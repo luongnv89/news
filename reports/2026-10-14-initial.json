@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-10-14-initial",
+  "edition": "Initial edition",
+  "issued_at": "2026-10-14T17:45:11+02:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-09-14T00:00:00+02:00",
+  "window_end": "2026-10-14T17:45:11+02:00",
+  "editorial_note": "This first issue is a 30-day catch-up, not eight announcements made today. Two items were published today; the other dispatches retain their original dates. Future morning and afternoon editions prioritise material changes since the previous issue. Facts, vendor claims, editorial analysis and anecdotal community reactions are labelled separately.",
+  "stories": [
+    {
+      "id": "eu-strategic-sector-ai-adoption",
+      "section": "Industry & policy",
+      "headline": "EU study: AI uptake grows, but integration remains uneven",
+      "published_at": "2026-10-14",
+      "freshness": "new",
+      "paragraphs": [
+        "A new Joint Research Centre analysis reports that AI adoption among firms in ten EU strategic sectors rose from 7% in 2021 to 18% in 2025. Cultural and creative sectors and media, energy, and electronic communications lead; mobility, tourism and agri-food trail.",
+        "The analysis uses Eurostat enterprise survey data from 2021 through 2025. It distinguishes using accessible AI tools from embedding AI in core production processes, and argues for sector-specific support rather than a single adoption recipe."
+      ],
+      "why_it_matters": "Integration, organisational change and sector constraints matter more than simply counting AI subscriptions.",
+      "caveat": "Published today, but the underlying observations end in 2025. These are strategic-sector figures, not a live measure of all EU businesses.",
+      "sources": [
+        {
+          "label": "European Commission Joint Research Centre",
+          "url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/ai-adoption-more-doubles-almost-every-eu-strategic-sector-2026-10-14_en",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "hai-accountability-enforcement",
+      "section": "Industry & policy",
+      "headline": "Deb Raji: AI accountability needs enforcement infrastructure",
+      "published_at": "2026-10-14",
+      "freshness": "new",
+      "paragraphs": [
+        "In a Stanford HAI interview published today, researcher Deb Raji argues that implementing AI accountability requires practical infrastructure: incident databases, usable documentation templates, third-party auditing and government enforcement capacity.",
+        "She highlights public-sector deployment, where affected people often cannot opt out and procurement must meet accessibility, privacy and performance requirements. Her emphasis is on tracing organisational decisions to harms, not treating model behaviour as an unaccountable force."
+      ],
+      "why_it_matters": "Governance teams need ways to document, contest and investigate real deployment outcomes, alongside model evaluations.",
+      "caveat": "This is an expert interview, not a new law, enforcement action or experimentally established policy effect.",
+      "sources": [
+        {
+          "label": "Stanford HAI interview",
+          "url": "https://hai.stanford.edu/news/who-is-responsible-when-ai-causes-harm",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "muse-wonder-agent-models",
+      "section": "Models",
+      "headline": "Meta launches Muse Wonder with memory and sustained-agent focus",
+      "published_at": "2026-10-12",
+      "freshness": "new",
+      "paragraphs": [
+        "Meta announced Muse Wonder and Muse Wonder Full on October 12. It positions the models around persistent memory, sustained execution and coding, and says Muse Wonder is available through the Meta Model API while Muse Wonder Full is available to Muse Code subscribers.",
+        "The announcement describes remembering preferences across interactions and working through long-running projects, including repeated testing and revision. Wider consumer rollout is described as forthcoming, rather than universally available now."
+      ],
+      "why_it_matters": "Long-running reliability and control of remembered personal context are becoming product differentiators, not just single-turn benchmark scores.",
+      "caveat": "Benchmark leadership, privacy robustness and alignment superiority are Meta claims. This edition did not independently benchmark either model.",
+      "sources": [
+        {
+          "label": "Meta AI Research announcement",
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-iot-replication",
+      "section": "Research",
+      "headline": "Anthropic studies AI replication on weak devices, with major caveats",
+      "published_at": "2026-10-12",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic reports running Gemma4-26B-A4B across 15 inexpensive Android TV boxes at 0.39 tokens per second. Separately, in a contained eight-node replication evaluation, GLM-5.2 reached all eight nodes in four of five trials and seven in the remaining trial.",
+        "Those are different experiments. The replication setup used unauthenticated ADB access, an acting model on a separate inference server, and a standardised Llama3.1-8B inference payload. It did not demonstrate a small model independently copying and running its own weights across real household devices."
+      ],
+      "why_it_matters": "Device security and network monitoring remain relevant even when useful model inference is slow and distributed.",
+      "caveat": "Anthropic calls the simplified replication result an upper bound on real-world success. Its year-end small-model forecast extrapolates a general capability index; it is a rough estimate, not an observed outcome.",
+      "sources": [
+        {
+          "label": "Anthropic Frontier Red Team",
+          "url": "https://www.anthropic.com/research/self-replicating-ai",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "hidden-capabilities-cryptographic-construction",
+      "section": "Research",
+      "headline": "Paper shows a constructed limit of capability elicitation",
+      "published_at": "2026-10-09",
+      "freshness": "new",
+      "paragraphs": [
+        "AI Models Can Provably Hide Arbitrary Capabilities constructs a weight-based supply-chain attack that embeds an encrypted executable neural network unlocked by a secret trigger. Under its stated cryptographic assumptions and compiler conditions, the hidden capability resists elicitation even with access to the weights.",
+        "The result concerns deliberately engineered circuits, not evidence that normal training spontaneously produces cryptographic concealment. Its small chemistry proof of concept classifies reaction feasibility; it does not plan synthesis. In the associated Hacker News discussion, t_minus_40 asks: \"how can you prove that someone is hiding something? if you prove then were they really hiding?\" The paper distinguishes finding an anomalous construction from eliciting its hidden behaviour."
+      ],
+      "why_it_matters": "A failed attempt to elicit a capability is not, by itself, proof that the capability is absent; model provenance and supply-chain controls complement testing.",
+      "caveat": "Submitted October 9, not the October 13 HN discussion date. Substantial overhead and potentially detectable circuit structure limit immediate practicality; integration of the full construction into a pretrained model remains future work.",
+      "sources": [
+        {
+          "label": "arXiv abstract and submission history",
+          "url": "https://arxiv.org/abs/2610.13928",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        },
+        {
+          "label": "Full paper, version 1",
+          "url": "https://arxiv.org/html/2610.13928v1",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "how can you prove that someone is hiding something? if you prove then were they really hiding?",
+          "author": "t_minus_40 on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50066440"
+        }
+      ]
+    },
+    {
+      "id": "coding-review-bottleneck",
+      "section": "Coding & agents",
+      "headline": "More code is not necessarily more delivered software",
+      "published_at": "2026-10-09",
+      "freshness": "new",
+      "paragraphs": [
+        "Ars Technica reported on an existing Fiona Chen and James Stratton working paper on October 9. Across 718 firms and 725,938 workers, agent adoption was associated with 30% more lines of code, 20% more commits and 23% more pull requests, while review time rose 49%. Effects on completed Jira issues and epics were positive but statistically insignificant.",
+        "The primary paper is dated August 4 and its data ends in March 2026: this is recent coverage of older research, not a fresh October experiment. In the HN discussion, radlad writes, \"I'm noticing AI catching many bugs in code that previously went unnoticed.\" The same comment notes that identifying many possible issues can itself add work. That is anecdotal context, not validation of the study."
+      ],
+      "why_it_matters": "Evaluate throughput at the completed-work level and budget for review, rather than equating generated lines or pull requests with customer value.",
+      "caveat": "An observational staggered difference-in-differences study depends on comparable counterfactual trends. Statistically insignificant gains do not establish zero benefit everywhere or assess all newer agents.",
+      "sources": [
+        {
+          "label": "Ars Technica reporting",
+          "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+          "type": "reporting",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        },
+        {
+          "label": "Chen and Stratton working paper, August 4 version",
+          "url": "https://fion.ac/jellyfish.pdf",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "I'm noticing AI catching many bugs in code that previously went unnoticed.",
+          "author": "radlad on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50059959"
+        }
+      ]
+    },
+    {
+      "id": "gemini-work-agent",
+      "section": "Coding & agents",
+      "headline": "Google packages a universal agent for enterprise work",
+      "published_at": "2026-10-08",
+      "freshness": "new",
+      "paragraphs": [
+        "Google Cloud announced the Gemini agent at Gemini at Work on October 8, describing a single entry point for knowledge work, content creation and coding, connected to business systems and existing work surfaces.",
+        "Google says the agent chooses models for tasks and provides cost controls, role-based access, sandboxing and an Agent Gateway for policy enforcement. Those governance and integration features are part of the product pitch, not independently verified security guarantees."
+      ],
+      "why_it_matters": "Enterprise agents increasingly compete on identity, permissions and workflow integration as well as model capability.",
+      "caveat": "Deployment-specific availability, pricing and effectiveness were not independently tested; the announcement does not prove a universal productivity gain.",
+      "sources": [
+        {
+          "label": "Google Cloud announcement",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "gpt6-october-system-card",
+      "section": "Models",
+      "headline": "OpenAI separates October ChatGPT rollout from September GPT-6 versions",
+      "published_at": "2026-10-07",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI's October 7 system card describes GPT-6 Sol and GPT-6 Luna launching across free and paid ChatGPT tiers. It distinguishes these October versions from the September versions accessible through Codex and ChatGPT Work.",
+        "OpenAI treats the October models as High capability in cybersecurity and biological/chemical domains under its Preparedness Framework and describes safeguards and evaluation results. These are the provider's capability assessments, not a declaration that risk has disappeared."
+      ],
+      "why_it_matters": "Version and deployment surface matter when interpreting model comparisons, safety evaluations and rollout claims.",
+      "caveat": "The card reports both improvements and limitations, including regressions in some safety evaluations. This edition did not reproduce OpenAI's tests.",
+      "sources": [
+        {
+          "label": "OpenAI Deployment Safety Hub, October system card",
+          "url": "https://deploymentsafety.openai.com/gpt-6-october/vision",
+          "type": "primary",
+          "checked_at": "2026-10-14T17:45:11+02:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.28.0",
+    "engine_ran": true,
+    "engine_window_days": 30,
+    "source_status": {
+      "reddit": "ok",
+      "youtube": "ok",
+      "hackernews": "ok",
+      "polymarket": "unreachable",
+      "github": "ok",
+      "x": "skipped-unconfigured"
+    },
+    "notes": [
+      "The completed engine returned 92 evidence items across Reddit, YouTube, Hacker News and GitHub. Those discovery items are not 92 independently verified news stories.",
+      "Reddit returned 25 items but one sub-request failed with HTTP 422; its overall cache state is ok, with a lane failure recorded.",
+      "Polymarket was unreachable because TLS hostname verification failed. No odds are available; no certificate bypass was attempted. X was not enabled.",
+      "YouTube supplied transcripts for four of six returned videos. Automated transcripts and community comments do not establish research findings.",
+      "Six focused host-web searches supplemented the engine; selected headlines were checked against primary pages and dependable reporting. Browser cookies and optional paid enrichment were not used."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 25 threads │ 7,225 upvotes │ 4,014 comments\n├─ 🔴 YouTube: 6 videos │ 29,791,824 views │ 4/6 with transcripts\n├─ 🟡 HN: 40 stories │ 1,305 points │ 811 comments\n├─ 🐙 GitHub: 21 items │ 171 reactions │ 289 comments\n├─ 🗣️ Top voices: r/LocalLLaMA, r/LocalLLM, r/OpenAI\n---"
+  },
+  "key_patterns": [
+    "Agent launches emphasise memory, persistent execution and enterprise permissions; vendor benchmarks still require independent scrutiny.",
+    "Capability testing alone is not enough: provenance, deployment authority and defence-in-depth remain important.",
+    "AI uptake and code generation should be distinguished from integration and completed-work productivity."
+  ],
+  "previous_issue_id": null
+}

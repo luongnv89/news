@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Initial edition, Wednesday 14 October 2026</title>
+<meta name="description" content="Initial edition of The AI Gazette, issue 2026-10-14-initial.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-14T17:45:11+02:00">Wednesday 14 October 2026</time></p><p>Initial edition &middot; No. 2026-10-14-initial</p><p>Issued 17:45 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-14-initial.html">This edition</a><a href="2026-10-14-initial.md">Markdown</a><a href="2026-10-14-initial.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-14-initial.html">This edition (HTML)</a> &middot; <a href="2026-10-14-initial.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Initial edition &mdash; Wednesday 14 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-09-14T00:00:00+02:00">14 Sep 2026, 00:00 CEST</time> to <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time> (Paris time). Issued <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time>.</p><p class="lead-note">This first issue is a 30-day catch-up, not eight announcements made today. Two items were published today; the other dispatches retain their original dates. Future morning and afternoon editions prioritise material changes since the previous issue. Facts, vendor claims, editorial analysis and anecdotal community reactions are labelled separately.</p><p class="tally">8 new or updated dispatches &middot; 0 background items</p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-muse-wonder-agent-models" aria-labelledby="h-muse-wonder-agent-models"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-muse-wonder-agent-models">Meta launches Muse Wonder with memory and sustained-agent focus</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-12">12 Oct 2026</time></p><div class="story-body"><p>Meta announced Muse Wonder and Muse Wonder Full on October 12. It positions the models around persistent memory, sustained execution and coding, and says Muse Wonder is available through the Meta Model API while Muse Wonder Full is available to Muse Code subscribers.</p><p>The announcement describes remembering preferences across interactions and working through long-running projects, including repeated testing and revision. Wider consumer rollout is described as forthcoming, rather than universally available now.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Long-running reliability and control of remembered personal context are becoming product differentiators, not just single-turn benchmark scores.</p></aside><p class="caveat"><span class="label">Caveat.</span> Benchmark leadership, privacy robustness and alignment superiority are Meta claims. This edition did not independently benchmark either model.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://research.meta.ai/blog/muse-wonder" rel="noopener noreferrer">Meta AI Research announcement</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-gpt6-october-system-card" aria-labelledby="h-gpt6-october-system-card"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-gpt6-october-system-card">OpenAI separates October ChatGPT rollout from September GPT-6 versions</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-07">7 Oct 2026</time></p><div class="story-body"><p>OpenAI&#x27;s October 7 system card describes GPT-6 Sol and GPT-6 Luna launching across free and paid ChatGPT tiers. It distinguishes these October versions from the September versions accessible through Codex and ChatGPT Work.</p><p>OpenAI treats the October models as High capability in cybersecurity and biological/chemical domains under its Preparedness Framework and describes safeguards and evaluation results. These are the provider&#x27;s capability assessments, not a declaration that risk has disappeared.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Version and deployment surface matter when interpreting model comparisons, safety evaluations and rollout claims.</p></aside><p class="caveat"><span class="label">Caveat.</span> The card reports both improvements and limitations, including regressions in some safety evaluations. This edition did not reproduce OpenAI&#x27;s tests.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://deploymentsafety.openai.com/gpt-6-october/vision" rel="noopener noreferrer">OpenAI Deployment Safety Hub, October system card</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-coding-review-bottleneck" aria-labelledby="h-coding-review-bottleneck"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-coding-review-bottleneck">More code is not necessarily more delivered software</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-09">9 Oct 2026</time></p><div class="story-body"><p>Ars Technica reported on an existing Fiona Chen and James Stratton working paper on October 9. Across 718 firms and 725,938 workers, agent adoption was associated with 30% more lines of code, 20% more commits and 23% more pull requests, while review time rose 49%. Effects on completed Jira issues and epics were positive but statistically insignificant.</p><p>The primary paper is dated August 4 and its data ends in March 2026: this is recent coverage of older research, not a fresh October experiment. In the HN discussion, radlad writes, &quot;I&#x27;m noticing AI catching many bugs in code that previously went unnoticed.&quot; The same comment notes that identifying many possible issues can itself add work. That is anecdotal context, not validation of the study.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Evaluate throughput at the completed-work level and budget for review, rather than equating generated lines or pull requests with customer value.</p></aside><p class="caveat"><span class="label">Caveat.</span> An observational staggered difference-in-differences study depends on comparable counterfactual trends. Statistically insignificant gains do not establish zero benefit everywhere or assess all newer agents.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;I&#x27;m noticing AI catching many bugs in code that previously went unnoticed.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50059959" rel="noopener noreferrer">radlad on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" rel="noopener noreferrer">Ars Technica reporting</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://fion.ac/jellyfish.pdf" rel="noopener noreferrer">Chen and Stratton working paper, August 4 version</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-gemini-work-agent" aria-labelledby="h-gemini-work-agent"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-gemini-work-agent">Google packages a universal agent for enterprise work</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-08">8 Oct 2026</time></p><div class="story-body"><p>Google Cloud announced the Gemini agent at Gemini at Work on October 8, describing a single entry point for knowledge work, content creation and coding, connected to business systems and existing work surfaces.</p><p>Google says the agent chooses models for tasks and provides cost controls, role-based access, sandboxing and an Agent Gateway for policy enforcement. Those governance and integration features are part of the product pitch, not independently verified security guarantees.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Enterprise agents increasingly compete on identity, permissions and workflow integration as well as model capability.</p></aside><p class="caveat"><span class="label">Caveat.</span> Deployment-specific availability, pricing and effectiveness were not independently tested; the announcement does not prove a universal productivity gain.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" rel="noopener noreferrer">Google Cloud announcement</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-iot-replication" aria-labelledby="h-anthropic-iot-replication"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-anthropic-iot-replication">Anthropic studies AI replication on weak devices, with major caveats</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-12">12 Oct 2026</time></p><div class="story-body"><p>Anthropic reports running Gemma4-26B-A4B across 15 inexpensive Android TV boxes at 0.39 tokens per second. Separately, in a contained eight-node replication evaluation, GLM-5.2 reached all eight nodes in four of five trials and seven in the remaining trial.</p><p>Those are different experiments. The replication setup used unauthenticated ADB access, an acting model on a separate inference server, and a standardised Llama3.1-8B inference payload. It did not demonstrate a small model independently copying and running its own weights across real household devices.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Device security and network monitoring remain relevant even when useful model inference is slow and distributed.</p></aside><p class="caveat"><span class="label">Caveat.</span> Anthropic calls the simplified replication result an upper bound on real-world success. Its year-end small-model forecast extrapolates a general capability index; it is a rough estimate, not an observed outcome.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/self-replicating-ai" rel="noopener noreferrer">Anthropic Frontier Red Team</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-hidden-capabilities-cryptographic-construction" aria-labelledby="h-hidden-capabilities-cryptographic-construction"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-hidden-capabilities-cryptographic-construction">Paper shows a constructed limit of capability elicitation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-09">9 Oct 2026</time></p><div class="story-body"><p>AI Models Can Provably Hide Arbitrary Capabilities constructs a weight-based supply-chain attack that embeds an encrypted executable neural network unlocked by a secret trigger. Under its stated cryptographic assumptions and compiler conditions, the hidden capability resists elicitation even with access to the weights.</p><p>The result concerns deliberately engineered circuits, not evidence that normal training spontaneously produces cryptographic concealment. Its small chemistry proof of concept classifies reaction feasibility; it does not plan synthesis. In the associated Hacker News discussion, t_minus_40 asks: &quot;how can you prove that someone is hiding something? if you prove then were they really hiding?&quot; The paper distinguishes finding an anomalous construction from eliciting its hidden behaviour.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> A failed attempt to elicit a capability is not, by itself, proof that the capability is absent; model provenance and supply-chain controls complement testing.</p></aside><p class="caveat"><span class="label">Caveat.</span> Submitted October 9, not the October 13 HN discussion date. Substantial overhead and potentially detectable circuit structure limit immediate practicality; integration of the full construction into a pretrained model remains future work.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;how can you prove that someone is hiding something? if you prove then were they really hiding?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50066440" rel="noopener noreferrer">t_minus_40 on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://arxiv.org/abs/2610.13928" rel="noopener noreferrer">arXiv abstract and submission history</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://arxiv.org/html/2610.13928v1" rel="noopener noreferrer">Full paper, version 1</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-eu-strategic-sector-ai-adoption" aria-labelledby="h-eu-strategic-sector-ai-adoption"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-eu-strategic-sector-ai-adoption">EU study: AI uptake grows, but integration remains uneven</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-14">14 Oct 2026</time></p><div class="story-body"><p>A new Joint Research Centre analysis reports that AI adoption among firms in ten EU strategic sectors rose from 7% in 2021 to 18% in 2025. Cultural and creative sectors and media, energy, and electronic communications lead; mobility, tourism and agri-food trail.</p><p>The analysis uses Eurostat enterprise survey data from 2021 through 2025. It distinguishes using accessible AI tools from embedding AI in core production processes, and argues for sector-specific support rather than a single adoption recipe.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Integration, organisational change and sector constraints matter more than simply counting AI subscriptions.</p></aside><p class="caveat"><span class="label">Caveat.</span> Published today, but the underlying observations end in 2025. These are strategic-sector figures, not a live measure of all EU businesses.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/ai-adoption-more-doubles-almost-every-eu-strategic-sector-2026-10-14_en" rel="noopener noreferrer">European Commission Joint Research Centre</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-hai-accountability-enforcement" aria-labelledby="h-hai-accountability-enforcement"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-hai-accountability-enforcement">Deb Raji: AI accountability needs enforcement infrastructure</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-14">14 Oct 2026</time></p><div class="story-body"><p>In a Stanford HAI interview published today, researcher Deb Raji argues that implementing AI accountability requires practical infrastructure: incident databases, usable documentation templates, third-party auditing and government enforcement capacity.</p><p>She highlights public-sector deployment, where affected people often cannot opt out and procurement must meet accessibility, privacy and performance requirements. Her emphasis is on tracing organisational decisions to harms, not treating model behaviour as an unaccountable force.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Governance teams need ways to document, contest and investigate real deployment outcomes, alongside model evaluations.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is an expert interview, not a new law, enforcement action or experimentally established policy effect.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://hai.stanford.edu/news/who-is-responsible-when-ai-causes-harm" rel="noopener noreferrer">Stanford HAI interview</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-14T17:45:11+02:00">14 Oct 2026, 17:45 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Agent launches emphasise memory, persistent execution and enterprise permissions; vendor benchmarks still require independent scrutiny.</li><li>Capability testing alone is not enough: provenance, deployment authority and defence-in-depth remain important.</li><li>AI uptake and code generation should be distinguished from integration and completed-work productivity.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>30 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>x</dt><dd>skipped-unconfigured</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The completed engine returned 92 evidence items across Reddit, YouTube, Hacker News and GitHub. Those discovery items are not 92 independently verified news stories.</li><li>Reddit returned 25 items but one sub-request failed with HTTP 422; its overall cache state is ok, with a lane failure recorded.</li><li>Polymarket was unreachable because TLS hostname verification failed. No odds are available; no certificate bypass was attempted. X was not enabled.</li><li>YouTube supplied transcripts for four of six returned videos. Automated transcripts and community comments do not establish research findings.</li><li>Six focused host-web searches supplemented the engine; selected headlines were checked against primary pages and dependable reporting. Browser cookies and optional paid enrichment were not used.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 25 threads │ 7,225 upvotes │ 4,014 comments
+├─  YouTube: 6 videos │ 29,791,824 views │ 4/6 with transcripts
+├─  HN: 40 stories │ 1,305 points │ 811 comments
+├─  GitHub: 21 items │ 171 reactions │ 289 comments
+├─  Top voices: r/LocalLLaMA, r/LocalLLM, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-14-initial.json" download>Exact input JSON</a></li><li><a href="2026-10-14-initial.md">Markdown text</a></li><li><a href="2026-10-14-initial.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
