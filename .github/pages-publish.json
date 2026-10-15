@@ -10,8 +10,12 @@
     "reports/2026-10-14-initial.html",
     "reports/2026-10-14-initial.json",
     "reports/2026-10-14-initial.md",
-    "reports/2026-10-14-initial.pdf"
+    "reports/2026-10-14-initial.pdf",
+    "reports/2026-10-15-morning.html",
+    "reports/2026-10-15-morning.json",
+    "reports/2026-10-15-morning.md",
+    "reports/2026-10-15-morning.pdf"
   ],
   "tool": "github-pages-publish",
-  "published_at": "2026-10-14T17:11:25+00:00"
+  "published_at": "2026-10-15T04:11:12+00:00"
 }

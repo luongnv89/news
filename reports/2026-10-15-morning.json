@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-10-15-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-10-15T06:10:10.684630+02:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-10-14T17:59:25.033523+02:00",
+  "window_end": "2026-10-15T06:10:10.684630+02:00",
+  "editorial_note": "Two overnight software releases clear the verification cutoff after the previous actual edition, issued October 14 at 17:59 CEST: Claude Code 2.1.300 and Ollama 0.40.5-rc0. We lead with their concrete changes rather than repeat yesterday's model announcements. A separate October 9 physics preprint is labeled BACKGROUND, with its limitations and the community's contrasting reactions. Broader model and policy leads that could not be dated or verified are omitted.",
+  "stories": [
+    {
+      "id": "claude-code-2-1-300-reliability",
+      "section": "Coding & agents",
+      "headline": "Claude Code 2.1.300 fixes lost resumed context and tightens hook validation",
+      "published_at": "2026-10-14T18:24:25Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic published Claude Code v2.1.300 at 20:24 CEST on October 14, after the previous edition. Its release notes describe fixes for headless and Agent SDK sessions losing recent messages or compaction summaries when resuming after interrupted, retried or output-limited replies.",
+        "The release also validates updatedInput returned by PreToolUse and PermissionRequest hooks: unknown keys are dropped, and input rejected by the tool denies the call. Local session transcripts now also record each API request's system prompt, tools and parameters, increasing the information present in a transcript a user chooses to share.",
+        "Other additions include separate five-minute and one-hour cache-write token counts in OpenTelemetry, GenAI trace attributes, and the /advisor feature on Claude Platform on AWS. An advisor does not run until selected."
+      ],
+      "why_it_matters": "For unattended agents, preserving the right context after a restart and rejecting malformed hook inputs are operational safeguards, not just interface polish. Review transcript contents before sharing them.",
+      "caveat": "These are the maintainer's release claims, not independent regression-test results. This issue reports the software release; it does not claim a new Claude model or install the update.",
+      "sources": [
+        {
+          "label": "Anthropic: Claude Code v2.1.300",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:08:21.323618+02:00"
+        },
+        {
+          "label": "GitHub API: original release timestamp",
+          "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=5",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:05:12.973327+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "ollama-0-40-5-rc0-cuda",
+      "section": "Industry & policy",
+      "headline": "Ollama release candidate ports MLX custom kernels to CUDA",
+      "published_at": "2026-10-14T19:45:22Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Ollama published v0.40.5-rc0 at 21:45 CEST on October 14. The release candidate includes a port of MLX custom kernels from Metal to CUDA and support for custom tool calls in OpenAI-compatible Responses history.",
+        "The linked implementation covers mamba2_scan, depthwise_conv_silu and gated_delta kernels that previously fell back to graph operations on CUDA. Its author reports testing on a Linux RTX 6000 Ada, with Nemotron prompt-processing improvements of 110% and 122% for two tested NVFP4 configurations and generation improvements of 33% and 15%, respectively.",
+        "The code change was merged on October 13; the fresh development is its inclusion in this October 14 release candidate, not a newly invented kernel announcement. The preceding stable v0.40.4 release predates the current news window."
+      ],
+      "why_it_matters": "More efficient CUDA paths can make local inference more practical on NVIDIA hardware, while Responses-history compatibility matters for tool-using agents. The reported speedups are useful leads for testing, not universal performance guarantees.",
+      "caveat": "This is explicitly a prerelease. Performance figures are author-reported for two model configurations on one GPU; they have not been independently reproduced here and do not apply to every model or device.",
+      "sources": [
+        {
+          "label": "Ollama: v0.40.5-rc0 prerelease",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.5-rc0",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:08:21.324236+02:00"
+        },
+        {
+          "label": "GitHub API: original release timestamp",
+          "url": "https://api.github.com/repos/ollama/ollama/releases?per_page=3",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:06:00.064947+02:00"
+        },
+        {
+          "label": "Ollama #18657: implementation and author benchmark",
+          "url": "https://api.github.com/repos/ollama/ollama/pulls/18657",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:08:21.324747+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "theophyseval-research-context",
+      "section": "Research",
+      "headline": "BACKGROUND: TheoPhysEval reports 98% on 50 physics calculations, not autonomous discovery",
+      "published_at": "2026-10-09",
+      "freshness": "background",
+      "paragraphs": [
+        "BACKGROUND - October 9, 2026. The TheoPhysEval preprint assembled 50 unpublished, verifiable theoretical-physics problems. Its authors report 98% final-answer accuracy for GPT-6-Astra in Codex with web and computational tools, at an average cost below US$3 per problem. This is an older paper newly examined by this journal, not an overnight model launch.",
+        "The authors describe the problems as concrete calculations using known techniques, not breakthrough open questions. GPT-6-Astra and Opus 5.5 in Claude Code each scored 92% on the isolated track; DeepSeek-V4.1-Flash in Codex scored 54% with web access and 50% without it. These results describe the tested model-and-harness combinations, not a ranking for all work.",
+        "The October 14 discussion mixed excitement with caution. u/141_1337 wrote, \"Next year is gonna be physics, I can feel it lol\"; u/quivering_palm answered the broader optimism with, \"Not really, physics will be bottlenecked by the need to run IRL experiments, which take a lot of money and time.\" These are anecdotal reactions, not evidence of a new scientific discovery."
+      ],
+      "why_it_matters": "The result supports evaluating agents on well-specified research calculations. It does not show that they can choose important scientific questions, design experiments or autonomously produce major new theories.",
+      "caveat": "This is a preprint, with final-answer-based grading and only 50 problems. Some human contributors used AI when solving problems, so the authors cannot rule out data leakage. They also discuss literature memorization; the benchmark is not an adversarial test of original scientific invention.",
+      "sources": [
+        {
+          "label": "arXiv: TheoPhysEval abstract and October 9 submission",
+          "url": "https://arxiv.org/abs/2610.16733",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:05:12.911900+02:00"
+        },
+        {
+          "label": "TheoPhysEval: methods, results and limitations",
+          "url": "https://arxiv.org/html/2610.16733v1",
+          "type": "primary",
+          "checked_at": "2026-10-15T06:06:00.065947+02:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "Next year is gonna be physics, I can feel it lol",
+          "author": "u/141_1337 (244 upvotes when checked)",
+          "url": "https://reddit.com/r/singularity/comments/1x5y9ue/comment/pgqidyh/"
+        },
+        {
+          "text": "Not really, physics will be bottlenecked by the need to run IRL experiments, which take a lot of money and time.",
+          "author": "u/quivering_palm (52 upvotes when checked)",
+          "url": "https://reddit.com/r/singularity/comments/1x5y9ue/comment/pgqo4k0/"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.28.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok",
+      "youtube": "ok",
+      "hackernews": "ok",
+      "polymarket": "unreachable",
+      "github": "ok",
+      "devto": "ok",
+      "x": "skipped-unconfigured"
+    },
+    "notes": [
+      "Two verified software releases appeared after the previous actual issue at 17:59 CEST on October 14. One October 9 physics paper is explicitly BACKGROUND; it is not counted as fresh news.",
+      "Models, coding and agents, research, and industry, infrastructure and policy were searched over a two-day discovery window. No separate new model launch or policy change met the verification gate; this does not establish a quiet wider news cycle.",
+      "The research engine completed with 69 evidence items: 16 Reddit threads, 6 YouTube videos, 20 Hacker News stories, 14 GitHub items and 13 dev.to articles. These are evidence items, not 69 verified developments.",
+      "Polymarket was unreachable because TLS hostname verification failed. No odds are reported and TLS verification was not bypassed. X was not configured.",
+      "YouTube returned six videos but transcripts for only two; the other transcript lanes were rate-limited or unavailable. The overall engine source state is preserved as ok alongside this limitation.",
+      "Three post-engine web supplements were attempted. The configured search backend failed and its built-in keyless fallback returned leads for one query and empty results for two; empty searches are not evidence of no news.",
+      "Reuters ASML and Axios policy article verification remained blocked. Date-only or older reports, commentary, unsupported social claims and a content-free Codex alpha release were not promoted as fresh stories.",
+      "No browser cookies, new optional services, credentials, paid enrichment, TLS bypass or schedule changes were used. Raw research and provenance remain private; only sanitized newspaper files are eligible for the authorized public repository."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 16 threads │ 2,016 upvotes │ 605 comments\n├─ 🔴 YouTube: 6 videos │ 676,114 views │ 2/6 with transcripts\n├─ 🟡 HN: 20 stories │ 2,140 points │ 1,550 comments\n├─ 👩‍💻 dev.to: 13 articles │ 286 reactions │ 152 comments\n├─ 🐙 GitHub: 14 items │ 41 reactions │ 194 comments\n├─ 🗣️ Top voices: r/singularity, r/artificial, r/LocalLLaMA\n---"
+  },
+  "key_patterns": [
+    "The fresh releases improve agent-state reliability, hook validation and inference plumbing rather than establish a newly launched foundation model.",
+    "A CUDA speedup from one author's two-model test is narrower evidence than a general performance claim; Ollama's release remains a candidate.",
+    "High accuracy on specified physics calculations is not the same as autonomous discovery; the October 9 paper itself makes that distinction."
+  ],
+  "previous_issue_id": "2026-10-14-afternoon"
+}
