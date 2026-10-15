@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "issued_at": "2026-10-15T08:22:23.164693+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-15T06:17:48.143224+00:00",
+    "period": "daily",
+    "total_listed": 12
+  },
+  "editorial_note": "Seven editorial picks from the official all-language daily GitHub Trending listing, captured this morning. Ordering reflects practical interest, not the GitHub rank. This is the first edition: inclusion means worth investigating, not newly launched or independently security-audited.",
+  "coverage_notes": [
+    "Official daily listing: 12 repositories observed; metadata and README sources checked for eight candidates, seven selected. This is a bounded snapshot, not an exhaustive map of GitHub.",
+    "Daily star figures reproduce the listing's literal stars-today labels; total stars come from the repository API at a later check time. These are different metrics, and neither establishes an audited rolling-24-hour growth rate.",
+    "Project capabilities, performance figures and adoption claims are maintainer descriptions unless explicitly stated otherwise. No repository code, installers or models were downloaded or run.",
+    "Stars and ranking measure attention, not quality, security or license suitability. Source-available licensing and notable platform/safety caveats are called out individually."
+  ],
+  "projects": [
+    {
+      "repository": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "trending_rank": 3,
+      "description": "An MCP server and hooks that keep bulky tool output out of an AI coding agent's context and retrieve session information.",
+      "why_interesting": "A practical angle on long-running coding sessions: manage what enters context rather than just choosing a model with a larger window.",
+      "category": "Coding agents",
+      "caveat": "The quoted 98% reduction is a maintainer claim, not reproduced here. Elastic License 2.0 restricts hosted/managed-service offerings; this is source-available, not a permissive open-source license.",
+      "language": "TypeScript",
+      "stars_total": 29346,
+      "stars_period": 947,
+      "stars_period_label": "947 stars today",
+      "license": "Elastic License 2.0 (ELv2)",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:30.303618+00:00",
+      "evidence_urls": [
+        "https://github.com/mksglu/context-mode",
+        "https://github.com/mksglu/context-mode/blob/main/README.md",
+        "https://github.com/mksglu/context-mode/blob/main/LICENSE"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/mksglu/context-mode/readme"
+    },
+    {
+      "repository": "xtool-org/xtool",
+      "url": "https://github.com/xtool-org/xtool",
+      "trending_rank": 10,
+      "description": "A SwiftPM-based tool for building, signing and installing iOS apps from Linux, WSL and macOS.",
+      "why_interesting": "Worth exploring when iOS build automation needs to run outside a full Xcode desktop workflow. The repository also exposes Apple Developer Services through a library.",
+      "category": "Developer tools",
+      "caveat": "Not a demonstrated replacement for every Xcode feature. SDK setup, signing credentials and device provisioning still matter; no app build was tested for this digest.",
+      "language": "Swift",
+      "stars_total": 11141,
+      "stars_period": 1502,
+      "stars_period_label": "1,502 stars today",
+      "license": "MIT",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:38.014095+00:00",
+      "evidence_urls": [
+        "https://github.com/xtool-org/xtool",
+        "https://github.com/xtool-org/xtool/blob/main/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/xtool-org/xtool/readme"
+    },
+    {
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "trending_rank": 1,
+      "description": "An MCP and CLI layer for agent-assisted inspection of native binaries, JavaScript/Electron applications and runtime behavior.",
+      "why_interesting": "Connects coding agents to existing reverse-engineering tools rather than asking them to infer behavior from screenshots alone. Its documentation emphasizes evidence and limitations.",
+      "category": "Reverse engineering",
+      "caveat": "Native analysis can require Hopper, Ghidra or IDA. Setup changes agent configuration. Review dependencies and permissions, and analyze only software you are authorized to inspect; no binaries were executed here.",
+      "language": "TypeScript",
+      "stars_total": 250334,
+      "stars_period": 41034,
+      "stars_period_label": "41,034 stars today",
+      "license": "MIT",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:28.928807+00:00",
+      "evidence_urls": [
+        "https://github.com/morluto/rea",
+        "https://github.com/morluto/rea/blob/main/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/morluto/rea/readme"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "trending_rank": 2,
+      "description": "A desktop voice-production project documenting local voice cloning, dubbing, transcription, dictation and audiobook workflows.",
+      "why_interesting": "Combines audio production with local API/MCP integrations, making it an interesting building block for agent-assisted media workflows.",
+      "category": "Local audio AI",
+      "caveat": "Hardware and model-storage requirements vary. CPU execution is slower, and the README limits Intel Macs to an app UI with a remote backend. The 646-language figure is the project's claim, not independently tested. Model, voice and generated-output rights are separate from the application's AGPL license; clone voices only with appropriate consent.",
+      "language": "Python",
+      "stars_total": 67106,
+      "stars_period": 3538,
+      "stars_period_label": "3,538 stars today",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:29.615049+00:00",
+      "evidence_urls": [
+        "https://github.com/debpalash/VoiceStudio",
+        "https://github.com/debpalash/VoiceStudio/blob/main/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/debpalash/VoiceStudio/readme"
+    },
+    {
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "trending_rank": 6,
+      "description": "A collection and generation workflow for command-line harnesses that let agents operate existing applications, with human-readable and JSON output.",
+      "why_interesting": "A useful alternative to brittle screen automation when a real application backend can be exposed through a structured CLI.",
+      "category": "Agent tooling",
+      "caveat": "Support is harness- and application-specific, not proof that every desktop application is already covered. Review each harness and its dependencies before running it; the project's test-count claims were not independently rerun.",
+      "language": "Python",
+      "stars_total": 52714,
+      "stars_period": 103,
+      "stars_period_label": "103 stars today",
+      "license": "Apache-2.0",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:30.982902+00:00",
+      "evidence_urls": [
+        "https://github.com/HKUDS/CLI-Anything",
+        "https://github.com/HKUDS/CLI-Anything/blob/main/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/HKUDS/CLI-Anything/readme"
+    },
+    {
+      "repository": "vxcontrol/pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "trending_rank": 8,
+      "description": "A self-hosted multi-agent penetration-testing platform that documents Docker-based tool execution, provider choice and persistent research state.",
+      "why_interesting": "Shows how agent planning, execution monitoring and reports can be composed into a security-research workflow instead of a single prompt.",
+      "category": "Security research",
+      "caveat": "For explicitly authorized testing only. Sandboxing is not a guarantee of isolation or correct findings; control network scope, secrets and model/API spending. No penetration tests were performed for this report.",
+      "language": "Go",
+      "stars_total": 29886,
+      "stars_period": 1025,
+      "stars_period_label": "1,025 stars today",
+      "license": "MIT",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:37.332019+00:00",
+      "evidence_urls": [
+        "https://github.com/vxcontrol/pentagi",
+        "https://github.com/vxcontrol/pentagi/blob/main/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/vxcontrol/pentagi/readme"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "trending_rank": 12,
+      "description": "A cross-platform software reverse-engineering framework supporting disassembly, decompilation, graphing and scripting.",
+      "why_interesting": "A mature foundation is useful context beside the agent wrappers now trending: inspect what the underlying analysis engine can actually establish.",
+      "category": "Security foundations",
+      "caveat": "Trending does not mean newly released. The README explicitly warns of vulnerabilities in some versions; review official security advisories and use an up-to-date release before examining untrusted samples.",
+      "language": "Java",
+      "stars_total": 87837,
+      "stars_period": 1008,
+      "stars_period_label": "1,008 stars today",
+      "license": "Apache-2.0",
+      "archived": false,
+      "metadata_checked_at": "2026-10-15T06:20:38.696986+00:00",
+      "evidence_urls": [
+        "https://github.com/NationalSecurityAgency/ghidra",
+        "https://github.com/NationalSecurityAgency/ghidra/blob/master/README.md"
+      ],
+      "readme_checked_at": "2026-10-15T08:22:23.164693+02:00",
+      "readme_source_url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/readme"
+    }
+  ]
+}
