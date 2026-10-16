@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Friday 16 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-16-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-16T16:09:55.251410+02:00">Friday 16 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-16-afternoon</p><p>Issued 16:09 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-16-afternoon.html">This edition</a><a href="2026-10-16-afternoon.md">Markdown</a><a href="2026-10-16-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-16-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-16-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Friday 16 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-16T06:12:05.300893+02:00">16 Oct 2026, 06:12 CEST</time> to <time datetime="2026-10-16T16:09:55.251410+02:00">16 Oct 2026, 16:09 CEST</time> (Paris time). Issued <time datetime="2026-10-16T16:09:55.251410+02:00">16 Oct 2026, 16:09 CEST</time>.</p><p class="lead-note">One material publication milestone cleared the verification gate since the actual morning edition at 06:12 CEST: Beam&#x27;s public weights availability. Its October 5 preview is explicitly distinguished from today&#x27;s repository publication milestone. We do not repeat this morning&#x27;s six stories or relabel older model announcements, research papers and security reports as new because they resurfaced in discussion.</p><p class="tally">1 new or updated dispatch &middot; 0 background items &middot; Previous: <a href="2026-10-16-morning.html">2026-10-16-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-reflection-beam-public-weights" aria-labelledby="h-reflection-beam-public-weights"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-reflection-beam-public-weights">Reflection makes Beam weights available under Apache 2.0, with uneven agent benchmark results</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16T10:34:28.000Z">16 Oct 2026, 12:34 CEST</time></p><div class="story-body"><p>Reflection has made its Beam-1.0-501B-A23B weights publicly available on Hugging Face. The repository commit labeled &quot;Beam is available&quot; is timestamped October 16 at 12:34 CEST, after this morning&#x27;s edition. The repository is public and ungated at verification. That commit is the timing anchor for this dispatch, not the model repository&#x27;s earlier creation date.</p><p>The model card describes a text-only sparse mixture-of-experts model with 501 billion total parameters, 23 billion active parameters and a one-million-token context window. Instruction-tuned BF16, FP8 and NVFP4 releases are listed under Apache 2.0. This is a weights-availability development, not the first announcement of Beam: Reflection previewed it on October 5 and said the weights would follow later in the month.</p><p>In its October 16 evaluation, Artificial Analysis gives Beam an Intelligence Index score of 30, behind Meta&#x27;s Muse Spark Open at 39. Its results are mixed: 48.5% on AutomationBench-AA but 3.0% on Terminal-Bench 4.0. The same evaluator reports 33% accuracy and a 47% hallucination rate on AA-Omniscience. These are results under specific evaluation setups, not a verdict that Beam is best for every agent workload.</p><p>Reflection&#x27;s own model card reports different benchmarks, including Terminal Bench v2.1; those numbers are not directly comparable with Artificial Analysis&#x27;s Terminal-Bench 4.0 result. The company&#x27;s model-development technical report is still marked as forthcoming in the card, while a separate safety technical report is already accessible.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Downloadable, permissively licensed weights give researchers and operators a new option they can inspect and adapt. The independent evaluation argues for testing the intended workflow rather than equating model size, one score or token efficiency with reliable coding performance.</p></aside><p class="caveat"><span class="label">Caveat.</span> We verified public artifacts, their provenance and reported benchmark results; we did not download the large weights or run the model. A repository commit is a directly observed publication milestone, not proof of the exact first instant anyone could obtain access. The October 5 preview is dated background within this story, not fresh news. The evaluated terminal benchmarks and harnesses differ, so their percentages must not be compared as like-for-like.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/reflection/Beam-1.0-501B-A23B/raw/main/README.md" rel="noopener noreferrer">Beam model card</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:08:13.748036+02:00">16 Oct 2026, 16:08 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/api/models/reflection/Beam-1.0-501B-A23B/commits/main" rel="noopener noreferrer">Beam model commits</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:08:13.748544+02:00">16 Oct 2026, 16:08 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/api/models/reflection/Beam-1.0-501B-A23B" rel="noopener noreferrer">Beam model metadata</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:08:13.747435+02:00">16 Oct 2026, 16:08 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://artificialanalysis.ai/articles/reflection-beam" rel="noopener noreferrer">Reflection Beam analysis</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:07:55.597595+02:00">16 Oct 2026, 16:07 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://reflection.ai/blog/introducing-beam" rel="noopener noreferrer">Reflection launch</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:08:25.964735+02:00">16 Oct 2026, 16:08 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://reflection.ai/beam-safety-report" rel="noopener noreferrer">Reflection safety</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-16T16:08:25.965339+02:00">16 Oct 2026, 16:08 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Model announcement and public weights availability are separate events: the October 5 preview is not presented as today&#x27;s launch.</li><li>Benchmark versions and harnesses matter: strong SaaS-workflow performance does not establish reliable terminal coding.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div><div><dt>x</dt><dd>skipped-unconfigured</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The edition interval begins with the actual October 16 morning issue at 06:12 CEST. One distinct new story is included; no background dispatches were added to fill a quota.</li><li>The installed engine completed successfully with 71 evidence items across five returning sources. These are discovery leads, not 71 verified news developments. Models, coding and agents, research, infrastructure and policy were searched.</li><li>Polymarket was unreachable because TLS hostname verification failed; TLS verification was not bypassed. X was unconfigured and omitted. YouTube supplied two transcripts for three videos; the remaining subtitle request was rate-limited.</li><li>Three post-engine native web supplements were completed. The configured search backend was unavailable and its automatic keyless fallback supplied results. The text extractor was unavailable, so official pages, APIs and the research paper were retrieved directly with normal TLS.</li><li>New discussion does not prove a new publication. Hybrid Reasoning Agents was submitted October 13; the Swarmchasers report is dated October 14; NVIDIA Nemotron announcements and the Brin and Apple/Meta coverage predate this morning. Timestral metadata last changed October 15. No separate coding, research or policy story cleared the post-morning timing gate.</li><li>The engine&#x27;s available community comments concern other or older stories, not Beam. They are not attached to this release as if they were reactions to it. No representative sentiment or community consensus is claimed.</li><li>No browser cookies, optional credentials or services, paid enrichment, TLS bypass, job-alert edits or schedule changes were used. Raw evidence, source snapshots, query plan and provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 14 threads │ 892 upvotes │ 407 comments
+├─  YouTube: 3 videos │ 900,606 views │ 2/3 with transcripts
+├─  HN: 21 stories │ 191 points │ 81 comments
+├─  dev.to: 12 articles │ 62 reactions │ 23 comments
+├─  GitHub: 21 items │ 58 reactions │ 224 comments
+├─  Top voices: r/OpenAI, r/LocalLLaMA, r/ClaudeAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-16-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-16-afternoon.md">Markdown text</a></li><li><a href="2026-10-16-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
