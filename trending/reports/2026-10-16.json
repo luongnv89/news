@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "issued_at": "2026-10-16T08:02:36.893965+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-16T06:00:46.048023+00:00",
+    "period": "daily",
+    "total_listed": 13
+  },
+  "editorial_note": "Six fresh editorial picks from the official all-language daily GitHub Trending snapshot. Curation prioritizes practical differences: retrieval, research, agent configuration security, serving infrastructure, plugin provenance and self-hosted media. Trending is attention, not a new-release date or an endorsement.",
+  "coverage_notes": [
+    "All 13 listing entries were inspected. Exact public GitHub metadata, README and license endpoints were checked for nine non-repeat candidates; six were selected. Four projects already featured yesterday were omitted without claiming a material new change, and three overlapping agent-tooling candidates were left out.",
+    "The seven preceding calendar dates were reviewed for local history. The archive began on 15 October: that edition is available, but 9-14 October have no local issues, so seven complete days of deduplication history do not yet exist. None of today's picks repeats the available edition.",
+    "The listing was captured at 08:00:46 Europe/Paris. Literal stars-today figures belong to GitHub's displayed daily window; API total stars were checked separately around 08:01. These are different metrics, not an audited rolling-24-hour measurement.",
+    "Capabilities, benchmarks, adoption and security guarantees are maintainer descriptions unless explicitly stated otherwise. Only primary public GitHub documentation and metadata were checked; no candidate code, installers, plugins, models or media streams were executed or downloaded.",
+    "This is a bounded, AI-heavy official listing, not a balanced census of every software category. Security coverage today is defensive agent-configuration review rather than a new penetration-testing selection. Stars and rank are not a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "xerj-org/xerj",
+      "url": "https://github.com/xerj-org/xerj",
+      "trending_rank": 12,
+      "description": "A Rust search engine that indexes code, documents, logs and other local files, with full-text, vector and hybrid retrieval and an Elasticsearch-compatible API.",
+      "why_interesting": "Useful for asking targeted questions of an unfamiliar codebase or incident corpus instead of repeatedly loading whole files into an agent. The README documents compatibility gaps and the boundary between offline lexical search and optional external services.",
+      "caveat": "The README quick start uses an insecure mode that disables TLS and authentication: any caller reaching it can read or delete indexes. Optional reranking sends result text to a third-party service. Token-saving and compatibility figures are maintainer claims, not reproduced here.",
+      "category": "Developer tools and retrieval",
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "stars_total": 5936,
+      "stars_period": 715,
+      "stars_period_label": "715 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:25.516344+00:00",
+      "readme_checked_at": "2026-10-16T06:01:26.059419+00:00",
+      "readme_source_url": "https://api.github.com/repos/xerj-org/xerj/readme",
+      "evidence_urls": [
+        "https://github.com/xerj-org/xerj",
+        "https://api.github.com/repos/xerj-org/xerj",
+        "https://github.com/xerj-org/xerj/blob/main/README.md",
+        "https://github.com/xerj-org/xerj/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "trending_rank": 3,
+      "description": "A library of procedural skills for scientific agents, covering data analysis, specialist Python packages, literature work and scientific database access.",
+      "why_interesting": "A concrete way to give a general coding agent domain-specific workflows and provenance checks. The current README explicitly documents the removal of four separately licensed document skills rather than silently assuming every older workflow is still bundled.",
+      "caveat": "Skills do not validate a scientific conclusion or authorize clinical decisions. Databases and external services may require registration, separate licenses or payment; check each workflow and dependency. The advertised skill counts and adoption are maintainer claims.",
+      "category": "Scientific research",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 50751,
+      "stars_period": 1091,
+      "stars_period_label": "1,091 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:23.946864+00:00",
+      "readme_checked_at": "2026-10-16T06:01:24.601404+00:00",
+      "readme_source_url": "https://api.github.com/repos/K-Dense-AI/scientific-agent-skills/readme",
+      "evidence_urls": [
+        "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "https://api.github.com/repos/K-Dense-AI/scientific-agent-skills",
+        "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/README.md",
+        "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/LICENSE.md"
+      ]
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "trending_rank": 10,
+      "description": "An agent engineering toolkit combining planning, tests, review, reusable skills and memory, with AgentShield scanning for prompts, hooks, MCP configuration, permissions and secrets.",
+      "why_interesting": "Its most relevant security angle is the agent configuration itself: review what tools and persistent instructions an assistant can access, not just the application it generates. This is a defensive configuration-review lead, not another repeat of yesterday's penetration-testing tools.",
+      "caveat": "A scanner is not proof of safety or complete detection. Installation can alter hooks and configuration, so inspect and scope changes first. The README says non-Claude adapters have capability limits; the separate hosted GitHub App has paid private-repository plans. Nothing was installed or scanned for this digest.",
+      "category": "Agent configuration security",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars_total": 280607,
+      "stars_period": 1013,
+      "stars_period_label": "1,013 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:25.327353+00:00",
+      "readme_checked_at": "2026-10-16T06:01:25.791953+00:00",
+      "readme_source_url": "https://api.github.com/repos/affaan-m/ECC/readme",
+      "evidence_urls": [
+        "https://github.com/affaan-m/ECC",
+        "https://api.github.com/repos/affaan-m/ECC",
+        "https://github.com/affaan-m/ECC/blob/main/README.md",
+        "https://github.com/affaan-m/ECC/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "lightseekorg/tokenspeed",
+      "url": "https://github.com/lightseekorg/tokenspeed",
+      "trending_rank": 11,
+      "description": "An LLM inference engine for agentic workloads, separating a C++ scheduling/control plane from Python execution and providing a modular GPU-kernel layer.",
+      "why_interesting": "Interesting to serving engineers investigating request lifecycle and KV-cache management, rather than another application wrapper. Its architectural split is a practical design to inspect when latency and scheduler correctness matter.",
+      "caveat": "The README highlights data-center GPUs including Blackwell and newer NVIDIA and AMD hardware, not evidence of good performance on a laptop. Throughput comparisons and speed-of-light language are maintainer claims; no model, kernel or benchmark was run.",
+      "category": "LLM serving infrastructure",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 2560,
+      "stars_period": 30,
+      "stars_period_label": "30 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:25.551667+00:00",
+      "readme_checked_at": "2026-10-16T06:01:26.054737+00:00",
+      "readme_source_url": "https://api.github.com/repos/lightseekorg/tokenspeed/readme",
+      "evidence_urls": [
+        "https://github.com/lightseekorg/tokenspeed",
+        "https://api.github.com/repos/lightseekorg/tokenspeed",
+        "https://github.com/lightseekorg/tokenspeed/blob/main/README.md",
+        "https://github.com/lightseekorg/tokenspeed/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "trending_rank": 2,
+      "description": "Anthropic's Claude Code plugin directory, separating internally maintained plugins from third-party partner and community entries.",
+      "why_interesting": "A primary-source starting point for discovering integrations and comparing their manifests. The distinction between an official directory and the origin of each individual plugin is operationally useful.",
+      "caveat": "The README explicitly says Anthropic cannot guarantee the behavior of included MCP servers or other software. Review each plugin's permissions, source and license: the directory's Apache-2.0 license is not a blanket license for everything it links to. No plugins were installed.",
+      "category": "Plugin discovery and supply chain",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 39407,
+      "stars_period": 307,
+      "stars_period_label": "307 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:24.003987+00:00",
+      "readme_checked_at": "2026-10-16T06:01:24.544383+00:00",
+      "readme_source_url": "https://api.github.com/repos/anthropics/claude-plugins-official/readme",
+      "evidence_urls": [
+        "https://github.com/anthropics/claude-plugins-official",
+        "https://api.github.com/repos/anthropics/claude-plugins-official",
+        "https://github.com/anthropics/claude-plugins-official/blob/main/README.md",
+        "https://github.com/anthropics/claude-plugins-official/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "LibreSpark/LibreTV",
+      "url": "https://github.com/LibreSpark/LibreTV",
+      "trending_rank": 13,
+      "description": "A Next.js and TypeScript interface for aggregating video sources and playing HLS or IPTV streams, with M3U playlists, program guides and local playback history.",
+      "why_interesting": "The non-AI standout: a practical reference for a personal interface to lawful, self-hosted or otherwise authorized media sources. Its documentation separates source management, live-stream proxying and browser-local history.",
+      "caveat": "The application does not supply rights to third-party media: use only sources you are authorized to watch or redistribute. Public deployments need reviewed authentication, HTTPS and SSRF controls; allowing private-network sources changes that boundary. AGPL obligations apply to modified network-served versions. No streams or demo logins were accessed.",
+      "category": "Self-hosted media",
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "stars_total": 18264,
+      "stars_period": 978,
+      "stars_period_label": "978 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-16T06:01:25.619277+00:00",
+      "readme_checked_at": "2026-10-16T06:01:26.191244+00:00",
+      "readme_source_url": "https://api.github.com/repos/LibreSpark/LibreTV/readme",
+      "evidence_urls": [
+        "https://github.com/LibreSpark/LibreTV",
+        "https://api.github.com/repos/LibreSpark/LibreTV",
+        "https://github.com/LibreSpark/LibreTV/blob/main/README.md",
+        "https://github.com/LibreSpark/LibreTV/blob/main/LICENSE"
+      ]
+    }
+  ]
+}

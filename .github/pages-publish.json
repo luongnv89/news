@@ -27,8 +27,11 @@
     "trending/index.html",
     "trending/reports/2026-10-15.html",
     "trending/reports/2026-10-15.json",
-    "trending/reports/2026-10-15.md"
+    "trending/reports/2026-10-15.md",
+    "trending/reports/2026-10-16.html",
+    "trending/reports/2026-10-16.json",
+    "trending/reports/2026-10-16.md"
   ],
   "tool": "github-pages-publish",
-  "published_at": "2026-10-16T04:13:04+00:00"
+  "published_at": "2026-10-16T06:04:08+00:00"
 }
