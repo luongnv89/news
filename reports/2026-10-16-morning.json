@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-10-16-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-10-16T06:12:05.300893+02:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-10-15T16:09:19.564507+02:00",
+  "window_end": "2026-10-16T06:12:05.300893+02:00",
+  "editorial_note": "Six verifiable public releases or announcements appeared after the actual afternoon edition of October 15 at 16:09 CEST. We lead with new Codex and Claude Code releases, GitHub security scanning and a concrete evaluator-access arrangement, then examine two contrasting publisher policies. The Claude Code story concerns v2.1.301, not an unchanged replay of yesterday's v2.1.300. No older paper or model announcement is relabeled as overnight news.",
+  "stories": [
+    {
+      "id": "codex-0-163-0-steering-network",
+      "section": "Coding & agents",
+      "headline": "Codex 0.163.0 adds instant steering and hardens network permission checks",
+      "published_at": "2026-10-15T21:30:38Z",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI published the stable Codex CLI 0.163.0 release at 23:30 CEST on October 15, after the afternoon edition. A follow-up sent during a response can steer the agent immediately; interrupting a turn also stops active Code Mode cells and their nested tool calls.",
+        "The release notes say saved threads now restore permissions and network approvals while respecting explicit overrides and current managed policy. The network proxy checks permission before DNS lookup, rejects duplicate Host headers and prevents credential aliases from bypassing inspection hooks.",
+        "A searchable /config panel applies supported preferences immediately and identifies settings requiring a restart. Independent read-only tools can execute in parallel, and /daemon can restart a managed background server after warning about work it could interrupt."
+      ],
+      "why_it_matters": "For long-running coding sessions, mid-turn control and correct permission restoration matter more than another interface shortcut. The network fixes address concrete enforcement boundaries.",
+      "caveat": "These are maintainer release claims, not an independent security audit or regression test. We did not install this version or change local agent settings.",
+      "sources": [
+        {
+          "label": "Codex 0.163.0",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:10:29.409952+02:00"
+        },
+        {
+          "label": "Codex releases",
+          "url": "https://api.github.com/repos/openai/codex/releases?per_page=5",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:04:34.115718+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "claude-code-2-1-301-watchdog-worktrees",
+      "section": "Coding & agents",
+      "headline": "Claude Code 2.1.301 protects worktrees and exposes unattended retry limits",
+      "published_at": "2026-10-15T19:22:06Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic published Claude Code v2.1.301 at 21:22 CEST on October 15. This is a newer software release than yesterday morning's v2.1.300, with a different set of operational fixes.",
+        "The release adds CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode can end a request instead of waiting for a usage limit whose reset is too distant. It also fixes quitting removing a worktree created by a WorktreeCreate hook without asking when that worktree may contain unpushed commits.",
+        "Grep and Glob now report an error when the underlying search program fails, rather than presenting the failure as no matches. Another fix addresses workflow agents skipping a step while the run still reported success. OpenTelemetry tool-decision events gain classifier and permission-mode details."
+      ],
+      "why_it_matters": "Worktree retention, bounded waiting and truthful failure reporting directly affect the safety of unattended coding jobs. They are distinct changes from the context-resume fixes covered in the previous morning issue.",
+      "caveat": "The changelog is the vendor's account of the fixes, not evidence that every affected workflow is now reliable. This is not a new Claude model announcement.",
+      "sources": [
+        {
+          "label": "Claude Code v2.1.301",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:08:03.923734+02:00"
+        },
+        {
+          "label": "Claude releases",
+          "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=5",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:04:32.624590+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "github-ai-scan-pr-ga",
+      "section": "Coding & agents",
+      "headline": "GitHub makes AI Scan generally available for pull-request security reviews",
+      "published_at": "2026-10-15T15:04:51+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "GitHub announced general availability of AI Scan for pull requests at 17:04 CEST on October 15. It complements CodeQL by reviewing changed code in languages and frameworks CodeQL does not currently cover, including PHP, Shell/Bash, Terraform configuration and Dockerfiles.",
+        "Findings appear alongside CodeQL results with an AI indicator, an explanation and potentially a suggested fix. They are advisory: they do not fail the code-scanning check and cannot block merges through ruleset requirements. Fork pull requests and Dependabot pull requests are excluded.",
+        "Public repositories are supported. Private and internal organization repositories require GitHub Code Security or Advanced Security; a Copilot license is not required. GitHub says the feature consumes Code Security AI Credits."
+      ],
+      "why_it_matters": "This widens review coverage for infrastructure and shell code, but teams still need enforceable checks and human judgment. Advisory AI findings are not a replacement for a merge gate.",
+      "caveat": "Availability and billing are product terms, not independent evidence of detection accuracy. No scan was enabled, run or paid for as part of this newspaper.",
+      "sources": [
+        {
+          "label": "GitHub AI Scan",
+          "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:08:03.922135+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-metr-embedded-evaluators",
+      "section": "Industry & policy",
+      "headline": "Anthropic gives six METR evaluators employee-like access and publication rights",
+      "published_at": "2026-10-15T17:20:00Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic announced at 19:20 CEST on October 15 that it had onboarded six employees from independent evaluation nonprofit METR with company hardware, office space and internal access roughly comparable to its own risk-assessment teams.",
+        "METR can publish analyses of risk levels, incidents and practices without an Anthropic veto. Anthropic can require narrow, predefined redactions, including customer or privileged information; METR may publicly characterize the redactions and whether it considers them justified.",
+        "Anthropic describes three access tiers. Initial engagements may require publication approval, a second tier allows publication with defined redactions, and the third adds employee-like access. The company says other partnerships have more limited access and rights; the METR terms do not automatically apply to every evaluator."
+      ],
+      "why_it_matters": "Access to internal evidence and the right to publish are more concrete oversight mechanisms than a generic promise to cooperate with auditors. Their practical value depends on the assessments eventually produced.",
+      "caveat": "This is a voluntary company arrangement, not legislation, a regulator's audit or a published finding that the models are safe. Architecture information is generally restricted, with explicit approvals possible when highly relevant.",
+      "sources": [
+        {
+          "label": "Anthropic independent evaluators",
+          "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:08:03.921519+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "google-news-ai-pilot-400",
+      "section": "Industry & policy",
+      "headline": "Google says its paid News AI pilot now includes more than 400 publications",
+      "published_at": "2026-10-15T16:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google announced at 18:00 CEST on October 15 that more than 400 publications worldwide now participate in its News AI pilot. Newly named partners include Axios, CNN, the Financial Times and Forbes, alongside local US publishers.",
+        "Google says the licensing program pays participating publications for enhanced content used to develop AI features. Examples include in-depth article overviews on Google News publisher pages and customizable audio briefings, with attribution and direct links."
+      ],
+      "why_it_matters": "The expansion is a concrete example of negotiated content licensing for AI news products. It contrasts with publishers choosing to keep AI-generated work out of their own output.",
+      "caveat": "The count and program description are Google's claims. The announcement does not disclose payment amounts, contract terms or independently measured effects on publisher traffic.",
+      "sources": [
+        {
+          "label": "Google publisher pilot",
+          "url": "https://blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers/",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:08:03.922672+02:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "current-affairs-ai-editorial-policy",
+      "section": "Industry & policy",
+      "headline": "Current Affairs discloses a union-contract ban on AI-generated articles and illustrations",
+      "published_at": "2026-10-15T15:33:13Z",
+      "freshness": "new",
+      "paragraphs": [
+        "In an editor's note published at 17:33 CEST on October 15, Current Affairs said its new union contract includes a policy barring AI-generated text and illustrations from the magazine. The fresh event is the public disclosure; the note says the policy was recently adopted and does not establish its exact adoption time.",
+        "The restriction is not a ban on every assistive tool. Editor Nathan J. Robinson explicitly allows tools that help writers research, and small artistic operations such as changing a color or adding a texture, while reserving the magazine's published writing and illustrations for human work.",
+        "The Hacker News discussion drew support for that distinction. kolinko wrote, \"I kind of respect that. Ok using AI for researching and whatnot, and for their core thing which is writing and illustrations using human work.\" georgemcbay added, \"It is not currently great (or even remotely passable) at writing interesting magazine articles.\" These are two readers' opinions, not an evaluation of every model or a representative survey."
+      ],
+      "why_it_matters": "The policy draws an operational line between assistance and authorship through a labor agreement. It is a publisher's choice about its own magazine, not a general legal prohibition on AI.",
+      "caveat": "We verified the editor's published account, not the full union contract or its enforcement. The community comments are anecdotal, and no universal claim about writing quality follows from them.",
+      "sources": [
+        {
+          "label": "Current Affairs AI policy",
+          "url": "https://www.currentaffairs.org/news/why-were-banning-ai",
+          "type": "primary",
+          "checked_at": "2026-10-16T06:08:04.214909+02:00"
+        },
+        {
+          "label": "kolinko comment",
+          "url": "https://news.ycombinator.com/item?id=50108487",
+          "type": "community",
+          "checked_at": "2026-10-16T06:10:29.408185+02:00"
+        },
+        {
+          "label": "georgemcbay comment",
+          "url": "https://news.ycombinator.com/item?id=50108511",
+          "type": "community",
+          "checked_at": "2026-10-16T06:10:29.409257+02:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "I kind of respect that. Ok using AI for researching and whatnot, and for their core thing which is writing and illustrations using human work.",
+          "author": "kolinko on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50108487"
+        },
+        {
+          "text": "It is not currently great (or even remotely passable) at writing interesting magazine articles.",
+          "author": "georgemcbay on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50108511"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.28.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok",
+      "youtube": "ok",
+      "hackernews": "ok",
+      "polymarket": "unreachable",
+      "github": "ok",
+      "devto": "ok",
+      "x": "skipped-unconfigured"
+    },
+    "notes": [
+      "The news interval begins with the previous actual issue at 16:09 CEST on October 15. Six stories have original publication timestamps after that cutoff. No background stories are added to fill a quota.",
+      "Models, coding and agents, research, infrastructure and policy were searched in a two-day discovery window. A later digest date or discussion date was never used as a product-launch or paper date.",
+      "The engine completed with 78 evidence items across five returning sources. Those are leads and community discussions, not 78 verified news stories. Two literal Hacker News comments were checked against their original comment pages.",
+      "Polymarket was unreachable because TLS hostname verification failed. No odds are reported and TLS checks were not bypassed. X was not configured.",
+      "YouTube returned five videos with only one transcript; four subtitle requests were rate-limited. The overall source state is preserved as ok, alongside the incomplete transcript coverage.",
+      "Three post-engine web supplements were completed. The configured search backend was unavailable and its automatic keyless fallback supplied the searches. Official announcements and release APIs were then checked directly.",
+      "No new model launch or research result cleared the strict overnight timing and verification gate. Some original pages exposed only a calendar date. The Simons funding announcement and NVIDIA European science pledge preceded the cutoff; later coverage or modification times did not make them new.",
+      "No browser cookies, new services or credentials, paid enrichment, TLS bypass, job-alert changes or schedule changes were used. Raw evidence and local provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 22 threads │ 3,388 upvotes │ 1,004 comments\n├─ 🔴 YouTube: 5 videos │ 656,662 views │ 1/5 with transcripts\n├─ 🟡 HN: 33 stories │ 2,879 points │ 2,121 comments\n├─ 👩‍💻 dev.to: 3 articles │ 28 reactions │ 15 comments\n├─ 🐙 GitHub: 15 items │ 43 reactions │ 140 comments\n├─ 🗣️ Top voices: r/singularity, r/artificial, r/LocalLLaMA\n---"
+  },
+  "key_patterns": [
+    "The new coding releases emphasize controllability and truthful operational behavior: steering, permission restoration, bounded retries, protected worktrees and explicit failures.",
+    "Security coverage and governance need carefully bounded claims: advisory scans cannot block merges, and evaluator access is not itself a safety verdict.",
+    "Publisher responses diverge between licensing content for AI products and reserving editorial output for human authors, with terms and enforcement still important."
+  ],
+  "previous_issue_id": "2026-10-15-afternoon"
+}

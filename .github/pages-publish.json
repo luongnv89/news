@@ -19,6 +19,10 @@
     "reports/2026-10-15-morning.json",
     "reports/2026-10-15-morning.md",
     "reports/2026-10-15-morning.pdf",
+    "reports/2026-10-16-morning.html",
+    "reports/2026-10-16-morning.json",
+    "reports/2026-10-16-morning.md",
+    "reports/2026-10-16-morning.pdf",
     "trending/archive.html",
     "trending/index.html",
     "trending/reports/2026-10-15.html",
@@ -26,5 +30,5 @@
     "trending/reports/2026-10-15.md"
   ],
   "tool": "github-pages-publish",
-  "published_at": "2026-10-15T14:10:24+00:00"
+  "published_at": "2026-10-16T04:13:04+00:00"
 }
