@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "issued_at": "2026-10-17T08:02:00.707154+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-17T06:00:36.657005+00:00",
+    "period": "daily",
+    "total_listed": 13
+  },
+  "editorial_note": "Five fresh picks from the official all-language daily GitHub Trending listing: specialist Android guidance, test-first agent workflows, document-focused career tooling, agent operations and a non-AI cloud-file utility. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 13 listing entries were inspected. Exact primary public GitHub metadata, README and license endpoints were checked for all six non-repeat candidates; all six were active and unarchived. Five were selected. Seven entries already featured on 15-16 October were omitted without claiming a material update.",
+    "Cursor plugins was not selected: it overlaps the previously featured plugin-directory theme, and although its README says MIT, the repository API detects no license and the root license endpoint returns 404. This is a licensing-verification limitation, not a finding that the project is unsafe.",
+    "The preceding seven calendar dates, 10-16 October, were checked for local history. The archive began on 15 October, so only two prior editions exist; 10-14 October have no local issues. None of today's picks repeats the available history.",
+    "The official listing was captured at 08:00:36 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling-24-hour growth measurement.",
+    "This remains an AI-heavy source snapshot. There is no fresh dedicated security-tool pick: agent permission boundaries and configuration review provide today's defensive-security angle. LinkSwift supplies the non-AI selection, not a claim of balanced coverage across software.",
+    "Capabilities, performance, adoption and security guarantees are maintainer descriptions unless expressly identified otherwise. No candidate code, installers, plugins, models, browser sessions or credentials were used. Stars and ranking are not a security audit or endorsement; no human review was performed."
+  ],
+  "projects": [
+    {
+      "repository": "android/skills",
+      "url": "https://github.com/android/skills",
+      "trending_rank": 7,
+      "description": "Modular instructions and resources for coding agents working on Android, grounded in Android developer guidance and distributed in the Agent Skills format.",
+      "why_interesting": "A focused alternative to generic coding advice: the maintainers say they prioritize workflows where their evaluations find models underperform, rather than basic Compose tips. The README illustrates specialist R8 analysis and edge-to-edge UI tasks.",
+      "caveat": "These are instructions, not a correctness guarantee: the README explicitly requires checking AI results. Skill installation can target every detected agent, so review scope and contents first. Public contributions are not currently accepted; no Android build or model evaluation was run.",
+      "category": "Android development",
+      "language": "Kotlin",
+      "license": "Apache-2.0",
+      "stars_total": 8149,
+      "stars_period": 36,
+      "stars_period_label": "36 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-17T06:01:04.739598+00:00",
+      "readme_checked_at": "2026-10-17T06:01:05.382327+00:00",
+      "readme_source_url": "https://api.github.com/repos/android/skills/readme",
+      "evidence_urls": [
+        "https://github.com/android/skills",
+        "https://api.github.com/repos/android/skills",
+        "https://github.com/android/skills/blob/main/README.md",
+        "https://github.com/android/skills/blob/main/LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "trending_rank": 8,
+      "description": "A composable development workflow for coding agents, linking design approval, implementation plans, isolated worktrees, test-driven development and code review.",
+      "why_interesting": "Useful when the failure mode is an agent rushing into implementation: it makes design, failing-test evidence and review explicit stages. The README documents both task-by-task subagents and a cheaper single-context execution path.",
+      "caveat": "Mandatory workflow instructions can add latency and token cost, and installation is harness-specific. The optional visual companion loads a version-bearing remote logo by default; the README documents telemetry opt-outs. Process guidance does not prove generated code is correct, and no plugin was installed.",
+      "category": "Developer workflow and testing",
+      "language": "Shell",
+      "license": "MIT",
+      "stars_total": 300784,
+      "stars_period": 973,
+      "stars_period_label": "973 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-17T06:01:04.706248+00:00",
+      "readme_checked_at": "2026-10-17T06:01:05.287531+00:00",
+      "readme_source_url": "https://api.github.com/repos/obra/superpowers/readme",
+      "evidence_urls": [
+        "https://github.com/obra/superpowers",
+        "https://api.github.com/repos/obra/superpowers",
+        "https://github.com/obra/superpowers/blob/main/README.md",
+        "https://github.com/obra/superpowers/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "trending_rank": 11,
+      "description": "A local-file job-application workflow built around Claude Code, with posting evaluation, tailored CV and cover-letter drafting, PDF checks, interview preparation and an application tracker.",
+      "why_interesting": "The practical distinction is document verification: the README describes compiling PDFs, checking extracted text for applicant-tracking readability and using a separate reviewer, rather than stopping at generated prose. It also documents an offline HTML tracking dashboard.",
+      "caveat": "The README warns that setup writes personal information into tracked files: use a private working repository, not a public fork, for real applications. Model access and the document toolchain add cost and setup. Several portal integrations are Denmark-focused, and the README says automated LinkedIn access conflicts with its terms. Review every factual claim before submitting; no applications or personal data were processed.",
+      "category": "Career productivity",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 48789,
+      "stars_period": 898,
+      "stars_period_label": "898 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-17T06:01:04.741919+00:00",
+      "readme_checked_at": "2026-10-17T06:01:05.346429+00:00",
+      "readme_source_url": "https://api.github.com/repos/MadsLorentzen/ai-job-search/readme",
+      "evidence_urls": [
+        "https://github.com/MadsLorentzen/ai-job-search",
+        "https://api.github.com/repos/MadsLorentzen/ai-job-search",
+        "https://github.com/MadsLorentzen/ai-job-search/blob/master/README.md",
+        "https://github.com/MadsLorentzen/ai-job-search/blob/master/LICENSE"
+      ]
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "trending_rank": 6,
+      "description": "An agent coordination layer for Claude Code and Codex, with CLI/MCP tools, persistent memory, workflow monitoring and a plugin-based console.",
+      "why_interesting": "Worth inspecting for multi-agent operations: the README distinguishes lightweight plugin use from a fuller setup with hooks and a daemon, and separates recorded console actions from proof that underlying swarm work completed. Its configuration-review tooling is a defensive security lead, not evidence of a security audit.",
+      "caveat": "The README says runtime mods execute with the user account permissions and are not sandboxed. Full setup changes agent configuration and can enable background activity; capability support varies by client. Performance, learning and security guarantees remain maintainer claims. No hooks, MCP servers or daemons were enabled.",
+      "category": "Agent orchestration and observability",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars_total": 75720,
+      "stars_period": 672,
+      "stars_period_label": "672 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-17T06:01:04.738507+00:00",
+      "readme_checked_at": "2026-10-17T06:01:05.286928+00:00",
+      "readme_source_url": "https://api.github.com/repos/ruvnet/ruflo/readme",
+      "evidence_urls": [
+        "https://github.com/ruvnet/ruflo",
+        "https://api.github.com/repos/ruvnet/ruflo",
+        "https://github.com/ruvnet/ruflo/blob/main/README.md",
+        "https://github.com/ruvnet/ruflo/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "trending_rank": 12,
+      "description": "A JavaScript userscript that obtains download URLs from supported cloud-drive services and connects them to downloader workflows, with browser-interface adjustments.",
+      "why_interesting": "The non-AI utility in this snapshot: potentially useful when an authorized cloud-drive download needs to work without the official desktop client. Its README explicitly separates obtaining links through service APIs from unsupported speed-limit-bypass claims.",
+      "caveat": "Review userscript permissions, update sources and handling of account tokens or session data before any use. Provider API changes and service terms can break workflows; obtaining a URL does not grant redistribution rights or bypass entitlements. The API-selected default branch is dev, and its README labels the canary unstable. AGPL-3.0 obligations apply; no script, account session or file download was accessed.",
+      "category": "Browser and cloud-file utilities",
+      "language": "JavaScript",
+      "license": "AGPL-3.0",
+      "stars_total": 23961,
+      "stars_period": 538,
+      "stars_period_label": "538 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-17T06:01:04.706445+00:00",
+      "readme_checked_at": "2026-10-17T06:01:05.533534+00:00",
+      "readme_source_url": "https://api.github.com/repos/hmjz100/LinkSwift/readme",
+      "evidence_urls": [
+        "https://github.com/hmjz100/LinkSwift",
+        "https://api.github.com/repos/hmjz100/LinkSwift",
+        "https://github.com/hmjz100/LinkSwift/blob/dev/README.md",
+        "https://github.com/hmjz100/LinkSwift/blob/dev/LICENSE"
+      ]
+    }
+  ]
+}
