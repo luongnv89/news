@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Saturday 17 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-17-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-17T16:12:36.187818+02:00">Saturday 17 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-17-afternoon</p><p>Issued 16:12 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-17-afternoon.html">This edition</a><a href="2026-10-17-afternoon.md">Markdown</a><a href="2026-10-17-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-17-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-17-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Saturday 17 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-17T06:26:17.250330+02:00">17 Oct 2026, 06:26 CEST</time> to <time datetime="2026-10-17T16:12:36.187813+02:00">17 Oct 2026, 16:12 CEST</time> (Paris time). Issued <time datetime="2026-10-17T16:12:36.187818+02:00">17 Oct 2026, 16:12 CEST</time>.</p><p class="lead-note">One material model-release event cleared the post-morning timing gate: DeepSeek&#x27;s V4.1-Flash-1017 release commit is timestamped 07:46 CEST, after the actual 06:26 morning edition. Initial repository creation and weight uploads were earlier; the timed event is the release commit, not a claim that every file first appeared after our cutoff. A separate BACKGROUND dispatch explains DeepSeek&#x27;s October 17 Search and Fetch API announcement, whose publication hour is unverified. No additional independent coding-tool, research or industry/policy development cleared both primary-source and freshness checks. Morning stories are not repeated.</p><p class="tally">1 new or updated dispatch &middot; 1 background item &middot; Previous: <a href="2026-10-17-morning.html">2026-10-17-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-deepseek-v4-1-flash-1017" aria-labelledby="h-deepseek-v4-1-flash-1017"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-deepseek-v4-1-flash-1017">DeepSeek releases V4.1-Flash-1017 weights with higher reported coding and agent scores</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-17T05:46:55.000Z">17 Oct 2026, 07:46 CEST</time></p><div class="story-body"><p>DeepSeek published the release commit for DeepSeek-V4.1-Flash-1017 at 05:46:55 UTC on October 17, or 07:46 CEST, after this newspaper&#x27;s 06:26 morning edition. The Hugging Face commit history names the event &#x27;Release DeepSeek-V4.1-Flash-1017&#x27;. Earlier repository creation and weight-upload commits predate the morning cutoff; those are not passed off as new afternoon events.</p><p>The official model card describes a minor update to V4.1 Flash and licenses both the repository and model weights under MIT. It lists a 1M-token context window. DeepSeek&#x27;s October 17 changelog says its web, app and API have been upgraded; the deepseek-flash API name and pricing remain unchanged. This is a new snapshot, not an independently demonstrated change to every workload.</p><p>DeepSeek reports Terminal-Bench 4.0 at 42.3 versus 31.2 for the previous V4.1 Flash, and DeepSWE v1.1 at 77.0 versus 74.2. The card specifies Claude Code as the Terminal-Bench harness and Mini-SWE-V2 for DeepSWE. It reports improvements in reasoning, coding, agent tasks and vision, with shorter outputs and task runtimes, but these remain vendor measurements. The same table has competitors ahead on some tasks, so it does not establish a universal winner.</p><p>For self-hosted integration, this release has no Jinja-format chat template. DeepSeek supplies a Python prompt-encoding reference with tests and points to deepseek-recipe, a Rust toolkit with Python bindings for protocol conversion and output parsing. The card explicitly leaves inference, tool execution and HTTP transport to callers. Vercel&#x27;s separately dated October 17 announcement lists the snapshot on AI Gateway as deepseek/deepseek-v4.1-flash-1017; availability is not an independent benchmark replication.</p><p>Community reaction mixes excitement with disbelief. On Hacker News, bashtoni wrote: &#x27;&quot;a minor update&quot; they say before showing off benchmarks that display a substantial improvement.&#x27; In the same discussion, freakynit asked: &#x27;Those benchmarks can&#x27;t possibly be real, right? Right?&#x27; These literal comments capture early reactions, not evidence that the performance claims are true or false.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> A permissively licensed, versioned snapshot gives teams an artifact to evaluate rather than relying only on a moving API alias. Teams testing it should pin the model revision, preserve harness settings and measure their own task quality, latency and cost before changing production routing.</p></aside><p class="caveat"><span class="label">Caveat.</span> We verified the official release history, model card, configuration, changelog and provider listing; we did not download the large weights, run inference or reproduce the benchmark suite. No speedup percentage, total-parameter count or hardware-fit claim is inferred from secondary summaries or community comments. The release timestamp identifies a specific repository event, not the first moment any weights were public.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;&quot;a minor update&quot; they say before showing off benchmarks that display a substantial improvement.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50129164" rel="noopener noreferrer">bashtoni on Hacker News</a></p></blockquote><blockquote><p>&ldquo;Those benchmarks can&#x27;t possibly be real, right? Right?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50129111" rel="noopener noreferrer">freakynit on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/README.md" rel="noopener noreferrer">DeepSeek official model card and benchmark settings</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:06:48.444088+02:00">17 Oct 2026, 16:06 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/api/models/deepseek-ai/DeepSeek-V4.1-Flash-1017/commits/main" rel="noopener noreferrer">Hugging Face release commit history with exact timestamps</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:06:48.444724+02:00">17 Oct 2026, 16:06 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://api-docs.deepseek.com/updates" rel="noopener noreferrer">DeepSeek October 17 API changelog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:06:48.445709+02:00">17 Oct 2026, 16:06 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway" rel="noopener noreferrer">Vercel AI Gateway October 17 provider listing</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:07:31.630201+02:00">17 Oct 2026, 16:07 CEST</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50129164" rel="noopener noreferrer">Hacker News comment by bashtoni</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-17T16:09:34.279828+02:00">17 Oct 2026, 16:09 CEST</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50129111" rel="noopener noreferrer">Hacker News comment by freakynit</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-17T16:09:34.279223+02:00">17 Oct 2026, 16:09 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-deepseek-search-fetch-api-opening" aria-labelledby="h-deepseek-search-fetch-api-opening"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">Background — older context</span></p><h3 id="h-deepseek-search-fetch-api-opening">BACKGROUND: DeepSeek opens standalone Search and Fetch APIs, with explicit request billing</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-17">17 Oct 2026</time></p><div class="story-body"><p>BACKGROUND - original announcement October 17, 2026; publication hour unverified. DeepSeek&#x27;s changelog separately announces public access to its in-house search engine through Search and Fetch APIs. Because a date alone cannot prove this announcement followed the 06:26 CEST morning edition, it is not counted as a post-cutoff development.</p><p>The Search endpoint returns structured web results; Fetch retrieves a single page as Markdown. The documentation gives POST /v1/tools/search and POST /v1/tools/fetch under api.deepseek.com, using the same bearer-key authentication as the model API. Each has an independent five-requests-per-second account limit; Fetch also has a per-domain limit. We read the public documentation without activating the service or making authenticated requests.</p><p>The published price is $0.75 per 1,000 successful requests for each API. Search is billable only when it returns HTTP 200 with non-empty results, and Fetch only when it returns page content. Failed calls, empty search results and timeouts are not billed. The number of requested results does not alter the per-request price.</p><p>There is an important exception: the guide says server-side Search and Fetch calls made through the DeepSeek API in DeepSeek Harness, Claude Code or Codex are currently free, with per-request billing starting at 00:00 Beijing time on November 1, 2026. That exception is not a promise that all direct standalone API calls are free. Claims about spam filtering, authority and search quality are DeepSeek&#x27;s, not an independent evaluation.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Explicit retrieval pricing, empty-result rules and separate throughput ceilings help developers estimate agent search costs. Live retrieval can improve access to current information, but does not make the returned pages trustworthy instructions or guarantee their factual accuracy.</p></aside><p class="caveat"><span class="label">Caveat.</span> The announcement has only a verified calendar date, so it remains background rather than timed breaking news. We did not test result quality, rate-limit enforcement or billing behavior, and did not enable a new optional research service.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://api-docs.deepseek.com/updates" rel="noopener noreferrer">DeepSeek October 17 API changelog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:06:48.445709+02:00">17 Oct 2026, 16:06 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://api-docs.deepseek.com/guides/search" rel="noopener noreferrer">DeepSeek Search and Fetch documentation and billing</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T16:07:31.629090+02:00">17 Oct 2026, 16:07 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>A minor-update label can conceal meaningful vendor-reported changes; the model revision and benchmark harness matter more than the label.</li><li>Published weights, API aliases and provider listings are different evidence about availability, and none independently validates a benchmark.</li><li>Search-tool billing and rate limits are operational inputs for agents; live web access does not eliminate verification or prompt-injection risks.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The fresh-event window starts at the actual October 17 morning edition, 06:26 CEST. One model release commit is later than that cutoff. Search and Fetch has only an October 17 calendar date and is explicitly separated as BACKGROUND, not a second timed breaking-news event.</li><li>The installed last30days engine completed with 75 discovery items across five returning sources, followed by primary-source verification. Models, coding and agents, research, infrastructure and policy were investigated; no quota of stories was imposed. Evidence-item counts are not verified-development counts.</li><li>Polymarket was unreachable because TLS hostname verification failed; verification was not bypassed. X was not included. Reddit returned evidence despite an HTTP 422 listing sub-request failure. Only one of the two retained YouTube videos has a transcript; the other subtitle request received HTTP 429. Missing or failing coverage is not interpreted as an absence of discussion.</li><li>Three post-engine native web supplements and a pre-research resolution pass were retained. The configured search backend was unavailable and its automatic keyless fallback supplied results; the text extractor was unavailable. Direct public HTTPS retrieval with normal certificate validation supplied official source snapshots and timestamps.</li><li>Anthropic Code Review GA and OpenTelemetry were dated October 15 and October 14 in primary metadata, despite October 17 roundup labels, and were not promoted to new developments. Claude Code remains at the already-covered 2.1.302; the examined Codex builds were prereleases with sparse notes. An inaccessible robotics press-release lead and unverified policy snippets were excluded.</li><li>The two short Hacker News comments are literal, attributed reactions to the selected model and were checked against comment data. They are anecdotal and are not independent performance evidence. Conflicting size claims in secondary summaries were not converted into architecture facts.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs, source snapshots, diagnostics and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 23 threads │ 2,117 upvotes │ 634 comments
+├─  YouTube: 2 videos │ 775,109 views │ 1/2 with transcripts
+├─  HN: 32 stories │ 1,774 points │ 1,056 comments
+├─  dev.to: 14 articles │ 233 reactions │ 28 comments
+├─  GitHub: 4 items │ 9 reactions │ 4 comments
+├─  Top voices: r/artificial, r/singularity, r/ClaudeAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-17-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-17-afternoon.md">Markdown text</a></li><li><a href="2026-10-17-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
