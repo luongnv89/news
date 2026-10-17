@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-10-17-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-10-17T06:26:17.250330+02:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-10-16T16:09:55.251410+02:00",
+  "window_end": "2026-10-17T06:26:17.250327+02:00",
+  "editorial_note": "Four material developments have primary publication timestamps after the actual October 16 afternoon edition at 16:09 CEST: Claude's reconstruction of NIST curve-seed origins, Anthropic's quantum-circuit results and internal employment study, and Claude Code 2.1.302. A separate BACKGROUND dispatch covers Google's October 16 wet-lab research; its publication hour is unavailable, so it is not claimed as post-cutoff news. Beam is not repeated. No additional model or policy launch cleared the timing and primary-source verification gates.",
+  "stories": [
+    {
+      "id": "anthropic-ecdsa-curve-origins",
+      "section": "Research",
+      "headline": "Claude reconstructs NIST curve-seed origins, not an ECDSA vulnerability",
+      "published_at": "2026-10-16T17:02:00.000Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic published a reproducible explanation for the seeds behind the NIST P-192, P-224, P-256, P-384 and P-521 elliptic curves. Its internal research model identified output from the C-library lrand48 pseudorandom generator initialized with Unix timestamps, rather than the rumored hash of a humorous passphrase. The article's publication timestamp is October 16 at 19:02 CEST, after the previous edition.",
+        "The company says the initial discovery took under half an hour. Its article includes code for regenerating the seeds and explains some selected base points. For this edition, an independent local implementation of the published timestamp-and-generator recipe reproduced the exact standardized P-256 seed. That is a narrow computational check, not an independent reconstruction of the whole investigation.",
+        "Anthropic explicitly says this is not a cryptographic break, a new attack or a reason to change ECDSA deployments. It argues the simple generation method reduces concerns about deliberately selected weaknesses. Important questions remain: B-163's seed is unexplained, several base-point origins remain unknown, and the reason some apparently viable curve candidates were skipped is not established."
+      ],
+      "why_it_matters": "A transparent, reproducible origin story helps distinguish parameter-provenance concerns from actual cryptographic vulnerabilities. Security teams should read the result as new evidence about historical choices, not as an emergency migration advisory.",
+      "caveat": "The investigation and broader security interpretation are Anthropic's. Our local verification reproduced only P-256's seed. The findings do not constitute a proof that every curve-selection decision was innocuous, nor do they recover private keys.",
+      "community_quotes": [],
+      "sources": [
+        {
+          "label": "Anthropic research and reproduction code",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:22:03.380602+02:00"
+        }
+      ]
+    },
+    {
+      "id": "claude-code-2-1-302-input-permissions",
+      "section": "Coding & agents",
+      "headline": "Claude Code 2.1.302 limits image reads and changes default permission behavior",
+      "published_at": "2026-10-16T20:53:06Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic published stable Claude Code 2.1.302 on October 16 at 22:53 CEST. The release fixes the Read tool loading arbitrarily large images, or pipes and devices named like images, entirely into memory. Image sources larger than 128 MB are now refused.",
+        "The changelog says headless claude -p and Agent SDK sessions without an explicit permission mode now start in default mode on third-party providers, with telemetry off or on a fresh install; explicitly selecting auto mode keeps it. A separate setting, CLAUDE_CODE_AUTO_MODE_MODEL, chooses the client-side auto-mode classifier model and does not change the server-side classifier.",
+        "The release also fixes MCP servers returning no tools or failing calls when negotiating protocol version 2026-07-28 without resultType, ttlMs or cacheScope. It fixes cloud-session scheduled runs unexpectedly restarting an hour or more after a partial failure, a behavior the changelog says could repeat work such as posting a report twice."
+      ],
+      "why_it_matters": "Operators of unattended agents should review explicit permission settings and duplicate-action protections. Input-size limits and clearer failure states matter independently of model capability.",
+      "caveat": "These are vendor-documented changes, not a security audit or an installation recommendation. We verified the official release metadata and notes; we did not install the version or reproduce every fix. Codex 0.164.0 builds found this morning are prereleases with sparse notes, not a verified stable feature launch.",
+      "community_quotes": [],
+      "sources": [
+        {
+          "label": "Claude Code official release metadata",
+          "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=5",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:11:56.588243+02:00"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-quantum-circuit-design",
+      "section": "Research",
+      "headline": "Anthropic reports new quantum-circuit designs, including a 17-fold gate reduction",
+      "published_at": "2026-10-16T17:29:00.000Z",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic's October 16 research announcement, published at 19:29 CEST, describes evaluator-guided quantum-circuit design using Claude Mythos 5. The model received plain-language specifications, proposed implementations, and iterated against a program that checked correctness and scored resource use across eight computational primitives.",
+        "The associated preprint was submitted to arXiv on October 15 at 17:59 UTC. Its abstract reports reductions in both Toffoli gates and qubits on seven tasks; the eighth produced a new reversible architecture for prime-field modular inversion. This edition treats the October 16 announcement as the new event and preserves the paper's earlier submission date.",
+        "In one design trade-off, the announcement reports 17 times fewer gates while using 12% more qubits than the smallest previous design. For a Reed-Solomon decoder used in decoded quantum interferometry, it reports a 12-fold gate reduction relative to a previous Google construction. These are specific circuit-resource comparisons, not a claim that all quantum algorithms are 17 times faster.",
+        "The modular-inversion search ran for 53 hours with an initial brief and occasional human prompts to broaden its approach. The decoder reserves less storage by accepting rare failures, about one in 10,000 sampled cases under the stated allowance. An external evaluator here means a separate checking program, not independent replication by another research group."
+      ],
+      "why_it_matters": "Verifiable code and explicit resource objectives can make a well-defined scientific optimization task suitable for an iterative agent. Lower circuit costs could help future hardware, but do not themselves demonstrate useful quantum advantage on today's machines.",
+      "caveat": "The paper is a preprint and the numerical results are the authors' reports. We verified the primary announcement, abstract and submission history, not every circuit or the full experimental artifact. Resource trade-offs, allowed failure rates and human interventions matter; this is not evidence of unrestricted autonomous scientific discovery.",
+      "community_quotes": [],
+      "sources": [
+        {
+          "label": "Anthropic quantum-circuit announcement",
+          "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:18:34.523591+02:00"
+        },
+        {
+          "label": "Paper and original submission history",
+          "url": "https://arxiv.org/abs/2610.22367",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:18:34.524263+02:00"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-employment-agent-hours",
+      "section": "Industry & policy",
+      "headline": "Anthropic reports six agent-hours per human-hour, alongside a falling junior-hiring share",
+      "published_at": "2026-10-16T16:26:00.000Z",
+      "freshness": "new",
+      "paragraphs": [
+        "An internal employment study published by Anthropic on October 16 at 18:26 CEST says employee-directed interactive agents logged six times the company's estimated human work hours by August. The numerator is agent runtime, including inference and active tool use, pooling subagents and excluding waits longer than 30 minutes. Human hours are estimated from headcount at 40 hours per week. This is not a finding that agents were six times as productive as people.",
+        "The study reports that junior employees' share of technical headcount fell from 21% to 14% since early 2025, while juniors' share of technical hires fell from 27% to 9%. Technical hiring still grew in absolute terms as the company expanded. A decline in hiring share is not equivalent to an observed count of jobs eliminated.",
+        "To examine coding-tool adoption, the authors follow 192 adopting engineers and compare them with 74 non-adopters. They report rising code output, but acknowledge that adoption was not randomized and that more code does not necessarily mean more business impact. Their code-quality proxies include later deletions and reversions, not a comprehensive independent quality assessment.",
+        "The report describes human attention as a bottleneck. One interviewed engineer called the experience 'an army of Claudes, with every one asking for my attention.' It also reports that interactive sessions spent around 80% of wall-clock time waiting for human input. That idle-time measure is distinct from the active agent-hours ratio."
+      ],
+      "why_it_matters": "This is a concrete case study of how agent adoption can shift work toward orchestration, review and judgment. Its measurement definitions are as important as the headline ratios when evaluating staffing or productivity claims.",
+      "caveat": "This is a single rapidly growing AI vendor studying itself, with internal data and 17 employee interviews. Selection, revenue growth, organizational change and non-random tool adoption limit causal inference and generalization. We did not access private employee or candidate records, and this reporting makes no changes to Job Alerts.",
+      "community_quotes": [],
+      "sources": [
+        {
+          "label": "Anthropic employment study and methodology",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:22:03.379944+02:00"
+        }
+      ]
+    },
+    {
+      "id": "google-agentic-wet-lab-building-blocks",
+      "section": "Research",
+      "headline": "BACKGROUND: Google reports supervised lab-in-the-loop advances, not a fully autonomous wet lab",
+      "published_at": "2026-10-16",
+      "freshness": "background",
+      "paragraphs": [
+        "BACKGROUND - original publication October 16, 2026. Google Research describes three projects connecting AI agents to biological experiments: the VERID laboratory digital twin and robotics safeguards, closed-loop aptamer discovery, and de novo protein-binder design. The page gives no publication hour we could verify, so this dispatch is not claimed as a development after the previous edition.",
+        "For aptamers, the team reports three design-test cycles with final confirmed on-target hit rates of 33.5% for myoglobin and 42.1% for alpha-thrombin. The myoglobin experiment initially got worse when designs favored nonspecific sticky binders, then recovered after revising the design rules. These two targets and experimental cycles do not establish general reliability across biology.",
+        "The protein-binder work reports more than an eightfold computational-cycle acceleration and single-digit nanomolar affinity against FAP. Google's next step is to combine the projects: the post does not say the complete integrated autonomous lab already exists. Safeguards include sequence screening, simulated robot runs, human authorization of sequences and protocols, and supervision of execution."
+      ],
+      "why_it_matters": "Real experimental feedback can expose shortcuts that look successful in simulation. The reported failure-and-recovery sequence is more informative about the scientific workflow than an undifferentiated claim that AI has automated a laboratory.",
+      "caveat": "These are results reported by Google, not replicated by this newspaper. Tight binding is not proof of a clinically useful drug. Integration remains future work, and the experiments retain human oversight. This older, newly verified context is explicitly separated from the four timed new developments.",
+      "community_quotes": [],
+      "sources": [
+        {
+          "label": "Google Research original wet-lab report",
+          "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+          "type": "primary",
+          "checked_at": "2026-10-17T06:16:00.170275+02:00"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.28.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok",
+      "youtube": "ok",
+      "hackernews": "ok",
+      "polymarket": "unreachable",
+      "github": "ok",
+      "devto": "ok"
+    },
+    "notes": [
+      "The new-development window begins at the actual October 16 afternoon issue, 16:09 CEST. Four primary publication timestamps are later than that cutoff. One October 16 date-only scientific report is separately labeled BACKGROUND; no fresh event is inferred from a discussion or crawl date.",
+      "The installed last30days engine completed successfully with 54 discovery items across five returning sources. Discovery covered models, coding and agents, research, industry, infrastructure and policy. Evidence items are not counts of verified news developments.",
+      "Polymarket was unreachable because TLS hostname verification failed; verification was not bypassed. X was not configured and was omitted. The four retained YouTube videos have transcripts; a fifth candidate failed subtitle retrieval after HTTP 429 responses before relevance filtering.",
+      "Three post-engine native web supplements were run, with empty-result queries retried more broadly. The configured search backend was unavailable; its automatic keyless fallback supplied the returned results. Direct HTTPS retrieval with normal certificate validation supplied primary articles, metadata and source snapshots because the text extractor was unavailable.",
+      "No additional post-cutoff model launch was established. Beam was covered yesterday; Meta Muse Spark Open is dated October 15. The NVIDIA Indic corpus announcement is timestamped October 16 at 03:44 CEST and says the corpus is releasing soon. Sparse Codex alpha release notes were not treated as a stable feature launch.",
+      "China export-control discussion was found, but primary legal text and publication timing were not verified in this run. It is not presented as enacted policy. Other older papers, resurfaced commentary and undated claims were not promoted to fresh developments.",
+      "Available community comments concern other or older topics, not these selected new events. We do not attach them to unrelated announcements or claim a representative consensus. The quoted workplace interview is attributed to the primary study, not labeled community reaction.",
+      "No browser-cookie access, optional services or credentials, paid enrichment, TLS bypass, job-alert edits or schedule changes were used. Full research, source snapshots and provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 22 threads │ 4,234 upvotes │ 1,357 comments\n├─ 🔴 YouTube: 4 videos │ 457,324 views │ 4/4 with transcripts\n├─ 🟡 HN: 18 stories │ 710 points │ 481 comments\n├─ 👩‍💻 dev.to: 4 articles │ 33 reactions │ 22 comments\n├─ 🐙 GitHub: 6 items │ 17 reactions │ 54 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/LocalLLaMA\n---"
+  },
+  "key_patterns": [
+    "Reproducible artifacts and separate correctness checks support narrower conclusions than sweeping capability claims.",
+    "Active agent runtime is not human-equivalent productivity; explicit definitions and selection limits matter.",
+    "Permission defaults, bounded input reads and duplicate-run fixes are operationally important agent-release changes."
+  ],
+  "previous_issue_id": "2026-10-16-afternoon"
+}

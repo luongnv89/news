@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Saturday 17 October 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-10-17-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-17T06:26:17.250330+02:00">Saturday 17 October 2026</time></p><p>Morning edition &middot; No. 2026-10-17-morning</p><p>Issued 06:26 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-17-morning.html">This edition</a><a href="2026-10-17-morning.md">Markdown</a><a href="2026-10-17-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-17-morning.html">This edition (HTML)</a> &middot; <a href="2026-10-17-morning.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Saturday 17 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-16T16:09:55.251410+02:00">16 Oct 2026, 16:09 CEST</time> to <time datetime="2026-10-17T06:26:17.250327+02:00">17 Oct 2026, 06:26 CEST</time> (Paris time). Issued <time datetime="2026-10-17T06:26:17.250330+02:00">17 Oct 2026, 06:26 CEST</time>.</p><p class="lead-note">Four material developments have primary publication timestamps after the actual October 16 afternoon edition at 16:09 CEST: Claude&#x27;s reconstruction of NIST curve-seed origins, Anthropic&#x27;s quantum-circuit results and internal employment study, and Claude Code 2.1.302. A separate BACKGROUND dispatch covers Google&#x27;s October 16 wet-lab research; its publication hour is unavailable, so it is not claimed as post-cutoff news. Beam is not repeated. No additional model or policy launch cleared the timing and primary-source verification gates.</p><p class="tally">4 new or updated dispatches &middot; 1 background item &middot; Previous: <a href="2026-10-16-afternoon.html">2026-10-16-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-claude-code-2-1-302-input-permissions" aria-labelledby="h-claude-code-2-1-302-input-permissions"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-claude-code-2-1-302-input-permissions">Claude Code 2.1.302 limits image reads and changes default permission behavior</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16T20:53:06Z">16 Oct 2026, 22:53 CEST</time></p><div class="story-body"><p>Anthropic published stable Claude Code 2.1.302 on October 16 at 22:53 CEST. The release fixes the Read tool loading arbitrarily large images, or pipes and devices named like images, entirely into memory. Image sources larger than 128 MB are now refused.</p><p>The changelog says headless claude -p and Agent SDK sessions without an explicit permission mode now start in default mode on third-party providers, with telemetry off or on a fresh install; explicitly selecting auto mode keeps it. A separate setting, CLAUDE_CODE_AUTO_MODE_MODEL, chooses the client-side auto-mode classifier model and does not change the server-side classifier.</p><p>The release also fixes MCP servers returning no tools or failing calls when negotiating protocol version 2026-07-28 without resultType, ttlMs or cacheScope. It fixes cloud-session scheduled runs unexpectedly restarting an hour or more after a partial failure, a behavior the changelog says could repeat work such as posting a report twice.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Operators of unattended agents should review explicit permission settings and duplicate-action protections. Input-size limits and clearer failure states matter independently of model capability.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are vendor-documented changes, not a security audit or an installation recommendation. We verified the official release metadata and notes; we did not install the version or reproduce every fix. Codex 0.164.0 builds found this morning are prereleases with sparse notes, not a verified stable feature launch.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://api.github.com/repos/anthropics/claude-code/releases?per_page=5" rel="noopener noreferrer">Claude Code official release metadata</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:11:56.588243+02:00">17 Oct 2026, 06:11 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-ecdsa-curve-origins" aria-labelledby="h-anthropic-ecdsa-curve-origins"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-anthropic-ecdsa-curve-origins">Claude reconstructs NIST curve-seed origins, not an ECDSA vulnerability</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16T17:02:00.000Z">16 Oct 2026, 19:02 CEST</time></p><div class="story-body"><p>Anthropic published a reproducible explanation for the seeds behind the NIST P-192, P-224, P-256, P-384 and P-521 elliptic curves. Its internal research model identified output from the C-library lrand48 pseudorandom generator initialized with Unix timestamps, rather than the rumored hash of a humorous passphrase. The article&#x27;s publication timestamp is October 16 at 19:02 CEST, after the previous edition.</p><p>The company says the initial discovery took under half an hour. Its article includes code for regenerating the seeds and explains some selected base points. For this edition, an independent local implementation of the published timestamp-and-generator recipe reproduced the exact standardized P-256 seed. That is a narrow computational check, not an independent reconstruction of the whole investigation.</p><p>Anthropic explicitly says this is not a cryptographic break, a new attack or a reason to change ECDSA deployments. It argues the simple generation method reduces concerns about deliberately selected weaknesses. Important questions remain: B-163&#x27;s seed is unexplained, several base-point origins remain unknown, and the reason some apparently viable curve candidates were skipped is not established.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> A transparent, reproducible origin story helps distinguish parameter-provenance concerns from actual cryptographic vulnerabilities. Security teams should read the result as new evidence about historical choices, not as an emergency migration advisory.</p></aside><p class="caveat"><span class="label">Caveat.</span> The investigation and broader security interpretation are Anthropic&#x27;s. Our local verification reproduced only P-256&#x27;s seed. The findings do not constitute a proof that every curve-selection decision was innocuous, nor do they recover private keys.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/ecdsa-curve-origins" rel="noopener noreferrer">Anthropic research and reproduction code</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:22:03.380602+02:00">17 Oct 2026, 06:22 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-quantum-circuit-design" aria-labelledby="h-anthropic-quantum-circuit-design"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-anthropic-quantum-circuit-design">Anthropic reports new quantum-circuit designs, including a 17-fold gate reduction</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16T17:29:00.000Z">16 Oct 2026, 19:29 CEST</time></p><div class="story-body"><p>Anthropic&#x27;s October 16 research announcement, published at 19:29 CEST, describes evaluator-guided quantum-circuit design using Claude Mythos 5. The model received plain-language specifications, proposed implementations, and iterated against a program that checked correctness and scored resource use across eight computational primitives.</p><p>The associated preprint was submitted to arXiv on October 15 at 17:59 UTC. Its abstract reports reductions in both Toffoli gates and qubits on seven tasks; the eighth produced a new reversible architecture for prime-field modular inversion. This edition treats the October 16 announcement as the new event and preserves the paper&#x27;s earlier submission date.</p><p>In one design trade-off, the announcement reports 17 times fewer gates while using 12% more qubits than the smallest previous design. For a Reed-Solomon decoder used in decoded quantum interferometry, it reports a 12-fold gate reduction relative to a previous Google construction. These are specific circuit-resource comparisons, not a claim that all quantum algorithms are 17 times faster.</p><p>The modular-inversion search ran for 53 hours with an initial brief and occasional human prompts to broaden its approach. The decoder reserves less storage by accepting rare failures, about one in 10,000 sampled cases under the stated allowance. An external evaluator here means a separate checking program, not independent replication by another research group.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Verifiable code and explicit resource objectives can make a well-defined scientific optimization task suitable for an iterative agent. Lower circuit costs could help future hardware, but do not themselves demonstrate useful quantum advantage on today&#x27;s machines.</p></aside><p class="caveat"><span class="label">Caveat.</span> The paper is a preprint and the numerical results are the authors&#x27; reports. We verified the primary announcement, abstract and submission history, not every circuit or the full experimental artifact. Resource trade-offs, allowed failure rates and human interventions matter; this is not evidence of unrestricted autonomous scientific discovery.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/designing-efficient-quantum-circuits" rel="noopener noreferrer">Anthropic quantum-circuit announcement</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:18:34.523591+02:00">17 Oct 2026, 06:18 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://arxiv.org/abs/2610.22367" rel="noopener noreferrer">Paper and original submission history</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:18:34.524263+02:00">17 Oct 2026, 06:18 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-employment-agent-hours" aria-labelledby="h-anthropic-employment-agent-hours"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-anthropic-employment-agent-hours">Anthropic reports six agent-hours per human-hour, alongside a falling junior-hiring share</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16T16:26:00.000Z">16 Oct 2026, 18:26 CEST</time></p><div class="story-body"><p>An internal employment study published by Anthropic on October 16 at 18:26 CEST says employee-directed interactive agents logged six times the company&#x27;s estimated human work hours by August. The numerator is agent runtime, including inference and active tool use, pooling subagents and excluding waits longer than 30 minutes. Human hours are estimated from headcount at 40 hours per week. This is not a finding that agents were six times as productive as people.</p><p>The study reports that junior employees&#x27; share of technical headcount fell from 21% to 14% since early 2025, while juniors&#x27; share of technical hires fell from 27% to 9%. Technical hiring still grew in absolute terms as the company expanded. A decline in hiring share is not equivalent to an observed count of jobs eliminated.</p><p>To examine coding-tool adoption, the authors follow 192 adopting engineers and compare them with 74 non-adopters. They report rising code output, but acknowledge that adoption was not randomized and that more code does not necessarily mean more business impact. Their code-quality proxies include later deletions and reversions, not a comprehensive independent quality assessment.</p><p>The report describes human attention as a bottleneck. One interviewed engineer called the experience &#x27;an army of Claudes, with every one asking for my attention.&#x27; It also reports that interactive sessions spent around 80% of wall-clock time waiting for human input. That idle-time measure is distinct from the active agent-hours ratio.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> This is a concrete case study of how agent adoption can shift work toward orchestration, review and judgment. Its measurement definitions are as important as the headline ratios when evaluating staffing or productivity claims.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a single rapidly growing AI vendor studying itself, with internal data and 17 employee interviews. Selection, revenue growth, organizational change and non-random tool adoption limit causal inference and generalization. We did not access private employee or candidate records, and this reporting makes no changes to Job Alerts.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/employment-at-anthropic" rel="noopener noreferrer">Anthropic employment study and methodology</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:22:03.379944+02:00">17 Oct 2026, 06:22 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-google-agentic-wet-lab-building-blocks" aria-labelledby="h-google-agentic-wet-lab-building-blocks"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">Background — older context</span></p><h3 id="h-google-agentic-wet-lab-building-blocks">BACKGROUND: Google reports supervised lab-in-the-loop advances, not a fully autonomous wet lab</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-16">16 Oct 2026</time></p><div class="story-body"><p>BACKGROUND - original publication October 16, 2026. Google Research describes three projects connecting AI agents to biological experiments: the VERID laboratory digital twin and robotics safeguards, closed-loop aptamer discovery, and de novo protein-binder design. The page gives no publication hour we could verify, so this dispatch is not claimed as a development after the previous edition.</p><p>For aptamers, the team reports three design-test cycles with final confirmed on-target hit rates of 33.5% for myoglobin and 42.1% for alpha-thrombin. The myoglobin experiment initially got worse when designs favored nonspecific sticky binders, then recovered after revising the design rules. These two targets and experimental cycles do not establish general reliability across biology.</p><p>The protein-binder work reports more than an eightfold computational-cycle acceleration and single-digit nanomolar affinity against FAP. Google&#x27;s next step is to combine the projects: the post does not say the complete integrated autonomous lab already exists. Safeguards include sequence screening, simulated robot runs, human authorization of sequences and protocols, and supervision of execution.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Real experimental feedback can expose shortcuts that look successful in simulation. The reported failure-and-recovery sequence is more informative about the scientific workflow than an undifferentiated claim that AI has automated a laboratory.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are results reported by Google, not replicated by this newspaper. Tight binding is not proof of a clinically useful drug. Integration remains future work, and the experiments retain human oversight. This older, newly verified context is explicitly separated from the four timed new developments.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/" rel="noopener noreferrer">Google Research original wet-lab report</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-17T06:16:00.170275+02:00">17 Oct 2026, 06:16 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Reproducible artifacts and separate correctness checks support narrower conclusions than sweeping capability claims.</li><li>Active agent runtime is not human-equivalent productivity; explicit definitions and selection limits matter.</li><li>Permission defaults, bounded input reads and duplicate-run fixes are operationally important agent-release changes.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The new-development window begins at the actual October 16 afternoon issue, 16:09 CEST. Four primary publication timestamps are later than that cutoff. One October 16 date-only scientific report is separately labeled BACKGROUND; no fresh event is inferred from a discussion or crawl date.</li><li>The installed last30days engine completed successfully with 54 discovery items across five returning sources. Discovery covered models, coding and agents, research, industry, infrastructure and policy. Evidence items are not counts of verified news developments.</li><li>Polymarket was unreachable because TLS hostname verification failed; verification was not bypassed. X was not configured and was omitted. The four retained YouTube videos have transcripts; a fifth candidate failed subtitle retrieval after HTTP 429 responses before relevance filtering.</li><li>Three post-engine native web supplements were run, with empty-result queries retried more broadly. The configured search backend was unavailable; its automatic keyless fallback supplied the returned results. Direct HTTPS retrieval with normal certificate validation supplied primary articles, metadata and source snapshots because the text extractor was unavailable.</li><li>No additional post-cutoff model launch was established. Beam was covered yesterday; Meta Muse Spark Open is dated October 15. The NVIDIA Indic corpus announcement is timestamped October 16 at 03:44 CEST and says the corpus is releasing soon. Sparse Codex alpha release notes were not treated as a stable feature launch.</li><li>China export-control discussion was found, but primary legal text and publication timing were not verified in this run. It is not presented as enacted policy. Other older papers, resurfaced commentary and undated claims were not promoted to fresh developments.</li><li>Available community comments concern other or older topics, not these selected new events. We do not attach them to unrelated announcements or claim a representative consensus. The quoted workplace interview is attributed to the primary study, not labeled community reaction.</li><li>No browser-cookie access, optional services or credentials, paid enrichment, TLS bypass, job-alert edits or schedule changes were used. Full research, source snapshots and provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 22 threads │ 4,234 upvotes │ 1,357 comments
+├─  YouTube: 4 videos │ 457,324 views │ 4/4 with transcripts
+├─  HN: 18 stories │ 710 points │ 481 comments
+├─  dev.to: 4 articles │ 33 reactions │ 22 comments
+├─  GitHub: 6 items │ 17 reactions │ 54 comments
+├─  Top voices: r/artificial, r/singularity, r/LocalLLaMA
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-17-morning.json" download>Exact input JSON</a></li><li><a href="2026-10-17-morning.md">Markdown text</a></li><li><a href="2026-10-17-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
