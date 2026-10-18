@@ -1,0 +1,141 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-18",
+ "issued_at": "2026-10-18T22:33:00+02:00",
+ "source": {
+  "url": "https://github.com/trending?since=daily",
+  "checked_at": "2026-10-18T20:31:29.660955+00:00",
+  "period": "daily",
+  "total_listed": 13
+ },
+ "editorial_note": "Five fresh picks from the official all-language daily GitHub Trending listing: an open-source terminal coding agent, cross-agent long-term memory, a multi-agent worktree orchestrator, a node-based local diffusion engine and a free LLM learning roadmap. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+ "coverage_notes": [
+  "This edition was captured late in the evening (22:31 Europe/Paris) because the scheduled 08:00 run failed on a model rate limit before collecting anything; the listing reflects GitHub's daily window at that later capture time, not the morning snapshot.",
+  "All 13 listing entries were inspected. Exact primary public GitHub repository metadata and README endpoints were checked for all seven entries not featured on 15-17 October; all seven were active and unarchived. Five were selected. Six entries already featured on 15-17 October were omitted without claiming a material update.",
+  "Cursor plugins was again not selected: the repository API still detects no root license (individual plugin folders carry their own LICENSE files), so the licensing caveat from 17 October is unchanged. Jasna, a GPU mosaic-removal video tool with paid supporter models, was not selected because its main use case is removing intentional image obfuscation, which raises consent and rights concerns.",
+  "The preceding seven calendar dates, 11-17 October, were checked for local history. The archive began on 15 October, so only three prior editions exist; 11-14 October have no local issues. None of today's picks repeats the available history.",
+  "The official listing was captured at 22:31:29 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling-24-hour growth measurement.",
+  "This remains an AI-heavy source snapshot with no dedicated security tool listed today; agent permission modes and self-hosted memory boundaries provide the defensive angle. Capabilities, performance, adoption and security guarantees are maintainer descriptions unless expressly identified otherwise. No candidate code, installers, plugins, models, browser sessions or credentials were used. Stars and ranking are not a security audit or endorsement; no human review was performed."
+ ],
+ "projects": [
+  {
+   "repository": "anomalyco/opencode",
+   "url": "https://github.com/anomalyco/opencode",
+   "trending_rank": 3,
+   "description": "An open-source AI coding agent with a terminal UI and a beta desktop app, shipping a full-access build agent, a read-only plan agent and a general subagent for multistep searches.",
+   "why_interesting": "A mature, MIT-licensed alternative to proprietary coding agents that is still moving fast: the latest release v1.19.3 was published on 16 October. The built-in plan agent denies file edits by default and asks before running shell commands, a useful pattern for exploring unfamiliar code safely.",
+   "caveat": "The default build agent has full access, so permissions and the working directory need deliberate review. The README's first install option pipes a remote script into bash, and the desktop app is labelled beta. Model costs and data handling depend on the provider you connect; nothing was installed or run here.",
+   "category": "AI coding agent",
+   "language": "TypeScript",
+   "license": "MIT",
+   "stars_total": 216421,
+   "stars_period": 1417,
+   "stars_period_label": "1,417 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-10-18T20:31:38+00:00",
+   "readme_checked_at": "2026-10-18T20:31:39+00:00",
+   "readme_source_url": "https://api.github.com/repos/anomalyco/opencode/readme",
+   "evidence_urls": [
+    "https://github.com/anomalyco/opencode",
+    "https://api.github.com/repos/anomalyco/opencode",
+    "https://github.com/anomalyco/opencode/blob/dev/README.md",
+    "https://github.com/anomalyco/opencode/releases/tag/v1.19.3"
+   ]
+  },
+  {
+   "repository": "akitaonrails/ai-memory",
+   "url": "https://github.com/akitaonrails/ai-memory",
+   "trending_rank": 6,
+   "description": "A self-hosted Rust server that gives coding agents shared long-term memory and typed handoffs, so work started in one agent CLI can continue in another, on another machine or with a teammate.",
+   "why_interesting": "It tackles a real gap: each agent's built-in notes stay tied to one tool and one machine. The maintainer says more than twenty harnesses feed one memory whose source of truth is a git-backed wiki of plain markdown files, with the database only a derived index. Release v3.1.1 was published on 17 October.",
+   "caveat": "It is another always-on server holding project knowledge; the README's Docker quick-start runs without authentication (bound to loopback), so exposure and access control need care before team use. Native Windows support is marked experimental. Harness coverage and privacy boundaries are maintainer claims and were not tested here.",
+   "category": "Agent memory infrastructure",
+   "language": "Rust",
+   "license": "MIT",
+   "stars_total": 10395,
+   "stars_period": 513,
+   "stars_period_label": "513 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-10-18T20:31:40+00:00",
+   "readme_checked_at": "2026-10-18T20:31:41+00:00",
+   "readme_source_url": "https://api.github.com/repos/akitaonrails/ai-memory/readme",
+   "evidence_urls": [
+    "https://github.com/akitaonrails/ai-memory",
+    "https://api.github.com/repos/akitaonrails/ai-memory",
+    "https://github.com/akitaonrails/ai-memory/blob/main/README.md",
+    "https://github.com/akitaonrails/ai-memory/releases/tag/v3.1.1"
+   ]
+  },
+  {
+   "repository": "stablyai/orca",
+   "url": "https://github.com/stablyai/orca",
+   "trending_rank": 7,
+   "description": "A desktop workspace for running several terminal coding agents side by side (Claude Code, Codex, OpenCode, Pi and others), each in its own git worktree, with diff annotation, SSH worktrees, GitHub and Linear views and a mobile companion.",
+   "why_interesting": "It turns the common fan-out pattern, one prompt to several agents then merge the best result, into a managed workflow with isolated worktrees and inline review comments sent back to the agent. It is MIT-licensed, runs on macOS, Windows and Linux, and ships very frequently (v1.4.229 on 17 October).",
+   "caveat": "Running parallel agents multiplies subscription or API usage, and features such as computer use, account switching and browser design mode widen what agents can touch. The README links to telemetry docs describing anonymous usage data collection with an opt-out. Feature claims were not exercised here.",
+   "category": "Agent orchestration / developer tools",
+   "language": "TypeScript",
+   "license": "MIT",
+   "stars_total": 96443,
+   "stars_period": 1146,
+   "stars_period_label": "1,146 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-10-18T20:31:42+00:00",
+   "readme_checked_at": "2026-10-18T20:31:43+00:00",
+   "readme_source_url": "https://api.github.com/repos/stablyai/orca/readme",
+   "evidence_urls": [
+    "https://github.com/stablyai/orca",
+    "https://api.github.com/repos/stablyai/orca",
+    "https://github.com/stablyai/orca/blob/main/README.md",
+    "https://github.com/stablyai/orca/releases/tag/v1.4.229"
+   ]
+  },
+  {
+   "repository": "Comfy-Org/ComfyUI",
+   "url": "https://github.com/Comfy-Org/ComfyUI",
+   "trending_rank": 13,
+   "description": "A modular node-graph interface, API and backend for running diffusion and other generative models for images, video and more, locally on Windows, Linux and macOS or through the vendor's cloud.",
+   "why_interesting": "The non-agent pick: a long-running, GPL-licensed local creative engine that keeps pace with new open models, with workflows expressed as inspectable graphs. The maintainers claim large models can run on as little as 4 GB of VRAM via weight streaming. Release v0.41.0 was published on 15 October.",
+   "caveat": "Performance and low-VRAM claims are the maintainers' own. Custom nodes are third-party Python code, and the README warns that commits outside stable tags may break them; partner nodes call paid closed-source model APIs. GPL-3.0 obligations apply to redistribution. No models were downloaded or run.",
+   "category": "Generative media / local AI",
+   "language": "Python",
+   "license": "GPL-3.0",
+   "stars_total": 138516,
+   "stars_period": 155,
+   "stars_period_label": "155 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-10-18T20:31:45+00:00",
+   "readme_checked_at": "2026-10-18T20:31:46+00:00",
+   "readme_source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI/readme",
+   "evidence_urls": [
+    "https://github.com/Comfy-Org/ComfyUI",
+    "https://api.github.com/repos/Comfy-Org/ComfyUI",
+    "https://github.com/Comfy-Org/ComfyUI/blob/master/README.md",
+    "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.41.0"
+   ]
+  },
+  {
+   "repository": "mlabonne/llm-course",
+   "url": "https://github.com/mlabonne/llm-course",
+   "trending_rank": 11,
+   "description": "A free course on large language models organised in three tracks, fundamentals, LLM scientist and LLM engineer, with roadmaps, curated references and Colab notebooks for fine-tuning, quantisation, merging and evaluation.",
+   "why_interesting": "A structured learning path rather than another tool: it separates model building from application engineering and links each topic to hands-on notebooks and articles, which helps engineers fill specific gaps. Apache-2.0 licensed.",
+   "caveat": "Last pushed in February 2026, so some notebooks reference older models and libraries and may need updating. Several helper notebooks rely on paid GPU clouds or Colab, and the README promotes a companion paid book. It is a reading list, not a maintained software package.",
+   "category": "Education / LLM engineering",
+   "language": null,
+   "license": "Apache-2.0",
+   "stars_total": 83959,
+   "stars_period": 81,
+   "stars_period_label": "81 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-10-18T20:31:43+00:00",
+   "readme_checked_at": "2026-10-18T20:31:44+00:00",
+   "readme_source_url": "https://api.github.com/repos/mlabonne/llm-course/readme",
+   "evidence_urls": [
+    "https://github.com/mlabonne/llm-course",
+    "https://api.github.com/repos/mlabonne/llm-course",
+    "https://github.com/mlabonne/llm-course/blob/main/README.md"
+   ]
+  }
+ ]
+}
