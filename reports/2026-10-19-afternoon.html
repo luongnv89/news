@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Monday 19 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-19-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-19T16:09:34+02:00">Monday 19 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-19-afternoon</p><p>Issued 16:09 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-19-afternoon.html">This edition</a><a href="2026-10-19-afternoon.md">Markdown</a><a href="2026-10-19-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-19-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-19-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Monday 19 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-19T06:08:57.686781+02:00">19 Oct 2026, 06:08 CEST</time> to <time datetime="2026-10-19T16:09:34+02:00">19 Oct 2026, 16:09 CEST</time> (Paris time). Issued <time datetime="2026-10-19T16:09:34+02:00">19 Oct 2026, 16:09 CEST</time>.</p><p class="lead-note">This edition follows the Monday morning issue, published at 06:08 CEST. Five verified developments were published on Monday 19 October after that issue: MiniMax&#x27;s M3.1 Flash model, Amazon&#x27;s TorchNeuron backend for running PyTorch on Trainium, NorForge&#x27;s investigation into exposed AI-agent attack panels, a Homeland Security order removing DeepSeek products from civilian federal IT, and Tenstorrent&#x27;s $1.5 billion funding round. No older context is needed, so there is no BACKGROUND section. Stories from earlier editions are not repeated.</p><p class="tally">5 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-10-19-morning.html">2026-10-19-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-minimax-m3-1-flash" aria-labelledby="h-minimax-m3-1-flash"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-minimax-m3-1-flash">MiniMax releases M3.1 Flash and confirms the anonymous &#x27;Space Bunny&#x27; model was an early version</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19">19 Oct 2026</time></p><div class="story-body"><p>MiniMax said on 19 October that it is rolling out M3.1 Flash through the MiniMax API, its M Plan subscription and its MiniMax Code app. The company said Space Bunny, a model that processed more than 200 trillion tokens while operating anonymously, was an early version of M3.1 Flash. MiniMax said model weights will be released later, and that a larger Pro model will also arrive later.</p><p>MiniMax lists flat pricing of $0.15 per million input tokens, $0.60 per million output tokens and $0.015 per million cached input tokens. It claims online inference is nearly three times faster and agentic-task usage costs are 70% lower than its predecessor, with output speeds above 200 tokens per second and a median above 170.</p><p>In its own benchmark results, MiniMax reports 73.7% on DeepSWE v1.1, 61.7 on OSWorld V2, 29.6 on Agents&#x27; Last Exam, 76.2 on BankerToolBench and 82% on CyberGym.</p><p>MarkTechPost reports that MiniMax&#x27;s product page lists 428 billion total parameters with about 23 billion active, a one-million-token context window and reasoning that cannot be switched off. It says the weights are due on 23 October under a license not yet disclosed, and that MiniMax&#x27;s comparison table puts the model at 38.1 on Terminal Bench 4.0.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Chinese labs keep cutting the price of agent-oriented models, and testing them under anonymous names before launch makes it harder for developers to know which build they actually evaluated.</p></aside><p class="caveat"><span class="label">Caveat.</span> All benchmark numbers are vendor-reported; this edition found no independent replication. The 23 October weights date comes from MarkTechPost, while MiniMax&#x27;s announcement says only &#x27;later&#x27;.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.minimax.io/blog/minimax-m31f" rel="noopener noreferrer">MiniMax</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:10+02:00">19 Oct 2026, 16:05 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/" rel="noopener noreferrer">MarkTechPost</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:12+02:00">19 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-amazon-torchneuron-trainium" aria-labelledby="h-amazon-torchneuron-trainium"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-amazon-torchneuron-trainium">Amazon says TorchNeuron lets existing PyTorch code run on its Trainium chips, with an open-source release set for 20 October</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19T13:00:10+00:00">19 Oct 2026, 15:00 CEST</time></p><div class="story-body"><p>Amazon announced TorchNeuron, a native PyTorch backend for its AWS Trainium AI chips. Amazon says PyTorch code that developers already write runs on Trainium with a single configuration change and no rewrite, and that in a side-by-side demonstration a training script learned at the same rate on a conventional chip and on Trainium.</p><p>A post on the PyTorch Foundation blog by AWS engineers says TorchNeuron plugs into PyTorch&#x27;s PrivateUse1 device backend and torch.accelerator APIs. It supports eager execution, torch.compile and the Neuron Kernel Interface for custom kernels on Trainium2 and Trainium3. The post says the code will be released under the Apache 2.0 license at aws-neuron/torch-neuronx as a public beta on 20 October, at PyTorch Conference North America.</p><p>Amazon says it is contributing changes upstream to make PyTorch less tied to specific chips and tests TorchNeuron against hundreds of thousands of models on every build. It names Cartesia and the Lieber Institute for Brain Development among early users.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: much of Nvidia&#x27;s lead rests on software that developers would have to rewrite to leave; lowering that porting cost is how rival chipmakers compete.</p></aside><p class="caveat"><span class="label">Caveat.</span> The no-rewrite and training-parity claims are Amazon&#x27;s own and were not independently tested. The open-source release was scheduled for the day after this edition and could not be checked.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai" rel="noopener noreferrer">Amazon</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:11+02:00">19 Oct 2026, 16:05 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/" rel="noopener noreferrer">PyTorch Foundation blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:11+02:00">19 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-norforge-cairn-ai-agent-attacks" aria-labelledby="h-norforge-cairn-ai-agent-attacks"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-norforge-cairn-ai-agent-attacks">Exposed AI-agent attack panels show more than 1,100 intrusion projects, security firm NorForge reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19">19 Oct 2026</time></p><div class="story-body"><p>NorForge published an investigation on 19 October into publicly exposed control panels for Cairn, an open-source AI agent platform it describes as a state-based problem-solving engine. An operator sets a starting point and a goal, and agent workers move toward it, posting discovered facts and planned next steps to a shared board.</p><p>NorForge says it found more than 20 exposed Cairn panels it assesses as likely malicious, all apparently financially motivated, with no obvious state-sponsored activity. Its largest cluster, which it labels AIA0001, uses Chinese, spans 14 panels and more than 1,100 attack projects, and mostly targets organizations in the United States, Japan and Australia, apparently seeking persistent access to e-commerce and payment infrastructure. Some exposed panels appeared to belong to legitimate red teams, which NorForge says could put their clients at risk.</p><p>The Verge, citing Reuters, reports that victims included John Deere, SharkNinja and Cummins, that the most active attacker broke into more than 100 websites, and that successful breaches took about 23 hours. John Deere told Reuters there was &#x27;no indication that sensitive information was accessed&#x27;, and SharkNinja said a standalone product-support site was affected and the threat contained. The Verge reports that Cairn&#x27;s creator said earlier this month that the platform &#x27;was never a hacking tool&#x27;.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: agent frameworks cut the human labor behind large intrusion campaigns; in this case the attackers&#x27; own unsecured dashboards were what exposed them.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a security vendor&#x27;s threat-intelligence report, not peer-reviewed research, and NorForge redacted panel addresses. Victim names come from Reuters via The Verge; Reuters itself returned HTTP 401 and was not read directly.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://norforge.com/blog/inside_cairn" rel="noopener noreferrer">NorForge</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:06:10+02:00">19 Oct 2026, 16:06 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins" rel="noopener noreferrer">The Verge (citing Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:51+02:00">19 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-dhs-deepseek-federal-exclusion" aria-labelledby="h-dhs-deepseek-federal-exclusion"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-dhs-deepseek-federal-exclusion">US Homeland Security orders DeepSeek products removed from civilian federal IT and barred from procurement</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19T08:45:00-04:00">19 Oct 2026, 14:45 CEST</time></p><div class="story-body"><p>The US Department of Homeland Security filed a notice for public inspection on 19 October, due to be published in the Federal Register on 20 October. It says the Secretary of Homeland Security has ordered two things: information technology products and services developed by Hangzhou DeepSeek Artificial Intelligence Co., Ltd, including affiliates, are excluded from federal civilian agency procurements; and all DeepSeek and DeepSeek-affiliate products, and third-party products and services developed using DeepSeek implementations, are to be removed from civilian agency IT.</p><p>The notice cites the Federal Acquisition Supply Chain Security Act of 2018 and a review of a Federal Acquisition Security Council recommendation. The signed order is filed under docket DHS-2026-0628, and a CISA team is named as the implementation contact.</p><p>Reuters, as published by CNA, reports that DHS said DeepSeek models pose &#x27;multiple threat vectors&#x27; and that their use &#x27;may result in the transfer of sensitive data to the PRC if used by U.S. government employees or vendors.&#x27;</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the clause covering third-party products &#x27;developed using DeepSeek implementations&#x27; could reach vendors that build on DeepSeek&#x27;s openly released models, not only DeepSeek&#x27;s own app.</p></aside><p class="caveat"><span class="label">Caveat.</span> This edition read the public-inspection notice, not the signed order in its appendix, so deadlines and the exact scope of &#x27;developed using DeepSeek implementations&#x27; were not checked. The order covers federal civilian executive-branch agencies; it is not a ban on private use.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://public-inspection.federalregister.gov/2026-21447.pdf" rel="noopener noreferrer">Federal Register (DHS notice 2026-21447)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:07:24+02:00">19 Oct 2026, 16:07 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/us-banning-chinese-ai-deepseek-government-agency-it-systems-6472301" rel="noopener noreferrer">CNA (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T16:05:12+02:00">19 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-tenstorrent-series-e" aria-labelledby="h-tenstorrent-series-e"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-tenstorrent-series-e">Tenstorrent raises $1.5 billion at a $6.2 billion valuation to scale its AI servers and chip IP</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19">19 Oct 2026</time></p><div class="story-body"><p>Tenstorrent said on 19 October that it has closed a $1.5 billion Series E round at a $6.2 billion post-money valuation. Trace Capital and Innovation X led the round, with participants including ARK Invest, Fidelity Management and Research Company, Morgan Stanley, Sandisk, T. Rowe Price, Tether Investments and XTX Markets.</p><p>The company says it will use the money to deploy its Galaxy servers at scale, keep serving open-weight language and video-generation models, and develop the AI and CPU designs it licenses to chipmakers. It names Samsung and LG as licensees of its TT-Ascalon RISC-V CPU and Tensix AI cores. Chief executive Jim Keller said: &#x27;We built one architecture and sell it at every size.&#x27;</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: investors are still funding alternatives to Nvidia, and Tenstorrent&#x27;s pitch rests on open-source software and licensable designs rather than on chips alone.</p></aside><p class="caveat"><span class="label">Caveat.</span> Funding, valuation and investor list come from the company&#x27;s announcement and were not independently confirmed.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://tenstorrent.com/newsroom/tenstorrent-announces-series-e" rel="noopener noreferrer">Tenstorrent</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T16:06:23+02:00">19 Oct 2026, 16:06 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The cost of running AI keeps falling from both ends: MiniMax prices an agent-oriented model at $0.15 per million input tokens, and Amazon is trying to make moving PyTorch code off Nvidia hardware nearly free.</li><li>AI is increasingly treated as a security and supply-chain risk, from the Homeland Security order removing DeepSeek products to NorForge&#x27;s evidence of agent-driven intrusion campaigns.</li><li>Money is still flowing to Nvidia alternatives, with Tenstorrent&#x27;s $1.5 billion round and Amazon&#x27;s Trainium software push on the same day.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>no-results</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>timeout</dd></div><div><dt>github</dt><dd>partial</dd></div><div><dt>devto</dt><dd>timeout</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The fresh window runs from the morning issue (06:08 CEST, 19 October) to this issue. Two dispatches carry date-only publication stamps from their primary sources; coverage timestamps from other outlets place both after the morning issue.</li><li>The installed last30days engine completed with 58 evidence items from Reddit, Hacker News and GitHub, followed by three web supplements and direct checks of primary sources. Evidence-item counts are not verified-development counts. None of the returned community comments addressed the stories selected here, so no community quotes are printed.</li><li>GitHub returned partial results because its issue and pull-request searches failed with network errors. dev.to timed out. Polymarket timed out during TLS handshakes and also failed certificate hostname checks; verification was not bypassed. YouTube completed with no results. X was not searched. Failed or missing coverage is not read as an absence of discussion.</li><li>The configured web search backend failed and its keyless fallback served the supplements. Public HTTPS pages were fetched directly with normal certificate validation. Reuters returned HTTP 401 and Investing.com HTTP 403, and the Federal Register website showed a CAPTCHA, so its public API and the notice PDF were used instead. Reuters facts are taken from outlets that republish or cite it.</li><li>Excluded after checks: Google&#x27;s Gemini 4 agents completing Minecraft (the underlying paper and its date were not verified), Anthropic&#x27;s acquisition of Opaque Systems (announced by Opaque the previous week), MITRE ATT&amp;CK v20 (released the previous week), Microsoft&#x27;s &#x27;Securing the agentic insider&#x27; post (commentary), Siemens and Santander partnerships with Nvidia (partnership announcements), a reported eight-state lawsuit against OpenAI (no primary filing checked in time), and further reactions to stories already covered, such as Anthropic&#x27;s Public Benefit Fund and DeepSeek V4.1 Flash.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 23 threads │ 583 upvotes │ 518 comments
+├─  HN: 11 stories │ 2,420 points │ 1,113 comments
+├─  GitHub: 24 items │ 6 reactions │ 51 comments
+├─  Top voices: r/artificial, r/OpenAI, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-19-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-19-afternoon.md">Markdown text</a></li><li><a href="2026-10-19-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
