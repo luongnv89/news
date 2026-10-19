@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "issued_at": "2026-10-19T08:02:36+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-19T06:00:45.216348+00:00",
+    "period": "daily",
+    "total_listed": 13
+  },
+  "editorial_note": "A short repeat-update edition. GitHub's daily listing barely changed overnight: 11 of its 13 rows were already featured on 15-18 October. Three of them are back only because their own repositories show a specific, dated change since we covered them: safer default settings in an agent harness, preview phone apps for a local voice studio, and new model support in a node-based diffusion engine. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 13 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 13 at 06:01 UTC; all were active and unarchived.",
+    "Eleven entries had already been featured on 15-18 October. Releases and recent commits were compared against each previous feature time. Only three showed a material, primary-sourced change and were re-featured; each card names the change. The other eight (ai-job-search, claude-plugins-official, opencode, ai-memory, orca, CLI-Anything, android/skills, llm-course) were omitted: they had only bug-fix commits, no new release since their feature, or were featured less than a day ago without a new release.",
+    "Cursor plugins was again not selected: the repository license API still returns no root license, so the 17 October licensing caveat is unchanged. Jasna, a GPU mosaic-removal video tool, was again not selected because its main use is removing intentional image obfuscation, which raises consent and rights concerns.",
+    "The preceding seven calendar dates, 12-18 October, were checked for local history. The archive began on 15 October, so four prior editions exist (15-18 October).",
+    "The official listing was captured at 08:00:45 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Today's listing is almost entirely AI-related and contains no dedicated security tool; the security angle comes from the agent-harness release notes. Capabilities, performance and security fixes are maintainer descriptions, not independently tested. No candidate code, installers, plugins, apps, models, browser sessions or credentials were used. Stars and ranking are not a security audit or endorsement; no human review was performed."
+  ],
+  "projects": [
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "trending_rank": 5,
+      "description": "An agent coordination layer (meta-harness) for Claude Code and Codex, with CLI and MCP tools, persistent memory, multi-agent swarms, hooks, a daemon and a browser console.",
+      "why_interesting": "Material change since our 17 October card: release v3.57.0 (published 17 October, 22:38 UTC) changes risky defaults. Per its release notes, init no longer writes a full-access, never-ask Codex config by default; it now writes workspace-write sandboxing with on-request approval, and full trust needs an explicit flag. The loopback MCP bridge now checks Host and Origin headers to block requests from arbitrary web pages (DNS rebinding) when no auth token is set.",
+      "caveat": "These are maintainer-described fixes, not an independent audit. Existing permissive .codex/config.toml files are deliberately left in place, so earlier installs stay permissive until changed by hand. The README still says mods run with your account permissions and are not sandboxed, and the full setup installs hooks and a background daemon. Nothing was installed or run.",
+      "category": "Agent orchestration / security defaults",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars_total": 76683,
+      "stars_period": 513,
+      "stars_period_label": "513 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-19T06:01:05.443245+00:00",
+      "readme_checked_at": "2026-10-19T06:01:06.065693+00:00",
+      "readme_source_url": "https://api.github.com/repos/ruvnet/ruflo/readme",
+      "evidence_urls": [
+        "https://github.com/ruvnet/ruflo",
+        "https://api.github.com/repos/ruvnet/ruflo",
+        "https://github.com/ruvnet/ruflo/releases/tag/v3.57.0",
+        "https://github.com/ruvnet/ruflo/blob/main/README.md",
+        "https://github.com/ruvnet/ruflo/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "trending_rank": 9,
+      "description": "A local voice-production app for voice cloning and design, video dubbing, dictation, transcription and audiobooks, with a local API and MCP server for agents.",
+      "why_interesting": "Material change since our 15 October card: a commit merged on 17 October adds native iOS (SwiftUI) and Android (Jetpack Compose) companion apps as a preview. Per docs/mobile.md, a phone pairs by QR code or PIN with your own VoiceStudio computer or server to drive Speak, Voices and cloning, Dub and Dictate, with no accounts, cloud relay or analytics. The heavy processing stays on the paired machine.",
+      "caveat": "Preview only and not in either app store: you must build from source, or sideload an unsigned iPhone build that expires after 7 days on a free Apple ID. On-device models are only planned, and the change is not in a tagged release yet (latest is v0.5.6). Exposing the backend on a network widens access; the docs require HTTPS beyond local or Tailscale addresses. Clone voices only with consent; model and voice rights are separate from the AGPL-3.0 app license.",
+      "category": "Local audio AI / mobile",
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "stars_total": 76013,
+      "stars_period": 2082,
+      "stars_period_label": "2,082 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-19T06:01:07.779273+00:00",
+      "readme_checked_at": "2026-10-19T06:01:08.322004+00:00",
+      "readme_source_url": "https://api.github.com/repos/debpalash/VoiceStudio/readme",
+      "evidence_urls": [
+        "https://github.com/debpalash/VoiceStudio",
+        "https://api.github.com/repos/debpalash/VoiceStudio",
+        "https://github.com/debpalash/VoiceStudio/commit/d9b83e6a17907255b5f3c8e65e825ebac2d3f18d",
+        "https://github.com/debpalash/VoiceStudio/blob/main/docs/mobile.md",
+        "https://github.com/debpalash/VoiceStudio/blob/main/README.md",
+        "https://github.com/debpalash/VoiceStudio/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "trending_rank": 13,
+      "description": "A modular node-graph interface, API and backend for running diffusion and other generative models for images, video, 3D and audio, locally or through the vendor's cloud.",
+      "why_interesting": "Material change since our 18 October card, which cited v0.41.0: stable release v0.42.0 was published at 22:10 UTC that night, adding MOSS-image model support, more Qwen 3.x performance work, ARM Linux in its test runs and a Krea 3 Image partner node. Patch v0.42.1 followed hours later to fix crashes some users hit with the MOSS image template workflow.",
+      "caveat": "A same-week repeat, re-featured only for this release. A crash fix within hours suggests waiting for the new template to settle. Partner nodes such as Krea call paid closed-source APIs, and custom nodes are third-party Python code. Performance claims are the maintainers' own. GPL-3.0 obligations apply to redistribution. No models were downloaded or run.",
+      "category": "Generative media / local AI",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars_total": 138866,
+      "stars_period": 154,
+      "stars_period_label": "154 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-19T06:01:09.828343+00:00",
+      "readme_checked_at": "2026-10-19T06:01:10.280692+00:00",
+      "readme_source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI/readme",
+      "evidence_urls": [
+        "https://github.com/Comfy-Org/ComfyUI",
+        "https://api.github.com/repos/Comfy-Org/ComfyUI",
+        "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.0",
+        "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.1",
+        "https://github.com/Comfy-Org/ComfyUI/blob/master/README.md"
+      ]
+    }
+  ]
+}
