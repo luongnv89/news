@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Monday 19 October 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-10-19-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-19T06:08:57.686781+02:00">Monday 19 October 2026</time></p><p>Morning edition &middot; No. 2026-10-19-morning</p><p>Issued 06:08 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-19-morning.html">This edition</a><a href="2026-10-19-morning.md">Markdown</a><a href="2026-10-19-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-19-morning.html">This edition (HTML)</a> &middot; <a href="2026-10-19-morning.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Monday 19 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-18T00:00:00+02:00">18 Oct 2026, 00:00 CEST</time> to <time datetime="2026-10-19T06:08:57.686781+02:00">19 Oct 2026, 06:08 CEST</time> (Paris time). Issued <time datetime="2026-10-19T06:08:57.686781+02:00">19 Oct 2026, 06:08 CEST</time>.</p><p class="lead-note">This edition follows the October 18 afternoon issue, published at 22:42 CEST. The Sunday night produced only two verifiable developments after that issue: Meta&#x27;s explanation that a Claude tool&#x27;s reading activity triggered the wrongful suspension of the No Kings Instagram account, and reports that Nscale&#x27;s IPO backers want a lower valuation after Microsoft walked away from its Loughton data centre deal. Because so little was new, the fresh window is widened to the start of Sunday 18 October, Paris time, to pick up three Sunday items the previous issue did not carry: Anthropic&#x27;s Public Benefit Fund, Disney&#x27;s agreement to hire most of Character.AI&#x27;s staff and the vLLM 0.32.0 release. The Verge&#x27;s October 17 report on websites blocking AI agents appears only as dated BACKGROUND. No new model release cleared verification, and stories from earlier editions are not repeated.</p><p class="tally">5 new or updated dispatches &middot; 1 background item &middot; Previous: <a href="2026-10-18-afternoon.html">2026-10-18-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-vllm-0-32-0-release" aria-labelledby="h-vllm-0-32-0-release"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-vllm-0-32-0-release">vLLM 0.32.0 fixes three security advisories, tightens default CORS and drops Python 3.10</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-18T06:50:48+00:00">18 Oct 2026, 08:50 CEST</time></p><div class="story-body"><p>The vLLM project published v0.32.0 on October 18 at 08:50 CEST. The release notes credit 814 commits from 363 contributors.</p><p>On security, it fixes three advisories: GHSA-4hhp-h66f-j5j7 (chat template resource exhaustion), GHSA-q97c-p368-75c4 (tokenizer max_token_id) and GHSA-frvg-qw88-hww9 (P2P ZMQ socket exhaustion). CORS no longer allows every origin by default, untrusted images are limited to raster formats, shared-memory multimodal cache handles are signed and JSON schemas nested deeper than 64 levels are rejected.</p><p>Breaking changes include dropping Python 3.10, new transformers and tokenizers version pins, removal of cascade attention and of the torch.compile sequence-parallelism and AsyncTP passes, no longer reserving max_tokens from the context window, and renamed Responses API reasoning stream events. Other additions include a new POST /v1/systemone endpoint for structured decisions and NVFP4 KV-cache support on more GPU generations.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: teams serving open-weight models behind vLLM should treat this as a security upgrade, but check the CORS default, Python version and stream-event renames before rolling it out, because each can break existing clients.</p></aside><p class="caveat"><span class="label">Caveat.</span> Throughput gains quoted in the release notes come from individual pull-request benchmarks on specific models and hardware, not independent tests.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0" rel="noopener noreferrer">vLLM release notes on GitHub</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T06:06:20+02:00">19 Oct 2026, 06:06 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-meta-no-kings-claude-tool-suspension" aria-labelledby="h-meta-no-kings-claude-tool-suspension"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-meta-no-kings-claude-tool-suspension">Meta says a Claude tool&#x27;s reading burst triggered the wrongful suspension of the No Kings Instagram account</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-19T00:07:00+00:00">19 Oct 2026, 02:07 CEST</time></p><div class="story-body"><p>Business Insider reported at 02:07 CEST on October 19 that Meta had given a fuller explanation for locking the No Kings movement&#x27;s Instagram account during its Saturday day of action. The group said the account was locked and administrators were denied access for several hours while it held rallies to encourage early voting in the US midterms.</p><p>In an X post quoted by Business Insider, Meta spokesperson Andy Stone said engineers found the spike that triggered the incorrect enforcement was mainly in the account&#x27;s &#x27;reading&#x27; behavior: network security systems detected &#x27;the use of a Claude tool reading profiles, posts, and hashtags,&#x27; at a rate that rose about fourfold in intense bursts on October 17. Stone said the pattern resembled bot traffic, that an automated re-review restored the account an hour later, that fixing administrator access took longer, and he repeated Meta&#x27;s apology.</p><p>Meta had first described the shutdown as an automatic trigger acting in error. The report does not say who was running the Claude tool or how it was configured.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: legitimate organizations now run AI agents against social platforms, and anti-bot systems treat that traffic like automation. Groups that let an agent read their own accounts may need to throttle it or use official APIs, especially before high-visibility events.</p></aside><p class="caveat"><span class="label">Caveat.</span> This account rests on Meta&#x27;s statement as quoted by Business Insider; we did not read the X post directly. This edition found no Anthropic comment, and the operator of the Claude tool is not identified.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.businessinsider.com/meta-says-suspending-no-kings-account-was-done-in-error-2026-10" rel="noopener noreferrer">Business Insider</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:05:58+02:00">19 Oct 2026, 06:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-nscale-microsoft-loughton-ipo" aria-labelledby="h-nscale-microsoft-loughton-ipo"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-nscale-microsoft-loughton-ipo">Microsoft walks away from Nscale&#x27;s Loughton data centre deal, and IPO backers push for a lower valuation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-18">18 Oct 2026</time></p><div class="story-body"><p>According to SiliconANGLE, which cites a Sunday report in The Telegraph, Microsoft has ended an agreement to rent AI infrastructure at Nscale&#x27;s planned facility in Loughton, Essex. The project had faced repeated construction delays, and UK grid officials told Nscale they could not supply adequate power to the site until the 2030s. Nscale had planned to install 23,040 Nvidia GPUs there by the first quarter of 2027, for an initial 50 megawatts of capacity.</p><p>An Nscale spokesperson told The Telegraph that its relationship with Microsoft remains &#x27;strong and long-term&#x27;, that the grid issue does not affect its other Microsoft contracts, and that it is exploring alternative power sources for Loughton. SiliconANGLE reports that Microsoft and Anthropic account for about 85% of Nscale&#x27;s contract value, according to its IPO filing.</p><p>Overnight, PYMNTS relayed a Bloomberg News report that some Nscale backers are balking at an IPO valuation goal of around $30 billion and suggesting $16 billion to $19 billion instead. SiliconANGLE separately cites a target of about $35 billion for a $3 billion raise on the New York Stock Exchange under the ticker NSCL. The two figures come from different press reports and have not been confirmed by the company.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: grid connection, not only GPU supply, is now setting the pace for AI data centres, and a neocloud that depends on two customers is exposed when either one leaves a site.</p></aside><p class="caveat"><span class="label">Caveat.</span> We did not read The Telegraph or Bloomberg directly; facts come from secondary reports. This edition found no public Microsoft statement. Valuation figures are reported, not company-confirmed, and they differ between sources.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://siliconangle.com/2026/10/18/neocloud-operator-nscales-ipo-plans-could-be-at-risk-after-microsoft-pulls-the-plug-on-u-k-data-center-project/" rel="noopener noreferrer">SiliconANGLE</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:06:06+02:00">19 Oct 2026, 06:06 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.pymnts.com/news/investment-tracker/ipo/2026/nscale-investors-seek-lower-ipo-target-amid-ai-related-concerns/" rel="noopener noreferrer">PYMNTS (citing Bloomberg News)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:06:50+02:00">19 Oct 2026, 06:06 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-public-benefit-fund" aria-labelledby="h-anthropic-public-benefit-fund"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-anthropic-public-benefit-fund">Anthropic commits 5% of its shares to a new Public Benefit Fund that grows with its valuation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-18T16:49:35+00:00">18 Oct 2026, 18:49 CEST</time></p><div class="story-body"><p>Anthropic said on October 18 (18:49 CEST) that, subject to stockholder approval, it is committing 5% of its shares to the Anthropic Public Benefit Fund, with a further 2% to be added at the board&#x27;s discretion for every 50% increase in the company&#x27;s value above a set baseline. The baseline has not been published.</p><p>The fund is a wholly owned LLC rather than a 501(c)(3), which Anthropic says leaves room for large donations to nonprofits or direct distributions to specific populations. It names AI&#x27;s effect on the labor market as one example, building on a previously announced $200 million commitment, and says none of the fund&#x27;s equity will be used for lobbying or political giving, in the US or abroad.</p><p>Combined with the co-founders&#x27; pledge to donate 80% of their equity and an employee donation-match program in which about half of staff take part, Anthropic says roughly 20% of its shares would be dedicated to the public good. It promises details on governance and the valuation milestones in the coming months. The BBC notes the move comes as Anthropic prepares a possible stock market listing, and reports that Elon Musk replied: &#x27;I recommend giving the shares directly to the public.&#x27;</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the pledge ties philanthropy to market value ahead of a listing; how much it delivers depends on stockholder approval, the undisclosed baseline and the governance details Anthropic has not yet published.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a company commitment, not a completed transfer: it needs stockholder approval, and the extra 2% tranches are discretionary. The 20% total is Anthropic&#x27;s own estimate and includes existing pledges.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;The greatest public benefit you could provide would be to open source your models.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50144427" rel="noopener noreferrer">ryan_glass on Hacker News</a></p></blockquote><blockquote><p>&ldquo;It feels disingenuous when a company attaches to market valuation the amount of public good they do.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50144924" rel="noopener noreferrer">herunan on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/news/public-benefit-fund" rel="noopener noreferrer">Anthropic</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-19T06:04:04+02:00">19 Oct 2026, 06:04 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:04:27+02:00">19 Oct 2026, 06:04 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.bbc.com/news/articles/cm2kez327gdko" rel="noopener noreferrer">BBC News</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:06:42+02:00">19 Oct 2026, 06:06 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-disney-character-ai-workforce" aria-labelledby="h-disney-character-ai-workforce"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-disney-character-ai-workforce">Disney agrees to hire most of bankrupt Character.AI&#x27;s workforce, a court filing shows</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-18T16:30:00+00:00">18 Oct 2026, 18:30 CEST</time></p><div class="story-body"><p>TechCrunch reported on October 18 (18:30 CEST) that a legal filing spotted by Bloomberg shows Disney agreed to make job offers to at least 60 Character.AI employees, the majority of the chatbot startup&#x27;s workforce, with estimated annual compensation of $60 million. The filing says the &#x27;vast majority&#x27; of those offered jobs accepted.</p><p>Character.AI filed for bankruptcy earlier in the week. The startup had previously said Disney agreed to buy some of its assets for $20 million, and its former CEO, Karandeep Anand, recently became Disney&#x27;s first CTO. Disney&#x27;s offer is a stalking-horse bid, so another buyer could still come in higher.</p><p>According to TechCrunch, the filing says that despite a &#x27;large and engaged user base&#x27;, Character.AI was hobbled by high costs and &#x27;potential litigation-related liabilities and regulatory engagement&#x27;.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: this is another case of a large company absorbing an AI startup&#x27;s team and selected assets through a structured deal rather than a full acquisition, here inside a bankruptcy process.</p></aside><p class="caveat"><span class="label">Caveat.</span> We did not read the court filing or Bloomberg&#x27;s report directly. The asset sale is not final while the stalking-horse process runs.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:04:25+02:00">19 Oct 2026, 06:04 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-websites-block-ai-agents-background" aria-labelledby="h-websites-block-ai-agents-background"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">Background — older context</span></p><h3 id="h-websites-block-ai-agents-background">BACKGROUND: Websites including Yelp, Delta, JPMorgan and Schwab restrict AI agents</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-17T13:00:00+00:00">17 Oct 2026, 15:00 CEST</time></p><div class="story-body"><p>The Verge reported on October 17 that users of agents such as Meta&#x27;s Muse, xAI&#x27;s Grok, OpenAI&#x27;s Dots and Instinct have hit blocks on major websites. Yelp told TechCrunch it only allows agents that pay for its data licensing program, Delta is preventing them from booking tickets, and JPMorgan Chase and Charles Schwab confirmed they block agents from accessing accounts over security concerns.</p><p>Meta said in a post earlier this month that &#x27;turning away a personal agent means turning away the customer behind it&#x27;, and has partnered with retailers including Walmart, Gap, Sephora and Best Buy to let Muse shop on their sites. The report was widely discussed on Hacker News over the weekend; it is listed here as context for this edition&#x27;s No Kings story, not as new news.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: whether agents are welcome on a site is increasingly set by business deals and anti-bot rules, not by what the agent can technically do.</p></aside><p class="caveat"><span class="label">Caveat.</span> Published October 17, before the previous edition&#x27;s window; the blocks are company statements and user reports collected by The Verge.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Most content has been behind a paywall / login wall for years&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50141727" rel="noopener noreferrer">mvkel on Hacker News</a></p></blockquote><blockquote><p>&ldquo;The whole web is based on selling people&#x27;s attention, providing free services as &quot;payment&quot; to people.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50141684" rel="noopener noreferrer">spwa4 on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-19T06:07:35+02:00">19 Oct 2026, 06:07 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI agents are colliding with platform defenses from both sides: Meta&#x27;s anti-bot systems shut out a legitimate group using a Claude tool, while banks and retailers deliberately block outside agents.</li><li>Power and customer concentration, not only chips, now decide whether AI data-centre projects survive, as the Nscale and Microsoft split shows.</li><li>With listings approaching, AI companies are reshaping their capital structures and teams, from Anthropic&#x27;s valuation-linked fund to Disney absorbing Character.AI&#x27;s staff.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>Fresh window widened from the previous issue (22:42 CEST, October 18) to 00:00 CEST on October 18 because only two verifiable developments appeared overnight. Items published on October 18 are new to this journal, not necessarily announced since the last issue; each dispatch gives its own timestamp.</li><li>The installed last30days engine completed with 71 evidence items across five returning sources, followed by native web supplements and direct primary-source checks. Evidence-item counts are not verified-development counts.</li><li>Polymarket was unreachable because TLS hostname verification failed; verification was not bypassed. Reddit returned evidence despite an HTTP 422 on one listing sub-request, and YouTube transcript requests were rate-limited (HTTP 429). X was not searched. Failed or missing coverage is not read as an absence of discussion.</li><li>The configured web search backend was unavailable and its keyless fallback supplied partial results; the text extractor was unavailable, so public HTTPS pages were fetched directly with normal certificate validation. The Wall Street Journal returned HTTP 401, and The Telegraph and Bloomberg were not read directly.</li><li>Excluded after checks: OpenAI&#x27;s unannounced &#x27;aurora&#x27; model IDs (sightings, no announcement), Google&#x27;s Harness2 (repository created October 6; the weekend Reddit post is a recirculation), Meta Muse Wonder (October 16), Gemini 4 Argon (October 13), the TreeOPSD preprint (October 16), Cohere&#x27;s planned AISLE acquisition (October 15), Claude Code 2.1.303 (bug fixes only) and items already reported in earlier editions.</li><li>Community comments are literal, attributed Hacker News replies checked against the comment pages; they are anecdotal, not evidence. No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 16 threads │ 1,013 upvotes │ 368 comments
+├─  YouTube: 2 videos │ 784,350 views │ 0/2 with transcripts
+├─  HN: 25 stories │ 405 points │ 417 comments
+├─  dev.to: 12 articles │ 124 reactions │ 19 comments
+├─  GitHub: 16 items │ 9 reactions │ 21 comments
+├─  Top voices: r/singularity, r/artificial, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-19-morning.json" download>Exact input JSON</a></li><li><a href="2026-10-19-morning.md">Markdown text</a></li><li><a href="2026-10-19-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
