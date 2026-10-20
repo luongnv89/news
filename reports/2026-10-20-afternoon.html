@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Tuesday 20 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-20-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-20T16:07:29+02:00">Tuesday 20 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-20-afternoon</p><p>Issued 16:07 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-20-afternoon.html">This edition</a><a href="2026-10-20-afternoon.md">Markdown</a><a href="2026-10-20-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-20-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-20-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Tuesday 20 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-20T06:08:26+02:00">20 Oct 2026, 06:08 CEST</time> to <time datetime="2026-10-20T16:07:29+02:00">20 Oct 2026, 16:07 CEST</time> (Paris time). Issued <time datetime="2026-10-20T16:07:29+02:00">20 Oct 2026, 16:07 CEST</time>.</p><p class="lead-note">This edition follows the Tuesday morning issue, published at 06:08 CEST on 20 October. Six verified developments came after it: DeepSeek&#x27;s open-source DeepInfer serving engine, the llm-d 1.0 inference stack, Google&#x27;s Gemini for government services preview, a Linux Foundation survey on generative AI in open source, Salesforce&#x27;s agreed purchase of Braze, and a $230 million raise for Bob McGrew&#x27;s Arda. No new model release was verified in this window, so the Models section is empty. Stories from earlier editions are not repeated.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-10-20-morning.html">2026-10-20-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-deepseek-deepinfer-open-source" aria-labelledby="h-deepseek-deepinfer-open-source"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-deepseek-deepinfer-open-source">DeepSeek open-sources DeepInfer, the inference software behind its own production service</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20">20 Oct 2026</time></p><div class="story-body"><p>DeepSeek published DeepInfer on GitHub under the Apache 2.0 licence and announced it on 20 October. The repository describes it as the high-performance inference framework that powers DeepSeek&#x27;s large-scale production services. Inference software runs a finished model on chips and turns requests into answers, so it largely decides how fast and how cheaply a model can be served.</p><p>This release supports one model, DeepSeek-V4.1-Flash, on Nvidia SM100 GPUs and Huawei Ascend 950 NPUs. Listed features include optimised kernels such as FlashMLA, DeepGEMM and DeepEP, attention and mixture-of-experts parallelism, draft-token decoding with confidence-scheduled verification, batch-invariant inference, deterministic sampling and structured outputs. The batch-invariant and deterministic modes work on Nvidia hardware only.</p><p>The public code covers offline inference. DeepSeek says a complete online service also needs a KV cache system, prefill and decode disaggregation and load balancing across data-parallel replicas, and none of these is included. The README says DeepInfer was originally built primarily on vLLM, with additional inspiration from SGLang and TensorRT-LLM.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Serving cost is a large part of what AI companies charge, and labs usually keep their production serving techniques private. Publishing them lets cloud hosts of DeepSeek&#x27;s models, and other engineers, study and reuse the methods.</p></aside><p class="caveat"><span class="label">Caveat.</span> No outside party has yet benchmarked DeepInfer&#x27;s efficiency, Quartz reports, citing Bloomberg. Throughput and revenue figures circulating in the Hacker News thread were quoted from a third-party post and were not verified for this edition.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;A nuclear bomb&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50163494" rel="noopener noreferrer">schneehertz</a></p></blockquote><blockquote><p>&ldquo;That&#x27;s Kami Kaze for US frontier labs. There&#x27;s no way from here for them towards trillion dollar valuations.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50163789" rel="noopener noreferrer">wg0</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://github.com/deepseek-ai/DeepInfer" rel="noopener noreferrer">DeepSeek on GitHub</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:11+02:00">20 Oct 2026, 16:03 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://qz.com/deepseek-open-source-deepinfer-inference-software-ai-102026" rel="noopener noreferrer">Quartz</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:12+02:00">20 Oct 2026, 16:03 CEST</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50163277" rel="noopener noreferrer">Hacker News thread</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-20T16:05:43+02:00">20 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-llm-d-1-0-release" aria-labelledby="h-llm-d-1-0-release"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-llm-d-1-0-release">llm-d 1.0 ships as an open-source stack for running AI inference across large clusters</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20">20 Oct 2026</time></p><div class="story-body"><p>Contributors to llm-d announced version 1.0 on 20 October. Red Hat, IBM, Google Cloud, CoreWeave and Nvidia founded the project in 2025, and the Cloud Native Computing Foundation now governs it. It is a Kubernetes-native stack for serving large language models across many accelerators.</p><p>According to the announcement, 1.0 adds priority- and fairness-aware flow control so several tenants can share one fleet, router high availability with rolling updates, prefill and decode replicas managed as one unit, a v1 configuration API, and session-aware routing that keeps multi-turn agent conversations close to their cached context. The project says it has more than 500 contributors from over 25 organisations.</p><p>Google Cloud says it is integrating llm-d 1.0 into Google Kubernetes Engine across its TPU and Nvidia GPU portfolio. Nvidia says it will bring llm-d to its Vera Rubin systems.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Together with DeepSeek&#x27;s release the same day, llm-d 1.0 shows the cost fight moving to inference, especially for agents that reuse long contexts over many turns.</p></aside><p class="caveat"><span class="label">Caveat.</span> Cost and throughput figures in the announcement, such as five to ten times lower cost for context-heavy agent workloads, come from project members&#x27; own demonstrations. The v1.0.0 tag appeared on GitHub at 04:30 CEST, shortly before the morning edition; the formal announcement came later in the day.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://newsroom.ibm.com/2026-10-20-llm-d-1-0-advances-open,-cost-efficient-ai-inference-for-production-scale" rel="noopener noreferrer">IBM Newsroom</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:04:25+02:00">20 Oct 2026, 16:04 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://cloud.google.com/blog/topics/ai-infrastructure/llm-d-1-0-an-open-source-stack-for-distributed-inference" rel="noopener noreferrer">Google Cloud Blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:48+02:00">20 Oct 2026, 16:03 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/llm-d/llm-d/releases/tag/v1.0.0" rel="noopener noreferrer">llm-d on GitHub</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:05:42+02:00">20 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-lf-research-genai-open-source-survey" aria-labelledby="h-lf-research-genai-open-source-survey"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-lf-research-genai-open-source-survey">Linux Foundation survey: AI speeds up open-source work, but maintainers rate a quarter of incoming pull requests as AI slop</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20T13:00:03+00:00">20 Oct 2026, 15:00 CEST</time></p><div class="story-body"><p>Linux Foundation Research published a report on 20 October, Navigating Open Source Software Development in the Generative AI Era. Red Hat sponsored it, with support from Futurewei, OpenSSF and LF AI and Data, and it is being presented at the All Things Open conference in Raleigh.</p><p>59% of maintainers report growing contribution volume since generative AI arrived, rising to 69% in large projects. Maintainers estimate that 25% of incoming pull requests are low-quality AI slop, and 31% in large projects. Respondents estimate that AI cut code-authoring time by 52%, but 21% say high-complexity tasks take longer with it.</p><p>Governance lags behind use. Only 35% of projects have a formal policy permitting generative AI, while 32% have no policy and no plans for one. 61% of contributors say they review and fully test AI-generated code before submitting it, but disclosure of AI help is inconsistent.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: The survey puts a number on a long-running complaint: AI tools make contributing cheaper, while the cost of review falls on a small group of maintainers.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a self-reported survey, and the slop share is the maintainers&#x27; own estimate. The press release does not give the sample size or method, and the full report was not checked for this edition.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.linuxfoundation.org/press/new-lf-research-survey-shows-generative-ai-cuts-open-source-coding-time-in-half-but-25-of-incoming-pull-requests-are-considered-ai-slop" rel="noopener noreferrer">Linux Foundation</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:04:26+02:00">20 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-google-gemini-for-government-services" aria-labelledby="h-google-gemini-for-government-services"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-google-gemini-for-government-services">Google launches Gemini for government services in preview for US agencies</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20T06:00:00-04:00">20 Oct 2026, 12:00 CEST</time></p><div class="story-body"><p>Google Public Sector unveiled Gemini for government services on 20 October at its Public Sector Summit. It is a packaged agent product for US federal, state and local governments, available first in preview. Google says the State of Missouri and the US Department of Health and Human Services already use it.</p><p>The package bundles pre-built skills for tasks such as analysing regulations, reviewing procurement bids and redacting Freedom of Information Act releases; connectors to Google Workspace, Microsoft SharePoint, Outlook 365, Salesforce, ServiceNow and Oracle applications; and third-party agents from partners including Accenture Federal Services, Deloitte and SAIC. Google says agency data, prompts and outputs stay within the organisation&#x27;s cloud perimeter.</p><p>Chris Hein, field CTO at Google Public Sector, told Nextgov/FCW that Google will prescreen the partner agents and that agency IT leaders, not individual users, will switch them on. He said general availability is expected later this year, with no target date.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: After Gemini for legal and Gemini for financial services, this is Google&#x27;s third industry-specific agent package, aimed at a market where procurement rules and security reviews slow adoption.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a preview. The capability and data-handling statements come from Google&#x27;s press release, and this edition found no independent assessment.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.googlecloudpresscorner.com/2026-10-20-Google-Public-Sector-Launches-Gemini-for-Government-Services" rel="noopener noreferrer">Google Cloud Press Corner</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:05:12+02:00">20 Oct 2026, 16:05 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.nextgov.com/artificial-intelligence/2026/10/google-public-sector-unveils-gemini-government-services/416681/" rel="noopener noreferrer">Nextgov/FCW</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-20T16:04:26+02:00">20 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-salesforce-braze-acquisition" aria-labelledby="h-salesforce-braze-acquisition"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-salesforce-braze-acquisition">Salesforce agrees to buy Braze for about $5.66 billion to feed its marketing agents</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20T12:00:00+00:00">20 Oct 2026, 14:00 CEST</time></p><div class="story-body"><p>Salesforce announced a definitive agreement on 20 October to acquire Braze, a customer engagement platform, for about $5.66 billion in enterprise value. Holders of Braze Class A shares would receive $47.50 per share in cash.</p><p>Salesforce says marketers now need agentic tools that act on customer behaviour in real time, and that Braze&#x27;s real-time engagement and AI decisioning would complement its Data 360, Customer 360, Agentforce and SIForce layers. Braze serves about 2,770 customers, including Canva, Instacart and Venmo.</p><p>The deal is expected to close in Salesforce&#x27;s fiscal year 2028, subject to approval by Braze shareholders and regulators. Salesforce shares fell 2.6% in premarket trading, according to a Reuters report published by CNBC.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Enterprise software makers are buying data and engagement businesses so their AI agents have live customer signals to act on, rather than competing on models alone.</p></aside><p class="caveat"><span class="label">Caveat.</span> The acquisition has not closed and still needs shareholder and regulatory approval.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze/" rel="noopener noreferrer">Salesforce</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:12+02:00">20 Oct 2026, 16:03 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/20/salesforce-to-acquire-braze.html" rel="noopener noreferrer">Reuters via CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:12+02:00">20 Oct 2026, 16:03 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-arda-230m-ai-manufacturing" aria-labelledby="h-arda-230m-ai-manufacturing"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-arda-230m-ai-manufacturing">Former OpenAI research chief Bob McGrew&#x27;s Arda raises $230 million at a $1.5 billion valuation for factory AI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20T13:00:01+00:00">20 Oct 2026, 15:00 CEST</time></p><div class="story-body"><p>Arda, the startup co-founded by former OpenAI chief research officer Bob McGrew, has raised $230 million at a $1.5 billion valuation, the company told CNBC on 20 October. Altimeter Capital, Accel and Khosla Ventures led the round.</p><p>Arda makes AI software that helps manufacturing engineers set up and change assembly lines. McGrew told CNBC: &quot;It&#x27;s a user interface and an agent that does for manufacturing engineers what Claude or Cursor does for programmers.&quot; He said Arda&#x27;s models are already deployed with defence-technology company Anduril, and that robotics is next on the roadmap.</p><p>Arda runs a mix of its own models, open-source models and some frontier models. Its co-founders include Augustus Odena, who helped start Adept, and former Palantir engineers Alex Mark and Jakob Frick.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Agent products modelled on coding assistants are moving into physical industries, where retooling a line for a new design can take months.</p></aside><p class="caveat"><span class="label">Caveat.</span> The round size and valuation come from the company in an interview with CNBC; no filing was checked.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/20/ex-openai-executive-builds-1point5-billion-ai-manufacturing-startup-arda.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-20T16:03:13+02:00">20 Oct 2026, 16:03 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Inference is where the cost fight is moving: DeepSeek opened its production serving engine and the llm-d project shipped a 1.0 aimed at agent workloads on the same day.</li><li>Agents are being packaged by industry: Google is selling a government-specific Gemini bundle, Salesforce is buying real-time engagement data for its agents, and Arda pitches a coding-assistant-style agent for factory engineers.</li><li>The cost of AI-generated work is landing on reviewers: open-source maintainers estimate that a quarter of incoming pull requests are low-quality AI output.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok</dd></div><div><dt>youtube</dt><dd>ok</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The fresh window runs from the morning issue (06:08 CEST, 20 October) to this issue. Two dispatches carry date-only publication stamps from their primary sources; the DeepInfer Hacker News launch thread (11:08 CEST) and the llm-d announcements came after the morning issue. The llm-d v1.0.0 GitHub tag itself appeared at 04:30 CEST.</li><li>The installed last30days engine completed with 65 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube, followed by three web supplements, Google News RSS pre-research and direct checks of primary sources. Evidence-item counts are not verified-development counts. Community quotes come from the DeepInfer thread on Hacker News and are anecdotal.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. Reddit returned results, but two subreddit listing requests failed with HTTP 422. One YouTube transcript download hit an HTTP 429 rate limit. X was not searched. Failed or missing coverage is not read as an absence of discussion.</li><li>The configured web search backend failed and its keyless fallback served the searches. The llm-d supplement search returned nothing, so llm-d facts come from direct checks of the IBM, Google Cloud and GitHub pages. Public HTTPS pages were fetched directly with normal certificate validation.</li><li>Excluded after date or source checks: Idaho&#x27;s lawsuit against OpenAI (announced 14 October), The Intercept&#x27;s report on the Army&#x27;s ECHOTRIBBLE agent programme (19 October, before the previous afternoon edition), Cloudflare&#x27;s Clairic extraction model (19 October, before the morning edition), OpenAI&#x27;s COBOL modernisation claims (19 October, previously excluded), and reported $35 billion Chinese orders for Nvidia RTX Pro 5500 cards (unconfirmed reports, no primary source). New reactions to stories already covered, such as OpenAI&#x27;s fundraising and the DeepSeek federal ban, are not repeated.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 2,205 upvotes │ 699 comments
+├─  YouTube: 3 videos │ 124,799 views │ 3/3 with transcripts
+├─  HN: 9 stories │ 2,518 points │ 1,267 comments
+├─  dev.to: 12 articles │ 87 reactions │ 43 comments
+├─  GitHub: 20 items │ 18 comments
+├─  Top voices: r/singularity, r/OpenAI, r/artificial
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-20-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-20-afternoon.md">Markdown text</a></li><li><a href="2026-10-20-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
