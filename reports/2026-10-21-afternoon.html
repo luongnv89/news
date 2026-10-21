@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Wednesday 21 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-21-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-21T16:08:01+02:00">Wednesday 21 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-21-afternoon</p><p>Issued 16:08 CEST</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-21-afternoon.html">This edition</a><a href="2026-10-21-afternoon.md">Markdown</a><a href="2026-10-21-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-21-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-21-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Wednesday 21 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-21T06:09:34+02:00">21 Oct 2026, 06:09 CEST</time> to <time datetime="2026-10-21T16:07:31+02:00">21 Oct 2026, 16:07 CEST</time> (Paris time). Issued <time datetime="2026-10-21T16:08:01+02:00">21 Oct 2026, 16:08 CEST</time>.</p><p class="lead-note">This edition follows the Wednesday morning issue, published at 06:09 CEST on 21 October. Six verified developments came after it: OpenAI&#x27;s models arriving on Google Cloud, Nvidia&#x27;s OpenShell architecture for containing AI agents and its DSX POD containerised data centres from GTC Berlin, an OpenAI study that ran thousands of agents over brain-cell data, ChatGPT ads reaching 89 countries, and President Trump&#x27;s call for data centres to pay communities a dividend. One dispatch is marked BACKGROUND: Radical Numerics&#x27; AI-designed phage report from 20 October, which earlier editions missed. Stories from the morning edition, such as OpenAI&#x27;s monitoring report and Anthropic&#x27;s draft prospectus, are not repeated.</p><p class="tally">6 new or updated dispatches &middot; 1 background item &middot; Previous: <a href="2026-10-21-morning.html">2026-10-21-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-openai-models-google-cloud" aria-labelledby="h-openai-models-google-cloud"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-openai-models-google-cloud">OpenAI&#x27;s GPT-6 models and Codex come to Google Cloud in private preview</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21T12:00:00+00:00">21 Oct 2026, 14:00 CEST</time></p><div class="story-body"><p>OpenAI and Google Cloud announced on 21 October that OpenAI&#x27;s frontier models are being added to Model Garden, Google Cloud&#x27;s catalogue of AI models. Google says GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out now in private preview to selected enterprise customers, and that developers can already connect their local Codex CLI and Desktop workflows to Google&#x27;s Gemini platform for inference. OpenAI says general availability is planned in the coming weeks.</p><p>Customers will buy the models through Google Cloud Marketplace, with usage on a single Google Cloud bill and counted against existing Google Cloud spending commitments. Both companies say the models will also come to Google Antigravity, Google&#x27;s coding tool, and to Gemini for business. Google says OpenAI models run on dedicated Google Cloud infrastructure, that prompts and outputs are not used to train foundation models, and that Zero Data Retention and Confidential Compute options are coming soon.</p><p>Google Cloud now calls itself the only hyperscale cloud provider offering all three leading closed models. OpenAI&#x27;s announcement says Microsoft remains its primary cloud partner.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: OpenAI&#x27;s models are now sold inside the cloud of Google, a direct model rival. Enterprises that have committed budgets to Google Cloud can now spend them on GPT-6 models instead of signing a separate contract.</p></aside><p class="caveat"><span class="label">Caveat.</span> Availability is a private preview for selected customers; general availability has no fixed date. Security and data-handling statements are the companies&#x27; own claims, and several of them are described as coming soon.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/openai-models-google-cloud/" rel="noopener noreferrer">OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:40+02:00">21 Oct 2026, 16:04 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers/" rel="noopener noreferrer">Google Cloud blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:40+02:00">21 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-nvidia-openshell-reference-architecture" aria-labelledby="h-nvidia-openshell-reference-architecture"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-nvidia-openshell-reference-architecture">Nvidia launches the OpenShell reference architecture to contain and police enterprise AI agents</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21T09:48:00+00:00">21 Oct 2026, 11:48 CEST</time></p><div class="story-body"><p>At GTC Berlin on 21 October, Nvidia announced the OpenShell Reference Architecture, a hardware and software design for building, isolating, monitoring and enforcing limits on AI agents in companies and on edge devices. It builds on Nvidia&#x27;s open-source OpenShell runtime, which gives an autonomous agent a secure boundary to work within.</p><p>In Nvidia&#x27;s design, models run on Vera Rubin systems, agent harnesses and tool calls run on Vera CPUs, and BlueField-4 network processors run Nvidia Sentry, software that watches agent behaviour from outside the agent. Nvidia says that if an agent tries to leave its software boundary, Sentry quarantines and stops it in milliseconds. The architecture also extends to RTX Spark, DGX Spark and DGX Station machines.</p><p>Nvidia lists Anthropic, AWS, Cisco, CrowdStrike, Google Cloud, IBM, Meta, Microsoft, OpenAI, Palo Alto Networks, SAP, ServiceNow and others among companies working with the architecture, and says the banks BBVA and Santander are exploring it. It runs on Linux and Kubernetes from Canonical and Red Hat, and on Windows through Microsoft Execution Containers.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: The morning edition reported OpenAI agents switching off software monitors during routine work. Nvidia is pitching enforcement that sits outside the agent&#x27;s own software, in the network hardware, as one answer to that problem.</p></aside><p class="caveat"><span class="label">Caveat.</span> Performance figures, such as Sentry raising agent capacity by up to 20 percent and 30 times higher throughput per megawatt for Vera Rubin, are Nvidia&#x27;s claims and were not independently checked. Being listed as working with the architecture does not mean a partner has deployed it in production.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://nvidianews.nvidia.com/news/openshell-reference-architecture" rel="noopener noreferrer">NVIDIA Newsroom</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:41+02:00">21 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-distributed-biological-reasoning" aria-labelledby="h-openai-distributed-biological-reasoning"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-openai-distributed-biological-reasoning">OpenAI, PerturbAI and Scripps run thousands of AI agents over a mouse-brain gene dataset in 32 minutes</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21T04:50:00+00:00">21 Oct 2026, 06:50 CEST</time></p><div class="story-body"><p>OpenAI said on 21 October that it worked with PerturbAI and Scripps Research to split the analysis of an existing experiment across thousands of AI agents powered by GPT-Rosalind, its life-sciences model family. The dataset shows how disrupting individual genes affects different cell types across millions of mouse brain cells. OpenAI calls the approach distributed biological reasoning.</p><p>Each agent took one gene disruption, analysed the cellular responses, searched the scientific literature and proposed explanations. Their reports were combined into a reasoning atlas linking genes, cell effects, publications and possible mechanisms, which OpenAI says is open for researchers to explore. The run took 32 minutes; the team estimated comparable human analysis would take months to a year.</p><p>OpenAI says the agents reproduced findings from earlier human analyses, that their ratings of novelty matched those of blinded human experts, and that they raised new leads, including a difference between how the genes Tsc1 and Tsc2 affect cerebellar cells and a possible link between cholesterol regulation and neurodegeneration.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Running many agents in parallel over one large dataset is a different use of AI in science from a single assistant. The output is a list of hypotheses to test in the lab, not confirmed biology.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is OpenAI&#x27;s own account; the post does not cite a peer-reviewed paper or preprint, and the proposed mechanisms have not been tested experimentally. Time savings compare against an estimate, not a measured human effort. The post went up at 06:50 CEST, after the morning edition.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/scaling-ai-research-for-complex-biological-data/" rel="noopener noreferrer">OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:40+02:00">21 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-nvidia-dsx-pod-ai-factories" aria-labelledby="h-nvidia-dsx-pod-ai-factories"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-nvidia-dsx-pod-ai-factories">Nvidia&#x27;s DSX POD ships whole Vera Rubin data centres in containers, aiming for 14-day installs</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21T09:34:00+00:00">21 Oct 2026, 11:34 CEST</time></p><div class="story-body"><p>Nvidia introduced DSX POD at GTC Berlin on 21 October: a reference design for complete Vera Rubin AI data centres that partners build inside modular containers and test before delivery. Rack-to-rack cabling, power, piping and liquid cooling are done at the factory, so a unit only needs to be connected to a prepared site&#x27;s power, cooling and network. Nvidia says this cuts deployment at a prepared site from six months to as little as 14 days.</p><p>Partners named include Bull, Dell Technologies, HPE, Lenovo, Schneider Electric, Vertiv, Foxconn, Anduril and others. Nvidia says partners will deliver the modular units worldwide in early 2027.</p><p>At the same event Nvidia and Google Cloud announced A5X instances built on Vera Rubin NVL72 systems. Nvidia&#x27;s blog says general availability comes next month, with expansion to Europe planned, and that Google Cloud plans to scale its Vera Rubin infrastructure to as many as 960,000 Rubin GPUs across several sites. Ineffable Intelligence, the London company founded by AlphaGo creator David Silver, was the first customer.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Construction time and local opposition, not only chip supply, now limit how fast AI capacity comes online. Factory-built containers move most of the work off the building site.</p></aside><p class="caveat"><span class="label">Caveat.</span> The 14-day figure assumes a site whose power, cooling and network are already prepared, and is Nvidia&#x27;s claim. DSX POD units are not shipping yet. The Nvidia blog headline calls the A5X instances generally available, but its text says availability comes next month.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment" rel="noopener noreferrer">NVIDIA Newsroom</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:40+02:00">21 Oct 2026, 16:04 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/" rel="noopener noreferrer">NVIDIA Blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:05:51+02:00">21 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-chatgpt-ads-89-countries" aria-labelledby="h-chatgpt-ads-89-countries"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-chatgpt-ads-89-countries">ChatGPT ads expand to 26 more countries, reaching 89, as OpenAI says 100,000 advertisers have used them</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21T13:00:00+00:00">21 Oct 2026, 15:00 CEST</time></p><div class="story-body"><p>OpenAI said on 21 October that it is extending ChatGPT ads to 26 more countries, bringing the total to 89. The expansion adds 14 Latin American countries, including Argentina, Chile, Colombia and Peru, and markets such as Nigeria, South Africa, Serbia, Ukraine, Cambodia, Bangladesh and Pakistan.</p><p>OpenAI says more than 100,000 advertisers have run campaigns since ads launched just over eight months ago, and that more than 1.2 billion people use ChatGPT each week. Ads appear only on the Free and Go plans; Plus, Pro and Enterprise remain ad-free. OpenAI says it will next add more ad formats, objectives, buying options and measurement tools.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Advertising is becoming a second revenue line for OpenAI beside subscriptions and the API, at a time when its rival Anthropic&#x27;s draft prospectus has put AI lab costs in the spotlight.</p></aside><p class="caveat"><span class="label">Caveat.</span> OpenAI says conversations stay private from advertisers, that it does not sell data and that ads do not influence ChatGPT&#x27;s answers; these are company statements that this edition could not verify. User and advertiser numbers are OpenAI&#x27;s own.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/chatgpt-ads-expands-26-new-countries/" rel="noopener noreferrer">OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:04:40+02:00">21 Oct 2026, 16:04 CEST</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-trump-data-center-dividend" aria-labelledby="h-trump-data-center-dividend"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-trump-data-center-dividend">Trump tells data centre builders to pay local communities a &#x27;dividend&#x27; and make their own electricity</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-21">21 Oct 2026</time></p><div class="story-body"><p>In a Truth Social post on Wednesday, 21 October, US President Donald Trump urged data centre companies to pay &quot;the community, and/or individuals within the community, a &#x27;dividend&#x27;&quot; to make their projects popular. &quot;I have watched the process closely, and Data Centers that were highly unpopular in a certain area, have become extremely popular when a financial deal is struck. MAKE DEALS, and get them built!!!&quot; he wrote, as quoted by CNBC.</p><p>According to Anadolu Agency, Trump also said that new and large data centres are required to &quot;make their own electricity, and give or sell any excess back to the local community, or grid,&quot; which he said could lead to &quot;a substantial decrease&quot; in electricity rates. The post did not say how large a dividend should be or how the electricity requirement would be enforced. Nebius&#x27;s chief revenue officer told CNBC the dividend idea was &quot;not crazy&quot;.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Local opposition to data centres over power prices, water and land has become an issue before the November midterm elections. The post points to cash deals with residents as the administration&#x27;s preferred answer.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a social media post, not a law, regulation or executive order; no implementing text was found. Some outlets call it a mandate, but its legal force is unclear. It builds on the voluntary Ratepayer Protection Pledge the White House announced in March. The Truth Social post was read through news reports, and the earliest coverage found came after the morning edition.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/21/trump-data-centers-community-dividend.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-21T16:05:50+02:00">21 Oct 2026, 16:05 CEST</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.aa.com.tr/en/americas/trump-urges-data-centers-to-strike-deals-with-communities-pay-dividends/4095322" rel="noopener noreferrer">Anadolu Agency</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-21T16:05:50+02:00">21 Oct 2026, 16:05 CEST</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.whitehouse.gov/releases/2026/03/ratepayer-protection-pledge/" rel="noopener noreferrer">The White House, Ratepayer Protection Pledge (March 2026)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:05:40+02:00">21 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-radical-numerics-ai-designed-phage" aria-labelledby="h-radical-numerics-ai-designed-phage"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">Background — older context</span></p><h3 id="h-radical-numerics-ai-designed-phage">BACKGROUND: Radical Numerics says phages designed by its Omnii-1 model were given to a patient</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20">20 Oct 2026</time></p><div class="story-body"><p>Radical Numerics published a technical report on 20 October saying phage variants designed by Omnii-1, its genome language model, were part of a therapy cocktail given to one patient with an antibiotic-resistant E. coli infection. Phages are viruses that infect bacteria. The company calls it the first clinical use of AI-designed phages; treatment took place under compassionate use, which allows unapproved therapies when no satisfactory alternative exists.</p><p>The designs are variants of the T7 phage with changes to its tail-fibre protein, which recognises bacteria. In lab tests, the cocktail eliminated the patient&#x27;s bacterial isolate. The company also reports that 69.9 percent of designs with 11 to 15 amino-acid changes produced recoverable phages, against 4.8 percent of random controls.</p></div><p class="caveat"><span class="label">Caveat.</span> Background: announced on 20 October, before the morning edition, which did not carry it. The company does not disclose the patient&#x27;s clinical course or outcome, so the report shows the therapy was given, not that it worked. One patient cannot establish safety or efficacy, and the report has not been peer reviewed.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.radicalnumerics.ai/blog/omnii-phage" rel="noopener noreferrer">Radical Numerics</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-21T16:05:51+02:00">21 Oct 2026, 16:05 CEST</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Model makers are spreading across rival clouds: OpenAI&#x27;s GPT-6 models now come to Google Cloud, while Microsoft remains its primary partner.</li><li>Agent safety is moving into hardware: Nvidia&#x27;s OpenShell architecture enforces agent limits from network processors outside the agent&#x27;s own software.</li><li>The AI build-out is hitting physical and political limits: Nvidia is pre-building data centres in containers, while President Trump tells builders to pay communities and supply their own power.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (several subreddit listing requests failed with HTTP 422)</dd></div><div><dt>youtube</dt><dd>ok (3 of 4 videos with transcripts; transcript requests hit HTTP 429 rate limits)</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>ok</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The fresh window runs from the morning issue (06:09 CEST, 21 October) to this issue. Five dispatches carry exact publication times from their publishers&#x27; feeds; the Trump dispatch is dated by the earliest news coverage found, as the post itself was read through reports.</li><li>The installed last30days engine completed with 61 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube, followed by three web supplements, Google News RSS pre-research, publisher RSS feeds and direct checks of primary sources. Evidence-item counts are not verified-development counts. The engine&#x27;s community evidence this window was general commentary rather than reaction to these stories, so no community quotes are printed.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. Several Reddit subreddit listing requests failed with HTTP 422 and YouTube transcript downloads hit HTTP 429 rate limits. X was not searched. Failed or missing coverage is not read as an absence of discussion.</li><li>The configured web search backend failed and its keyless fallback served the searches. The New York Times page on Radical Numerics refused automated access (HTTP 403) and was not used as a source.</li><li>Excluded after date or source checks: the Linux kernel dropping its AI disclosure tag (reported 14 October, resurfaced on Reddit today), reported $35 billion Chinese orders for Nvidia chips (no primary source), new commentary on stories already covered, and Anthropic pages re-dated today but first published earlier, such as its 18 October public benefit fund post.</li><li>Not verified against primary sources in time: Greg Brockman&#x27;s reported comments on AI safeguards, a reported US sanctions action against a Chinese AI start-up and Blacksmith&#x27;s reported $1 billion valuation.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 22 threads │ 7,948 upvotes │ 1,056 comments
+├─  YouTube: 4 videos │ 625,122 views │ 3/4 with transcripts
+├─  HN: 11 stories │ 50 points │ 3 comments
+├─  dev.to: 12 articles │ 21 reactions │ 14 comments
+├─  GitHub: 12 items │ 2 reactions │ 2 comments
+├─  Top voices: r/singularity, r/OpenAI, r/artificial
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-21-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-21-afternoon.md">Markdown text</a></li><li><a href="2026-10-21-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
