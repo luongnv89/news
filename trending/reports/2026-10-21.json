@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "issued_at": "2026-10-21T08:02:14+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-21T06:00:35.226888+00:00",
+    "period": "daily",
+    "total_listed": 15
+  },
+  "editorial_note": "Five projects reach our edition for the first time today, and for once the list includes a real security tool: Cloudflare's published skill for running a coding agent as a multi-phase security auditor. Next to it are a local code-to-knowledge-graph tool, a skill that tells agents to write less code, a large vLLM release that bundles three security advisory fixes, and Anthropic's role-based plugins for non-developers. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 15 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 15 at about 06:01 UTC; all were active and unarchived.",
+    "Seven entries had already been featured on 17-20 October: ai-job-search, orca, ComfyUI, ruflo, opencode, headroom and Kronos. Releases since each feature time were compared. orca and ruflo shipped several small releases in the last day, ComfyUI's latest release predates its 19 October card, and the others had no new release since their cards. None was judged a material change worth repeating, so all seven were left out.",
+    "Three more agent prompt and skill collections (msitarzewski/agency-agents, wshobson/agents and sickn33/agentic-awesome-skills) were inspected but not selected; they overlap with today's skill picks and with collections featured earlier this week.",
+    "The preceding seven calendar dates, 14-20 October, were checked for local history. The archive began on 15 October, so six prior editions exist (15-20 October).",
+    "The official listing was captured at 08:00:35 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Today's listing is again dominated by AI coding-agent projects. Benchmarks, token savings and performance figures are the maintainers' own claims. No candidate code was installed or run, no model was downloaded, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "trending_rank": 2,
+      "description": "A coding-agent skill that runs a six-phase security audit of a codebase: reconnaissance and a coverage ledger, isolated bug hunters, a fresh verifier that tries to disprove each candidate, schema-checked findings, independent re-verification and a final report.",
+      "why_interesting": "First time on our list, and the only dedicated security tool today. It comes from Cloudflare, which says this skill seeded its internal vulnerability-discovery harness (described on its blog). The design is the interesting part: the agent that checks a finding is never the one that found it, unresolved leads stay labeled needs_validation without a severity, and small dependency-free validators check the findings and coverage files.",
+      "caveat": "For authorized audits of code you own or may test. The README requires an OS-enforced sandbox with external networking disabled before the agent builds or runs target code; without one it leaves leads unconfirmed. Results come from a language model and still need human review; Cloudflare says a single run found roughly half of what repeated runs found. It needs an agent with tool use and parallel sub-agents, so model costs apply. No release has been tagged and the last push was 14 September.",
+      "category": "Security / AI agents",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars_total": 34638,
+      "stars_period": 1712,
+      "stars_period_label": "1,712 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-21T06:00:52.121769+00:00",
+      "readme_checked_at": "2026-10-21T06:00:52.784673+00:00",
+      "readme_source_url": "https://api.github.com/repos/cloudflare/security-audit-skill/readme",
+      "evidence_urls": [
+        "https://github.com/cloudflare/security-audit-skill",
+        "https://api.github.com/repos/cloudflare/security-audit-skill",
+        "https://github.com/cloudflare/security-audit-skill/blob/main/README.md",
+        "https://github.com/cloudflare/security-audit-skill/blob/main/LICENSE",
+        "https://blog.cloudflare.com/build-your-own-vulnerability-harness"
+      ]
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "trending_rank": 7,
+      "description": "Maps a project's code, docs, PDFs, images and videos into a knowledge graph that a coding assistant (Claude Code, Cursor, Codex, Gemini CLI) can query through a /graphify command, instead of searching through files.",
+      "why_interesting": "First time on our list. Code is parsed locally with tree-sitter, so a code-only graph needs no language model and no network, and every link in the graph is tagged as read directly from the source or inferred by the tool. That makes it a more inspectable alternative to vector-search memory. It also has an explicit no-telemetry statement and a documented switch to turn all model backends off. Release v0.9.93 came out on 20 October.",
+      "caveat": "Docs, PDFs and images are sent to a language model for the semantic pass: your assistant's model or whichever API key it detects first (one option, Kimi, routes to servers in China), so set the backend explicitly for sensitive code. The headline token savings come from the maker, which also sells a paid Graphify Cloud service promoted throughout the README. Still pre-1.0, with about 1,600 open issues and pull requests.",
+      "category": "Developer tools / AI agents",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 130551,
+      "stars_period": 802,
+      "stars_period_label": "802 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-21T06:00:54.130251+00:00",
+      "readme_checked_at": "2026-10-21T06:00:54.660039+00:00",
+      "readme_source_url": "https://api.github.com/repos/Graphify-Labs/graphify/readme",
+      "evidence_urls": [
+        "https://github.com/Graphify-Labs/graphify",
+        "https://api.github.com/repos/Graphify-Labs/graphify",
+        "https://github.com/Graphify-Labs/graphify/blob/v8/README.md",
+        "https://github.com/Graphify-Labs/graphify/blob/v8/LICENSE",
+        "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.93"
+      ]
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "url": "https://github.com/vllm-project/vllm",
+      "trending_rank": 15,
+      "description": "A widely used open-source engine for serving large language models with high throughput, with an OpenAI-compatible API server and support for NVIDIA, AMD and Intel GPUs, CPUs and several other accelerators.",
+      "why_interesting": "First time on our list. Release v0.32.0 (18 October) matters to anyone running vLLM in production: according to its notes it fixes three published security advisories (chat-template resource exhaustion, a tokenizer bound and a peer-to-peer socket exhaustion), stops allowing every web origin (CORS) by default, and adds lower-precision KV caches on more GPUs to cut memory use.",
+      "caveat": "The release has breaking changes: Python 3.10 is dropped, CORS defaults are stricter, and several deprecated APIs and options were removed, so test before upgrading. Most speed gains are quoted from the project's own pull requests and depend on specific GPUs and models. Serving models needs suitable hardware, and model weights have their own licenses. With over 9,000 open issues and pull requests, check the tracker for your setup.",
+      "category": "AI infrastructure",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 94532,
+      "stars_period": 128,
+      "stars_period_label": "128 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-21T06:00:56.853397+00:00",
+      "readme_checked_at": "2026-10-21T06:00:57.337118+00:00",
+      "readme_source_url": "https://api.github.com/repos/vllm-project/vllm/readme",
+      "evidence_urls": [
+        "https://github.com/vllm-project/vllm",
+        "https://api.github.com/repos/vllm-project/vllm",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+        "https://github.com/vllm-project/vllm/blob/main/README.md",
+        "https://github.com/vllm-project/vllm/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "trending_rank": 4,
+      "description": "A skill and rule set for coding agents that makes them write the minimum code a task needs: reuse what the repository, the standard library or the platform already provides before adding anything, while keeping validation, error handling, security and tests.",
+      "why_interesting": "First time on our list. It targets a real problem with AI coding agents, which tend to add libraries and hand-built components where a few lines would do; the README's example swaps a 335-line hand-built calendar for a 10-line native date input. It works with about 20 agents and adds a review command that looks for breakage in files the change did not touch.",
+      "caveat": "Its numbers (about half the code, 45 percent fewer tokens, more tests on risky logic) come from the maker's own benchmark: 39 tasks with one agent and model, five runs each. Instruction-only adapters for some editors load the rules without the commands. The author warns that impostor copies exist and to install only from this repository or its npm package. The README also promotes a waitlist for an unannounced product.",
+      "category": "AI agents / developer tools",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars_total": 170170,
+      "stars_period": 1208,
+      "stars_period_label": "1,208 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-21T06:00:52.015106+00:00",
+      "readme_checked_at": "2026-10-21T06:00:52.597196+00:00",
+      "readme_source_url": "https://api.github.com/repos/DietrichGebert/ponytail/readme",
+      "evidence_urls": [
+        "https://github.com/DietrichGebert/ponytail",
+        "https://api.github.com/repos/DietrichGebert/ponytail",
+        "https://github.com/DietrichGebert/ponytail/blob/main/README.md",
+        "https://github.com/DietrichGebert/ponytail/blob/main/LICENSE",
+        "https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/results/2026-10-07-agentic.md"
+      ]
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "trending_rank": 11,
+      "description": "Anthropic's open set of 11 role-based plugins (sales, support, product, marketing, legal, finance, data, enterprise search, bio research and more) for Claude Cowork and Claude Code, each bundling skills, slash commands and connectors to tools such as Slack, Jira or Snowflake.",
+      "why_interesting": "First time on our list, and a change from developer tooling: a ready example of how to package a team's own workflows for an AI assistant. Every plugin is plain Markdown and JSON with no code or build step, so a company can read and edit exactly what the assistant is told before adopting it.",
+      "caveat": "Generic starting points that need customizing. Connectors use MCP servers that give the assistant access to company systems such as CRMs, email and data warehouses, so review permissions and data exposure first. Legal and finance outputs still need professional review. It is built for Anthropic's Claude products, so an Anthropic account is needed; plan requirements were not checked. No releases are tagged.",
+      "category": "AI agents / business tools",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 30889,
+      "stars_period": 267,
+      "stars_period_label": "267 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-21T06:00:54.904349+00:00",
+      "readme_checked_at": "2026-10-21T06:00:55.509519+00:00",
+      "readme_source_url": "https://api.github.com/repos/anthropics/knowledge-work-plugins/readme",
+      "evidence_urls": [
+        "https://github.com/anthropics/knowledge-work-plugins",
+        "https://api.github.com/repos/anthropics/knowledge-work-plugins",
+        "https://github.com/anthropics/knowledge-work-plugins/blob/main/README.md",
+        "https://github.com/anthropics/knowledge-work-plugins/blob/main/LICENSE"
+      ]
+    }
+  ]
+}
