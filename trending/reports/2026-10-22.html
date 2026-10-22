@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Trending — Thursday 22 October 2026</title>
+<meta name="description" content="Daily GitHub Trending digest for 2026-10-22.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.trend-card h3 { text-transform: none; }
+.trend-card .freshness { white-space: nowrap; }
+.trend-card h3 a { text-decoration: none; }
+.trend-card h3 a:hover { text-decoration: underline; }
+.trend-card .facts dl > div { margin-top: 3px; }
+.trend-card .facts dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.trend-card .facts dt::after { content: ":"; }
+.trend-card .facts dd { display: inline; margin-left: 4px; }
+main .trend-card .facts dd, main .trend-card .evidence li { text-align: left; }
+.evidence a { overflow-wrap: anywhere; }
+main .trend-card p.checks { text-align: left; font-size: 0.92rem; font-style: italic; margin-top: 4px; }
+</style>
+</head>
+<body class="page page-trending page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">GitHub Trending</a>
+<p class="tagline">A daily reading of GitHub’s trending page — a supplement to The AI Gazette</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-22T08:02:42+02:00">Thursday 22 October 2026</time></p><p>Daily digest &middot; No. 2026-10-22</p><p>Issued 08:02 CEST</p><p>Listing checked <time datetime="2026-10-22T06:00:37.024383+00:00">22 Oct 2026, 08:00 CEST</time></p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../../index.html">The AI Gazette</a><a href="../index.html">Latest trending</a><a href="../archive.html">Trending archive</a><a href="2026-10-22.html">This digest</a><a href="2026-10-22.md">Markdown</a><a href="2026-10-22.json">JSON</a></div></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">GitHub Trending &mdash; Thursday 22 October 2026</h1><p class="window-line">Source: <a href="https://github.com/trending?since=daily" rel="noopener noreferrer">GitHub Trending, daily</a> (https://github.com/trending?since=daily), checked <time datetime="2026-10-22T06:00:37.024383+00:00">22 Oct 2026, 08:00 CEST</time>. GitHub listed 11 repositories; this digest picks 3.</p><p class="lead-note">A short listing today: GitHub showed 11 projects, and nine of them were already featured this week. So this is a deliberately small edition of three. Two business-grade platforms appear for the first time, the open-source CRM Twenty and the Postgres backend platform Supabase, and the agent memory server ai-memory returns because of a substantial new release. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.</p><p class="tally">Curation order, not GitHub rank &middot; Issued <time datetime="2026-10-22T08:02:42+02:00">22 Oct 2026, 08:02 CEST</time></p></section>
+<section class="paper-section" aria-labelledby="picks-title"><h2 id="picks-title">The Picks</h2><p class="section-note">Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch trend-card" id="pick-1" aria-labelledby="h-pick-1"><p class="kicker"><span class="section-name">Pick 1 &middot; Business software / developer platform</span> <span class="freshness">GitHub rank #8 of 11</span></p><h3 id="h-pick-1"><a href="https://github.com/twentyhq/twenty" rel="noopener noreferrer">twentyhq/twenty</a></h3><p class="dates">TypeScript &middot; License: AGPL-3.0 with exceptions (see LICENSE)</p><div class="story-body"><p><span class="label">What it does.</span> An open-source CRM (customer relationship management) platform pitched as an open alternative to Salesforce: companies, people, deals, custom objects and views, workflows and AI agents, used as a hosted cloud service or self-hosted with Docker Compose.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, and a business application rather than another coding agent. Twenty treats the CRM as code: the README shows objects, fields and views defined in TypeScript with its SDK and published to a workspace from a CLI, and the repository ships official agent skills for building Twenty apps. Release v2.50.0 (21 October) added AI summaries of Microsoft Teams call recordings and per-seat workspace credits.</p></aside><p class="caveat"><span class="label">Caveat.</span> Licensing is mixed: the LICENSE file puts most code under AGPLv3 with an added exception for apps built on its interfaces, marks some files as commercially licensed Enterprise code, and puts the SDK and UI packages under MIT, so check which parts you rely on before self-hosting or modifying it. Releases come every few days, and both v2.49.0 and v2.50.0 list breaking changes (app permissions, AI credit accounting). AI features consume credits. Self-hosting means running and securing a database full of customer data.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;112 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>59,348 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/twentyhq/twenty" rel="noopener noreferrer">https://github.com/twentyhq/twenty</a></li><li><a class="source-link" href="https://api.github.com/repos/twentyhq/twenty" rel="noopener noreferrer">https://api.github.com/repos/twentyhq/twenty</a></li><li><a class="source-link" href="https://github.com/twentyhq/twenty/blob/main/README.md" rel="noopener noreferrer">https://github.com/twentyhq/twenty/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/twentyhq/twenty/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/twentyhq/twenty/blob/main/LICENSE</a></li><li><a class="source-link" href="https://github.com/twentyhq/twenty/releases/tag/twenty/v2.50.0" rel="noopener noreferrer">https://github.com/twentyhq/twenty/releases/tag/twenty/v2.50.0</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-22T06:00:53.911173+00:00">22 Oct 2026, 08:00 CEST</time>. README read from <a href="https://api.github.com/repos/twentyhq/twenty/readme" rel="noopener noreferrer">https://api.github.com/repos/twentyhq/twenty/readme</a>, checked <time datetime="2026-10-22T06:00:54.473741+00:00">22 Oct 2026, 08:00 CEST</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-2" aria-labelledby="h-pick-2"><p class="kicker"><span class="section-name">Pick 2 &middot; AI agents / developer tools</span> <span class="freshness">GitHub rank #10 of 11</span></p><h3 id="h-pick-2"><a href="https://github.com/akitaonrails/ai-memory" rel="noopener noreferrer">akitaonrails/ai-memory</a></h3><p class="dates">Rust &middot; License: MIT</p><div class="story-body"><p><span class="label">What it does.</span> A self-hosted long-term memory server for coding-agent command-line tools: it captures sessions through hooks and MCP, keeps a plain Markdown wiki as the source of truth, and passes handoffs between different agent tools.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> A repeat from our 18 October card (which cited v3.1.1), re-featured for release v3.2.0, published on 22 October. According to its changelog, session start now points to a session that was cut off by a quota limit, crash or closed terminal, so the next agent can continue where the work stopped. It also adds first-party Qwen Code and Hermes Agent integrations, search for Chinese, Japanese and Korean text without a language model, and a bounded local importer for PDF, DOCX, PPTX and XLSX documents.</p></aside><p class="caveat"><span class="label">Caveat.</span> It installs hooks into your agent tools and keeps captured prompts and work in an always-on server, so decide what may be captured before team use. The README&#x27;s Docker quick-start runs without authentication (bound to loopback only). Native Windows is still marked experimental. GitHub&#x27;s compare view lists 461 commits between v3.1.1 and v3.2.0, so expect churn. Integration claims are the maintainer&#x27;s and were not tested here.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;286 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>12,496 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/akitaonrails/ai-memory" rel="noopener noreferrer">https://github.com/akitaonrails/ai-memory</a></li><li><a class="source-link" href="https://api.github.com/repos/akitaonrails/ai-memory" rel="noopener noreferrer">https://api.github.com/repos/akitaonrails/ai-memory</a></li><li><a class="source-link" href="https://github.com/akitaonrails/ai-memory/blob/main/README.md" rel="noopener noreferrer">https://github.com/akitaonrails/ai-memory/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/akitaonrails/ai-memory/blob/main/CHANGELOG.md" rel="noopener noreferrer">https://github.com/akitaonrails/ai-memory/blob/main/CHANGELOG.md</a></li><li><a class="source-link" href="https://github.com/akitaonrails/ai-memory/releases/tag/v3.2.0" rel="noopener noreferrer">https://github.com/akitaonrails/ai-memory/releases/tag/v3.2.0</a></li><li><a class="source-link" href="https://github.com/akitaonrails/ai-memory/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/akitaonrails/ai-memory/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-22T06:00:53.915155+00:00">22 Oct 2026, 08:00 CEST</time>. README read from <a href="https://api.github.com/repos/akitaonrails/ai-memory/readme" rel="noopener noreferrer">https://api.github.com/repos/akitaonrails/ai-memory/readme</a>, checked <time datetime="2026-10-22T06:00:54.444651+00:00">22 Oct 2026, 08:00 CEST</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-3" aria-labelledby="h-pick-3"><p class="kicker"><span class="section-name">Pick 3 &middot; Developer tools / databases</span> <span class="freshness">GitHub rank #7 of 11</span></p><h3 id="h-pick-3"><a href="https://github.com/supabase/supabase" rel="noopener noreferrer">supabase/supabase</a></h3><p class="dates">TypeScript &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> The main repository of Supabase, a Postgres development platform that bundles a database with authentication, auto-generated REST and GraphQL APIs, realtime subscriptions, file storage, edge functions and a vector toolkit. Several of those services live in their own repositories.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, and a mature, practical pick for app builders. Instead of a proprietary backend, each feature sits on a standard open-source piece: Postgres for data, PostgREST for the API, and Supabase&#x27;s own Realtime, Auth (GoTrue) and Storage services. Your data stays in plain Postgres, and the same stack can be used as a hosted service or self-hosted.</p></aside><p class="caveat"><span class="label">Caveat.</span> Its Trending spot is not tied to a release: the newest monthly update tagged in this repository dates from 7 August, and we could not establish why it is trending today. Self-hosting means running several services yourself, and some features are hosted-only or paid (the August notes put Pipelines on paid plans). The repository has over 1,100 open issues and pull requests. Licenses of the separate component repositories were not each checked.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;504 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>113,145 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/supabase/supabase" rel="noopener noreferrer">https://github.com/supabase/supabase</a></li><li><a class="source-link" href="https://api.github.com/repos/supabase/supabase" rel="noopener noreferrer">https://api.github.com/repos/supabase/supabase</a></li><li><a class="source-link" href="https://github.com/supabase/supabase/blob/master/README.md" rel="noopener noreferrer">https://github.com/supabase/supabase/blob/master/README.md</a></li><li><a class="source-link" href="https://github.com/supabase/supabase/blob/master/LICENSE" rel="noopener noreferrer">https://github.com/supabase/supabase/blob/master/LICENSE</a></li><li><a class="source-link" href="https://github.com/supabase/supabase/releases/tag/v1.26.08" rel="noopener noreferrer">https://github.com/supabase/supabase/releases/tag/v1.26.08</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-22T06:00:53.877802+00:00">22 Oct 2026, 08:00 CEST</time>. README read from <a href="https://api.github.com/repos/supabase/supabase/readme" rel="noopener noreferrer">https://api.github.com/repos/supabase/supabase/readme</a>, checked <time datetime="2026-10-22T06:00:54.430461+00:00">22 Oct 2026, 08:00 CEST</time>.</p></section></article></div></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Source</h3><dl><div><dt>Listing</dt><dd><a href="https://github.com/trending?since=daily" rel="noopener noreferrer">https://github.com/trending?since=daily</a></dd></div><div><dt>Period</dt><dd>daily, as defined by GitHub</dd></div><div><dt>Checked</dt><dd><time datetime="2026-10-22T06:00:37.024383+00:00">22 Oct 2026, 08:00 CEST</time></dd></div><div><dt>Repositories listed</dt><dd>11</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>All 11 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 11 at about 06:01 UTC; all were active and unarchived.</li><li>Nine entries had already been featured on 18-21 October: security-audit-skill, vllm, graphify, ponytail, orca, headroom, Kronos, ComfyUI and ai-memory. Releases since each feature time were compared. Only ai-memory shipped a substantial release (v3.2.0) after its card, so it is re-featured with that reason stated. orca shipped several small v1.4.x releases; graphify v0.9.93, vllm v0.32.0 and ComfyUI v0.42.1 predate their cards; headroom, Kronos, security-audit-skill and ponytail had no new release since their cards. Those eight were left out.</li><li>With only two first-time entries on the listing, the edition was kept to three picks rather than filled with unchanged repeats.</li><li>The preceding seven calendar dates, 15-21 October, were checked for local history; all seven editions exist.</li><li>The official listing was captured at 08:00:37 Europe/Paris. Literal stars-today labels are GitHub&#x27;s displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.</li><li>Feature and integration claims are the maintainers&#x27; own. No candidate code was installed or run, no model was downloaded, and none of this is a security audit or endorsement.</li></ul></div></div><div class="cell"><div class="box"><h3>This digest</h3><ul><li><a href="2026-10-22.json" download>Exact input JSON</a></li><li><a href="2026-10-22.md">Markdown text</a></li><li><a href="2026-10-22.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>GitHub Trending is an editorial digest of GitHub’s public daily Trending page, published with The AI Gazette. Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count. Every figure and link is shown with the time it was checked.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>

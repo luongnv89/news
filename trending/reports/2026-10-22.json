@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "issued_at": "2026-10-22T08:02:42+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-22T06:00:37.024383+00:00",
+    "period": "daily",
+    "total_listed": 11
+  },
+  "editorial_note": "A short listing today: GitHub showed 11 projects, and nine of them were already featured this week. So this is a deliberately small edition of three. Two business-grade platforms appear for the first time, the open-source CRM Twenty and the Postgres backend platform Supabase, and the agent memory server ai-memory returns because of a substantial new release. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 11 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 11 at about 06:01 UTC; all were active and unarchived.",
+    "Nine entries had already been featured on 18-21 October: security-audit-skill, vllm, graphify, ponytail, orca, headroom, Kronos, ComfyUI and ai-memory. Releases since each feature time were compared. Only ai-memory shipped a substantial release (v3.2.0) after its card, so it is re-featured with that reason stated. orca shipped several small v1.4.x releases; graphify v0.9.93, vllm v0.32.0 and ComfyUI v0.42.1 predate their cards; headroom, Kronos, security-audit-skill and ponytail had no new release since their cards. Those eight were left out.",
+    "With only two first-time entries on the listing, the edition was kept to three picks rather than filled with unchanged repeats.",
+    "The preceding seven calendar dates, 15-21 October, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:37 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature and integration claims are the maintainers' own. No candidate code was installed or run, no model was downloaded, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "trending_rank": 8,
+      "description": "An open-source CRM (customer relationship management) platform pitched as an open alternative to Salesforce: companies, people, deals, custom objects and views, workflows and AI agents, used as a hosted cloud service or self-hosted with Docker Compose.",
+      "why_interesting": "First time on our list, and a business application rather than another coding agent. Twenty treats the CRM as code: the README shows objects, fields and views defined in TypeScript with its SDK and published to a workspace from a CLI, and the repository ships official agent skills for building Twenty apps. Release v2.50.0 (21 October) added AI summaries of Microsoft Teams call recordings and per-seat workspace credits.",
+      "caveat": "Licensing is mixed: the LICENSE file puts most code under AGPLv3 with an added exception for apps built on its interfaces, marks some files as commercially licensed Enterprise code, and puts the SDK and UI packages under MIT, so check which parts you rely on before self-hosting or modifying it. Releases come every few days, and both v2.49.0 and v2.50.0 list breaking changes (app permissions, AI credit accounting). AI features consume credits. Self-hosting means running and securing a database full of customer data.",
+      "category": "Business software / developer platform",
+      "language": "TypeScript",
+      "license": "AGPL-3.0 with exceptions (see LICENSE)",
+      "stars_total": 59348,
+      "stars_period": 112,
+      "stars_period_label": "112 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-22T06:00:53.911173+00:00",
+      "readme_checked_at": "2026-10-22T06:00:54.473741+00:00",
+      "readme_source_url": "https://api.github.com/repos/twentyhq/twenty/readme",
+      "evidence_urls": [
+        "https://github.com/twentyhq/twenty",
+        "https://api.github.com/repos/twentyhq/twenty",
+        "https://github.com/twentyhq/twenty/blob/main/README.md",
+        "https://github.com/twentyhq/twenty/blob/main/LICENSE",
+        "https://github.com/twentyhq/twenty/releases/tag/twenty/v2.50.0"
+      ]
+    },
+    {
+      "repository": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "trending_rank": 10,
+      "description": "A self-hosted long-term memory server for coding-agent command-line tools: it captures sessions through hooks and MCP, keeps a plain Markdown wiki as the source of truth, and passes handoffs between different agent tools.",
+      "why_interesting": "A repeat from our 18 October card (which cited v3.1.1), re-featured for release v3.2.0, published on 22 October. According to its changelog, session start now points to a session that was cut off by a quota limit, crash or closed terminal, so the next agent can continue where the work stopped. It also adds first-party Qwen Code and Hermes Agent integrations, search for Chinese, Japanese and Korean text without a language model, and a bounded local importer for PDF, DOCX, PPTX and XLSX documents.",
+      "caveat": "It installs hooks into your agent tools and keeps captured prompts and work in an always-on server, so decide what may be captured before team use. The README's Docker quick-start runs without authentication (bound to loopback only). Native Windows is still marked experimental. GitHub's compare view lists 461 commits between v3.1.1 and v3.2.0, so expect churn. Integration claims are the maintainer's and were not tested here.",
+      "category": "AI agents / developer tools",
+      "language": "Rust",
+      "license": "MIT",
+      "stars_total": 12496,
+      "stars_period": 286,
+      "stars_period_label": "286 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-22T06:00:53.915155+00:00",
+      "readme_checked_at": "2026-10-22T06:00:54.444651+00:00",
+      "readme_source_url": "https://api.github.com/repos/akitaonrails/ai-memory/readme",
+      "evidence_urls": [
+        "https://github.com/akitaonrails/ai-memory",
+        "https://api.github.com/repos/akitaonrails/ai-memory",
+        "https://github.com/akitaonrails/ai-memory/blob/main/README.md",
+        "https://github.com/akitaonrails/ai-memory/blob/main/CHANGELOG.md",
+        "https://github.com/akitaonrails/ai-memory/releases/tag/v3.2.0",
+        "https://github.com/akitaonrails/ai-memory/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "supabase/supabase",
+      "url": "https://github.com/supabase/supabase",
+      "trending_rank": 7,
+      "description": "The main repository of Supabase, a Postgres development platform that bundles a database with authentication, auto-generated REST and GraphQL APIs, realtime subscriptions, file storage, edge functions and a vector toolkit. Several of those services live in their own repositories.",
+      "why_interesting": "First time on our list, and a mature, practical pick for app builders. Instead of a proprietary backend, each feature sits on a standard open-source piece: Postgres for data, PostgREST for the API, and Supabase's own Realtime, Auth (GoTrue) and Storage services. Your data stays in plain Postgres, and the same stack can be used as a hosted service or self-hosted.",
+      "caveat": "Its Trending spot is not tied to a release: the newest monthly update tagged in this repository dates from 7 August, and we could not establish why it is trending today. Self-hosting means running several services yourself, and some features are hosted-only or paid (the August notes put Pipelines on paid plans). The repository has over 1,100 open issues and pull requests. Licenses of the separate component repositories were not each checked.",
+      "category": "Developer tools / databases",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars_total": 113145,
+      "stars_period": 504,
+      "stars_period_label": "504 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-22T06:00:53.877802+00:00",
+      "readme_checked_at": "2026-10-22T06:00:54.430461+00:00",
+      "readme_source_url": "https://api.github.com/repos/supabase/supabase/readme",
+      "evidence_urls": [
+        "https://github.com/supabase/supabase",
+        "https://api.github.com/repos/supabase/supabase",
+        "https://github.com/supabase/supabase/blob/master/README.md",
+        "https://github.com/supabase/supabase/blob/master/LICENSE",
+        "https://github.com/supabase/supabase/releases/tag/v1.26.08"
+      ]
+    }
+  ]
+}
