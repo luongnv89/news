@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "issued_at": "2026-10-23T08:02:36+02:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-23T06:00:36.911678+00:00",
+    "period": "daily",
+    "total_listed": 9
+  },
+  "editorial_note": "Another short listing: GitHub showed only nine projects, and five of them were featured earlier this week. The four first-time entries make a varied edition. The PHP interpreter is trending two days after an urgent security release for two critical remote code execution flaws, so anyone running PHP should read that card first. FastAPI shipped a breaking change in a minor release, a popular Minecraft launcher shows what source-available (but not open-source) code looks like, and a Claude Code guide maintained by this newspaper's publisher also appears, with that disclosure. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 9 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 9 at about 06:01 UTC; all were active and unarchived.",
+    "Five entries had already been featured on 21-22 October: knowledge-work-plugins, ponytail, security-audit-skill, graphify and supabase. Releases and commits since each feature time were compared. graphify shipped v0.9.94 on 22 October, a batch of community fixes including stricter URL validation during ingestion; knowledge-work-plugins had a few plugin commits and no release; ponytail, security-audit-skill and supabase had no new release since their cards. None was judged a material change, so all five were left out.",
+    "Disclosure: luongnv89/claude-howto is maintained by the publisher of this newspaper. It appears because it is on GitHub's official listing today, and its card is held to the same evidence and caveat rules as the others.",
+    "The PHP vulnerability details come from the PHP project's own security advisory and release notes on php.net and GitHub; we did not test the vulnerabilities or the suggested mitigations.",
+    "The preceding seven calendar dates, 16-22 October, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:36 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature and performance claims are the maintainers' own. No candidate code or binary was installed or run, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "php/php-src",
+      "url": "https://github.com/php/php-src",
+      "trending_rank": 1,
+      "description": "The source code of the PHP interpreter itself, the language runtime behind a large share of web servers, including PHP-FPM, Apache mod_php and php-cgi deployments.",
+      "why_interesting": "First time on our list, and the most urgent card this week. On 21 October the PHP project released 8.5.12, 8.4.27, 8.3.36 and 8.2.35 to fix two critical vulnerabilities (CVE-2026-109618 and CVE-2026-109619) that its advisory says can allow unauthenticated remote code execution. The advisory names every installation serving web requests as at risk, rates mod_php highest with a demonstrated exploit that fires before any application code runs, and says updating is the only complete fix.",
+      "caveat": "If you run PHP, check your version and your distribution or vendor packages rather than this repository: Linux distributions and LTS vendors received the patches in advance, and PHP 8.1 and older get no official releases from the project. The interim php.ini mitigations in the advisory reduce exposure to specific attack paths but explicitly do not make an installation safe. PHP 8.2 reaches end of life on 31 December 2026. We relied on the project's own advisory and did not test the flaws.",
+      "category": "Security / programming languages",
+      "language": "C",
+      "license": "BSD-3-Clause",
+      "stars_total": 41292,
+      "stars_period": 287,
+      "stars_period_label": "287 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-23T06:00:57.989707+00:00",
+      "readme_checked_at": "2026-10-23T06:00:58.519877+00:00",
+      "readme_source_url": "https://api.github.com/repos/php/php-src/readme",
+      "evidence_urls": [
+        "https://github.com/php/php-src",
+        "https://api.github.com/repos/php/php-src",
+        "https://github.com/php/php-src/releases/tag/php-8.5.12",
+        "https://github.com/php/php-src/releases/tag/php-8.2.35",
+        "https://www.php.net/archive/2026.php",
+        "https://www.php.net/ChangeLog-8.php",
+        "https://github.com/php/php-src/blob/master/LICENSE"
+      ]
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "trending_rank": 7,
+      "description": "A Python web framework for building APIs from standard type hints, with automatic request validation through Pydantic and generated OpenAPI documentation.",
+      "why_interesting": "First time on our list. FastAPI is a mature, widely used choice for Python APIs, and its maintainers shipped four releases between 21 and 22 October. Release 0.160.0 is the one to read before upgrading: query, header, cookie and form parameter models now apply their extra setting to every field in the same location, so a model with extra=\"forbid\" now rejects fields declared elsewhere. 0.159.1 and 0.161.0 add support for optional and combined unions of form models.",
+      "caveat": "FastAPI is still versioned 0.x, and 0.160.0 is labelled a breaking change inside a minor version bump, so pin the version and run your tests before upgrading; requests that used to pass may now be rejected. The \"high performance\" wording is the project's own claim and depends on your server, database and workload.",
+      "category": "Developer tools / web frameworks",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 103901,
+      "stars_period": 101,
+      "stars_period_label": "101 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-23T06:01:00.025757+00:00",
+      "readme_checked_at": "2026-10-23T06:01:00.559599+00:00",
+      "readme_source_url": "https://api.github.com/repos/fastapi/fastapi/readme",
+      "evidence_urls": [
+        "https://github.com/fastapi/fastapi",
+        "https://api.github.com/repos/fastapi/fastapi",
+        "https://github.com/fastapi/fastapi/blob/master/README.md",
+        "https://github.com/fastapi/fastapi/releases/tag/0.160.0",
+        "https://github.com/fastapi/fastapi/releases/tag/0.161.1",
+        "https://github.com/fastapi/fastapi/blob/master/LICENSE"
+      ]
+    },
+    {
+      "repository": "Meloong-Git/PCL",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "trending_rank": 9,
+      "description": "Plain Craft Launcher (PCL), a popular Chinese-language desktop launcher for Minecraft Java Edition. The repository holds most of its source, including its UI library, animation, download and game-launch modules.",
+      "why_interesting": "First time on our list, and a change from developer and AI tooling. It is also a clear example of a source-available project: the code is public and its guide explains in plain language what light reuse (credit is enough) and heavy reuse (naming, attribution and disclosure rules) look like, rather than granting an open-source license.",
+      "caveat": "Not open source. GitHub detects no standard license; the LICENCE file points to a custom limited distribution license hosted on an external document site and adds a usage guide, and the developer reserves all other rights. Heavier reuse carries naming, attribution, source-publication and sponsor-prompt conditions. The README says code is synced only when PCL releases, so it can lag the shipping app. Documentation is in Chinese. The repository also contains a prebuilt zip, which we did not inspect or run.",
+      "category": "Games / desktop software",
+      "language": "Visual Basic .NET",
+      "license": "Custom source-available license (see LICENCE)",
+      "stars_total": 8777,
+      "stars_period": 119,
+      "stars_period_label": "119 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-23T06:01:00.241207+00:00",
+      "readme_checked_at": "2026-10-23T06:01:00.698393+00:00",
+      "readme_source_url": "https://api.github.com/repos/Meloong-Git/PCL/readme",
+      "evidence_urls": [
+        "https://github.com/Meloong-Git/PCL",
+        "https://api.github.com/repos/Meloong-Git/PCL",
+        "https://github.com/Meloong-Git/PCL/blob/main/README.md",
+        "https://github.com/Meloong-Git/PCL/blob/main/LICENCE"
+      ]
+    },
+    {
+      "repository": "luongnv89/claude-howto",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "trending_rank": 8,
+      "description": "A visual, example-driven guide to Anthropic's Claude Code, with a learning path from first prompts to slash commands, memory, hooks, skills, MCP servers and subagents, plus copy-paste templates. Translated into Vietnamese, Chinese, Ukrainian and Japanese.",
+      "why_interesting": "First time on our list. Disclosure: this repository is maintained by the publisher of this newspaper. It is useful for teams adopting Claude Code because it shows how the features combine into workflows, not just what each one does, and it tracks the tool closely: commits on 19 October synced it to Claude Code v2.1.302, and a 20 October change made the database MCP example read-only by default.",
+      "caveat": "It is a third-party guide, not Anthropic documentation, and Claude Code changes quickly, so check details against the official docs. Hook, MCP and agent templates can run commands or give an assistant access to systems, so review permissions before copying them into a project. The last tagged release is from June; updates arrive as commits.",
+      "category": "AI agents / documentation",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 43466,
+      "stars_period": 177,
+      "stars_period_label": "177 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-23T06:00:59.985905+00:00",
+      "readme_checked_at": "2026-10-23T06:01:00.481977+00:00",
+      "readme_source_url": "https://api.github.com/repos/luongnv89/claude-howto/readme",
+      "evidence_urls": [
+        "https://github.com/luongnv89/claude-howto",
+        "https://api.github.com/repos/luongnv89/claude-howto",
+        "https://github.com/luongnv89/claude-howto/blob/main/README.md",
+        "https://github.com/luongnv89/claude-howto/commits/main",
+        "https://github.com/luongnv89/claude-howto/blob/main/LICENSE"
+      ]
+    }
+  ]
+}

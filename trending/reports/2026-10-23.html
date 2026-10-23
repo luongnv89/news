@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Trending — Friday 23 October 2026</title>
+<meta name="description" content="Daily GitHub Trending digest for 2026-10-23.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.trend-card h3 { text-transform: none; }
+.trend-card .freshness { white-space: nowrap; }
+.trend-card h3 a { text-decoration: none; }
+.trend-card h3 a:hover { text-decoration: underline; }
+.trend-card .facts dl > div { margin-top: 3px; }
+.trend-card .facts dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.trend-card .facts dt::after { content: ":"; }
+.trend-card .facts dd { display: inline; margin-left: 4px; }
+main .trend-card .facts dd, main .trend-card .evidence li { text-align: left; }
+.evidence a { overflow-wrap: anywhere; }
+main .trend-card p.checks { text-align: left; font-size: 0.92rem; font-style: italic; margin-top: 4px; }
+</style>
+</head>
+<body class="page page-trending page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">GitHub Trending</a>
+<p class="tagline">A daily reading of GitHub’s trending page — a supplement to The AI Gazette</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-23T08:02:36+02:00">Friday 23 October 2026</time></p><p>Daily digest &middot; No. 2026-10-23</p><p>Issued 08:02 CEST</p><p>Listing checked <time datetime="2026-10-23T06:00:36.911678+00:00">23 Oct 2026, 08:00 CEST</time></p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../../index.html">The AI Gazette</a><a href="../index.html">Latest trending</a><a href="../archive.html">Trending archive</a><a href="2026-10-23.html">This digest</a><a href="2026-10-23.md">Markdown</a><a href="2026-10-23.json">JSON</a></div></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">GitHub Trending &mdash; Friday 23 October 2026</h1><p class="window-line">Source: <a href="https://github.com/trending?since=daily" rel="noopener noreferrer">GitHub Trending, daily</a> (https://github.com/trending?since=daily), checked <time datetime="2026-10-23T06:00:36.911678+00:00">23 Oct 2026, 08:00 CEST</time>. GitHub listed 9 repositories; this digest picks 4.</p><p class="lead-note">Another short listing: GitHub showed only nine projects, and five of them were featured earlier this week. The four first-time entries make a varied edition. The PHP interpreter is trending two days after an urgent security release for two critical remote code execution flaws, so anyone running PHP should read that card first. FastAPI shipped a breaking change in a minor release, a popular Minecraft launcher shows what source-available (but not open-source) code looks like, and a Claude Code guide maintained by this newspaper&#x27;s publisher also appears, with that disclosure. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.</p><p class="tally">Curation order, not GitHub rank &middot; Issued <time datetime="2026-10-23T08:02:36+02:00">23 Oct 2026, 08:02 CEST</time></p></section>
+<section class="paper-section" aria-labelledby="picks-title"><h2 id="picks-title">The Picks</h2><p class="section-note">Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch trend-card" id="pick-1" aria-labelledby="h-pick-1"><p class="kicker"><span class="section-name">Pick 1 &middot; Security / programming languages</span> <span class="freshness">GitHub rank #1 of 9</span></p><h3 id="h-pick-1"><a href="https://github.com/php/php-src" rel="noopener noreferrer">php/php-src</a></h3><p class="dates">C &middot; License: BSD-3-Clause</p><div class="story-body"><p><span class="label">What it does.</span> The source code of the PHP interpreter itself, the language runtime behind a large share of web servers, including PHP-FPM, Apache mod_php and php-cgi deployments.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, and the most urgent card this week. On 21 October the PHP project released 8.5.12, 8.4.27, 8.3.36 and 8.2.35 to fix two critical vulnerabilities (CVE-2026-109618 and CVE-2026-109619) that its advisory says can allow unauthenticated remote code execution. The advisory names every installation serving web requests as at risk, rates mod_php highest with a demonstrated exploit that fires before any application code runs, and says updating is the only complete fix.</p></aside><p class="caveat"><span class="label">Caveat.</span> If you run PHP, check your version and your distribution or vendor packages rather than this repository: Linux distributions and LTS vendors received the patches in advance, and PHP 8.1 and older get no official releases from the project. The interim php.ini mitigations in the advisory reduce exposure to specific attack paths but explicitly do not make an installation safe. PHP 8.2 reaches end of life on 31 December 2026. We relied on the project&#x27;s own advisory and did not test the flaws.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;287 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>41,292 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/php/php-src" rel="noopener noreferrer">https://github.com/php/php-src</a></li><li><a class="source-link" href="https://api.github.com/repos/php/php-src" rel="noopener noreferrer">https://api.github.com/repos/php/php-src</a></li><li><a class="source-link" href="https://github.com/php/php-src/releases/tag/php-8.5.12" rel="noopener noreferrer">https://github.com/php/php-src/releases/tag/php-8.5.12</a></li><li><a class="source-link" href="https://github.com/php/php-src/releases/tag/php-8.2.35" rel="noopener noreferrer">https://github.com/php/php-src/releases/tag/php-8.2.35</a></li><li><a class="source-link" href="https://www.php.net/archive/2026.php" rel="noopener noreferrer">https://www.php.net/archive/2026.php</a></li><li><a class="source-link" href="https://www.php.net/ChangeLog-8.php" rel="noopener noreferrer">https://www.php.net/ChangeLog-8.php</a></li><li><a class="source-link" href="https://github.com/php/php-src/blob/master/LICENSE" rel="noopener noreferrer">https://github.com/php/php-src/blob/master/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-23T06:00:57.989707+00:00">23 Oct 2026, 08:00 CEST</time>. README read from <a href="https://api.github.com/repos/php/php-src/readme" rel="noopener noreferrer">https://api.github.com/repos/php/php-src/readme</a>, checked <time datetime="2026-10-23T06:00:58.519877+00:00">23 Oct 2026, 08:00 CEST</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-2" aria-labelledby="h-pick-2"><p class="kicker"><span class="section-name">Pick 2 &middot; Developer tools / web frameworks</span> <span class="freshness">GitHub rank #7 of 9</span></p><h3 id="h-pick-2"><a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></h3><p class="dates">Python &middot; License: MIT</p><div class="story-body"><p><span class="label">What it does.</span> A Python web framework for building APIs from standard type hints, with automatic request validation through Pydantic and generated OpenAPI documentation.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. FastAPI is a mature, widely used choice for Python APIs, and its maintainers shipped four releases between 21 and 22 October. Release 0.160.0 is the one to read before upgrading: query, header, cookie and form parameter models now apply their extra setting to every field in the same location, so a model with extra=&quot;forbid&quot; now rejects fields declared elsewhere. 0.159.1 and 0.161.0 add support for optional and combined unions of form models.</p></aside><p class="caveat"><span class="label">Caveat.</span> FastAPI is still versioned 0.x, and 0.160.0 is labelled a breaking change inside a minor version bump, so pin the version and run your tests before upgrading; requests that used to pass may now be rejected. The &quot;high performance&quot; wording is the project&#x27;s own claim and depends on your server, database and workload.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;101 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>103,901 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">https://github.com/fastapi/fastapi</a></li><li><a class="source-link" href="https://api.github.com/repos/fastapi/fastapi" rel="noopener noreferrer">https://api.github.com/repos/fastapi/fastapi</a></li><li><a class="source-link" href="https://github.com/fastapi/fastapi/blob/master/README.md" rel="noopener noreferrer">https://github.com/fastapi/fastapi/blob/master/README.md</a></li><li><a class="source-link" href="https://github.com/fastapi/fastapi/releases/tag/0.160.0" rel="noopener noreferrer">https://github.com/fastapi/fastapi/releases/tag/0.160.0</a></li><li><a class="source-link" href="https://github.com/fastapi/fastapi/releases/tag/0.161.1" rel="noopener noreferrer">https://github.com/fastapi/fastapi/releases/tag/0.161.1</a></li><li><a class="source-link" href="https://github.com/fastapi/fastapi/blob/master/LICENSE" rel="noopener noreferrer">https://github.com/fastapi/fastapi/blob/master/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-23T06:01:00.025757+00:00">23 Oct 2026, 08:01 CEST</time>. README read from <a href="https://api.github.com/repos/fastapi/fastapi/readme" rel="noopener noreferrer">https://api.github.com/repos/fastapi/fastapi/readme</a>, checked <time datetime="2026-10-23T06:01:00.559599+00:00">23 Oct 2026, 08:01 CEST</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-3" aria-labelledby="h-pick-3"><p class="kicker"><span class="section-name">Pick 3 &middot; Games / desktop software</span> <span class="freshness">GitHub rank #9 of 9</span></p><h3 id="h-pick-3"><a href="https://github.com/Meloong-Git/PCL" rel="noopener noreferrer">Meloong-Git/PCL</a></h3><p class="dates">Visual Basic .NET &middot; License: Custom source-available license (see LICENCE)</p><div class="story-body"><p><span class="label">What it does.</span> Plain Craft Launcher (PCL), a popular Chinese-language desktop launcher for Minecraft Java Edition. The repository holds most of its source, including its UI library, animation, download and game-launch modules.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, and a change from developer and AI tooling. It is also a clear example of a source-available project: the code is public and its guide explains in plain language what light reuse (credit is enough) and heavy reuse (naming, attribution and disclosure rules) look like, rather than granting an open-source license.</p></aside><p class="caveat"><span class="label">Caveat.</span> Not open source. GitHub detects no standard license; the LICENCE file points to a custom limited distribution license hosted on an external document site and adds a usage guide, and the developer reserves all other rights. Heavier reuse carries naming, attribution, source-publication and sponsor-prompt conditions. The README says code is synced only when PCL releases, so it can lag the shipping app. Documentation is in Chinese. The repository also contains a prebuilt zip, which we did not inspect or run.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;119 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>8,777 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/Meloong-Git/PCL" rel="noopener noreferrer">https://github.com/Meloong-Git/PCL</a></li><li><a class="source-link" href="https://api.github.com/repos/Meloong-Git/PCL" rel="noopener noreferrer">https://api.github.com/repos/Meloong-Git/PCL</a></li><li><a class="source-link" href="https://github.com/Meloong-Git/PCL/blob/main/README.md" rel="noopener noreferrer">https://github.com/Meloong-Git/PCL/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/Meloong-Git/PCL/blob/main/LICENCE" rel="noopener noreferrer">https://github.com/Meloong-Git/PCL/blob/main/LICENCE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-23T06:01:00.241207+00:00">23 Oct 2026, 08:01 CEST</time>. README read from <a href="https://api.github.com/repos/Meloong-Git/PCL/readme" rel="noopener noreferrer">https://api.github.com/repos/Meloong-Git/PCL/readme</a>, checked <time datetime="2026-10-23T06:01:00.698393+00:00">23 Oct 2026, 08:01 CEST</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-4" aria-labelledby="h-pick-4"><p class="kicker"><span class="section-name">Pick 4 &middot; AI agents / documentation</span> <span class="freshness">GitHub rank #8 of 9</span></p><h3 id="h-pick-4"><a href="https://github.com/luongnv89/claude-howto" rel="noopener noreferrer">luongnv89/claude-howto</a></h3><p class="dates">Python &middot; License: MIT</p><div class="story-body"><p><span class="label">What it does.</span> A visual, example-driven guide to Anthropic&#x27;s Claude Code, with a learning path from first prompts to slash commands, memory, hooks, skills, MCP servers and subagents, plus copy-paste templates. Translated into Vietnamese, Chinese, Ukrainian and Japanese.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. Disclosure: this repository is maintained by the publisher of this newspaper. It is useful for teams adopting Claude Code because it shows how the features combine into workflows, not just what each one does, and it tracks the tool closely: commits on 19 October synced it to Claude Code v2.1.302, and a 20 October change made the database MCP example read-only by default.</p></aside><p class="caveat"><span class="label">Caveat.</span> It is a third-party guide, not Anthropic documentation, and Claude Code changes quickly, so check details against the official docs. Hook, MCP and agent templates can run commands or give an assistant access to systems, so review permissions before copying them into a project. The last tagged release is from June; updates arrive as commits.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;177 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>43,466 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/luongnv89/claude-howto" rel="noopener noreferrer">https://github.com/luongnv89/claude-howto</a></li><li><a class="source-link" href="https://api.github.com/repos/luongnv89/claude-howto" rel="noopener noreferrer">https://api.github.com/repos/luongnv89/claude-howto</a></li><li><a class="source-link" href="https://github.com/luongnv89/claude-howto/blob/main/README.md" rel="noopener noreferrer">https://github.com/luongnv89/claude-howto/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/luongnv89/claude-howto/commits/main" rel="noopener noreferrer">https://github.com/luongnv89/claude-howto/commits/main</a></li><li><a class="source-link" href="https://github.com/luongnv89/claude-howto/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/luongnv89/claude-howto/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-23T06:00:59.985905+00:00">23 Oct 2026, 08:00 CEST</time>. README read from <a href="https://api.github.com/repos/luongnv89/claude-howto/readme" rel="noopener noreferrer">https://api.github.com/repos/luongnv89/claude-howto/readme</a>, checked <time datetime="2026-10-23T06:01:00.481977+00:00">23 Oct 2026, 08:01 CEST</time>.</p></section></article></div></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Source</h3><dl><div><dt>Listing</dt><dd><a href="https://github.com/trending?since=daily" rel="noopener noreferrer">https://github.com/trending?since=daily</a></dd></div><div><dt>Period</dt><dd>daily, as defined by GitHub</dd></div><div><dt>Checked</dt><dd><time datetime="2026-10-23T06:00:36.911678+00:00">23 Oct 2026, 08:00 CEST</time></dd></div><div><dt>Repositories listed</dt><dd>9</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>All 9 listing entries were inspected. Exact primary public GitHub repository metadata, README, license and recent release endpoints were checked for all 9 at about 06:01 UTC; all were active and unarchived.</li><li>Five entries had already been featured on 21-22 October: knowledge-work-plugins, ponytail, security-audit-skill, graphify and supabase. Releases and commits since each feature time were compared. graphify shipped v0.9.94 on 22 October, a batch of community fixes including stricter URL validation during ingestion; knowledge-work-plugins had a few plugin commits and no release; ponytail, security-audit-skill and supabase had no new release since their cards. None was judged a material change, so all five were left out.</li><li>Disclosure: luongnv89/claude-howto is maintained by the publisher of this newspaper. It appears because it is on GitHub&#x27;s official listing today, and its card is held to the same evidence and caveat rules as the others.</li><li>The PHP vulnerability details come from the PHP project&#x27;s own security advisory and release notes on php.net and GitHub; we did not test the vulnerabilities or the suggested mitigations.</li><li>The preceding seven calendar dates, 16-22 October, were checked for local history; all seven editions exist.</li><li>The official listing was captured at 08:00:36 Europe/Paris. Literal stars-today labels are GitHub&#x27;s displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.</li><li>Feature and performance claims are the maintainers&#x27; own. No candidate code or binary was installed or run, and none of this is a security audit or endorsement.</li></ul></div></div><div class="cell"><div class="box"><h3>This digest</h3><ul><li><a href="2026-10-23.json" download>Exact input JSON</a></li><li><a href="2026-10-23.md">Markdown text</a></li><li><a href="2026-10-23.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>GitHub Trending is an editorial digest of GitHub’s public daily Trending page, published with The AI Gazette. Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count. Every figure and link is shown with the time it was checked.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
