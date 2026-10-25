@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Trending — Sunday 25 October 2026</title>
+<meta name="description" content="Daily GitHub Trending digest for 2026-10-25.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.trend-card h3 { text-transform: none; }
+.trend-card .freshness { white-space: nowrap; }
+.trend-card h3 a { text-decoration: none; }
+.trend-card h3 a:hover { text-decoration: underline; }
+.trend-card .facts dl > div { margin-top: 3px; }
+.trend-card .facts dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.trend-card .facts dt::after { content: ":"; }
+.trend-card .facts dd { display: inline; margin-left: 4px; }
+main .trend-card .facts dd, main .trend-card .evidence li { text-align: left; }
+.evidence a { overflow-wrap: anywhere; }
+main .trend-card p.checks { text-align: left; font-size: 0.92rem; font-style: italic; margin-top: 4px; }
+</style>
+</head>
+<body class="page page-trending page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">GitHub Trending</a>
+<p class="tagline">A daily reading of GitHub’s trending page — a supplement to The AI Gazette</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-25T08:02:34+01:00">Sunday 25 October 2026</time></p><p>Daily digest &middot; No. 2026-10-25</p><p>Issued 08:02 CET</p><p>Listing checked <time datetime="2026-10-25T07:00:34.632674+00:00">25 Oct 2026, 08:00 CET</time></p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../../index.html">The AI Gazette</a><a href="../index.html">Latest trending</a><a href="../archive.html">Trending archive</a><a href="2026-10-25.html">This digest</a><a href="2026-10-25.md">Markdown</a><a href="2026-10-25.json">JSON</a></div></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">GitHub Trending &mdash; Sunday 25 October 2026</h1><p class="window-line">Source: <a href="https://github.com/trending?since=daily" rel="noopener noreferrer">GitHub Trending, daily</a> (https://github.com/trending?since=daily), checked <time datetime="2026-10-25T07:00:34.632674+00:00">25 Oct 2026, 08:00 CET</time>. GitHub listed 10 repositories; this digest picks 6.</p><p class="lead-note">GitHub listed ten projects this Sunday morning. Three had already been featured this week without a material change since, and one was rejected, so today&#x27;s edition has six first-time picks. AWS&#x27;s official agent toolkit leads because it adds agent-specific IAM controls and audit logging to coding agents working in AWS. Two design skills, Impeccable and Hallmark, take different routes to the same problem of pages that look AI-generated. Cindy is an open-source client that mixes agent harnesses and models, Microduck is the code behind a small robot duck that walks on learned policies, and Gemini CLI users should read a transition notice. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.</p><p class="tally">Curation order, not GitHub rank &middot; Issued <time datetime="2026-10-25T08:02:34+01:00">25 Oct 2026, 08:02 CET</time></p></section>
+<section class="paper-section" aria-labelledby="picks-title"><h2 id="picks-title">The Picks</h2><p class="section-note">Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch trend-card" id="pick-1" aria-labelledby="h-pick-1"><p class="kicker"><span class="section-name">Pick 1 &middot; AI agents / cloud tooling</span> <span class="freshness">GitHub rank #3 of 10</span></p><h3 id="h-pick-1"><a href="https://github.com/aws/agent-toolkit-for-aws" rel="noopener noreferrer">aws/agent-toolkit-for-aws</a></h3><p class="dates">Python &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> AWS&#x27;s official bundle of plugins, agent skills, rules files and a managed MCP server configuration that help coding agents such as Claude Code, Codex, Cursor, Devin and Kiro build, deploy and operate applications on AWS.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. It comes from AWS itself and, per its README, succeeds the earlier AWS Labs MCP servers and skills. The practical part is control: AWS says its managed MCP server adds IAM condition keys that separate agent actions from human ones, so a policy can, for example, allow an agent only read-only calls even when your own role can write, and logs every request to CloudTrail. Five plugins cover core services, Bedrock agents, data analytics, DevSecOps and startup advice.</p></aside><p class="caveat"><span class="label">Caveat.</span> Connecting an agent to the MCP server gives it authenticated access to real AWS APIs, which can change resources and run up costs; scope it with least-privilege IAM and try it on a sandbox account first. The README&#x27;s GA status and the claim that skills went through end-to-end evaluations are AWS&#x27;s own, and some setups route through a remote endpoint or Devin&#x27;s cloud plugins. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;13 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>3,209 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/aws/agent-toolkit-for-aws" rel="noopener noreferrer">https://github.com/aws/agent-toolkit-for-aws</a></li><li><a class="source-link" href="https://api.github.com/repos/aws/agent-toolkit-for-aws" rel="noopener noreferrer">https://api.github.com/repos/aws/agent-toolkit-for-aws</a></li><li><a class="source-link" href="https://github.com/aws/agent-toolkit-for-aws/blob/main/README.md" rel="noopener noreferrer">https://github.com/aws/agent-toolkit-for-aws/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/aws/agent-toolkit-for-aws/tree/main/plugins" rel="noopener noreferrer">https://github.com/aws/agent-toolkit-for-aws/tree/main/plugins</a></li><li><a class="source-link" href="https://github.com/aws/agent-toolkit-for-aws/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/aws/agent-toolkit-for-aws/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:00:57.083584+00:00">25 Oct 2026, 08:00 CET</time>. README read from <a href="https://api.github.com/repos/aws/agent-toolkit-for-aws/readme" rel="noopener noreferrer">https://api.github.com/repos/aws/agent-toolkit-for-aws/readme</a>, checked <time datetime="2026-10-25T07:00:57.724218+00:00">25 Oct 2026, 08:00 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-2" aria-labelledby="h-pick-2"><p class="kicker"><span class="section-name">Pick 2 &middot; Developer tools / design</span> <span class="freshness">GitHub rank #6 of 10</span></p><h3 id="h-pick-2"><a href="https://github.com/pbakaus/impeccable" rel="noopener noreferrer">pbakaus/impeccable</a></h3><p class="dates">Rust &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> A design skill and command-line engine for AI coding agents: one setup flow, 24 commands such as audit, critique, polish and harden, and 62 deterministic rules that detect common tells of AI-generated frontend design.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. Unlike most prompt-only design skills, its detector rules run in a CLI or browser extension with no model and no API key, so findings are repeatable and can feed GitHub Actions annotations. Skill v4.7.0 (19 October) added scanning of open Electron, NW.js, CEF or WebView2 desktop app windows over a debugging port and two new typography checks. It is a useful reviewer for teams whose agents keep shipping the same purple-gradient look.</p></aside><p class="caveat"><span class="label">Caveat.</span> The launcher downloads a prebuilt engine binary into ~/.impeccable/bin on first use, and the installer offers to add edit-time hooks to Claude Code, Copilot, Cursor, Codex and Grok Build; the README warns that a Claude Code hook can run and download the engine even when a session denies the launcher, so review hooks before unattended runs. New-design rolls call the impeccable.style API, with anonymous choice telemetry on by default (it can be switched off). Design quality judgements are the maintainer&#x27;s.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;619 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>86,664 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/pbakaus/impeccable" rel="noopener noreferrer">https://github.com/pbakaus/impeccable</a></li><li><a class="source-link" href="https://api.github.com/repos/pbakaus/impeccable" rel="noopener noreferrer">https://api.github.com/repos/pbakaus/impeccable</a></li><li><a class="source-link" href="https://github.com/pbakaus/impeccable/blob/main/README.md" rel="noopener noreferrer">https://github.com/pbakaus/impeccable/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/pbakaus/impeccable/releases/tag/skill-v4.7.0" rel="noopener noreferrer">https://github.com/pbakaus/impeccable/releases/tag/skill-v4.7.0</a></li><li><a class="source-link" href="https://github.com/pbakaus/impeccable/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/pbakaus/impeccable/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:01:03.477607+00:00">25 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/pbakaus/impeccable/readme" rel="noopener noreferrer">https://api.github.com/repos/pbakaus/impeccable/readme</a>, checked <time datetime="2026-10-25T07:01:03.963189+00:00">25 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-3" aria-labelledby="h-pick-3"><p class="kicker"><span class="section-name">Pick 3 &middot; AI agents / design</span> <span class="freshness">GitHub rank #4 of 10</span></p><h3 id="h-pick-3"><a href="https://github.com/Nutlope/hallmark" rel="noopener noreferrer">Nutlope/hallmark</a></h3><p class="dates">CSS &middot; License: MIT</p><div class="story-body"><p><span class="label">What it does.</span> A design skill for Claude Code, Codex, Cursor and OpenCode that builds or redesigns web pages from a catalog of 48 visual themes and then lints the result in a real browser against patterns that read as machine-made.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, and a contrast to Impeccable: it works by firm rules rather than a long command list. A Floor tier (contrast, focus, reduced motion, invented facts, a broken phone layout) never ships, the hero section is rendered and reviewed on its own first, and a redesign mode records every link, field and handler beforehand and fails if one goes missing. Its README says photos come only from openly licensed Wikimedia Commons images, credited on the page. The README says it is made by Together AI.</p></aside><p class="caveat"><span class="label">Caveat.</span> Browser checks need Node 18 or later, puppeteer-core and Chrome; without them only static checks run. An optional install-hook script adds an edit-time check to Claude Code, which you should review first. Each photograph keeps its own licence, including CC BY-SA, so check attribution and share-alike terms before commercial use. There are no tagged releases, and the quality claims are the maintainers&#x27; own.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;455 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>32,498 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/Nutlope/hallmark" rel="noopener noreferrer">https://github.com/Nutlope/hallmark</a></li><li><a class="source-link" href="https://api.github.com/repos/Nutlope/hallmark" rel="noopener noreferrer">https://api.github.com/repos/Nutlope/hallmark</a></li><li><a class="source-link" href="https://github.com/Nutlope/hallmark/blob/main/README.md" rel="noopener noreferrer">https://github.com/Nutlope/hallmark/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/Nutlope/hallmark/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/Nutlope/hallmark/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:00:59.579691+00:00">25 Oct 2026, 08:00 CET</time>. README read from <a href="https://api.github.com/repos/Nutlope/hallmark/readme" rel="noopener noreferrer">https://api.github.com/repos/Nutlope/hallmark/readme</a>, checked <time datetime="2026-10-25T07:01:00.073552+00:00">25 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-4" aria-labelledby="h-pick-4"><p class="kicker"><span class="section-name">Pick 4 &middot; AI agents / desktop apps</span> <span class="freshness">GitHub rank #10 of 10</span></p><h3 id="h-pick-4"><a href="https://github.com/makecindy/cindy" rel="noopener noreferrer">makecindy/cindy</a></h3><p class="dates">TypeScript &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> The open-source desktop (Electron) and mobile (React Native) client of Cindy, an AI agent that runs Claude Code, Codex and other harnesses and models on your own machine, with shared memory, skills, schedules, MCP tools and browser, computer and phone control.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. Its distinctive idea is mixing harnesses and models inside one task: the README describes planning, parallel execution and review by agents on different harness and model combinations while memory and skills stay continuous. It can reuse a Claude Code or Codex plan you already pay for, your own API keys or local models, and a Skip Sign-In mode runs local agents without a Cindy account. Releases ship almost daily (v0.1.115 on 23 October).</p></aside><p class="caveat"><span class="label">Caveat.</span> Only the client is open source; the backend is in a separate repository, and the client talks to Cindy&#x27;s cloud and update CDN by default. Official builds include TapDB usage analytics tied to your account ID after sign-in (the README says no chat or file content), and server-backed features need an account and paid usage. The agent works with your real files and logged-in apps, so give it narrow access. It is a young 0.1.x project, and release notes are mostly in Chinese.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;477 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>4,269 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/makecindy/cindy" rel="noopener noreferrer">https://github.com/makecindy/cindy</a></li><li><a class="source-link" href="https://api.github.com/repos/makecindy/cindy" rel="noopener noreferrer">https://api.github.com/repos/makecindy/cindy</a></li><li><a class="source-link" href="https://github.com/makecindy/cindy/blob/main/README.md" rel="noopener noreferrer">https://github.com/makecindy/cindy/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/makecindy/cindy/releases/tag/v0.1.115" rel="noopener noreferrer">https://github.com/makecindy/cindy/releases/tag/v0.1.115</a></li><li><a class="source-link" href="https://github.com/makecindy/cindy/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/makecindy/cindy/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:01:11.312905+00:00">25 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/makecindy/cindy/readme" rel="noopener noreferrer">https://api.github.com/repos/makecindy/cindy/readme</a>, checked <time datetime="2026-10-25T07:01:12.025869+00:00">25 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-5" aria-labelledby="h-pick-5"><p class="kicker"><span class="section-name">Pick 5 &middot; Robotics / embedded</span> <span class="freshness">GitHub rank #7 of 10</span></p><h3 id="h-pick-5"><a href="https://github.com/pollen-robotics/microduck" rel="noopener noreferrer">pollen-robotics/microduck</a></h3><p class="dates">Rust &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> The onboard software of Microduck, a roughly 25 cm, 800 g two-legged robot duck from Pollen Robotics: Rust daemons on a Rockchip RK3566 that run a 50 Hz control loop driving fifteen servos from neural-network walking policies, plus radios, camera streaming and signed updates.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list and today&#x27;s standout outside software tooling. It is an unusually complete, readable example of a reinforcement-learning robot in production: policies trained in MuJoCo with PPO in a sister repo and exported to ONNX, daemons that share one JSON-RPC contract over Unix sockets, updates that are signed, health-gated and rolled back automatically, and design notes that record what went wrong. A simulator script runs the real daemons against a MuJoCo body, so you can study it without the robot.</p></aside><p class="caveat"><span class="label">Caveat.</span> Most of the value needs the physical robot, which Pollen sells; we did not check its price or availability. Many published GitHub releases are moving development builds signed with a dev key that customer robots refuse; the latest stable daemon release is daemon-v0.17.8 (19 October). Training is in a separate repository, and the movement abilities described are the maintainers&#x27; claims, which we did not test.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;319 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>11,154 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/pollen-robotics/microduck" rel="noopener noreferrer">https://github.com/pollen-robotics/microduck</a></li><li><a class="source-link" href="https://api.github.com/repos/pollen-robotics/microduck" rel="noopener noreferrer">https://api.github.com/repos/pollen-robotics/microduck</a></li><li><a class="source-link" href="https://github.com/pollen-robotics/microduck/blob/main/README.md" rel="noopener noreferrer">https://github.com/pollen-robotics/microduck/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/pollen-robotics/microduck/releases/tag/daemon-v0.17.8" rel="noopener noreferrer">https://github.com/pollen-robotics/microduck/releases/tag/daemon-v0.17.8</a></li><li><a class="source-link" href="https://github.com/pollen-robotics/microduck_rl" rel="noopener noreferrer">https://github.com/pollen-robotics/microduck_rl</a></li><li><a class="source-link" href="https://github.com/pollen-robotics/microduck/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/pollen-robotics/microduck/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:01:05.397090+00:00">25 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/pollen-robotics/microduck/readme" rel="noopener noreferrer">https://api.github.com/repos/pollen-robotics/microduck/readme</a>, checked <time datetime="2026-10-25T07:01:05.876171+00:00">25 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-6" aria-labelledby="h-pick-6"><p class="kicker"><span class="section-name">Pick 6 &middot; Developer tools / AI agents</span> <span class="freshness">GitHub rank #8 of 10</span></p><h3 id="h-pick-6"><a href="https://github.com/google-gemini/gemini-cli" rel="noopener noreferrer">google-gemini/gemini-cli</a></h3><p class="dates">TypeScript &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> Google&#x27;s open-source terminal AI agent for Gemini models: it queries and edits codebases, automates tasks such as pull-request queries and rebases, connects MCP servers and runs non-interactively in scripts.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list, mainly as a status check for existing users. The README now says that for unpaid-tier and Google One users Gemini CLI was replaced by Antigravity CLI on 18 June 2026, and that it is not optimized for the latest Gemini models such as Gemini 4 Argon. It is still actively released for paid Code Assist, API-key and Vertex AI use: stable v0.65.0 came out on 20 October, with weekly stable and preview channels and daily nightlies.</p></aside><p class="caveat"><span class="label">Caveat.</span> If you used it through a free personal Google account, check the transition notice before relying on it. Nightly and preview builds are explicitly not fully vetted. API-key and Vertex AI use is billed by Google, and an agent with shell access should run with its sandboxing options; we did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;44 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>108,241 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/google-gemini/gemini-cli" rel="noopener noreferrer">https://github.com/google-gemini/gemini-cli</a></li><li><a class="source-link" href="https://api.github.com/repos/google-gemini/gemini-cli" rel="noopener noreferrer">https://api.github.com/repos/google-gemini/gemini-cli</a></li><li><a class="source-link" href="https://github.com/google-gemini/gemini-cli/blob/main/README.md" rel="noopener noreferrer">https://github.com/google-gemini/gemini-cli/blob/main/README.md</a></li><li><a class="source-link" href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0" rel="noopener noreferrer">https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0</a></li><li><a class="source-link" href="https://github.com/google-gemini/gemini-cli/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/google-gemini/gemini-cli/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-25T07:01:07.360413+00:00">25 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/google-gemini/gemini-cli/readme" rel="noopener noreferrer">https://api.github.com/repos/google-gemini/gemini-cli/readme</a>, checked <time datetime="2026-10-25T07:01:07.945049+00:00">25 Oct 2026, 08:01 CET</time>.</p></section></article></div></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Source</h3><dl><div><dt>Listing</dt><dd><a href="https://github.com/trending?since=daily" rel="noopener noreferrer">https://github.com/trending?since=daily</a></dd></div><div><dt>Period</dt><dd>daily, as defined by GitHub</dd></div><div><dt>Checked</dt><dd><time datetime="2026-10-25T07:00:34.632674+00:00">25 Oct 2026, 08:00 CET</time></dd></div><div><dt>Repositories listed</dt><dd>10</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>All 10 listing entries were inspected. Exact primary public GitHub repository metadata, README, recent releases and recent commits were checked for all 10 at about 07:01 UTC; all were active and unarchived.</li><li>Three entries had already been featured: cloudflare/security-audit-skill (21 October), luongnv89/claude-howto (23 October) and NVIDIA/OpenShell (24 October). security-audit-skill has had no commit since 14 September; claude-howto&#x27;s last commit is from 20 October, before its feature; OpenShell has had Helm, documentation, build and CI commits but no release newer than v0.1.5, which the 24 October card covered. None was judged a material change, so all three were left out.</li><li>jbiaojerry/ebook-treasure-chest was rejected: it collects download links for e-books from commercial reading apps, has no license detected and raises copyright concerns.</li><li>The preceding seven calendar dates, 18-24 October, were checked for local history; all seven editions exist, and none of today&#x27;s picks appeared in any earlier edition.</li><li>The official listing was captured at 08:00:34 Europe/Paris. Literal stars-today labels are GitHub&#x27;s displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.</li><li>Feature, security-control and quality claims are the maintainers&#x27; own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit or endorsement.</li></ul></div></div><div class="cell"><div class="box"><h3>This digest</h3><ul><li><a href="2026-10-25.json" download>Exact input JSON</a></li><li><a href="2026-10-25.md">Markdown text</a></li><li><a href="2026-10-25.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>GitHub Trending is an editorial digest of GitHub’s public daily Trending page, published with The AI Gazette. Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count. Every figure and link is shown with the time it was checked.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "issued_at": "2026-10-25T08:02:34+01:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-25T07:00:34.632674+00:00",
+    "period": "daily",
+    "total_listed": 10
+  },
+  "editorial_note": "GitHub listed ten projects this Sunday morning. Three had already been featured this week without a material change since, and one was rejected, so today's edition has six first-time picks. AWS's official agent toolkit leads because it adds agent-specific IAM controls and audit logging to coding agents working in AWS. Two design skills, Impeccable and Hallmark, take different routes to the same problem of pages that look AI-generated. Cindy is an open-source client that mixes agent harnesses and models, Microduck is the code behind a small robot duck that walks on learned policies, and Gemini CLI users should read a transition notice. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 10 listing entries were inspected. Exact primary public GitHub repository metadata, README, recent releases and recent commits were checked for all 10 at about 07:01 UTC; all were active and unarchived.",
+    "Three entries had already been featured: cloudflare/security-audit-skill (21 October), luongnv89/claude-howto (23 October) and NVIDIA/OpenShell (24 October). security-audit-skill has had no commit since 14 September; claude-howto's last commit is from 20 October, before its feature; OpenShell has had Helm, documentation, build and CI commits but no release newer than v0.1.5, which the 24 October card covered. None was judged a material change, so all three were left out.",
+    "jbiaojerry/ebook-treasure-chest was rejected: it collects download links for e-books from commercial reading apps, has no license detected and raises copyright concerns.",
+    "The preceding seven calendar dates, 18-24 October, were checked for local history; all seven editions exist, and none of today's picks appeared in any earlier edition.",
+    "The official listing was captured at 08:00:34 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature, security-control and quality claims are the maintainers' own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "trending_rank": 3,
+      "description": "AWS's official bundle of plugins, agent skills, rules files and a managed MCP server configuration that help coding agents such as Claude Code, Codex, Cursor, Devin and Kiro build, deploy and operate applications on AWS.",
+      "why_interesting": "First time on our list. It comes from AWS itself and, per its README, succeeds the earlier AWS Labs MCP servers and skills. The practical part is control: AWS says its managed MCP server adds IAM condition keys that separate agent actions from human ones, so a policy can, for example, allow an agent only read-only calls even when your own role can write, and logs every request to CloudTrail. Five plugins cover core services, Bedrock agents, data analytics, DevSecOps and startup advice.",
+      "caveat": "Connecting an agent to the MCP server gives it authenticated access to real AWS APIs, which can change resources and run up costs; scope it with least-privilege IAM and try it on a sandbox account first. The README's GA status and the claim that skills went through end-to-end evaluations are AWS's own, and some setups route through a remote endpoint or Devin's cloud plugins. We did not install or test it.",
+      "category": "AI agents / cloud tooling",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 3209,
+      "stars_period": 13,
+      "stars_period_label": "13 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:00:57.083584+00:00",
+      "readme_checked_at": "2026-10-25T07:00:57.724218+00:00",
+      "readme_source_url": "https://api.github.com/repos/aws/agent-toolkit-for-aws/readme",
+      "evidence_urls": [
+        "https://github.com/aws/agent-toolkit-for-aws",
+        "https://api.github.com/repos/aws/agent-toolkit-for-aws",
+        "https://github.com/aws/agent-toolkit-for-aws/blob/main/README.md",
+        "https://github.com/aws/agent-toolkit-for-aws/tree/main/plugins",
+        "https://github.com/aws/agent-toolkit-for-aws/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "trending_rank": 6,
+      "description": "A design skill and command-line engine for AI coding agents: one setup flow, 24 commands such as audit, critique, polish and harden, and 62 deterministic rules that detect common tells of AI-generated frontend design.",
+      "why_interesting": "First time on our list. Unlike most prompt-only design skills, its detector rules run in a CLI or browser extension with no model and no API key, so findings are repeatable and can feed GitHub Actions annotations. Skill v4.7.0 (19 October) added scanning of open Electron, NW.js, CEF or WebView2 desktop app windows over a debugging port and two new typography checks. It is a useful reviewer for teams whose agents keep shipping the same purple-gradient look.",
+      "caveat": "The launcher downloads a prebuilt engine binary into ~/.impeccable/bin on first use, and the installer offers to add edit-time hooks to Claude Code, Copilot, Cursor, Codex and Grok Build; the README warns that a Claude Code hook can run and download the engine even when a session denies the launcher, so review hooks before unattended runs. New-design rolls call the impeccable.style API, with anonymous choice telemetry on by default (it can be switched off). Design quality judgements are the maintainer's.",
+      "category": "Developer tools / design",
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "stars_total": 86664,
+      "stars_period": 619,
+      "stars_period_label": "619 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:01:03.477607+00:00",
+      "readme_checked_at": "2026-10-25T07:01:03.963189+00:00",
+      "readme_source_url": "https://api.github.com/repos/pbakaus/impeccable/readme",
+      "evidence_urls": [
+        "https://github.com/pbakaus/impeccable",
+        "https://api.github.com/repos/pbakaus/impeccable",
+        "https://github.com/pbakaus/impeccable/blob/main/README.md",
+        "https://github.com/pbakaus/impeccable/releases/tag/skill-v4.7.0",
+        "https://github.com/pbakaus/impeccable/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "trending_rank": 4,
+      "description": "A design skill for Claude Code, Codex, Cursor and OpenCode that builds or redesigns web pages from a catalog of 48 visual themes and then lints the result in a real browser against patterns that read as machine-made.",
+      "why_interesting": "First time on our list, and a contrast to Impeccable: it works by firm rules rather than a long command list. A Floor tier (contrast, focus, reduced motion, invented facts, a broken phone layout) never ships, the hero section is rendered and reviewed on its own first, and a redesign mode records every link, field and handler beforehand and fails if one goes missing. Its README says photos come only from openly licensed Wikimedia Commons images, credited on the page. The README says it is made by Together AI.",
+      "caveat": "Browser checks need Node 18 or later, puppeteer-core and Chrome; without them only static checks run. An optional install-hook script adds an edit-time check to Claude Code, which you should review first. Each photograph keeps its own licence, including CC BY-SA, so check attribution and share-alike terms before commercial use. There are no tagged releases, and the quality claims are the maintainers' own.",
+      "category": "AI agents / design",
+      "language": "CSS",
+      "license": "MIT",
+      "stars_total": 32498,
+      "stars_period": 455,
+      "stars_period_label": "455 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:00:59.579691+00:00",
+      "readme_checked_at": "2026-10-25T07:01:00.073552+00:00",
+      "readme_source_url": "https://api.github.com/repos/Nutlope/hallmark/readme",
+      "evidence_urls": [
+        "https://github.com/Nutlope/hallmark",
+        "https://api.github.com/repos/Nutlope/hallmark",
+        "https://github.com/Nutlope/hallmark/blob/main/README.md",
+        "https://github.com/Nutlope/hallmark/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "trending_rank": 10,
+      "description": "The open-source desktop (Electron) and mobile (React Native) client of Cindy, an AI agent that runs Claude Code, Codex and other harnesses and models on your own machine, with shared memory, skills, schedules, MCP tools and browser, computer and phone control.",
+      "why_interesting": "First time on our list. Its distinctive idea is mixing harnesses and models inside one task: the README describes planning, parallel execution and review by agents on different harness and model combinations while memory and skills stay continuous. It can reuse a Claude Code or Codex plan you already pay for, your own API keys or local models, and a Skip Sign-In mode runs local agents without a Cindy account. Releases ship almost daily (v0.1.115 on 23 October).",
+      "caveat": "Only the client is open source; the backend is in a separate repository, and the client talks to Cindy's cloud and update CDN by default. Official builds include TapDB usage analytics tied to your account ID after sign-in (the README says no chat or file content), and server-backed features need an account and paid usage. The agent works with your real files and logged-in apps, so give it narrow access. It is a young 0.1.x project, and release notes are mostly in Chinese.",
+      "category": "AI agents / desktop apps",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars_total": 4269,
+      "stars_period": 477,
+      "stars_period_label": "477 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:01:11.312905+00:00",
+      "readme_checked_at": "2026-10-25T07:01:12.025869+00:00",
+      "readme_source_url": "https://api.github.com/repos/makecindy/cindy/readme",
+      "evidence_urls": [
+        "https://github.com/makecindy/cindy",
+        "https://api.github.com/repos/makecindy/cindy",
+        "https://github.com/makecindy/cindy/blob/main/README.md",
+        "https://github.com/makecindy/cindy/releases/tag/v0.1.115",
+        "https://github.com/makecindy/cindy/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "trending_rank": 7,
+      "description": "The onboard software of Microduck, a roughly 25 cm, 800 g two-legged robot duck from Pollen Robotics: Rust daemons on a Rockchip RK3566 that run a 50 Hz control loop driving fifteen servos from neural-network walking policies, plus radios, camera streaming and signed updates.",
+      "why_interesting": "First time on our list and today's standout outside software tooling. It is an unusually complete, readable example of a reinforcement-learning robot in production: policies trained in MuJoCo with PPO in a sister repo and exported to ONNX, daemons that share one JSON-RPC contract over Unix sockets, updates that are signed, health-gated and rolled back automatically, and design notes that record what went wrong. A simulator script runs the real daemons against a MuJoCo body, so you can study it without the robot.",
+      "caveat": "Most of the value needs the physical robot, which Pollen sells; we did not check its price or availability. Many published GitHub releases are moving development builds signed with a dev key that customer robots refuse; the latest stable daemon release is daemon-v0.17.8 (19 October). Training is in a separate repository, and the movement abilities described are the maintainers' claims, which we did not test.",
+      "category": "Robotics / embedded",
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "stars_total": 11154,
+      "stars_period": 319,
+      "stars_period_label": "319 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:01:05.397090+00:00",
+      "readme_checked_at": "2026-10-25T07:01:05.876171+00:00",
+      "readme_source_url": "https://api.github.com/repos/pollen-robotics/microduck/readme",
+      "evidence_urls": [
+        "https://github.com/pollen-robotics/microduck",
+        "https://api.github.com/repos/pollen-robotics/microduck",
+        "https://github.com/pollen-robotics/microduck/blob/main/README.md",
+        "https://github.com/pollen-robotics/microduck/releases/tag/daemon-v0.17.8",
+        "https://github.com/pollen-robotics/microduck_rl",
+        "https://github.com/pollen-robotics/microduck/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "trending_rank": 8,
+      "description": "Google's open-source terminal AI agent for Gemini models: it queries and edits codebases, automates tasks such as pull-request queries and rebases, connects MCP servers and runs non-interactively in scripts.",
+      "why_interesting": "First time on our list, mainly as a status check for existing users. The README now says that for unpaid-tier and Google One users Gemini CLI was replaced by Antigravity CLI on 18 June 2026, and that it is not optimized for the latest Gemini models such as Gemini 4 Argon. It is still actively released for paid Code Assist, API-key and Vertex AI use: stable v0.65.0 came out on 20 October, with weekly stable and preview channels and daily nightlies.",
+      "caveat": "If you used it through a free personal Google account, check the transition notice before relying on it. Nightly and preview builds are explicitly not fully vetted. API-key and Vertex AI use is billed by Google, and an agent with shell access should run with its sandboxing options; we did not install or test it.",
+      "category": "Developer tools / AI agents",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars_total": 108241,
+      "stars_period": 44,
+      "stars_period_label": "44 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-25T07:01:07.360413+00:00",
+      "readme_checked_at": "2026-10-25T07:01:07.945049+00:00",
+      "readme_source_url": "https://api.github.com/repos/google-gemini/gemini-cli/readme",
+      "evidence_urls": [
+        "https://github.com/google-gemini/gemini-cli",
+        "https://api.github.com/repos/google-gemini/gemini-cli",
+        "https://github.com/google-gemini/gemini-cli/blob/main/README.md",
+        "https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0",
+        "https://github.com/google-gemini/gemini-cli/blob/main/LICENSE"
+      ]
+    }
+  ]
+}
