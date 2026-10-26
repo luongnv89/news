@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "issued_at": "2026-10-26T08:03:02+01:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-26T07:00:56.955551+00:00",
+    "period": "daily",
+    "total_listed": 11
+  },
+  "editorial_note": "GitHub listed eleven projects this Monday morning. Six had been featured in the past week without a material change since, so today's edition has four first-time picks and one repeat with a sourced change. Coolify leads as a mature self-hosted alternative to paid deployment platforms, with a fresh v4.5.0 release. JetBrains' ThinkRail puts each agent task in its own git worktree, Claude SEO packages an SEO audit as a Claude Code plugin, and TradingAgents is a research framework for multi-agent market analysis. VoiceStudio returns because its new beta phone apps now run models on the device. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 11 listing entries were inspected. Exact primary public GitHub repository metadata, README, recent releases and recent commits were checked for all 11 at about 07:01 UTC; all were active, unarchived and had an API-detected license.",
+    "Six entries had been featured in the previous seven days and were left out without a material change: makecindy/cindy, Nutlope/hallmark, pbakaus/impeccable and pollen-robotics/microduck (25 October), Renhuai123/ziwei-doushu (24 October) and cloudflare/security-audit-skill (21 October). Since those cards they show only small fixes, README edits, development builds or no commits at all.",
+    "debpalash/VoiceStudio is a repeat from 19 October, included because its 23-24 October prereleases changed a caveat we printed then (on-device phone models were only planned).",
+    "The preceding seven calendar dates, 19-25 October, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:56 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature, performance and security claims are the maintainers' own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit, endorsement or financial advice."
+  ],
+  "projects": [
+    {
+      "repository": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "trending_rank": 9,
+      "description": "An open-source, self-hostable platform in the style of Heroku, Netlify or Vercel: it deploys applications, databases and more than 360 one-click services onto your own servers over SSH, with Git push deploys, pull-request previews, automatic HTTPS, backups and a dashboard, API, CLI and MCP interface.",
+      "why_interesting": "First time on our list. A mature project (created 2021) that suits anyone paying platform fees for small apps. Its v4.5.0 release on 23 October adds beta server patching with automatic security updates per server, passkey sign-in, a fleet metrics page, a file browser, maintenance mode, Gitea App sources, MCP tools to manage resources and an automatic backup of Coolify's own database before each update. The README also says running resources keep working if you stop using Coolify.",
+      "caveat": "Self-hosting moves the operations work to you: you patch, secure and back up the servers, and the new server patching is labelled beta. The quick start pipes a remote install script into bash on the server, so read the script first. A dashboard that holds SSH access to all your servers is a high-value target; protect it accordingly. The hosted Coolify Cloud is a paid service. We did not install or test it.",
+      "category": "Developer tools / self-hosting",
+      "language": "PHP",
+      "license": "Apache-2.0",
+      "stars_total": 64675,
+      "stars_period": 152,
+      "stars_period_label": "152 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-26T07:01:37.949859+00:00",
+      "readme_checked_at": "2026-10-26T07:01:38.491043+00:00",
+      "readme_source_url": "https://api.github.com/repos/coollabsio/coolify/readme",
+      "evidence_urls": [
+        "https://github.com/coollabsio/coolify",
+        "https://api.github.com/repos/coollabsio/coolify",
+        "https://github.com/coollabsio/coolify/releases/tag/v4.5.0",
+        "https://github.com/coollabsio/coolify/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "trending_rank": 8,
+      "description": "A JetBrains incubator project: a lightweight agentic IDE built around the open-source pi coding agent, with Monaco editor tabs, terminals, a file tree, review comments and chats, where each task runs in its own git worktree workspace and the agent keeps project knowledge in a graph of SPEC.md files.",
+      "why_interesting": "First time on our list. Running parallel agent tasks in separate git worktrees, then merging the good branch and discarding the rest, is a practical answer to agents trampling one checkout. The topbar follows the branch through push, PR, CI checks and merge, and MCP calls not marked read-only need approval in chat, with repository-defined servers kept off until approved. It works with JetBrains AI or any provider pi supports; ThinkRail has no accounts of its own. v0.2.0 was released on 18 October, with v0.3.0 nightlies since.",
+      "caveat": "Early software: an incubator project at 0.x with frequent nightly builds. It sends basic usage events and error reports tied to a random installation ID, and extra sharing only if you enable it. Desktop builds need Apple Silicon on macOS (no Intel build) or glibc 2.38+ on Linux, Windows and Linux artifacts are unsigned, and the CLI installs through a piped install script. Model costs are your provider's. We did not install or test it.",
+      "category": "AI agents / developer tools",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars_total": 2081,
+      "stars_period": 51,
+      "stars_period_label": "51 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-26T07:01:35.619158+00:00",
+      "readme_checked_at": "2026-10-26T07:01:36.227223+00:00",
+      "readme_source_url": "https://api.github.com/repos/JetBrains/thinkrail/readme",
+      "evidence_urls": [
+        "https://github.com/JetBrains/thinkrail",
+        "https://api.github.com/repos/JetBrains/thinkrail",
+        "https://github.com/JetBrains/thinkrail/releases/tag/v0.2.0",
+        "https://github.com/JetBrains/thinkrail/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "trending_rank": 11,
+      "description": "A Claude Code plugin for SEO audits: 26 sub-skills and 19 agents check technical SEO, Core Web Vitals, content quality, Schema.org markup, local and e-commerce SEO and how likely AI search tools are to cite a page, then produce a prioritized action plan as Markdown, PDF or JSON.",
+      "why_interesting": "First time on our list. It turns a familiar checklist job into a repeatable command (/seo audit plus a site address) with an explanation and a way to check each fix, and it includes an agent-readiness check (llms.txt, WebMCP, Lighthouse agentic browsing). Its v2.5.0 release on 22 October is billed as security and accuracy fixes from a full audit, adds a read-only check that flags a known critical CVE in the audited site's server stack, and now requires Python 3.11 to 3.14.",
+      "caveat": "The audit time, results and the 10.8K Search Console clicks shown in the README are the author's claims. It installs its own Python environment and a headless Chromium and uses your Claude Code plan's usage; some extensions need paid third-party accounts. Its own commits move installer verification to a future v2.6.0. Audit only sites you own or are permitted to test. We did not install or test it.",
+      "category": "AI agents / web marketing",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 21327,
+      "stars_period": 197,
+      "stars_period_label": "197 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-26T07:01:42.187273+00:00",
+      "readme_checked_at": "2026-10-26T07:01:42.667717+00:00",
+      "readme_source_url": "https://api.github.com/repos/AgriciDaniel/claude-seo/readme",
+      "evidence_urls": [
+        "https://github.com/AgriciDaniel/claude-seo",
+        "https://api.github.com/repos/AgriciDaniel/claude-seo",
+        "https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.5.0",
+        "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "trending_rank": 6,
+      "description": "A research framework that models a trading firm with LLM agents: fundamentals, sentiment, news and technical analysts report in parallel, bullish and bearish researchers debate, and a trader, risk team and portfolio manager reach a decision; it includes a CLI, a Python package, backtesting and many model providers.",
+      "why_interesting": "First time on our list. It is a well-documented example of a multi-agent workflow with structured roles, and recent releases focus on research correctness: point-in-time data so backtests only see information published by each analysis date, SEC EDGAR fundamentals as filed and, in v0.7.0 on 16 October, decisions scored from the first close after each decision. v0.7.0 can also run on a ChatGPT Plus or Pro plan instead of an API key.",
+      "caveat": "The README states it is designed for research and is not financial, investment or trading advice; LLM output is non-deterministic and any backtest results are the authors'. Runs call paid model APIs and market-data vendors that need their own keys, and the interactive CLI checks for updates once a day unless disabled. Do not connect it to real money without your own validation. We did not install or test it.",
+      "category": "AI agents / finance research",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 114951,
+      "stars_period": 381,
+      "stars_period_label": "381 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-26T07:01:31.267754+00:00",
+      "readme_checked_at": "2026-10-26T07:01:31.852929+00:00",
+      "readme_source_url": "https://api.github.com/repos/TauricResearch/TradingAgents/readme",
+      "evidence_urls": [
+        "https://github.com/TauricResearch/TradingAgents",
+        "https://api.github.com/repos/TauricResearch/TradingAgents",
+        "https://github.com/TauricResearch/TradingAgents/releases/tag/v0.7.0",
+        "https://github.com/TauricResearch/TradingAgents/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "trending_rank": 3,
+      "description": "A local, open-source alternative to ElevenLabs: a desktop app and server for voice cloning, voice design, text-to-speech, video dubbing, dictation, transcription and audiobook creation using locally run models.",
+      "why_interesting": "Material change since our 19 October card, which said on-device phone models were only planned and the mobile apps were untagged. The v0.5.7-beta.2 prerelease (23 October) and mobile-v0.5.7-beta.2 (24 October) now ship preview iOS and Android apps that, per the release notes, run VoiceStudio on the phone offline after downloading the models, with SHA256SUMS for verification. The desktop prerelease also adds an opt-in beta update channel and lets small models install with 2 GB of spare disk.",
+      "caveat": "These are beta prereleases: Android needs a sideloaded APK, the iPhone build is unsigned for sideloading or limited to TestFlight, and the Windows desktop installers are unsigned. Offline phone use still means downloading models first. Clone voices only with consent; model and voice rights are separate from the AGPL-3.0 app license. Quality and language-count claims are the maintainer's. We did not install or test it.",
+      "category": "AI / audio",
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "stars_total": 87416,
+      "stars_period": 1592,
+      "stars_period_label": "1,592 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-26T07:01:24.850528+00:00",
+      "readme_checked_at": "2026-10-26T07:01:25.356757+00:00",
+      "readme_source_url": "https://api.github.com/repos/debpalash/VoiceStudio/readme",
+      "evidence_urls": [
+        "https://github.com/debpalash/VoiceStudio",
+        "https://api.github.com/repos/debpalash/VoiceStudio",
+        "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.7-beta.2",
+        "https://github.com/debpalash/VoiceStudio/releases/tag/mobile-v0.5.7-beta.2",
+        "https://github.com/debpalash/VoiceStudio/blob/main/LICENSE"
+      ]
+    }
+  ]
+}

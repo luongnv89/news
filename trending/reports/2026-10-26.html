@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Trending — Monday 26 October 2026</title>
+<meta name="description" content="Daily GitHub Trending digest for 2026-10-26.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.trend-card h3 { text-transform: none; }
+.trend-card .freshness { white-space: nowrap; }
+.trend-card h3 a { text-decoration: none; }
+.trend-card h3 a:hover { text-decoration: underline; }
+.trend-card .facts dl > div { margin-top: 3px; }
+.trend-card .facts dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.trend-card .facts dt::after { content: ":"; }
+.trend-card .facts dd { display: inline; margin-left: 4px; }
+main .trend-card .facts dd, main .trend-card .evidence li { text-align: left; }
+.evidence a { overflow-wrap: anywhere; }
+main .trend-card p.checks { text-align: left; font-size: 0.92rem; font-style: italic; margin-top: 4px; }
+</style>
+</head>
+<body class="page page-trending page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">GitHub Trending</a>
+<p class="tagline">A daily reading of GitHub’s trending page — a supplement to The AI Gazette</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-26T08:03:02+01:00">Monday 26 October 2026</time></p><p>Daily digest &middot; No. 2026-10-26</p><p>Issued 08:03 CET</p><p>Listing checked <time datetime="2026-10-26T07:00:56.955551+00:00">26 Oct 2026, 08:00 CET</time></p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../../index.html">The AI Gazette</a><a href="../index.html">Latest trending</a><a href="../archive.html">Trending archive</a><a href="2026-10-26.html">This digest</a><a href="2026-10-26.md">Markdown</a><a href="2026-10-26.json">JSON</a></div></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">GitHub Trending &mdash; Monday 26 October 2026</h1><p class="window-line">Source: <a href="https://github.com/trending?since=daily" rel="noopener noreferrer">GitHub Trending, daily</a> (https://github.com/trending?since=daily), checked <time datetime="2026-10-26T07:00:56.955551+00:00">26 Oct 2026, 08:00 CET</time>. GitHub listed 11 repositories; this digest picks 5.</p><p class="lead-note">GitHub listed eleven projects this Monday morning. Six had been featured in the past week without a material change since, so today&#x27;s edition has four first-time picks and one repeat with a sourced change. Coolify leads as a mature self-hosted alternative to paid deployment platforms, with a fresh v4.5.0 release. JetBrains&#x27; ThinkRail puts each agent task in its own git worktree, Claude SEO packages an SEO audit as a Claude Code plugin, and TradingAgents is a research framework for multi-agent market analysis. VoiceStudio returns because its new beta phone apps now run models on the device. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.</p><p class="tally">Curation order, not GitHub rank &middot; Issued <time datetime="2026-10-26T08:03:02+01:00">26 Oct 2026, 08:03 CET</time></p></section>
+<section class="paper-section" aria-labelledby="picks-title"><h2 id="picks-title">The Picks</h2><p class="section-note">Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch trend-card" id="pick-1" aria-labelledby="h-pick-1"><p class="kicker"><span class="section-name">Pick 1 &middot; Developer tools / self-hosting</span> <span class="freshness">GitHub rank #9 of 11</span></p><h3 id="h-pick-1"><a href="https://github.com/coollabsio/coolify" rel="noopener noreferrer">coollabsio/coolify</a></h3><p class="dates">PHP &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> An open-source, self-hostable platform in the style of Heroku, Netlify or Vercel: it deploys applications, databases and more than 360 one-click services onto your own servers over SSH, with Git push deploys, pull-request previews, automatic HTTPS, backups and a dashboard, API, CLI and MCP interface.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. A mature project (created 2021) that suits anyone paying platform fees for small apps. Its v4.5.0 release on 23 October adds beta server patching with automatic security updates per server, passkey sign-in, a fleet metrics page, a file browser, maintenance mode, Gitea App sources, MCP tools to manage resources and an automatic backup of Coolify&#x27;s own database before each update. The README also says running resources keep working if you stop using Coolify.</p></aside><p class="caveat"><span class="label">Caveat.</span> Self-hosting moves the operations work to you: you patch, secure and back up the servers, and the new server patching is labelled beta. The quick start pipes a remote install script into bash on the server, so read the script first. A dashboard that holds SSH access to all your servers is a high-value target; protect it accordingly. The hosted Coolify Cloud is a paid service. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;152 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>64,675 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/coollabsio/coolify" rel="noopener noreferrer">https://github.com/coollabsio/coolify</a></li><li><a class="source-link" href="https://api.github.com/repos/coollabsio/coolify" rel="noopener noreferrer">https://api.github.com/repos/coollabsio/coolify</a></li><li><a class="source-link" href="https://github.com/coollabsio/coolify/releases/tag/v4.5.0" rel="noopener noreferrer">https://github.com/coollabsio/coolify/releases/tag/v4.5.0</a></li><li><a class="source-link" href="https://github.com/coollabsio/coolify/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/coollabsio/coolify/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-26T07:01:37.949859+00:00">26 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/coollabsio/coolify/readme" rel="noopener noreferrer">https://api.github.com/repos/coollabsio/coolify/readme</a>, checked <time datetime="2026-10-26T07:01:38.491043+00:00">26 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-2" aria-labelledby="h-pick-2"><p class="kicker"><span class="section-name">Pick 2 &middot; AI agents / developer tools</span> <span class="freshness">GitHub rank #8 of 11</span></p><h3 id="h-pick-2"><a href="https://github.com/JetBrains/thinkrail" rel="noopener noreferrer">JetBrains/thinkrail</a></h3><p class="dates">TypeScript &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> A JetBrains incubator project: a lightweight agentic IDE built around the open-source pi coding agent, with Monaco editor tabs, terminals, a file tree, review comments and chats, where each task runs in its own git worktree workspace and the agent keeps project knowledge in a graph of SPEC.md files.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. Running parallel agent tasks in separate git worktrees, then merging the good branch and discarding the rest, is a practical answer to agents trampling one checkout. The topbar follows the branch through push, PR, CI checks and merge, and MCP calls not marked read-only need approval in chat, with repository-defined servers kept off until approved. It works with JetBrains AI or any provider pi supports; ThinkRail has no accounts of its own. v0.2.0 was released on 18 October, with v0.3.0 nightlies since.</p></aside><p class="caveat"><span class="label">Caveat.</span> Early software: an incubator project at 0.x with frequent nightly builds. It sends basic usage events and error reports tied to a random installation ID, and extra sharing only if you enable it. Desktop builds need Apple Silicon on macOS (no Intel build) or glibc 2.38+ on Linux, Windows and Linux artifacts are unsigned, and the CLI installs through a piped install script. Model costs are your provider&#x27;s. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;51 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>2,081 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/JetBrains/thinkrail" rel="noopener noreferrer">https://github.com/JetBrains/thinkrail</a></li><li><a class="source-link" href="https://api.github.com/repos/JetBrains/thinkrail" rel="noopener noreferrer">https://api.github.com/repos/JetBrains/thinkrail</a></li><li><a class="source-link" href="https://github.com/JetBrains/thinkrail/releases/tag/v0.2.0" rel="noopener noreferrer">https://github.com/JetBrains/thinkrail/releases/tag/v0.2.0</a></li><li><a class="source-link" href="https://github.com/JetBrains/thinkrail/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/JetBrains/thinkrail/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-26T07:01:35.619158+00:00">26 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/JetBrains/thinkrail/readme" rel="noopener noreferrer">https://api.github.com/repos/JetBrains/thinkrail/readme</a>, checked <time datetime="2026-10-26T07:01:36.227223+00:00">26 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-3" aria-labelledby="h-pick-3"><p class="kicker"><span class="section-name">Pick 3 &middot; AI agents / web marketing</span> <span class="freshness">GitHub rank #11 of 11</span></p><h3 id="h-pick-3"><a href="https://github.com/AgriciDaniel/claude-seo" rel="noopener noreferrer">AgriciDaniel/claude-seo</a></h3><p class="dates">Python &middot; License: MIT</p><div class="story-body"><p><span class="label">What it does.</span> A Claude Code plugin for SEO audits: 26 sub-skills and 19 agents check technical SEO, Core Web Vitals, content quality, Schema.org markup, local and e-commerce SEO and how likely AI search tools are to cite a page, then produce a prioritized action plan as Markdown, PDF or JSON.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. It turns a familiar checklist job into a repeatable command (/seo audit plus a site address) with an explanation and a way to check each fix, and it includes an agent-readiness check (llms.txt, WebMCP, Lighthouse agentic browsing). Its v2.5.0 release on 22 October is billed as security and accuracy fixes from a full audit, adds a read-only check that flags a known critical CVE in the audited site&#x27;s server stack, and now requires Python 3.11 to 3.14.</p></aside><p class="caveat"><span class="label">Caveat.</span> The audit time, results and the 10.8K Search Console clicks shown in the README are the author&#x27;s claims. It installs its own Python environment and a headless Chromium and uses your Claude Code plan&#x27;s usage; some extensions need paid third-party accounts. Its own commits move installer verification to a future v2.6.0. Audit only sites you own or are permitted to test. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;197 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>21,327 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/AgriciDaniel/claude-seo" rel="noopener noreferrer">https://github.com/AgriciDaniel/claude-seo</a></li><li><a class="source-link" href="https://api.github.com/repos/AgriciDaniel/claude-seo" rel="noopener noreferrer">https://api.github.com/repos/AgriciDaniel/claude-seo</a></li><li><a class="source-link" href="https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.5.0" rel="noopener noreferrer">https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.5.0</a></li><li><a class="source-link" href="https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-26T07:01:42.187273+00:00">26 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/AgriciDaniel/claude-seo/readme" rel="noopener noreferrer">https://api.github.com/repos/AgriciDaniel/claude-seo/readme</a>, checked <time datetime="2026-10-26T07:01:42.667717+00:00">26 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-4" aria-labelledby="h-pick-4"><p class="kicker"><span class="section-name">Pick 4 &middot; AI agents / finance research</span> <span class="freshness">GitHub rank #6 of 11</span></p><h3 id="h-pick-4"><a href="https://github.com/TauricResearch/TradingAgents" rel="noopener noreferrer">TauricResearch/TradingAgents</a></h3><p class="dates">Python &middot; License: Apache-2.0</p><div class="story-body"><p><span class="label">What it does.</span> A research framework that models a trading firm with LLM agents: fundamentals, sentiment, news and technical analysts report in parallel, bullish and bearish researchers debate, and a trader, risk team and portfolio manager reach a decision; it includes a CLI, a Python package, backtesting and many model providers.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> First time on our list. It is a well-documented example of a multi-agent workflow with structured roles, and recent releases focus on research correctness: point-in-time data so backtests only see information published by each analysis date, SEC EDGAR fundamentals as filed and, in v0.7.0 on 16 October, decisions scored from the first close after each decision. v0.7.0 can also run on a ChatGPT Plus or Pro plan instead of an API key.</p></aside><p class="caveat"><span class="label">Caveat.</span> The README states it is designed for research and is not financial, investment or trading advice; LLM output is non-deterministic and any backtest results are the authors&#x27;. Runs call paid model APIs and market-data vendors that need their own keys, and the interactive CLI checks for updates once a day unless disabled. Do not connect it to real money without your own validation. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;381 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>114,951 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/TauricResearch/TradingAgents" rel="noopener noreferrer">https://github.com/TauricResearch/TradingAgents</a></li><li><a class="source-link" href="https://api.github.com/repos/TauricResearch/TradingAgents" rel="noopener noreferrer">https://api.github.com/repos/TauricResearch/TradingAgents</a></li><li><a class="source-link" href="https://github.com/TauricResearch/TradingAgents/releases/tag/v0.7.0" rel="noopener noreferrer">https://github.com/TauricResearch/TradingAgents/releases/tag/v0.7.0</a></li><li><a class="source-link" href="https://github.com/TauricResearch/TradingAgents/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/TauricResearch/TradingAgents/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-26T07:01:31.267754+00:00">26 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/TauricResearch/TradingAgents/readme" rel="noopener noreferrer">https://api.github.com/repos/TauricResearch/TradingAgents/readme</a>, checked <time datetime="2026-10-26T07:01:31.852929+00:00">26 Oct 2026, 08:01 CET</time>.</p></section></article></div><div class="cell"><article class="dispatch trend-card" id="pick-5" aria-labelledby="h-pick-5"><p class="kicker"><span class="section-name">Pick 5 &middot; AI / audio</span> <span class="freshness">GitHub rank #3 of 11</span></p><h3 id="h-pick-5"><a href="https://github.com/debpalash/VoiceStudio" rel="noopener noreferrer">debpalash/VoiceStudio</a></h3><p class="dates">Python &middot; License: AGPL-3.0</p><div class="story-body"><p><span class="label">What it does.</span> A local, open-source alternative to ElevenLabs: a desktop app and server for voice cloning, voice design, text-to-speech, video dubbing, dictation, transcription and audiobook creation using locally run models.</p></div><aside class="analysis" aria-label="Editorial view"><p><span class="label">Why it is interesting &mdash; editorial.</span> Material change since our 19 October card, which said on-device phone models were only planned and the mobile apps were untagged. The v0.5.7-beta.2 prerelease (23 October) and mobile-v0.5.7-beta.2 (24 October) now ship preview iOS and Android apps that, per the release notes, run VoiceStudio on the phone offline after downloading the models, with SHA256SUMS for verification. The desktop prerelease also adds an opt-in beta update channel and lets small models install with 2 GB of spare disk.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are beta prereleases: Android needs a sideloaded APK, the iPhone build is unsigned for sideloading or limited to TestFlight, and the Windows desktop installers are unsigned. Offline phone use still means downloading models first. Clone voices only with consent; model and voice rights are separate from the AGPL-3.0 app license. Quality and language-count claims are the maintainer&#x27;s. We did not install or test it.</p><section class="sources facts" aria-label="Attention figures"><p class="label">Attention, not endorsement</p><dl><div><dt>GitHub showed</dt><dd>&ldquo;1,592 stars today&rdquo; as displayed for GitHub’s daily window; not an audited rolling 24-hour count</dd></div><div><dt>Total stars</dt><dd>87,416 at the metadata check</dd></div></dl></section><section class="sources evidence" aria-label="Evidence"><p class="label">Primary evidence</p><ol><li><a class="source-link" href="https://github.com/debpalash/VoiceStudio" rel="noopener noreferrer">https://github.com/debpalash/VoiceStudio</a></li><li><a class="source-link" href="https://api.github.com/repos/debpalash/VoiceStudio" rel="noopener noreferrer">https://api.github.com/repos/debpalash/VoiceStudio</a></li><li><a class="source-link" href="https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.7-beta.2" rel="noopener noreferrer">https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.7-beta.2</a></li><li><a class="source-link" href="https://github.com/debpalash/VoiceStudio/releases/tag/mobile-v0.5.7-beta.2" rel="noopener noreferrer">https://github.com/debpalash/VoiceStudio/releases/tag/mobile-v0.5.7-beta.2</a></li><li><a class="source-link" href="https://github.com/debpalash/VoiceStudio/blob/main/LICENSE" rel="noopener noreferrer">https://github.com/debpalash/VoiceStudio/blob/main/LICENSE</a></li></ol><p class="checks">Metadata checked <time datetime="2026-10-26T07:01:24.850528+00:00">26 Oct 2026, 08:01 CET</time>. README read from <a href="https://api.github.com/repos/debpalash/VoiceStudio/readme" rel="noopener noreferrer">https://api.github.com/repos/debpalash/VoiceStudio/readme</a>, checked <time datetime="2026-10-26T07:01:25.356757+00:00">26 Oct 2026, 08:01 CET</time>.</p></section></article></div></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Source</h3><dl><div><dt>Listing</dt><dd><a href="https://github.com/trending?since=daily" rel="noopener noreferrer">https://github.com/trending?since=daily</a></dd></div><div><dt>Period</dt><dd>daily, as defined by GitHub</dd></div><div><dt>Checked</dt><dd><time datetime="2026-10-26T07:00:56.955551+00:00">26 Oct 2026, 08:00 CET</time></dd></div><div><dt>Repositories listed</dt><dd>11</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>All 11 listing entries were inspected. Exact primary public GitHub repository metadata, README, recent releases and recent commits were checked for all 11 at about 07:01 UTC; all were active, unarchived and had an API-detected license.</li><li>Six entries had been featured in the previous seven days and were left out without a material change: makecindy/cindy, Nutlope/hallmark, pbakaus/impeccable and pollen-robotics/microduck (25 October), Renhuai123/ziwei-doushu (24 October) and cloudflare/security-audit-skill (21 October). Since those cards they show only small fixes, README edits, development builds or no commits at all.</li><li>debpalash/VoiceStudio is a repeat from 19 October, included because its 23-24 October prereleases changed a caveat we printed then (on-device phone models were only planned).</li><li>The preceding seven calendar dates, 19-25 October, were checked for local history; all seven editions exist.</li><li>The official listing was captured at 08:00:56 Europe/Paris. Literal stars-today labels are GitHub&#x27;s displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.</li><li>Feature, performance and security claims are the maintainers&#x27; own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit, endorsement or financial advice.</li></ul></div></div><div class="cell"><div class="box"><h3>This digest</h3><ul><li><a href="2026-10-26.json" download>Exact input JSON</a></li><li><a href="2026-10-26.md">Markdown text</a></li><li><a href="2026-10-26.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>GitHub Trending is an editorial digest of GitHub’s public daily Trending page, published with The AI Gazette. Picks are listed in curation order, not GitHub’s rank; each card shows the rank GitHub displayed when the page was checked. Stars measure attention, not security, quality or fitness for use, and no project here was installed or run. “Stars today” is GitHub’s own displayed figure for its daily window, not an audited rolling 24-hour count. Every figure and link is shown with the time it was checked.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
