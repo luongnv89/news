@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Monday 26 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-26-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Monday 26 October 2026</span><span class="rh-url">luongnv.com/news/reports/2026-10-26-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-26T16:08:39+01:00">Monday 26 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-26-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-26-afternoon.html">This edition</a><a href="2026-10-26-afternoon.md">Markdown</a><a href="2026-10-26-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-26-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-26-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Monday 26 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-26T06:11:18+01:00">26 Oct 2026, 06:11 CET</time> to <time datetime="2026-10-26T16:08:09+01:00">26 Oct 2026, 16:08 CET</time> (Paris time). Issued <time datetime="2026-10-26T16:08:39+01:00">26 Oct 2026, 16:08 CET</time>.</p><p class="lead-note">This edition follows this morning&#x27;s issue, published at 06:11 CET. Monday&#x27;s news was dominated by money for AI. Two dispatches are new: Meta&#x27;s plan to raise up to $95 billion in equity and Springer Nature&#x27;s peer-review partnership with Google DeepMind. Two are updates with a material change: Anthropic&#x27;s prospectus, which the Gazette reported from a leaked draft on 21 October, is now filed publicly with the SEC, and the SpaceX chip money that Musk called closed debt on Sunday turns out to be a lease commitment that has not yet closed. One item, a Tsinghua preprint from 20 October, is new to this journal and appears only as background. Nothing else from earlier editions is repeated.</p><p class="tally">4 new or updated dispatches &middot; 1 background item &middot; Previous: <a href="2026-10-26-morning.html">2026-10-26-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-springer-nature-deepmind-peer-review-assistant" aria-labelledby="h-springer-nature-deepmind-peer-review-assistant"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-springer-nature-deepmind-peer-review-assistant">Springer Nature and Google DeepMind are building an AI assistant for peer reviewers, now being tested as a prototype</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-26">26 Oct 2026</time></p><div class="story-body"><p>Springer Nature announced on 26 October a research partnership with Google DeepMind to co-design an AI assistant for peer reviewers. The publisher says the assistant will help reviewers navigate manuscripts, analyse large amounts of text, charts and figures, and flag areas that may need closer attention, so they can spend more time on questions that require specialist scientific judgement.</p><p>The assistant uses Google DeepMind&#x27;s Gemini models and builds on Google&#x27;s research tools ScholarPeer and Deep Review, according to the release. It is built with Google&#x27;s open-source Agent Development Kit and runs only inside Springer Nature&#x27;s private Gemini Enterprise environment, which the publisher says keeps manuscripts and reviewer content confidential. A prototype is being tested; no launch date was given.</p><p>Times Higher Education notes that the partnership comes as journals face a surge of AI-assisted submissions and that using AI in peer review remains controversial.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: One of the largest publishers is trying to use AI to absorb the volume that AI is helping to create, while keeping the human reviewer formally responsible. How reviewers actually use such a tool will matter more than the design intent.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is an announcement of a prototype, with no published evaluation, results or timetable. The claims about its abilities are the partners&#x27; own.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://group.springernature.com/gp/group/media/press-releases/research-partnership-with-googledeepmind-to-support-peer-review/53891572" rel="noopener noreferrer">Springer Nature press release</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:09+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.timeshighereducation.com/news/google-deepmind-and-springer-nature-create-ai-peer-review-tool" rel="noopener noreferrer">Times Higher Education</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:09+01:00">26 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-draft-ipo-prospectus" aria-labelledby="h-anthropic-draft-ipo-prospectus"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-draft-ipo-prospectus">UPDATE: Anthropic files its IPO prospectus publicly, confirms $16.3 billion of first-half revenue and gives its seven co-founders 50.1% of the vote</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-26">26 Oct 2026</time></p><div class="story-body"><p>Anthropic made its registration statement for an initial public offering public on Monday 26 October. The Form S-1 on the SEC&#x27;s EDGAR system says the company has applied to list its Class A shares on the Nasdaq Global Select Market under the symbol ANT. The price range, the number of shares and the amount to be raised are still blank.</p><p>What changed since this journal&#x27;s 21 October dispatch, which relied on the Wall Street Journal&#x27;s account of a draft: the figures now come from the filed document. Revenue for the six months to 30 June was $16.29 billion, against $1.16 billion a year earlier and $4.59 billion for all of 2025. Compute and infrastructure cost $8.95 billion in the half, and the operating loss narrowed to $693 million from $2.14 billion. The net loss was $80.75 billion, of which $72.4 billion came from changes in the fair value of convertible notes, derivative liabilities and SAFEs, which the filing attributes mainly to Anthropic&#x27;s rising valuation.</p><p>The filing also sets out control after the listing. Anthropic is a Delaware public benefit corporation. Its Long-Term Benefit Trust holds Class T stock, which generally lets it elect and remove the Class T directors, who will be a majority of the board. A single Class F share, held by a company owned by the seven co-founders, will carry 50.1 per cent of the votes on other shareholder matters, including the election of the remaining directors. Employees other than the co-founders will receive Class E stock that votes only on limited matters.</p><p>On customers, the S-1 says that as of 30 September more than 11,900 customers each brought in $100,000 or more over the previous twelve months, more than 1,900 brought in $1 million or more and about 250 brought in $10 million or more. The top five customers made up about 25 per cent of revenue in the nine months to 30 September, and none exceeded 10 per cent. Since the start of 2026, Anthropic says it has signed new or amended lease and commercial agreements, mostly for compute equipment, data centres and cloud capacity, with future minimum payments of about $417 billion.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Public shareholders would get economic exposure but little say over the board or the company&#x27;s direction, while Anthropic carries hundreds of billions of dollars in fixed compute commitments. Those two facts, more than the headline loss, are what investors will have to price.</p></aside><p class="caveat"><span class="label">Caveat.</span> The six-month figures are unaudited. The offering&#x27;s size, price and timing are not set, and an S-1 can be amended or withdrawn. Most of the net loss is a non-cash accounting charge. The Gazette read the S-1 itself; Reuters&#x27; report on the filing refused automated access and was not opened.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" rel="noopener noreferrer">SEC EDGAR: Anthropic, PBC Form S-1</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:24+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:10+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://fortune.com/2026/10/26/anthropics-s-1/" rel="noopener noreferrer">Fortune</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:05:23+01:00">26 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://finance.yahoo.com/technology/article/anthropic-publicly-files-s-1-prospectus-noting-strong-revenue-growth-and-massive-spending-131255196.html" rel="noopener noreferrer">Yahoo Finance</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:10+01:00">26 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-meta-95bn-equity-raise" aria-labelledby="h-meta-95bn-equity-raise"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-meta-95bn-equity-raise">Meta launches about $35 billion of share sales and plans up to $60 billion more to pay for AI, with Nvidia, AMD and Broadcom offering to buy in</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-26">26 Oct 2026</time></p><div class="story-body"><p>Meta said on Monday 26 October that it had launched two concurrent underwritten offerings: $22.5 billion of Class A common stock sold under forward sale agreements with Morgan Stanley and Goldman Sachs, and 250 million depositary shares, each a one-twentieth interest in new mandatory convertible preferred stock, which Meta puts at about $12.5 billion. It also plans an at-the-market programme of about $60 billion in non-voting Class C shares once those shares start trading, expected in the first quarter of 2027. Meta says it has no agreement for that programme yet and that its timing, size and terms are undecided.</p><p>Nvidia, AMD and Broadcom have indicated interest in buying up to $5.0 billion of the Class A shares at the offering price, the release says. Meta ties the plan to its AI infrastructure and what it calls personal superintelligence, repeats its forecast of $135 billion to $145 billion of capital spending in 2026, and says it had about $82 billion of cash and marketable securities at the end of September.</p><p>Reuters, as published by CNA, calls it Meta&#x27;s largest-ever equity fundraising. It reports that Meta burned $2.12 billion of cash in the third quarter, its first negative free cash flow in more than a decade, and has committed to about $825 billion of future spending, mostly on data centres, AI infrastructure and cloud capacity. CNBC reported the shares down 1.6 per cent in morning trading after the announcement.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Meta used to pay for its build-out from cash flow and bonds; selling shares is a new step. Chip suppliers buying stock in one of their biggest customers adds to concern that money is circulating within the AI industry rather than coming from outside it.</p></aside><p class="caveat"><span class="label">Caveat.</span> The offerings had not been priced when the Gazette checked, and the $60 billion programme may never be set up. The chipmakers&#x27; interest is an indication, not a commitment.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Jensen Huang has been masterful at his orchestration of this bubble, pushing tech companies to buy and store billions of dollars worth of gpus well before they have the data centers built to even use&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xfejeo/comment/19rnhhrqhtfds/" rel="noopener noreferrer">u/glitterandnails on r/technology, in a 25 October thread on circular AI financing</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-Launch-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Class-A-Common-Stock-in-Connection-with-Forward-Sale-Agreements/default.aspx" rel="noopener noreferrer">Meta press release</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:02+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/meta-raise-up-95-billion-in-equity-fund-costly-ai-expansion-6492931" rel="noopener noreferrer">CNA (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:03+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:10+01:00">26 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-spacex-40bn-gpu-debt-neocloud-warning" aria-labelledby="h-spacex-40bn-gpu-debt-neocloud-warning"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-spacex-40bn-gpu-debt-neocloud-warning">UPDATE: SpaceX&#x27;s $40 billion turns out to be a GPU finance lease from an Apollo-managed entity, which has not yet closed</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-26T07:03:00+00:00">26 Oct 2026, 08:03 CET</time></p><div class="story-body"><p>SpaceX said on Monday 26 October that it has reached a binding commitment to enter an approximately $40 billion master finance lease for GPUs and related equipment with an entity managed by Apollo Global Management. The lease is to supply Nvidia Vera Rubin chips for SpaceX&#x27;s ground-based computing build-out. Reuters, as published by CNA and Yahoo Finance, reports that the Apollo-managed entity will buy the chips and server hardware and lease them to SpaceX, with total principal payments of about $40 billion.</p><p>What changed since this morning&#x27;s edition: on Sunday, Elon Musk had described the money on X as $40 billion of debt that SpaceX had closed. Monday&#x27;s release says entry into the lease is still subject to closing conditions and is expected to close before the end of 2026, with lease schedules starting as the equipment is delivered in the first half of 2027. Apollo and Goldman Sachs lead the financing parties, with Goldman as sole structuring agent, and funds managed by BlackRock and Goldman Sachs Asset Management and accounts advised by KKR have made anchor commitments.</p><p>Finance-chief commentary in the release says SpaceX is &#x27;seeing less than one year payback periods on our SI infrastructure investments&#x27; and that the extra compute will power Grok and serve cloud customers.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: A lease from an asset manager keeps the chips&#x27; cost spread over years and shows where AI hardware money is now coming from: private credit funds rather than banks or the buyer&#x27;s own cash.</p></aside><p class="caveat"><span class="label">Caveat.</span> The payback claim is SpaceX&#x27;s own and is not supported by figures in the release. The Gazette did not open the Form 8-K that SpaceX says contains the lease terms. The Reddit comment below comes from a 25 October thread about a report on data-centre debt, not about this deal.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Speculative data center debt is being repackaged and sold to pension and retirement funds... Umm what the fk. Can someone explain how that works?&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xfejeo/comment/19rngs58y0kys/" rel="noopener noreferrer">u/BotOrNot_1337 on r/technology</a></p></blockquote><blockquote><p>&ldquo;Remember the &#x27;08 recession? Swap out mortgages with data centers.&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xfejeo/comment/19rnguttn6uqo/" rel="noopener noreferrer">u/Tamotefu on r/technology</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-EVER-2026-EnDqGhTAB3/default.aspx" rel="noopener noreferrer">SpaceX investor relations</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:04+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/meta-raise-up-95-billion-in-equity-fund-costly-ai-expansion-6492931" rel="noopener noreferrer">CNA (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:03+01:00">26 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://finance.yahoo.com/technology/ai/articles/spacex-enters-40-billion-deal-120734644.html" rel="noopener noreferrer">Yahoo Finance (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:06:50+01:00">26 Oct 2026, 16:06 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-tsinghua-akv-cache-engineering" aria-labelledby="h-tsinghua-akv-cache-engineering"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">Background — older context</span></p><h3 id="h-tsinghua-akv-cache-engineering">BACKGROUND: Tsinghua researchers release AKV, a server that lets agents drop parts of their KV cache instead of summarising old history</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-20">20 Oct 2026</time></p><div class="story-body"><p>A preprint titled Cache Engineering for Agents, submitted to arXiv on 20 October by researchers from Tsinghua University and others, proposes letting long-running agents remove selected entries from their key-value cache, and re-index the rest, instead of trimming or summarising the text history. The code, released as AKV under the Apache 2.0 licence, extends the SGLang serving engine. The repository was created on 28 September and last updated on 21 October.</p><p>MarkTechPost, which covered the release on Monday, summarises the paper&#x27;s results as 27.7 per cent lower average cost and 1.7 points higher average task score than summarising history at a threshold, across three open models and four agent benchmarks. It reports that on SWE-bench Verified with GPT-OSS-120B, cost per task fell from 20.0 to 9.7 US cents while the score rose from 40.0 to 43.2.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Reading cached context accounts for most of the bill in long agent sessions, so serving-side tricks like this could cut the cost of coding agents without changing the model.</p></aside><p class="caveat"><span class="label">Caveat.</span> Background: the paper is from 20 October and is new to this journal only. The results are the authors&#x27; own, on their chosen benchmarks, in a preprint that has not been peer reviewed. The method needs a self-hosted open model and does not apply to closed hosted APIs.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://arxiv.org/abs/2610.28577" rel="noopener noreferrer">arXiv: Cache Engineering for Agents</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:05:02+01:00">26 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/thu-nics/AKV" rel="noopener noreferrer">GitHub: thu-nics/AKV</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-26T16:05:02+01:00">26 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/" rel="noopener noreferrer">MarkTechPost</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-26T16:04:10+01:00">26 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI&#x27;s builders are turning to outside money at once: Anthropic heads for a listing, Meta sells shares, and SpaceX leases its chips from private credit funds.</li><li>The money comes with control limits: Anthropic&#x27;s founders and trust keep the board, and Meta&#x27;s new shares carry no votes.</li><li>Suppliers and lenders are tied ever closer to their customers, as Nvidia, AMD and Broadcom offer to buy Meta stock and funds finance SpaceX&#x27;s Nvidia chips.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (16 threads; 8 sub-requests failed with HTTP 530)</dd></div><div><dt>youtube</dt><dd>ok (2 videos with transcripts; some transcript requests hit HTTP 429)</dd></div><div><dt>hackernews</dt><dd>ok</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok</dd></div><div><dt>devto</dt><dd>searched with tags ai and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from this morning&#x27;s 06:11 CET issue to this edition. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished with 41 evidence items from Reddit, Hacker News, GitHub and YouTube. Top-ranked items were general-audience videos and Reddit threads on AI financing and privacy; a 25 October r/technology thread on data-centre debt supplied the community quotes. Stories were chosen with Google News RSS, publisher feeds, Hacker News searches, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. X was not searched. dev.to returned no articles. Some Reddit requests failed. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. Reuters (HTTP 401), Investing.com and StreetInsider (HTTP 403) refused automated access; the SEC&#x27;s EDGAR site refused a generic browser request but served the S-1 to a request that identified this newspaper.</li><li>Not carried: Cadence&#x27;s Nvidia-backed Maestro chip-design models (Cadence&#x27;s site refused automated access), Microsoft&#x27;s report on an AI-driven nation-state supply-chain campaign (21 October), the WSJ report on OpenAI staff fired over leak suspicions (paywalled), Moonshot&#x27;s reported trimming of Kimi K3.1 Pro&#x27;s hacking skills (no primary source checked), Verizon&#x27;s AI deal with AWS, and Georgia election-data follow-ups with no new fact.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 16 threads │ 33,951 upvotes │ 3,486 comments
+├─  YouTube: 2 videos │ 1,353,252 views │ 2/2 with transcripts
+├─  HN: 11 stories │ 144 points │ 127 comments
+├─  GitHub: 12 items │ 7 reactions │ 15 comments
+├─  Top voices: r/technology, r/ClaudeAI, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-26-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-26-afternoon.md">Markdown text</a></li><li><a href="2026-10-26-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
