@@ -177,9 +177,26 @@ main .trend-card .facts dd, main .trend-card .evidence li { text-align: left; }
 .evidence a { overflow-wrap: anywhere; }
 main .trend-card p.checks { text-align: left; font-size: 0.92rem; font-style: italic; margin-top: 4px; }
 </style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
 </head>
 <body class="page page-trending page-report">
 <a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">GitHub Trending · Daily digest · Saturday 17 October 2026</span><span class="rh-url">luongnv.com/news/trending/reports/2026-10-17.html</span></div><!--/running-head-->
 <header class="site-header">
 <div class="wrap masthead">
 <a class="brand" href="../index.html">GitHub Trending</a>
