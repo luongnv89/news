@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-10-26",
-  "issued_at": "2026-10-26T08:03:02+01:00",
+  "issued_at": "2026-10-26T10:07:15+01:00",
   "source": {
     "url": "https://github.com/trending?since=daily",
     "checked_at": "2026-10-26T07:00:56.955551+00:00",
@@ -15,7 +15,8 @@
     "debpalash/VoiceStudio is a repeat from 19 October, included because its 23-24 October prereleases changed a caveat we printed then (on-device phone models were only planned).",
     "The preceding seven calendar dates, 19-25 October, were checked for local history; all seven editions exist.",
     "The official listing was captured at 08:00:56 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
-    "Feature, performance and security claims are the maintainers' own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit, endorsement or financial advice."
+    "Feature, performance and security claims are the maintainers' own. No candidate code, installer, plugin, hook or model was installed, downloaded or run, and none of this is a security audit, endorsement or financial advice.",
+    "Re-issued 26 Oct 2026, 10:07 at the reader's request to add the full listing and star tracking of earlier picks; the picks and their text are unchanged from the 08:03 issue."
   ],
   "projects": [
     {
@@ -138,6 +139,463 @@
         "https://github.com/debpalash/VoiceStudio/releases/tag/mobile-v0.5.7-beta.2",
         "https://github.com/debpalash/VoiceStudio/blob/main/LICENSE"
       ]
+    }
+  ],
+  "listing": [
+    {
+      "rank": 1,
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "language": "TypeScript",
+      "stars_total": 5301,
+      "stars_period": 675,
+      "stars_period_label": "675 stars today"
+    },
+    {
+      "rank": 2,
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars_total": 34499,
+      "stars_period": 1317,
+      "stars_period_label": "1,317 stars today"
+    },
+    {
+      "rank": 3,
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars_total": 87416,
+      "stars_period": 1592,
+      "stars_period_label": "1,592 stars today"
+    },
+    {
+      "rank": 4,
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "language": "Rust",
+      "stars_total": 88110,
+      "stars_period": 1092,
+      "stars_period_label": "1,092 stars today"
+    },
+    {
+      "rank": 5,
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "description": "A Tiny biped duck robot 🦆",
+      "language": "Rust",
+      "stars_total": 11922,
+      "stars_period": 647,
+      "stars_period_label": "647 stars today"
+    },
+    {
+      "rank": 6,
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stars_total": 114951,
+      "stars_period": 381,
+      "stars_period_label": "381 stars today"
+    },
+    {
+      "rank": 7,
+      "repository": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "language": "TypeScript",
+      "stars_total": 7959,
+      "stars_period": 199,
+      "stars_period_label": "199 stars today"
+    },
+    {
+      "rank": 8,
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "language": "TypeScript",
+      "stars_total": 2081,
+      "stars_period": 51,
+      "stars_period_label": "51 stars today"
+    },
+    {
+      "rank": 9,
+      "repository": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers.",
+      "language": "PHP",
+      "stars_total": 64675,
+      "stars_period": 152,
+      "stars_period_label": "152 stars today"
+    },
+    {
+      "rank": 10,
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars_total": 47392,
+      "stars_period": 2878,
+      "stars_period_label": "2,878 stars today"
+    },
+    {
+      "rank": 11,
+      "repository": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+      "language": "Python",
+      "stars_total": 21326,
+      "stars_period": 197,
+      "stars_period_label": "197 stars today"
+    }
+  ],
+  "tracked": [
+    {
+      "repository": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "stars_total": 32332,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "xtool-org/xtool",
+      "url": "https://github.com/xtool-org/xtool",
+      "stars_total": 13759,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "stars_total": 387210,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "stars_total": 87648,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "stars_total": 57193,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "vxcontrol/pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "stars_total": 32457,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "stars_total": 94440,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "xerj-org/xerj",
+      "url": "https://github.com/xerj-org/xerj",
+      "stars_total": 15683,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "stars_total": 54667,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "stars_total": 289123,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "lightseekorg/tokenspeed",
+      "url": "https://github.com/lightseekorg/tokenspeed",
+      "stars_total": 2793,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "stars_total": 44640,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "LibreSpark/LibreTV",
+      "url": "https://github.com/LibreSpark/LibreTV",
+      "stars_total": 21999,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "android/skills",
+      "url": "https://github.com/android/skills",
+      "stars_total": 9767,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "stars_total": 305261,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "stars_total": 65929,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "stars_total": 79362,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "stars_total": 28094,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "stars_total": 221692,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "stars_total": 13620,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "stars_total": 106334,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "stars_total": 143081,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "mlabonne/llm-course",
+      "url": "https://github.com/mlabonne/llm-course",
+      "stars_total": 84709,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "stars_total": 77853,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "withmarbleapp/os-taxonomy",
+      "url": "https://github.com/withmarbleapp/os-taxonomy",
+      "stars_total": 7370,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "stars_total": 43801,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "stars_total": 153414,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "stars_total": 47591,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "stars_total": 135586,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "url": "https://github.com/vllm-project/vllm",
+      "stars_total": 95562,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "stars_total": 176480,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "stars_total": 33076,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "stars_total": 59762,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "supabase/supabase",
+      "url": "https://github.com/supabase/supabase",
+      "stars_total": 113952,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "php/php-src",
+      "url": "https://github.com/php/php-src",
+      "stars_total": 41672,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "stars_total": 104198,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "Meloong-Git/PCL",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "stars_total": 9313,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "luongnv89/claude-howto",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "stars_total": 45158,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "stars_total": 123102,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "NVIDIA/OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "stars_total": 19959,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "SnailSploit/Claude-Red",
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "stars_total": 9241,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "OpenBMB/VoxCPM",
+      "url": "https://github.com/OpenBMB/VoxCPM",
+      "stars_total": 40629,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "stars_total": 8091,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "stars_total": 3283,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "stars_total": 88271,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "stars_total": 34774,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "stars_total": 5493,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "stars_total": 12018,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "stars_total": 108396,
+      "archived": false,
+      "checked_at": "2026-10-26T09:07:13+00:00"
     }
   ]
 }
