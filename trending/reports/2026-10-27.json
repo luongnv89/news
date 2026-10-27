@@ -1,0 +1,660 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-27",
+  "issued_at": "2026-10-27T08:03:45+01:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-27T07:00:35.464748+00:00",
+    "period": "daily",
+    "total_listed": 14
+  },
+  "editorial_note": "GitHub listed fourteen projects this Tuesday morning. Eight had been featured before, seven of them within the past week, and none showed a change big enough to bring it back, so today's edition has five first-time picks. NVIDIA's SkillSpector leads because it answers a timely question: ==is this agent skill safe to install?== Postiz is a self-hostable social media scheduler that has just shipped urgent security fixes, OpenBot is a desktop workspace for several AI agents at once, Agent Reach lets an agent read platforms that ordinary web search misses, and Huashu Design turns a one-line request into a prototype, deck or animation. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 14 listing entries were inspected. Exact primary public GitHub repository metadata, README, recent releases and recent commits were checked for all 14 at about 07:01 UTC; all were active and unarchived. Thirteen had an API-detected license; nightly-labs/openbot showed NOASSERTION, and its LICENSE file was read directly (PolyForm Noncommercial 1.0.0).",
+    "Seven entries had been featured in the previous seven days and were left out without a material change: JetBrains/thinkrail, TauricResearch/TradingAgents and debpalash/VoiceStudio (26 October; VoiceStudio's stable v0.5.7 of 26 October rolls in the phone apps we described yesterday, still labelled preview), Nutlope/hallmark, makecindy/cindy, pbakaus/impeccable and pollen-robotics/microduck (25 October). Since those cards they show incremental releases, beta builds, small fixes or no commits.",
+    "affaan-m/ECC (featured 16 October) was not repeated: its latest release, v2.2.3 of 1 October, predates that card. multica-ai/andrej-karpathy-skills, a single CLAUDE.md guideline file, was not picked: GitHub detects no license and it has had no commits since 20 April.",
+    "The preceding seven calendar dates, 20-26 October, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:35 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature, performance and security claims are the maintainers' own, including SkillSpector's research figures. No candidate code, installer, skill, plugin, hook or model was installed, downloaded or run, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "trending_rank": 7,
+      "description": "A ==security scanner for AI agent skills== (Claude Code, Codex, MCP and similar). It scans a folder, single SKILL.md, Git repository, URL or zip file against 71 patterns in 17 categories, including prompt injection, data exfiltration, privilege escalation, supply-chain and memory-poisoning risks, with an optional LLM second pass, and reports a 0-100 risk score as terminal, JSON, Markdown or SARIF output.",
+      "why_interesting": "First time on our list. Agent skills run with broad trust and little vetting, and this gives a ==repeatable pre-install check== you can wire into CI via SARIF, with a baseline file so re-scans show only new findings. It is part of NVIDIA's own pipeline for signing skills in its catalog. The v2.13.0 release on 16 October disabled the Codex CLI analysis provider because its sandbox could read host secrets, and v2.13.1 followed on 23 October with false-positive fixes.",
+      "caveat": "A scanner lowers risk but ==cannot prove a skill is safe==: static patterns miss novel tricks and flag harmless text, and the README's figure that 26.1% of 31,132 analysed skills had vulnerabilities is the project's own research. The optional LLM pass sends skill content to the provider you configure and uses your API credits. Requires Python 3.12+ or Docker, and installs further third-party packages. We did not install or test it.",
+      "category": "Security / AI agents",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars_total": 22463,
+      "stars_period": 214,
+      "stars_period_label": "214 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-27T07:01:14.270629+00:00",
+      "readme_checked_at": "2026-10-27T07:01:14.909314+00:00",
+      "readme_source_url": "https://api.github.com/repos/NVIDIA/SkillSpector/readme",
+      "evidence_urls": [
+        "https://github.com/NVIDIA/SkillSpector",
+        "https://api.github.com/repos/NVIDIA/SkillSpector",
+        "https://github.com/NVIDIA/SkillSpector/releases/tag/v2.13.1",
+        "https://github.com/NVIDIA/SkillSpector/releases/tag/v2.13.0",
+        "https://github.com/NVIDIA/SkillSpector/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "gitroomhq/postiz-app",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "trending_rank": 12,
+      "description": "An ==open-source social media scheduler== with a calendar, cross-posting, team collaboration, analytics, RSS auto-posting, AI writing and image tools, a public API and webhooks, plus MCP and CLI access so AI agents can draft and schedule posts. It runs as Postiz Cloud or self-hosted with Docker on your own Postgres and Redis.",
+      "why_interesting": "First time on our list. A mature project (created 2023) and a credible alternative to paid schedulers, with ==no feature gating in the self-hosted edition==: unlimited channels, posts and team members, as its README compares. It also connects to automation tools such as n8n, Make and Zapier. Its two latest releases, v2.25.2 and v2.25.3 on 23-24 October, are security releases.",
+      "caveat": "Both releases flag security advisories and ask ==all users to upgrade immediately==; the commits name a JWT bypass and local-file access fix, so self-hosters must keep up with patches. Self-hosting also means creating your own developer apps on each social network, and Meta, YouTube or TikTok approval can take weeks. AI features need your own provider keys. AGPL-3.0 applies if you modify and serve it. We did not install or test it.",
+      "category": "Productivity / social media",
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "stars_total": 38679,
+      "stars_period": 188,
+      "stars_period_label": "188 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-27T07:01:27.616908+00:00",
+      "readme_checked_at": "2026-10-27T07:01:28.176130+00:00",
+      "readme_source_url": "https://api.github.com/repos/gitroomhq/postiz-app/readme",
+      "evidence_urls": [
+        "https://github.com/gitroomhq/postiz-app",
+        "https://api.github.com/repos/gitroomhq/postiz-app",
+        "https://github.com/gitroomhq/postiz-app/releases/tag/v2.25.3",
+        "https://github.com/gitroomhq/postiz-app/releases/tag/v2.25.2",
+        "https://github.com/gitroomhq/postiz-app/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "nightly-labs/openbot",
+      "url": "https://github.com/nightly-labs/openbot",
+      "trending_rank": 9,
+      "description": "A ==desktop workspace for persistent AI teammates==: each agent, backed by Codex, Claude Code, Grok, OpenCode, Gemini, Cursor or Cline, gets its own workspace and conversation, with message queues, file transfers, agent-to-agent messaging, shared channel chats, an embedded browser agents can control, and optional computer use. Builds exist for macOS, Windows and Linux.",
+      "why_interesting": "First time on our list. Instead of juggling several agent CLIs in terminals, it runs them side by side as named teammates that can hand tasks to each other, with one task owner per shared chat and Stop, Resume and Reassign controls. It detects local model servers such as Ollama and LM Studio. Development is fast: v0.49 to v0.51.1 shipped between 24 and 26 October.",
+      "caveat": "A development preview: agents run with ==full access and no per-action approval== after first-launch consent, so they can change files, run commands and use the network unattended. It is source-available under PolyForm Noncommercial 1.0.0, ==not an open-source license==: commercial use needs a paid license. Optional accounts use the maker's cloud service, and model costs are your providers'. We did not install or test it.",
+      "category": "AI agents / desktop",
+      "language": "TypeScript",
+      "license": "PolyForm Noncommercial 1.0.0",
+      "stars_total": 1697,
+      "stars_period": 176,
+      "stars_period_label": "176 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-27T07:01:18.910838+00:00",
+      "readme_checked_at": "2026-10-27T07:01:20.525667+00:00",
+      "readme_source_url": "https://api.github.com/repos/nightly-labs/openbot/readme",
+      "evidence_urls": [
+        "https://github.com/nightly-labs/openbot",
+        "https://api.github.com/repos/nightly-labs/openbot",
+        "https://github.com/nightly-labs/openbot/releases/tag/v0.51.1",
+        "https://github.com/nightly-labs/openbot/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "trending_rank": 10,
+      "description": "A command-line layer that ==lets AI agents read platforms ordinary web search misses==: GitHub, YouTube subtitles and transcripts, Reddit, LinkedIn jobs, X, Bilibili, Xiaohongshu, V2EX, Xueqiu and podcasts, through one agent-reach command that picks a working tool for each site and falls back to another when one breaks.",
+      "why_interesting": "First time on our list. It packages a messy job, keeping scrapers for many sites working, behind one stable command any agent can call, and is strong on Chinese platforms that general search covers poorly. The v1.6.0 rebuild on 23 October keeps everything under one folder, uses its own background browser for login sites, and the README states it is read-only: it never posts, comments or sends messages.",
+      "caveat": "Login channels ==copy a site's login from your Chrome==, and platforms may restrict accounts used for automation; the README itself advises a secondary account. Some channels are labelled experimental and the 1.6.0 release shipped with several untested on the release machine (Reddit, Instagram, LinkedIn among them). Scraping may conflict with a site's terms. The PyPI package of the same name is not this project. We did not install or test it.",
+      "category": "AI agents / research tools",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 104122,
+      "stars_period": 746,
+      "stars_period_label": "746 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-27T07:01:23.397000+00:00",
+      "readme_checked_at": "2026-10-27T07:01:23.862033+00:00",
+      "readme_source_url": "https://api.github.com/repos/Panniantong/Agent-Reach/readme",
+      "evidence_urls": [
+        "https://github.com/Panniantong/Agent-Reach",
+        "https://api.github.com/repos/Panniantong/Agent-Reach",
+        "https://github.com/Panniantong/Agent-Reach/blob/main/docs/README_en.md",
+        "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.6.0",
+        "https://github.com/Panniantong/Agent-Reach/blob/main/LICENSE"
+      ]
+    },
+    {
+      "repository": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "trending_rank": 13,
+      "description": "An ==HTML-native design skill== for Claude Code, Codex, Cursor and other agents: from one sentence it produces clickable app or web prototypes, HTML slide decks with editable PPTX export, timeline animations as MP4 or GIF, infographics and a five-point design review. Version 3.0 proposes six directions to pick three from and ships a library of 84 styles with samples.",
+      "why_interesting": "First time on our list. Unlike the design-taste skills we covered on 25 October, it ==delivers finished files== (prototype, deck, video) rather than only rules, and it keeps a local record of the styles you choose so later results follow your taste. The README says the core render and export pipeline runs locally with no network or keys; cloud voice-over and review scripts are optional. It moved to the MIT license in May.",
+      "caveat": "The main README and examples are in Chinese (an English README exists). The author calls it an 80-point skill: no layer-editable Figma output, no 3D or physics animation, and weaker results for a brand designed from scratch. The timings in its table are the author's claims. Older skills CLI versions install only SKILL.md and miss the scripts it needs. We did not install or test it.",
+      "category": "AI agents / design",
+      "language": "HTML",
+      "license": "MIT",
+      "stars_total": 27286,
+      "stars_period": 251,
+      "stars_period_label": "251 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-27T07:01:29.816415+00:00",
+      "readme_checked_at": "2026-10-27T07:01:30.304647+00:00",
+      "readme_source_url": "https://api.github.com/repos/alchaincyf/huashu-design/readme",
+      "evidence_urls": [
+        "https://github.com/alchaincyf/huashu-design",
+        "https://api.github.com/repos/alchaincyf/huashu-design",
+        "https://github.com/alchaincyf/huashu-design/releases/tag/v3.0.0",
+        "https://github.com/alchaincyf/huashu-design/blob/master/LICENSE"
+      ]
+    }
+  ],
+  "listing": [
+    {
+      "rank": 1,
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars_total": 37157,
+      "stars_period": 2244,
+      "stars_period_label": "2,244 stars today"
+    },
+    {
+      "rank": 2,
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stars_total": 116579,
+      "stars_period": 1395,
+      "stars_period_label": "1,395 stars today"
+    },
+    {
+      "rank": 3,
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "language": "TypeScript",
+      "stars_total": 3242,
+      "stars_period": 1173,
+      "stars_period_label": "1,173 stars today"
+    },
+    {
+      "rank": 4,
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "language": "TypeScript",
+      "stars_total": 6878,
+      "stars_period": 1296,
+      "stars_period_label": "1,296 stars today"
+    },
+    {
+      "rank": 5,
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars_total": 290094,
+      "stars_period": 896,
+      "stars_period_label": "896 stars today"
+    },
+    {
+      "rank": 6,
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "language": "Rust",
+      "stars_total": 89543,
+      "stars_period": 1506,
+      "stars_period_label": "1,506 stars today"
+    },
+    {
+      "rank": 7,
+      "repository": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+      "language": "Python",
+      "stars_total": 22461,
+      "stars_period": 214,
+      "stars_period_label": "214 stars today"
+    },
+    {
+      "rank": 8,
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "description": "A Tiny biped duck robot 🦆",
+      "language": "Rust",
+      "stars_total": 12567,
+      "stars_period": 843,
+      "stars_period_label": "843 stars today"
+    },
+    {
+      "rank": 9,
+      "repository": "nightly-labs/openbot",
+      "url": "https://github.com/nightly-labs/openbot",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "language": "TypeScript",
+      "stars_total": 1696,
+      "stars_period": 176,
+      "stars_period_label": "176 stars today"
+    },
+    {
+      "rank": 10,
+      "repository": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars_total": 104121,
+      "stars_period": 746,
+      "stars_period_label": "746 stars today"
+    },
+    {
+      "rank": 11,
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars_total": 89915,
+      "stars_period": 2297,
+      "stars_period_label": "2,297 stars today"
+    },
+    {
+      "rank": 12,
+      "repository": "gitroomhq/postiz-app",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "description": "📨 The ultimate agentic social media scheduling tool 🤖",
+      "language": "TypeScript",
+      "stars_total": 38679,
+      "stars_period": 188,
+      "stars_period_label": "188 stars today"
+    },
+    {
+      "rank": 13,
+      "repository": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
+      "language": "HTML",
+      "stars_total": 27285,
+      "stars_period": 251,
+      "stars_period_label": "251 stars today"
+    },
+    {
+      "rank": 14,
+      "repository": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "language": null,
+      "stars_total": 224925,
+      "stars_period": 638,
+      "stars_period_label": "638 stars today"
+    }
+  ],
+  "tracked": [
+    {
+      "repository": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "stars_total": 32468,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "xtool-org/xtool",
+      "url": "https://github.com/xtool-org/xtool",
+      "stars_total": 13842,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "stars_total": 393311,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "stars_total": 89924,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "stars_total": 57289,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "vxcontrol/pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "stars_total": 32539,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "stars_total": 94820,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "xerj-org/xerj",
+      "url": "https://github.com/xerj-org/xerj",
+      "stars_total": 16924,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "stars_total": 54828,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "stars_total": 290094,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "lightseekorg/tokenspeed",
+      "url": "https://github.com/lightseekorg/tokenspeed",
+      "stars_total": 2808,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "stars_total": 44803,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "LibreSpark/LibreTV",
+      "url": "https://github.com/LibreSpark/LibreTV",
+      "stars_total": 22221,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "android/skills",
+      "url": "https://github.com/android/skills",
+      "stars_total": 9858,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "stars_total": 305753,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "stars_total": 66452,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "stars_total": 79616,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "stars_total": 31467,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "stars_total": 222085,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "stars_total": 13881,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "stars_total": 107357,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "stars_total": 143379,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "mlabonne/llm-course",
+      "url": "https://github.com/mlabonne/llm-course",
+      "stars_total": 84728,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "stars_total": 77962,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "withmarbleapp/os-taxonomy",
+      "url": "https://github.com/withmarbleapp/os-taxonomy",
+      "stars_total": 7392,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "stars_total": 43889,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "stars_total": 153504,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "stars_total": 48907,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "stars_total": 136380,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "url": "https://github.com/vllm-project/vllm",
+      "stars_total": 95657,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "stars_total": 177433,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "stars_total": 33290,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "stars_total": 59848,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "supabase/supabase",
+      "url": "https://github.com/supabase/supabase",
+      "stars_total": 114078,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "php/php-src",
+      "url": "https://github.com/php/php-src",
+      "stars_total": 41686,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "stars_total": 104250,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "Meloong-Git/PCL",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "stars_total": 9351,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "luongnv89/claude-howto",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "stars_total": 45411,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "stars_total": 123129,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "NVIDIA/OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "stars_total": 20137,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "SnailSploit/Claude-Red",
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "stars_total": 9484,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "OpenBMB/VoxCPM",
+      "url": "https://github.com/OpenBMB/VoxCPM",
+      "stars_total": 40706,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "stars_total": 8308,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "stars_total": 3300,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "stars_total": 89545,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "stars_total": 37169,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "stars_total": 6881,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "stars_total": 12567,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "stars_total": 108562,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "stars_total": 64985,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "stars_total": 3247,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "stars_total": 22322,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "stars_total": 116583,
+      "archived": false,
+      "checked_at": "2026-10-27T07:03:38+00:00"
+    }
+  ]
+}
