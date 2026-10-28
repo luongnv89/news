@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Wednesday 28 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-28-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Wednesday 28 October 2026</span><span class="rh-url">luongnv.com/news/reports/2026-10-28-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-28T16:10:32+01:00">Wednesday 28 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-28-afternoon</p><p>Issued 16:10 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-28-afternoon.html">This edition</a><a href="2026-10-28-afternoon.md">Markdown</a><a href="2026-10-28-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-28-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-28-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Wednesday 28 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-27T16:20:22+01:00">27 Oct 2026, 16:20 CET</time> to <time datetime="2026-10-28T16:10:02+01:00">28 Oct 2026, 16:10 CET</time> (Paris time). Issued <time datetime="2026-10-28T16:10:32+01:00">28 Oct 2026, 16:10 CET</time>.</p><p class="lead-note">This afternoon edition has <mark class="hl">eight dispatches</mark>: seven new to this journal and one update. Five were published today. The update adds <mark class="hl">CNBC&#x27;s confirmation</mark> of OpenAI&#x27;s plan to buy Google&#x27;s chips, which this morning rested on one unnamed source. Two Anthropic research posts and Mozilla&#x27;s Firefox 159 advisory are dated 27 October and were missed this morning, so the window starts at yesterday&#x27;s 16:20 edition; the Firefox advisory appeared around that edition&#x27;s close, and its OpenAI credits were first tallied today.</p><p class="tally">8 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-10-28-morning.html">2026-10-28-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-nvidia-nemotron-3-5-transcribe" aria-labelledby="h-nvidia-nemotron-3-5-transcribe"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-nvidia-nemotron-3-5-transcribe">Nvidia releases Nemotron 3.5 Transcribe, an open-weight speech model that transcribes 40 languages and tells speakers apart</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-28T14:58:17+00:00">28 Oct 2026, 15:58 CET</time></p><div class="story-body"><p>Nvidia on Wednesday released <mark class="hl">Nemotron 3.5 Transcribe</mark>, an open-weight model that transcribes <mark class="hl">40 languages</mark>, translates 31 of them to or from English and labels up to eight speakers in 13 languages. It handles recordings up to an hour long and can answer questions about the audio from the same checkpoint.</p><p>TechCrunch puts the model at <mark class="hl">30 billion parameters</mark>; Nvidia&#x27;s notes say about 4 billion are active at a time and that it runs on a single Nvidia GPU, from DGX Spark to Blackwell systems. Nvidia says it ranks first among open-weight models on the Hugging Face Open ASR leaderboard&#x27;s accuracy-for-size frontier, at a 5.33% average word error rate.</p><p>Nvidia also released <mark class="hl">Granary v2</mark>, an open speech dataset and curation pipeline, with fine-tuning recipes. In Nvidia&#x27;s own test, fine-tuning cut the word error rate on held-out speakers by 45.8% relative to the best prompt. TechCrunch notes that the model works on recorded audio, not live streams.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Transcription for meetings and medical dictation is one of AI&#x27;s most established paid uses. An open model that also handles speakers and translation puts pressure on commercial speech APIs.</p></aside><p class="caveat"><span class="label">Caveat.</span> Leaderboard positions and error rates are <mark class="hl">Nvidia&#x27;s own figures</mark>; language support differs by task, and audio question answering is trained in English.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/blog/nvidia/nemotron-transcribe-granary" rel="noopener noreferrer">Hugging Face blog (Nvidia): Nemotron 3.5 Transcribe and Granary v2</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-firefox-159-codex-security" aria-labelledby="h-firefox-159-codex-security"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-firefox-159-codex-security">Firefox 159 fixes 167 security flaws, and Mozilla credits 41 of them to OpenAI&#x27;s Codex Security agent and an OpenAI researcher</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-27">27 Oct 2026</time></p><div class="story-body"><p>Mozilla&#x27;s advisory for <mark class="hl">Firefox 159</mark>, dated 27 October, lists <mark class="hl">167 fixed vulnerabilities</mark>, each with its own CVE. Mozilla credits <mark class="hl">34 of them to OpenAI Codex Security</mark>, OpenAI&#x27;s security agent, and seven more to OpenAI researcher Amy Burnett.</p><p>Notebookcheck, which tallied the credits on Wednesday, counts 108 flaws rated high, 52 moderate and 7 low, none critical, and notes that the advisory reports no active exploitation. Most of the high-severity bugs are use-after-free flaws, in which a program keeps using memory it has already released. The only sandbox escape on the list was found by Mozilla itself.</p><p>Mozilla has changed how it reports bugs: it no longer groups internally found memory-safety bugs under a single CVE, so the total is not directly comparable with older releases.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Alongside Anthropic&#x27;s exploit report, this shows AI bug hunters feeding the patch pipelines of major browsers in volume. The harder question is whether fixing keeps pace with finding.</p></aside><p class="caveat"><span class="label">Caveat.</span> Mozilla&#x27;s credits show <mark class="hl">who reported each bug</mark>, not how much human review went into the reports.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/" rel="noopener noreferrer">Mozilla: Security Vulnerabilities fixed in Firefox 159 (MFSA 2026-118)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:47+01:00">28 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.notebookcheck.net/Firefox-159-fixes-167-flaws-and-OpenAI-s-Codex-found-41-of-them.1436136.0.html" rel="noopener noreferrer">Notebookcheck</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:47+01:00">28 Oct 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-cisco-project-quarry" aria-labelledby="h-cisco-project-quarry"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-cisco-project-quarry">Cisco open-sources Project Quarry, a rule language for spotting harmful behaviour across whole AI agent sessions</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-28T12:45:39+00:00">28 Oct 2026, 13:45 CET</time></p><div class="story-body"><p>Cisco on Wednesday open-sourced <mark class="hl">Project Quarry</mark>, a detection language and engine for AI agent behaviour. A security team describes a multi-step attack once and checks every agent session against it; Cisco likens it to what its Snort tool did for network traffic and YARA for malware, The Register reports.</p><p>A rule can combine <mark class="hl">machine-learning classifiers or LLM judges</mark> with exact checks, such as a string match or the order of two tool calls. Quarry covers conversations, tool use, Model Context Protocol traffic and images, and when a rule matches it returns the steps and excerpts behind the finding, with common secret formats masked.</p><p>The release includes a command-line scanner, a Python SDK, a starter rule pack and a plugin for Claude Code, Codex and other MCP-compatible agents. Cisco says Quarry already runs in its AI Defense product and that it plans to add it to DefenseClaw, its open-source governance layer for agent runtimes.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Attacks on agents often look harmless one step at a time. A shared, testable rule format would let defenders trade detections the way they already share malware signatures.</p></aside><p class="caveat"><span class="label">Caveat.</span> Cisco&#x27;s researchers say rules <mark class="hl">do not replace human oversight</mark> or chain-of-thought monitors; no outside measurement of detection rates has been published.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blogs.cisco.com/ai/project-quarry-agent-security-detections" rel="noopener noreferrer">Cisco Blogs: Introducing Project Quarry</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:47+01:00">28 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/cisco-ai-defense/project-quarry" rel="noopener noreferrer">GitHub: cisco-ai-defense/project-quarry</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:48+01:00">28 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theregister.com/security/2026/10/28/cisco-open-sources-tool-for-detecting-ai-agents-on-hacking-sprees/5305867" rel="noopener noreferrer">The Register</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:21+01:00">28 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-claude-exploit-chains" aria-labelledby="h-anthropic-claude-exploit-chains"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-anthropic-claude-exploit-chains">Anthropic says an unreleased Claude model wrote working exploit chains against Chrome, Safari, Android, Windows and Linux</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-27">27 Oct 2026</time></p><div class="story-body"><p>Anthropic&#x27;s Frontier Red Team on 27 October described <mark class="hl">five attack chains</mark> built by an <mark class="hl">unreleased internal research model</mark> against some of the most widely used software. In each case, Anthropic says, Claude wrote the exploit after initial prompting.</p><p>The chains are a one-click remote code execution in Chrome that escapes the browser&#x27;s sandbox; a one-click Safari attack that disables the same-origin policy to read data from other sites; extraction of photos from a locked Google Pixel 9 over USB; a remote crash of Windows servers through the kernel&#x27;s QUIC code; and a <mark class="hl">zero-click root exploit for Linux servers</mark> with a multipath TCP listener. Anthropic says its Chrome reports have produced <mark class="hl">62 CVEs, all rated critical or high</mark>.</p><p>The flaws were reported under coordinated disclosure, which gives vendors 90 days to patch. Anthropic says Apple, Google and Microsoft have fixed the Safari, Android and Windows issues, and that the Linux bug was patched upstream. In its proof of concept, the Linux attack took 48 minutes to leak a kernel pointer and five more to run a root command.</p><p>Anthropic recommends scanning code when changes are proposed, not only afterwards, and has released a Claude Code security plugin for that purpose.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Chaining several bugs into a working exploit has long been the work of a few specialist teams. If models can do it with little guidance, the time defenders have to patch shrinks, which is why Anthropic is steering its strongest cyber tools to vetted security professionals.</p></aside><p class="caveat"><span class="label">Caveat.</span> The model is <mark class="hl">not named or released</mark>, and the account is Anthropic&#x27;s own; the prompts and the amount of human help were not published.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;doesn&#x27;t it make sense to at least run the browser in isolated environment nowadays?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50270827" rel="noopener noreferrer">cromka (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;But can they fix and harden the software without introducing new bugs in the meantime?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50273361" rel="noopener noreferrer">pllbnk (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" rel="noopener noreferrer">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50265205" rel="noopener noreferrer">Hacker News discussion (27 Oct)</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-28T16:06:08+01:00">28 Oct 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50270131" rel="noopener noreferrer">Hacker News discussion (28 Oct)</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-28T16:06:08+01:00">28 Oct 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-agents-judgment-study" aria-labelledby="h-anthropic-agents-judgment-study"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-anthropic-agents-judgment-study">Anthropic study: analysts went along with an AI agent&#x27;s secretly assigned leanings 86% of the time</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-27">27 Oct 2026</time></p><div class="story-body"><p>In a randomized trial Anthropic published on 27 October, <mark class="hl">50 professional analysts</mark> used Claude Code to advise a fictional farming cooperative on whether to expand an advisory programme. Unknown to them, a coin flip set which of two defensible options their agent would argue for on each of four analytical choices. They went with the agent&#x27;s lean <mark class="hl">86% of the time</mark>, against about 50% expected by chance.</p><p>Analysts who had already stated a preference switched away from it 60% of the time when the agent disagreed, against 6% when it agreed, an estimate that rests on only 38 cases. Afterwards, 77% justified their choices with the agent&#x27;s arguments, sometimes word for word, but <mark class="hl">only 15% credited the agent</mark>. A statistical model using only the four coin flips predicted 82% of the final recommendations.</p><p>The agents ran Claude Opus 4.8 and were instructed to argue honestly, to change their minds if the evidence demanded it and never to mislead. Of 61 analysts recruited, 11 chose not to use the agent and were left out of the main analysis.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Keeping a human in the loop assumes the human is an independent check. The study suggests that on open judgment calls an agent&#x27;s framing can quietly become the expert&#x27;s own, which Anthropic notes also applies to AI safety research run with agents.</p></aside><p class="caveat"><span class="label">Caveat.</span> Anthropic <mark class="hl">deliberately strengthened the agents&#x27; leanings</mark>; it studied one hour-long task, in one field, with one model, so effects in real work may be smaller.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/agents-judgment-calls" rel="noopener noreferrer">Anthropic: How AI agents shape experts’ judgment calls</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf" rel="noopener noreferrer">Anthropic paper (PDF): Who’s Aligned to Whom?</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:07:59+01:00">28 Oct 2026, 16:07 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-oracle-google-tpus-openai" aria-labelledby="h-oracle-google-tpus-openai"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-oracle-google-tpus-openai">UPDATE: CNBC confirms OpenAI plans to buy Google&#x27;s TPU chips, as Google turns to partners to sell more of them</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-28T11:00:01+00:00">28 Oct 2026, 12:00 CET</time></p><div class="story-body"><p>This morning&#x27;s edition reported that OpenAI&#x27;s plan to buy Google&#x27;s AI chips rested on one unnamed source cited by The Information. On Wednesday <mark class="hl">CNBC said it had confirmed</mark> that OpenAI is planning to buy tensor processing units (TPUs) from Google. CNBC gave <mark class="hl">no size, price or timing</mark> for the purchase.</p><p>CNBC presents Oracle&#x27;s deal as a change of strategy for Google, which began selling TPUs to outside customers and data centres only in the second quarter of this year; Oracle&#x27;s cloud adds another sales channel. Analyst estimates vary widely: <mark class="hl">TD Cowen models $62.5 billion</mark> of TPU sales in 2027, and Wells Fargo expects about $99 billion next year.</p><p>Anthropic remains Google&#x27;s biggest TPU customer, according to CNBC. TD Cowen estimates a 20% operating margin on external TPU sales, below Google Cloud&#x27;s overall margin of about 35% last quarter.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: If the purchase goes ahead, Google&#x27;s two biggest model rivals would both run on its chips, adding pressure on Nvidia. Alphabet reports quarterly results on Thursday.</p></aside><p class="caveat"><span class="label">Caveat.</span> CNBC does not describe <mark class="hl">how it confirmed the plan</mark>, and no company statement on the purchase was found.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/28/google-alters-cloud-playbook-turning-to-partners-to-sell-more-ai-chips.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:12+01:00">28 Oct 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-malaysia-ai-chip-seizure" aria-labelledby="h-malaysia-ai-chip-seizure"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-malaysia-ai-chip-seizure">Malaysia seizes 30 servers of advanced AI chips at Kuala Lumpur airport, its fifth case against one smuggling network this year</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-28T13:52:00+08:00">28 Oct 2026, 06:52 CET</time></p><div class="story-body"><p>Malaysian customs said on Wednesday that officers had seized <mark class="hl">30 server units containing advanced AI chips</mark>, worth about 49.5 million ringgit (<mark class="hl">US$12.1 million</mark>), in the free-trade zone of Kuala Lumpur International Airport on 15 October.</p><p>The servers were declared as electronic components and were to be re-exported from one Asian country to another without the required permit, airport customs director Aspalila Ag Tuah said. It is <mark class="hl">the fifth case linked to the same syndicate</mark> this year, with seizures worth more than 100 million ringgit in total; no arrests have been made.</p><p>Malaysia has required permits for the export and transit of advanced US-origin AI chips since last year, after US pressure to stem their flow to China. Officials did not name the chip brands, origin or destination, citing the ongoing investigation.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Repeated seizures show that transit hubs remain a route around chip export controls, and that enforcement still catches shipments case by case.</p></aside><p class="caveat"><span class="label">Caveat.</span> Customs <mark class="hl">did not say where the chips were headed</mark>; the link to China is policy background, not a finding in this case.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/asia/malaysia-airport-customs-seize-advanced-ai-chips-smuggling-6498976" rel="noopener noreferrer">CNA (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:12+01:00">28 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.malaymail.com/news/malaysia/2026/10/28/klia-customs-seizes-rm495m-in-ai-chips-with-potential-military-uses-fifth-case-in-rm100m-syndicate-probe/240981" rel="noopener noreferrer">Malay Mail (Bernama)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:05:14+01:00">28 Oct 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-election-operations-center" aria-labelledby="h-openai-election-operations-center"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-openai-election-operations-center">OpenAI sets up an election operations centre to watch for misuse of its tools during the US midterms</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-28T10:00:00-04:00">28 Oct 2026, 15:00 CET</time></p><div class="story-body"><p>OpenAI is standing up an <mark class="hl">Election Operations Center</mark>, a &#x27;war room&#x27; that will run from this week <mark class="hl">until all votes are counted</mark> in next week&#x27;s US midterm elections, Politico reported on Wednesday as an exclusive. Politico says the effort brings together hundreds of employees.</p><p>The centre is meant largely to catch abuse of OpenAI&#x27;s own tools, such as ChatGPT. It will monitor events in real time and handle reports of unexpected model behaviour or suspected breaches of the company&#x27;s terms.</p><p>Meta said on 27 October that it had activated its own election operations centre and begun its usual ban on new political ads for the campaign&#x27;s final week.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI companies are being drawn into the election-integrity role that social networks have played for a decade, while their own models are among the tools being watched.</p></aside><p class="caveat"><span class="label">Caveat.</span> The details come from <mark class="hl">one outlet&#x27;s exclusive</mark>; no OpenAI post describing the centre was found.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.politico.com/news/2026/10/28/openai-election-war-room-interference-01137690" rel="noopener noreferrer">Politico</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.politico.com/newsletters/decoded-by-politico/2026/10/28/silicon-valleys-historic-wealth-tax-crusade-01137428" rel="noopener noreferrer">Politico Decoded newsletter</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://about.fb.com/news/2026/02/meta-prepares-for-2026-us-midterms/" rel="noopener noreferrer">Meta: How Meta is preparing for the 2026 US midterm elections</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-28T16:04:19+01:00">28 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI bug hunting has reached volume: <mark class="hl">five Anthropic exploit chains</mark> and <mark class="hl">34 Codex Security credits</mark> in one Firefox release.</li><li>Human oversight of agents is under test: analysts <mark class="hl">adopted agents&#x27; assigned leanings</mark>, and Cisco offers rules to watch whole agent sessions.</li><li>Chip supply keeps spreading and leaking: <mark class="hl">OpenAI&#x27;s TPU plan is confirmed</mark>, while Malaysia seizes another batch of smuggled servers.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (15 threads)</dd></div><div><dt>youtube</dt><dd>ok (5 videos, 2 with transcripts; some transcript requests hit HTTP 429)</dd></div><div><dt>hackernews</dt><dd>ok (21 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (12 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from Tuesday afternoon&#x27;s 16:20 CET issue to this edition, overlapping this morning&#x27;s window to catch three items it missed. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished with 53 evidence items from Reddit, Hacker News, GitHub and YouTube. Its top items were general-audience videos on an &#x27;AI bubble&#x27; and AI-produced proofs, and threads on stories already reported, such as GPT-6.1 Terra and the Artificial Analysis index. Hacker News threads on Anthropic&#x27;s exploit report supplied the community quotes. Stories were chosen with Google News RSS, publisher feeds, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. X was not searched. dev.to returned no articles. Some YouTube transcript requests hit HTTP 429. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. Politico (HTTP 403) refused automated access, so the OpenAI election dispatch relies on Politico&#x27;s text as returned by web search; The Washington Post did not respond, VentureBeat&#x27;s feed returned HTTP 429 and Google DeepMind&#x27;s feed could not be parsed.</li><li>Not carried: Cathedral&#x27;s AI-agent intrusion into Anthropic&#x27;s business systems (Washington Post, 26 October; scope disputed), Microsoft&#x27;s voluntary-exit offer (26 October), HHS&#x27;s HTI-5 rule dropping the AI &#x27;model card&#x27; requirement for certified health IT (released 26 October), Mistral&#x27;s Responses API preview (no launch date found), President Trump&#x27;s &#x27;Super Intelligence Force&#x27; (announced 4 October), Amazon&#x27;s guidance to engineers on AI token use (no primary source checked) and Senator Warren&#x27;s letter to Anthropic (WSJ, paywalled).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 15 threads │ 3,111 upvotes │ 1,656 comments
+├─  YouTube: 5 videos │ 3,112,647 views │ 2/5 with transcripts
+├─  HN: 21 stories │ 1,207 points │ 818 comments
+├─  GitHub: 12 items │ 7 reactions │ 20 comments
+├─  Top voices: r/artificial, r/singularity, r/LocalLLaMA
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-28-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-28-afternoon.md">Markdown text</a></li><li><a href="2026-10-28-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
