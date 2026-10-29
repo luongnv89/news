@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Thursday 29 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-29-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Thursday 29 October 2026</span><span class="rh-url">luongnv.com/news/reports/2026-10-29-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-29T16:07:29+01:00">Thursday 29 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-29-afternoon</p><p>Issued 16:07 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-29-afternoon.html">This edition</a><a href="2026-10-29-afternoon.md">Markdown</a><a href="2026-10-29-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-29-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-29-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Thursday 29 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-29T06:08:34+01:00">29 Oct 2026, 06:08 CET</time> to <time datetime="2026-10-29T16:06:59+01:00">29 Oct 2026, 16:06 CET</time> (Paris time). Issued <time datetime="2026-10-29T16:07:29+01:00">29 Oct 2026, 16:07 CET</time>.</p><p class="lead-note">This edition has <mark class="hl">five new stories</mark> since this morning&#x27;s 06:08 issue, and no updates. Mistral put its trillion-parameter Le Chonk model on open download, Deepgram bought the company behind Pipecat, and the AI build-out met its money test: <mark class="hl">Alphabet shares fell sharply</mark> on its cash outflow while Microsoft went to the bond market. No new research result cleared the bar this afternoon.</p><p class="tally">5 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-10-29-morning.html">2026-10-29-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-mistral-large-4-open-weights" aria-labelledby="h-mistral-large-4-open-weights"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-mistral-large-4-open-weights">Mistral releases the weights of Mistral Large 4, its 1-trillion-parameter &#x27;Le Chonk&#x27; model, and pitches it at cyber defenders</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29T12:00:07+00:00">29 Oct 2026, 13:00 CET</time></p><div class="story-body"><p>Mistral on 29 October published the weights of an improved <mark class="hl">Mistral Large 4</mark>, nicknamed Le Chonk, which it first offered as a public preview earlier this month. Mistral describes it as a <mark class="hl">1-trillion-parameter</mark>, natively multimodal model trained from scratch in its own European data centres. The weights are on Hugging Face, and the model is also offered through Mistral&#x27;s API and OpenRouter.</p><p>Mistral says three more weeks of reinforcement learning made it the strongest open-weight coding model. It reports 48% on the Artificial Analysis Coding Agent Index, level with Zhipu&#x27;s GLM-5.3 while using 47% fewer tokens per task, and 41% on Terminal-Bench 4.0. On security, it reports <mark class="hl">51% on the Artificial Analysis Cyber Index</mark> and a 96.6% average refusal rate on malicious cyber prompts.</p><p>The licence is a modified MIT licence: use, fine-tuning and commercial use are free, but <mark class="hl">companies selling the model as a service need a separate licence</mark>. API pricing is <mark class="hl">$0.70 per million input tokens and $2.10 per million output tokens</mark>. Mistral also says enterprise partners such as Orange Cyberdefense get preview access to a specialised variant for penetration testing and red-teaming, under vetting and contracts.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: A day after Google limited its strongest cyber model to vetted defenders, Mistral has put a model with similar aims on public download. Defenders gain a model they can run on their own systems, and anyone else can download it too.</p></aside><p class="caveat"><span class="label">Caveat.</span> The benchmark figures and refusal rates are <mark class="hl">reported by Mistral</mark>. Mistral itself says it saw <mark class="hl">potential for uplift to conduct real attacks</mark> in preview traffic and is tightening its guardrails.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;It&#x27;s not open weight, it&#x27;s weights available as they use a modified MIT license that is not OSI.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50289652" rel="noopener noreferrer">rcr-anti (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;Unrelated to Large 4, but why is it so hard to give money to Mistral?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50289584" rel="noopener noreferrer">tokai (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://mistral.ai/news/mistral-large-4-oss/" rel="noopener noreferrer">Mistral: Mistral Large 4 (Le Chonk) is now open weight</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:53+01:00">29 Oct 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://huggingface.co/blog/mistral-large4" rel="noopener noreferrer">Hugging Face blog</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:53+01:00">29 Oct 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.wired.com/story/mistral-says-le-chonk-surpasses-chinese-models-cybersecurity/" rel="noopener noreferrer">WIRED</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:53+01:00">29 Oct 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.euronews.com/2026/10/29/mistral-releases-latest-ai-model-for-download-giving-companies-more-control-over-their-cyb" rel="noopener noreferrer">Euronews</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:55+01:00">29 Oct 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50289418" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-29T16:06:12+01:00">29 Oct 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-deepgram-daily-pipecat" aria-labelledby="h-deepgram-daily-pipecat"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-deepgram-daily-pipecat">Deepgram buys Daily, maker of the open-source Pipecat voice-agent framework, and promises an independent Pipecat Foundation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29T13:00:00+00:00">29 Oct 2026, 14:00 CET</time></p><div class="story-body"><p>Speech-AI company <mark class="hl">Deepgram is acquiring Daily</mark>, the company behind <mark class="hl">Pipecat</mark>, a widely used open-source framework for building voice agents, the two companies announced on 29 October. Terms were not disclosed. Daily also runs real-time audio and video network infrastructure, and its team is joining Deepgram.</p><p>Both companies say Pipecat will stay open source under its existing BSD licence and vendor-neutral. They are setting up an <mark class="hl">independent Pipecat Foundation</mark> which, according to Daily, will be run by a steering committee that includes companies competing with Deepgram.</p><p>At its first Speak conference, Deepgram also introduced the <mark class="hl">Real-Time Context Standard</mark>, an open protocol written with the Pipecat team. It carries cues such as a whisper or an unclear word from one model to the next, so that a voice agent can ask for clarification or match its tone.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Voice agents are assembled from separate speech, language and voice models. Owning the most popular open framework that joins them gives Deepgram a central place in that stack, which is why the neutrality promises matter to rivals.</p></aside><p class="caveat"><span class="label">Caveat.</span> The foundation&#x27;s governance has been announced but <mark class="hl">not yet published in detail</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://deepgram.com/blog/daily-pipecat-deepgram" rel="noopener noreferrer">Deepgram announcement</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.daily.co/blog/deepgram-is-acquiring-daily-and-establishing-an-independent-pipecat-foundation/" rel="noopener noreferrer">Daily blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:54+01:00">29 Oct 2026, 16:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-alphabet-cash-flow-selloff" aria-labelledby="h-alphabet-cash-flow-selloff"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-alphabet-cash-flow-selloff">Alphabet shares fall 13% in early trading after its AI build-out pushes quarterly free cash flow to minus $9.07 billion</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29T08:35:01+00:00">29 Oct 2026, 09:35 CET</time></p><div class="story-body"><p>Alphabet shares fell <mark class="hl">13% in early New York trading</mark> on Thursday 29 October, CNBC reported, after third-quarter results released after the market closed on Wednesday. CNBC noted that a close more than 9.77% lower would be the company&#x27;s worst reaction to earnings since it went public in 2004.</p><p>Revenue grew 25% to $127.58 billion but missed analysts&#x27; forecasts, as did adjusted earnings of $2.67 a share. Free cash flow was <mark class="hl">minus $9.07 billion</mark>, against the minus $2.70 billion analysts expected. Capital spending reached $51.36 billion in the quarter, and Alphabet kept its 2026 forecast of <mark class="hl">$195 billion to $205 billion</mark>, saying spending will increase significantly in 2027.</p><p>Search advertising grew 12% to $63.35 billion, below expectations. On the earnings call, business chief Philipp Schindler said the growth of AI Mode queries had an impact because they currently earn less than traditional search. Google Cloud revenue more than doubled to $30.7 billion, according to The Decoder.</p><p>Microsoft, which also reported on Wednesday, was little changed. Its capital spending including finance leases was $45.2 billion, below forecasts, and its free cash flow stayed positive at $18.63 billion.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Investors are now judging the AI build-out by cash, not only by growth. Alphabet&#x27;s cloud business is growing fast, but the market punished a quarter in which <mark class="hl">spending outran the cash coming in</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> Share moves were changing during the trading day; the 13% figure is CNBC&#x27;s early-trading number, <mark class="hl">not a closing price</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html" rel="noopener noreferrer">CNBC: Alphabet stock drops while Microsoft rises</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:23+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html" rel="noopener noreferrer">CNBC: Alphabet Q3 2026 earnings</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:23+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://the-decoder.com/googles-ai-search-problem-finally-shows-up-in-the-earnings-report-some-investors-believe/" rel="noopener noreferrer">The Decoder</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:54+01:00">29 Oct 2026, 16:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-microsoft-bond-sale" aria-labelledby="h-microsoft-bond-sale"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-microsoft-bond-sale">Microsoft returns to the US bond market for the first time since 2017, seeking at least $25 billion as AI spending climbs</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29T11:47:00+00:00">29 Oct 2026, 12:47 CET</time></p><div class="story-body"><p>Microsoft is selling <mark class="hl">at least $25 billion of bonds</mark> in its first US high-grade debt sale since 2017, Bloomberg reported on 29 October, citing a person with knowledge of the matter. The deal has as many as 10 parts, with maturities from 2 to 40 years; Wells Fargo, JPMorgan Chase and UBS are managing it, according to The Next Web.</p><p>Microsoft last raised $17 billion in a US bond sale in January 2017. It is one of only two US companies with a AAA credit rating. The sale follows results in which Microsoft&#x27;s spending on data centres and equipment, including leases, reached <mark class="hl">$45.2 billion in the quarter</mark> to September and free cash flow fell 27%. Chief financial officer Amy Hood told analysts: &#x27;We still have demand that exceeds supply.&#x27;</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Even the companies with the most cash are now <mark class="hl">borrowing to pay for AI data centres</mark>. Alphabet and Amazon each raised $25 billion in bond sales earlier this year, according to The Next Web.</p></aside><p class="caveat"><span class="label">Caveat.</span> The size and terms come from <mark class="hl">unnamed people</mark> quoted by Bloomberg; the final amount depends on investor demand and had not been announced at the time of writing.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.bloomberg.com/news/articles/2026-10-29/microsoft-kicks-off-first-us-high-grade-bond-sale-since-2017" rel="noopener noreferrer">Bloomberg (paywalled; listing only)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://thenextweb.com/news/microsoft-25-billion-bond-sale-first-since-2017" rel="noopener noreferrer">The Next Web</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-nvidia-huang-spy-report">New York Times: US officials concluded that an executive close to Nvidia&#x27;s Jensen Huang was a Chinese intelligence asset</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29">29 Oct 2026</time></p><div class="story-body"><p>US intelligence agencies concluded that <mark class="hl">Alice Huang (Huang Le)</mark>, a Chinese citizen and senior executive at the Singapore-based data-centre company Megaspeed, was passing information to Beijing, The New York Times reported on 29 October, citing people briefed on classified surveillance. The surveillance showed she had developed a close relationship with <mark class="hl">Nvidia chief executive Jensen Huang</mark>.</p><p>According to the report, as summarised by The Decoder, President Trump was <mark class="hl">briefed about a year ago and took no action</mark>, and Jensen Huang was not warned; officials believed he was unaware. US authorities already suspected Megaspeed of helping Chinese companies obtain Nvidia chips, and the Times reports that a Malaysian sister company bought at least $4.8 billion of AI hardware with Nvidia chips between June 2024 and February 2026.</p><p>Nvidia told The Verge she is one of the thousands of customer executives Huang meets each year, and said Megaspeed does not receive sensitive information. Megaspeed has announced an internal investigation, and the Chinese embassy called the allegations groundless smears.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: The report adds a security question to the arguments over how Nvidia&#x27;s chips reach China, at a time when the company already faces a Justice Department inquiry into its Hugging Face purchase.</p></aside><p class="caveat"><span class="label">Caveat.</span> The account rests on <mark class="hl">anonymous sources describing classified intelligence</mark>. It does not accuse Jensen Huang of wrongdoing, and the Times article itself could not be read by this journal.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.nytimes.com/2026/10/29/us/politics/nvidia-china-jensen-huang-trump.html" rel="noopener noreferrer">The New York Times (paywalled; listing only)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1022060/jensen-huang-and-the-ai-spies" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:05:24+01:00">29 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://the-decoder.com/chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-york-times/" rel="noopener noreferrer">The Decoder</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-29T16:03:54+01:00">29 Oct 2026, 16:03 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The AI build-out is now being judged by cash: <mark class="hl">Alphabet was punished</mark> for negative free cash flow, while Microsoft chose to borrow.</li><li>Cyber-capable models are reaching defenders by two routes: Google keeps Gemini 4 Carbon gated, while <mark class="hl">Mistral published Large 4&#x27;s weights</mark> with its own guardrails.</li><li>Nvidia faces scrutiny on more than one front, from the Justice Department&#x27;s Hugging Face questions to a reported spy case close to its chief executive.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (21 threads)</dd></div><div><dt>youtube</dt><dd>ok (2 videos, 1 with a transcript; transcript requests for the other hit HTTP 429)</dd></div><div><dt>hackernews</dt><dd>ok (19 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (12 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from this morning&#x27;s 06:08 CET issue to this edition. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished with 54 evidence items from Reddit, Hacker News, GitHub and YouTube. Its top item was the Hacker News thread on Mistral Large 4, which supplied the community quotes; most other items were general discussion and videos about an &#x27;AI bubble&#x27;. Stories were chosen with Google News RSS, publisher feeds, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. X was not searched. dev.to returned no articles. One YouTube transcript request hit HTTP 429. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. Bloomberg, The New York Times, AP and Orange Cyberdefense refused automated access (HTTP 403), so the Microsoft bond and Huang dispatches rely on pages that could be fetched (The Next Web, The Verge, The Decoder) together with those publishers&#x27; text as returned by web search. VentureBeat returned HTTP 429.</li><li>Not carried: Amazon&#x27;s memo against &#x27;tokenmaxxing&#x27; (27 October), Anthropic&#x27;s purchase of Mithril Medicine (disclosed 27 October), Block&#x27;s Dessa speech model (23 October), Canadian banks&#x27; blocks on personal AI agents (RBC covered on 28 October; the other banks&#x27; statements also date from 28 October), new commentary on the exponential time hypothesis proofs (covered on 27 October), and The Information&#x27;s follow-up on GPT-6 Astra distillation, which adds no company confirmation.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 591 upvotes │ 224 comments
+├─  YouTube: 2 videos │ 1,674,623 views │ 1/2 with transcripts
+├─  HN: 19 stories │ 944 points │ 602 comments
+├─  GitHub: 12 items │ 9 reactions │ 20 comments
+├─  Top voices: r/artificial, r/OpenAI, r/MistralAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-29-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-29-afternoon.md">Markdown text</a></li><li><a href="2026-10-29-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
