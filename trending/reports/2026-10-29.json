@@ -1,0 +1,685 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-29",
+  "issued_at": "2026-10-29T08:03:55+01:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-10-29T07:00:34.166524+00:00",
+    "period": "daily",
+    "total_listed": 14
+  },
+  "editorial_note": "GitHub listed fourteen projects this Thursday morning. Nine had been featured before, eight of them within the past week, and none of those eight showed a change big enough to bring it back, so all four picks are first-time entries. Macro leads as ==an open-source, all-in-one team workspace== under the AGPL. Expo's official agent skills are for mobile developers, RuView turns ==cheap ESP32 boards into camera-free room sensors== with unusually candid accuracy labels, and a 2019 Chinese book on teaching yourself to code rounds out the list. The remaining new entry, a collection of model jailbreak prompts, was left out again. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "All 14 listing entries were inspected. Exact primary public GitHub repository metadata and recent releases were checked for all 14 at about 07:01 UTC, and README files for the four picks; all were active and unarchived. Twelve had an API-detected license (one, nightly-labs/openbot, as NOASSERTION); togg53192-cmd/jailbreaks and xiaolai/the-craft-of-selfteaching had none, and the latter's README states CC BY-NC-ND 3.0.",
+    "Eight entries featured in the previous seven days were left out without a material change: elayadesign/ai-design-skills, obra/superpowers and HKUDS/DeepTutor (28 October), nightly-labs/openbot (27 October), JetBrains/thinkrail (26 October), Nutlope/hallmark, pbakaus/impeccable and makecindy/cindy (25 October). Since those cards they show nightly or beta builds, patch and feature releases, new themes or no new release.",
+    "HKUDS/DeepTutor released v1.7.0 on 28 October, after yesterday's card: modular installation (the bare deeptutor package now installs core only; the full app is deeptutor[full]), a block-based learning notebook and narrated video lessons. We note it here rather than repeat a card one day later.",
+    "hmjz100/LinkSwift (featured 17 October) was not repeated: its latest release, v1.1.3 of 18 February, predates that card, and recent commits are small fixes.",
+    "togg53192-cmd/jailbreaks, a collection of prompts written to override model safety policies, was again not picked: GitHub detects no license, and its purpose is to defeat safeguards rather than to serve as a practical tool.",
+    "The preceding seven calendar dates, 22-28 October, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:34 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature, accuracy, security and performance claims are the maintainers' own, including RuView's model accuracy figures and Macro's security certifications. No candidate code, installer, skill, plugin, firmware or model was installed, downloaded or run, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "macro-inc/macro",
+      "url": "https://github.com/macro-inc/macro",
+      "trending_rank": 5,
+      "description": "An ==all-in-one team workspace== that puts email, chat channels, tasks, collaborative Markdown docs, a canvas, recorded calls, file storage, linked pull requests and a CRM in one keyboard-first interface. Everything is @-linked in a shared graph, and a team-level AI memory, rebuilt nightly, is available to its own agent and to outside agents through MCP. It is built in Rust and SolidJS and offered as a hosted app with web, desktop and iOS clients, with the full source in this repository.",
+      "why_interesting": "First time on our list. Instead of gluing Slack, Linear, Notion and a CRM together with automations, every item shares one backend, so a task stays linked to the email or message that created it and ==issue tracking happens where the conversation is==. The makers call it fully open source rather than open core, under the AGPL-3.0, and they ship several releases a day.",
+      "caveat": "The hosted app needs a Gmail or Google Workspace account, and its team memory is built from your email, messages and calls: a lot of sensitive data for one service. The documented local stack is ==a contributor setup, not a turnkey self-host==: Postgres, Redis, Kafka, OpenSearch and more in Docker, with stubbed Google, GitHub and Stripe integrations, and the agent harness needs real Google OAuth. AGPL terms apply if you host a modified version for others. Security certifications are the company's claims. We did not install or test it.",
+      "category": "Productivity / team collaboration",
+      "language": "Rust",
+      "license": "AGPL-3.0",
+      "stars_total": 5555,
+      "stars_period": 117,
+      "stars_period_label": "117 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-29T07:00:55.702467+00:00",
+      "readme_checked_at": "2026-10-29T07:01:12.671247+00:00",
+      "readme_source_url": "https://api.github.com/repos/macro-inc/macro/readme",
+      "evidence_urls": [
+        "https://github.com/macro-inc/macro",
+        "https://api.github.com/repos/macro-inc/macro",
+        "https://github.com/macro-inc/macro/blob/main/LICENSE.txt",
+        "https://github.com/macro-inc/macro/blob/main/docs/development/running-locally.md",
+        "https://github.com/macro-inc/macro/releases/tag/v2026.10.28.3"
+      ]
+    },
+    {
+      "repository": "expo/skills",
+      "url": "https://github.com/expo/skills",
+      "trending_rank": 12,
+      "description": "Expo's ==official agent skills for Expo and React Native apps==: 24 SKILL.md guides listed in the README, covering Expo Router navigation, native UI and animation, data fetching, native modules, SDK upgrades and moving a web app to native, plus a separate group for the paid Expo Application Services (store builds and submission, over-the-air updates, hosting, workflows and observability). It installs as a Claude Code or Codex plugin, or through the skills CLI for Cursor, OpenCode and other agents.",
+      "why_interesting": "First time on our list. Coding agents often reach for outdated React Native patterns; these guides come from the framework's own team, which keeps Expo's documentation and CLIs as the source of truth. The README ==separates free framework skills from paid services==, and each services skill opens with a costs and plan-limits note, so you can see when an agent's advice leads to a paid plan.",
+      "caveat": "Useful only for Expo and React Native projects, and the services group assumes ==paid Expo Application Services==. The Claude Code and Codex plugins also wire up Expo's MCP server, which can trigger builds and read crash data, and every skill tells the agent how to send feedback through an npx command that fetches Expo's agent CLI, so review what your agent may run. The skills are guidance, not tests of your app. We did not install or test them.",
+      "category": "Mobile development / AI coding",
+      "language": "Shell",
+      "license": "MIT",
+      "stars_total": 3677,
+      "stars_period": 90,
+      "stars_period_label": "90 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-29T07:01:03.465848+00:00",
+      "readme_checked_at": "2026-10-29T07:01:13.343461+00:00",
+      "readme_source_url": "https://api.github.com/repos/expo/skills/readme",
+      "evidence_urls": [
+        "https://github.com/expo/skills",
+        "https://api.github.com/repos/expo/skills",
+        "https://github.com/expo/skills/blob/main/LICENSE",
+        "https://docs.expo.dev/skills/"
+      ]
+    },
+    {
+      "repository": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "trending_rank": 13,
+      "description": "A ==WiFi sensing platform== that reads Channel State Information from low-cost ESP32-S3 boards to detect presence and movement, estimate breathing and heart rate, recognise activities and falls, and pass those states to Home Assistant, Matter, Apple Home and local automations, without cameras. It ships Rust firmware and services, a Python package, pretrained models on Hugging Face and a Docker demo that runs on simulated data.",
+      "why_interesting": "First time on our list. Camera-free room sensing is an active research field, and this is one of the most complete open toolkits for trying it on inexpensive hardware. Unusually, the README ==grades its own models==: it retracted an earlier 100 percent presence figure in favour of 82.3 percent held-out accuracy, and labels its on-device pose model weak, below target and not yet wired in.",
+      "caveat": "Real sensing needs ESP32-S3 or other CSI-capable hardware; the Docker image uses simulated data, and ordinary laptops give presence only. The README calls it ==beta software==, and its health uses are ==research prototypes, not medical devices==. Accuracy figures are the maintainer's own, sensing people through walls raises consent and privacy questions, and the README also promotes the maker's roughly 140-dollar Cognitum Seed hub and an affiliate programme. We did not install it or download its models.",
+      "category": "Hardware / sensing / smart home",
+      "language": "Rust",
+      "license": "MIT",
+      "stars_total": 101281,
+      "stars_period": 557,
+      "stars_period_label": "557 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-29T07:01:04.574649+00:00",
+      "readme_checked_at": "2026-10-29T07:01:13.879912+00:00",
+      "readme_source_url": "https://api.github.com/repos/ruvnet/RuView/readme",
+      "evidence_urls": [
+        "https://github.com/ruvnet/RuView",
+        "https://api.github.com/repos/ruvnet/RuView",
+        "https://github.com/ruvnet/RuView/blob/main/LICENSE",
+        "https://github.com/ruvnet/RuView/releases/tag/v3422",
+        "https://huggingface.co/ruvnet/wifi-densepose-pretrained"
+      ]
+    },
+    {
+      "repository": "xiaolai/the-craft-of-selfteaching",
+      "url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+      "trending_rank": 14,
+      "description": "Li Xiaolai's free Chinese-language book on teaching yourself, using Python programming as the way in. It is ==a book written as Jupyter notebooks==: chapters on deliberate practice, coping with material full of forward references and avoiding focus drift alternate with a Python primer on values, control flow, functions, strings, files, classes, regular expressions and test-driven development. A Markdown version reads without Jupyter.",
+      "why_interesting": "First time on our list. Its argument, that ==the ability to teach yourself== matters more than any single skill, fits a moment when tools change monthly, and it teaches the habit by example: read the official documentation, live with not understanding everything yet, and practise deliberately. Small fixes for current JupyterLab landed in May 2026.",
+      "caveat": "Chinese only. GitHub detects no license; the README states ==CC BY-NC-ND 3.0==, so you may share it non-commercially with credit but not distribute adaptations or translations. The Python chapters were written in 2019 with only small fixes since, so some details may be dated. It is a book, not a tool, and we did not run its notebooks.",
+      "category": "Education / programming",
+      "language": "Jupyter Notebook",
+      "license": "CC BY-NC-ND 3.0 (stated in README)",
+      "stars_total": 18702,
+      "stars_period": 148,
+      "stars_period_label": "148 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-10-29T07:01:05.718277+00:00",
+      "readme_checked_at": "2026-10-29T07:01:14.391493+00:00",
+      "readme_source_url": "https://api.github.com/repos/xiaolai/the-craft-of-selfteaching/readme",
+      "evidence_urls": [
+        "https://github.com/xiaolai/the-craft-of-selfteaching",
+        "https://api.github.com/repos/xiaolai/the-craft-of-selfteaching",
+        "https://github.com/xiaolai/the-craft-of-selfteaching/tree/master/markdown"
+      ]
+    }
+  ],
+  "listing": [
+    {
+      "rank": 1,
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "language": "TypeScript",
+      "stars_total": 5393,
+      "stars_period": 1068,
+      "stars_period_label": "1,068 stars today"
+    },
+    {
+      "rank": 2,
+      "repository": "elayadesign/ai-design-skills",
+      "url": "https://github.com/elayadesign/ai-design-skills",
+      "description": null,
+      "language": null,
+      "stars_total": 11447,
+      "stars_period": 2139,
+      "stars_period_label": "2,139 stars today"
+    },
+    {
+      "rank": 3,
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": 307678,
+      "stars_period": 1095,
+      "stars_period_label": "1,095 stars today"
+    },
+    {
+      "rank": 4,
+      "repository": "HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "language": "Python",
+      "stars_total": 48591,
+      "stars_period": 2371,
+      "stars_period_label": "2,371 stars today"
+    },
+    {
+      "rank": 5,
+      "repository": "macro-inc/macro",
+      "url": "https://github.com/macro-inc/macro",
+      "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+      "language": "Rust",
+      "stars_total": 5555,
+      "stars_period": 117,
+      "stars_period_label": "117 stars today"
+    },
+    {
+      "rank": 6,
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars_total": 41081,
+      "stars_period": 2110,
+      "stars_period_label": "2,110 stars today"
+    },
+    {
+      "rank": 7,
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars_total": 93488,
+      "stars_period": 1472,
+      "stars_period_label": "1,472 stars today"
+    },
+    {
+      "rank": 8,
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "language": "TypeScript",
+      "stars_total": 8309,
+      "stars_period": 728,
+      "stars_period_label": "728 stars today"
+    },
+    {
+      "rank": 9,
+      "repository": "nightly-labs/openbot",
+      "url": "https://github.com/nightly-labs/openbot",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "language": "TypeScript",
+      "stars_total": 3449,
+      "stars_period": 1054,
+      "stars_period_label": "1,054 stars today"
+    },
+    {
+      "rank": 10,
+      "repository": "togg53192-cmd/jailbreaks",
+      "url": "https://github.com/togg53192-cmd/jailbreaks",
+      "description": "LIST OF ALL MY JAILBREAKS",
+      "language": null,
+      "stars_total": 7544,
+      "stars_period": 1477,
+      "stars_period_label": "1,477 stars today"
+    },
+    {
+      "rank": 11,
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+      "language": "JavaScript",
+      "stars_total": 35528,
+      "stars_period": 1616,
+      "stars_period_label": "1,616 stars today"
+    },
+    {
+      "rank": 12,
+      "repository": "expo/skills",
+      "url": "https://github.com/expo/skills",
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+      "language": "Shell",
+      "stars_total": 3677,
+      "stars_period": 90,
+      "stars_period_label": "90 stars today"
+    },
+    {
+      "rank": 13,
+      "repository": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars_total": 101281,
+      "stars_period": 557,
+      "stars_period_label": "557 stars today"
+    },
+    {
+      "rank": 14,
+      "repository": "xiaolai/the-craft-of-selfteaching",
+      "url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+      "description": "One has no future if one couldn't teach themself.",
+      "language": "Jupyter Notebook",
+      "stars_total": 18701,
+      "stars_period": 148,
+      "stars_period_label": "148 stars today"
+    }
+  ],
+  "tracked": [
+    {
+      "repository": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "stars_total": 32752,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "xtool-org/xtool",
+      "url": "https://github.com/xtool-org/xtool",
+      "stars_total": 14090,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "stars_total": 404088,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "stars_total": 93338,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "stars_total": 57616,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "vxcontrol/pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "stars_total": 32686,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "stars_total": 95616,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "xerj-org/xerj",
+      "url": "https://github.com/xerj-org/xerj",
+      "stars_total": 17401,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "stars_total": 55165,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "stars_total": 292002,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "lightseekorg/tokenspeed",
+      "url": "https://github.com/lightseekorg/tokenspeed",
+      "stars_total": 2823,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "stars_total": 45176,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "LibreSpark/LibreTV",
+      "url": "https://github.com/LibreSpark/LibreTV",
+      "stars_total": 22566,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "android/skills",
+      "url": "https://github.com/android/skills",
+      "stars_total": 10000,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "stars_total": 307679,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "stars_total": 67267,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "stars_total": 80025,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "stars_total": 35536,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "stars_total": 222842,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "stars_total": 14336,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "stars_total": 109384,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "stars_total": 143843,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "mlabonne/llm-course",
+      "url": "https://github.com/mlabonne/llm-course",
+      "stars_total": 84746,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "stars_total": 78181,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "withmarbleapp/os-taxonomy",
+      "url": "https://github.com/withmarbleapp/os-taxonomy",
+      "stars_total": 7440,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "stars_total": 44029,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "stars_total": 153778,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "stars_total": 51978,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "stars_total": 138078,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "url": "https://github.com/vllm-project/vllm",
+      "stars_total": 95819,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "stars_total": 179435,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "stars_total": 33711,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "stars_total": 60037,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "supabase/supabase",
+      "url": "https://github.com/supabase/supabase",
+      "stars_total": 114278,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "php/php-src",
+      "url": "https://github.com/php/php-src",
+      "stars_total": 41707,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "stars_total": 104268,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Meloong-Git/PCL",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "stars_total": 9424,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "luongnv89/claude-howto",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "stars_total": 45954,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "stars_total": 123158,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "NVIDIA/OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "stars_total": 20625,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "SnailSploit/Claude-Red",
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "stars_total": 9747,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "OpenBMB/VoxCPM",
+      "url": "https://github.com/OpenBMB/VoxCPM",
+      "stars_total": 40796,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "stars_total": 9350,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "stars_total": 3334,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "stars_total": 93498,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "stars_total": 41085,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "stars_total": 8309,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "stars_total": 12987,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "stars_total": 108607,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "stars_total": 65230,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "stars_total": 5398,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "stars_total": 23544,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "stars_total": 118012,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "stars_total": 23176,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "gitroomhq/postiz-app",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "stars_total": 40025,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "nightly-labs/openbot",
+      "url": "https://github.com/nightly-labs/openbot",
+      "stars_total": 3453,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "stars_total": 105819,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "stars_total": 28015,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "stars_total": 48596,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    },
+    {
+      "repository": "elayadesign/ai-design-skills",
+      "url": "https://github.com/elayadesign/ai-design-skills",
+      "stars_total": 11449,
+      "archived": false,
+      "checked_at": "2026-10-29T07:03:43+00:00"
+    }
+  ]
+}
