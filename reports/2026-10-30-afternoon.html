@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Friday 30 October 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-10-30-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Friday 30 October 2026</span><span class="rh-url">luongnv.com/news/reports/2026-10-30-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-30T16:08:16+01:00">Friday 30 October 2026</time></p><p>Afternoon edition &middot; No. 2026-10-30-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-30-afternoon.html">This edition</a><a href="2026-10-30-afternoon.md">Markdown</a><a href="2026-10-30-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-30-afternoon.html">This edition (HTML)</a> &middot; <a href="2026-10-30-afternoon.pdf">This edition (PDF)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Friday 30 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-29T16:07:29+01:00">29 Oct 2026, 16:07 CET</time> to <time datetime="2026-10-30T16:07:46+01:00">30 Oct 2026, 16:07 CET</time> (Paris time). Issued <time datetime="2026-10-30T16:08:16+01:00">30 Oct 2026, 16:08 CET</time>.</p><p class="lead-note">This edition has <mark class="hl">six new stories</mark> and no repeats of this morning&#x27;s issue. Two of them, a <mark class="hl">backdoored Claude Code extension</mark> in Cursor&#x27;s marketplace and Epoch AI&#x27;s Firefox exploit study, are dated 29 October but were missed this morning, so the window reaches back to yesterday&#x27;s 16:07 issue. The rest are from today: an AI-spending selloff led by Intel, Wikimedia&#x27;s brief in the New York Times case, Foxconn&#x27;s planned OpenAI deal and Apple&#x27;s purchase of Ascend.io.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-10-30-morning.html">2026-10-30-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-claude-code-extension-cursor-backdoor" aria-labelledby="h-claude-code-extension-cursor-backdoor"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-claude-code-extension-cursor-backdoor">Cursor says a tampered Claude Code extension in its marketplace planted an SSH backdoor on up to 5,000 machines</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29">29 Oct 2026</time></p><div class="story-body"><p>Cursor, the AI coding editor owned by SpaceX, published a security notice dated 29 October. It says a maliciously modified <mark class="hl">Anthropic.claude-code version 2.1.313</mark> was available in its own VS Code extension marketplace from about 2:27am to 1:35pm Pacific time that day. Cursor says the version was not developed by Anthropic and that <mark class="hl">at most 5,000 users were affected</mark>; it will contact them directly.</p><p>According to Cursor, the code collects host and user details, adds an attacker&#x27;s SSH key labelled svc-telemetry to the user&#x27;s authorized keys, installs persistence and tries to open a reverse SSH tunnel. Cursor says turning on the SSH service fails on most macOS and Windows machines because it needs administrator rights, but the key, the persistence and the host report still go through. <mark class="hl">Uninstalling the extension may not be enough</mark>, it says, and it publishes a check and removal scripts.</p><p>Cursor says it removed the version, shut down and rebuilt the marketplace, rotated its keys, audited access and found no other tampered extensions, and had the attacker&#x27;s server taken offline. The Hacker News reports that the package was shipped under the extension&#x27;s legitimate ID, that there is no evidence it reached Open VSX or Microsoft&#x27;s marketplace, and that <mark class="hl">Anthropic has published version 2.1.314</mark> to both.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI coding agents run with the developer&#x27;s own permissions, so a poisoned update to one of them is a direct route into source code and credentials. Here the weak point was a third-party marketplace, not the vendor&#x27;s own release.</p></aside><p class="caveat"><span class="label">Caveat.</span> How the attacker got the package into Cursor&#x27;s marketplace has not been explained, and <mark class="hl">no statement from Anthropic was found</mark>. The 5,000 figure is Cursor&#x27;s upper bound.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;How will they communicate and fix that.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50301846" rel="noopener noreferrer">mrweasel (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;Is this affecting only people using Cursor or all VS Code users?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50302053" rel="noopener noreferrer">ale42 (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://cursor.com/blog/claude-code-extension-security-notice" rel="noopener noreferrer">Cursor: security notice</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:48+01:00">30 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1023096/cursor-says-around-5000-people-may-have-installed-a-malicious-claude-code-extension" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:48+01:00">30 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html" rel="noopener noreferrer">The Hacker News</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:48+01:00">30 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://phorion.io/blog/offical-claude-code-vsx-compromise/" rel="noopener noreferrer">Phorion: technical advisory</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:55+01:00">30 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50300683" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-30T16:06:15+01:00">30 Oct 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-epoch-glm-firefox-patch-gap" aria-labelledby="h-epoch-glm-firefox-patch-gap"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-epoch-glm-firefox-patch-gap">Epoch AI: the open-weight model GLM 5.3 built working Firefox exploits from security fixes before users received them</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-29">29 Oct 2026</time></p><div class="story-body"><p>Epoch AI published a report on 29 October on the <mark class="hl">patch gap</mark>, the time between a security fix appearing in public code and reaching users. Its researchers say Z.ai&#x27;s open-weight model GLM 5.3 built webpages that read a file from a visitor&#x27;s computer and sent it to an attacker, against <mark class="hl">all six Firefox releases from 17 September to 26 October</mark>.</p><p>The researchers say they ran the model offline with basic tools and public information from each release date, and that it worked without human input after basic instructions. Once their setup was built, each version cost <mark class="hl">about $1,000 in API fees</mark>; the fastest attempt took 12 hours. They say no provider, including Z.ai, refused the requests. Each attack also used an unpublished sandbox flaw that the model rediscovered; <mark class="hl">Firefox 159.0, released on 27 October, patches it</mark>.</p><p>The same approach did not produce a Chrome exploit. In a post on 29 October, Mozilla said it now ships builds every week, keeps regression tests confidential until fixes ship, scans new commits, and will time fixes so that the pieces an attacker must chain are never in the patch gap at the same time.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Offensive skills once reserved for tightly held frontier models are showing up in freely available ones, which shifts the defence towards how quickly and quietly fixes ship.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is Epoch AI&#x27;s own experiment, not peer reviewed. The team spent more than $100,000 building and testing the setup, and has <mark class="hl">not confirmed whether the attack works on Firefox 159.0</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://epoch.ai/publications/open-weight-models-patch-gap" rel="noopener noreferrer">Epoch AI: report</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:29+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blog.mozilla.org/en/firefox/privacy-security/defending-patch-gap/" rel="noopener noreferrer">Mozilla: Defending the patch gap</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:30+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/" rel="noopener noreferrer">The Decoder</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:53+01:00">30 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-intel-amazon-ai-spending-selloff" aria-labelledby="h-intel-amazon-ai-spending-selloff"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-intel-amazon-ai-spending-selloff">Intel falls more than 30% and drags chip stocks down as the selloff over AI spending reaches the Nasdaq</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T14:35:24+00:00">30 Oct 2026, 15:35 CET</time></p><div class="story-body"><p>US technology stocks fell sharply on Friday morning. Reuters reported that <mark class="hl">Intel fell more than 30%</mark>, on course for its biggest one-day loss on record, after warning that it would burn cash this year because of a weak PC market, manufacturing problems and heavy spending on production. Amazon slipped 2% after reporting its cash outflow the day before.</p><p>The selloff spread to chipmakers: Reuters reported Nvidia down 3%, AMD down 9.3% and the chips index down 5.7%, with Dell and HP down about 9%. At 09:53 New York time <mark class="hl">the Nasdaq Composite was down 2.21%</mark> and the S&amp;P 500 down 1.22%. Reuters said the Nasdaq-100 was <mark class="hl">on track to erase just over $1 trillion</mark> in market value if losses held. Reddit fell 26% after warning that daily visitors could drop.</p><p>Intel&#x27;s chief executive, Lip-Bu Tan, told investors he was disappointed not to meet strong customer demand, citing manufacturing, supply shortages and an unprecedented memory crunch, NBC News reported.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: A week that started with questions about cloud giants&#x27; cash flow now reaches the suppliers; investors are pricing the cost of the AI build-out, not only its demand.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are <mark class="hl">intraday figures from Friday morning</mark> in New York; closing prices were not available when this edition went to press.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-sink-amazon-intel-114737736.html" rel="noopener noreferrer">Reuters via Yahoo Finance</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:30+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.nbcnews.com/business/markets/tech-stocks-nasdaq-ai-boom-fears-deepen-rcna606512" rel="noopener noreferrer">NBC News</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:31+01:00">30 Oct 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-wikimedia-amicus-openai-copyright" aria-labelledby="h-wikimedia-amicus-openai-copyright"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-wikimedia-amicus-openai-copyright">Wikimedia asks the court in the New York Times case against OpenAI to treat AI training as fair use, but not chatbot retrieval</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T09:00:29+00:00">30 Oct 2026, 10:00 CET</time></p><div class="story-body"><p>The Wikimedia Foundation, which runs Wikipedia, said on 30 October that it had filed an <mark class="hl">amicus brief</mark> in In re: OpenAI, Inc. Copyright Infringement Litigation, the 12 combined lawsuits against OpenAI that include The New York Times&#x27; case against Microsoft and OpenAI, in the Southern District of New York. It says it supports neither side.</p><p>The foundation argues that using copyrighted works to train models that are new and different from their sources should count as <mark class="hl">fair use, without licensing terms</mark>. It argues that retrieval-augmented generation, where a chatbot copies web content to answer a question, <mark class="hl">should not count as fair use</mark> and must respect each publisher&#x27;s licence; for Wikipedia that means CC BY-SA 4.0 attribution. It also says scraping of its sites must respect its rate limits or go through its paid Enterprise API.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: The brief splits training from retrieval, the distinction that matters most for AI search products, and comes from the site whose content is among the most used to train and ground chatbots.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is one party&#x27;s legal argument, <mark class="hl">not a ruling</mark>. Unite.AI reports that the filing is a request for leave to file the brief, which the judge has not yet decided.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://wikimediafoundation.org/news/2026/10/30/wikimedia-foundation-amicus-brief-new-york-times-v-open-ai-case/" rel="noopener noreferrer">Wikimedia Foundation</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:30+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/policy/1022880/wikipedia-openai-new-york-times-copyright" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:30+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.unite.ai/wikimedia-foundation-seeks-to-file-amicus-brief-in-openai-copyright-case/" rel="noopener noreferrer">Unite.AI</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:08:01+01:00">30 Oct 2026, 16:08 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-foxconn-openai-new-collaboration" aria-labelledby="h-foxconn-openai-new-collaboration"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-foxconn-openai-new-collaboration">Foxconn says a new collaboration with OpenAI is in the works after its chairman met Sam Altman</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T16:38:40+08:00">30 Oct 2026, 09:38 CET</time></p><div class="story-body"><p>Foxconn chairman Young Liu told reporters at the company&#x27;s annual technology event in Taipei on Friday that he had met OpenAI chief executive Sam Altman earlier that day, and that <mark class="hl">a new collaboration with OpenAI was in the works</mark>, Reuters reported. He said there would be an announcement once details were confirmed and gave no further details.</p><p>Reuters notes that any deal would build on last year&#x27;s agreement for the two companies to design and engineer data-centre racks and other AI hardware. Liu also said the AI industry was not in a bubble and that Foxconn, Nvidia&#x27;s biggest AI server maker, <mark class="hl">expects double-digit growth next year</mark>.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: OpenAI keeps lining up hardware partners directly, alongside the chipmakers whose shares were falling on the same day.</p></aside><p class="caveat"><span class="label">Caveat.</span> No terms were given and OpenAI&#x27;s comment was not found; the growth outlook is Foxconn&#x27;s own.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/foxconn-working-new-tie-up-openai-says-there-no-ai-bubble-6506396" rel="noopener noreferrer">CNA (Reuters)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:54+01:00">30 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-apple-ascend-io-acquihire" aria-labelledby="h-apple-ascend-io-acquihire"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-apple-ascend-io-acquihire">Apple&#x27;s EU disclosure shows a deal for agentic data-engineering startup Ascend.io</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T12:06:19+00:00">30 Oct 2026, 13:06 CET</time></p><div class="story-body"><p>An update to the European Commission&#x27;s list of acquisitions under the Digital Markets Act shows a deal between Apple and Ascension Labs, better known as <mark class="hl">Ascend.io</mark>, a company that sells AI agents for data engineering, 9to5Mac and MacRumors reported on 30 October.</p><p>According to the reports, Apple gets the right to <mark class="hl">make employment offers to certain employees</mark>, a non-exclusive licence to Ascend&#x27;s intellectual property and some of its patents. Ascend&#x27;s website says it is winding down operations.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Like other recent Apple deals, this is structured as a hiring and licensing deal rather than a classic takeover, which keeps it small.</p></aside><p class="caveat"><span class="label">Caveat.</span> The Commission&#x27;s page was not read directly, and <mark class="hl">no price was disclosed</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://9to5mac.com/2026/10/30/apple-acquires-ascend%E2%80%A4io-an-agentic-ai-engineering-startup/" rel="noopener noreferrer">9to5Mac</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:55+01:00">30 Oct 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.macrumors.com/2026/10/30/apple-acquires-ascend-io/" rel="noopener noreferrer">MacRumors</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:05:56+01:00">30 Oct 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://appleinsider.com/articles/26/10/30/ai-data-handling-firm-ascendio-acquired-by-apple" rel="noopener noreferrer">AppleInsider</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:08:01+01:00">30 Oct 2026, 16:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1023069/apple-has-acquired-ai-data-engineering-startup-ascend-io" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-30T16:04:55+01:00">30 Oct 2026, 16:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI developer tools are now a supply-chain target: <mark class="hl">one poisoned extension update</mark> reached up to 5,000 machines in a day.</li><li>Freely available models are closing in on offensive security work, and defenders are answering by <mark class="hl">shipping fixes faster and more quietly</mark>.</li><li>Markets are pricing the cost of the AI build-out across the supply chain, from cloud giants to <mark class="hl">chipmakers such as Intel</mark>.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (23 threads)</dd></div><div><dt>youtube</dt><dd>ok (4 videos, 2 with transcripts; other transcript requests hit HTTP 429)</dd></div><div><dt>hackernews</dt><dd>ok (14 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (21 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai, machinelearning and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from yesterday&#x27;s 16:07 CET issue to this edition, wider than usual, to carry two 29 October items that this morning&#x27;s edition missed. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished with 62 evidence items from Reddit, Hacker News, GitHub and YouTube. Its top items were videos about the AI stock selloff and Hacker News threads on the Claude Code extension backdoor, which supplied the community quotes. Stories were chosen with Google News RSS, publisher feeds, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. X was not searched. dev.to returned no articles. YouTube transcript requests hit HTTP 429. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. VentureBeat returned HTTP 429; Reuters copies on StreetInsider and the AP market report returned HTTP 403, so the market dispatch relies on Reuters&#x27; text on Yahoo Finance and on NBC News. The European Commission&#x27;s acquisitions page and MLex were not read.</li><li>Not carried: an AI audit of 138 economics papers (reported 28 October, before this window), DeepSeek&#x27;s funding round (reported 22 October), Cognizant&#x27;s OpenAI staffing pledge (a company announcement), and Gemini&#x27;s in-chat document editing.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 23 threads │ 826 upvotes │ 684 comments
+├─  YouTube: 4 videos │ 2,318,272 views │ 2/4 with transcripts
+├─  HN: 14 stories │ 1,839 points │ 791 comments
+├─  GitHub: 21 items │ 10 reactions │ 16 comments
+├─  Top voices: r/singularity, r/artificial, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-30-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-10-30-afternoon.md">Markdown text</a></li><li><a href="2026-10-30-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
