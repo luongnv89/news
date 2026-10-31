@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Saturday 31 October 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-10-31-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Saturday 31 October 2026</span><span class="rh-url">luongnv.com/news/reports/2026-10-31-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-10-31T06:09:13+01:00">Saturday 31 October 2026</time></p><p>Morning edition &middot; No. 2026-10-31-morning</p><p>Issued 06:09 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-10-31-morning.html">This edition</a><a href="2026-10-31-morning.md">Markdown</a><a href="2026-10-31-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-10-31-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Saturday 31 October 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-30T06:07:50+01:00">30 Oct 2026, 06:07 CET</time> to <time datetime="2026-10-31T06:08:43+01:00">31 Oct 2026, 06:08 CET</time> (Paris time). Issued <time datetime="2026-10-31T06:09:13+01:00">31 Oct 2026, 06:09 CET</time>.</p><p class="lead-note">This edition has <mark class="hl">six new stories and one update</mark>. The window reaches back to yesterday&#x27;s 06:07 morning issue to carry two announcements made on the morning of 30 October that yesterday&#x27;s afternoon edition did not carry: OpenAI&#x27;s tighter weapons limits for teenagers and the shared AI-training opt-out signal. The rest came after yesterday&#x27;s 16:08 issue: OpenAI&#x27;s reportedly smaller funding round, a forecast that Anthropic may get a junk credit rating, <mark class="hl">S&amp;P&#x27;s negative outlook on Meta</mark> and Apple&#x27;s December launch of Apple Intelligence in China. The update adds Anthropic&#x27;s statement on the tampered Claude Code extension. Anthropic&#x27;s 26 October IPO filing appears as background. No research paper met the bar for this edition.</p><p class="tally">7 new or updated dispatches &middot; 1 background item &middot; Previous: <a href="2026-10-30-afternoon.html">2026-10-30-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-apple-intelligence-china-qwen" aria-labelledby="h-apple-intelligence-china-qwen"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-apple-intelligence-china-qwen">Apple says Apple Intelligence will reach China with iOS 27.3, with Alibaba&#x27;s Qwen in some features</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T23:32:53+01:00">30 Oct 2026, 23:32 CET</time></p><div class="story-body"><p>Apple announced on its Chinese newsroom that <mark class="hl">Apple Intelligence will launch in China with iOS 27.3</mark>, The Verge reports. The features come first in an iOS 27.3 beta due on <mark class="hl">4 November</mark>, with the full release scheduled for <mark class="hl">December</mark>.</p><p>The launch does not include the new Siri. It brings earlier features such as notification summaries, real-time translation, rewriting and proofreading tools, visual intelligence and object removal in photos. The Verge says Apple worked with <mark class="hl">Alibaba to support its Qwen chatbot</mark> in some experiences.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the iPhone&#x27;s AI features get a route into China through a domestic partner&#x27;s model, and Alibaba&#x27;s Qwen gets a place inside Apple&#x27;s software.</p></aside><p class="caveat"><span class="label">Caveat.</span> Single source: Apple&#x27;s Chinese newsroom page renders with JavaScript and could not be read, so this relies on The Verge&#x27;s account.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:08+01:00">31 Oct 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-teen-weapons-safety-report" aria-labelledby="h-openai-teen-weapons-safety-report"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-openai-teen-weapons-safety-report">OpenAI tightens ChatGPT&#x27;s weapons answers for teenagers and promises a twice-yearly community safety report</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30">30 Oct 2026</time></p><div class="story-body"><p>OpenAI says it is placing <mark class="hl">further limits on weapons-related information teens can receive</mark> in ChatGPT, restricting practical information about weapons and security systems that could be misused, even when there is no sign of violent intent. For all users, it is giving less detailed answers about past mass attacks and the people who carried them out.</p><p>The company says it made <mark class="hl">over 200 law enforcement referrals in Q3 2026</mark>. It commits to a Community Safety Report, with the <mark class="hl">first report in early 2027</mark> covering the second half of 2026 and updates every six months. ChatGPT will also be able to end a chat automatically when it shows fixation on seriously harming someone, and repeated endings may pause the account temporarily.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: these are self-imposed rules, so the promised report will be the first chance to see how well the safeguards work in practice.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is OpenAI&#x27;s own description, with no outside evaluation yet. The teen limits depend on OpenAI&#x27;s <mark class="hl">age prediction, which estimates</mark> whether a user is under 18.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/community-safety-report-and-new-protections-for-teens/" rel="noopener noreferrer">OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:52+01:00">31 Oct 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-claude-code-extension-cursor-backdoor" aria-labelledby="h-claude-code-extension-cursor-backdoor"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">Updated</span></p><h3 id="h-claude-code-extension-cursor-backdoor">Anthropic says the tampered Claude Code extension on Cursor did not come from a breach of its own systems</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T17:27:00+01:00">30 Oct 2026, 17:27 CET</time></p><div class="story-body"><p>Update to yesterday&#x27;s report: Anthropic has now commented on the backdoored version 2.1.313 in Cursor&#x27;s marketplace. Felix Rieseberg, a member of its technical staff, said &#x27;it wasn&#x27;t a compromise of Anthropic&#x27;s systems or employee laptops&#x27;, The Register reports. He said <mark class="hl">a malicious actor used access to Cursor&#x27;s marketplace</mark> to publish a tampered copy Anthropic did not build or publish, and that <mark class="hl">versions on Anthropic&#x27;s official channels are not affected</mark>.</p><p>Ars Technica reports that the researcher Kevin Beaumont and Phorion&#x27;s CTO, Luke Roberts, said version 2.1.313 was posted through <mark class="hl">Anthropic&#x27;s official account on Cursor</mark>, and that neither company has explained how the attackers gained control of it. The Register says Cursor shares Phorion&#x27;s view that the reverse SSH tunnel usually failed without administrator rights, while the host data, the attacker&#x27;s key and the persistence mechanism still went through.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: both companies&#x27; accounts now place the weak point in the marketplace and its publishing account, not in the extension&#x27;s own code. How that access was obtained is the open question.</p></aside><p class="caveat"><span class="label">Caveat.</span> Rieseberg&#x27;s statement was read as quoted by The Register, not in the original post. <mark class="hl">How the account was accessed is unexplained</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.theregister.com/cyber-crime/2026/10/30/anthropic-that-claude-code-extension-compromise-couldnt-be-us/5306682" rel="noopener noreferrer">The Register</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:51+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/" rel="noopener noreferrer">Ars Technica</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:09+01:00">31 Oct 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-funding-target-cut" aria-labelledby="h-openai-funding-target-cut"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-openai-funding-target-cut">Report: OpenAI cuts its funding target by $10 billion and now seeks about $20 billion at a $1.25 trillion valuation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30">30 Oct 2026</time></p><div class="story-body"><p>The Financial Times reported on Friday that OpenAI has <mark class="hl">cut the target for its latest funding round by $10 billion</mark> and is now seeking about $20 billion at a <mark class="hl">$1.25 trillion valuation</mark>, citing people with knowledge of the matter. According to Reuters&#x27; account of the report, OpenAI had earlier planned to raise $30 billion at a $1.4 trillion valuation.</p><p>Reuters says OpenAI set Friday as the deadline for investors to commit, but that the <mark class="hl">first close is expected to raise less than $20 billion</mark> after some investors reduced their allocations. Bloomberg Law&#x27;s summary of the FT report says the selloff in AI stocks and rival Anthropic&#x27;s coming listing complicated the effort.</p><p>The report landed as tech stocks fell again. Reuters says the Nasdaq dropped 2.9% on Friday and closed 7.8% below its record close of 6 October. OpenAI did not immediately respond to Reuters.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a smaller round at a lower price for the most valuable private AI company shows the stock-market selloff reaching private AI funding, just as Anthropic prepares to test public demand.</p></aside><p class="caveat"><span class="label">Caveat.</span> The figures come from anonymous sources quoted by the FT, and <mark class="hl">OpenAI has not confirmed them</mark>. The FT article was not read (paywall); Reuters&#x27; account was read in a copy on CNBC TV18. A Wall Street Journal report that OpenAI raised less than half of its $30 billion target was seen only as a headline.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Welp that’s not a good sign for the anthropic IPO.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50313262" rel="noopener noreferrer">bushbaba (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbctv18.com/business/openai-cuts-funding-target-by-usd-10-billion-chatgpt-20023854.htm" rel="noopener noreferrer">CNBC TV18 (Reuters report)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:54+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://news.bloomberglaw.com/private-equity/openai-funding-goal-cut-by-10-billion-as-ai-stocks-dip-ft-says" rel="noopener noreferrer">Bloomberg Law (summary of the FT report)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:54+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50312922" rel="noopener noreferrer">Hacker News discussion of the WSJ report</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-31T06:03:39+01:00">31 Oct 2026, 06:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-junk-rating-blackstone" aria-labelledby="h-anthropic-junk-rating-blackstone"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-anthropic-junk-rating-blackstone">FT: Blackstone now tells investors Anthropic may get a &#x27;junk&#x27; credit rating after its IPO</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30">30 Oct 2026</time></p><div class="story-body"><p>Blackstone, the anchor investor in a recent deal to finance Anthropic&#x27;s chips, told investors in that deal that it expects the AI lab to receive a <mark class="hl">high &#x27;junk&#x27; rating in the double-B range</mark> after its initial public offering, the Financial Times reported on Friday. TechCrunch, summarising the FT, says Blackstone had previously said Anthropic would get an <mark class="hl">investment-grade rating before 2027</mark>.</p><p>Anthropic and Blackstone declined to comment to TechCrunch. The expectation is Blackstone&#x27;s forecast, not a rating issued by any agency. TechCrunch notes that a junk rating would make it harder and costlier for Anthropic to raise money for its large compute deals.</p><p>Anthropic filed its IPO prospectus on 26 October; that filing appears in this edition&#x27;s background section.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI labs increasingly pay for chips with borrowed money, so the expected credit rating feeds directly into what their compute costs. A reversal by the deal&#x27;s anchor investor is a signal lenders will notice.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a forecast reported second-hand: the FT article was not read (paywall), and <mark class="hl">no rating agency has acted</mark>.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;But why would Anthropic deceive us? There&#x27;s no... no reason for them to do that.&rdquo;</p><p class="attribution">&mdash; <a href="https://www.youtube.com/watch?v=884dTvxSk4c" rel="noopener noreferrer">@ZappBranniganCos (YouTube comment)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:51+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50307219" rel="noopener noreferrer">Hacker News discussion of the FT report</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-31T06:03:39+01:00">31 Oct 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://www.youtube.com/watch?v=884dTvxSk4c" rel="noopener noreferrer">The Tech Report on YouTube (Ed Zitron interview)</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-10-31T06:03:39+01:00">31 Oct 2026, 06:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-meta-sp-negative-outlook" aria-labelledby="h-meta-sp-negative-outlook"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-meta-sp-negative-outlook">S&amp;P turns its outlook on Meta&#x27;s AA- rating negative and questions how Meta will make money from AI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30T22:44:57+01:00">30 Oct 2026, 22:44 CET</time></p><div class="story-body"><p>S&amp;P Global Ratings on Friday <mark class="hl">revised its outlook on Meta to negative from stable</mark> and kept the <mark class="hl">AA- rating</mark>, Reuters and CNBC report. S&amp;P cited uncertainty over Meta&#x27;s capital spending and free operating cash flow, and said Meta&#x27;s ability to monetise its AI investments is more limited than its peers&#x27;.</p><p>According to Reuters, S&amp;P now forecasts free operating cash flow <mark class="hl">deficits of $39 billion in 2026 and $71 billion in 2027</mark>, expects Meta to fund a 2028 shortfall entirely with debt, and says leverage could rise above 1.0x, its threshold for the AA- rating, as early as 2027. Meta has guided to $135 billion to $145 billion of capital spending this year.</p><p>A Meta spokesperson said: &#x27;We respectfully disagree with S&amp;P&#x27;s assertion about Meta&#x27;s AI monetization capabilities.&#x27; CNBC adds that Meta&#x27;s stock finished October down 15%, its worst month in four years.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a rating agency is now putting AI spending into credit terms, not only stock prices, which can raise the cost of borrowing for the build-out.</p></aside><p class="caveat"><span class="label">Caveat.</span> An outlook change is a warning, not a downgrade: <mark class="hl">the AA- rating itself is unchanged</mark>. S&amp;P&#x27;s own release was not read.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:05:27+01:00">31 Oct 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/sp-global-revises-metas-outlook-negative-ai-spending-cash-flow-worries-6508631" rel="noopener noreferrer">CNA (Reuters report)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:05:27+01:00">31 Oct 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/" rel="noopener noreferrer">TechCrunch: Cracks are emerging in the AI spending boom</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:54+01:00">31 Oct 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-ai-training-opt-out-signal" aria-labelledby="h-ai-training-opt-out-signal"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-ai-training-opt-out-signal">OpenAI, Google, Microsoft and Anthropic back one robots.txt signal for opting out of AI training</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-30">30 Oct 2026</time></p><div class="story-body"><p>OpenAI says it will honor a <mark class="hl">common signal in robots.txt</mark> that lets websites state whether their content may be used for foundational generative AI training, so operators no longer need separate rules for each provider&#x27;s crawler. Google&#x27;s Search Central blog says an opt-out through the shared &#x27;policy token&#x27; will count <mark class="hl">as if the site had disallowed Google-Extended</mark>, unless the site addresses Google-Extended directly.</p><p>Timelines differ. Google says it aims to support the control <mark class="hl">in 2027</mark>; OpenAI says it aims to implement it <mark class="hl">in the coming months</mark> and that its existing crawler controls stay. The Verge reports that the token was proposed at the Internet Engineering Task Force by Kevin Kelley, a technical lead for standards at Anthropic, that Anthropic has already adopted it, and that Microsoft will offer separate opt-outs for AI training and for grounding.</p><p>Meta&#x27;s communications head Andy Stone welcomed a common signal, but The Verge says he did not say whether Meta will honor it.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: one robots.txt entry could replace a growing list of per-company crawler rules. It only states a preference, though, and works only for crawlers that choose to respect it.</p></aside><p class="caveat"><span class="label">Caveat.</span> The token comes from a proposal at the IETF, <mark class="hl">not a finished standard</mark>, and only Anthropic is reported to have adopted it so far. Microsoft&#x27;s and Anthropic&#x27;s own posts were not read.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/helping-websites-express-ai-training-preferences/" rel="noopener noreferrer">OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:07+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://developers.google.com/search/blog/2026/10/ai-training-control" rel="noopener noreferrer">Google Search Central Blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:07+01:00">31 Oct 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:04:08+01:00">31 Oct 2026, 06:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="bg-title"><h2 id="bg-title">Background &mdash; older or undated context</h2><p class="section-note">Earlier or undated items, carried for context only. They are not new reporting.</p><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-background is-background" id="story-anthropic-s1-filing" aria-labelledby="h-anthropic-s1-filing"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Background — older context</span></p><h3 id="h-anthropic-s1-filing">Anthropic filed its IPO prospectus on 26 October for a Nasdaq listing under the ticker ANT</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-26">26 Oct 2026</time></p><div class="story-body"><p>Background, 26 October: Anthropic said it filed a Form S-1 with the US Securities and Exchange Commission for a proposed initial public offering of Class A shares on the Nasdaq Global Select Market under the symbol <mark class="hl">ANT</mark>. The number of shares and the price range were not yet set.</p><p>TechCrunch reports that the filing shows first-half 2026 revenue of <mark class="hl">$16.3 billion, up from $1.2 billion</mark> a year earlier, an operating loss of $693 million and a net loss of $80.7 billion, driven largely by non-cash accounting adjustments tied to convertible debt. TechCrunch says the governance structure lets the seven co-founders keep control after the listing.</p></div><p class="caveat"><span class="label">Caveat.</span> This journal did not report the filing when it was made; it is included here as context for the credit-rating story. The figures come from a preliminary prospectus that may change.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/news/s1-sec" rel="noopener noreferrer">Anthropic</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-10-31T06:06:28+01:00">31 Oct 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:06:28+01:00">31 Oct 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-10-31T06:06:28+01:00">31 Oct 2026, 06:06 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI spending worries moved from share prices into funding and credit: <mark class="hl">OpenAI&#x27;s smaller round</mark>, a possible junk rating for Anthropic and <mark class="hl">S&amp;P&#x27;s negative outlook on Meta</mark>.</li><li>The largest AI providers agreed on <mark class="hl">one robots.txt signal for training opt-outs</mark>, but it is a voluntary preference with staggered start dates.</li><li>In the Claude Code extension incident, both vendors now <mark class="hl">point at the marketplace account</mark>, and how it was accessed is still unexplained.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (17 threads)</dd></div><div><dt>youtube</dt><dd>ok (3 videos, 1 with transcript; other transcript requests hit HTTP 429)</dd></div><div><dt>hackernews</dt><dd>ok (19 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (17 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai, machinelearning and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from yesterday&#x27;s 06:07 CET morning issue to this edition, wider than usual, to carry two 30 October morning announcements that yesterday&#x27;s afternoon edition did not carry. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished with 56 evidence items from Reddit, Hacker News, GitHub and YouTube. Its top items were a YouTube interview and Hacker News threads on Anthropic&#x27;s expected credit rating and OpenAI&#x27;s funding round, which supplied the community quotes. Stories were chosen with Google News RSS, publisher feeds, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. X was not searched. dev.to returned no articles. YouTube transcript requests hit HTTP 429. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. VentureBeat&#x27;s feed returned HTTP 429. Investing.com returned HTTP 403 and a US News copy failed, so Reuters&#x27; OpenAI report was read in a CNBC TV18 copy. The FT and WSJ articles were not read (paywalls), and Apple&#x27;s Chinese newsroom could not be read without JavaScript.</li><li>Not carried: a claim, posted on X by a startup founder and reported by The Decoder, that a Claude agent chose and performed a gene-therapy injection in a mouse (no paper or independent check); Amazon&#x27;s reported $80 billion supplier financing facility (Bloomberg, not read); Nvidia&#x27;s possible backing for Nscale&#x27;s debt (covered on 30 October); and Sam Altman&#x27;s remarks on PC memory.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 17 threads │ 464 upvotes │ 474 comments
+├─  YouTube: 3 videos │ 719,331 views │ 1/3 with transcripts
+├─  HN: 19 stories │ 2,589 points │ 2,223 comments
+├─  GitHub: 17 items │ 8 reactions │ 11 comments
+├─  Top voices: r/artificial, r/singularity, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-10-31-morning.json" download>Exact input JSON</a></li><li><a href="2026-10-31-morning.md">Markdown text</a></li><li><a href="2026-10-31-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
