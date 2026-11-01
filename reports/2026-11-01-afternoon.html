@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Sunday 1 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-01-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Sunday 1 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-01-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-01T16:08:02+01:00">Sunday 1 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-01-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-01-afternoon.html">This edition</a><a href="2026-11-01-afternoon.md">Markdown</a><a href="2026-11-01-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-01-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Sunday 1 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-10-31T16:07:01+01:00">31 Oct 2026, 16:07 CET</time> to <time datetime="2026-11-01T16:07:32+01:00">1 Nov 2026, 16:07 CET</time> (Paris time). Issued <time datetime="2026-11-01T16:08:02+01:00">1 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">This Sunday afternoon edition has <mark class="hl">six new stories and no updates</mark>. The window opens at Saturday&#x27;s 16:07 issue so it can carry two items this morning&#x27;s edition missed: OpenAI&#x27;s plan to <mark class="hl">merge ChatGPT and Codex usage</mark>, first discussed late on Saturday, and xAI&#x27;s watermark notice dated 31 October. The other four appeared on Sunday. No new model release met the bar, and two items are plans rather than decisions: OpenAI&#x27;s Washington push and a Korea-Japan data-centre fund.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-01-morning.html">2026-11-01-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-grok-api-text-watermark" aria-labelledby="h-grok-api-text-watermark"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-grok-api-text-watermark">xAI will watermark text from seven Grok API models by default from 7 November, citing the EU AI Act</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-10-31">31 Oct 2026</time></p><div class="story-body"><p>A developer documentation page from xAI, whose docs now carry the SpaceXSI name, says that <mark class="hl">starting 7 November 2026</mark> text responses from grok-4.7, grok-4.6, grok-4.5, grok-4.3 and three grok-4.20 variants will include <mark class="hl">an invisible watermark</mark>. The page says the watermark is applied &quot;to comply with the EU AI Act&quot;. It was last updated on 31 October.</p><p>The watermark is on by default on every API endpoint. It covers ordinary text, structured outputs and tool-call arguments, and a response header, x-watermark, shows whether it was applied. <mark class="hl">Team admins can opt out per model</mark>, but must confirm that a legal exception applies and that they are responsible for any marking or disclosure duties.</p><p>The mark works by slightly shaping which tokens the model picks, so no characters are added. Detection is statistical and returns watermarked, not watermarked or uncertain, with longer text giving a stronger signal. <mark class="hl">Access to the detection API is granted by application</mark>.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: with Anthropic extending its own text watermark to older Claude models, as this morning&#x27;s edition reported, watermarking is becoming normal for API text. Only xAI and the organisations it admits can check for this mark.</p></aside><p class="caveat"><span class="label">Caveat.</span> xAI states that watermarking does not change quality or speed; that is <mark class="hl">a vendor claim</mark>. The page publishes <mark class="hl">no accuracy or false-positive figures</mark> and does not say how the mark holds up after paraphrasing or translation.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://docs.x.ai/developers/advanced-api-usage/watermarking" rel="noopener noreferrer">SpaceXSI Docs: Output Watermarking</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-01T16:04:55+01:00">1 Nov 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-chatgpt-codex-shared-allowance" aria-labelledby="h-openai-chatgpt-codex-shared-allowance"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-openai-chatgpt-codex-shared-allowance">OpenAI says ChatGPT and Codex will share one token-based usage allowance from December as Work moves into the main chat</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-01T08:53:11-05:00">1 Nov 2026, 14:53 CET</time></p><div class="story-body"><p>An OpenAI Help Center page says that <mark class="hl">starting in December</mark>, the usage allowance on Plus, Pro and Business plans <mark class="hl">will be shared across ChatGPT and Codex</mark>, &quot;as we bring the agentic capabilities of Work into the main ChatGPT experience&quot;. Usage will be measured in tokens, so more advanced models and complex tasks use more of the allowance; <mark class="hl">Instant chat will not draw from it</mark>.</p><p>OpenAI says it expects most users will not have to wait for a reset more often than they do now. Combined remaining usage and reset times will appear under Settings, and users who hit the limit can wait, upgrade or buy credits. The page gives no allowance figures.</p><p>BleepingComputer, which saw an OpenAI email to subscribers, reports that a <mark class="hl">combined Chat and Work experience will be tested</mark> with a small group of users in the coming weeks, and that Codex stays a separate experience in the ChatGPT desktop app. Hacker News users were discussing the help page by late Saturday evening, after this journal&#x27;s Saturday afternoon edition.</p><p>A second help page sets <mark class="hl">card and device limits</mark>: too many Go, Plus or Pro subscriptions on one payment card or device can block a purchase, and a device can show &quot;Device limit reached&quot;. Free, Business, Enterprise and Edu accounts do not count. The Decoder reads this as aimed at people who rotate several cheap paid accounts to get more usage.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a single metered budget ends the separation between everyday chat and agent work. Heavy Codex users will now trade coding runs against chat with advanced models, and one Hacker News commenter says Claude has worked this way for a while.</p></aside><p class="caveat"><span class="label">Caveat.</span> Both help pages are <mark class="hl">undated</mark>, so the exact date of the change is unclear. This journal did not read OpenAI&#x27;s email itself; its contents are as reported by BleepingComputer. OpenAI publishes <mark class="hl">no numerical allowances</mark> for any plan. BACKGROUND: the Pro usage increase of 29 October was covered on 30 October.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Not surprising: Claude has behaved like this for awhile and it was only a matter of time.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50320635" rel="noopener noreferrer">minimaxir (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;I got it, too. Not surprising but this was definitely one of the deciding factors keeping me with ChatGPT. Much more willing to change providers now.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50321692" rel="noopener noreferrer">sjs382 (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits" rel="noopener noreferrer">OpenAI Help Center: ChatGPT and Codex usage limits</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:09+01:00">1 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt" rel="noopener noreferrer">OpenAI Help Center: card and device limits</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:09+01:00">1 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/" rel="noopener noreferrer">BleepingComputer</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:10+01:00">1 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://the-decoder.com/openais-upcoming-chat-and-work-merger-in-chatgpt-signals-the-end-of-all-you-can-prompt-pricing/" rel="noopener noreferrer">The Decoder: Chat and Work merger</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:44+01:00">1 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://the-decoder.com/openai-is-steering-chatgpt-users-toward-more-paid-usage/" rel="noopener noreferrer">The Decoder: paid usage</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:10+01:00">1 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50320588" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:29+01:00">1 Nov 2026, 16:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-mathematicians-warn-ai-research-secrecy" aria-labelledby="h-mathematicians-warn-ai-research-secrecy"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-mathematicians-warn-ai-research-secrecy">Leading mathematicians warn that OpenAI and Anthropic could keep AI-made mathematics behind paywalls</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-01T05:00:00+00:00">1 Nov 2026, 06:00 CET</time></p><div class="story-body"><p>The Observer reports that Britain&#x27;s most senior mathematicians, including <mark class="hl">three Fields medal winners</mark>, met at the Royal Society in London last week. The meeting followed OpenAI&#x27;s publication last month of solutions, generated by its frontier models, to 377 of the hardest mathematical problems.</p><p>Martin Bridson, president of the Clay Mathematics Institute, described a &quot;longer-term fear that knowledge could be hoarded behind paywalls&quot; and asked: &quot;Why should they get to say who has access to these tools, and on what basis do they choose who gets access?&quot; So far <mark class="hl">OpenAI and Anthropic have each committed $5m</mark> to a Simons Foundation fund that gives some researchers access to their models.</p><p>Fields medallist Martin Hairer said open models cannot compete with frontier ones, leaving &quot;one of the main tools for mathematic research&quot; <mark class="hl">under the control of two US companies</mark>. Ana Caraiani of Imperial College London said no institution in Romania, her native country, is eligible to apply for access.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the dispute has moved from who solved a problem first to who controls access to the tools, which is a question about research governance rather than model quality.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are <mark class="hl">concerns, not evidence that results have been withheld</mark>; neither company is reported as saying it will keep mathematical work secret, and the article as read carries no response from either company.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://observer.co.uk/news/national/article/mathematicians-warn-ai-firms-are-keeping-vital-research-in-the-field-secret" rel="noopener noreferrer">The Observer</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:04:31+01:00">1 Nov 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-speed-limits-policy-push" aria-labelledby="h-openai-speed-limits-policy-push"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-openai-speed-limits-policy-push">Axios: OpenAI plans a post-midterm push in Washington for &#x27;speed limits&#x27; on the most powerful AI and new data-centre deals</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-01">1 Nov 2026</time></p><div class="story-body"><p>Axios reports that right after Tuesday&#x27;s US midterm elections, OpenAI will launch <mark class="hl">a policy and PR campaign</mark> starting in Congress&#x27;s lame-duck session, which opens on 9 November. Chris Lehane, OpenAI&#x27;s chief global affairs officer, told Axios his team has been stockpiling proposals since August, &quot;some new and some repackaged&quot;.</p><p>The first proposal is what OpenAI calls <mark class="hl">&quot;speed limits&quot;</mark>: new ideas for mandatory safeguards on the most powerful AI systems, with a more aggressive drive in Congress. &quot;You&#x27;re going to see us talk more and more about the concept of speed limits,&quot; Lehane said.</p><p>On data centres, OpenAI plans community compacts and <mark class="hl">proposed state legislation</mark> giving residents a say in how projects are built and what benefits they receive. It will also argue that its facilities should be called <mark class="hl">&quot;AI compute campuses&quot;</mark>, citing a project in Pike County, Ohio. Further proposals cover help for workers, education and training, and US-shaped international standards.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a frontier lab asking for mandatory limits on frontier systems is notable, but until OpenAI publishes the proposals it is not possible to judge how binding they would be or whom they would constrain.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are plans described to Axios, not published proposals; OpenAI has not said what a &quot;speed limit&quot; would require in practice. Axios <mark class="hl">discloses a content licensing and technology agreement with OpenAI</mark>. Axios blocked this journal&#x27;s automated reader, so the story was read through a search index copy of the Axios page and a syndicated copy.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.axios.com/2026/11/01/scoop-openai-post-midterm-policy" rel="noopener noreferrer">Axios</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:15+01:00">1 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.daily8.com/en/article/d8_4945f438c59d6b3a24743d55aa65370b82cbe8bc011dfe10972e111fcd89bdb4" rel="noopener noreferrer">Daily8 (syndicated copy of the Axios story)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:15+01:00">1 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-kb-kookmin-naver-gpu-loan" aria-labelledby="h-kb-kookmin-naver-gpu-loan"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-kb-kookmin-naver-gpu-loan">KB Kookmin Bank will lead a record 10.7 trillion won loan for GPUs that will supply Naver Cloud</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-01T14:20:24+09:00">1 Nov 2026, 06:20 CET</time></p><div class="story-body"><p>KB Kookmin Bank said on Sunday that it holds the mandate to lead a <mark class="hl">10.7 trillion won ($8 billion) syndicated loan</mark> for a Brookfield-backed AI computing project, The Korea Herald reports. The bank calls it <mark class="hl">South Korea&#x27;s first GPU financing</mark> and the country&#x27;s largest-ever syndicated loan arrangement.</p><p>The loan is part of a project worth about 13 trillion won. Brookfield will set up a special-purpose company, tentatively named Asset Co., to buy GPUs and other computing assets and supply capacity to Naver Cloud under a long-term agreement. The bank named no other lenders and gave no loan terms.</p><p>Naver&#x27;s filing sets tentative targets of 55 megawatts in the first half of 2027, 100 megawatts by year-end and <mark class="hl">200 megawatts in 2028</mark>, centred on its GAK Sejong data centre. Naver signed its $9 billion infrastructure agreement with Brookfield on Tuesday, a condition of Nvidia&#x27;s planned $1 billion investment in Naver.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the structure keeps the GPUs off Naver&#x27;s own books, in a Brookfield-owned company financed by banks, so the cost of Naver&#x27;s AI capacity now also depends on how lenders value chips.</p></aside><p class="caveat"><span class="label">Caveat.</span> The lender group and the final commitments of other banks have <mark class="hl">not been disclosed</mark>; the capacity targets are tentative.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.koreaherald.com/article/10921731" rel="noopener noreferrer">The Korea Herald</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:03:13+01:00">1 Nov 2026, 16:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-korea-investment-sbi-japan-datacentre-fund" aria-labelledby="h-korea-investment-sbi-japan-datacentre-fund"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-korea-investment-sbi-japan-datacentre-fund">Korea Investment and Japan&#x27;s SBI discuss a fund of about 1.15 trillion yen to build AI data centres in Japan</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-01T17:20:00+09:00">1 Nov 2026, 09:20 CET</time></p><div class="story-body"><p>Korea&#x27;s Financial News reports that Korea Investment Holdings and Japan&#x27;s SBI Group plan a joint fund to invest <mark class="hl">about 1.15 trillion yen</mark> (about 9.75 trillion won) in Japanese data centres with <mark class="hl">200 megawatts of capacity</mark>. The two groups are sounding out companies in both countries as investors and plan a blueprint by the end of the year.</p><p>Companies are looking at supplying chips, cooling and power equipment and at building and operating the sites. Kyushu is one candidate location, and the project&#x27;s backers are understood to have held talks with Kyushu Electric Power.</p><p>Maeil Business reports a fund target of more than 1 trillion yen and quotes Korea Investment as saying the plan <mark class="hl">&quot;has not been confirmed&quot;</mark>. KED Global says the groups hope to expand the partnership over 30 years.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Korean finance and equipment makers are looking abroad for AI-infrastructure demand, in a structure Financial News compares with the Stargate project&#x27;s pooling of money and suppliers.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is an <mark class="hl">early-stage plan reported by the press</mark>; size, timing, site and participants are unconfirmed, and figures differ between reports.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://en.fnnews.com/news/202611010936588588" rel="noopener noreferrer">Financial News (Korea)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:12+01:00">1 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.mk.co.kr/en/stock/12192990" rel="noopener noreferrer">Maeil Business (MK)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:14+01:00">1 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.kedglobal.com/artificial-intelligence/newsView/ked202611010002" rel="noopener noreferrer">KED Global</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-01T16:05:10+01:00">1 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Flat-rate AI is giving way to metered budgets: ChatGPT and Codex will <mark class="hl">share one token allowance</mark>, with new limits on extra paid accounts.</li><li>Labs are shaping the rules around them: OpenAI will push <mark class="hl">&quot;speed limits&quot; for powerful AI</mark>, while xAI turns on <mark class="hl">default text watermarks</mark> for the EU AI Act.</li><li>Access is the new fault line: mathematicians fear <mark class="hl">AI-made results behind paywalls</mark>, and Korean lenders are financing GPUs at record scale.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (16 threads)</dd></div><div><dt>youtube</dt><dd>no-results (0 videos)</dd></div><div><dt>hackernews</dt><dd>ok (10 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (13 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from Saturday&#x27;s 16:07 CET afternoon issue to this edition, so it overlaps this morning&#x27;s window to carry two items that edition missed. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one.</li><li>The installed last30days engine finished in 36 seconds with 39 evidence items from Reddit, Hacker News and GitHub. Its top item was the Hacker News thread on OpenAI&#x27;s shared ChatGPT and Codex limits, which supplied the community quotes; other top items repeated stories already covered. Stories were chosen with Google News RSS, publisher feeds, web searches and checks of primary documents. Item counts are not counts of verified developments.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. YouTube completed with no matching videos, dev.to returned no articles and X was not searched. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. Axios blocked automated reading (HTTP 403 and a bot check, not bypassed), so its story was read through a search index copy and a syndicated copy. VentureBeat&#x27;s feed returned HTTP 429, Anthropic&#x27;s news feed and one Tom&#x27;s Hardware article HTTP 404. OpenAI&#x27;s email to subscribers was not read directly.</li><li>Not carried: the Vals AI study of Chinese models&#x27; political answers (published 12 October), Adobe&#x27;s EditAgent paper (29 October), the UK CMA&#x27;s Meta investigation (30 October), Google&#x27;s Suncatcher satellite test (30 October) and the Justice Department&#x27;s questions about Nvidia&#x27;s Hugging Face deal (covered 29 October).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 16 threads │ 707 upvotes │ 341 comments
+├─  HN: 10 stories │ 412 points │ 340 comments
+├─  GitHub: 13 items │ 8 reactions │ 14 comments
+├─  Top voices: r/singularity, r/artificial, r/ClaudeAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-01-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-01-afternoon.md">Markdown text</a></li><li><a href="2026-11-01-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
