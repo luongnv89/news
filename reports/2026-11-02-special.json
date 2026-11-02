@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-02-special",
+  "edition": "Special edition",
+  "issued_at": "2026-11-02T23:06:12+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-02T16:08:57+01:00",
+  "window_end": "2026-11-02T23:05:42+01:00",
+  "editorial_note": "This Special edition, published at the reader's request outside the twice-daily schedule, carries ==six new stories== first reported after the 16:08 afternoon edition, in a window of about seven hours. Developer tools lead: Anthropic's message threads cut reply delays for long Claude agent sessions, and DeepSeek added a plugin-building creator mode to Harness. Google's threat researchers documented hijacked AI accounts billing victims more than $100,000 a day, Deep Principle released an open-weight science model, SUSE announced job cuts it ties to AI, and 42AI emerged from stealth. ==No frontier model release== passed this journal's checks in this window.",
+  "stories": [
+    {
+      "id": "anthropic-message-threads-beta",
+      "section": "Coding & agents",
+      "headline": "Anthropic opens message threads in beta, so Claude agents send only new turns and wait about 35% less on very long sessions",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic released ==message threads== in public beta on the Claude Platform on Monday. An agent sends the full conversation once to start a thread; after that, each Messages API request carries only the new messages and the ID of the previous response.",
+        "Anthropic says threads are already on by default for most Claude Code users, and that on requests of 500,000 to 1 million tokens the ==median time to first token fell by about 35%==. Claude still reads the whole conversation on every turn, so token usage does not change; standard token rates and existing rate limits apply.",
+        "Threads are held in memory, encrypted and not written to disk, and ==expire five minutes after the last request==, after which the client resends the full conversation. The beta is offered on the native Claude Platform, Claude Platform on AWS, Claude in Microsoft Foundry and Claude models on Google Cloud."
+      ],
+      "why_it_matters": "Analysis: long-running coding agents spend real time re-uploading their own history. This attacks latency, not cost, so bills for long agent sessions stay the same.",
+      "caveat": "The 35% figure is Anthropic's own median on Claude Code traffic; no independent test was available at press time. The Next Web reports that threads are ==not eligible for zero-data-retention or HIPAA setups==; that limit was not visible on Anthropic's announcement page.",
+      "sources": [
+        {
+          "label": "Anthropic: Make long-running agents faster with message threads",
+          "url": "https://claude.com/resources/articles/message-threads",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:01:47+01:00"
+        },
+        {
+          "label": "The Next Web: Anthropic's message threads let Claude agents skip resending chats",
+          "url": "https://thenextweb.com/news/anthropic-message-threads-beta-claude-api-agents",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:01:39+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "deepseek-harness-creator-mode",
+      "section": "Coding & agents",
+      "headline": "DeepSeek adds a 'creator mode' to its open-source Harness agent, letting users build plugins by describing them in chat",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "DeepSeek introduced ==creator mode== for DeepSeek Harness, its open-source agent platform, on Monday, Quartz reported, citing the company's post on X. The Harness page says users can install plugins, or create them through chat in creator mode, to extend the agent's tools, skills and interface.",
+        "The company listed a design workspace, a sandbox game and a 3D LLM visualizer as examples. Bloomberg, as cited by Quartz, reported demonstrations of plugins for 3D model generation and a video-editing workbench built from plain-English prompts. DeepSeek says Harness is ==still in preview==, with evolving core plugins and APIs; it can be launched from npm or cloned from its GitHub repository.",
+        "It follows the upgraded coding-agent prototype DeepSeek released on Saturday, which this journal covered on 1 November."
+      ],
+      "why_it_matters": "Analysis: DeepSeek is competing on the agent shell as well as on models. Letting users extend the harness through chat lowers the cost of building on it, and widens what a plugin can touch.",
+      "caveat": "The examples are the company's own demonstrations; this journal did not test creator mode. DeepSeek describes Harness as a preview whose APIs may change.",
+      "sources": [
+        {
+          "label": "Quartz: DeepSeek adds creator mode for building custom AI plugins",
+          "url": "https://qz.com/deepseek-creator-mode-custom-ai-plugins-110226",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:00:12+01:00"
+        },
+        {
+          "label": "DeepSeek: DeepSeek Harness",
+          "url": "https://www.deepseek.com/en/harness/",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:00:12+01:00"
+        },
+        {
+          "label": "GitHub: deepseek-ai/deepseek-harness",
+          "url": "https://github.com/deepseek-ai/deepseek-harness",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:01:17+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "google-gtig-llmjacking",
+      "section": "Industry & policy",
+      "headline": "Google's threat researchers say hijacked corporate AI accounts ran up more than $100,000 of charges a day, with stolen access resold through 'LLM mixers'",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "Google Threat Intelligence Group published a report on Monday on ==LLMJacking==, in which attackers take over an organisation's access to large language models. Google's Mandiant responded to multiple such incidents in 2026, across North America, South America and Asia Pacific, in financial services, retail, technology and transportation.",
+        "In individual incidents, fraudulent charges ==exceeded $100,000 in a single day==, and cumulative charges at some organisations reached $1 million before access was revoked. The main way in was exposed or stolen cloud identity tokens, including service-account keys, IAM credentials and GitHub personal access tokens; some attackers also probed model endpoints left open to the internet.",
+        "The report describes a division of labour: some actors gain access while others run ==LLM mixers==, gateways that pool stolen credentials and resell model access. In one case, more than 500,000 API calls in under eight hours powered a routing service called Jet Night, which passed nearly $1 million in token costs to the victim and advertised an unlimited plan for about $60 a month."
+      ],
+      "why_it_matters": "Analysis: model API keys are now billable credentials worth stealing for their own sake. Spending alerts and key hygiene become security controls, not just finance tools.",
+      "caveat": "The figures come from Google's own incident-response cases and are not a market-wide estimate. Google's view that Jet Night ==relies on stolen keys is an inference== from its below-market pricing.",
+      "sources": [
+        {
+          "label": "Google Threat Intelligence Group: The Rise of LLMJacking",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:01:16+01:00"
+        },
+        {
+          "label": "The Register: Token thieves costing companies $100K+ per day in illicit LLM charges",
+          "url": "https://www.theregister.com/security/2026/11/02/token-thieves-costing-companies-100k-per-day-in-illicit-llm-charges/5306967",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:00:16+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "deep-principle-hydrogen-1",
+      "section": "Models",
+      "headline": "Deep Principle releases Hydrogen-1.0, a roughly 753-billion-parameter open-weight model for chemistry, materials and life sciences built on GLM-5.3",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "Hangzhou-based Deep Principle released ==Hydrogen-1.0==, a scientific model made by post-training Z.ai's GLM-5.3 on chemistry, materials-science and life-sciences data, together with laboratory records and agent trajectories from its own labs. The weights are on Hugging Face under an ==MIT licence==, which lists about 753 billion parameters.",
+        "MarkTechPost reports a mixture-of-experts design with a 1-million-token context and 128,000-token maximum output, plus NVFP4 and MXFP4 builds. Citing the company's figures, it reports ==38.3% on FrontierScience-Research against 33.3% for GPT-6 Astra==, roughly matching Kimi K3 on GPQA-Diamond, while trailing GPT-6 Astra on NMR structure elucidation.",
+        "Deep Principle presents it as an open, inspectable alternative to the proprietary models behind recent AI science results. The full training datasets and recipes are not released, according to MarkTechPost."
+      ],
+      "why_it_matters": "Analysis: an open-weight model aimed at lab work lets researchers inspect and adapt what proprietary science agents keep closed, though its value rests on benchmarks the company ran itself.",
+      "caveat": "All benchmark results are ==self-reported== and not independently reproduced. The announcement carries no timestamp: MarkTechPost reported it at 18:41 UTC on Monday, but the model files were last updated at 09:00 UTC, so the release may slightly predate this window. The afternoon edition did not carry it.",
+      "sources": [
+        {
+          "label": "Deep Principle: Introducing Hydrogen-1.0",
+          "url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:00:14+01:00"
+        },
+        {
+          "label": "Hugging Face: deep-principle/Hydrogen-1.0 (checked through the Hub API)",
+          "url": "https://huggingface.co/deep-principle/Hydrogen-1.0",
+          "type": "primary",
+          "checked_at": "2026-11-02T23:00:29+01:00"
+        },
+        {
+          "label": "MarkTechPost: Deep Principle Releases Hydrogen-1.0",
+          "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:00:14+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "suse-ten-percent-job-cuts-ai",
+      "section": "Industry & policy",
+      "headline": "SUSE to cut about 10% of its workforce, with its chief executive citing automation and AI",
+      "published_at": "2026-11-02T15:30:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "SUSE, the open-source enterprise software company owned by private-equity firm EQT, is cutting ==about 10% of its global workforce==, The Register reported, citing an email sent on Monday by chief executive Dirk-Peter van Leeuwen to its roughly 1,900 staff.",
+        "In the memo, van Leeuwen wrote that 'automation and AI are fundamentally shifting how software companies operate' and that SUSE's current organisational design and cost base would not carry it forward. Affected staff are to be told ==by 4 November==, and the rest of the company will hear its fiscal 2027 strategy on 16 November. The roles at risk were not specified.",
+        "The Register notes that SUSE asked long-serving staff to consider voluntary separation in September."
+      ],
+      "why_it_matters": "Analysis: another software vendor is naming AI as a reason for cuts. The memo gives no figures showing how much work AI tooling actually replaced.",
+      "caveat": "The memo was reported by The Register; SUSE had not published it. The claim that AI drove the cuts is the company's own and cannot be checked independently.",
+      "sources": [
+        {
+          "label": "The Register: SUSE to cut one in ten employees because of... AI",
+          "url": "https://www.theregister.com/software/2026/11/02/suse-to-cut-one-in-ten-employees-because-of-ai/5306950",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:05:04+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50339628",
+          "type": "community",
+          "checked_at": "2026-11-02T23:03:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "It would be interesting to know if the reason is truly automation.",
+          "author": "klhs (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50339629"
+        },
+        {
+          "text": "Imho 10% is normal… If you are a corporation, you employ a lot of redundant people.",
+          "author": "sixtyj (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50339997"
+        }
+      ]
+    },
+    {
+      "id": "42ai-behavioral-world-model",
+      "section": "Industry & policy",
+      "headline": "42AI comes out of stealth with $62.5 million and a 'behavioral world model' it says predicts how individual traders will act",
+      "published_at": "2026-11-02T16:30:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "42AI emerged from stealth with ==$62.5 million in seed funding== and a transformer-based 'behavioral world model' that, it says, estimates the probability of a person's decisions in unfamiliar situations, TechCrunch reported. The company says it works with ==10 large brokerages==, which use it to manage liquidity, margin requirements and hedging exposure.",
+        "Chief technology officer Ehud Ezra said the model draws on signals such as onboarding, support calls, money transfers and trades, including sentiment and voice in customer conversations. Chief executive Amit Gal-Or said revenue is above 'seven figures'.",
+        "The seed money came over three years from the founders and Infinity Group, which was founded by Gal-Or's father, Amir Gal-Or, 42AI's chairman; it was ==not all raised from outside investors==."
+      ],
+      "why_it_matters": "Analysis: predicting behaviour from customer calls and voice raises consent and privacy questions for regulated brokers, whatever the accuracy.",
+      "caveat": "Performance and revenue claims are the company's own, as told to TechCrunch; no independent evaluation was published.",
+      "sources": [
+        {
+          "label": "TechCrunch: 42AI comes out of stealth with $62.5M and a world model that can 'predict human behavior'",
+          "url": "https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/",
+          "type": "reporting",
+          "checked_at": "2026-11-02T23:00:14+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok (21 threads)",
+      "youtube": "ok (2 videos; transcripts for 1 of 2)",
+      "hackernews": "ok (12 stories)",
+      "github": "ok (17 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "Special edition requested by the reader on 2 November to test the full workflow end to end. The window runs from the afternoon edition's 16:08 CET issue to this edition. Dispatches with only a date carry the date of their primary source; for each of them, the first report found fell inside the window.",
+      "The installed last30days engine finished in 58 seconds with 64 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube. Its top items were general commentary (election chatbots, opposition to data centres, AI in games and music) and stories already covered; none of the six dispatches came from its ranked clusters. Stories were chosen with Google News RSS, publisher feeds, three post-engine web searches, targeted source lookups and the primary pages. Item counts are not counts of verified developments.",
+      "The two community quotes on SUSE come from a Hacker News thread found by a direct search after the engine run; they are anecdotal. The engine returned no relevance-qualified comments on the other stories.",
+      "Polymarket not used: blocked in France (ANJ). X was not searched. All five engine sources completed normally. Failed or missing coverage does not mean nobody discussed these stories.",
+      "Every cited page was read directly; no bot wall was met, so no fallback route was needed. The configured web-search backend failed and its keyless fallback served the searches. VentureBeat's feed returned HTTP 429 and Anthropic's news feed HTTP 404.",
+      "Not carried: OpenAI's LifeVal everyday-task benchmark (published 09:00 UTC Monday, before this window, and not carried by the afternoon edition), newspapers' lawsuit against Brave (reported before this window), CrowdStrike's ARTEX findings (covered 30 October), the House Democrats' letter on White House chatbot records (28 October), OpenAI's reduced funding target (reported 30 and 31 October), the Trigger.dev environment-variable incident (disclosed Sunday), and OpenAI's reported 'AI compute campuses' messaging plan and xAI's internal Data Bot write-up (lower consequence).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 21 threads │ 13,001 upvotes │ 2,189 comments\n├─ 🔴 YouTube: 2 videos │ 21,462 views │ 1/2 with transcripts\n├─ 🟡 HN: 12 stories │ 75 points │ 20 comments\n├─ 👩‍💻 dev.to: 12 articles │ 84 reactions │ 48 comments\n├─ 🐙 GitHub: 17 items │ 24 reactions │ 48 comments\n├─ 🗣️ Top voices: r/ClaudeAI, r/technology, r/artificial\n---"
+  },
+  "key_patterns": [
+    "Agent plumbing is the competitive front: ==Anthropic and DeepSeek both shipped harness-level features== in this window rather than new models.",
+    "Per-token billing turns ==stolen API keys into a direct cost== for victims, on Google's incident data.",
+    "Companies keep naming AI as a reason for cuts, as SUSE did, without publishing evidence of the work it replaced."
+  ],
+  "previous_issue_id": "2026-11-02-afternoon"
+}
