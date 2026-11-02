@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-02-afternoon",
+  "edition": "Afternoon edition",
+  "issued_at": "2026-11-02T16:08:57+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-02T06:08:22+01:00",
+  "window_end": "2026-11-02T16:08:27+01:00",
+  "editorial_note": "This Monday afternoon edition has ==five new stories and one update==, all published after this morning's 06:08 issue. Money and infrastructure lead: Anthropic's amended IPO filing adds third-quarter results, Marvell agreed to buy Lumentum, and Oracle filed to raise $20 billion. OpenAI pledged to give power back to the grid in emergencies, Goldman Sachs pulled AI coding tools from non-engineers, and WIRED exposed a hidden deepfake app network. ==No new model release== passed this journal's checks in this window.",
+  "stories": [
+    {
+      "id": "anthropic-draft-ipo-prospectus",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Anthropic's amended IPO filing shows $17 billion of third-quarter revenue, a return to an operating loss and $895 billion of compute commitments",
+      "published_at": "2026-11-02T09:24:24-05:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "What is new since this journal's 26 October report: Anthropic filed an ==amended S-1== with the US Securities and Exchange Commission on Monday, adding results to 30 September. Third-quarter revenue was ==$16.96 billion==, up from $11.56 billion in the second quarter and $1.38 billion a year earlier. Revenue for the first nine months of 2026 was $33.24 billion.",
+        "The quarter swung back to a ==GAAP operating loss of $567 million==, after an operating profit of $974 million in the second quarter, as compute and infrastructure costs rose to $9.86 billion. On Anthropic's own adjusted measure, which leaves out stock pay and non-cash charitable contributions, operating income was $2.46 billion, a 15% margin. The net loss was ==$23.29 billion==, mostly from changes in the value of convertible notes and similar instruments.",
+        "The filing says Anthropic has purchase commitments and leases with an aggregate committed spend of about ==$895.4 billion==, \"substantially all\" for compute and infrastructure, including about $447.5 billion expected before the end of 2030. The share price range and share count are still blank. The offering still includes public sales in Japan, the UK, Canada, Australia, Switzerland and parts of the European Economic Area."
+      ],
+      "why_it_matters": "Analysis: growth is still steep, but the second quarter's operating profit did not repeat, and the commitments now stand near ==nine-tenths of a trillion dollars==. Investors will weigh those numbers against the price range when it appears.",
+      "caveat": "Interim figures are ==unaudited==, and the adjusted operating income is a company-defined measure. The price range, offering size and listing date have not been filed. Reports of a Japanese tranche of up to $3.5 billion were not confirmed in the filing.",
+      "sources": [
+        {
+          "label": "Anthropic, PBC: Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+          "type": "primary",
+          "checked_at": "2026-11-02T16:05:03+01:00"
+        },
+        {
+          "label": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:04:17+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "marvell-lumentum-115bn",
+      "section": "Industry & policy",
+      "headline": "Marvell agrees to buy laser and optics maker Lumentum in an all-stock deal valuing it at $115 billion",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "Marvell Technology and Lumentum announced a ==definitive agreement== on Monday for Marvell to acquire Lumentum, which makes high-performance lasers, optical transceivers and optical circuit switches. Lumentum holders will get a ==fixed 4.5 Marvell shares== for each share.",
+        "The companies put the implied enterprise value at ==$115 billion==, about $1,132 a Lumentum share and a 23.9% premium to the 28 October close, before market speculation began. Marvell holders would own about 67% of the combined company and Lumentum holders about 33%. Matt Murphy stays chairman and chief executive, and three Lumentum directors, including chief executive Michael Hurlston, join Marvell's board.",
+        "Marvell says the deal joins its electrical interconnect, switching and custom-chip business with Lumentum's optics for AI data centres, and expects more than $1 billion of annual cost savings. Closing is expected in the ==first half of 2028==, subject to shareholder and regulatory approval. CNBC reported both stocks fell before the bell."
+      ],
+      "why_it_matters": "Analysis: AI clusters increasingly link chips with light rather than copper, and lasers are a supply bottleneck. The deal makes Marvell ==a larger rival to Broadcom== in AI networking, if regulators approve it.",
+      "caveat": "Because the price is paid in shares, the deal's value moves with Marvell's stock. The savings, market-size and earnings claims are ==company projections==, and closing is more than a year away.",
+      "sources": [
+        {
+          "label": "Marvell investor relations: press release",
+          "url": "https://investor.marvell.com/news-events/press-releases/detail/1040/marvell-and-lumentum-to-combine-creating-a-category-leader-in-ai-connectivity",
+          "type": "primary",
+          "checked_at": "2026-11-02T16:04:18+01:00"
+        },
+        {
+          "label": "Marvell 8-K, Exhibit 99.1",
+          "url": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-442714/d81187dex991.htm",
+          "type": "primary",
+          "checked_at": "2026-11-02T16:05:41+01:00"
+        },
+        {
+          "label": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/02/marvell-lumentum-ai-deal.html",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:05:40+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-grid-protectors-program",
+      "section": "Industry & policy",
+      "headline": "Axios: OpenAI pledges to cut power use at the data-centre campuses it builds when extreme weather strains the US grid",
+      "published_at": "2026-11-02",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI is launching a ==\"Grid Protectors Program\"== under which it will reduce electricity use at US data-centre campuses it develops itself when extreme weather or other emergencies strain the grid, Axios reported on Monday, quoting a blog post OpenAI planned to publish later in the day.",
+        "The template is OpenAI's planned campus in Effingham County, Georgia, where it has committed to ==cut demand by up to a gigawatt== when the grid needs relief. Georgia Power said in July that the site needs about 3,200 megawatts under a 25-year agreement and that up to 1,000 megawatts would be flexible. OpenAI says arrangements will vary by campus and will be announced as they are finalised.",
+        "John McCarrick, OpenAI's head of energy policy, told Axios that data centres no longer insist on near-constant availability. On Reddit's r/technology, weekend threads on data-centre energy use drew thousands of upvotes, many of them hostile to the industry."
+      ],
+      "why_it_matters": "Analysis: local opposition to data centres is now a ballot and permitting issue. A promise to ==give power back during emergencies== is OpenAI's answer, days after this journal reported its plan to rename the sites 'compute campuses'.",
+      "caveat": "The pledge covers only ==campuses OpenAI develops directly==, not capacity it rents from cloud partners, and per-site terms are not yet public. This journal could not read Axios directly (HTTP 403) or find OpenAI's blog post at press time; the Axios text was read through its search listing.",
+      "sources": [
+        {
+          "label": "Axios",
+          "url": "https://www.axios.com/2026/11/02/openai-data-center-power-cuts",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:05:37+01:00"
+        },
+        {
+          "label": "Georgia Power: OpenAI project in Effingham County (22 July 2026)",
+          "url": "https://www.georgiapower.com/news-hub/press-releases/georgia-power-to-serve-openai-project-in-effingham-county.html",
+          "type": "primary",
+          "checked_at": "2026-11-02T16:05:41+01:00"
+        },
+        {
+          "label": "r/technology: AI data centres and climate progress thread",
+          "url": "https://www.reddit.com/r/technology/comments/1xkfac2/ai_data_centers_could_erase_15_years_of_americas/",
+          "type": "community",
+          "checked_at": "2026-11-02T16:03:27+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "We are no longer supposed to use plastic bags or straws but data centers can come in and destroy the environment and get tax breaks for doing it.",
+          "author": "u/bobjr94, r/technology (1,066 upvotes)",
+          "url": "https://reddit.com/r/technology/comments/1xkfac2/comment/19rxvds1nz7l1/"
+        },
+        {
+          "text": "RIP The Paris Agreement.",
+          "author": "u/copperblood, r/technology (889 upvotes)",
+          "url": "https://reddit.com/r/technology/comments/1xl8de6/comment/19rzlxmej69yb/"
+        }
+      ]
+    },
+    {
+      "id": "oracle-20bn-stock-bond-ai",
+      "section": "Industry & policy",
+      "headline": "Oracle files to sell $10 billion of shares and $10 billion of bonds to fund its AI data-centre build-out",
+      "published_at": "2026-11-02T08:16:06-05:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Oracle filed preliminary prospectus supplements on Monday for ==$10 billion of common stock== and a separate ==$10 billion of senior notes==. Neither offering depends on the other. Oracle says the money is for general corporate purposes, which may include capital spending and debt repayment.",
+        "CNBC reports the plan was outlined at Oracle's investor day last week. Oracle shares fell more than 4% on Monday. CNBC puts its debt at $125.34 billion as of 31 August; S&P cut Oracle to BBB-, one notch above junk, in July."
+      ],
+      "why_it_matters": "Analysis: Oracle builds much of the capacity OpenAI rents, and it is ==selling new shares as well as borrowing== to pay for it. Equity buyers are now funding the AI build-out directly, not only lenders.",
+      "caveat": "The filings are preliminary: prices, tranche sizes and final amounts are ==not yet set==, and either offering could change or be withdrawn.",
+      "sources": [
+        {
+          "label": "Oracle: preliminary prospectus supplement, common stock (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526442729/d181425d424b5.htm",
+          "type": "primary",
+          "checked_at": "2026-11-02T16:06:23+01:00"
+        },
+        {
+          "label": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:05:40+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "goldman-limits-ai-coding-tools",
+      "section": "Coding & agents",
+      "headline": "Bloomberg: Goldman Sachs limits Claude Code and GitHub's AI tools to engineers, cutting off traders and bankers",
+      "published_at": "2026-11-02T13:52:41+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Goldman Sachs has restricted Anthropic's Claude Code and Microsoft's GitHub coding tools to ==engineers only==, under internal guidance updated in October, Bloomberg News reported on Monday. For months bankers and traders had been allowed to use them.",
+        "Bloomberg says some traders are frustrated: they had used the tools to monitor client trading flows, model market changes and positions, and produce written and graphic material. As recently as July, chief information officer Marco Argenti praised ==\"vibe coding\" by non-technical staff==.",
+        "A Goldman spokesperson said that after a period of experimentation that weighed ==\"productivity and risk management\"==, the bank puts tools \"in the hands of those who are best suited to leverage them for the long term.\" Earlier this year the bank restricted Claude for staff in Hong Kong."
+      ],
+      "why_it_matters": "Analysis: a large bank is pulling agentic coding tools back from non-engineers after letting them in. Expect more firms to ==decide who may run code-writing agents== by role, not just by vendor.",
+      "caveat": "The account rests on ==internal guidance seen by Bloomberg== and an unnamed person; Goldman did not detail the risks it found. This journal read Bloomberg's text through Bloomberg Law and a syndicated copy.",
+      "sources": [
+        {
+          "label": "Bloomberg News via Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/capital-markets/goldman-restricts-traders-and-bankers-from-using-some-ai-tools",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:05:39+01:00"
+        },
+        {
+          "label": "Moneycontrol (syndicated Bloomberg copy)",
+          "url": "https://www.moneycontrol.com/news/business/goldman-restricts-traders-and-bankers-from-using-some-ai-tools-14066677.html",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:05:39+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "wired-hidden-deepfake-app-network",
+      "section": "Industry & policy",
+      "headline": "WIRED: more than 400 'pet portrait' and tutoring apps hid a sexual-deepfake generator and slipped past Apple, Google and Meta",
+      "published_at": "2026-11-02T10:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "A WIRED investigation found a network of ==more than 400 connected apps and domains== that present as ordinary AI tools, such as pet portraits, language lessons or workout coaching, but can load a hidden web interface for making explicit deepfake images and videos from uploaded photos. Payments went through Apple and Google Pay.",
+        "Researchers traced the network after examining thousands of explicit deepfake video ads on Facebook and Instagram. Paul Bouchaud of the nonprofit AI Forensics says the server decides whether to show the explicit version; one trigger appears to be installing the app from a Meta ad. At one point about ==27 such apps were live on Google Play==, with more than 350,000 downloads in total.",
+        "WIRED links the operation to Chinese-language developers and a Hong Kong company, ==KeLing Technology Limited==, which did not respond. Apple removed 19 apps after WIRED's questions and says developers swapped in pornographic content after review. Meta says it has acted against 11,600 ad accounts and blocked 209 apps from advertising; Google had removed most of the apps before WIRED contacted it."
+      ],
+      "why_it_matters": "Analysis: app review checks an app once, but these apps change their content afterwards. Image generators are now ==cheap enough to hide inside disposable apps==, and platform takedowns are trailing behind.",
+      "caveat": "Download counts and the network's size come from WIRED and the researchers it worked with. KeLing's role is inferred from domain and code evidence; the company did not comment.",
+      "sources": [
+        {
+          "label": "WIRED",
+          "url": "https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/",
+          "type": "reporting",
+          "checked_at": "2026-11-02T16:04:17+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.28.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok (14 threads; one sub-request timed out)",
+      "youtube": "no results (0 videos)",
+      "hackernews": "ok (18 stories)",
+      "polymarket": "unreachable (TLS certificate hostname mismatch; not bypassed)",
+      "github": "ok (13 items)",
+      "devto": "searched with tags ai and llm; 0 articles returned",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The window runs from this morning's 06:08 CET issue to this edition. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one, including SEC acceptance times.",
+      "The installed last30days engine finished in 71 seconds with 45 evidence items from Reddit, Hacker News and GitHub. It surfaced Anthropic's amended filing; its other top items were weekend data-centre debates and stories already covered. Stories were chosen with Google News RSS, publisher feeds, three post-engine web searches, targeted source lookups and checks of primary documents, including SEC EDGAR. Item counts are not counts of verified developments.",
+      "Community quotes come from r/technology threads on data-centre energy use returned by the engine; they react to the wider debate, not to OpenAI's pledge itself, and are anecdotal.",
+      "Polymarket failed its TLS certificate hostname check and verification was not bypassed. YouTube and dev.to returned nothing, and X was not searched by the engine. Failed or missing coverage does not mean nobody discussed these stories.",
+      "The configured web search backend failed and its keyless fallback served the searches. Axios refused automated reading (HTTP 403), so its story was read through its search listing. Bloomberg's Goldman story was read through Bloomberg Law's excerpt and a syndicated copy. VentureBeat's feed returned HTTP 429 and Anthropic's news feed HTTP 404.",
+      "Not carried: Aramco's closing of its 49% Humain stake (announced 1 November, before this window), Google's Jules shutdown notice (29 October), NVIDIA's Brev SSH-key incident (customer notice shared publicly on 30 October), ChatGPT's chat and Work merge (covered 1 November), the Claude Code game-cloning rule (covered 31 October and 1 November), reports of a Claude Mythos 5.5 model (unconfirmed) and Mustafa Suleyman's warning on conscious AI (commentary).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 14 threads │ 18,496 upvotes │ 1,378 comments\n├─ 🟡 HN: 18 stories │ 206 points │ 82 comments\n├─ 🐙 GitHub: 13 items │ 16 reactions │ 26 comments\n├─ 🗣️ Top voices: r/technology, r/ClaudeAI, r/singularity\n---"
+  },
+  "key_patterns": [
+    "The AI build-out is moving onto public balance sheets: ==Anthropic's filing, Oracle's share sale and Marvell's stock deal== all ask public investors to fund it.",
+    "Limits are arriving from users' side too: Goldman narrowed who may use coding agents, and OpenAI is promising to ==step back from the grid when it is strained==.",
+    "Platform review keeps missing apps that change after approval, as the deepfake network shows."
+  ],
+  "previous_issue_id": "2026-11-02-morning"
+}

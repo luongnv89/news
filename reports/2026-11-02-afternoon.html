@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Monday 2 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-02-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Monday 2 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-02-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-02T16:08:57+01:00">Monday 2 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-02-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-02-afternoon.html">This edition</a><a href="2026-11-02-afternoon.md">Markdown</a><a href="2026-11-02-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-02-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Monday 2 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-02T06:08:22+01:00">2 Nov 2026, 06:08 CET</time> to <time datetime="2026-11-02T16:08:27+01:00">2 Nov 2026, 16:08 CET</time> (Paris time). Issued <time datetime="2026-11-02T16:08:57+01:00">2 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">This Monday afternoon edition has <mark class="hl">five new stories and one update</mark>, all published after this morning&#x27;s 06:08 issue. Money and infrastructure lead: Anthropic&#x27;s amended IPO filing adds third-quarter results, Marvell agreed to buy Lumentum, and Oracle filed to raise $20 billion. OpenAI pledged to give power back to the grid in emergencies, Goldman Sachs pulled AI coding tools from non-engineers, and WIRED exposed a hidden deepfake app network. <mark class="hl">No new model release</mark> passed this journal&#x27;s checks in this window.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-02-morning.html">2026-11-02-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-goldman-limits-ai-coding-tools" aria-labelledby="h-goldman-limits-ai-coding-tools"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-goldman-limits-ai-coding-tools">Bloomberg: Goldman Sachs limits Claude Code and GitHub&#x27;s AI tools to engineers, cutting off traders and bankers</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02T13:52:41+00:00">2 Nov 2026, 14:52 CET</time></p><div class="story-body"><p>Goldman Sachs has restricted Anthropic&#x27;s Claude Code and Microsoft&#x27;s GitHub coding tools to <mark class="hl">engineers only</mark>, under internal guidance updated in October, Bloomberg News reported on Monday. For months bankers and traders had been allowed to use them.</p><p>Bloomberg says some traders are frustrated: they had used the tools to monitor client trading flows, model market changes and positions, and produce written and graphic material. As recently as July, chief information officer Marco Argenti praised <mark class="hl">&quot;vibe coding&quot; by non-technical staff</mark>.</p><p>A Goldman spokesperson said that after a period of experimentation that weighed <mark class="hl">&quot;productivity and risk management&quot;</mark>, the bank puts tools &quot;in the hands of those who are best suited to leverage them for the long term.&quot; Earlier this year the bank restricted Claude for staff in Hong Kong.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a large bank is pulling agentic coding tools back from non-engineers after letting them in. Expect more firms to <mark class="hl">decide who may run code-writing agents</mark> by role, not just by vendor.</p></aside><p class="caveat"><span class="label">Caveat.</span> The account rests on <mark class="hl">internal guidance seen by Bloomberg</mark> and an unnamed person; Goldman did not detail the risks it found. This journal read Bloomberg&#x27;s text through Bloomberg Law and a syndicated copy.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://news.bloomberglaw.com/capital-markets/goldman-restricts-traders-and-bankers-from-using-some-ai-tools" rel="noopener noreferrer">Bloomberg News via Bloomberg Law</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:39+01:00">2 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.moneycontrol.com/news/business/goldman-restricts-traders-and-bankers-from-using-some-ai-tools-14066677.html" rel="noopener noreferrer">Moneycontrol (syndicated Bloomberg copy)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:39+01:00">2 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-draft-ipo-prospectus" aria-labelledby="h-anthropic-draft-ipo-prospectus"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-draft-ipo-prospectus">UPDATE: Anthropic&#x27;s amended IPO filing shows $17 billion of third-quarter revenue, a return to an operating loss and $895 billion of compute commitments</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02T09:24:24-05:00">2 Nov 2026, 15:24 CET</time></p><div class="story-body"><p>What is new since this journal&#x27;s 26 October report: Anthropic filed an <mark class="hl">amended S-1</mark> with the US Securities and Exchange Commission on Monday, adding results to 30 September. Third-quarter revenue was <mark class="hl">$16.96 billion</mark>, up from $11.56 billion in the second quarter and $1.38 billion a year earlier. Revenue for the first nine months of 2026 was $33.24 billion.</p><p>The quarter swung back to a <mark class="hl">GAAP operating loss of $567 million</mark>, after an operating profit of $974 million in the second quarter, as compute and infrastructure costs rose to $9.86 billion. On Anthropic&#x27;s own adjusted measure, which leaves out stock pay and non-cash charitable contributions, operating income was $2.46 billion, a 15% margin. The net loss was <mark class="hl">$23.29 billion</mark>, mostly from changes in the value of convertible notes and similar instruments.</p><p>The filing says Anthropic has purchase commitments and leases with an aggregate committed spend of about <mark class="hl">$895.4 billion</mark>, &quot;substantially all&quot; for compute and infrastructure, including about $447.5 billion expected before the end of 2030. The share price range and share count are still blank. The offering still includes public sales in Japan, the UK, Canada, Australia, Switzerland and parts of the European Economic Area.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: growth is still steep, but the second quarter&#x27;s operating profit did not repeat, and the commitments now stand near <mark class="hl">nine-tenths of a trillion dollars</mark>. Investors will weigh those numbers against the price range when it appears.</p></aside><p class="caveat"><span class="label">Caveat.</span> Interim figures are <mark class="hl">unaudited</mark>, and the adjusted operating income is a company-defined measure. The price range, offering size and listing date have not been filed. Reports of a Japanese tranche of up to $3.5 billion were not confirmed in the filing.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm" rel="noopener noreferrer">Anthropic, PBC: Form S-1/A (SEC EDGAR)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:03+01:00">2 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:04:17+01:00">2 Nov 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-marvell-lumentum-115bn" aria-labelledby="h-marvell-lumentum-115bn"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-marvell-lumentum-115bn">Marvell agrees to buy laser and optics maker Lumentum in an all-stock deal valuing it at $115 billion</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02">2 Nov 2026</time></p><div class="story-body"><p>Marvell Technology and Lumentum announced a <mark class="hl">definitive agreement</mark> on Monday for Marvell to acquire Lumentum, which makes high-performance lasers, optical transceivers and optical circuit switches. Lumentum holders will get a <mark class="hl">fixed 4.5 Marvell shares</mark> for each share.</p><p>The companies put the implied enterprise value at <mark class="hl">$115 billion</mark>, about $1,132 a Lumentum share and a 23.9% premium to the 28 October close, before market speculation began. Marvell holders would own about 67% of the combined company and Lumentum holders about 33%. Matt Murphy stays chairman and chief executive, and three Lumentum directors, including chief executive Michael Hurlston, join Marvell&#x27;s board.</p><p>Marvell says the deal joins its electrical interconnect, switching and custom-chip business with Lumentum&#x27;s optics for AI data centres, and expects more than $1 billion of annual cost savings. Closing is expected in the <mark class="hl">first half of 2028</mark>, subject to shareholder and regulatory approval. CNBC reported both stocks fell before the bell.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI clusters increasingly link chips with light rather than copper, and lasers are a supply bottleneck. The deal makes Marvell <mark class="hl">a larger rival to Broadcom</mark> in AI networking, if regulators approve it.</p></aside><p class="caveat"><span class="label">Caveat.</span> Because the price is paid in shares, the deal&#x27;s value moves with Marvell&#x27;s stock. The savings, market-size and earnings claims are <mark class="hl">company projections</mark>, and closing is more than a year away.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://investor.marvell.com/news-events/press-releases/detail/1040/marvell-and-lumentum-to-combine-creating-a-category-leader-in-ai-connectivity" rel="noopener noreferrer">Marvell investor relations: press release</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-02T16:04:18+01:00">2 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-442714/d81187dex991.htm" rel="noopener noreferrer">Marvell 8-K, Exhibit 99.1</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:41+01:00">2 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/02/marvell-lumentum-ai-deal.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:40+01:00">2 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-grid-protectors-program" aria-labelledby="h-openai-grid-protectors-program"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-openai-grid-protectors-program">Axios: OpenAI pledges to cut power use at the data-centre campuses it builds when extreme weather strains the US grid</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02">2 Nov 2026</time></p><div class="story-body"><p>OpenAI is launching a <mark class="hl">&quot;Grid Protectors Program&quot;</mark> under which it will reduce electricity use at US data-centre campuses it develops itself when extreme weather or other emergencies strain the grid, Axios reported on Monday, quoting a blog post OpenAI planned to publish later in the day.</p><p>The template is OpenAI&#x27;s planned campus in Effingham County, Georgia, where it has committed to <mark class="hl">cut demand by up to a gigawatt</mark> when the grid needs relief. Georgia Power said in July that the site needs about 3,200 megawatts under a 25-year agreement and that up to 1,000 megawatts would be flexible. OpenAI says arrangements will vary by campus and will be announced as they are finalised.</p><p>John McCarrick, OpenAI&#x27;s head of energy policy, told Axios that data centres no longer insist on near-constant availability. On Reddit&#x27;s r/technology, weekend threads on data-centre energy use drew thousands of upvotes, many of them hostile to the industry.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: local opposition to data centres is now a ballot and permitting issue. A promise to <mark class="hl">give power back during emergencies</mark> is OpenAI&#x27;s answer, days after this journal reported its plan to rename the sites &#x27;compute campuses&#x27;.</p></aside><p class="caveat"><span class="label">Caveat.</span> The pledge covers only <mark class="hl">campuses OpenAI develops directly</mark>, not capacity it rents from cloud partners, and per-site terms are not yet public. This journal could not read Axios directly (HTTP 403) or find OpenAI&#x27;s blog post at press time; the Axios text was read through its search listing.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;We are no longer supposed to use plastic bags or straws but data centers can come in and destroy the environment and get tax breaks for doing it.&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xkfac2/comment/19rxvds1nz7l1/" rel="noopener noreferrer">u/bobjr94, r/technology (1,066 upvotes)</a></p></blockquote><blockquote><p>&ldquo;RIP The Paris Agreement.&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xl8de6/comment/19rzlxmej69yb/" rel="noopener noreferrer">u/copperblood, r/technology (889 upvotes)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.axios.com/2026/11/02/openai-data-center-power-cuts" rel="noopener noreferrer">Axios</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:37+01:00">2 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.georgiapower.com/news-hub/press-releases/georgia-power-to-serve-openai-project-in-effingham-county.html" rel="noopener noreferrer">Georgia Power: OpenAI project in Effingham County (22 July 2026)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:41+01:00">2 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://www.reddit.com/r/technology/comments/1xkfac2/ai_data_centers_could_erase_15_years_of_americas/" rel="noopener noreferrer">r/technology: AI data centres and climate progress thread</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-02T16:03:27+01:00">2 Nov 2026, 16:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-oracle-20bn-stock-bond-ai" aria-labelledby="h-oracle-20bn-stock-bond-ai"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-oracle-20bn-stock-bond-ai">Oracle files to sell $10 billion of shares and $10 billion of bonds to fund its AI data-centre build-out</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02T08:16:06-05:00">2 Nov 2026, 14:16 CET</time></p><div class="story-body"><p>Oracle filed preliminary prospectus supplements on Monday for <mark class="hl">$10 billion of common stock</mark> and a separate <mark class="hl">$10 billion of senior notes</mark>. Neither offering depends on the other. Oracle says the money is for general corporate purposes, which may include capital spending and debt repayment.</p><p>CNBC reports the plan was outlined at Oracle&#x27;s investor day last week. Oracle shares fell more than 4% on Monday. CNBC puts its debt at $125.34 billion as of 31 August; S&amp;P cut Oracle to BBB-, one notch above junk, in July.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Oracle builds much of the capacity OpenAI rents, and it is <mark class="hl">selling new shares as well as borrowing</mark> to pay for it. Equity buyers are now funding the AI build-out directly, not only lenders.</p></aside><p class="caveat"><span class="label">Caveat.</span> The filings are preliminary: prices, tranche sizes and final amounts are <mark class="hl">not yet set</mark>, and either offering could change or be withdrawn.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.sec.gov/Archives/edgar/data/1341439/000119312526442729/d181425d424b5.htm" rel="noopener noreferrer">Oracle: preliminary prospectus supplement, common stock (SEC EDGAR)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-02T16:06:23+01:00">2 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:05:40+01:00">2 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-wired-hidden-deepfake-app-network" aria-labelledby="h-wired-hidden-deepfake-app-network"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-wired-hidden-deepfake-app-network">WIRED: more than 400 &#x27;pet portrait&#x27; and tutoring apps hid a sexual-deepfake generator and slipped past Apple, Google and Meta</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-02T10:00:00+00:00">2 Nov 2026, 11:00 CET</time></p><div class="story-body"><p>A WIRED investigation found a network of <mark class="hl">more than 400 connected apps and domains</mark> that present as ordinary AI tools, such as pet portraits, language lessons or workout coaching, but can load a hidden web interface for making explicit deepfake images and videos from uploaded photos. Payments went through Apple and Google Pay.</p><p>Researchers traced the network after examining thousands of explicit deepfake video ads on Facebook and Instagram. Paul Bouchaud of the nonprofit AI Forensics says the server decides whether to show the explicit version; one trigger appears to be installing the app from a Meta ad. At one point about <mark class="hl">27 such apps were live on Google Play</mark>, with more than 350,000 downloads in total.</p><p>WIRED links the operation to Chinese-language developers and a Hong Kong company, <mark class="hl">KeLing Technology Limited</mark>, which did not respond. Apple removed 19 apps after WIRED&#x27;s questions and says developers swapped in pornographic content after review. Meta says it has acted against 11,600 ad accounts and blocked 209 apps from advertising; Google had removed most of the apps before WIRED contacted it.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: app review checks an app once, but these apps change their content afterwards. Image generators are now <mark class="hl">cheap enough to hide inside disposable apps</mark>, and platform takedowns are trailing behind.</p></aside><p class="caveat"><span class="label">Caveat.</span> Download counts and the network&#x27;s size come from WIRED and the researchers it worked with. KeLing&#x27;s role is inferred from domain and code evidence; the company did not comment.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/" rel="noopener noreferrer">WIRED</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-02T16:04:17+01:00">2 Nov 2026, 16:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The AI build-out is moving onto public balance sheets: <mark class="hl">Anthropic&#x27;s filing, Oracle&#x27;s share sale and Marvell&#x27;s stock deal</mark> all ask public investors to fund it.</li><li>Limits are arriving from users&#x27; side too: Goldman narrowed who may use coding agents, and OpenAI is promising to <mark class="hl">step back from the grid when it is strained</mark>.</li><li>Platform review keeps missing apps that change after approval, as the deepfake network shows.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.28.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok (14 threads; one sub-request timed out)</dd></div><div><dt>youtube</dt><dd>no results (0 videos)</dd></div><div><dt>hackernews</dt><dd>ok (18 stories)</dd></div><div><dt>polymarket</dt><dd>unreachable (TLS certificate hostname mismatch; not bypassed)</dd></div><div><dt>github</dt><dd>ok (13 items)</dd></div><div><dt>devto</dt><dd>searched with tags ai and llm; 0 articles returned</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window runs from this morning&#x27;s 06:08 CET issue to this edition. Dispatches with only a date carry that date; exact timestamps are given where a source supplied one, including SEC acceptance times.</li><li>The installed last30days engine finished in 71 seconds with 45 evidence items from Reddit, Hacker News and GitHub. It surfaced Anthropic&#x27;s amended filing; its other top items were weekend data-centre debates and stories already covered. Stories were chosen with Google News RSS, publisher feeds, three post-engine web searches, targeted source lookups and checks of primary documents, including SEC EDGAR. Item counts are not counts of verified developments.</li><li>Community quotes come from r/technology threads on data-centre energy use returned by the engine; they react to the wider debate, not to OpenAI&#x27;s pledge itself, and are anecdotal.</li><li>Polymarket failed its TLS certificate hostname check and verification was not bypassed. YouTube and dev.to returned nothing, and X was not searched by the engine. Failed or missing coverage does not mean nobody discussed these stories.</li><li>The configured web search backend failed and its keyless fallback served the searches. Axios refused automated reading (HTTP 403), so its story was read through its search listing. Bloomberg&#x27;s Goldman story was read through Bloomberg Law&#x27;s excerpt and a syndicated copy. VentureBeat&#x27;s feed returned HTTP 429 and Anthropic&#x27;s news feed HTTP 404.</li><li>Not carried: Aramco&#x27;s closing of its 49% Humain stake (announced 1 November, before this window), Google&#x27;s Jules shutdown notice (29 October), NVIDIA&#x27;s Brev SSH-key incident (customer notice shared publicly on 30 October), ChatGPT&#x27;s chat and Work merge (covered 1 November), the Claude Code game-cloning rule (covered 31 October and 1 November), reports of a Claude Mythos 5.5 model (unconfirmed) and Mustafa Suleyman&#x27;s warning on conscious AI (commentary).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 14 threads │ 18,496 upvotes │ 1,378 comments
+├─  HN: 18 stories │ 206 points │ 82 comments
+├─  GitHub: 13 items │ 16 reactions │ 26 comments
+├─  Top voices: r/technology, r/ClaudeAI, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-02-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-02-afternoon.md">Markdown text</a></li><li><a href="2026-11-02-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
