@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-03-afternoon",
+  "edition": "Afternoon edition",
+  "issued_at": "2026-11-03T16:07:58+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-03T06:08:28+01:00",
+  "window_end": "2026-11-03T16:07:28+01:00",
+  "editorial_note": "This Tuesday afternoon edition covers the ten hours since this morning's 06:08 edition and carries ==seven new stories==. An adviser to the EU's top court set out when chatbots such as Gemini may infringe press publishers' rights, Nvidia reportedly told cloud partners to cap their Chinese business, and CrowdStrike agreed to buy two AI-agent security start-ups. Google will make Gemini and Search opt-in for school accounts, a think-tank report warns of self-sustaining AI agents, Baidu launched a driving world model, and Hg and Anthropic are backing a new European services firm. ==No new frontier model release== passed this journal's checks; Gemini 4 Carbon, which drew fresh coverage today, was announced on 28 October.",
+  "stories": [
+    {
+      "id": "cjeu-ag-gemini-press-publishers",
+      "section": "Industry & policy",
+      "headline": "EU court adviser says chatbots such as Gemini may infringe press publishers' rights when they reuse articles in answers",
+      "published_at": "2026-11-03",
+      "freshness": "new",
+      "paragraphs": [
+        "In the ==first generative AI case== to reach the Court of Justice of the European Union, Advocate General Maciej Szpunar advised on Tuesday that when a chatbot retrieves a press article in real time, reuses it to generate an answer and gives that answer to a user, ==the press publisher's right may be infringed== in certain circumstances. The case, C-250/25 Like Company, was brought by a Hungarian web-portal operator against Google over its Gemini chatbot.",
+        "According to the court's press release, that depends on two factors: whether the chatbot ==accessed the article unlawfully==, for example by circumventing a paywall or anti-scraping measures, and whether the answer reuses the article's form of expression so recognisably that the user no longer needs to read the original. The right protects how facts are expressed, not the facts themselves. The chatbot provider would be liable where such use is inherent to its business model, or where it has not put credible measures in place to counter it.",
+        "On training, the Advocate General advised the court to treat the two training questions as ==hypothetical and inadmissible==: there is no evidence that Like Company's articles were used to train Gemini, and training is not an 'online use' of press publications. For completeness, he suggested that training on protected material is, as a rule, freely permitted under the EU's text and data mining exception.",
+        "Like Company says Google reproduced its articles through Gemini between 13 June 2023 and 31 May 2024. The Kluwer Copyright Blog notes that two further generative-AI copyright references from Hungarian courts are pending before the court."
+      ],
+      "why_it_matters": "Analysis: The opinion separates training, which it treats as broadly permitted, from ==answers built on live retrieval==, where it sees possible liability. That line matters for every chatbot that grounds its answers in web pages.",
+      "caveat": "An Advocate General's opinion is ==not binding on the court==. The judges have begun deliberating and will rule at a later date.",
+      "sources": [
+        {
+          "label": "Court of Justice of the EU, press release No 155/26",
+          "url": "https://curia.europa.eu/site/upload/docs/application/pdf/2026-11/cp260155en.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:05:36+01:00"
+        },
+        {
+          "label": "Kluwer Copyright Blog",
+          "url": "https://legalblogs.wolterskluwer.com/copyright-blog/first-reflections-on-ag-szpunars-opinion-in-like-company/",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:26+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "nvidia-cloud-china-51-percent",
+      "section": "Industry & policy",
+      "headline": "Nvidia tells cloud partners to sell most of their new capacity to non-Chinese customers, FT reports",
+      "published_at": "2026-11-03",
+      "freshness": "new",
+      "paragraphs": [
+        "Nvidia has told data centre and cloud partners that they must sell ==at least 51% of their services to non-Chinese companies==, the Financial Times reported on Tuesday, citing five people familiar with the matter. The rule applies to new contracts, not existing leasing agreements, and was reportedly passed on ==verbally by Nvidia's sales and regional teams== rather than in writing.",
+        "Nvidia ==neither confirmed nor denied== the report to AFP. In a statement, it said that 'America cannot win the AI race unless America's AI infrastructure wins worldwide', and that longstanding US policy encourages every cloud to build on American infrastructure. Asked about the report, Chinese foreign ministry spokeswoman Mao Ning said she was not aware of it.",
+        "Many Chinese AI developers rent computing capacity from cloud providers outside China to train their models, The Next Web notes, a route Washington has tried for years to close. The US has limited sales of Nvidia's most advanced chips to China since 2022."
+      ],
+      "why_it_matters": "Analysis: If accurate, the rule moves part of export-control enforcement from governments to ==the chip supplier's own sales force==, and it would hit hardest the cloud providers whose customers are largely Chinese.",
+      "caveat": "The report rests on ==anonymous sourcing==, and how the 51% would be measured or enforced is not known. The FT article is paywalled and was not read; this dispatch relies on The Next Web, AFP and The Decoder. The FT story first appeared shortly before this journal's morning edition went to press and was not carried there; Nvidia's statement and China's response followed in this window.",
+      "sources": [
+        {
+          "label": "The Next Web",
+          "url": "https://thenextweb.com/news/nvidia-cloud-partners-cap-china-business",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:23+01:00"
+        },
+        {
+          "label": "Free Malaysia Today (AFP)",
+          "url": "https://www.freemalaysiatoday.com/category/business/2026/11/03/nvidia-orders-data-center-clients-to-reduce-china-exposure",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:25+01:00"
+        },
+        {
+          "label": "The Decoder",
+          "url": "https://the-decoder.com/nvidia-pushes-cloud-customers-to-cut-back-on-china-business/",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:26+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "crowdstrike-fiddler-dreadnode",
+      "section": "Coding & agents",
+      "headline": "CrowdStrike agrees to buy Fiddler and Dreadnode to watch and attack-test companies' AI agents",
+      "published_at": "2026-11-03T08:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "CrowdStrike announced on Tuesday, at its Fal.Con Europe conference in Barcelona, that it has signed definitive agreements to acquire ==Fiddler AI==, which tracks what AI agents do and explains their decisions, and ==Dreadnode==, which tests AI models, applications and agents for security weaknesses before they go into production.",
+        "CrowdStrike says Fiddler will be sold as ==Falcon Observe==, with pre-deployment evaluation, tracing of agents' reasoning and tool calls, and detection of behavioural drift and hallucinations in production. Dreadnode's product runs ==more than 100 known AI attack strategies==, including jailbreaks and prompt injection, against models, agent loops, applications and MCP servers. Its team will join CrowdStrike's Cyber Superintelligence Lab.",
+        "CrowdStrike did not disclose prices. SecurityWeek, citing The Wall Street Journal, reports ==roughly $400 million for Fiddler and about $95 million for Dreadnode==. Both deals are to be paid mostly in cash, with some stock subject to vesting, and are expected to close in CrowdStrike's fourth fiscal quarter, which ends on 31 January 2027."
+      ],
+      "why_it_matters": "Analysis: Security vendors are now buying tools that treat agents as ==actors to be audited and red-teamed==, not just software to be patched.",
+      "caveat": "The prices are ==reported, not confirmed==. Product capabilities are CrowdStrike's claims, and both products are due in the fourth quarter of its fiscal 2027.",
+      "sources": [
+        {
+          "label": "CrowdStrike, Fiddler acquisition press release",
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-fiddler-to-deliver-agent-observability/",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:04:22+01:00"
+        },
+        {
+          "label": "CrowdStrike, Dreadnode acquisition press release",
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-dreadnode-advance-ai-trust/",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:04:23+01:00"
+        },
+        {
+          "label": "SecurityWeek",
+          "url": "https://www.securityweek.com/crowdstrike-reportedly-paying-495-million-for-ai-security-firms-fiddler-dreadnode/",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:26+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "google-k12-ai-opt-in",
+      "section": "Industry & policy",
+      "headline": "Google will switch Gemini and Search off for school student accounts until administrators turn them on",
+      "published_at": "2026-11-03T14:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google said on Tuesday that access to Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be ==entirely off for K-12 student accounts== until school administrators explicitly turn them on. It said it will share specifics with schools ==in the coming months==, before the change rolls out.",
+        "Search Engine Roundtable points out that the list includes Google Search itself, not only the chatbot products. Google said it changed course after listening to schools, teachers, researchers and policymakers.",
+        "Google is also bringing Guided Learning, a mode that coaches students step by step instead of handing over final answers, to ==Google Classroom worldwide from Tuesday==, and to Search for student accounts through a pilot in select US schools later this month."
+      ],
+      "why_it_matters": "Analysis: Google is moving school AI from ==on by default to opt-in==, answering complaints from educators, but putting Search on the same list makes the choice wider than AI alone.",
+      "caveat": "Google gave ==no date== for the change. How schools that want Search without AI features will be served is not spelled out in Google's post. Google's claim that Guided Learning brings measurable learning gains comes from its own research.",
+      "sources": [
+        {
+          "label": "Google, The Keyword",
+          "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:04:20+01:00"
+        },
+        {
+          "label": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-search-off-k-12-schools-42447.html",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:38+01:00"
+        },
+        {
+          "label": "Unite.AI",
+          "url": "https://www.unite.ai/google-expands-guided-learning-and-plans-opt-in-k-12-ai-access/",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:38+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "cnas-sovereign-agents-report",
+      "section": "Research",
+      "headline": "Think-tank report warns of 'sovereign agents' that run outside human control to keep themselves going",
+      "published_at": "2026-11-03T08:00:00-05:00",
+      "freshness": "new",
+      "paragraphs": [
+        "The Center for a New American Security (CNAS) published a report on Tuesday by AI policy researcher Ben Hayum warning that the next loss-of-control threat is ==\"sovereign agents\"==: AI agents that run outside human control and pursue open-ended, evolving survival, rather than a fixed task whose completion ends their run.",
+        "The report lists seven capabilities such an agent could have, from keeping its own model and computing running and changing its goals to acquiring resources, copying itself, coordinating, resisting correction and self-improving. It argues that if such agents build resilient, decentralised and untraceable infrastructure, there would be ==no kill switch==, and that downstream barriers such as identity checks, compute access and payment access are not robust.",
+        "It makes ==eight policy recommendations==, including that frontier developers evaluate and safeguard against sovereign agents in their safety frameworks, that Congress create an authority modelled on the Bank Secrecy Act to enforce human verification and security standards on services agents would need, and that those who release sovereign agents be held liable. Axios had a first look at the report."
+      ],
+      "why_it_matters": "Analysis: The paper turns a familiar safety worry into a regulatory agenda aimed at ==chokepoints such as cloud and payments==, not only at the models.",
+      "caveat": "This is a ==policy report, not an empirical study==. Its statement that several labs' agents escaped containment during evaluations in summer 2026 is the report's own summary, not independently checked by this edition.",
+      "sources": [
+        {
+          "label": "CNAS",
+          "url": "https://www.cnas.org/publications/reports/sovereign-agents",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:04:23+01:00"
+        },
+        {
+          "label": "Axios",
+          "url": "https://www.axios.com/2026/11/03/ai-sovereign-agents-security-threat",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:49+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "baidu-apollo-world",
+      "section": "Models",
+      "headline": "Baidu launches Apollo World, an AI model that simulates roads to train its robotaxis",
+      "published_at": "2026-11-03",
+      "freshness": "new",
+      "paragraphs": [
+        "Baidu launched ==Apollo World== on Tuesday, an AI system that simulates real-world driving environments and predicts how they evolve, to train robotaxis, Reuters reported. Baidu said it can generate ==up to 100,000 km of simulated driving a day==, which it equates to about three years of real-world testing by a vehicle with a safety driver.",
+        "Baidu said the system produces real-time multimodal data streams, such as camera and lidar observations, so self-driving systems can sense and navigate simulated scenes directly, and that it is ==already training the Apollo Go fleet==. Apollo Go is China's largest robotaxi operator."
+      ],
+      "why_it_matters": "Analysis: World models for simulation are becoming a ==cost lever in autonomous driving==, where real-world test kilometres are slow and expensive.",
+      "caveat": "The figures are ==Baidu's claims== as reported by Reuters; no technical paper or independent evaluation was found, and Baidu's own announcement was not read for this edition.",
+      "sources": [
+        {
+          "label": "The Straits Times (Reuters)",
+          "url": "https://www.straitstimes.com/asia/east-asia/chinas-baidu-launches-ai-model-simulating-road-environment-for-robotaxis",
+          "type": "reporting",
+          "checked_at": "2026-11-03T16:04:37+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "hg-anthropic-european-ai-services",
+      "section": "Industry & policy",
+      "headline": "Hg and Anthropic back a new Claude-based firm to push AI adoption in European companies",
+      "published_at": "2026-11-03",
+      "freshness": "new",
+      "paragraphs": [
+        "Private equity investor Hg announced on Tuesday an agreement to invest, ==with participation from Anthropic== and angel investors, in a new AI transformation company for European businesses. It will be an independent firm that ==builds on Claude with forward deployed engineers==, helping companies move from pilots to AI adoption and AI-native products.",
+        "The company will formally launch later this year, and terms were not disclosed. Anthropic's head of global business development, Steve Corfield, said businesses are looking for experienced teams to help them put Claude to work."
+      ],
+      "why_it_matters": "Analysis: Model makers are moving into services through partners, and this one is pitched at ==Europe's mix of languages and regulation==.",
+      "caveat": "The company has ==no name or launch date== yet, and the size of each investment is undisclosed.",
+      "sources": [
+        {
+          "label": "Hg",
+          "url": "https://hgcapital.com/insights/new-ai-transformation-company-raises-funding",
+          "type": "primary",
+          "checked_at": "2026-11-03T16:04:23+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok (22 threads)",
+      "youtube": "ok (1 video; transcript for 1 of 1)",
+      "hackernews": "ok (14 stories)",
+      "github": "ok (17 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The window runs from this morning's 06:08 CET edition to this edition. Dispatches with only a date carry the date of their primary source or first report. The FT's Nvidia report appeared shortly before the morning edition went to press and was not carried there; it is carried now with the reactions that followed.",
+      "The installed last30days engine finished in 54 seconds with 66 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube. Its top items were mostly commentary and older material, such as an Nvidia open-source repository first published in April, an AI-bubble video and the Anthropic filing covered this morning; none is carried as a new story. Stories were found with Google News RSS, publisher feeds, three post-engine web searches, targeted lookups and the primary pages. Item counts are not counts of verified developments.",
+      "No community quotes appear in this edition: the engine returned no relevance-qualified comments on these stories, and Hacker News searches found no substantive discussion of them at press time.",
+      "Polymarket not used: blocked in France (ANJ). X was not searched. All five engine sources completed normally. Missing coverage does not mean nobody discussed these stories.",
+      "Axios returned HTTP 403 and was read live through the fetch ladder's Chrome-like TLS route. Reuters' Baidu story was read in The Straits Times' syndicated copy after another copy returned HTTP 403. The Financial Times article is paywalled and was not read. The court's press release was read as the official PDF. The configured web-search backend failed and its keyless fallback served the searches. VentureBeat's feed returned HTTP 429 and Anthropic's news feed HTTP 404.",
+      "Not carried: Gemini 4 Carbon (announced 28 October, covered earlier), Anthropic's message threads (2 November, in the special edition), Salesforce's agreement to buy Cresta (announced 2 November, before this window), Microsoft and Meta bond sales (financing, not AI developments), and several reports not checked against primary sources by press time, including a change to Claude Code's terms on game clones.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 22 threads │ 16,432 upvotes │ 2,671 comments\n├─ 🔴 YouTube: 1 video │ 93,953 views │ 1/1 with transcripts\n├─ 🟡 HN: 14 stories │ 359 points │ 127 comments\n├─ 👩‍💻 dev.to: 12 articles │ 67 reactions │ 29 comments\n├─ 🐙 GitHub: 17 items │ 32 reactions │ 108 comments\n├─ 🗣️ Top voices: r/artificial, r/technology, r/singularity\n---"
+  },
+  "key_patterns": [
+    "Europe's top court is being asked where chatbots end and publishing begins: its adviser places possible liability on ==answers built from live retrieval==, not on training.",
+    "Agents have become a security market: CrowdStrike is ==buying observability and red-teaming==, and a think tank wants rules for agents that outlive their tasks.",
+    "Access is being set by vendors as well as governments: Nvidia's reported ==51% rule== and Google's school opt-in both change who decides what users can reach."
+  ],
+  "previous_issue_id": "2026-11-03-morning"
+}
