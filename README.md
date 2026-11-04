@@ -25,9 +25,9 @@ The Trending roundup uses GitHub's primary listing and repository sources direct
 
 This repository holds only the reviewed public website. Research uses Matt Van Horn's last30days skill, with primary-source verification. Generation runs on the owner's machine; GitHub Actions deploys the committed static files, without research credentials.
 
-Publishing uses `github-pages-publish` from https://github.com/luongnv89/skills, installed through ASM. Deployment is considered complete only when the action succeeds for the exact commit and the live files match that commit.
+Publishing uses the `github-pages-publish` skill. Deployment is considered complete only when the action succeeds for the exact commit and the live files match that commit.
 
-`skills/github-pages-publish/` is the instance of that skill the AI Gazette and GitHub Trending crons load (Hermes links `~/.hermes/skills/github-pages-publish` here), so every change to it, including approved Self-Improve edits, is tracked in this repo's history. It started from v1.0.3 (upstream 1.0.2 plus local fixes). Cron publish commits never include `skills/`; commit skill changes separately.
+This repository is the publish target only: it holds the final site and nothing else. The pipeline that researches, builds and publishes it (runbooks, scripts, tests, cron definitions, and the pinned `last30days` and `github-pages-publish` skills) lives in a separate private repository.
 
 Raw research caches, local runbooks, private logs, browser sessions, credentials and local filesystem pointers are excluded. Coverage gaps remain visible in the public newspaper. No applications or job-candidate information are part of this repository.
 
