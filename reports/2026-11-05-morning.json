@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-05-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-05T06:08:33+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-04T16:09:55+01:00",
+  "window_end": "2026-11-05T06:08:03+01:00",
+  "editorial_note": "This Thursday morning edition covers the 14 hours since yesterday afternoon's 16:09 edition and carries ==eight new stories==. OpenAI said an unreleased cyber model found and exploited 948 Linux kernel flaws, Meta bought the coding-agent start-up Conductor, and Cognition released SWE-2 Flash while holding back its weights. OpenAI also shipped Images 2.6, announced before the last edition but not carried in it. Greg Brockman said OpenAI could be ready to list in 2027, the Pentagon's technology chief promised a list of laws that apply to AI labs, Adweek reported Anthropic's first news-licensing deal, with the AP, and Bloomberg reported that Apple is cutting staff AI budgets. ==No new frontier model from a major lab== passed this journal's checks.",
+  "stories": [
+    {
+      "id": "openai-linux-948-root-exploits",
+      "section": "Research",
+      "headline": "OpenAI says an unreleased cyber model found and exploited 948 Linux kernel flaws in one $1.2 million run",
+      "published_at": "2026-11-04",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI published research on Wednesday on an automated pipeline that, in a mid-October run with an upcoming cyber model, analysed 2,308 candidate Linux kernel findings, reproduced 1,724 vulnerabilities and produced ==948 local privilege escalation exploits==. Such flaws let an unprivileged local user gain root. The run cost ==$1,213,430 in API credits==, or $1,279 per exploit, OpenAI said.",
+        "The pipeline has five stages: discovery, validation in isolated virtual machines, exploitability testing, patch generation and human review before anything reaches maintainers. OpenAI said the targets ran a stock desktop operating system with standard protections, that it began with critical bugs on the Linux community's guidance, and that it is sending further reports and patches with its Patch the Planet partners.",
+        "OpenAI said the October model found ==more than five times as many== novel exploits as a GPT-5.6 Sol run in July, and that its agents used at least 10 exploitation techniques new to outside kernel experts; it withheld their details. In an early run, 20 of 200 reported successes reached root through a different zero-day than the one assigned, which OpenAI cites as a reason to verify how agents reach a result."
+      ],
+      "why_it_matters": "Analysis: Finding and weaponising kernel bugs is turning into a compute bill rather than a staffing problem. OpenAI's own advice is that a low-privileged account on an unpatched system should be treated as ==equivalent to root== for a well-resourced attacker.",
+      "caveat": "These are OpenAI's figures for an ==unnamed, unreleased model==, not independently audited. The 948 counts distinct candidate patches, not merged fixes; OpenAI said over 100 of the flaws were patched or had staging patches from other contributors within 10 days. The exploits are local, not remote.",
+      "sources": [
+        {
+          "label": "OpenAI",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:04:46+01:00"
+        },
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:50+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "meta-acquires-conductor",
+      "section": "Coding & agents",
+      "headline": "Meta buys Conductor, maker of an app for running coding agents in parallel, and its cloud service closes on 20 November",
+      "published_at": "2026-11-04",
+      "freshness": "new",
+      "paragraphs": [
+        "Meta has acquired ==Conductor==, a start-up whose Mac app lets developers run several AI coding agents at once in separate copies of a project, Axios reported on Wednesday. Meta confirmed the deal to TechCrunch but gave no further details, and ==terms were not disclosed==.",
+        "Conductor said it has stopped new sign-ups and downloads. ==Conductor Cloud goes read-only on 13 November== and shuts down on 20 November, when the company begins deleting cloud user data; active subscribers get refunds. The local app will keep receiving new models and critical fixes until early 2027, and co-founder Charlie Holtz promised something new to use early next year.",
+        "Axios set the deal beside OpenAI's planned purchase of Pierre Computer, announced the same day and covered in the previous edition. TechCrunch notes that Conductor runs agents from labs such as Anthropic and OpenAI rather than its own."
+      ],
+      "why_it_matters": "Analysis: Two large labs bought developer-tool start-ups on the same day. The place where developers ==supervise many agents at once== now looks as contested as the models behind them.",
+      "caveat": "Meta has not said how it will use Conductor's team or product. The Hacker News reactions below are anecdotal.",
+      "sources": [
+        {
+          "label": "Conductor",
+          "url": "https://www.conductor.build/announcement",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:04:46+01:00"
+        },
+        {
+          "label": "Axios",
+          "url": "https://www.axios.com/2026/11/04/meta-acquires-ai-coding-startup-conductor",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:06:09+01:00"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:46+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50369503",
+          "type": "community",
+          "checked_at": "2026-11-05T06:04:20+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "Literally just went to go \"all in\" on conductor yesterday, and buy into their cloud setup and hope the company keeps going.",
+          "author": "iamunr (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50370063"
+        },
+        {
+          "text": "I really fail to understand what is going on here.",
+          "author": "brainless (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50374401"
+        }
+      ]
+    },
+    {
+      "id": "cognition-swe-2-flash",
+      "section": "Models",
+      "headline": "Cognition releases SWE-2 Flash, a cheaper coding model for Devin, and keeps its weights behind a vetting programme",
+      "published_at": "2026-11-04T10:00:00-08:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Cognition, the maker of the Devin coding agent, released ==SWE-2 Flash== on Wednesday in Devin Desktop and the Devin CLI. It says the model runs at ==one-fifth the price and three times the speed== of its larger SWE-2, and its launch page lists it as free through 30 November.",
+        "SWE-2 Flash is built on Thinking Machines' open-weight Inkling-Small, which has 276 billion total and 12 billion active parameters. Cognition added a mid-training stage before reinforcement learning and says this raised Terminal-Bench 4.0 from 0.9% to 20.0% and FrontierCode 2.0 from 3.2% to 24.0% over the base model, and that SWE-2 Flash beats all American open-weight models on leading evaluations.",
+        "Cognition also trained the model for security work, lifting its ExploitBench score from 11.3% to 34.8% by its account. Citing cyber risk, it is ==not publishing the weights== and is building a programme to share them with trusted industry partners and research labs, with details promised in a few weeks."
+      ],
+      "why_it_matters": "Analysis: Coding-agent companies are post-training open bases to cut the cost of routine work instead of renting frontier models for every task. The gated weights also show cyber risk starting to decide ==who gets model weights==.",
+      "caveat": "All benchmark figures are Cognition's own, and its comparison covers only American open-weight models. The weight-sharing programme has not been described in detail.",
+      "sources": [
+        {
+          "label": "Cognition",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:04:46+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-images-2-6",
+      "section": "Models",
+      "headline": "OpenAI releases Images 2.6, adding animated GIFs and two new image models to its API",
+      "published_at": "2026-11-04",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI released ==Images 2.6== in ChatGPT, Codex and the API on Wednesday. It says the update generates images 50% faster and adds animated GIFs, and that people now create 4 billion images a week across its products.",
+        "In the API the release ships as two models, according to OpenAI's changelog: ==GPT-Image-2.6 Flare== for fast iteration and GPT-Image-2.6 Sunburst for detail and consistency across edits. Developers also get markup-guided edits, SVG output and a complexity setting that controls how much planning the model does.",
+        "OpenAI's system card says GIFs bring risks that single images do not, such as harmful meaning conveyed across frames, and that motion-related violations remain challenging to detect."
+      ],
+      "why_it_matters": "Analysis: An incremental release, but ==GIF output in the API== moves OpenAI's image models a step toward short animation, with new moderation problems attached.",
+      "caveat": "Speed and usage figures are OpenAI's. The release was announced on 4 November before the previous edition went to press but was not carried in it.",
+      "sources": [
+        {
+          "label": "OpenAI",
+          "url": "https://openai.com/index/introducing-images-2-6/",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:05:54+01:00"
+        },
+        {
+          "label": "OpenAI API changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:05:54+01:00"
+        },
+        {
+          "label": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/chatgpt-images-2-6/gif-risks-safeguards-and-evaluations",
+          "type": "primary",
+          "checked_at": "2026-11-05T06:07:10+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "brockman-openai-enterprise-ipo-2027",
+      "section": "Industry & policy",
+      "headline": "Brockman says most of OpenAI's revenue now comes from businesses, and that it could be ready to go public in 2027",
+      "published_at": "2026-11-04",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI President Greg Brockman said on Wednesday that the company now generates ==the majority of its revenue from enterprise sales==, Reuters reported from a Wall Street Journal technology conference in Napa, California. Asked on stage whether OpenAI would be ready for an IPO next year, he said: \"I think so.\"",
+        "According to Reuters, Brockman said OpenAI has been ramping up sales to businesses, including its Codex agent, in competition with Anthropic, which Reuters said is likely to go public before the end of the year."
+      ],
+      "why_it_matters": "Analysis: With Anthropic's listing expected within weeks, OpenAI is now presenting itself as a business-software company. A ==2027 listing== is Brockman's expectation, not a filing or a date.",
+      "caveat": "Brockman gave no figures, and Reuters' report does not say how the revenue share is measured.",
+      "sources": [
+        {
+          "label": "Reuters (via The Star)",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/11/05/openai-ready-to-ipo-in-2027-now-counts-majority-of-sales-from-enterprises-brockman-says",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:48+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "pentagon-cto-ai-lab-laws",
+      "section": "Industry & policy",
+      "headline": "Pentagon technology chief says the US will set out the laws that apply to AI labs within weeks",
+      "published_at": "2026-11-04T23:42:31+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "The US government will lay out ==all the laws and regulations that apply to domestic AI labs== later this month, Pentagon Chief Technology Officer Emil Michael said on Wednesday, Reuters reported. Michael, vice chair of the government's Super Intelligence Task Force, said the group would publicise the regulatory landscape \"in the next week or two\".",
+        "Speaking at the Wall Street Journal conference in Napa, he gave no further details. \"What we're trying to do is create a framework that makes the American people have confidence that these companies are going to do the right thing,\" he said. \"Or else I think what you get is 535 legislators writing a piece of regulation that could kill the industry.\""
+      ],
+      "why_it_matters": "Analysis: Michael describes ==a map of existing law==, presented as an alternative to new legislation from Congress. It comes the day after midterm votes in which local voters backed limits on data centres, covered in the previous edition.",
+      "caveat": "This is a ==stated plan, not a published document==, and Reuters reports nothing about what the list will contain.",
+      "sources": [
+        {
+          "label": "Reuters (via Yahoo Finance)",
+          "url": "https://ca.finance.yahoo.com/news/pentagon-chief-tech-officer-says-234231540.html",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:49+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-ap-licensing-deal",
+      "section": "Industry & policy",
+      "headline": "Anthropic struck its first news-licensing deal, with the AP, before the midterms, Adweek reports",
+      "published_at": "2026-11-04T19:00:00-05:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic signed a ==content and data licensing deal with the Associated Press== just before the US midterm elections, Adweek reported, citing two people familiar with the matter. According to Adweek, Claude users who asked for updates on election night saw up-to-date information attributed to the AP.",
+        "Adweek says this is the first time Anthropic has licensed content from any digital publisher, while OpenAI has negotiated more than a dozen such deals. ==Financial terms and duration were not disclosed==; Anthropic did not respond to Adweek's request for comment and the AP gave no comment on the record."
+      ],
+      "why_it_matters": "Analysis: Live answers on events such as elections depend on publishers that block AI crawlers. Adweek itself cautions that one deal does not show a lasting change in Anthropic's licensing strategy.",
+      "caveat": "==Neither company has confirmed the deal== on the record; the report rests on anonymous sources. Its scope, including whether it covers model training, is unknown.",
+      "sources": [
+        {
+          "label": "Adweek",
+          "url": "https://www.adweek.com/media/anthropic-licensing-deal-ap-election/",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:49+01:00"
+        },
+        {
+          "label": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1027173/anthropic-reportedly-made-a-licensing-deal-with-the-associated-press",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:04:49+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "apple-cuts-employee-ai-budgets",
+      "section": "Industry & policy",
+      "headline": "Apple cuts some engineers' daily AI budgets from $300 to $200 and plans deeper cuts, Bloomberg reports",
+      "published_at": "2026-11-04",
+      "freshness": "new",
+      "paragraphs": [
+        "Apple lowered the daily AI spending cap for some engineers ==from $300 to $200== last month and plans further cuts that could take some engineering teams to $100 a day, Bloomberg reported on Wednesday, according to The Next Web and 9to5Mac. Many staff outside engineering already have a $100 cap, which Apple has considered cutting to as little as $25 for some teams; employees can ask senior leaders for exemptions.",
+        "The budgets cover tokens used with tools such as Anthropic's Claude, OpenAI's ChatGPT and Google's Gemini, and some teams are being told to switch to cheaper or on-device models. Apple declined to comment, The Next Web says, and notes that Apple's research and development costs rose 32% in its 2026 fiscal year, partly on infrastructure and AI costs."
+      ],
+      "why_it_matters": "Analysis: After urging heavy use, large employers are starting to ==budget AI tokens like any other expense==. Goldman Sachs' limits on AI coding tools, covered earlier, were a similar move.",
+      "caveat": "Bloomberg's report rests on unnamed people and was not read directly (paywalled); this dispatch relies on The Next Web's and 9to5Mac's accounts. It is unclear how much Apple will save.",
+      "sources": [
+        {
+          "label": "The Next Web",
+          "url": "https://thenextweb.com/news/apple-cuts-employee-ai-token-budgets",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:05:21+01:00"
+        },
+        {
+          "label": "9to5Mac",
+          "url": "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/",
+          "type": "reporting",
+          "checked_at": "2026-11-05T06:05:22+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (17 threads; 6 subreddit requests blocked with HTTP 403)",
+      "youtube": "ok (4 videos; transcripts for 4 of 4)",
+      "hackernews": "ok (15 stories)",
+      "github": "ok (20 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The window runs from yesterday afternoon's 16:09 CET edition to this edition. Dispatches with only a date carry the date of their primary source or first report; all are dated 4 November, US time.",
+      "The installed last30days engine finished in 45 seconds with 68 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube. Its strongest new cluster was the Hacker News thread on Conductor joining Meta; its top YouTube items were commentary videos, and its top Reddit thread was a discussion of AI-built clones of software services. Stories were found with Google News RSS, publisher feeds, web searches before and after the engine run and the primary pages. Item counts are not counts of verified developments.",
+      "The community quotes come from the engine's relevance-qualified Hacker News comments. They are anecdotal reactions, not evidence for the facts reported.",
+      "Polymarket not used: blocked in France (ANJ). X was not searched. Reddit returned results, but six of its subreddit requests were blocked (HTTP 403), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Axios' Conductor report returned HTTP 403 and was read live through the fetch ladder's Chrome-like TLS route. Reuters.com returned HTTP 401, so the Brockman and Pentagon reports were read in syndicated copies on The Star and Yahoo Finance. Bloomberg's Apple report is paywalled and was not read. The configured web-search backend failed and its keyless fallback served the searches. VentureBeat returned HTTP 429, Anthropic's news feed HTTP 404 and Google DeepMind's feed could not be parsed.",
+      "Not carried: Moonshot's Kimi K3.1 Pro weights (on Hugging Face since 2 November by its repository metadata, before this window), Ricursive's Ripple-65B Preview (its primary report could not be read: HTTP 429 and 404), the hearing in music publishers' case against Anthropic (reports of the outcome differ), Cat Wu's move from Anthropic to OpenAI, and Google's school Search controls and Anthropic's FlashProve (both covered on 3 November).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 17 threads │ 22,440 upvotes │ 1,055 comments\n├─ 🔴 YouTube: 4 videos │ 1,014,614 views │ 4/4 with transcripts\n├─ 🟡 HN: 15 stories │ 982 points │ 393 comments\n├─ 👩‍💻 dev.to: 12 articles │ 261 reactions │ 120 comments\n├─ 🐙 GitHub: 20 items │ 9 reactions │ 200 comments\n├─ 🗣️ Top voices: r/technology, r/artificial, r/singularity\n---"
+  },
+  "key_patterns": [
+    "Offensive cyber capability now has a price tag: OpenAI put a Linux root exploit at about ==$1,279 in API credits==, and Cognition held back its weights on cyber grounds.",
+    "The contest for developers is moving to the tools around the models, as Meta bought Conductor on the day OpenAI announced its Pierre deal.",
+    "AI's big buyers and sellers are tightening up: OpenAI points to ==enterprise revenue and a 2027 listing==, while Apple reportedly rations staff token budgets."
+  ],
+  "previous_issue_id": "2026-11-04-afternoon"
+}
