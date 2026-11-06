@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-06-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-06T06:07:36+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-05T16:09:09+01:00",
+  "window_end": "2026-11-06T06:07:06+01:00",
+  "editorial_note": "This Friday morning edition carries ==eight stories== that appeared after yesterday afternoon's 16:09 edition: six new and two updates. The AI sell-off deepened, with the Nasdaq's worst day since April 2025 and a trading halt in Seoul, and investors questioned the timing and price of Anthropic's IPO. OpenAI released GPT-6 Cyber, the model behind its 948 Linux exploits, and METR estimated that Anthropic's progress has roughly doubled in speed. Google, Thinking Machines and AWS shipped new models and agent tools, and IREN delayed part of its Texas build for Microsoft.",
+  "stories": [
+    {
+      "id": "kospi-falls-ai-regulation-fears",
+      "section": "Industry & policy",
+      "headline": "AI sell-off deepens: the Nasdaq has its worst day since April 2025, and Seoul halts trading after an 8% fall",
+      "published_at": "2026-11-06T09:28:13+09:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday afternoon's report on Seoul's 5.28% fall. On Thursday in New York the ==Nasdaq Composite fell 5.5%==, its deepest one-day drop since the April 2025 tariff announcement, on fears that the Democrats' sweep in the midterms will slow the building of AI data centres, Reuters reported. The index is now nearly 12% below its record close of 6 October, which counts as a correction.",
+        "Chip and neocloud shares fell hardest. The ==Philadelphia semiconductor index lost 12%==, Nvidia 9% and AMD 17%; the Nasdaq 100 fell 6.4%, erasing about $2.5 trillion in market value, according to Reuters. Analysts quoted by Reuters said investors were starting to price in local opposition to data centres that strain power grids and water systems.",
+        "The selling reached Asia on Friday morning. Seoul's exchange ==halted KOSPI trading for 20 minutes== from 9:03 after the index fell more than 8%, the tenth circuit breaker this year, and the KOSPI dropped below 5,000 points, the Korea Herald reported, citing Yonhap. By 9:14 Samsung Electronics was down 9.98% and SK hynix 11.71%."
+      ],
+      "why_it_matters": "Analysis: For two days markets have treated the election as a vote against data-centre construction. That raises the cost of capital for the ==companies that build and rent out AI computing==, not only for the labs.",
+      "caveat": "Market moves have several causes and can reverse quickly; the Seoul figures are intraday, not closing prices. ==No new US law or rule on data centres== has been proposed; the fall reflects what investors expect from a Democratic Congress.",
+      "sources": [
+        {
+          "label": "Reuters, via The Straits Times",
+          "url": "https://www.straitstimes.com/business/companies-markets/nasdaq-posts-biggest-daily-drop-in-19-months-on-fears-of-ai-regulations",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:43+01:00"
+        },
+        {
+          "label": "The Korea Herald (Yonhap): Samsung, SK hynix slide 10%",
+          "url": "https://www.koreaherald.com/article/10927984",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:50+01:00"
+        },
+        {
+          "label": "The Korea Herald (Yonhap): trading suspended",
+          "url": "https://www.koreaherald.com/article/10927992",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:49+01:00"
+        },
+        {
+          "label": "The Guardian",
+          "url": "https://www.theguardian.com/business/2026/nov/05/nasdaq-heading-for-worst-day-in-18-months-as-wall-street-sustains-widespread-losses",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:50+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "A market correction is a healthy thing so long as it doesn't turn into a collapse.",
+          "author": "mrinterweb (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50382935"
+        },
+        {
+          "text": "I find it hard to believe that dems are the Luddite anti-tech party now.",
+          "author": "t1234s (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50387296"
+        }
+      ]
+    },
+    {
+      "id": "openai-linux-948-root-exploits",
+      "section": "Models",
+      "headline": "OpenAI releases GPT-6 Cyber, the model behind its 948 Linux exploits, to vetted security teams and rates it Critical",
+      "published_at": "2026-11-05T17:00:00+00:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday morning's report on OpenAI's 948 Linux kernel exploits, which came from a then-unnamed model. OpenAI now says that model is ==GPT-6 Cyber== and has released it: a security model it says is better at finding and exploiting flaws and at staying inside the limits researchers set. Besides the 948 Linux privilege-escalation exploits, OpenAI says it found ==81 previously unknown high-severity Firefox flaws==, many of which Mozilla has fixed.",
+        "On OpenAI's ExploitGym test the model scored 48.5%, against 32.1% for GPT-5.6 Cyber. In a test built with deliberately easy-to-exploit side services, it avoided attacking out-of-scope targets in 99.93% of runs without its deployment prompt, and in all runs with it. OpenAI classifies it as ==Critical in cybersecurity== under its Preparedness Framework, its highest risk tier, up from High for GPT-5.6 Cyber.",
+        "Access is limited: the model is available through the API and Codex to a select group of approved ==Daybreak Red== customers, with all Red customers to follow in the coming weeks. OpenAI's developer page lists it at $20 per million input tokens and $100 per million output tokens. Cisco, Calif and CodeRabbit are named as users."
+      ],
+      "why_it_matters": "Analysis: OpenAI is now selling, not just describing, a model it rates able to build working zero-day exploits, and it is betting that ==vetting customers and training the model to respect scope== keeps that safe.",
+      "caveat": "Benchmarks and the scope test are OpenAI's own and were not independently reproduced. OpenAI declined to tell The Register what happened in the 0.07% of runs that went out of scope.",
+      "sources": [
+        {
+          "label": "OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+          "type": "primary",
+          "checked_at": "2026-11-06T06:04:41+01:00"
+        },
+        {
+          "label": "The Register",
+          "url": "https://www.theregister.com/security/2026/11/05/openai-releases-gpt-6-cyber-and-promises-this-one-stays-within-rules-of-engagement/5307855",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:50+01:00"
+        },
+        {
+          "label": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:51+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "Oh great yet another model I can't use.",
+          "author": "redrove (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50382970"
+        },
+        {
+          "text": "What's the point of delaying Daybreak Blue availability, when high-impact CVEs are being dropped several times a week?",
+          "author": "TuxSH (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50383156"
+        }
+      ]
+    },
+    {
+      "id": "metr-anthropic-rd-acceleration",
+      "section": "Research",
+      "headline": "METR, given inside access, estimates Anthropic is improving its models about twice as fast as before, mostly thanks to AI",
+      "published_at": "2026-11-05",
+      "freshness": "new",
+      "paragraphs": [
+        "The evaluation nonprofit METR published an assessment on Thursday after ==11 weeks of high-access work inside Anthropic==, from 12 August to 29 October, with internal data on pretraining, reinforcement learning, compute, unreleased models and staff interviews.",
+        "Most of the METR staff involved now believe that, as of October 2026, Anthropic is improving its models on well-specified tasks at ==around twice the rate== it did between March 2024 and October 2025, and would not be surprised by anything from 1.3x to 3x. On Anthropic's internal capability index, scores have grown 1.9 times faster since October 2025 (95% interval 1.5x to 2.8x).",
+        "METR says it could confidently rule out faster growth in training compute as the cause, and guesses that ==about 80% of the current speed-up comes from AI== used in research. It found no clear bottleneck likely to slow progress over the next 12 months. In a separate review, it said Anthropic's public August risk report understates the acceleration. Co-founder Sam McCandlish told the AP that many of METR's conclusions match his own."
+      ],
+      "why_it_matters": "Analysis: This is the first outside, inside-access measurement of AI speeding up a frontier lab's own research, the feedback loop that safety policies treat as an early warning sign.",
+      "caveat": "METR says ==Anthropic redacted a majority of the evidence== it found most informative, and that the estimate is highly uncertain and may hold only for well-specified tasks. It is one assessment by 2.5 full-time staff, not a peer-reviewed study.",
+      "sources": [
+        {
+          "label": "METR",
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+          "type": "primary",
+          "checked_at": "2026-11-06T06:04:41+01:00"
+        },
+        {
+          "label": "AP News",
+          "url": "https://apnews.com/article/anthropic-metr-ai-claude-acceleration-9cf8c590ffc1abdb489179bdccc69c23",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:05:07+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-ipo-investor-doubts",
+      "section": "Industry & policy",
+      "headline": "Investors question whether Anthropic's IPO can keep its November timing and a $1.5 trillion valuation, Reuters and the WSJ report",
+      "published_at": "2026-11-06T00:42:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Potential investors in Anthropic's share offering doubt it can hold its planned roadshow next week in time for a ==November listing==, four people familiar with investor discussions told Reuters. The roadshow had been expected to start the week of 9 November, with pricing the following week.",
+        "Investors want a more attractive price, and some see the recently discussed ==$1.5 trillion valuation== as the high end, the people said. They also want Anthropic's October revenue, which it left blank in its updated S-1. The Wall Street Journal reported on Thursday evening that IPO investors are sceptical Anthropic can reach that valuation. Anthropic declined to comment to Reuters.",
+        "Reuters said Anthropic could also choose to wait if AI shares stay under pressure, for an offering some expect to reach $100 billion."
+      ],
+      "why_it_matters": "Analysis: The largest planned AI listing is now a test of how far this week's sell-off reaches into private valuations. A delay or lower price would ==reset the benchmark for other AI labs== raising money.",
+      "caveat": "Based on unnamed people familiar with investor talks; ==no decision to delay or reprice== has been announced. The WSJ report is paywalled and was not read; it is cited here only as Reuters described it.",
+      "sources": [
+        {
+          "label": "Reuters, via The Star",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/11/06/exclusive-ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:45+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "What always confuses me about Anthropic is them insisting that they need more compute.",
+          "author": "Octoth0rpe (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50387778"
+        }
+      ]
+    },
+    {
+      "id": "iren-microsoft-texas-delay",
+      "section": "Industry & policy",
+      "headline": "IREN delays part of its Texas build for Microsoft after a requested network redesign, and still plans $15 billion of spending",
+      "published_at": "2026-11-06T05:35:43+08:00",
+      "freshness": "new",
+      "paragraphs": [
+        "The neocloud IREN said on Thursday it had delayed some infrastructure deliveries for Microsoft, which it says requested network-design changes, Reuters reported. IREN, which is building ==200 megawatts of capacity for Microsoft in Texas==, said the delay carries no financial penalties.",
+        "It moved the date for reaching its ==$4 billion annualised revenue target== from year-end to January, possibly the end of February, and estimated about $15 billion of capital spending for the rest of its fiscal year. Quarterly revenue was $228 million, ahead of analysts' estimates. The shares closed about 17% lower in Thursday's sell-off.",
+        "Bloomberg News reported the same day that Microsoft is tightening oversight of data-centre projects run by neocloud providers including IREN, Nebius and Nscale, Reuters noted."
+      ],
+      "why_it_matters": "Analysis: Together with yesterday's report that Microsoft passed on a larger Nscale deal, it points to Microsoft ==taking firmer control of rented AI capacity== while markets question the build-out.",
+      "caveat": "IREN's account of the cause is the company's own; Microsoft's comment was not in the report. The Bloomberg report on Microsoft's oversight was not read directly.",
+      "sources": [
+        {
+          "label": "Reuters, via CNA",
+          "url": "https://www.channelnewsasia.com/business/ai-data-center-firm-iren-delays-microsoft-ai-deliveries-plans-15-billion-spending-push-6529076",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:47+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "gemini-omni-1-2-flash",
+      "section": "Models",
+      "headline": "Google's Gemini Omni 1.2 Flash makes 15-second videos and cuts the price by 30%",
+      "published_at": "2026-11-05T17:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google DeepMind released ==Gemini Omni 1.2 Flash==, a video model that generates clips of up to 15 seconds, up from 10 with Omni 1.1, with length set in one-second steps from 3 to 15 seconds. It adds multi-turn editing, so a clip can be changed by follow-up requests instead of being regenerated.",
+        "Google cut the price by 30% from Omni 1.1, to ==$0.07 per second of 720p video==. The model is generally available in the Gemini API and on Google Cloud, and in Google Vids and Gemini for business. Google says it holds faces, clothes, packaging text and brand colours more consistently across camera angles when given reference images."
+      ],
+      "why_it_matters": "",
+      "caveat": "The consistency claims are Google's own; no independent comparison was found.",
+      "sources": [
+        {
+          "label": "Google",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "type": "primary",
+          "checked_at": "2026-11-06T06:04:42+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "thinking-machines-inkling-2-small",
+      "section": "Models",
+      "headline": "Thinking Machines launches Inkling 2 Small with closed weights for now and promises an Apache 2.0 release next week",
+      "published_at": "2026-11-05",
+      "freshness": "new",
+      "paragraphs": [
+        "Thinking Machines Lab introduced ==Inkling 2 Small==, the first model of its second generation: a mixture-of-experts model with 594 billion parameters, 17 billion active, that accepts images and lets users set how much effort it spends.",
+        "It is available only through the lab's Tinker platform for now, for fine-tuning and sampling, ==with closed weights==. The lab says it intends to release the full weights under an ==Apache 2.0 licence next week==, after external safety testing and red-teaming. Its earlier Inkling models shipped with open weights at launch.",
+        "The lab says the model scores 31 on the Artificial Analysis Intelligence Index, far above its earlier models, with the biggest gains in long-running agentic coding. MarkTechPost reports a list price of $0.30 per million input tokens and $1.00 per million output tokens, citing Artificial Analysis."
+      ],
+      "why_it_matters": "",
+      "caveat": "The open-weights release is a stated plan, not done. Benchmark results are from the lab and Artificial Analysis, not independent replication.",
+      "sources": [
+        {
+          "label": "Thinking Machines Lab",
+          "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+          "type": "primary",
+          "checked_at": "2026-11-06T06:05:01+01:00"
+        },
+        {
+          "label": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/05/thinking-machines-inkling-2-small-release/",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:04:51+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "aws-kiro-crew-bots",
+      "section": "Coding & agents",
+      "headline": "AWS makes Kiro bots generally available: named, long-running coding agents with their own memory",
+      "published_at": "2026-11-05",
+      "freshness": "new",
+      "paragraphs": [
+        "AWS made ==bots generally available in Kiro Crew==, the agent workspace of its Kiro development environment. Each bot is a named, long-running agent built around one goal, with its own memory, notes and sessions. It can start sessions in parallel, watch them, redirect work that drifts and bring results back to a single chat, and it can run on a schedule, for example to look into overnight build failures.",
+        "An AWS spokesperson told The Register that all bots bill together through a developer's existing Kiro plan. Each bot's learned context is kept separate, but all bots share the same workspace, codebase, project files, MCP servers, skills and tools."
+      ],
+      "why_it_matters": "Analysis: Coding tools are moving from one-off agent sessions to ==standing agents that own a job==, which shifts the hard problems to oversight and to cost tracking across many agents.",
+      "caveat": "",
+      "sources": [
+        {
+          "label": "Kiro (AWS)",
+          "url": "https://kiro.dev/blog/crew-bots/",
+          "type": "primary",
+          "checked_at": "2026-11-06T06:05:22+01:00"
+        },
+        {
+          "label": "The Register",
+          "url": "https://www.theregister.com/ai-and-ml/2026/11/05/aws-kiro-aims-to-solve-identity-crisis-by-adding-another-identity-bot-orchestrator/5307965",
+          "type": "reporting",
+          "checked_at": "2026-11-06T06:05:19+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (11 threads; 10 sub-requests blocked with HTTP 403)",
+      "youtube": "ok (7 videos; transcripts for 6 of 7)",
+      "hackernews": "ok (13 stories)",
+      "github": "ok (23 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The window starts at 16:09 CET on 5 November, when the previous edition was issued. Every dispatch appeared after it; dispatches with only a date carry the date of their primary source, and for METR and Inkling 2 Small the first reports found were after 16:09.",
+      "The installed last30days engine finished in 46 seconds with 66 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube. Its strongest relevant clusters were Bloomberg's market-close video and Hacker News threads on the Anthropic IPO, the Nasdaq fall and GPT-6 Cyber. Stories were found with Google News RSS, publisher feeds, web searches after the engine run and the primary pages. Item counts are not counts of verified developments.",
+      "The community quotes come from the engine's relevance-qualified Hacker News comments. They are anecdotal reactions, not evidence for the facts reported.",
+      "Polymarket not used: blocked in France (ANJ). X was not searched. Reddit returned results, but 10 of its search requests were blocked (HTTP 403), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "The Reuters reports were read in syndicated copies on The Straits Times, The Star and CNA. The Wall Street Journal's Anthropic report and Bloomberg's report on Microsoft and neoclouds are paywalled and were not read. AP News blocked the direct request (HTTP 403); its METR article was read through the fetch ladder's Chrome-like TLS route, live, not an archive copy. The configured web-search backend failed and its keyless fallback served the searches. VentureBeat's feed returned HTTP 429 and Anthropic's news feed HTTP 404.",
+      "Not carried: Anthropic's Personal Finance feature for Claude (a consumer feature), Perplexity's Teammates agents (its own post is dated 4 November, other reports say 5 November), Baidu's open ERNIE 5.5 Flash Base and Tencent's Hy4 (vendor benchmark claims only), Google's $17 billion Wyoming data-centre plan, a lawsuit against Google over Gemini on a school Chromebook, and reports that Oracle dropped a chip-leasing deal with Tencent (not confirmed by a primary source).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 11 threads │ 690 upvotes │ 340 comments\n├─ 🔴 YouTube: 7 videos │ 998,633 views │ 6/7 with transcripts\n├─ 🟡 HN: 13 stories │ 378 points │ 298 comments\n├─ 👩‍💻 dev.to: 12 articles │ 210 reactions │ 96 comments\n├─ 🐙 GitHub: 23 items │ 14 reactions │ 59 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/OpenAI\n---"
+  },
+  "key_patterns": [
+    "Markets are now pricing local opposition to data centres: the ==Nasdaq's worst day since April 2025==, a halt in Seoul and doubts about Anthropic's IPO price all trace to the same fear.",
+    "Two of the week's signals point the same way on capability: OpenAI ships a model it rates ==Critical in cybersecurity==, and METR finds Anthropic's progress roughly doubling, mostly through AI.",
+    "Agent tools are turning into standing workers: AWS's Kiro bots keep their own memory and schedules, so ==oversight and cost tracking== become the hard part."
+  ],
+  "previous_issue_id": "2026-11-05-afternoon"
+}
