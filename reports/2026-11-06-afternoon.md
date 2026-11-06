@@ -1,0 +1,216 @@
+# The AI Gazette — Afternoon edition, Friday 6 November 2026
+
+*Models, machines, and matters of consequence*
+
+- Issue: 2026-11-06-afternoon
+- Issued: 6 Nov 2026, 16:13 CET (Paris)
+- Reporting window: 6 Nov 2026, 06:07 CET to 6 Nov 2026, 16:12 CET
+- Timezone: Europe/Paris
+- Previous issue: 2026-11-06-morning
+- Price: Complimentary
+
+## Editor's note
+
+This Friday afternoon edition carries **six stories** that appeared after this morning's 06:07 edition: four new and two updates, plus one background item. AI stocks bounced at the New York open after Tokyo and Seoul closed down about 6%, and prospective buyers now discuss a lower range for Anthropic's IPO. Democrats outlined AI bills for January, protesters broke into a Microsoft data-centre site in Amsterdam, Nvidia tied partner status in Southeast Asia to GPU tracking, and a UK amendment would add powers over AI agents that slip out of control. No new model release met the bar for this edition.
+
+## The News
+
+### UK amendment would let ministers set rules and inspection powers for incidents where organisations lose control of AI agents
+
+*Coding & agents · New*
+
+**Published:** 6 Nov 2026, 12:00 CET
+
+An amendment to the UK's **Cyber Security and Resilience Bill**, introduced at the bill's third reading in the House of Lords this week, would let ministers regulate how certain organisations deploy AI agents and report incidents when they lose control of them, The Register reported. Ministers have outlined safeguards, notification of affected organisations, preservation of evidence and government-led incident reviews.
+
+The clause does not impose duties by itself: any rules would need consultation and **approval by Parliament through secondary legislation**. A Pinsent Masons partner told The Register this could include powers to appoint inspectors, enter premises and seize documents. Operators of essential services, managed service providers and cloud providers running agents for customers could be covered; **foundation model developers would not automatically be**.
+
+**Analysis — why it matters:** *Analysis: The proposal puts responsibility on the organisation that deploys an agent rather than on the company that built the model.*
+
+**Caveat:** Reported by The Register; the amendment text and the government's statement were not read directly. The bill is **not yet law**, and the powers would need further regulations.
+
+**Sources:**
+
+1. [The Register](<https://www.theregister.com/ai-and-ml/2026/11/06/uk-ministers-seek-powers-to-investigate-when-ai-agents-are-let-off-the-leash/5307889>) — reporting. Checked: 6 Nov 2026, 16:06 CET
+
+### AI stocks bounce at the New York open after Tokyo and Seoul close down about 6%
+
+*Industry & policy · Updated*
+
+**Published:** 6 Nov 2026, 15:44 CET
+
+Update to this morning's report of the trading halt in Seoul. Asian markets closed sharply lower on Friday: indexes **fell about 6% in Tokyo and Seoul**, and Germany's DAX lost 2.5%, AP reported. This morning's edition gave the KOSPI's intraday fall of more than 8%; AP's figure is for the whole session.
+
+In New York, AI stocks recovered part of their losses at the open. **Nvidia rose 5.6%** after falls of 9.3% and 3.2% on the previous two days, and the Nasdaq composite was up 1.1% at 9:35 a.m. Eastern time while the Dow was down 0.9%, AP reported. IREN rose 13.7% after quarterly results above analysts' expectations, and Lam Research rose 8.8% after announcing **up to $25 billion of share buybacks**.
+
+**Analysis — why it matters:** *Analysis: The rebound is limited to AI and chip stocks, while **most of the US market still fell**, so it does not yet show that investors have stopped pricing in tougher rules on data centres.*
+
+**Caveat:** These are prices from the start of Friday's session in New York, not the close; this edition went to press before Wall Street closed. **Market moves can reverse within hours.**
+
+**Sources:**
+
+1. [AP News (read through the fetch ladder)](<https://apnews.com/article/markets-japan-nikkei-oil-ai-bba6f0bf9035a6e6b1c4fef3e8230b89>) — reporting. Checked: 6 Nov 2026, 16:07 CET
+2. [AP, via WPLG Local 10](<https://www.local10.com/business/2026/11/06/the-worldwide-sell-off-for-ai-stocks-halts-but-other-us-stocks-are-still-struggling/>) — reporting. Checked: 6 Nov 2026, 16:07 CET
+
+### Prospective buyers now discuss a $1.2 trillion to $1.3 trillion valuation for Anthropic's IPO, Bloomberg reports
+
+*Industry & policy · Updated*
+
+**Published:** 6 Nov 2026, 15:00 CET
+
+Update to this morning's report that investors doubted a $1.5 trillion valuation. Some prospective buyers are now discussing **$1.2 trillion to $1.3 trillion**, down from the $1.4 trillion to $1.5 trillion they had earlier told the deal's bankers, Bloomberg reported on Friday, according to Quartz. No decision has been made, and an Anthropic spokesperson declined to comment.
+
+According to the same report, **formal marketing is due to begin next week**. Anthropic and its selling shareholders could start cautiously, with a smaller offering and a lower valuation, and raise both if demand is strong; delaying the offering is another option. In early October investors had talked of up to $2 trillion.
+
+**Analysis — why it matters:** *Analysis: A lower valuation means less money raised for Anthropic's **large compute commitments**, the concern several Hacker News commenters raised.*
+
+**Caveat:** Bloomberg's report relies on an unnamed person and was read in Quartz's summary; the original is paywalled. **These are investor discussions, not a price range** set by Anthropic or its bankers.
+
+**Community reaction (opinion, not verified fact):**
+
+> “I don't think people realize just how screwed Anthropic is if their revenue doesn't grow at a crazy rate.” — [woeirua (Hacker News)](<https://news.ycombinator.com/item?id=50387712>)
+
+> “What always confuses me about Anthropic is them insisting that they need more compute.” — [Octoth0rpe (Hacker News)](<https://news.ycombinator.com/item?id=50387778>)
+
+**Sources:**
+
+1. [Quartz, citing Bloomberg](<https://qz.com/anthropic-ipo-valuation-expectations-fall-ai-selloff-110626>) — reporting. Checked: 6 Nov 2026, 16:06 CET
+2. [Hacker News discussion of the WSJ report](<https://news.ycombinator.com/item?id=50387778>) — community. Checked: 6 Nov 2026, 16:04 CET
+
+### Democrats plan bills on data-centre power costs, AI testing and liability once they control Congress in January, Reuters reports
+
+*Industry & policy · New*
+
+**Published:** 6 Nov 2026, 12:05 CET
+
+Democrats plan to introduce a wave of AI legislation when they take control of the US Congress in January, Reuters reported, citing lawmakers, congressional aides and advocates. The bills would shield consumers from **electricity costs tied to data centres**, require **independent testing of advanced AI systems** and clarify when AI companies can be held liable for harm caused by their products.
+
+Senator Chuck Schumer, expected to become majority leader, said on Thursday that protecting consumers from higher energy costs linked to data centres would be among his priorities next year. Representative Lori Trahan plans a bill requiring independent experts to evaluate leading AI models against safety standards, her deputy chief of staff told Reuters. Democrats also plan to use committee control to compel testimony from industry leaders.
+
+Any bill faces steep odds while President Trump, who has repeatedly dismissed calls for mandatory AI rules, can **veto it; an override needs two-thirds of both chambers**. On Friday Trump said he would work with states that "want to become RICH" by embracing AI, without giving details, Reuters reported.
+
+**Analysis — why it matters:** *Analysis: Even if no bill becomes law, hearings and subpoenas give Democrats **a way to press AI companies from January**, which is part of what markets reacted to this week.*
+
+**Caveat:** These are plans described to Reuters; **no bill text has been published**. Democrats are divided on how far to go, Semafor reported on 5 November.
+
+**Community reaction (opinion, not verified fact):**
+
+> “It will be interesting to see if and how people who campaigned on broad "anti-datacenter" platforms actually make it happen.” — [Spivak (Hacker News)](<https://news.ycombinator.com/item?id=50362910>)
+
+> “the shady and irresponsible way the industry went about the Datacenter build-out convinced them that the industry is not to be trusted.” — [Shitty-kitty (Hacker News)](<https://news.ycombinator.com/item?id=50362709>)
+
+**Sources:**
+
+1. [Reuters, via CNA](<https://www.channelnewsasia.com/business/democrats-planning-flood-ai-bills-when-they-take-control-congress-6530926>) — reporting. Checked: 6 Nov 2026, 16:06 CET
+2. [Reuters, via The Star](<https://www.thestar.com.my/tech/tech-news/2026/11/06/democrats-planning-flood-of-ai-bills-when-they-take-control-of-congress>) — reporting. Checked: 6 Nov 2026, 16:06 CET
+3. [Semafor (5 November)](<https://www.semafor.com/article/11/05/2026/democrats-are-fired-up-on-ai-consensus-is-harder>) — reporting. Checked: 6 Nov 2026, 16:11 CET
+
+### Protesters break into Microsoft's Amsterdam data-centre site as two days of actions against data centres begin across Europe
+
+*Industry & policy · New*
+
+**Published:** 6 Nov 2026, 12:55 CET
+
+Protesters broke into the construction site of a Microsoft AI data centre in Amsterdam's Sloterdijk district on Friday, at the start of **two days of 'Stop Dirty Data Centres' actions in 16 countries**, Reuters reported. Reuters put the number who got onto the site at about 100; the organiser Geef Tegengas told local broadcaster AT5 about 500, NL Times reported. Some climbed a crane and hung banners against AI.
+
+Riot police intervened and **arrested several protesters**, NL Times reported. The coalition wants a **moratorium on large data centres in Europe** until governments set clearer rules; other actions are planned in Dublin, outside the Polish parliament in Warsaw and at a Microsoft site in Denmark. Microsoft said it respected the right to protest peacefully but did not condone unlawful action.
+
+The site, three towers built by Pure Data Centres with Microsoft as the sole tenant, is going ahead despite Amsterdam's ban on new data centres because **its plans date from 2016**, before the ban, The Verge reported.
+
+**Analysis — why it matters:** *Analysis: The protests came two days after US voters backed limits on data centres in local ballots, so opposition to the build-out is now **organised on both sides of the Atlantic**.*
+
+**Caveat:** Counts differ: Reuters saw about 100 people on the site, the organisers said about 500. **The number of arrests was not known** when NL Times reported.
+
+**Sources:**
+
+1. [Reuters, via the Irish Independent (read through the fetch ladder)](<https://www.independent.ie/world-news/activists-breach-microsoft-data-centre-construction-site-in-amsterdam-as-protests-spread-in-europe/a/164200199.html>) — reporting. Checked: 6 Nov 2026, 16:09 CET
+2. [NL Times](<https://nltimes.nl/2026/11/06/protesters-break-onto-site-planned-microsoft-data-center-adam-police-intervene>) — reporting. Checked: 6 Nov 2026, 16:08 CET
+3. [The Verge](<https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam>) — reporting. Checked: 6 Nov 2026, 16:05 CET
+4. [Tom's Hardware](<https://www.tomshardware.com/tech-industry/data-centers/protesters-storm-microsoft-ai-data-center-construction-site-amsterdam-reportedly-first-of-85-targeted-actions-across-europe>) — reporting. Checked: 6 Nov 2026, 16:05 CET
+
+### Nvidia requires Southeast Asian cloud partners to enrol in its GPU tracking software, Bloomberg reports
+
+*Industry & policy · New*
+
+**Published:** 6 Nov 2026, 14:49 CET
+
+Cloud providers in Southeast Asia that want to become official **Nvidia Cloud Partners must now enrol in Nvidia's fleet tracking software**, Bloomberg reported, according to Tom's Hardware. The software, introduced last December as a data-centre management tool, gathers information on Nvidia hardware in participating companies' infrastructure, **including the locations of individual accelerators**.
+
+The requirement gives Nvidia another way to see where its chips run, as US officials grow frustrated with restricted processors reaching China through smuggling networks in the region. Participation stays voluntary outside the partner programme, and Nvidia has not said whether existing partners must enrol or whether the rule will extend beyond Southeast Asia. Nvidia was not immediately available for comment.
+
+**Analysis — why it matters:** *Analysis: Partner status brings preferred access to scarce chips, so tying it to tracking turns a **commercial perk into an export-control tool**.*
+
+**Caveat:** Based on one report citing people familiar with the requirements; **Nvidia has not confirmed it**, and Bloomberg's original was not read because it is paywalled.
+
+**Sources:**
+
+1. [Tom's Hardware, citing Bloomberg](<https://www.tomshardware.com/tech-industry/big-tech/nvidia-tightens-tracking-of-ai-gpus-in-southeast-asia-as-chinese-chip-smuggling-draws-scrutiny-report-claims-cloud-providers-must-join-monitoring-program-to-qualify-for-official-partner-status>) — reporting. Checked: 6 Nov 2026, 16:05 CET
+
+## Background — older or undated context
+
+*Earlier or undated items, carried for context only. They are not new reporting.*
+
+### FrontierPhysics preprint: no AI agent passes more than 46 of 168 attempts at end-to-end physics research
+
+*Research · Background — older context*
+
+**Published:** 4 Nov 2026
+
+BACKGROUND, 4 November. A preprint by Bingran You and 71 co-authors introduces FrontierPhysics, **56 research tasks built by 42 physicists** from their own projects. An agent must review the literature, plan and carry out the research, and hand in numerical results and a manuscript; automatic checks and expert rubrics judge whether the work is correct and publishable.
+
+Across 22 models in 26 configurations, **no configuration passed more than 46 of its 168 attempts**; Claude Opus 5.5 in Claude Code had the highest pass rate, 27.4%. The authors' manual review found that agents failed mainly through insufficiently rigorous reasoning and limited expert intuition, not missing physics knowledge.
+
+**Analysis — why it matters:** *Analysis: A useful check on talk of AI scientists: **even the best agent fails most real research tasks** in this test.*
+
+**Caveat:** A preprint, not peer reviewed. With 56 tasks and three attempts each, small gaps between agents are uncertain, and the authors found nine attempts that had been wrongly failed.
+
+**Sources:**
+
+1. [arXiv: FrontierPhysics](<https://arxiv.org/abs/2611.06910>) — primary source. Checked: 6 Nov 2026, 16:08 CET
+2. [Tech Times](<https://www.techtimes.com/articles/330154/20261106/no-ai-agent-passes-more-46-168-physics-research-attempts-new-frontierphysics-benchmark.htm>) — reporting. Checked: 6 Nov 2026, 16:08 CET
+
+## Key patterns (editorial analysis)
+
+- Friday's **AI stock rebound** did not change the politics: Democrats are preparing bills on data-centre power costs and AI testing, and IPO investors are still lowering Anthropic's range.
+- Opposition to data centres has spread from US ballots to **coordinated protests in 16 European countries**.
+- Accountability is moving to operators: Nvidia ties partner status to chip tracking, and the UK would **hold deployers of AI agents to account**.
+
+## Source coverage
+
+- Engine version: 3.31.0
+- Engine ran this edition: yes
+- Engine look-back: 2 days
+
+### Source status
+
+- reddit: ok, partial (18 threads; 11 sub-requests blocked with HTTP 403, 1 failed with HTTP 422)
+- youtube: ok (5 videos; transcripts for 5 of 5)
+- hackernews: ok (17 stories)
+- github: ok (19 items)
+- devto: ok (12 articles; tags ai and llm)
+- polymarket: not used: blocked in France (ANJ)
+- x: not searched (no consent-free source configured)
+
+### Notes
+
+- The window starts at 06:07 CET on 6 November, when the morning edition was issued. Every new or updated dispatch was first published after it; the FrontierPhysics preprint (4 November) is labelled background.
+- The installed last30days engine finished in 53 seconds with 71 evidence items from Reddit, Hacker News, GitHub, dev.to and YouTube. Its relevant clusters were Hacker News threads on the Anthropic IPO and the data-centre backlash and YouTube commentary on the sell-off. Stories were found with Google News RSS, publisher feeds, web searches after the engine run and the pages cited. Item counts are not counts of verified developments.
+- The community quotes come from the engine's relevance-qualified Hacker News comments; the two on the Democrats' plans were posted under a 4 November thread on the Texas election. They are anecdotal reactions, not evidence for the facts reported.
+- Polymarket not used: blocked in France (ANJ). X was not searched. Reddit returned results, but 11 of its search requests were blocked (HTTP 403) and one failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.
+- AP News and the Irish Independent blocked direct requests (HTTP 403); their articles were read through the fetch ladder's Chrome-like TLS route, live, not archive copies. Reuters reports were read in syndicated copies on CNA, The Star and the Irish Independent. Bloomberg's reports on Anthropic and Nvidia are paywalled and were read only through Quartz's and Tom's Hardware's summaries. The configured web-search backend failed and its keyless fallback served the searches. VentureBeat's feed returned HTTP 429 and Anthropic's news feed HTTP 404.
+- Not carried: Palo Alto Networks' talks to buy Clutch Security for about $500 million (first reported by The Information on 5 November), the doubling of Gemini 3.6 to 3.8 Flash API prices on 1 January 2027 (scheduled earlier), Amazon's text ordering for Alexa (a consumer feature), Hypercall's Anthropic-linked options, a report that Nvidia wants to turn Brightspeed telecom buildings into small data centres (one report), Stanford's Memorilla memory system (an October preprint) and the Nvidia H200 backlog in Hong Kong (covered on 5 November).
+- No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.
+
+### Engine footer (verbatim)
+
+```text
+---
+✅ All agents reported back!
+├─ 🟠 Reddit: 18 threads │ 1,303 upvotes │ 479 comments
+├─ 🔴 YouTube: 5 videos │ 1,320,926 views │ 5/5 with transcripts
+├─ 🟡 HN: 17 stories │ 676 points │ 939 comments
+├─ 👩‍💻 dev.to: 12 articles │ 189 reactions │ 101 comments
+├─ 🐙 GitHub: 19 items │ 30 reactions │ 379 comments
+├─ 🗣️ Top voices: r/artificial, r/OpenAI, r/singularity
+---
+```
