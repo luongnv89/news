@@ -1,0 +1,951 @@
+{
+ "schema_version": 2,
+ "date": "2026-11-06",
+ "issued_at": "2026-11-06T08:03:56+01:00",
+ "source": {
+  "url": "https://github.com/trending?since=daily",
+  "checked_at": "2026-11-06T07:01:21.461208+00:00",
+  "period": "daily",
+  "total_listed": 15
+ },
+ "editorial_note": "GitHub listed fifteen projects this Friday morning, and eight of them were already featured here in the past week. Of the rest, four stood out. LZ4's first release in over two years ==brings multithreaded compression into the library itself==. Vercel's agent-browser gives coding agents a text-first browser, Google publishes an official set of agent skills for its cloud, and Microsoft's VibeVoice turns hour-long recordings into speaker-labelled transcripts. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+ "coverage_notes": [
+  "All 15 listing entries were inspected. Exact public GitHub API metadata and recent releases were checked for all fifteen at about 07:02 UTC, and README files for six; every checked repository was active and unarchived. GitHub's API detects Apache-2.0 or MIT for three picks; for lz4/lz4 it reports NOASSERTION, and the repository's LICENSE file was read to establish the split BSD-2-Clause / GPL-2.0-or-later licensing.",
+  "No repeats. Eight entries featured before were left out without a material change since their last pick: NVIDIA/auto-ontology, vercel-labs/agent-desktop and JiaFeiMiao-K-Cat/DiscImageStudio (5 November), floci-io/floci and Usagi-org/ai-goofish-monitor (4 November), D4Vinci/Scrapling and max-sixty/worktrunk (3 November) and mattpocock/skills (31 October). Auto Ontology, agent-desktop, Floci, ai-goofish-monitor, worktrunk and mattpocock/skills have had no release since; Scrapling's v0.5.1 was already weighed on 5 November; Disc Image Studio's v1.4.1 and v1.4.2 add translations and a CD burning fix for some drives, judged incremental.",
+  "New entries not picked: garrytan/gstack (a personal Claude Code skill set, close to setups covered before, also left out on 5 November), scenario-labs/skills (agent skills that mostly need a paid Scenario account, also left out on 5 November) and ConardLi/garden-skills (six design, video and retrieval skills, a smaller overlap with today's google/skills pick).",
+  "No security-focused project was on today's list.",
+  "The preceding seven calendar dates, 30 October-5 November, were checked for local history; all seven editions exist.",
+  "The official listing was captured at 08:01:21 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+  "Speed, accuracy and capability descriptions are the maintainers' own, including LZ4's benchmark tables and VibeVoice's transcription length, language count and real-time figures. No candidate code, installer, skill, plugin, browser or model was installed, downloaded or run, and none of this is a security audit or endorsement."
+ ],
+ "projects": [
+  {
+   "repository": "lz4/lz4",
+   "url": "https://github.com/lz4/lz4",
+   "trending_rank": 8,
+   "description": "The ==reference implementation of LZ4==, the very fast lossless compression format used inside databases, file systems, kernels and network stacks. It ships the liblz4 library (block, frame and file APIs), the lz4 command-line tool and its test suites. Release v1.11.0, published on 4 November, is the first since July 2024 and gathers more than 850 commits.",
+   "why_interesting": "First time on our list, and the most foundational project on it. v1.11.0 ==puts multithreaded compression into the liblz4 frame API==: one new field, nbWorkers, and the output stays identical whatever the thread count, so results are reproducible. The release notes also report much faster compression of small blocks and dictionaries, clearer decompression error codes, and new contract tests, mutation testing and fuzzing that found and fixed corner-case bugs.",
+   "caveat": "The speed tables (for example roughly 7.5 GB/s with 16 workers at level 1) are the maintainers' own measurements on specific CPUs and compilers. ==nbWorkers is labelled experimental== in this release, and the static library stays single-threaded by default. Licensing is split: ==lib/ is BSD 2-Clause, the CLI and other files GPL-2.0-or-later==, which matters if you embed more than the library. We did not build or run it.",
+   "category": "Developer tools / compression library",
+   "language": "C",
+   "license": "BSD-2-Clause (lib) and GPL-2.0-or-later (other files)",
+   "stars_total": 12466,
+   "stars_period": 23,
+   "stars_period_label": "23 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-11-06T07:01:55Z",
+   "readme_checked_at": "2026-11-06T07:02:13Z",
+   "readme_source_url": "https://api.github.com/repos/lz4/lz4/readme",
+   "evidence_urls": [
+    "https://github.com/lz4/lz4",
+    "https://api.github.com/repos/lz4/lz4",
+    "https://github.com/lz4/lz4/releases/tag/v1.11.0",
+    "https://github.com/lz4/lz4/blob/dev/LICENSE"
+   ]
+  },
+  {
+   "repository": "vercel-labs/agent-browser",
+   "url": "https://github.com/vercel-labs/agent-browser",
+   "trending_rank": 10,
+   "description": "A ==native Rust CLI that gives an AI agent a browser== it drives one shell command at a time. snapshot returns the page as a compact accessibility tree with refs such as @e1; the agent clicks or fills a ref, reads the page again, and repeats. A background daemon keeps the browser open over the Chrome DevTools Protocol, and the tool also offers screenshots, network and storage inspection, tracing, an MCP server and versioned agent skills.",
+   "why_interesting": "First time on our list (its sibling agent-desktop was featured on 3 and 5 November). Short text snapshots are a cheaper, more checkable alternative to screenshot-driven browsing, and ==a click fails instead of reporting success when the target is covered or hidden==. v0.41.2 (3 November) lets agents load one skill reference at a time and adds a warning when a newer stable Chrome lists CVE fixes.",
+   "caveat": "Its first run ==downloads Chrome for Testing==, and Linux setup can install system libraries. An agent with a live browser can read and act on anything that browser can reach, including logged-in sessions if you attach to your own Chrome via CDP, so ==keep it on a separate profile== and use the documented domain allowlists and action policies. Pre-1.0 releases arrive every few days, so pin a version. We did not install it.",
+   "category": "AI agents / browser automation",
+   "language": "Rust",
+   "license": "Apache-2.0",
+   "stars_total": 46090,
+   "stars_period": 150,
+   "stars_period_label": "150 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-11-06T07:01:57Z",
+   "readme_checked_at": "2026-11-06T07:02:14Z",
+   "readme_source_url": "https://api.github.com/repos/vercel-labs/agent-browser/readme",
+   "evidence_urls": [
+    "https://github.com/vercel-labs/agent-browser",
+    "https://api.github.com/repos/vercel-labs/agent-browser",
+    "https://github.com/vercel-labs/agent-browser/releases/tag/v0.41.2",
+    "https://agent-browser.dev/security"
+   ]
+  },
+  {
+   "repository": "google/skills",
+   "url": "https://github.com/google/skills",
+   "trending_rank": 9,
+   "description": "Google's ==official collection of Agent Skills for its products==, mostly Google Cloud. The README lists 186 skills, from onboarding, IAM authentication and solution architectures to Agent Platform model deployment, tuning and evaluation, plus troubleshooting guides for individual services. It also bundles plugins (skills plus MCP servers) for Claude Code, Codex and Google's Antigravity CLI, and links to separate Android, Flutter, Dart, Firebase and Maps skill repositories.",
+   "why_interesting": "First time on our list. Skills are plain Markdown instructions that a coding agent loads on demand, so a vendor-maintained set means ==guidance that tracks the actual product==, rather than a model's stale memory of gcloud flags. It is Apache-2.0 and updated frequently: an API Gateway troubleshooting skill landed on 5 November.",
+   "caveat": "These skills steer an agent to ==run cloud commands with your credentials==, which can create billable resources or change IAM, so review what a skill does and use a scoped project. The bundled google-cloud-developer plugin ==sends an X-Goog-Api-Client attribution header== to Google's Developer Knowledge MCP server (added 5 November) and needs an API key for it. There are no tagged releases, so pin a commit. We did not install it.",
+   "category": "AI agents / cloud developer tools",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "stars_total": 22518,
+   "stars_period": 211,
+   "stars_period_label": "211 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-11-06T07:01:56Z",
+   "readme_checked_at": "2026-11-06T07:02:13Z",
+   "readme_source_url": "https://api.github.com/repos/google/skills/readme",
+   "evidence_urls": [
+    "https://github.com/google/skills",
+    "https://api.github.com/repos/google/skills",
+    "https://github.com/google/skills/commit/eb932e47484af69db1887b30778bc071d8d094eb"
+   ]
+  },
+  {
+   "repository": "microsoft/VibeVoice",
+   "url": "https://github.com/microsoft/VibeVoice",
+   "trending_rank": 13,
+   "description": "Microsoft Research's ==family of open voice AI models==, with code and model links. VibeVoice-ASR transcribes up to 60 minutes of audio in one pass and outputs who spoke, when and what, with custom hotwords and more than 50 languages; a streaming ASR version (September) transcribes as audio arrives. VibeVoice-Realtime-0.5B is a small streaming text-to-speech model, and a separate VibeASR.cpp engine targets CPUs.",
+   "why_interesting": "First time on our list. ==Speaker-labelled transcripts of hour-long recordings in a single pass== are directly useful for meetings, interviews and podcasts, and the ASR model is in Hugging Face Transformers and vLLM. It is also a rare case where a vendor documented pulling back: Microsoft removed the long-form VibeVoice-TTS code in September 2025 after misuse.",
+   "caveat": "The README says it is ==intended for research and development, not commercial use without further testing==. Model weights are separate, multi-gigabyte downloads (the main ASR model has 7B parameters), and accuracy and real-time figures are Microsoft's claims. Synthetic speech can impersonate people, so ==clone or publish voices only with consent==. The latest commit is from 8 October and the repo has no tagged releases. We downloaded nothing.",
+   "category": "AI / speech recognition and synthesis",
+   "language": "Python",
+   "license": "MIT",
+   "stars_total": 56227,
+   "stars_period": 223,
+   "stars_period_label": "223 stars today",
+   "archived": false,
+   "metadata_checked_at": "2026-11-06T07:02:01Z",
+   "readme_checked_at": "2026-11-06T07:02:14Z",
+   "readme_source_url": "https://api.github.com/repos/microsoft/VibeVoice/readme",
+   "evidence_urls": [
+    "https://github.com/microsoft/VibeVoice",
+    "https://api.github.com/repos/microsoft/VibeVoice",
+    "https://microsoft.github.io/VibeVoice",
+    "https://github.com/microsoft/VibeVoice/blob/main/docs/vibevoice-asr.md"
+   ]
+  }
+ ],
+ "listing": [
+  {
+   "rank": 1,
+   "repository": "NVIDIA/auto-ontology",
+   "url": "https://github.com/NVIDIA/auto-ontology",
+   "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+   "language": "Python",
+   "stars_total": 7874,
+   "stars_period": 2679,
+   "stars_period_label": "2,679 stars today"
+  },
+  {
+   "rank": 2,
+   "repository": "mattpocock/skills",
+   "url": "https://github.com/mattpocock/skills",
+   "description": "Skills for Real Engineers. Straight from my .agents directory.",
+   "language": "Shell",
+   "stars_total": 315717,
+   "stars_period": 2071,
+   "stars_period_label": "2,071 stars today"
+  },
+  {
+   "rank": 3,
+   "repository": "garrytan/gstack",
+   "url": "https://github.com/garrytan/gstack",
+   "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+   "language": "TypeScript",
+   "stars_total": 140155,
+   "stars_period": 612,
+   "stars_period_label": "612 stars today"
+  },
+  {
+   "rank": 4,
+   "repository": "Usagi-org/ai-goofish-monitor",
+   "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+   "description": "基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+   "language": "Python",
+   "stars_total": 17926,
+   "stars_period": 240,
+   "stars_period_label": "240 stars today"
+  },
+  {
+   "rank": 5,
+   "repository": "D4Vinci/Scrapling",
+   "url": "https://github.com/D4Vinci/Scrapling",
+   "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+   "language": "Python",
+   "stars_total": 98330,
+   "stars_period": 1655,
+   "stars_period_label": "1,655 stars today"
+  },
+  {
+   "rank": 6,
+   "repository": "vercel-labs/agent-desktop",
+   "url": "https://github.com/vercel-labs/agent-desktop",
+   "description": "Computer use CLI for AI agents",
+   "language": "Rust",
+   "stars_total": 17320,
+   "stars_period": 2173,
+   "stars_period_label": "2,173 stars today"
+  },
+  {
+   "rank": 7,
+   "repository": "max-sixty/worktrunk",
+   "url": "https://github.com/max-sixty/worktrunk",
+   "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+   "language": "Rust",
+   "stars_total": 11647,
+   "stars_period": 546,
+   "stars_period_label": "546 stars today"
+  },
+  {
+   "rank": 8,
+   "repository": "lz4/lz4",
+   "url": "https://github.com/lz4/lz4",
+   "description": "Extremely Fast Compression algorithm",
+   "language": "C",
+   "stars_total": 12466,
+   "stars_period": 23,
+   "stars_period_label": "23 stars today"
+  },
+  {
+   "rank": 9,
+   "repository": "google/skills",
+   "url": "https://github.com/google/skills",
+   "description": "Agent Skills for Google products and technologies",
+   "language": "Python",
+   "stars_total": 22517,
+   "stars_period": 211,
+   "stars_period_label": "211 stars today"
+  },
+  {
+   "rank": 10,
+   "repository": "vercel-labs/agent-browser",
+   "url": "https://github.com/vercel-labs/agent-browser",
+   "description": "Browser automation CLI for AI agents",
+   "language": "Rust",
+   "stars_total": 46090,
+   "stars_period": 150,
+   "stars_period_label": "150 stars today"
+  },
+  {
+   "rank": 11,
+   "repository": "scenario-labs/skills",
+   "url": "https://github.com/scenario-labs/skills",
+   "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+   "language": "Python",
+   "stars_total": 3241,
+   "stars_period": 667,
+   "stars_period_label": "667 stars today"
+  },
+  {
+   "rank": 12,
+   "repository": "ConardLi/garden-skills",
+   "url": "https://github.com/ConardLi/garden-skills",
+   "description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+   "language": "JavaScript",
+   "stars_total": 14325,
+   "stars_period": 175,
+   "stars_period_label": "175 stars today"
+  },
+  {
+   "rank": 13,
+   "repository": "microsoft/VibeVoice",
+   "url": "https://github.com/microsoft/VibeVoice",
+   "description": "Open-Source Frontier Voice AI",
+   "language": "Python",
+   "stars_total": 56226,
+   "stars_period": 223,
+   "stars_period_label": "223 stars today"
+  },
+  {
+   "rank": 14,
+   "repository": "floci-io/floci",
+   "url": "https://github.com/floci-io/floci",
+   "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+   "language": "Java",
+   "stars_total": 30603,
+   "stars_period": 779,
+   "stars_period_label": "779 stars today"
+  },
+  {
+   "rank": 15,
+   "repository": "JiaFeiMiao-K-Cat/DiscImageStudio",
+   "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+   "description": null,
+   "language": "C#",
+   "stars_total": 7463,
+   "stars_period": 984,
+   "stars_period_label": "984 stars today"
+  }
+ ],
+ "tracked": [
+  {
+   "repository": "mksglu/context-mode",
+   "url": "https://github.com/mksglu/context-mode",
+   "stars_total": 33571,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "xtool-org/xtool",
+   "url": "https://github.com/xtool-org/xtool",
+   "stars_total": 14824,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "morluto/rea",
+   "url": "https://github.com/morluto/rea",
+   "stars_total": 435412,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "debpalash/VoiceStudio",
+   "url": "https://github.com/debpalash/VoiceStudio",
+   "stars_total": 102185,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "HKUDS/CLI-Anything",
+   "url": "https://github.com/HKUDS/CLI-Anything",
+   "stars_total": 58330,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "vxcontrol/pentagi",
+   "url": "https://github.com/vxcontrol/pentagi",
+   "stars_total": 33472,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "NationalSecurityAgency/ghidra",
+   "url": "https://github.com/NationalSecurityAgency/ghidra",
+   "stars_total": 98209,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "xerj-org/xerj",
+   "url": "https://github.com/xerj-org/xerj",
+   "stars_total": 19085,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "K-Dense-AI/scientific-agent-skills",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+   "stars_total": 56241,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "affaan-m/ECC",
+   "url": "https://github.com/affaan-m/ECC",
+   "stars_total": 298023,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "lightseekorg/tokenspeed",
+   "url": "https://github.com/lightseekorg/tokenspeed",
+   "stars_total": 2873,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anthropics/claude-plugins-official",
+   "url": "https://github.com/anthropics/claude-plugins-official",
+   "stars_total": 46247,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "LibreSpark/LibreTV",
+   "url": "https://github.com/LibreSpark/LibreTV",
+   "stars_total": 23672,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "android/skills",
+   "url": "https://github.com/android/skills",
+   "stars_total": 10364,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "stars_total": 313172,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "MadsLorentzen/ai-job-search",
+   "url": "https://github.com/MadsLorentzen/ai-job-search",
+   "stars_total": 69933,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "ruvnet/ruflo",
+   "url": "https://github.com/ruvnet/ruflo",
+   "stars_total": 81013,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "hmjz100/LinkSwift",
+   "url": "https://github.com/hmjz100/LinkSwift",
+   "stars_total": 38085,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anomalyco/opencode",
+   "url": "https://github.com/anomalyco/opencode",
+   "stars_total": 224875,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "akitaonrails/ai-memory",
+   "url": "https://github.com/akitaonrails/ai-memory",
+   "stars_total": 15240,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "stablyai/orca",
+   "url": "https://github.com/stablyai/orca",
+   "stars_total": 116991,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Comfy-Org/ComfyUI",
+   "url": "https://github.com/Comfy-Org/ComfyUI",
+   "stars_total": 145293,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "mlabonne/llm-course",
+   "url": "https://github.com/mlabonne/llm-course",
+   "stars_total": 84924,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "headroomlabs-ai/headroom",
+   "url": "https://github.com/headroomlabs-ai/headroom",
+   "stars_total": 78963,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "withmarbleapp/os-taxonomy",
+   "url": "https://github.com/withmarbleapp/os-taxonomy",
+   "stars_total": 7615,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "shiyu-coder/Kronos",
+   "url": "https://github.com/shiyu-coder/Kronos",
+   "stars_total": 46974,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anthropics/claude-code",
+   "url": "https://github.com/anthropics/claude-code",
+   "stars_total": 154710,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "cloudflare/security-audit-skill",
+   "url": "https://github.com/cloudflare/security-audit-skill",
+   "stars_total": 62165,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Graphify-Labs/graphify",
+   "url": "https://github.com/Graphify-Labs/graphify",
+   "stars_total": 143128,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "vllm-project/vllm",
+   "url": "https://github.com/vllm-project/vllm",
+   "stars_total": 96435,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "DietrichGebert/ponytail",
+   "url": "https://github.com/DietrichGebert/ponytail",
+   "stars_total": 185392,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anthropics/knowledge-work-plugins",
+   "url": "https://github.com/anthropics/knowledge-work-plugins",
+   "stars_total": 34905,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "twentyhq/twenty",
+   "url": "https://github.com/twentyhq/twenty",
+   "stars_total": 60526,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "supabase/supabase",
+   "url": "https://github.com/supabase/supabase",
+   "stars_total": 114590,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "php/php-src",
+   "url": "https://github.com/php/php-src",
+   "stars_total": 41756,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "fastapi/fastapi",
+   "url": "https://github.com/fastapi/fastapi",
+   "stars_total": 104441,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Meloong-Git/PCL",
+   "url": "https://github.com/Meloong-Git/PCL",
+   "stars_total": 9580,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "luongnv89/claude-howto",
+   "url": "https://github.com/luongnv89/claude-howto",
+   "stars_total": 46632,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "nodejs/node",
+   "url": "https://github.com/nodejs/node",
+   "stars_total": 123269,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "NVIDIA/OpenShell",
+   "url": "https://github.com/NVIDIA/OpenShell",
+   "stars_total": 21184,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "SnailSploit/Claude-Red",
+   "url": "https://github.com/SnailSploit/Claude-Red",
+   "stars_total": 10419,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "OpenBMB/VoxCPM",
+   "url": "https://github.com/OpenBMB/VoxCPM",
+   "stars_total": 41113,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Renhuai123/ziwei-doushu",
+   "url": "https://github.com/Renhuai123/ziwei-doushu",
+   "stars_total": 16343,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "aws/agent-toolkit-for-aws",
+   "url": "https://github.com/aws/agent-toolkit-for-aws",
+   "stars_total": 3416,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "pbakaus/impeccable",
+   "url": "https://github.com/pbakaus/impeccable",
+   "stars_total": 104181,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Nutlope/hallmark",
+   "url": "https://github.com/Nutlope/hallmark",
+   "stars_total": 48988,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "makecindy/cindy",
+   "url": "https://github.com/makecindy/cindy",
+   "stars_total": 9362,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "pollen-robotics/microduck",
+   "url": "https://github.com/pollen-robotics/microduck",
+   "stars_total": 13490,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "google-gemini/gemini-cli",
+   "url": "https://github.com/google-gemini/gemini-cli",
+   "stars_total": 108748,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "coollabsio/coolify",
+   "url": "https://github.com/coollabsio/coolify",
+   "stars_total": 65693,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "JetBrains/thinkrail",
+   "url": "https://github.com/JetBrains/thinkrail",
+   "stars_total": 7788,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "AgriciDaniel/claude-seo",
+   "url": "https://github.com/AgriciDaniel/claude-seo",
+   "stars_total": 26966,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "TauricResearch/TradingAgents",
+   "url": "https://github.com/TauricResearch/TradingAgents",
+   "stars_total": 120872,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "NVIDIA/SkillSpector",
+   "url": "https://github.com/NVIDIA/SkillSpector",
+   "stars_total": 24574,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "gitroomhq/postiz-app",
+   "url": "https://github.com/gitroomhq/postiz-app",
+   "stars_total": 40993,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "nightly-labs/openbot",
+   "url": "https://github.com/nightly-labs/openbot",
+   "stars_total": 5869,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Panniantong/Agent-Reach",
+   "url": "https://github.com/Panniantong/Agent-Reach",
+   "stars_total": 109378,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "alchaincyf/huashu-design",
+   "url": "https://github.com/alchaincyf/huashu-design",
+   "stars_total": 28832,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "HKUDS/DeepTutor",
+   "url": "https://github.com/HKUDS/DeepTutor",
+   "stars_total": 55607,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "elayadesign/ai-design-skills",
+   "url": "https://github.com/elayadesign/ai-design-skills",
+   "stars_total": 14426,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "macro-inc/macro",
+   "url": "https://github.com/macro-inc/macro",
+   "stars_total": 6176,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "expo/skills",
+   "url": "https://github.com/expo/skills",
+   "stars_total": 4067,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "ruvnet/RuView",
+   "url": "https://github.com/ruvnet/RuView",
+   "stars_total": 102621,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "xiaolai/the-craft-of-selfteaching",
+   "url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+   "stars_total": 19134,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "CopilotKit/OpenBot",
+   "url": "https://github.com/CopilotKit/OpenBot",
+   "stars_total": 10287,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "milind-soni/OpenMausBot",
+   "url": "https://github.com/milind-soni/OpenMausBot",
+   "stars_total": 13843,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "thedotmack/claude-mem",
+   "url": "https://github.com/thedotmack/claude-mem",
+   "stars_total": 113679,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Donchitos/Claude-Code-Game-Studios",
+   "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+   "stars_total": 35814,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "lightpanda-io/browser",
+   "url": "https://github.com/lightpanda-io/browser",
+   "stars_total": 41433,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "pingdotgg/t3code",
+   "url": "https://github.com/pingdotgg/t3code",
+   "stars_total": 48655,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "mattpocock/skills",
+   "url": "https://github.com/mattpocock/skills",
+   "stars_total": 315723,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anthropics/skills",
+   "url": "https://github.com/anthropics/skills",
+   "stars_total": 187872,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Orkas-AI/Orkas",
+   "url": "https://github.com/Orkas-AI/Orkas",
+   "stars_total": 9047,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "vorssaint/vorssaint-utils",
+   "url": "https://github.com/vorssaint/vorssaint-utils",
+   "stars_total": 33168,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "THU-MAIC/OpenMAIC",
+   "url": "https://github.com/THU-MAIC/OpenMAIC",
+   "stars_total": 42766,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "bregman-arie/devops-exercises",
+   "url": "https://github.com/bregman-arie/devops-exercises",
+   "stars_total": 86548,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "beenuar/AiSOC",
+   "url": "https://github.com/beenuar/AiSOC",
+   "stars_total": 7302,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "cjpais/Handy",
+   "url": "https://github.com/cjpais/Handy",
+   "stars_total": 37727,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "FlashML-org/FreeToken",
+   "url": "https://github.com/FlashML-org/FreeToken",
+   "stars_total": 16724,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "kornia/kornia",
+   "url": "https://github.com/kornia/kornia",
+   "stars_total": 12341,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "hyprwm/Hyprland",
+   "url": "https://github.com/hyprwm/Hyprland",
+   "stars_total": 40389,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "vercel-labs/agent-desktop",
+   "url": "https://github.com/vercel-labs/agent-desktop",
+   "stars_total": 17325,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "max-sixty/worktrunk",
+   "url": "https://github.com/max-sixty/worktrunk",
+   "stars_total": 11647,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "JustVugg/colibri",
+   "url": "https://github.com/JustVugg/colibri",
+   "stars_total": 48234,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "D4Vinci/Scrapling",
+   "url": "https://github.com/D4Vinci/Scrapling",
+   "stars_total": 98332,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "paperclipai/paperclip",
+   "url": "https://github.com/paperclipai/paperclip",
+   "stars_total": 111532,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "karpathy/nanochat",
+   "url": "https://github.com/karpathy/nanochat",
+   "stars_total": 60317,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "floci-io/floci",
+   "url": "https://github.com/floci-io/floci",
+   "stars_total": 30603,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "anomalyco/hex",
+   "url": "https://github.com/anomalyco/hex",
+   "stars_total": 5369,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "spotify/portal-ai-plugins",
+   "url": "https://github.com/spotify/portal-ai-plugins",
+   "stars_total": 3170,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Usagi-org/ai-goofish-monitor",
+   "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+   "stars_total": 17929,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "NVIDIA/auto-ontology",
+   "url": "https://github.com/NVIDIA/auto-ontology",
+   "stars_total": 7877,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "github/spec-kit",
+   "url": "https://github.com/github/spec-kit",
+   "stars_total": 147986,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "The-PR-Agent/pr-agent",
+   "url": "https://github.com/The-PR-Agent/pr-agent",
+   "stars_total": 15145,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "FareedKhan-dev/kimi-k3-in-c",
+   "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+   "stars_total": 10788,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "JiaFeiMiao-K-Cat/DiscImageStudio",
+   "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+   "stars_total": 7464,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  },
+  {
+   "repository": "Thysrael/Horizon",
+   "url": "https://github.com/Thysrael/Horizon",
+   "stars_total": 12917,
+   "archived": false,
+   "checked_at": "2026-11-06T07:03:46+00:00"
+  }
+ ]
+}
