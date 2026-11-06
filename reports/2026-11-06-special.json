@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-06-special",
+  "edition": "Special edition",
+  "issued_at": "2026-11-06T17:19:29+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-06T16:13:14+01:00",
+  "window_end": "2026-11-06T17:17:51+01:00",
+  "editorial_note": "This Special edition, requested by the reader to test the full workflow on a new machine, covers the hour after the afternoon edition (16:13 to 17:17 CET) and carries ==two new stories==. Ramp's lead economist told TechCrunch that business spending on AI models barely grew in August and September even as usage rose, and White House adviser Kevin Hassett said this week's ballot defeats will not slow the data centres planned for the next two years. No new model release, and none of today's newsletter leads, was first published inside this short window.",
+  "stories": [
+    {
+      "id": "ramp-ai-spend-stall",
+      "section": "Industry & policy",
+      "headline": "Business AI spending barely grew in August and September even as usage rose, Ramp's economist tells TechCrunch",
+      "published_at": "2026-11-06T15:54:47+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Spending by US businesses on AI model tokens recorded ==two straight months of virtually no growth== in August and September, even as token volumes rose, Ramp lead economist Ara Kharazian told TechCrunch in an article published at 15:54 UTC on Friday. Ramp, a corporate card and expense company, tracks AI payments by more than 85,000 American businesses for its Ramp AI Index.",
+        "Ramp's own October update, published on 14 October, says the top 1% of firms paying for AI spent ==$9,568 per employee per month== in September, 3.1% below their July high of $9,873, while overall paid AI adoption reached 55.9% of businesses on Ramp. The median firm paying for AI spent $15.70 per employee per month.",
+        "New in the interview: Kharazian said token spend ==re-accelerated 8.9% from 23 September to 23 October==, but that the headwinds remain strong. He blamed price cuts by OpenAI and Anthropic and thriftier customers rather than weaker demand. \"Almost the entire spend on AI is from venture-backed, high-growth tech companies,\" he told TechCrunch, adding: \"The era of hypergrowth may be over.\"",
+        "TechCrunch also reported that Anthropic said in a recent filing that its price cuts reduced revenue growth by about $600 million; that filing was not read for this edition."
+      ],
+      "why_it_matters": "Analysis: Ramp's card data are one of the few outside measures of what businesses actually pay OpenAI and Anthropic. If falling prices keep spending flat while usage grows, revenue growth has to come from ==new kinds of use==, not from the same heavy spenders, which bears directly on the valuations discussed for Anthropic's IPO.",
+      "caveat": "Ramp's sample covers its own customers, and Ramp says its top-1% estimate is volatile and subject to revision. The ==October 8.9% figure comes from the TechCrunch interview== and was not found in a published Ramp index update; most September figures were first published on 14 October.",
+      "sources": [
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+          "type": "reporting",
+          "checked_at": "2026-11-06T17:17:49+01:00"
+        },
+        {
+          "label": "Ramp Economics Lab: Ramp AI Index October 2026 update",
+          "url": "https://econlab.substack.com/p/ai-index-oct-2026",
+          "type": "primary",
+          "checked_at": "2026-11-06T17:17:49+01:00"
+        },
+        {
+          "label": "Ramp AI Index",
+          "url": "https://ramp.com/data/ai-index",
+          "type": "primary",
+          "checked_at": "2026-11-06T17:17:51+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "hassett-data-centre-buildout",
+      "section": "Industry & policy",
+      "headline": "White House adviser Hassett says ballot defeats will not slow the data centres planned for the next two years",
+      "published_at": "2026-11-06T15:55:48+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "National Economic Council Director ==Kevin Hassett== said on Friday that he expects data-centre growth to ==continue as projected== despite the Democratic sweep in Tuesday's elections, CNBC reported at 15:55 UTC. Speaking on CNBC's Squawk on the Street, he said: \"right now, the data centers scheduled over the next couple of years aren't affected by these ballot initiatives.\"",
+        "In at least ==46 of at least 50== data-centre measures on 2026 ballots, majorities voted to restrict the facilities, according to Ballotpedia's tally as cited by CNBC. A CNBC Voter Poll found that ==56% of midterm voters== called data centres a crucial or major issue. Hassett blamed Thursday's tech-led market fall on uncertainty about what the political change means for data centres.",
+        "President Trump wrote on Truth Social on Friday that he is \"100% in favor of Super Intelligence (SI)\" and will work with states that want data centres, CNBC reported."
+      ],
+      "why_it_matters": "Analysis: The administration is signalling that it will keep backing the build-out wherever states allow it, while Democrats prepare data-centre and AI bills for January, as this afternoon's edition reported. The ==projects already scheduled== drive the chip and power orders behind the AI trade.",
+      "caveat": "Hassett's view is an official's forecast, not a projection backed by published data. The ==Ballotpedia count was read only through CNBC==, not on Ballotpedia itself.",
+      "sources": [
+        {
+          "label": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/06/data-centers-ai-elections-hassett.html",
+          "type": "reporting",
+          "checked_at": "2026-11-06T17:17:51+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (19 threads; 27 sub-requests blocked with HTTP 403, 2 failed with HTTP 422)",
+      "hackernews": "ok (30 stories)",
+      "github": "ok (14 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "Special edition requested by the reader on 6 November to test the full workflow on the new machine. The window runs from the afternoon edition's 16:13 CET issue to the last source check at 17:17 CET, about an hour, so few stories were expected. Both dispatches were first published inside it.",
+      "The installed last30days engine finished in 107.5 seconds with 75 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were general commentary and stories already covered (METR's Anthropic estimate, the midterm sell-off); neither dispatch came from its ranked clusters. Stories were found with 16 Google News RSS queries, publisher feeds, Hacker News's newest-story list, post-engine web searches and the primary pages. Item counts are not counts of verified developments.",
+      "No community quotes: the engine returned no relevance-qualified comments on either story.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 27 of its search requests were blocked (HTTP 403) and two failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Bloomberg's report that the ECB is considering a review of banks' data-centre lending is bot-walled (HTTP 403) and paywalled; the direct, Chrome-like TLS and Internet Archive routes all failed, as did a syndicated copy on Investing.com, so it was not read and is not carried. VentureBeat's feed returned HTTP 429. The configured web-search backend hit its daily cap and keyless fallbacks served the searches.",
+      "Newsletter leads from the Iris mail bot (13 in today's file, 5 without a link; no file for 5 November) were used as unverified leads and verified independently against primary sources. None was first published in this window: the Riot Corsicana lease, China's RTX Pro 5500 orders, Render Sandboxes, Glasshand, the UAE agent plan, Wiz's Bedrock report and Alphabet's late-October fall predate it; the other six were covered or noted in earlier editions.",
+      "Not carried: the DOJ Super Intelligence Task Force (announced 5 November), the indictment of three people over a $129 million AI impersonation scheme (unsealed 5 November), Shield AI's $5.3 billion Echodyne deal (5 November), Personal Finance in Claude (5 November), Devin Review 2.0 (5 November), Google Antigravity 2.29 and ING's sale of data-centre loans (reported before this window).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 19 threads │ 5,038 upvotes │ 2,505 comments\n├─ 🟡 HN: 30 stories │ 3,341 points │ 2,560 comments\n├─ 👩‍💻 dev.to: 12 articles │ 250 reactions │ 142 comments\n├─ 🐙 GitHub: 14 items │ 52 reactions │ 252 comments\n├─ 🗣️ Top voices: r/singularity, r/artificial, r/OpenAI\n---"
+  },
+  "key_patterns": [
+    "The AI trade's two pressure points met in one hour: ==flat business spending== on models (Ramp via TechCrunch) and political risk to data centres, which the White House says will not touch ==projects scheduled for the next two years==."
+  ],
+  "previous_issue_id": "2026-11-06-afternoon"
+}
