@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-07-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-07T06:09:20+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-05T15:30:00+01:00",
+  "window_end": "2026-11-07T06:08:00+01:00",
+  "editorial_note": "This Morning edition covers Friday evening and the night since the Special edition closed at 17:19 CET, and carries ==seven new stories==. OpenAI has closed the first $11 billion of a round at a $1.25 trillion valuation, Bloomberg reports, and Microsoft is winding down its rental of AI computing from Oracle. A physics start-up says a ==non-public Anthropic model== found a machine-checked proof of an open quantum-computing conjecture, and OpenAI published a wet-lab benchmark. There is ==no new frontier model release==. The window was widened back to 15:30 CET on 5 November to carry one verified newsletter lead, Visa's shopping-agent benchmark; nothing an earlier edition carried is repeated.",
+  "stories": [
+    {
+      "id": "openai-11b-round-1-25t",
+      "section": "Industry & policy",
+      "headline": "OpenAI closes the first $11 billion of a round at a $1.25 trillion valuation, Bloomberg reports",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI has closed ==$11 billion== of new funding, the first part of a round that values it at ==$1.25 trillion==, Bloomberg News reported on Friday, citing people familiar with the matter. The money had been wired as of Friday, and the rest of the round, which could reach ==$20 billion== in total, is expected in the coming weeks, one person said. OpenAI declined to comment.",
+        "According to Bloomberg, OpenAI first set out to raise $30 billion or more at a $1.4 trillion valuation, then scaled back its plans during this week's sell-off in AI shares. It raised $122 billion in March at an $852 billion valuation.",
+        "TechCrunch notes the report came hours after Bloomberg said some prospective buyers of shares in Anthropic's IPO believe its valuation could be as low as $1.1 trillion."
+      ],
+      "why_it_matters": "Analysis: the round is still large, but it is smaller and priced lower than OpenAI first sought, a measure of how far sentiment toward AI spending has turned since the midterm elections.",
+      "caveat": "The figures come from ==anonymous sources==; OpenAI has not confirmed the amount or the valuation, and the round is not complete.",
+      "sources": [
+        {
+          "label": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-06/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        },
+        {
+          "label": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:03:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "microsoft-oracle-rental-wind-down",
+      "section": "Industry & policy",
+      "headline": "Microsoft is winding down its rental of AI computing from Oracle, Bloomberg reports",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "Microsoft is ==winding down an arrangement to rent AI computing from Oracle==, part of a larger reassessment of billions of dollars in cloud partnerships, Bloomberg News reported on Friday, citing people familiar with the matter. Microsoft has been turning off the rented capacity in recent months after ==declining to renew the contract==, the report said.",
+        "The capacity became less useful because it no longer fit Microsoft's specifications; the Oracle hardware used ==older-generation Nvidia chips==, according to the people. An Oracle spokesperson told Reuters that demand for its AI infrastructure remains strong, including for earlier-generation GPUs. Microsoft did not immediately respond to Reuters.",
+        "Oracle announced the multi-year deal in 2023, saying Microsoft would use its cloud's AI infrastructure for the AI version of Bing; terms were not disclosed. Reuters links the move to other signs that Microsoft is rethinking how it buys capacity, including the IREN delay this paper reported on Friday morning."
+      ],
+      "why_it_matters": "Analysis: the stated reason is the age of the chips rather than falling demand, but it is another case of a hyperscaler cutting rented capacity in the same week investors began to doubt AI spending.",
+      "caveat": "Bloomberg's report relies on anonymous sources, and Microsoft has not commented.",
+      "sources": [
+        {
+          "label": "Bloomberg (via Bloomberg Law)",
+          "url": "https://news.bloomberglaw.com/artificial-intelligence/microsoft-winding-down-oracle-deal-to-rent-ai-cloud-capacity-2",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        },
+        {
+          "label": "Reuters (via Belleville News-Democrat)",
+          "url": "https://www.bnd.com/news/business/article317962921.html",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "psi-aaronson-ambainis-proof",
+      "section": "Research",
+      "headline": "Physics start-up PSI says a non-public Anthropic model found a machine-checked proof of the Aaronson-Ambainis conjecture",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "Physical Superintelligence (PSI) said on Friday that a research system it built, running ==a non-public Anthropic model==, found a proof of the ==Aaronson-Ambainis conjecture==, open since 2008. The conjecture concerns when quantum computers can be exponentially faster than ordinary ones: if it is true, they are at most polynomially faster on random inputs that lack special structure.",
+        "PSI says the system had a complete proof ==during the third day== of the run and that Lean, a proof assistant that checks every step by computer, accepted it. The system then improved the result twice, and Lean accepted the final version. PSI has published a paper and the Lean proofs and code on GitHub.",
+        "Guy Blanc, Jordan Docter, Carmen Strassle and Li-Yang Tan of Stanford, who settled a special case in August, are reading the proof and writing a shorter exposition for experts, PSI says; it quotes them calling it a huge result. Business Insider reports it is not clear which unreleased model PSI used, and Anthropic did not respond to its request for comment."
+      ],
+      "why_it_matters": "Analysis: if it holds, this is a result on a central question in quantum complexity found largely by an AI system, and the Lean code lets anyone re-run the checks.",
+      "caveat": "This is ==PSI's own claim== and has not been peer reviewed. The Anthropic model is not named and cannot be tested by outsiders. A Lean check proves the formal statements; experts still need to confirm that they match the conjecture as stated.",
+      "sources": [
+        {
+          "label": "PSI",
+          "url": "https://psi.inc/research/aaronson-ambainis",
+          "type": "primary",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        },
+        {
+          "label": "PSI on GitHub (paper, Lean proofs and code)",
+          "url": "https://github.com/physical-superintelligence/aaronson-ambainis",
+          "type": "primary",
+          "checked_at": "2026-11-07T06:05:00+01:00"
+        },
+        {
+          "label": "Business Insider",
+          "url": "https://www.businessinsider.com/anthropic-quantum-computing-breakthrough-aaronson-ambainis-math-physics-psi-2026-11",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        },
+        {
+          "label": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1xpgl2k/an_unreleased_anthropic_ai_model_reportedly/",
+          "type": "community",
+          "checked_at": "2026-11-07T06:03:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-biobasicsbench",
+      "section": "Research",
+      "headline": "OpenAI's BioBasicsBench tests agents on raw wet-lab data; GPT-6 Astra earns 66.7% of the credit",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI published ==BioBasicsBench==, a benchmark built with the enzyme-design company Ligo that asks AI agents to read raw evidence from routine wet-lab work: gel and blot images, plate photos, microscopy, sequencing reads, instrument exports and bench videos. Its ==100 tasks== cover protein methods, imaging and cytometry, assays, nucleic acid methods and molecular cloning, and test whether an agent can spot errors and say when the evidence cannot support a conclusion.",
+        "Ligo scientists wrote the tasks from their own experiments with grading rubrics, and each task had an internal review, an external review by a PhD-level wet-lab scientist and a final check. OpenAI ran seven of its models in 37 settings, five attempts per task, for 18,500 results.",
+        "At the xhigh reasoning setting, ==GPT-6 Astra earned 66.7%== of the available credit, GPT-6.1 Sol 62.0% and ==GPT-5.6 Sol 43.8%==, with Astra using about half Sol's output tokens per task. In one example, Astra noticed that a control plate was labelled for the wrong antibiotic, which GPT-5.6 Sol missed."
+      ],
+      "why_it_matters": "Analysis: the benchmark targets the routine, messy analysis that real lab work depends on, and OpenAI says it also uses the results to track what model gains mean for biosafety and biosecurity.",
+      "caveat": "OpenAI built the benchmark with a partner and tested ==only its own models==; the scores are its own measurements.",
+      "sources": [
+        {
+          "label": "OpenAI",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+          "type": "primary",
+          "checked_at": "2026-11-07T06:05:00+01:00"
+        },
+        {
+          "label": "R&D World",
+          "url": "https://www.rdworldonline.com/openai-unveils-biobasicsbench-a-benchmark-to-gauge-how-well-ai-agents-read-raw-experimental-data-across-100-routine-wet-lab-tasks",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:04:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "visa-agentic-commerce-benchmark",
+      "section": "Coding & agents",
+      "headline": "Visa's shopping benchmark: AI agents failed 42.8% of runs, and most failed runs still ended in a purchase",
+      "published_at": "2026-11-05",
+      "freshness": "new",
+      "paragraphs": [
+        "Visa released the ==Visa Agentic Commerce Benchmark== on Thursday 5 November; this paper did not carry it then. In the first round, ==22 AI models from 12 labs== took on 15 shopping tasks such as buying a TV, a laptop or a personal-care appliance. To pass, a model had to uncover the shopper's unstated requirements through conversation and buy only if something fitted, or decline.",
+        "Visa's release, as reported by PYMNTS, says ==42.8% of test runs failed==. The best models passed 82.2% of their runs and the worst 28.9%. In ==54% of failed runs== the agent still made a purchase, either one that missed the customer's requirements or one made before it had found them all. The five most expensive models per run passed 67.1% of runs, the five cheapest 50.2%.",
+        "Visa says models that passed a scenario often failed when made to repeat it. It plans to add scenarios and extend the tests to checkout, payment and order placement, and the benchmark is open for anyone to try on its Visa Payments Frontier site."
+      ],
+      "why_it_matters": "Analysis: the failure that matters most here is not an agent giving up but one confidently buying the wrong thing, which is exactly where payment networks and merchants carry the risk.",
+      "caveat": "Visa designed and ran the benchmark, which covers only three product categories; its release does not say which model scored what.",
+      "sources": [
+        {
+          "label": "Visa",
+          "url": "https://investor.visa.com/news/news-details/2026/Visa-Releases-First-of-Its-Kind-Industry-Benchmark-for-AI-Shopping-Almost-Half-of-Test-Runs-Fail/default.aspx",
+          "type": "primary",
+          "checked_at": "2026-11-07T06:05:00+01:00"
+        },
+        {
+          "label": "PYMNTS",
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/visa-finds-ai-models-fail-43percent-shopping-test-runs",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "meta-muse-specialized-models",
+      "section": "Models",
+      "headline": "Meta upgrades the models behind Muse and Meta AI with skills from Muse Wonder, and adds Spaces to Muse",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "Meta is rolling out ==specialized versions of its existing models==, trained using its Muse Wonder series, to people who use Muse and Meta AI. They bring two Muse Wonder capabilities: ==Active Memory==, which judges which earlier information still matters and which is stale, and ==Active Focus==, which keeps working toward a goal when something goes wrong.",
+        "Meta says the improved Muse models show a ==2.4x reduction== in forgetting information critical to a user's goal, and a 67% improvement in completing everyday tasks where unexpected issues arise. On its own Active Memory evaluation the current Muse model uses critical context correctly in 90% of tasks, against 76% for the previous one, and on Meta's Personal Superintelligence Index it scores 47% against 38%.",
+        "Separately, Meta launched Spaces in Muse: a user describes an idea in chat and Muse builds a tracker, planner or project board in the sidebar, which can stay up to date from connected apps, TechCrunch reports."
+      ],
+      "why_it_matters": "",
+      "caveat": "All figures are ==Meta's own evaluations==, with no independent results; Meta has not named the models or given their sizes.",
+      "sources": [
+        {
+          "label": "Meta AI Research",
+          "url": "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+          "type": "primary",
+          "checked_at": "2026-11-07T06:06:00+01:00"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "google-takes-crusoe-wyoming-site",
+      "section": "Industry & policy",
+      "headline": "Google takes over Crusoe's unfinished Wyoming data-centre site after pledging $17 billion for it",
+      "published_at": "2026-11-06",
+      "freshness": "new",
+      "paragraphs": [
+        "Crusoe confirmed on Friday that it has ==sold its unfinished data-centre project in southeast Wyoming to Google==, a day after Google announced a ==$17 billion== investment to build its first Wyoming data centre there. Financial terms were not disclosed, Reuters reports.",
+        "Crusoe says it completed the pre-development work, including site selection, government approvals and the power strategy. Google is building the campus with Tallgrass Energy, Black Hills Energy, American Electric Power and Related Digital. TechCrunch reports that Google had raised concerns about the project's cost and timeline under Crusoe; Bloomberg first reported the handover in June.",
+        "Crusoe is still developing another campus for Google near Amarillo, Texas. Its chief executive, Chase Lochmiller, said the company has more than ==6 gigawatts of contracted capacity==, according to Reuters."
+      ],
+      "why_it_matters": "Analysis: a hyperscaler taking a troubled site in-house shows how hard it is for independent developers to deliver giant campuses on time, at a moment when voters have turned against data centres.",
+      "caveat": "",
+      "sources": [
+        {
+          "label": "Reuters (via Investing.com)",
+          "url": "https://www.investing.com/news/stock-market-news/google-acquires-wyoming-data-center-site-from-ai-infrastructure-firm-crusoe-5009084",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:06:00+01:00"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+          "type": "reporting",
+          "checked_at": "2026-11-07T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (24 threads; 23 search requests blocked with HTTP 403, 2 lookups failed with HTTP 422)",
+      "hackernews": "ok (29 stories)",
+      "github": "ok (15 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The window runs from the Special edition's 17:19 CET issue on 6 November to the last source check at 06:08 CET, widened back to 15:30 CET on 5 November for one newsletter lead: Visa's benchmark was released on 5 November, verified against Visa's own release, and no earlier edition carried it. Nothing else from the widened hours is repeated or added.",
+      "The installed last30days engine finished in 106 seconds with 80 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were commentary and stories already covered (the midterm sell-off, AI-accelerated research); it surfaced the PSI proof and OpenAI's benchmark only as low-engagement posts. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web searches and the primary pages. Item counts are not counts of verified developments.",
+      "No community quotes: the engine returned no relevance-qualified comments on these stories.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 23 of its search requests were blocked (HTTP 403) and two lookups failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Bloomberg's OpenAI and Oracle reports were read through Bloomberg's own page and Bloomberg Law's syndicated copy; Reuters copies were read on syndication partners because reuters.com did not return article text. VentureBeat's feed returned HTTP 429. No source needed the anti-bot fetch route.",
+      "Newsletter leads from the Iris mail bot: today's file has 2 leads (1 without a link). Visa's benchmark is carried; the Reflection Beam pricing change on Ollama Cloud is a minor price notice and is not carried. Yesterday's 13 leads were handled by earlier editions; of those not carried, the Riot Corsicana lease and China's RTX Pro 5500 orders (4 November), the UAE agent plan (June) and Wiz's Bedrock report (30 October) fall outside the 48-hour lead window; Render Sandboxes and Glasshand were not re-checked.",
+      "Not carried: Meta's pause of its business-terms update (announced 13:14 CET on 6 November, before this window), Perplexity Teammates (5 November), OpenAI's agreement to buy Pierre (4 November), Groq's reported fundraising at an $8 billion valuation (paywalled, not read) and reports about alleged espionage targeting Nvidia's chief executive (not confirmed by primary sources).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 24 threads │ 4,031 upvotes │ 1,786 comments\n├─ 🟡 HN: 29 stories │ 1,145 points │ 871 comments\n├─ 👩‍💻 dev.to: 12 articles │ 323 reactions │ 178 comments\n├─ 🐙 GitHub: 15 items │ 69 reactions │ 218 comments\n├─ 🗣️ Top voices: r/artificial, r/OpenAI, r/singularity\n---"
+  },
+  "key_patterns": [
+    "Money is still flowing but on harder terms: OpenAI's round is priced at ==$1.25 trillion==, below the $1.4 trillion it first sought, while Microsoft drops rented capacity built on ==older Nvidia chips== and Google takes a troubled site in-house.",
+    "Three new tests measure agents on routine work rather than showcase tasks: wet-lab analysis, where the best OpenAI model earns ==66.7%== of the credit, and shopping, where ==42.8% of runs failed==; both were designed by interested parties.",
+    "The day's biggest research claim, PSI's proof, comes with Lean code anyone can re-run but from ==a model no outsider can use==."
+  ],
+  "previous_issue_id": "2026-11-06-special"
+}
