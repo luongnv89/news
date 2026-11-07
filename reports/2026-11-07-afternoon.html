@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Saturday 7 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-07-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Saturday 7 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-07-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-07T16:08:30+01:00">Saturday 7 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-07-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-07-afternoon.html">This edition</a><a href="2026-11-07-afternoon.md">Markdown</a><a href="2026-11-07-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-07-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Saturday 7 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-06T17:19:29+01:00">6 Nov 2026, 17:19 CET</time> to <time datetime="2026-11-07T16:08:25+01:00">7 Nov 2026, 16:08 CET</time> (Paris time). Issued <time datetime="2026-11-07T16:08:30+01:00">7 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">Saturday brought little fresh news, so this Afternoon edition carries <mark class="hl">five stories</mark>, four of them from Friday evening and the night that this morning&#x27;s edition did not carry. The window therefore reopens the overnight hours, back to the Special edition&#x27;s close at 17:19 CET on 6 November, and is labelled as widened; nothing an earlier edition carried is repeated. The one story from Saturday itself is a New York Times investigation into <mark class="hl">Chinese firms cleared to handle Nvidia&#x27;s H200 chips</mark>. Google DeepMind published two working papers in which AI agents helped weaken legacy 1024-bit RSA, and Anthropic is reported to be pressing ahead with its listing. There is <mark class="hl">no new frontier model release</mark> and no coding-agent launch worth carrying.</p><p class="tally">5 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-07-morning.html">2026-11-07-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-deepmind-rsa-1024-cryptanalysis" aria-labelledby="h-deepmind-rsa-1024-cryptanalysis"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-deepmind-rsa-1024-cryptanalysis">Google DeepMind says human-guided AI agents found two weaknesses in legacy 1024-bit RSA</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-06">6 Nov 2026</time></p><div class="story-body"><p>Google DeepMind announced on the evening of 6 November, Paris time, two working papers written with cryptographers Nadia Heninger and Emmanuel Thomé in which AI agents, supervised by researchers, attacked <mark class="hl">legacy 1024-bit RSA</mark>. Both papers state that deployed RSA keys of <mark class="hl">2048 bits or more are not threatened</mark>.</p><p>The first paper shows that the PKCS#1 v1.5 signing format stops adding protection once an attacker may submit more than about half a block of data, or a 64-byte digest at 1024 bits. It also reports a re-run of a published 1024-bit signature computation: the first root took <mark class="hl">391 CPU core-years, 3.5 times less</mark> than the original, and two cooperating AI agents designed, ran and debugged it in under four days.</p><p>The second paper, dated 5 November, is theoretical. With a precomputation costing about one factorisation, each further 1024-bit key could be factored at about 1/58 of the usual cost, <mark class="hl">30 times less</mark> than with the best earlier method for that budget. One model generated the proofs and a second checked them, with the algebra machine-checked in Lean 4.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the practical risk is limited to old keys still left in devices and signing services, but the papers are a concrete case of AI agents moving a slow mathematical field in days rather than months.</p></aside><p class="caveat"><span class="label">Caveat.</span> Both are <mark class="hl">working papers, not peer reviewed</mark>. The factoring gain is a leading-order estimate with lower-order terms set to zero; no factorisation factory was built and no keys were factored.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://storage.googleapis.com/deepmind-media/papers/Faster_Affine_Root_and_a_1024bit%20Computation.pdf" rel="noopener noreferrer">Google DeepMind working paper: Modular Roots from a Restricted Oracle</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:57+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://storage.googleapis.com/deepmind-media/papers/Fan_Factories_Multiple_Number_Fields_in_Factorization_Factories_and_Batch_NFS.pdf" rel="noopener noreferrer">Google DeepMind working paper: Fan Factories</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:57+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.aichatdaily.com/ai-security/google-deepmind-agents-find-two-weaknesses-legacy-1024-bit" rel="noopener noreferrer">AI Chat Daily</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:07:00+01:00">7 Nov 2026, 16:07 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-microsoft-ai-frontiers-ends" aria-labelledby="h-microsoft-ai-frontiers-ends"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-microsoft-ai-frontiers-ends">John Langford leaves Microsoft and says its AI Frontiers research group is over after a move into Microsoft AI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-06">6 Nov 2026</time></p><div class="story-body"><p>Machine-learning researcher John Langford wrote on his blog on 6 November that he has <mark class="hl">left Microsoft</mark> and that <mark class="hl">AI Frontiers is over</mark>. The roughly 50-person group inside Microsoft Research worked on agents, such as the Autogen framework and the Fara computer-use agent, and on new training methods.</p><p>Langford wrote that the group was moved into <mark class="hl">Microsoft AI in early September</mark>, and that its leadership&#x27;s philosophy is scaling and &quot;aggressively not research&quot;. He said every other founding member of the group&#x27;s leadership seems to have reached a similar conclusion, and that there will be no internships with the group next year.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: it is a first-hand account of a large lab choosing scale over exploratory research, and it removes one of the few Microsoft teams publishing on agent frameworks.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is <mark class="hl">one departing leader&#x27;s account</mark>; Microsoft has not commented on it, and the group&#x27;s formal status and remaining staff are not described.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://hunch.net/?p=13764006" rel="noopener noreferrer">John Langford, hunch.net</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:59+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.indiatoday.in/technology/news/story/microsoft-ai-research-clash-john-langford-quits-declares-ai-frontiers-over-3034334-2026-11-07" rel="noopener noreferrer">India Today</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:07:00+01:00">7 Nov 2026, 16:07 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-h200-licensees-empty-offices" aria-labelledby="h-h200-licensees-empty-offices"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-h200-licensees-empty-offices">US cleared Chinese firms with empty offices and sanctioned ties to handle Nvidia&#x27;s H200 chips, the New York Times reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-07T05:00:00-05:00">7 Nov 2026, 11:00 CET</time></p><div class="story-body"><p>A Chinese company called <mark class="hl">New Matrix</mark>, which the Commerce Department approved this year to assemble Nvidia&#x27;s H200 chips into AI servers, lists an office in a Beijing industrial park that stands empty, the New York Times reported on Saturday. The building&#x27;s directory does not include the firm, and the park&#x27;s management agency told reporters it had no record of it.</p><p>According to Chinese corporate records cited by the Times, New Matrix was created 17 months ago and its owners have ties to a Chinese private equity fund the US government <mark class="hl">placed on a trade blacklist in 2024</mark>. Two analysts who examined the records told the paper they believed the firm may be a front for companies associated with that fund.</p><p>A summary of the full report by FourWeekMBA says New Matrix is the second approved H200 handler with no apparent presence at its address, after Maginfra in September, and that roughly <mark class="hl">two dozen Chinese firms</mark> appear to have been approved to buy or handle the chips. The Bureau of Industry and Security told the Times it carefully reviews all applications for national-security risks.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the H200 sales were allowed on condition that every company in the chain passed a security review; a second licensee with no visible operations questions how that review is done, just as Congress prepares closer scrutiny of Nvidia&#x27;s China links.</p></aside><p class="caveat"><span class="label">Caveat.</span> The New York Times page was read only up to its opening section; the agency&#x27;s response and the count of about two dozen licensees come from FourWeekMBA&#x27;s summary of the full article, read through a Chrome-like TLS route after a 429 reply. The front-company view is that of two analysts; <mark class="hl">no charges or licence revocations</mark> have been reported.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.nytimes.com/2026/11/07/business/economy/nvidia-chips-chinese-firms.html" rel="noopener noreferrer">The New York Times</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:56+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://fourweekmba.com/ai-two-us-cleared-nvidia-h200-firms-in-china-had-empty-offices" rel="noopener noreferrer">FourWeekMBA (summary of the Times report)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:07:09+01:00">7 Nov 2026, 16:07 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-ipo-investor-doubts" aria-labelledby="h-anthropic-ipo-investor-doubts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-ipo-investor-doubts">Anthropic still plans to list before Thanksgiving and raise $80 billion to $100 billion, the Financial Times reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-07">7 Nov 2026</time></p><div class="story-body"><p>Update to Friday&#x27;s reports that prospective buyers were discussing a valuation of $1.2 trillion to $1.3 trillion. Anthropic has no intention of delaying its listing, unnamed sources told the Financial Times, in a report LinkedIn News summarised early on 7 November. The company still plans to <mark class="hl">go public before the US Thanksgiving holiday</mark> on 26 November.</p><p>According to the same report, Anthropic aims to raise <mark class="hl">$80 billion to $100 billion</mark> at a valuation of <mark class="hl">$1.25 trillion to $1.75 trillion</mark>. An earlier Wall Street Journal report had said Thursday&#x27;s AI-led market sell-off raised investor doubts about the plan, with some wondering whether the offering would be postponed.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the reported range still sits above the $1.2 trillion to $1.3 trillion buyers were discussing on Friday, so the price set during next week&#x27;s marketing will show who gave way.</p></aside><p class="caveat"><span class="label">Caveat.</span> Anthropic has announced no price range, share count or date. The FT article is paywalled and was <mark class="hl">not read directly</mark>; its figures come from LinkedIn News&#x27;s summary.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.linkedin.com/news/story/anthropic-stays-the-course-on-ipo-despite-market-turmoil-7762540/" rel="noopener noreferrer">LinkedIn News (summary of the Financial Times report)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:58+01:00">7 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-tsmc-3d-dram-nvidia-request" aria-labelledby="h-tsmc-3d-dram-nvidia-request"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-tsmc-3d-dram-nvidia-request">TSMC weighs making advanced memory chips at Nvidia&#x27;s request, The Information reports; Nvidia is also financing packaging capacity at SPIL</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-06">6 Nov 2026</time></p><div class="story-body"><p>Taiwan Semiconductor Manufacturing Co. has begun drafting plans to make an advanced memory chip, <mark class="hl">3D DRAM</mark>, at the request of Nvidia, its biggest customer, The Information reported on Friday, citing two people with direct knowledge, according to Reuters. TSMC could build new factories or convert an existing plant, the report said; it was not clear when production would start.</p><p>A move into memory would put TSMC up against <mark class="hl">Samsung, SK Hynix and Micron</mark> during an AI-driven memory shortage that has pushed prices up. TSMC and Nvidia did not immediately respond to Reuters.</p><p>Separately, Reuters reported in a 6 November article on chip packaging that Nvidia is providing <mark class="hl">billions of dollars in financing</mark> to expand CoWoS packaging capacity at Siliconware Precision Industries, a unit of ASE Technology, for new factory space and equipment, citing one unnamed industry executive.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: memory and packaging, not chip design, are now the bottlenecks on AI hardware, and Nvidia is spending to widen both, pulling its suppliers into markets they did not plan to enter.</p></aside><p class="caveat"><span class="label">Caveat.</span> Both reports rest on <mark class="hl">unnamed sources</mark>; neither TSMC nor Nvidia has confirmed them. The Information&#x27;s article is paywalled and was read only through Reuters&#x27; account of it.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.kansascity.com/news/business/article317959971.html" rel="noopener noreferrer">Reuters, via the Kansas City Star</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:58+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/news/1029248/tsmc-is-apparently-considering-getting-into-the-ram-business-at-the-request-of-nvidia" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:59+01:00">7 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://live.euronext.com/en/financial-news/ai-boom-turns-chip-packaging-next-battleground-semiconductors" rel="noopener noreferrer">Reuters, via Euronext</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-07T16:06:59+01:00">7 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Export control now hinges on paperwork: the New York Times found a <mark class="hl">second H200 licensee</mark> with no visible office, among roughly two dozen Chinese firms reportedly approved.</li><li>AI agents are speeding up specialist research: DeepMind&#x27;s agents cut a 1024-bit RSA computation <mark class="hl">3.5 times</mark> and ran it in under four days, while one Microsoft research leader left over a scaling-only strategy.</li><li>Capital keeps flowing on lower terms: Anthropic reportedly still aims to raise <mark class="hl">up to $100 billion</mark> before Thanksgiving, and Nvidia is reportedly financing memory and packaging capacity at its suppliers.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (21 threads; 22 search requests blocked with HTTP 403, 4 lookups failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (30 stories)</dd></div><div><dt>github</dt><dd>ok (15 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The window was widened back to 17:19 CET on 6 November, the start of this morning&#x27;s edition&#x27;s window, because Saturday produced one new story; four stories from Friday evening and the night that the Morning edition did not carry are run here, each verified against primary sources or dependable reporting. Nothing an earlier edition carried is repeated.</li><li>The installed last30days engine finished in about 100 seconds with 78 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were commentary and stories already covered; it surfaced the DeepMind cryptanalysis only as a single Hacker News link. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web searches and the primary pages. Item counts are not counts of verified developments.</li><li>No community quotes: the engine returned no relevance-qualified comments on these stories.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 22 of its search requests were blocked (HTTP 403) and four lookups failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.</li><li>Paywalled sources were not read past their free sections: the New York Times article was read only to its opening, and the Financial Times and The Information reports only through other outlets&#x27; summaries. FourWeekMBA answered HTTP 429 and was read through the anti-bot fetch script&#x27;s Chrome-like TLS route. VentureBeat&#x27;s feed returned HTTP 429.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file still has the same 2 leads as this morning (Visa&#x27;s benchmark, already carried, and a minor Ollama Cloud price notice, not carried); yesterday&#x27;s leads were handled by earlier editions.</li><li>Not carried: Bloomberg&#x27;s recap of AI-safety groups&#x27; midterm spending (results already covered this week), Business Insider&#x27;s report that Thinking Machines Lab is raising $5 billion (published before 15:02 CET on 6 November, outside this window), the Kimi K3.1 Pro weights and GPT-6 Cyber (carried earlier), Airbnb&#x27;s sale of intellectual property to its chief executive&#x27;s AI lab (filed 5 November) and Uber&#x27;s figure of four agent-booked rides (4 November).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 4,372 upvotes │ 1,734 comments
+├─  HN: 30 stories │ 1,211 points │ 891 comments
+├─  dev.to: 12 articles │ 237 reactions │ 141 comments
+├─  GitHub: 15 items │ 73 reactions │ 227 comments
+├─  Top voices: r/artificial, r/OpenAI, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-07-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-07-afternoon.md">Markdown text</a></li><li><a href="2026-11-07-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
