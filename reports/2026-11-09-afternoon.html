@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Monday 9 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-09-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Monday 9 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-09-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-09T16:08:01+01:00">Monday 9 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-09-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-09-afternoon.html">This edition</a><a href="2026-11-09-afternoon.md">Markdown</a><a href="2026-11-09-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-09-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Monday 9 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-09T06:08:17+01:00">9 Nov 2026, 06:08 CET</time> to <time datetime="2026-11-09T16:07:30+01:00">9 Nov 2026, 16:07 CET</time> (Paris time). Issued <time datetime="2026-11-09T16:08:01+01:00">9 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">This Monday afternoon edition covers the ten hours since this morning&#x27;s 06:08 edition and carries <mark class="hl">six stories</mark>: one update and five new. Google added <mark class="hl">two new TPU systems</mark> for confidential computing and long-context agent work, Nvidia introduced its GR00T 2 robot model at the Conference on Robot Learning, Disney and Adobe agreed to build custom AI models on Disney&#x27;s own properties, Meta took its AI age estimation for Instagram worldwide, and Automattic launched Spacefast for hosting what people build with their own AI agents. The update: Nvidia&#x27;s shares fell sharply as its board investigates Jensen Huang. <mark class="hl">No new frontier model from a major lab</mark> passed this journal&#x27;s checks.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-09-morning.html">2026-11-09-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-automattic-spacefast" aria-labelledby="h-automattic-spacefast"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-automattic-spacefast">Automattic launches Spacefast, a home for sites and apps built with the AI agent you already use</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09">9 Nov 2026</time></p><div class="story-body"><p>WordPress.com owner Automattic launched <mark class="hl">Spacefast</mark> on 9 November as a new Automattic company. People keep building in their own AI tool, such as ChatGPT, Claude, Claude Code, Codex or Cursor, and Spacefast supplies hosting, custom domains and a database, then puts the work online behind a private link that a team can comment on.</p><p>App authentication, transactional email and shared team knowledge are <mark class="hl">coming in the next few weeks</mark>, Automattic said. The service is free to start, with a Go plan at <mark class="hl">$5 a month</mark> and a Pro plan at $15 a month per member, and it connects through official plugins for Claude, ChatGPT and others, or through an API, a CLI and an MCP server.</p><p>TechCrunch reported that Automattic soft-launched the product in September and that it competes with Lovable and Emergent. Its founder, Batuhan İçöz, told TechCrunch that enterprises face IT sprawl as marketing teams turn out landing pages on such services.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: bring-your-own-agent hosting bets that the coding agent becomes something users already pay for elsewhere, and that the business is in where the output runs.</p></aside><p class="caveat"><span class="label">Caveat.</span> Product claims come from Automattic&#x27;s press release; this journal did not test the service.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.prnewswire.com/news-releases/automattic-launches-spacefast-a-new-company-that-gets-apps-and-websites-live-in-seconds-302933038.html" rel="noopener noreferrer">Automattic via PR Newswire</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:07:00+01:00">9 Nov 2026, 16:07 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:30+01:00">9 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-nvidia-gr00t-2-corl" aria-labelledby="h-nvidia-gr00t-2-corl"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-nvidia-gr00t-2-corl">Nvidia introduces GR00T 2, an open world action model that teaches robots from human video, at the Conference on Robot Learning</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09">9 Nov 2026</time></p><div class="story-body"><p>At the Conference on Robot Learning in Austin, Nvidia on 9 November introduced <mark class="hl">GR00T 2</mark>, which it describes as an open frontier world action model built on its Cosmos platform. Its research page says the model predicts future video and robot actions together, and was pretrained on <mark class="hl">402,730 hours of egocentric human video</mark>, 10,184 hours of handheld-gripper demonstrations and 23,500 hours of robot teleoperation. Nvidia says 100,000 hours of that human video are openly available on Hugging Face.</p><p>Nvidia claims that on 50 tasks never demonstrated on the target robot, GR00T 2 completed 40 at least once without task-specific demonstrations, and that five demonstrations per task raised success to <mark class="hl">95% after a 30-minute fine-tune</mark> on a single RTX 5090. A smaller GR00T 2 Turbo runs on the Unitree G1 humanoid itself, at 124 milliseconds per prediction, according to the research page.</p><p>Nvidia also announced Isaac Lab 3.0 and new open benchmarks at the conference, and said two of its papers, GRAIL and RoboTTT, are among six finalists for the Best Paper award.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: robot data from teleoperation is slow and expensive to collect, so learning manipulation from ordinary human video is the shortcut the field is chasing. If transfer results like these hold up outside Nvidia&#x27;s labs, data rather than hardware becomes the cheaper lever for robot makers.</p></aside><p class="caveat"><span class="label">Caveat.</span> All results are <mark class="hl">Nvidia&#x27;s own evaluations</mark>, reported in a company whitepaper that has not been peer-reviewed. The blog and the research page describe the zero-shot result differently (40 of 50 tasks completed at least once, against a 40% success rate). This journal did not check the model&#x27;s licence terms.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/" rel="noopener noreferrer">NVIDIA Blog: Practice Makes Precise, at CoRL</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:00+01:00">9 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://research.nvidia.com/labs/gear/gr00t-2/" rel="noopener noreferrer">NVIDIA Research: GR00T 2 project page</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:06:00+01:00">9 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-google-tpu-8tx-8i-max" aria-labelledby="h-google-tpu-8tx-8i-max"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-google-tpu-8tx-8i-max">Google adds two eighth-generation TPU systems: TPU 8tx for confidential inference and the dual-chip TPU 8i Max for long contexts</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09">9 Nov 2026</time></p><div class="story-body"><p>Google said on 9 November that it has expanded its eighth-generation TPU line with <mark class="hl">two new systems, TPU 8tx and TPU 8i Max</mark>, joining the TPU 8t and TPU 8i it introduced in April. It is the first time Google has introduced four TPU systems in one year. In a post by Amin Vahdat, Google said TPUs now have <mark class="hl">nearly 100 customers</mark>, including frontier labs, trading firms, retailers and universities.</p><p>TPU 8tx uses the same silicon as TPU 8t, paired with AMD CPU hosts, and is aimed at regulated enterprises and governments. Google says it keeps sensitive data and model weights protected and isolated <mark class="hl">even while in active use</mark>, and claims up to 2x lower latency than TPU 8t with a near-zero performance penalty. Google pitches it for private fine-tuning, distillation and reinforcement learning on one system.</p><p>TPU 8i Max puts <mark class="hl">two TPU 8i chips on a single package</mark>. Google says that doubles compute, SRAM and HBM bandwidth over TPU 8i within the same rack footprint, for workloads such as many agents working across a whole codebase or hours of video. Google also said its Cloud Pathways runtime and GKE dynamic slicing are now generally available.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: neither system is a new chip. Google is repackaging this year&#x27;s silicon for two kinds of buyer that Nvidia also courts, regulated customers who need confidential computing and agent builders who run into memory limits, and it did so on a day when Nvidia&#x27;s shares were falling over the investigation into its chief executive.</p></aside><p class="caveat"><span class="label">Caveat.</span> Latency and density figures are <mark class="hl">Google&#x27;s own claims</mark>, published without test conditions. Google&#x27;s post gives no availability date, pricing or regions for either system.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/" rel="noopener noreferrer">Google: Our newest TPUs, 8tx and 8i Max</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:00+01:00">9 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max" rel="noopener noreferrer">Google Cloud blog (same post, full text)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:07:00+01:00">9 Nov 2026, 16:07 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-huang-spy-report">UPDATE: Nvidia shares fall more than 6% as its board investigates Jensen Huang, and China calls the spy claims unsubstantiated</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09T10:05:00+01:00">9 Nov 2026, 10:05 CET</time></p><div class="story-body"><p>Update to this morning&#x27;s edition, which reported that Nvidia&#x27;s board had opened an independent investigation after reports that Jensen Huang was the target of a foreign intelligence effort, and that Huang had admitted an affair in an email to staff. The new development: on Monday <mark class="hl">Nvidia&#x27;s stock fell more than 6%</mark>, CNBC reported, as investors weighed leadership risk around Huang. IBTimes said the shares had already lost 13% through Friday since the first reports about the relationship.</p><p>China&#x27;s Foreign Ministry spokesperson Guo Jiakun said on Monday that the so-called Chinese spy narrative was <mark class="hl">unsubstantiated</mark>, CNBC reported, citing Reuters.</p><p>IBTimes also reported that three House committee chairs asked Huang, in a letter dated 4 November, for a closed-door briefing on <mark class="hl">18 November</mark> about his interactions with Alice Huang and Nvidia&#x27;s protections against foreign espionage, and gave him until 11 November to reply. Nvidia has said Huang will keep leading the company during the investigation, according to IBTimes.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the market is now putting a price on a governance question at the company at the centre of AI spending, while rivals such as Google use the moment to push their own chips.</p></aside><p class="caveat"><span class="label">Caveat.</span> The espionage allegations have not been established in any public legal proceeding, and Nvidia&#x27;s board has said it has no reason to believe national security or company secrets were compromised. The share move was intraday when this edition checked it.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:00+01:00">9 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.ibtimes.com/nvidia-stock-falls-huang-board-investigation-3809545" rel="noopener noreferrer">IBTimes</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:30+01:00">9 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" rel="noopener noreferrer">Nvidia: Statement from the board of directors (8 November)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T06:05:59+01:00">9 Nov 2026, 06:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-disney-adobe-custom-ai-models" aria-labelledby="h-disney-adobe-custom-ai-models"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-disney-adobe-custom-ai-models">Disney and Adobe agree a multi-year deal to build custom generative AI models trained on Disney&#x27;s own properties</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09">9 Nov 2026</time></p><div class="story-body"><p>Disney and Adobe announced on 9 November a <mark class="hl">multi-year deal</mark> to co-develop custom generative AI models for Disney, Reuters reported. Using <mark class="hl">Adobe Firefly Foundry</mark>, which lets companies build and deploy their own models, the two will train models on Disney&#x27;s intellectual property; the models will be private and proprietary to Disney.</p><p>The work starts with Disney&#x27;s Experiences division, which runs its theme parks, resorts and cruise lines, and with concept exploration at StudioLAB, the innovation hub of Walt Disney Studios. Adobe will also work with ESPN on fan engagement and its content archive. Walt Disney Imagineering has already deployed a custom image model and a <mark class="hl">sketch-to-image model</mark> that turns hand-drawn sketches into rendered concept art.</p><p>Kyle Laughlin, Disney&#x27;s senior vice president of R&amp;D technology and engineering, told Reuters the tools cut work that took months to hours and days, and were &quot;in no way meant to replace&quot; roles at Imagineering. Reuters noted a Bloomberg report earlier this month that Disney was considering cutting thousands of jobs.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: large rights holders are opting for models trained only on their own catalogues, which sidesteps the copyright fights around general-purpose image models but leaves the question of creative jobs open.</p></aside><p class="caveat"><span class="label">Caveat.</span> Financial terms were not disclosed. Adobe&#x27;s press release on Business Wire could not be read (HTTP 403 on every route tried), so this story relies on Reuters&#x27; report, read through a syndicated copy.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/disney-adobe-co-develop-custom-ai-models-tailored-media-giant-6536291" rel="noopener noreferrer">Reuters, via CNA</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-09T16:06:00+01:00">9 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-meta-ai-age-estimation-global" aria-labelledby="h-meta-ai-age-estimation-global"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-meta-ai-age-estimation-global">Meta takes its AI age estimation worldwide to move millions more teens into Instagram&#x27;s Teen Accounts</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-09">9 Nov 2026</time></p><div class="story-body"><p>Meta said on 9 November that it is <mark class="hl">expanding its AI age-estimation technology globally</mark> to place millions more teens on Instagram into Teen Account protections, even when they gave an adult birthday. Teen Accounts limit who can contact teens, the content they see and their time on the apps.</p><p>Meta said it is still rolling the technology out on Facebook and will begin launching similar technology globally on Threads <mark class="hl">later this year</mark>. In Australia it has started using <mark class="hl">Apple&#x27;s age-range signal</mark> as an extra method, and parents in the US will see an in-feed video on Instagram this month explaining the approach.</p><p>Meta tied the expansion to its commitments under an agreement with 52 bipartisan attorneys general. The Verge reported that the system looks at signals such as the profiles and content a user interacts with and the birthday messages they receive, and that it launched in the US, the EU and Brazil last year.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI classification is becoming the industry&#x27;s default answer to age assurance. Meta is also using the announcement to argue for app-store-level age verification, which would shift much of the burden to Apple and Google.</p></aside><p class="caveat"><span class="label">Caveat.</span> Meta did not publish accuracy or error rates, so how many adults are misclassified as teens, or how many teens are missed, is not known.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/" rel="noopener noreferrer">Meta: Expanding Teen Account protections to teens around the world</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-09T16:05:00+01:00">9 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1029627/meta-instagram-ai-age-assurance-global-expansion" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-09T16:06:00+01:00">9 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The chip contest moved on two fronts in one day: Google added <mark class="hl">two TPU systems</mark> while Nvidia&#x27;s shares fell over the investigation into its chief executive.</li><li>Custom, owned models are spreading beyond tech: Disney will <mark class="hl">own models trained on its own characters</mark>, and Nvidia&#x27;s GR00T 2 trains robots largely on human video.</li><li>Agents are becoming the interface others build around, from Spacefast&#x27;s <mark class="hl">bring-your-own-agent hosting</mark> to Google pitching TPUs for agent workloads.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (21 threads; 23 sub-requests blocked with HTTP 403, 2 failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (25 stories)</dd></div><div><dt>github</dt><dd>ok (15 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished in about two minutes with 73 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were general commentary and stories already covered; it surfaced none of this edition&#x27;s stories. Stories were found with 16 Google News RSS queries, publisher feeds, three post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>No community quotes: the engine returned no relevance-qualified comments on these stories.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 23 of its sub-requests were blocked (HTTP 403) and two failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.</li><li>Sources not read: Adobe&#x27;s Business Wire release (HTTP 403) and Reuters&#x27; report on a US permitting bill and data centres (HTTP 401). For both, the anti-bot fetch script found no route (direct and Chrome-like requests refused, local stealth Chrome not installed, no Internet Archive snapshot). The Disney and Adobe story is cited through a Reuters syndicated copy; the permitting-bill report was not carried. Bloomberg&#x27;s reports on Google&#x27;s TPUs and Deutsche Telekom were not read (paywalled). VentureBeat&#x27;s feed returned HTTP 429.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file still holds the four leads handled this morning, none of them new in this window, so none is carried and the window was not widened.</li><li>Not carried because they fall before this window: OpenAI&#x27;s GPT-6 Cyber (5 November), Personal Finance in Claude (5 November), Google removing Pro models from its AI Plus plan (announced in October, effective 13 November), Abu Dhabi&#x27;s work with OpenAI (reported 6 November) and Apiiro&#x27;s research on secrets saved by Claude Code&#x27;s permission prompt (8 November).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 1,799 upvotes │ 1,137 comments
+├─  HN: 25 stories │ 1,912 points │ 1,876 comments
+├─  dev.to: 12 articles │ 103 reactions │ 67 comments
+├─  GitHub: 15 items │ 55 reactions │ 130 comments
+├─  Top voices: r/artificial, r/ClaudeAI, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-09-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-09-afternoon.md">Markdown text</a></li><li><a href="2026-11-09-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
