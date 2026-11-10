@@ -1,0 +1,202 @@
+# The AI Gazette — Afternoon edition, Tuesday 10 November 2026
+
+*Models, machines, and matters of consequence*
+
+- Issue: 2026-11-10-afternoon
+- Issued: 10 Nov 2026, 16:13 CET (Paris)
+- Reporting window: 10 Nov 2026, 06:07 CET to 10 Nov 2026, 16:13 CET
+- Timezone: Europe/Paris
+- Previous issue: 2026-11-10-morning
+- Price: Complimentary
+
+## Editor's note
+
+Since this morning's edition, Anthropic set firm terms for its listing: an amended filing prices **825 million shares at $70 to $78** and confirms a $26 billion placement with seven chip and cloud suppliers, and TSMC's board approved buying into both Anthropic and OpenAI. Google DeepMind published two results: **Gemini Robotics 2.5**, a robot-control model tested on Mercedes-Benz production lines, and AlphaProof Code, which formally verified the code of Signal's protocol. Adobe opened Creative Cloud apps to outside AI agents, Google Cloud launched an agent product for healthcare, Microsoft will switch on Claude for UK Copilot customers by default, and Reuters reports Microsoft is lobbying against a ban on Chinese data-centre parts. There is no new frontier language model in this window. The window was not widened.
+
+## The News
+
+### Google DeepMind introduces Gemini Robotics 2.5 and reports a 96% success rate picking car parts on Mercedes-Benz lines
+
+*Models · New*
+
+**Published:** 10 Nov 2026
+
+Google DeepMind introduced **Gemini Robotics 2.5**, which it calls its most capable vision-language-action model to date: a model that turns camera input and instructions into robot movements. It is rolling out to DeepMind's robotics partners, not as a public API.
+
+DeepMind says it evaluated the model on more than 200 tasks, such as serving food with tongs, tying a bow and pipetting liquid, and that it reaches a **30% to 100% higher success rate** than earlier baselines, depending on the task, while finishing tasks 20% to 30% faster.
+
+In a proof of concept with Apptronik and Mercedes-Benz, Apptronik's Apollo 2 humanoid sorted metal brackets from bulk bins into sequencing trays on production lines in Kecskemét, Hungary, and Sindelfingen, Germany, with a **96% success rate**, according to DeepMind. The company also says new safety guidance raised safe task completion around obstacles by 33% and around nearby people by 43%.
+
+**Analysis — why it matters:** *Editorial analysis: a factory pilot with a named carmaker is a **harder test than lab demos**, though a proof of concept on one task is still a long way from routine deployment.*
+
+**Caveat:** All figures are DeepMind's own evaluations; no independent results were found. The page is dated 10 November, while DeepMind's news feed timestamps the post at 20:51 Paris time on 9 November; no earlier edition carried it.
+
+**Sources:**
+
+1. [Google DeepMind](<https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/>) — primary source. Checked: 10 Nov 2026, 16:09 CET
+
+### Adobe previews local MCP links that let outside AI agents edit Photoshop, Illustrator, Premiere and After Effects files
+
+*Coding & agents · New*
+
+**Published:** 10 Nov 2026, 15:00 CET
+
+At its MAX conference in Miami Beach, Adobe previewed **local MCP integrations for Creative Cloud** that will let users direct their own third-party AI agents to work in Photoshop, Illustrator, Premiere and After Effects, making changes directly in native project files on the user's computer. Layers, vectors, bins and sequences stay editable.
+
+The Verge names agents from OpenAI, Google and Anthropic as examples and reports that a **private beta is due in early 2027**. Adobe also expanded its own Creative Agent across Creative Cloud apps in beta, previewed always-on agents that run recurring tasks in the background, starting with Firefly AI Assistant, and added a Plan Mode that lets users approve an agent's plan before it runs.
+
+**Analysis — why it matters:** *Editorial analysis: Adobe is choosing to let rival agents **operate its tools** rather than only pushing its own assistant, a bet that professional files, not chat, are where it keeps users.*
+
+**Caveat:** The MCP integrations and always-on agents are previews; Adobe gave no general release date.
+
+**Sources:**
+
+1. [Adobe newsroom](<https://news.adobe.com/news/2026/11/adobe-transforms-creative-cloud-tools>) — primary source. Checked: 10 Nov 2026, 16:10 CET
+2. [The Verge](<https://www.theverge.com/tech/1030593/adobe-max-ai-agents-mcp-firefly-assistant-updates>) — reporting. Checked: 10 Nov 2026, 16:04 CET
+
+### Microsoft will switch on Anthropic's Claude models by default for UK Copilot tenants on 9 December
+
+*Coding & agents · New*
+
+**Published:** 10 Nov 2026, 12:30 CET
+
+Microsoft told administrators that from **9 December 2026**, Claude models will be enabled by default in Microsoft Copilot for UK tenants that have not made a selection, in line with other regions, according to its Message Center notice MC1546435 as reported by The Register. Admins can opt out before then or turn Claude off at any time.
+
+Anthropic works as a Microsoft subprocessor and processes the data in the United States, and **UK tenants are not covered by the EU Data Boundary**. Microsoft is also retiring the option that allowed Claude only in Copilot in Microsoft 365 apps; tenants using it move to all users. EU and EFTA tenants keep Claude off by default, per Microsoft's documentation.
+
+**Analysis — why it matters:** *Editorial analysis: for UK organisations, **doing nothing now means opting in** to US processing, so compliance teams have a one-month deadline.*
+
+**Caveat:** Microsoft's Message Center is not public; the notice was read through The Register and a third-party copy of the notice. Microsoft's public documentation still described the UK as off by default when checked.
+
+**Sources:**
+
+1. [The Register](<https://www.theregister.com/ai-and-ml/2026/11/10/microsoft-is-giving-claude-the-keys-to-uk-copilot-tenants-by-default/5308693>) — reporting. Checked: 10 Nov 2026, 16:04 CET
+2. [Microsoft Learn: Anthropic models in Microsoft Online Services](<https://learn.microsoft.com/en-gb/microsoft-365/copilot/connect-to-ai-subprocessor>) — primary source. Checked: 10 Nov 2026, 16:12 CET
+3. [MWPro (copy of Message Center notice MC1546435)](<https://mwpro.co.uk/blog/2026/11/10/mc1546435-microsoft-copilot-enables-claude-models-by-default-in-the-uk-and-retires-limited-access-option/>) — reporting. Checked: 10 Nov 2026, 16:12 CET
+
+### Google DeepMind's AlphaProof Code agents formally verify the code behind the Signal protocol
+
+*Research · New*
+
+**Published:** 10 Nov 2026, 13:02 CET
+
+Google DeepMind presented **AlphaProof Code**, a framework in which human experts decide what to prove and AI agents write the proofs. Researchers used it to prove key security properties of the compiled code of the Signal protocol, which encrypts messages in Signal and Google Messages, not just of its design.
+
+Agents running on Gemini Carbon generated **over six million lines of Lean** proofs, and the agents flagged about one percent of the work for human review, DeepMind says. The verification took four weeks. As a check, the team reintroduced two real, previously fixed bugs into an isolated copy of the code, and the system produced machine-checked proofs that the buggy versions were insecure. The Register reports the work covered Signal's post-quantum PQXDH handshake and its Triple Ratchet.
+
+DeepMind says this is the first time the implementation of a widely deployed protocol like this has been formally verified by any method. Signal's chief technology officer, Ehren Kret, is quoted in the announcement calling the approach a major breakthrough. A technical paper accompanies the post.
+
+**Analysis — why it matters:** *Editorial analysis: formal proofs are the strongest form of software assurance, and cutting the work from **years to weeks** could make them practical for more security-critical code.*
+
+**Caveat:** The 'first' claims and timings are DeepMind's; the technical paper has not been peer reviewed. The proofs cover the security properties the experts specified, not every possible flaw.
+
+**Sources:**
+
+1. [Google DeepMind](<https://deepmind.google/blog/introducing-alphaproof-code/>) — primary source. Checked: 10 Nov 2026, 16:04 CET
+2. [The Register](<https://www.theregister.com/ai-and-ml/2026/11/10/google-deepmind-melds-humans-and-ai-agents-to-vet-signals-secure-messaging-techniques/5308625>) — reporting. Checked: 10 Nov 2026, 16:12 CET
+
+### UPDATE: Anthropic sets its IPO range at $70 to $78 a share in an amended filing, and TSMC's board approves stakes in Anthropic and OpenAI
+
+*Industry & policy · Updated*
+
+**Published:** 10 Nov 2026
+
+Update to this morning's edition, which carried Reuters' report that Anthropic had sent banks IPO terms of about 867 million shares at $70 to $80 and then retracted them. The new development: Anthropic filed **Amendment No. 2 to its Form S-1** with the US Securities and Exchange Commission on 10 November, offering **825 million Class A shares at $70 to $78** each, with underwriters holding an option on 123.75 million more. It has applied to list on the Nasdaq Global Select Market under the symbol ANT.
+
+The filing confirms that AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners have agreed to buy an aggregate **$26.0 billion of non-voting Class N stock** at the IPO price in a private placement that closes right after the offering. Google's share funds part of an investment it had already committed. TechCrunch, reading the same filing, reports that Google and Nvidia are putting in about $10 billion each, that the IPO would raise $57.75 billion to $64.35 billion, and that the top of the range implies a value of about $1.404 trillion on a fully diluted basis.
+
+Separately, TSMC's board on 10 November approved investing **up to $500 million in Anthropic** shares at the IPO price and up to $500 million in OpenAI preferred stock, according to the company's board resolutions. CNBC, cited by TechCrunch, reports trading could start around 19 November.
+
+**Analysis — why it matters:** *Editorial analysis: the amended filing replaces the retracted figures with the terms investors will actually be offered, and the placement means the suppliers that sell Anthropic its computing power will also be **among its largest new shareholders**.*
+
+**Caveat:** Valuation figures depend on the share count used: TechCrunch's $1.404 trillion is fully diluted at $78, and other readings of the filing give lower figures on shares outstanding. The listing date comes from CNBC's reporting, not the filing. Final pricing has not happened.
+
+**Sources:**
+
+1. [Anthropic, PBC, Form S-1/A (Amendment No. 2), SEC EDGAR](<https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm>) — primary source. Checked: 10 Nov 2026, 16:08 CET
+2. [TSMC, Board of Directors meeting resolutions](<https://pr.tsmc.com/english/news/3352>) — primary source. Checked: 10 Nov 2026, 16:06 CET
+3. [TechCrunch](<https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/>) — reporting. Checked: 10 Nov 2026, 16:04 CET
+4. [Reuters, via CNA](<https://www.channelnewsasia.com/business/tsmc-invest-up-1-billion-in-anthropic-openai-6539881>) — reporting. Checked: 10 Nov 2026, 16:06 CET
+
+### Google Cloud launches Gemini for healthcare in preview, an agent product for records and prior authorisation
+
+*Industry & policy · New*
+
+**Published:** 10 Nov 2026
+
+Google Cloud unveiled **Gemini for healthcare**, an agentic product built on its Gemini agent that connects to electronic health records, billing platforms, clinical guidelines and Centers for Medicare and Medicaid Services datasets, and runs multi-step workflows such as medical records synthesis and **prior authorisation review**, with human oversight.
+
+It is available in preview. Launch customers named by Google include Blue Cross Blue Shield of Massachusetts, Hartford HealthCare, HCA Healthcare, Highmark Health, Northwell Health, Optum and Stanford School of Medicine.
+
+**Analysis — why it matters:** *Editorial analysis: health care is one of the most regulated places to let agents act on records, so how these launch customers use it will be a test of agent oversight.*
+
+**Caveat:** Google did not publish pricing or results; the benefits described are the company's claims.
+
+**Sources:**
+
+1. [Google Cloud press release](<https://www.googlecloudpresscorner.com/2026-11-10-Google-Cloud-Launches-Gemini-for-Healthcare>) — primary source. Checked: 10 Nov 2026, 16:10 CET
+2. [Google blog](<https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/>) — primary source. Checked: 10 Nov 2026, 16:09 CET
+
+### Microsoft is lobbying the Trump administration against a ban on Chinese optical transceivers for data centres, Reuters reports
+
+*Industry & policy · New*
+
+**Published:** 10 Nov 2026
+
+Microsoft has been pressing the Trump administration to drop plans to bar imports of new Chinese **optical transceivers**, the parts that move data over fibre inside AI data centres, Reuters reported on 10 November, citing three people familiar with the matter. The Federal Communications Commission is working on the ban, over concerns the parts could be used to steal data or disrupt US data centres.
+
+Microsoft is one of several companies and trade groups arguing that a ban would slow the data-centre build-out and hurt the US lead over China in AI, Reuters says. Two sources said a threshold covering only **3.2 terabit-per-second transceivers**, not expected in volume until 2028, is under consideration.
+
+**Analysis — why it matters:** *Editorial analysis: it shows how much of the AI build-out still depends on Chinese components, even as Washington tightens chip-export rules in the other direction.*
+
+**Caveat:** Based on anonymous sources; Reuters' text was read through syndicated copies. The FCC has not addressed the issue publicly, and no ban has been issued.
+
+**Sources:**
+
+1. [Reuters, via US News & World Report](<https://money.usnews.com/investing/news/articles/2026-11-10/exclusive-microsoft-presses-trump-to-scuttle-expected-ban-on-chinese-data-center-technology>) — reporting. Checked: 10 Nov 2026, 16:05 CET
+2. [Reuters, via Business Recorder](<https://www.brecorder.com/news/40448278/microsoft-presses-trump-to-scuttle-expected-ban-on-chinese-data-center-technology>) — reporting. Checked: 10 Nov 2026, 16:05 CET
+
+## Key patterns (editorial analysis)
+
+- Anthropic's listing is tying AI developers to their suppliers: seven chip and cloud companies are buying **$26 billion of stock**, and TSMC is now investing in both Anthropic and OpenAI.
+- Agents are being given access to **professional tools and records**: Adobe's Creative Cloud files, hospital systems through Gemini for healthcare, and Copilot tenants in the UK.
+- Google DeepMind's two results this window both pair models with checks outside the model: a factory pilot for robotics and machine-checked Lean proofs for software.
+
+## Source coverage
+
+- Engine version: 3.31.0
+- Engine ran this edition: yes
+- Engine look-back: 2 days
+
+### Source status
+
+- reddit: ok, partial (21 threads; 24 sub-requests blocked with HTTP 403, 6 failed with HTTP 422)
+- hackernews: ok (26 stories)
+- github: ok (18 items)
+- devto: ok (12 articles; tags ai and llm)
+- youtube: not searched (yt-dlp not available on this machine)
+- polymarket: not used: blocked in France (ANJ)
+- x: not searched (no consent-free source configured)
+
+### Notes
+
+- The installed last30days engine finished with 77 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were general commentary; it surfaced none of this edition's stories. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.
+- No community quotes: the engine returned no relevance-qualified comments on these stories.
+- Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 24 of its sub-requests were blocked (HTTP 403) and six failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.
+- Reuters' report on Microsoft and the transceiver ban was read through syndicated copies. Microsoft's Message Center notice was read through The Register and a third-party copy. Not read: Bloomberg reports on Moonshot AI renting Nvidia B300 servers and on Nvidia and the Megaspeed inquiry (paywalled). VentureBeat's feed returned HTTP 429.
+- Newsletter leads from the Iris mail bot: today's file holds 15 leads. None was new in this window: Google's TPU 8tx and 8i Max and the Disney and Adobe alliance ran in the 9 November afternoon edition; Claude Fable 5.2 and Muse Ember ran this morning; Meituan's LongCat-2.5 weights were posted on 4 November, more than 48 hours ago; the rest were assessed in earlier editions. The window was not widened.
+- Not carried because they fall before this window and no earlier edition ran them: the Paris Call for AI Safety and Security, signed on 9 November by six governments and ten AI companies including OpenAI, Anthropic and Microsoft; a shareholder class action against Nvidia and Jensen Huang filed on 9 November after the US market close; and Bloomberg's report that Moonshot AI rented Nvidia B300 servers in China, published before 06:00 Paris time.
+- No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.
+
+### Engine footer (verbatim)
+
+```text
+---
+✅ All agents reported back!
+├─ 🟠 Reddit: 21 threads │ 4,632 upvotes │ 1,174 comments
+├─ 🟡 HN: 26 stories │ 1,893 points │ 1,983 comments
+├─ 👩‍💻 dev.to: 12 articles │ 166 reactions │ 132 comments
+├─ 🐙 GitHub: 18 items │ 72 reactions │ 136 comments
+├─ 🗣️ Top voices: r/artificial, r/singularity, r/MachineLearning
+---
+```

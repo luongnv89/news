@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Tuesday 10 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-10-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Tuesday 10 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-10-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-10T16:13:02+01:00">Tuesday 10 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-10-afternoon</p><p>Issued 16:13 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-10-afternoon.html">This edition</a><a href="2026-11-10-afternoon.md">Markdown</a><a href="2026-11-10-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-10-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Tuesday 10 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-10T06:07:37+01:00">10 Nov 2026, 06:07 CET</time> to <time datetime="2026-11-10T16:13:02+01:00">10 Nov 2026, 16:13 CET</time> (Paris time). Issued <time datetime="2026-11-10T16:13:02+01:00">10 Nov 2026, 16:13 CET</time>.</p><p class="lead-note">Since this morning&#x27;s edition, Anthropic set firm terms for its listing: an amended filing prices <mark class="hl">825 million shares at $70 to $78</mark> and confirms a $26 billion placement with seven chip and cloud suppliers, and TSMC&#x27;s board approved buying into both Anthropic and OpenAI. Google DeepMind published two results: <mark class="hl">Gemini Robotics 2.5</mark>, a robot-control model tested on Mercedes-Benz production lines, and AlphaProof Code, which formally verified the code of Signal&#x27;s protocol. Adobe opened Creative Cloud apps to outside AI agents, Google Cloud launched an agent product for healthcare, Microsoft will switch on Claude for UK Copilot customers by default, and Reuters reports Microsoft is lobbying against a ban on Chinese data-centre parts. There is no new frontier language model in this window. The window was not widened.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-10-morning.html">2026-11-10-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-gemini-robotics-2-5" aria-labelledby="h-gemini-robotics-2-5"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-gemini-robotics-2-5">Google DeepMind introduces Gemini Robotics 2.5 and reports a 96% success rate picking car parts on Mercedes-Benz lines</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>Google DeepMind introduced <mark class="hl">Gemini Robotics 2.5</mark>, which it calls its most capable vision-language-action model to date: a model that turns camera input and instructions into robot movements. It is rolling out to DeepMind&#x27;s robotics partners, not as a public API.</p><p>DeepMind says it evaluated the model on more than 200 tasks, such as serving food with tongs, tying a bow and pipetting liquid, and that it reaches a <mark class="hl">30% to 100% higher success rate</mark> than earlier baselines, depending on the task, while finishing tasks 20% to 30% faster.</p><p>In a proof of concept with Apptronik and Mercedes-Benz, Apptronik&#x27;s Apollo 2 humanoid sorted metal brackets from bulk bins into sequencing trays on production lines in Kecskemét, Hungary, and Sindelfingen, Germany, with a <mark class="hl">96% success rate</mark>, according to DeepMind. The company also says new safety guidance raised safe task completion around obstacles by 33% and around nearby people by 43%.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: a factory pilot with a named carmaker is a <mark class="hl">harder test than lab demos</mark>, though a proof of concept on one task is still a long way from routine deployment.</p></aside><p class="caveat"><span class="label">Caveat.</span> All figures are DeepMind&#x27;s own evaluations; no independent results were found. The page is dated 10 November, while DeepMind&#x27;s news feed timestamps the post at 20:51 Paris time on 9 November; no earlier edition carried it.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" rel="noopener noreferrer">Google DeepMind</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:09:00+01:00">10 Nov 2026, 16:09 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-adobe-creative-cloud-agents-mcp" aria-labelledby="h-adobe-creative-cloud-agents-mcp"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-adobe-creative-cloud-agents-mcp">Adobe previews local MCP links that let outside AI agents edit Photoshop, Illustrator, Premiere and After Effects files</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T09:00:00-05:00">10 Nov 2026, 15:00 CET</time></p><div class="story-body"><p>At its MAX conference in Miami Beach, Adobe previewed <mark class="hl">local MCP integrations for Creative Cloud</mark> that will let users direct their own third-party AI agents to work in Photoshop, Illustrator, Premiere and After Effects, making changes directly in native project files on the user&#x27;s computer. Layers, vectors, bins and sequences stay editable.</p><p>The Verge names agents from OpenAI, Google and Anthropic as examples and reports that a <mark class="hl">private beta is due in early 2027</mark>. Adobe also expanded its own Creative Agent across Creative Cloud apps in beta, previewed always-on agents that run recurring tasks in the background, starting with Firefly AI Assistant, and added a Plan Mode that lets users approve an agent&#x27;s plan before it runs.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: Adobe is choosing to let rival agents <mark class="hl">operate its tools</mark> rather than only pushing its own assistant, a bet that professional files, not chat, are where it keeps users.</p></aside><p class="caveat"><span class="label">Caveat.</span> The MCP integrations and always-on agents are previews; Adobe gave no general release date.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://news.adobe.com/news/2026/11/adobe-transforms-creative-cloud-tools" rel="noopener noreferrer">Adobe newsroom</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:10:00+01:00">10 Nov 2026, 16:10 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1030593/adobe-max-ai-agents-mcp-firefly-assistant-updates" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:04:00+01:00">10 Nov 2026, 16:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-microsoft-claude-default-uk-copilot" aria-labelledby="h-microsoft-claude-default-uk-copilot"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-microsoft-claude-default-uk-copilot">Microsoft will switch on Anthropic&#x27;s Claude models by default for UK Copilot tenants on 9 December</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T11:30:00+00:00">10 Nov 2026, 12:30 CET</time></p><div class="story-body"><p>Microsoft told administrators that from <mark class="hl">9 December 2026</mark>, Claude models will be enabled by default in Microsoft Copilot for UK tenants that have not made a selection, in line with other regions, according to its Message Center notice MC1546435 as reported by The Register. Admins can opt out before then or turn Claude off at any time.</p><p>Anthropic works as a Microsoft subprocessor and processes the data in the United States, and <mark class="hl">UK tenants are not covered by the EU Data Boundary</mark>. Microsoft is also retiring the option that allowed Claude only in Copilot in Microsoft 365 apps; tenants using it move to all users. EU and EFTA tenants keep Claude off by default, per Microsoft&#x27;s documentation.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: for UK organisations, <mark class="hl">doing nothing now means opting in</mark> to US processing, so compliance teams have a one-month deadline.</p></aside><p class="caveat"><span class="label">Caveat.</span> Microsoft&#x27;s Message Center is not public; the notice was read through The Register and a third-party copy of the notice. Microsoft&#x27;s public documentation still described the UK as off by default when checked.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.theregister.com/ai-and-ml/2026/11/10/microsoft-is-giving-claude-the-keys-to-uk-copilot-tenants-by-default/5308693" rel="noopener noreferrer">The Register</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:04:00+01:00">10 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://learn.microsoft.com/en-gb/microsoft-365/copilot/connect-to-ai-subprocessor" rel="noopener noreferrer">Microsoft Learn: Anthropic models in Microsoft Online Services</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:12:00+01:00">10 Nov 2026, 16:12 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://mwpro.co.uk/blog/2026/11/10/mc1546435-microsoft-copilot-enables-claude-models-by-default-in-the-uk-and-retires-limited-access-option/" rel="noopener noreferrer">MWPro (copy of Message Center notice MC1546435)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:12:00+01:00">10 Nov 2026, 16:12 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-deepmind-alphaproof-code-signal" aria-labelledby="h-deepmind-alphaproof-code-signal"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-deepmind-alphaproof-code-signal">Google DeepMind&#x27;s AlphaProof Code agents formally verify the code behind the Signal protocol</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T12:02:28+00:00">10 Nov 2026, 13:02 CET</time></p><div class="story-body"><p>Google DeepMind presented <mark class="hl">AlphaProof Code</mark>, a framework in which human experts decide what to prove and AI agents write the proofs. Researchers used it to prove key security properties of the compiled code of the Signal protocol, which encrypts messages in Signal and Google Messages, not just of its design.</p><p>Agents running on Gemini Carbon generated <mark class="hl">over six million lines of Lean</mark> proofs, and the agents flagged about one percent of the work for human review, DeepMind says. The verification took four weeks. As a check, the team reintroduced two real, previously fixed bugs into an isolated copy of the code, and the system produced machine-checked proofs that the buggy versions were insecure. The Register reports the work covered Signal&#x27;s post-quantum PQXDH handshake and its Triple Ratchet.</p><p>DeepMind says this is the first time the implementation of a widely deployed protocol like this has been formally verified by any method. Signal&#x27;s chief technology officer, Ehren Kret, is quoted in the announcement calling the approach a major breakthrough. A technical paper accompanies the post.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: formal proofs are the strongest form of software assurance, and cutting the work from <mark class="hl">years to weeks</mark> could make them practical for more security-critical code.</p></aside><p class="caveat"><span class="label">Caveat.</span> The &#x27;first&#x27; claims and timings are DeepMind&#x27;s; the technical paper has not been peer reviewed. The proofs cover the security properties the experts specified, not every possible flaw.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://deepmind.google/blog/introducing-alphaproof-code/" rel="noopener noreferrer">Google DeepMind</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:04:00+01:00">10 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theregister.com/ai-and-ml/2026/11/10/google-deepmind-melds-humans-and-ai-agents-to-vet-signals-secure-messaging-techniques/5308625" rel="noopener noreferrer">The Register</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:12:00+01:00">10 Nov 2026, 16:12 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-ipo-investor-doubts" aria-labelledby="h-anthropic-ipo-investor-doubts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-ipo-investor-doubts">UPDATE: Anthropic sets its IPO range at $70 to $78 a share in an amended filing, and TSMC&#x27;s board approves stakes in Anthropic and OpenAI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>Update to this morning&#x27;s edition, which carried Reuters&#x27; report that Anthropic had sent banks IPO terms of about 867 million shares at $70 to $80 and then retracted them. The new development: Anthropic filed <mark class="hl">Amendment No. 2 to its Form S-1</mark> with the US Securities and Exchange Commission on 10 November, offering <mark class="hl">825 million Class A shares at $70 to $78</mark> each, with underwriters holding an option on 123.75 million more. It has applied to list on the Nasdaq Global Select Market under the symbol ANT.</p><p>The filing confirms that AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners have agreed to buy an aggregate <mark class="hl">$26.0 billion of non-voting Class N stock</mark> at the IPO price in a private placement that closes right after the offering. Google&#x27;s share funds part of an investment it had already committed. TechCrunch, reading the same filing, reports that Google and Nvidia are putting in about $10 billion each, that the IPO would raise $57.75 billion to $64.35 billion, and that the top of the range implies a value of about $1.404 trillion on a fully diluted basis.</p><p>Separately, TSMC&#x27;s board on 10 November approved investing <mark class="hl">up to $500 million in Anthropic</mark> shares at the IPO price and up to $500 million in OpenAI preferred stock, according to the company&#x27;s board resolutions. CNBC, cited by TechCrunch, reports trading could start around 19 November.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the amended filing replaces the retracted figures with the terms investors will actually be offered, and the placement means the suppliers that sell Anthropic its computing power will also be <mark class="hl">among its largest new shareholders</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> Valuation figures depend on the share count used: TechCrunch&#x27;s $1.404 trillion is fully diluted at $78, and other readings of the filing give lower figures on shares outstanding. The listing date comes from CNBC&#x27;s reporting, not the filing. Final pricing has not happened.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm" rel="noopener noreferrer">Anthropic, PBC, Form S-1/A (Amendment No. 2), SEC EDGAR</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:08:00+01:00">10 Nov 2026, 16:08 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://pr.tsmc.com/english/news/3352" rel="noopener noreferrer">TSMC, Board of Directors meeting resolutions</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:06:00+01:00">10 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:04:00+01:00">10 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/tsmc-invest-up-1-billion-in-anthropic-openai-6539881" rel="noopener noreferrer">Reuters, via CNA</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:06:00+01:00">10 Nov 2026, 16:06 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-google-cloud-gemini-for-healthcare" aria-labelledby="h-google-cloud-gemini-for-healthcare"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-google-cloud-gemini-for-healthcare">Google Cloud launches Gemini for healthcare in preview, an agent product for records and prior authorisation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>Google Cloud unveiled <mark class="hl">Gemini for healthcare</mark>, an agentic product built on its Gemini agent that connects to electronic health records, billing platforms, clinical guidelines and Centers for Medicare and Medicaid Services datasets, and runs multi-step workflows such as medical records synthesis and <mark class="hl">prior authorisation review</mark>, with human oversight.</p><p>It is available in preview. Launch customers named by Google include Blue Cross Blue Shield of Massachusetts, Hartford HealthCare, HCA Healthcare, Highmark Health, Northwell Health, Optum and Stanford School of Medicine.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: health care is one of the most regulated places to let agents act on records, so how these launch customers use it will be a test of agent oversight.</p></aside><p class="caveat"><span class="label">Caveat.</span> Google did not publish pricing or results; the benefits described are the company&#x27;s claims.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.googlecloudpresscorner.com/2026-11-10-Google-Cloud-Launches-Gemini-for-Healthcare" rel="noopener noreferrer">Google Cloud press release</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:10:00+01:00">10 Nov 2026, 16:10 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/" rel="noopener noreferrer">Google blog</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-10T16:09:00+01:00">10 Nov 2026, 16:09 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-microsoft-chinese-transceiver-ban" aria-labelledby="h-microsoft-chinese-transceiver-ban"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-microsoft-chinese-transceiver-ban">Microsoft is lobbying the Trump administration against a ban on Chinese optical transceivers for data centres, Reuters reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>Microsoft has been pressing the Trump administration to drop plans to bar imports of new Chinese <mark class="hl">optical transceivers</mark>, the parts that move data over fibre inside AI data centres, Reuters reported on 10 November, citing three people familiar with the matter. The Federal Communications Commission is working on the ban, over concerns the parts could be used to steal data or disrupt US data centres.</p><p>Microsoft is one of several companies and trade groups arguing that a ban would slow the data-centre build-out and hurt the US lead over China in AI, Reuters says. Two sources said a threshold covering only <mark class="hl">3.2 terabit-per-second transceivers</mark>, not expected in volume until 2028, is under consideration.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: it shows how much of the AI build-out still depends on Chinese components, even as Washington tightens chip-export rules in the other direction.</p></aside><p class="caveat"><span class="label">Caveat.</span> Based on anonymous sources; Reuters&#x27; text was read through syndicated copies. The FCC has not addressed the issue publicly, and no ban has been issued.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://money.usnews.com/investing/news/articles/2026-11-10/exclusive-microsoft-presses-trump-to-scuttle-expected-ban-on-chinese-data-center-technology" rel="noopener noreferrer">Reuters, via US News &amp; World Report</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:05:00+01:00">10 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.brecorder.com/news/40448278/microsoft-presses-trump-to-scuttle-expected-ban-on-chinese-data-center-technology" rel="noopener noreferrer">Reuters, via Business Recorder</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-10T16:05:00+01:00">10 Nov 2026, 16:05 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Anthropic&#x27;s listing is tying AI developers to their suppliers: seven chip and cloud companies are buying <mark class="hl">$26 billion of stock</mark>, and TSMC is now investing in both Anthropic and OpenAI.</li><li>Agents are being given access to <mark class="hl">professional tools and records</mark>: Adobe&#x27;s Creative Cloud files, hospital systems through Gemini for healthcare, and Copilot tenants in the UK.</li><li>Google DeepMind&#x27;s two results this window both pair models with checks outside the model: a factory pilot for robotics and machine-checked Lean proofs for software.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (21 threads; 24 sub-requests blocked with HTTP 403, 6 failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (26 stories)</dd></div><div><dt>github</dt><dd>ok (18 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished with 77 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top items were general commentary; it surfaced none of this edition&#x27;s stories. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>No community quotes: the engine returned no relevance-qualified comments on these stories.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 24 of its sub-requests were blocked (HTTP 403) and six failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.</li><li>Reuters&#x27; report on Microsoft and the transceiver ban was read through syndicated copies. Microsoft&#x27;s Message Center notice was read through The Register and a third-party copy. Not read: Bloomberg reports on Moonshot AI renting Nvidia B300 servers and on Nvidia and the Megaspeed inquiry (paywalled). VentureBeat&#x27;s feed returned HTTP 429.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file holds 15 leads. None was new in this window: Google&#x27;s TPU 8tx and 8i Max and the Disney and Adobe alliance ran in the 9 November afternoon edition; Claude Fable 5.2 and Muse Ember ran this morning; Meituan&#x27;s LongCat-2.5 weights were posted on 4 November, more than 48 hours ago; the rest were assessed in earlier editions. The window was not widened.</li><li>Not carried because they fall before this window and no earlier edition ran them: the Paris Call for AI Safety and Security, signed on 9 November by six governments and ten AI companies including OpenAI, Anthropic and Microsoft; a shareholder class action against Nvidia and Jensen Huang filed on 9 November after the US market close; and Bloomberg&#x27;s report that Moonshot AI rented Nvidia B300 servers in China, published before 06:00 Paris time.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 4,632 upvotes │ 1,174 comments
+├─  HN: 26 stories │ 1,893 points │ 1,983 comments
+├─  dev.to: 12 articles │ 166 reactions │ 132 comments
+├─  GitHub: 18 items │ 72 reactions │ 136 comments
+├─  Top voices: r/artificial, r/singularity, r/MachineLearning
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-10-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-10-afternoon.md">Markdown text</a></li><li><a href="2026-11-10-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
