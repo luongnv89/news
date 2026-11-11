@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-11-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-11T06:07:32+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-10T16:13:02+01:00",
+  "window_end": "2026-11-11T06:07:32+01:00",
+  "editorial_note": "Since yesterday afternoon's edition, Google made ==Gemini 4 Carbon== generally available two weeks after a security-only release, and Anthropic launched Claude Meetings, Whiteboards and Sheets as it courts office workers before its listing. OpenAI opened ChatGPT to business profiles and Business Agents, Nvidia's independent directors named the lawyer leading their inquiry into Jensen Huang, New York launched a state centre to test frontier AI systems, and Mercor raised ==$750 million at a $20 billion valuation==. A leak points to an Apple app for running open models across Macs. Carbon is the only new frontier model in this window; Google first released it to security defenders two weeks earlier. The window was not widened.",
+  "stories": [
+    {
+      "id": "gemini-4-carbon-available",
+      "section": "Models",
+      "headline": "Google makes Gemini 4 Carbon available to paying developers and Ultra subscribers, at Argon's price",
+      "published_at": "2026-11-10T16:00:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google made ==Gemini 4 Carbon==, which it calls its strongest model, available on 10 November to developers, enterprises, scientists and consumers. Two weeks earlier Google had released Carbon only to a set of cybersecurity defenders through its Fairwind Program; Gemini 4 Argon remains the default choice for most coding and knowledge work, Google says.",
+        "Carbon is on the paid tier of the Gemini API in Google AI Studio and Android Studio and in Gemini for business, at the same introductory price as Argon, ==$2 per million input tokens and $10 per million output tokens==. It is rolling out to Google AI Ultra subscribers in the Gemini app, AI Mode in Search and Google Antigravity, where Google is previewing a ==/swarm feature== that turns one prompt into a team of coordinated agents.",
+        "Google says Carbon ranks first on CursorBench 4.0, Perplexity's WANDR and Zapier's AutomationBench at less than half the cost per task of the next best outside model, and second on a new Multimodal Knowledge Agent benchmark built with Artificial Analysis. On safety, Google reports that its safeguards cut the per-attempt breach rate in simulated cyberattack tests to 0.8%, from 3.1% for Argon, and that Carbon passed 92% of a 375-task agentic honesty benchmark, against 70% for Argon."
+      ],
+      "why_it_matters": "Editorial analysis: pricing Carbon the same as Argon makes Google's top model a ==drop-in choice for paying API users==, and it lands a day after Anthropic cut prices on Claude Fable 5.2.",
+      "caveat": "Benchmark, cost and safety figures are ==Google's own claims== or results from evaluations it selected; no independent comparison was found in this window. The broader cyber version stays restricted to the Fairwind Program.",
+      "sources": [
+        {
+          "label": "Google: Gemini 4 Carbon is now available",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:03:00+01:00"
+        },
+        {
+          "label": "Google: Gemini 4 Carbon for developers",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:03:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-claude-workplace-tools",
+      "section": "Coding & agents",
+      "headline": "Anthropic launches Claude Meetings, Whiteboards and Sheets, and makes Claude Data generally available",
+      "published_at": "2026-11-10",
+      "freshness": "new",
+      "paragraphs": [
+        "At an event in San Francisco on 10 November, Anthropic launched ==Claude Meetings==, which adds Claude to a video call as a visible participant that follows the discussion, drafts plans, answers questions in the chat and pulls figures from connected work apps while the call is still going. It is in beta for Team and Enterprise plans and works with Google Meet at launch, TechCrunch reports.",
+        "Anthropic also put ==Claude Whiteboards and Claude Sheets== into beta on all paid plans: a shared board that Claude organises into timelines with owners and dates, and spreadsheets with tabs, formulas and drop-downs that Claude builds and edits in the cells. Claude Dashboards, in beta since October, is now generally available as Claude Data, with certified queries and live sharing still in beta.",
+        "The company also introduced interactive connectors that open full versions of partner apps such as Adobe, Atlassian and HubSpot inside Claude. TechCrunch reports that Claude announces itself in meetings and will not join calls with external guests unless an admin allows it."
+      ],
+      "why_it_matters": "Editorial analysis: these are among Anthropic's first products built for non-technical office workers, a ==direct push into Microsoft 365 and Google Workspace territory== days before its planned stock market debut.",
+      "caveat": "All three new tools are betas. Anthropic's own article covers Whiteboards, Sheets and Data; the details of Claude Meetings come from TechCrunch, The Verge and Axios reporting on the event.",
+      "sources": [
+        {
+          "label": "Anthropic (claude.com): Claude Whiteboards, Sheets and Data",
+          "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:04:30+01:00"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:03:30+01:00"
+        },
+        {
+          "label": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030709/anthropic-has-its-own-ai-powered-office-suite-now",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:03:30+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-businesses-in-chatgpt",
+      "section": "Industry & policy",
+      "headline": "OpenAI lets companies claim profiles in ChatGPT and launches Business Agents for US online sellers",
+      "published_at": "2026-11-10",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI launched ==Businesses in ChatGPT== in beta on 10 November. Through a Business Hub, a company can claim its profile once verified, update its details, upload product feeds with prices and availability, and see aggregated insights such as mentions, views and website clicks, Reuters reports.",
+        "A second tool, ==Business Agents==, lets ChatGPT users chat with an agent that answers from the information and guidelines a business sets. OpenAI's page says it is available at first to eligible e-commerce and online service businesses in the US; Shopify merchants can connect their stores directly.",
+        "According to Reuters, OpenAI says it does not share users' conversations or Business Agent chats with businesses, and that insights appear only above minimum thresholds. Businesses can sponsor their agent and use it as the destination for ChatGPT ads, with sponsored placements labelled."
+      ],
+      "why_it_matters": "Editorial analysis: this gives ChatGPT the equivalent of a ==business listings product, a field Google has long dominated==, and ties it to OpenAI's new ads business.",
+      "caveat": "Eligibility depends on OpenAI's verification and integrity checks, and the company has not said how many businesses are in the beta.",
+      "sources": [
+        {
+          "label": "OpenAI: Businesses in ChatGPT",
+          "url": "https://openai.com/business/businesses-in-chatgpt",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:03:40+01:00"
+        },
+        {
+          "label": "Reuters (via Centre Daily Times)",
+          "url": "https://www.centredaily.com/news/business/article318016384.html",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:04:40+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "nvidia-huang-spy-report",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Nvidia's independent directors hire former acting US Attorney Joon Kim and Wachtell Lipton to run the Huang inquiry",
+      "published_at": "2026-11-10T19:07:00+00:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday morning's edition, which reported President Trump saying the FBI is looking into Jensen Huang's relationship with Alice Huang, a Megaspeed executive whom US intelligence reportedly believes was a spy for Beijing. The new development: on 10 November the independent members of Nvidia's board said they have retained ==Joon H. Kim==, former acting US Attorney for the Southern District of New York, and his firm ==Wachtell, Lipton, Rosen & Katz== to conduct the investigation announced on Sunday.",
+        "CNBC reports that Kim joined the firm earlier this month, citing Law360, and that Nvidia shares fell about 6% on Tuesday as investors weighed whether the scandal could lead to Huang leaving the company.",
+        "Also on Tuesday, Senate Democratic leader Chuck Schumer said Congress must have a full accounting of the President's defence of Huang and urged lawmakers to quickly approve new limits on US chip exports to China, Reuters reports. The Senate version of the annual defence bill contains provisions on AI chip sales to China and on tracking chips abroad to combat smuggling."
+      ],
+      "why_it_matters": "Editorial analysis: naming an outside former prosecutor gives the board's inquiry ==a visible lead==, while the episode is adding momentum in Congress to chip export limits.",
+      "caveat": "The board's statement is one sentence and gives no timetable. Nothing has been established about whether any Nvidia secrets or national security were compromised.",
+      "sources": [
+        {
+          "label": "Nvidia: statement from the independent members of the board",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:03:00+01:00"
+        },
+        {
+          "label": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/nvidia-wachtell-lipton-huang-affair.html",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:05:00+01:00"
+        },
+        {
+          "label": "Reuters (via Investing.com)",
+          "url": "https://www.investing.com/news/stock-market-news/schumer-says-congress-must-have-answers-on-trump-defense-of-nvidia-ceo-5016683",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:04:50+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "new-york-ai-safety-center",
+      "section": "Industry & policy",
+      "headline": "New York launches a state centre to independently test frontier AI systems and opens registration under its RAISE Act",
+      "published_at": "2026-11-10",
+      "freshness": "new",
+      "paragraphs": [
+        "New York Governor Kathy Hochul on 10 November launched the statewide programme of the ==New York Center for AI Responsibility and Research==, based at SUNY Binghamton, to independently test frontier AI systems, do foundational safety research and train AI safety experts. Politico first reported the plan at 8:00 New York time that morning, before the previous edition; the official launch followed later in the day.",
+        "Greg Morrisett of Cornell Tech and Jeannette Wing of Columbia University will be interim co-directors and bring together ==more than 80 researchers== across the state, using the computing power of Empire AI, the state's $500 million public-private initiative. The centre was first announced in January with a $30 million gift from donors led by Bloomberg LP co-founder Tom Secunda and an initial $25 million from SUNY.",
+        "The state's new DIGIT office also opened a portal where large frontier AI developers must ==register by 1 January 2027== under the RAISE Act. From January, large developers must publish safety frameworks and all frontier developers must report critical safety incidents; the centre will help review the published frameworks."
+      ],
+      "why_it_matters": "Editorial analysis: with no federal rules, New York is building its own capacity to check what AI companies say about safety, ==ahead of its law taking effect in January==.",
+      "caveat": "The centre's testing programme is only starting, and the release does not say which systems it will evaluate first or whether companies must give it access.",
+      "sources": [
+        {
+          "label": "Office of the Governor of New York",
+          "url": "https://www.governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:04:40+01:00"
+        },
+        {
+          "label": "Politico",
+          "url": "https://www.politico.com/news/2026/11/10/new-york-hochul-first-state-ai-testing-program-01157713",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "mercor-series-d",
+      "section": "Industry & policy",
+      "headline": "Mercor raises $750 million at a $20 billion valuation to sell AI agent evaluations to enterprises",
+      "published_at": "2026-11-10",
+      "freshness": "new",
+      "paragraphs": [
+        "Mercor, which pays experts to help train and evaluate AI models, announced a ==$750 million Series D at a $20 billion valuation== on 10 November. The round included an employee tender, and investors include Benchmark, Felicis, General Catalyst, Nvidia, Salesforce, Zoom and funds managed by affiliates of Apollo; Mercor did not name a lead.",
+        "Reuters reports that the valuation is double the roughly $10 billion Mercor reached when it raised $350 million in October 2025. Mercor says its network has more than five million experts, and that the money will go into evaluations, post-training and environments where agents can practise enterprise workflows. Co-founder Brendan Foody wrote on LinkedIn that the company went from ==$1 million to $3 billion in run-rate revenue== in 27 months."
+      ],
+      "why_it_matters": "Editorial analysis: the round shows investors betting that companies will pay to ==test and tune agents on their own workflows==, not just buy model access.",
+      "caveat": "The revenue figure is the company's own claim, and Mercor does not say how much of the $750 million went to employees selling shares.",
+      "sources": [
+        {
+          "label": "Mercor",
+          "url": "https://www.mercor.com/blog/series-d",
+          "type": "primary",
+          "checked_at": "2026-11-11T06:05:00+01:00"
+        },
+        {
+          "label": "Reuters",
+          "url": "https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:04:50+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "apple-harbor-local-ai",
+      "section": "Models",
+      "headline": "Apple is preparing Harbor, a Mac app for running open-weight models locally across several Macs, 9to5Mac reports",
+      "published_at": "2026-11-10T19:15:00+00:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Apple is working on a Mac app called ==Harbor== that turns a Mac into a private AI inference server for open-weight models, 9to5Mac reported on 10 November, based on material found by leaker Aaron Perris. Apple has not announced it.",
+        "According to the description quoted by 9to5Mac, Harbor downloads and runs models locally and can ==pool the unified memory of several Macs over Thunderbolt 5== to run models too large for one machine or to serve more requests. 9to5Mac says the app is in a private preview under Apple's Claris brand."
+      ],
+      "why_it_matters": "Editorial analysis: if it ships, Apple would be packaging the ==home-built Mac clusters== that local-model users assemble today into a supported product.",
+      "caveat": "Unconfirmed leak: Apple has not commented, and there is no release date, price or list of supported models.",
+      "sources": [
+        {
+          "label": "9to5Mac",
+          "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
+          "type": "reporting",
+          "checked_at": "2026-11-11T06:04:40+01:00"
+        },
+        {
+          "label": "r/LocalLLaMA discussion",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xszbe7/apple_has_new_mac_app_coming_to_make_running/",
+          "type": "community",
+          "checked_at": "2026-11-11T06:03:13+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "So much negativity, but I think Apple making an effort for users to be able to run their own local LLM is a big step in the right direction.",
+          "author": "u/BigWideBaker (r/LocalLLaMA)",
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1xszbe7/apple_has_new_mac_app_coming_to_make_running/19sg4jnxj061t/"
+        },
+        {
+          "text": "This is what I've wanted for the last few years.",
+          "author": "apparent (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50448433"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (26 threads; 103 sub-requests blocked with HTTP 403, 21 failed with HTTP 422)",
+      "hackernews": "ok (28 stories)",
+      "github": "ok (13 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished with 79 evidence items from Reddit, Hacker News, dev.to and GitHub. It surfaced the Apple Harbor report and its community comments; the other stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 103 of its sub-requests were blocked (HTTP 403) and 21 failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Reuters reports on OpenAI's business profiles and on Senator Schumer were read through syndicated copies. Not read: the Financial Times report that the US commodities regulator postponed AI computing futures (paywalled). No source needed the anti-bot fetch ladder.",
+      "Newsletter leads from the Iris mail bot: today's file holds five leads. Claude Fable 5.2's benchmarks and the Mythos 5.2 system card were covered in yesterday's editions; an OpenAI Codex-branded handheld, GitHub's port of a Copilot engine to Rust and a tech jobs report were not verified as new primary-sourced news in this window and were not carried. The window was not widened.",
+      "Not carried: Fireworks AI's wider breach disclosure, which Notion says exposed some unattributable Notion AI chats, because Fireworks posted its update on 9 November, before this window; IBM and Microsoft's Imagine Enterprise agent platform, announced on 10 November, because its release time could not be placed after the previous edition; OpenAI's reported acquisition of travel start-up Odessia, which OpenAI has not confirmed; and the Lean code for OpenAI's Yang-Mills existence proof, which the reviewing committee said it would publish on 10 November but which could not be located.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 26 threads │ 5,187 upvotes │ 1,750 comments\n├─ 🟡 HN: 28 stories │ 1,777 points │ 1,247 comments\n├─ 👩‍💻 dev.to: 12 articles │ 215 reactions │ 175 comments\n├─ 🐙 GitHub: 13 items │ 58 reactions │ 157 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/OpenAI\n---"
+  },
+  "key_patterns": [
+    "The frontier labs are competing for office work: Anthropic shipped meeting, whiteboard and spreadsheet tools, and OpenAI turned ChatGPT into ==a place for businesses to list and sell==.",
+    "Google priced its strongest model, Gemini 4 Carbon, ==the same as Argon==, a day after Anthropic cut Fable 5.2's price.",
+    "Outside checks on AI are growing: New York will test frontier systems itself, and Mercor raised $750 million to sell agent evaluations to companies."
+  ],
+  "previous_issue_id": "2026-11-10-afternoon"
+}

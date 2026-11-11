@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Wednesday 11 November 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-11-11-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Wednesday 11 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-11-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-11T06:07:32+01:00">Wednesday 11 November 2026</time></p><p>Morning edition &middot; No. 2026-11-11-morning</p><p>Issued 06:07 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-11-morning.html">This edition</a><a href="2026-11-11-morning.md">Markdown</a><a href="2026-11-11-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-11-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Wednesday 11 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-10T16:13:02+01:00">10 Nov 2026, 16:13 CET</time> to <time datetime="2026-11-11T06:07:32+01:00">11 Nov 2026, 06:07 CET</time> (Paris time). Issued <time datetime="2026-11-11T06:07:32+01:00">11 Nov 2026, 06:07 CET</time>.</p><p class="lead-note">Since yesterday afternoon&#x27;s edition, Google made <mark class="hl">Gemini 4 Carbon</mark> generally available two weeks after a security-only release, and Anthropic launched Claude Meetings, Whiteboards and Sheets as it courts office workers before its listing. OpenAI opened ChatGPT to business profiles and Business Agents, Nvidia&#x27;s independent directors named the lawyer leading their inquiry into Jensen Huang, New York launched a state centre to test frontier AI systems, and Mercor raised <mark class="hl">$750 million at a $20 billion valuation</mark>. A leak points to an Apple app for running open models across Macs. Carbon is the only new frontier model in this window; Google first released it to security defenders two weeks earlier. The window was not widened.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-10-afternoon.html">2026-11-10-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-gemini-4-carbon-available" aria-labelledby="h-gemini-4-carbon-available"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-gemini-4-carbon-available">Google makes Gemini 4 Carbon available to paying developers and Ultra subscribers, at Argon&#x27;s price</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T16:00:00+00:00">10 Nov 2026, 17:00 CET</time></p><div class="story-body"><p>Google made <mark class="hl">Gemini 4 Carbon</mark>, which it calls its strongest model, available on 10 November to developers, enterprises, scientists and consumers. Two weeks earlier Google had released Carbon only to a set of cybersecurity defenders through its Fairwind Program; Gemini 4 Argon remains the default choice for most coding and knowledge work, Google says.</p><p>Carbon is on the paid tier of the Gemini API in Google AI Studio and Android Studio and in Gemini for business, at the same introductory price as Argon, <mark class="hl">$2 per million input tokens and $10 per million output tokens</mark>. It is rolling out to Google AI Ultra subscribers in the Gemini app, AI Mode in Search and Google Antigravity, where Google is previewing a <mark class="hl">/swarm feature</mark> that turns one prompt into a team of coordinated agents.</p><p>Google says Carbon ranks first on CursorBench 4.0, Perplexity&#x27;s WANDR and Zapier&#x27;s AutomationBench at less than half the cost per task of the next best outside model, and second on a new Multimodal Knowledge Agent benchmark built with Artificial Analysis. On safety, Google reports that its safeguards cut the per-attempt breach rate in simulated cyberattack tests to 0.8%, from 3.1% for Argon, and that Carbon passed 92% of a 375-task agentic honesty benchmark, against 70% for Argon.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: pricing Carbon the same as Argon makes Google&#x27;s top model a <mark class="hl">drop-in choice for paying API users</mark>, and it lands a day after Anthropic cut prices on Claude Fable 5.2.</p></aside><p class="caveat"><span class="label">Caveat.</span> Benchmark, cost and safety figures are <mark class="hl">Google&#x27;s own claims</mark> or results from evaluations it selected; no independent comparison was found in this window. The broader cyber version stays restricted to the Fairwind Program.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" rel="noopener noreferrer">Google: Gemini 4 Carbon is now available</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:00+01:00">11 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/" rel="noopener noreferrer">Google: Gemini 4 Carbon for developers</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:00+01:00">11 Nov 2026, 06:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-apple-harbor-local-ai" aria-labelledby="h-apple-harbor-local-ai"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-apple-harbor-local-ai">Apple is preparing Harbor, a Mac app for running open-weight models locally across several Macs, 9to5Mac reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T19:15:00+00:00">10 Nov 2026, 20:15 CET</time></p><div class="story-body"><p>Apple is working on a Mac app called <mark class="hl">Harbor</mark> that turns a Mac into a private AI inference server for open-weight models, 9to5Mac reported on 10 November, based on material found by leaker Aaron Perris. Apple has not announced it.</p><p>According to the description quoted by 9to5Mac, Harbor downloads and runs models locally and can <mark class="hl">pool the unified memory of several Macs over Thunderbolt 5</mark> to run models too large for one machine or to serve more requests. 9to5Mac says the app is in a private preview under Apple&#x27;s Claris brand.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: if it ships, Apple would be packaging the <mark class="hl">home-built Mac clusters</mark> that local-model users assemble today into a supported product.</p></aside><p class="caveat"><span class="label">Caveat.</span> Unconfirmed leak: Apple has not commented, and there is no release date, price or list of supported models.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;So much negativity, but I think Apple making an effort for users to be able to run their own local LLM is a big step in the right direction.&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/LocalLLaMA/comments/1xszbe7/apple_has_new_mac_app_coming_to_make_running/19sg4jnxj061t/" rel="noopener noreferrer">u/BigWideBaker (r/LocalLLaMA)</a></p></blockquote><blockquote><p>&ldquo;This is what I&#x27;ve wanted for the last few years.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50448433" rel="noopener noreferrer">apparent (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/" rel="noopener noreferrer">9to5Mac</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:40+01:00">11 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://www.reddit.com/r/LocalLLaMA/comments/1xszbe7/apple_has_new_mac_app_coming_to_make_running/" rel="noopener noreferrer">r/LocalLLaMA discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:13+01:00">11 Nov 2026, 06:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-claude-workplace-tools" aria-labelledby="h-anthropic-claude-workplace-tools"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-anthropic-claude-workplace-tools">Anthropic launches Claude Meetings, Whiteboards and Sheets, and makes Claude Data generally available</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>At an event in San Francisco on 10 November, Anthropic launched <mark class="hl">Claude Meetings</mark>, which adds Claude to a video call as a visible participant that follows the discussion, drafts plans, answers questions in the chat and pulls figures from connected work apps while the call is still going. It is in beta for Team and Enterprise plans and works with Google Meet at launch, TechCrunch reports.</p><p>Anthropic also put <mark class="hl">Claude Whiteboards and Claude Sheets</mark> into beta on all paid plans: a shared board that Claude organises into timelines with owners and dates, and spreadsheets with tabs, formulas and drop-downs that Claude builds and edits in the cells. Claude Dashboards, in beta since October, is now generally available as Claude Data, with certified queries and live sharing still in beta.</p><p>The company also introduced interactive connectors that open full versions of partner apps such as Adobe, Atlassian and HubSpot inside Claude. TechCrunch reports that Claude announces itself in meetings and will not join calls with external guests unless an admin allows it.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: these are among Anthropic&#x27;s first products built for non-technical office workers, a <mark class="hl">direct push into Microsoft 365 and Google Workspace territory</mark> days before its planned stock market debut.</p></aside><p class="caveat"><span class="label">Caveat.</span> All three new tools are betas. Anthropic&#x27;s own article covers Whiteboards, Sheets and Data; the details of Claude Meetings come from TechCrunch, The Verge and Axios reporting on the event.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://claude.com/resources/articles/sheets-whiteboards-data" rel="noopener noreferrer">Anthropic (claude.com): Claude Whiteboards, Sheets and Data</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:30+01:00">11 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/" rel="noopener noreferrer">TechCrunch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:30+01:00">11 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1030709/anthropic-has-its-own-ai-powered-office-suite-now" rel="noopener noreferrer">The Verge</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:30+01:00">11 Nov 2026, 06:03 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-businesses-in-chatgpt" aria-labelledby="h-openai-businesses-in-chatgpt"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-openai-businesses-in-chatgpt">OpenAI lets companies claim profiles in ChatGPT and launches Business Agents for US online sellers</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>OpenAI launched <mark class="hl">Businesses in ChatGPT</mark> in beta on 10 November. Through a Business Hub, a company can claim its profile once verified, update its details, upload product feeds with prices and availability, and see aggregated insights such as mentions, views and website clicks, Reuters reports.</p><p>A second tool, <mark class="hl">Business Agents</mark>, lets ChatGPT users chat with an agent that answers from the information and guidelines a business sets. OpenAI&#x27;s page says it is available at first to eligible e-commerce and online service businesses in the US; Shopify merchants can connect their stores directly.</p><p>According to Reuters, OpenAI says it does not share users&#x27; conversations or Business Agent chats with businesses, and that insights appear only above minimum thresholds. Businesses can sponsor their agent and use it as the destination for ChatGPT ads, with sponsored placements labelled.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: this gives ChatGPT the equivalent of a <mark class="hl">business listings product, a field Google has long dominated</mark>, and ties it to OpenAI&#x27;s new ads business.</p></aside><p class="caveat"><span class="label">Caveat.</span> Eligibility depends on OpenAI&#x27;s verification and integrity checks, and the company has not said how many businesses are in the beta.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/business/businesses-in-chatgpt" rel="noopener noreferrer">OpenAI: Businesses in ChatGPT</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:40+01:00">11 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.centredaily.com/news/business/article318016384.html" rel="noopener noreferrer">Reuters (via Centre Daily Times)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:40+01:00">11 Nov 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-huang-spy-report">UPDATE: Nvidia&#x27;s independent directors hire former acting US Attorney Joon Kim and Wachtell Lipton to run the Huang inquiry</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10T19:07:00+00:00">10 Nov 2026, 20:07 CET</time></p><div class="story-body"><p>Update to yesterday morning&#x27;s edition, which reported President Trump saying the FBI is looking into Jensen Huang&#x27;s relationship with Alice Huang, a Megaspeed executive whom US intelligence reportedly believes was a spy for Beijing. The new development: on 10 November the independent members of Nvidia&#x27;s board said they have retained <mark class="hl">Joon H. Kim</mark>, former acting US Attorney for the Southern District of New York, and his firm <mark class="hl">Wachtell, Lipton, Rosen &amp; Katz</mark> to conduct the investigation announced on Sunday.</p><p>CNBC reports that Kim joined the firm earlier this month, citing Law360, and that Nvidia shares fell about 6% on Tuesday as investors weighed whether the scandal could lead to Huang leaving the company.</p><p>Also on Tuesday, Senate Democratic leader Chuck Schumer said Congress must have a full accounting of the President&#x27;s defence of Huang and urged lawmakers to quickly approve new limits on US chip exports to China, Reuters reports. The Senate version of the annual defence bill contains provisions on AI chip sales to China and on tracking chips abroad to combat smuggling.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: naming an outside former prosecutor gives the board&#x27;s inquiry <mark class="hl">a visible lead</mark>, while the episode is adding momentum in Congress to chip export limits.</p></aside><p class="caveat"><span class="label">Caveat.</span> The board&#x27;s statement is one sentence and gives no timetable. Nothing has been established about whether any Nvidia secrets or national security were compromised.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board" rel="noopener noreferrer">Nvidia: statement from the independent members of the board</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:03:00+01:00">11 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/10/nvidia-wachtell-lipton-huang-affair.html" rel="noopener noreferrer">CNBC</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:05:00+01:00">11 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.investing.com/news/stock-market-news/schumer-says-congress-must-have-answers-on-trump-defense-of-nvidia-ceo-5016683" rel="noopener noreferrer">Reuters (via Investing.com)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:50+01:00">11 Nov 2026, 06:04 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-new-york-ai-safety-center" aria-labelledby="h-new-york-ai-safety-center"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-new-york-ai-safety-center">New York launches a state centre to independently test frontier AI systems and opens registration under its RAISE Act</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>New York Governor Kathy Hochul on 10 November launched the statewide programme of the <mark class="hl">New York Center for AI Responsibility and Research</mark>, based at SUNY Binghamton, to independently test frontier AI systems, do foundational safety research and train AI safety experts. Politico first reported the plan at 8:00 New York time that morning, before the previous edition; the official launch followed later in the day.</p><p>Greg Morrisett of Cornell Tech and Jeannette Wing of Columbia University will be interim co-directors and bring together <mark class="hl">more than 80 researchers</mark> across the state, using the computing power of Empire AI, the state&#x27;s $500 million public-private initiative. The centre was first announced in January with a $30 million gift from donors led by Bloomberg LP co-founder Tom Secunda and an initial $25 million from SUNY.</p><p>The state&#x27;s new DIGIT office also opened a portal where large frontier AI developers must <mark class="hl">register by 1 January 2027</mark> under the RAISE Act. From January, large developers must publish safety frameworks and all frontier developers must report critical safety incidents; the centre will help review the published frameworks.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: with no federal rules, New York is building its own capacity to check what AI companies say about safety, <mark class="hl">ahead of its law taking effect in January</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> The centre&#x27;s testing programme is only starting, and the release does not say which systems it will evaluate first or whether companies must give it access.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research" rel="noopener noreferrer">Office of the Governor of New York</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:40+01:00">11 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.politico.com/news/2026/11/10/new-york-hochul-first-state-ai-testing-program-01157713" rel="noopener noreferrer">Politico</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:05:00+01:00">11 Nov 2026, 06:05 CET</time></span></li></ol></section></article></div><div class="cell"><article class="dispatch fresh-new" id="story-mercor-series-d" aria-labelledby="h-mercor-series-d"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-mercor-series-d">Mercor raises $750 million at a $20 billion valuation to sell AI agent evaluations to enterprises</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-10">10 Nov 2026</time></p><div class="story-body"><p>Mercor, which pays experts to help train and evaluate AI models, announced a <mark class="hl">$750 million Series D at a $20 billion valuation</mark> on 10 November. The round included an employee tender, and investors include Benchmark, Felicis, General Catalyst, Nvidia, Salesforce, Zoom and funds managed by affiliates of Apollo; Mercor did not name a lead.</p><p>Reuters reports that the valuation is double the roughly $10 billion Mercor reached when it raised $350 million in October 2025. Mercor says its network has more than five million experts, and that the money will go into evaluations, post-training and environments where agents can practise enterprise workflows. Co-founder Brendan Foody wrote on LinkedIn that the company went from <mark class="hl">$1 million to $3 billion in run-rate revenue</mark> in 27 months.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the round shows investors betting that companies will pay to <mark class="hl">test and tune agents on their own workflows</mark>, not just buy model access.</p></aside><p class="caveat"><span class="label">Caveat.</span> The revenue figure is the company&#x27;s own claim, and Mercor does not say how much of the $750 million went to employees selling shares.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.mercor.com/blog/series-d" rel="noopener noreferrer">Mercor</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-11T06:05:00+01:00">11 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10" rel="noopener noreferrer">Reuters</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-11T06:04:50+01:00">11 Nov 2026, 06:04 CET</time></span></li></ol></section></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The frontier labs are competing for office work: Anthropic shipped meeting, whiteboard and spreadsheet tools, and OpenAI turned ChatGPT into <mark class="hl">a place for businesses to list and sell</mark>.</li><li>Google priced its strongest model, Gemini 4 Carbon, <mark class="hl">the same as Argon</mark>, a day after Anthropic cut Fable 5.2&#x27;s price.</li><li>Outside checks on AI are growing: New York will test frontier systems itself, and Mercor raised $750 million to sell agent evaluations to companies.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (26 threads; 103 sub-requests blocked with HTTP 403, 21 failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (28 stories)</dd></div><div><dt>github</dt><dd>ok (13 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished with 79 evidence items from Reddit, Hacker News, dev.to and GitHub. It surfaced the Apple Harbor report and its community comments; the other stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 103 of its sub-requests were blocked (HTTP 403) and 21 failed (HTTP 422), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.</li><li>Reuters reports on OpenAI&#x27;s business profiles and on Senator Schumer were read through syndicated copies. Not read: the Financial Times report that the US commodities regulator postponed AI computing futures (paywalled). No source needed the anti-bot fetch ladder.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file holds five leads. Claude Fable 5.2&#x27;s benchmarks and the Mythos 5.2 system card were covered in yesterday&#x27;s editions; an OpenAI Codex-branded handheld, GitHub&#x27;s port of a Copilot engine to Rust and a tech jobs report were not verified as new primary-sourced news in this window and were not carried. The window was not widened.</li><li>Not carried: Fireworks AI&#x27;s wider breach disclosure, which Notion says exposed some unattributable Notion AI chats, because Fireworks posted its update on 9 November, before this window; IBM and Microsoft&#x27;s Imagine Enterprise agent platform, announced on 10 November, because its release time could not be placed after the previous edition; OpenAI&#x27;s reported acquisition of travel start-up Odessia, which OpenAI has not confirmed; and the Lean code for OpenAI&#x27;s Yang-Mills existence proof, which the reviewing committee said it would publish on 10 November but which could not be located.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 26 threads │ 5,187 upvotes │ 1,750 comments
+├─  HN: 28 stories │ 1,777 points │ 1,247 comments
+├─  dev.to: 12 articles │ 215 reactions │ 175 comments
+├─  GitHub: 13 items │ 58 reactions │ 157 comments
+├─  Top voices: r/artificial, r/singularity, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-11-morning.json" download>Exact input JSON</a></li><li><a href="2026-11-11-morning.md">Markdown text</a></li><li><a href="2026-11-11-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and no scripts, cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+</body>
+</html>
