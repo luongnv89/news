@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-12-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-12T06:08:55+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-11T04:30:00+01:00",
+  "window_end": "2026-11-12T06:08:55+01:00",
+  "editorial_note": "Since yesterday afternoon's edition, ==Nvidia's board met to decide whether to remove Jensen Huang== after The New York Times reported a second relationship, this one with an executive who reports to him; no decision had been announced when this edition went to press. United Airlines moved to ==block third-party AI agents== from booking its flights, Google launched ==Gemini Decision 1==, a model that scores answers instead of writing them, SpaceXSI took Grok Bot out of beta, and Meta's longtime infrastructure chief said he will step down. There is no new frontier model in this window. To carry the release of the checked Lean code behind OpenAI's Yang-Mills proof, which no earlier edition carried, ==the window was widened to 04:30 on 11 November==, about 26 hours before this edition.",
+  "stories": [
+    {
+      "id": "nvidia-huang-spy-report",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Nvidia's board meets to decide whether to oust Jensen Huang after a report of a second relationship, with an executive",
+      "published_at": "2026-11-11",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday morning's edition, which reported that Nvidia's independent directors had hired Joon Kim and Wachtell Lipton to investigate Jensen Huang's relationship with Alice Huang, whom US intelligence reportedly believes was a Chinese spy. The new development: late on Wednesday 11 November, US time, ==Nvidia's board met to decide whether to remove Huang== as chief executive, a source told Reuters, after The Wall Street Journal first reported that the board was preparing to oust him.",
+        "The meeting followed a New York Times report, citing five people who worked at Nvidia, that Huang also had a relationship with ==Kimberly Powell, Nvidia's vice president of healthcare==, who reports to him. Reuters says it could not immediately verify that report, and Nvidia and Powell did not immediately respond to requests for comment.",
+        "Under Nvidia's bylaws, Huang can be removed ==\"with or without cause\" by a majority of the directors==; the company has 11 directors and considers all but Huang independent, Reuters reports. Nvidia shares fell more than 8% in extended trading. Bloomberg reported that the board has been working with an outside firm to identify possible replacements. Nvidia reports quarterly results on ==17 November==.",
+        "NBC News reports that Senators Elizabeth Warren and Chris Coons asked the Commerce Department, the State Department and the White House to preserve all records about exports of Nvidia's advanced AI chips to China and about the reported intelligence operation."
+      ],
+      "why_it_matters": "Editorial analysis: Huang has led Nvidia since 1993, and the company supplies most of the chips behind the AI build-out; ==a change at the top days before its results== would test how far the industry depends on one leader.",
+      "caveat": "As of this edition, ==Nvidia has announced no decision==. The board meeting and the planned ouster are reported by unnamed sources; the second relationship is reported by The New York Times and has not been confirmed by Nvidia.",
+      "sources": [
+        {
+          "label": "CNA (Reuters): Nvidia board meets to decide CEO Huang's future as leadership crisis deepens",
+          "url": "https://www.channelnewsasia.com/world/nvidia-ceo-jensen-huang-oust-board-affair-6544031",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "NBC News: Nvidia shares drop after hours amid reports of meeting over CEO Jensen Huang's future",
+          "url": "https://www.nbcnews.com/business/business-news/nvidia-shares-drop-hours-reports-meeting-ceo-jensen-huangs-future-rcna608906",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "NVIDIA Newsroom: Statement from NVIDIA Board of Directors (8 November)",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:05:00+01:00"
+        },
+        {
+          "label": "Hacker News discussion: Nvidia is preparing to oust Jensen Huang",
+          "url": "https://news.ycombinator.com/item?id=50459703",
+          "type": "community",
+          "checked_at": "2026-11-12T06:04:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "This is certainly fast after the NYT article on his second affair. I suspect this was in the works after the original affair + export scandal.",
+          "author": "minimaxir (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50459775"
+        },
+        {
+          "text": "Affair or not, this is a tragedy for American technology.",
+          "author": "dcgudeman (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50459825"
+        }
+      ]
+    },
+    {
+      "id": "united-airlines-blocks-ai-agents",
+      "section": "Coding & agents",
+      "headline": "United Airlines bars unauthorised third-party AI agents from booking, changing or checking in for its flights",
+      "published_at": "2026-11-11",
+      "freshness": "new",
+      "paragraphs": [
+        "United Airlines said on Wednesday 11 November that it is ==restricting access by unauthorised third-party AI agents== and assistants, both on its own website and app and indirectly through travel agencies and aggregators. Its help page says any agent, bot, browser extension or browser feature that searches, books, buys, manages or collects information on united.com or in the United app without the airline's permission is unauthorised.",
+        "United says sharing account credentials with such assistants can expose personal data and lead to unintended purchases, account changes or use of MileagePlus miles, and that automated check-in could breach rules requiring a human to confirm a bag carries no banned items. Bookings an agent made ==before 11 November will not be cancelled==, travellers can still use AI to plan trips without touching United's systems, and assistive technology for customers with disabilities is not affected. Travel agencies may use AI tools only with United's permission.",
+        "United says it does not yet work with any third-party AI agents. CNBC notes that companies are split: Amazon has blocked Meta's Muse agent while Walmart has partnered with it."
+      ],
+      "why_it_matters": "Editorial analysis: this is one of the first large consumer brands to write an ==agent ban into its booking rules==, a sign that agents may need permission deals, not just credentials, to transact.",
+      "caveat": "United has not said how it will detect agents in practice. An analyst quoted by CBS News suggests United also wants to keep control of how its fares are sold; United itself cites security and regulation.",
+      "sources": [
+        {
+          "label": "United Airlines: Unauthorized third-party AI agents or assistants",
+          "url": "https://www.united.com/en/us/fly/help-center/digital-trust-center/artificial-intelligence/third-party-ai-agents.html",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "CNBC (Reuters): United Airlines moves to block AI agents from its platform over security concerns",
+          "url": "https://www.cnbc.com/2026/11/11/united-airlines-ai-agents.html",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "CBS News: United Airlines bans AI agents from booking flights on behalf of travelers",
+          "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "Hacker News discussion: United Airlines bans AI agents from booking flights",
+          "url": "https://news.ycombinator.com/item?id=50458900",
+          "type": "community",
+          "checked_at": "2026-11-12T06:04:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "How do they plan on stopping me from using Claude code with the Claude in chrome plugin, or some other computer use agent?",
+          "author": "doctoboggan (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50459506"
+        },
+        {
+          "text": "Somebody once said, that airline booking pages itself are one of the most sophisticated CAPTCHAs.",
+          "author": "andix (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50459448"
+        }
+      ]
+    },
+    {
+      "id": "google-gemini-decision-1",
+      "section": "Models",
+      "headline": "Google launches Gemini Decision 1, a model that scores up to 1,000 yes/no or multiple-choice questions in one pass",
+      "published_at": "2026-11-11T19:00:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google introduced the ==Gemini Decisions API== on 11 November, powered by a new model, ==Gemini Decision 1== (gemini-decision-1). Instead of generating text, it scores a fixed set of options and returns probabilities and confidence scores, for tasks such as tool selection, policy checks, model routing and grading context.",
+        "One request carries a single input of text, images, audio, video or PDFs, up to 256K tokens, plus ==up to 1,000 independent questions==: yes/no checks, choices among 2 to 255 options, or scores on a rubric. Google says it answers in 150 to 250 milliseconds end to end and charges ==$0.10 per million input tokens with no output charge==; the shared input is billed once per request. It is available in Google AI Studio with a no-cost tier.",
+        "Google claims the model is nearly five times cheaper on its benchmark suite than Gemini 3.5 Flash-Lite. It enters a field where TypeSafe's Jev and OpenAI's Decisions API already sell similar decision models, VentureBeat notes."
+      ],
+      "why_it_matters": "Editorial analysis: agent builders make many small judgments per task; ==a cheap, fast scorer for those choices== could cut costs more than another chat model would.",
+      "caveat": "The speed and cost comparisons are Google's own claims on its own benchmark suite. The Decisions API does not support context caching or the Batch API.",
+      "sources": [
+        {
+          "label": "Google: Gemini Decisions API, fast, calibrated multimodal decisions",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:05:00+01:00"
+        },
+        {
+          "label": "VentureBeat: Google's Gemini Decision 1 model scores up to 1,000 questions in one API call",
+          "url": "https://venturebeat.com/technology/googles-gemini-decision-1-model-scores-up-to-1-000-questions-in-one-api-call",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "Hacker News discussion: Gemini Decisions API",
+          "url": "https://news.ycombinator.com/item?id=50456791",
+          "type": "community",
+          "checked_at": "2026-11-12T06:04:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "However, it can accept Audio and Video as input as well and for those specific cases it can be extremely useful.",
+          "author": "waximabbax (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50456959"
+        }
+      ]
+    },
+    {
+      "id": "spacexsi-grok-bot-1-0",
+      "section": "Coding & agents",
+      "headline": "SpaceXSI takes Grok Bot out of beta with shared team bots that join Slack, Microsoft Teams and video calls",
+      "published_at": "2026-11-11",
+      "freshness": "new",
+      "paragraphs": [
+        "SpaceXSI launched ==Grok Bot 1.0== on 11 November, ending the beta of its always-on AI agents. Team Bots can be shared with people or groups and brought into ==Slack, Microsoft Teams and video calls==, where they follow multi-person discussions and take part through the chat.",
+        "The company says the bots now ==offer to take on work unprompted==: they monitor projects, follow up on unfinished tasks and bring people in when a decision needs human judgment. It also says they are faster and more reliable at browser work, documents and slide decks, and adds team settings and usage analytics. Team Bots are on Team and Enterprise plans; meetings are on Team, Enterprise and Ultra plans and must be switched on by Enterprise admins."
+      ],
+      "why_it_matters": "Editorial analysis: agents are moving from personal assistants to shared colleagues inside work chat, which raises new questions about whose permissions a shared bot uses.",
+      "caveat": "The capability claims come from SpaceXSI's launch post and have not been independently tested.",
+      "sources": [
+        {
+          "label": "SpaceXSI: Introducing Grok Bot 1.0",
+          "url": "https://x.ai/news/grok-bot-1-0",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "meta-janardhan-steps-down",
+      "section": "Industry & policy",
+      "headline": "Meta's longtime infrastructure chief Santosh Janardhan will step down, handing over to former AWS executive Dave Brown",
+      "published_at": "2026-11-11",
+      "freshness": "new",
+      "paragraphs": [
+        "==Santosh Janardhan==, Meta's head of infrastructure and co-head of engineering, told staff on 11 November that he will step down, according to an internal memo first reported by Bloomberg and also obtained by CNBC. He has been at the company since 2009 and wrote that it is \"time to pass the baton\".",
+        "==Dave Brown==, who joined Meta this year after about two decades at Amazon Web Services, will succeed him. Janardhan will support the transition through the ==first quarter of 2027==, and a Meta representative told TechCrunch he is moving into an advisory role on Meta Compute, the initiative that plans Meta's computing capacity for AI. The memo gave no reason for the change."
+      ],
+      "why_it_matters": "Editorial analysis: Meta expects ==$135 billion to $145 billion== of capital spending this year, mostly for AI data centres, so the person running that build-out matters to its AI plans.",
+      "caveat": "",
+      "sources": [
+        {
+          "label": "CNBC: Meta head of infrastructure will depart, succeeded by former AWS exec",
+          "url": "https://www.cnbc.com/2026/11/11/meta-infrastructure-departure-aws-cloud.html",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "TechCrunch: Meta is losing its longtime head of infrastructure",
+          "url": "https://techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure/",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-eth-kakeya-qcd-claims",
+      "section": "Research",
+      "headline": "UPDATE: Reviewers publish the Lean code behind OpenAI's Yang-Mills existence proof and say it holds, but not for the mass gap",
+      "published_at": "2026-11-11T04:37:54+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 27 October edition, which reported that OpenAI's maths advisers asked it to release its claimed Yang-Mills proof. The new development: on the night of 10 November, US time, the review committee led by physicist David Gross ==published its assessment and the checked Lean code== on GitHub, as its 9 November statement had promised; yesterday morning's edition said the code could not yet be found.",
+        "The assessment, dated 10 November, concerns OpenAI's submission of 28 October. In the group's opinion it proves that a relativistic quantum field theory satisfying the Wightman axioms ==can be constructed as a scaling limit of four-dimensional lattice gauge theory== for any simple compact gauge group. It ==does not prove a mass gap== or that the infinite-volume limit is unique, so the Millennium Prize problem is not solved. A second OpenAI submission, of 4 November, is listed as work in progress.",
+        "Scientific American reports that the reviewers wrote they used OpenAI's Astra model to help digest the Lean code and \"do not claim to fully understand the proof yet\". The package includes reproduction instructions so others can rerun the formal checks."
+      ],
+      "why_it_matters": "Editorial analysis: with the code public, the claim can now be checked by anyone, not only by a committee the company chose.",
+      "caveat": "The committee was appointed by OpenAI, and its own repository says posting a submission is ==not an endorsement or certification==. Outside mathematicians have only just received the material.",
+      "sources": [
+        {
+          "label": "yang-mills-group/YM on GitHub: pure Yang-Mills results and verification",
+          "url": "https://github.com/yang-mills-group/YM",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "KITP: third statement about quantum Yang-Mills theory (9 November)",
+          "url": "https://www.kitp.ucsb.edu/sites/default/files/3rd-Statement-About-Quantum-YangMills-Theory_Nov-9.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        },
+        {
+          "label": "Scientific American: OpenAI's 'shepherds' affirm blockbuster physics result",
+          "url": "https://www.scientificamerican.com/article/openais-shepherds-affirm-blockbuster-physics-result/",
+          "type": "reporting",
+          "checked_at": "2026-11-12T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (18 threads; 22 sub-requests blocked with HTTP 403, 17 failed with HTTP 422, 6 got no response; Arctic Shift archive supplied posts)",
+      "hackernews": "ok (26 stories)",
+      "github": "ok (12 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished with 68 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top Hacker News cluster was United's AI-agent ban; the other stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Community comments come from Hacker News threads read through its public API. Item counts are not counts of verified developments.",
+      "Window widened: this edition's window starts at 04:30 on 11 November, about 26 hours before it was issued, to carry the release of the Yang-Mills Lean code, which no earlier edition carried.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 22 of its sub-requests were blocked (HTTP 403) and 23 failed, so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Paywalled and not read: The Wall Street Journal's reports that Nvidia was preparing to oust Jensen Huang and that United was banning AI bots, The New York Times report on Huang and Kimberly Powell, and Bloomberg's first report on Santosh Janardhan; these are described through Reuters, NBC News, CNBC, CBS News and TechCrunch. A report by The Information that the US Commerce Department is finalising a rule on China's remote access to AI chips was paywalled and is not carried.",
+      "Newsletter leads from the Iris mail bot: today's file holds five leads. Anthropic's IPO range and Gemini 4 Carbon's pricing were covered by earlier editions; OpenAI's offline training policy dates from 23 October and is not new; a report on an approved H200 recipient's empty office and a KFC Japan item were not verified from readable primary sources and were not carried.",
+      "Not carried: Google's Gemini app on Apple CarPlay, a consumer rollout; an AWS guide to running OpenAI's Codex through Amazon Bedrock; OpenAI's deal for Pierre Computer, announced on 4 November; and an Axios report that Commerce Secretary Lutnick stalled new curbs on Nvidia chip sales to China, based on unnamed sources.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 18 threads │ 14,215 upvotes │ 2,530 comments\n├─ 🟡 HN: 26 stories │ 2,207 points │ 1,555 comments\n├─ 👩‍💻 dev.to: 12 articles │ 146 reactions │ 93 comments\n├─ 🐙 GitHub: 12 items │ 53 reactions │ 224 comments\n├─ 🗣️ Top voices: r/technology, r/artificial, r/LocalLLaMA\n---"
+  },
+  "key_patterns": [
+    "Companies are setting terms for AI agents: United ==banned unauthorised agents== while SpaceXSI pitched shared bots that act unprompted.",
+    "Leadership risk is now an AI infrastructure risk: Nvidia's board weighed removing Huang, and Meta is changing who runs its data-centre build-out.",
+    "Cheap single-purpose models keep arriving: Google's Gemini Decision 1 scores choices instead of writing text."
+  ],
+  "previous_issue_id": "2026-11-11-afternoon"
+}

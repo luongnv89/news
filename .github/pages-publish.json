@@ -213,6 +213,9 @@
     "reports/2026-11-11-morning.html",
     "reports/2026-11-11-morning.json",
     "reports/2026-11-11-morning.md",
+    "reports/2026-11-12-morning.html",
+    "reports/2026-11-12-morning.json",
+    "reports/2026-11-12-morning.md",
     "trending/archive.html",
     "trending/index.html",
     "trending/reports/2026-10-15.html",
@@ -301,5 +304,5 @@
     "trending/reports/2026-11-11.md"
   ],
   "tool": "github-pages-publish",
-  "published_at": "2026-11-11T15:11:51+00:00"
+  "published_at": "2026-11-12T05:10:10+00:00"
 }
