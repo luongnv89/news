@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Sunday 15 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-15-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Sunday 15 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-15-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-15T16:09:29+01:00">Sunday 15 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-15-afternoon</p><p>Issued 16:09 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-15-afternoon.html">This edition</a><a href="2026-11-15-afternoon.md">Markdown</a><a href="2026-11-15-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-15-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Sunday 15 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-13T17:00:00+01:00">13 Nov 2026, 17:00 CET</time> to <time datetime="2026-11-15T16:09:00+01:00">15 Nov 2026, 16:09 CET</time> (Paris time). Issued <time datetime="2026-11-15T16:09:29+01:00">15 Nov 2026, 16:09 CET</time>.</p><p class="lead-note">Ten hours since the morning edition, through a Sunday with no new frontier model release. Inside the normal window: Megaspeed&#x27;s statement that <mark class="hl">Alice Huang left in August 2025</mark>, a South Korean exam cheating confession, a coolant spill at an xAI facility in Mississippi and Japan&#x27;s plan for military AI guidelines. The window is widened to 17:00 on Friday 13 November, just under 48 hours, to carry three verified items no earlier edition ran: Cursor&#x27;s account of how <mark class="hl">a key issued to Fireworks</mark> led to the tampered Claude Code extension, Bland&#x27;s Tofu-1 speech model, and South Africa&#x27;s AI visit to Silicon Valley. Vendor claims are labelled as such.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-15-morning.html">2026-11-15-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-bland-tofu-1" aria-labelledby="h-bland-tofu-1"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-bland-tofu-1">Bland opens a research preview of Tofu-1, a full-duplex speech-to-speech model for phone calls</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-13">13 Nov 2026</time></p><div class="story-body"><p>San Francisco voice-AI company Bland has introduced <mark class="hl">Tofu-1</mark>, which it describes as a <mark class="hl">full duplex speech-to-speech model</mark> built for calls in poor conditions: from moving cars and hospital rooms, over weak signal, or with several people talking at once. Bland announced it on 13 November, and MarkTechPost reported it on Sunday.</p><p>Bland says Tofu-1 listens while it speaks, so callers can interrupt or correct it mid-sentence, keeps the call moving while it works on a task, tells speakers apart and can generate several speakers and the sound of the room. Unlike cascaded voice systems that turn speech into text and back, it works on the audio itself, the company says.</p><p>Access is a <mark class="hl">research preview for a limited number of enterprises</mark>. Bland has not published the model&#x27;s internal architecture, and its parameter count and turn-taking latency are not disclosed, MarkTechPost notes.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: phone agents are moving from transcribe-then-reply pipelines to models that handle audio end to end, which matters most in the noisy, interrupted calls that cascades handle badly.</p></aside><p class="caveat"><span class="label">Caveat.</span> All capability claims are Bland&#x27;s own; no independent evaluation or benchmark result was available, and the model is not generally available.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.bland.ai/speech-to-speech" rel="noopener noreferrer">Bland: Tofu-1, speech-to-speech built for high-stakes calls</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:15+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.marktechpost.com/2026/11/15/bland-tofu-1-full-duplex-speech-to-speech-model/" rel="noopener noreferrer">MarkTechPost: Bland launches Tofu-1, a full-duplex speech-to-speech model for calls</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:35+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-bland-tofu-1"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-bland-tofu-1">Draft for X</label><textarea id="share-x-story-bland-tofu-1" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-bland-tofu-1-count">Bland opens a research preview of Tofu-1, a full-duplex speech-to-speech model for phone calls
+
+→ Bland announced it on 13 November, and MarkTechPost reported it on Sunday.
+
+Sources: Bland, MarkTechPost; via The AI Gazette</textarea><p class="share-count" id="share-x-story-bland-tofu-1-count">247 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Bland%20opens%20a%20research%20preview%20of%20Tofu-1%2C%20a%20full-duplex%20speech-to-speech%20model%20for%20phone%20calls%0A%0A%E2%86%92%20Bland%20announced%20it%20on%2013%20November%2C%20and%20MarkTechPost%20reported%20it%20on%20Sunday.%0A%0ASources%3A%20Bland%2C%20MarkTechPost%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-bland-tofu-1" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-bland-tofu-1">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-bland-tofu-1">Draft for LinkedIn</label><textarea id="share-li-story-bland-tofu-1" class="share-text share-text-li" rows="12">Bland opens a research preview of Tofu-1, a full-duplex speech-to-speech model for phone calls
+
+→ Bland announced it on 13 November, and MarkTechPost reported it on Sunday.
+→ Access is a research preview for a limited number of enterprises.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-bland-tofu-1
+Sources: Bland, MarkTechPost; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Bland%20opens%20a%20research%20preview%20of%20Tofu-1%2C%20a%20full-duplex%20speech-to-speech%20model%20for%20phone%20calls%0A%0A%E2%86%92%20Bland%20announced%20it%20on%2013%20November%2C%20and%20MarkTechPost%20reported%20it%20on%20Sunday.%0A%E2%86%92%20Access%20is%20a%20research%20preview%20for%20a%20limited%20number%20of%20enterprises.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-bland-tofu-1%0ASources%3A%20Bland%2C%20MarkTechPost%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-bland-tofu-1">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-bland-tofu-1">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-claude-code-extension-cursor-backdoor" aria-labelledby="h-claude-code-extension-cursor-backdoor"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">Updated</span></p><h3 id="h-claude-code-extension-cursor-backdoor">UPDATE: Cursor says a key it had issued to Fireworks, exposed by Fireworks, opened the way to the tampered Claude Code extension</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-13">13 Nov 2026</time></p><div class="story-body"><p>Update to the 30 and 31 October editions on the tampered Claude Code extension in Cursor&#x27;s marketplace. The new development: in a post dated 13 November, Cursor says the attack <mark class="hl">started at Fireworks</mark>. An attacker obtained an access key Cursor had issued to the inference company, which Cursor says was exposed by Fireworks, and used it to copy data from a read-only storage bucket the two used to share data.</p><p>That bucket held limited coding agent traces, mostly from 2025, from sessions not in Privacy Mode that Cursor was permitted to use for training. Some traces contained credentials that had not been redacted, exposing API credentials of <mark class="hl">less than 0.01% of customers</mark>, Cursor says. From there the attacker reached select SaaS tools and accessed archived non-production source code repositories, limited support data and email conversations, usage metrics and contact details, and some credentials users had sent to Cursor&#x27;s support team.</p><p>On 29 October a stolen credential let the attacker place malicious copies of Anthropic&#x27;s Claude Code extension, versions 2.1.312 and 2.1.313, directly on the cache that serves Cursor&#x27;s VS Code extension marketplace. Cursor says <mark class="hl">at most 5,000 users</mark> may have received the build, which was available for about 11 hours, and that the marketplace source, Open VSX, never had the malware.</p><p>Cursor says it has <mark class="hl">moved all inference traffic off Fireworks</mark>, rotated credentials and believes the incident is contained, with the last attacker activity seen on 1 November and blocked. Fireworks&#x27; security bulletins list an October 2026 incident involving unauthorized use of internal Fireworks credentials. The Hacker News reported Cursor&#x27;s update on Sunday.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the chain ran through a model vendor holding training traces rather than through Cursor&#x27;s release pipeline, so the data a coding tool shares with AI training and inference partners is part of its attack surface.</p></aside><p class="caveat"><span class="label">Caveat.</span> This account and its exposure figures come from Cursor&#x27;s own investigation and were not independently verified; Fireworks&#x27; bulletins were checked only for the incident listing, not for what they say about Cursor&#x27;s key. Cursor says users who installed the tampered versions should follow its October security notice, because uninstalling the extension alone may not be enough.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://cursor.com/blog/security-incident-update" rel="noopener noreferrer">Cursor: An update on our recent security incident</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:14+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://fireworks.ai/security/bulletins" rel="noopener noreferrer">Fireworks AI: Security bulletins</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:15+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html" rel="noopener noreferrer">The Hacker News: Stolen Fireworks AI key led to Cursor data breach and trojanized Claude Code extension</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:14+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-claude-code-extension-cursor-backdoor"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-claude-code-extension-cursor-backdoor">Draft for X</label><textarea id="share-x-story-claude-code-extension-cursor-backdoor" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-claude-code-extension-cursor-backdoor-count">UPDATE: Cursor says a key it had issued to Fireworks, exposed by Fireworks, opened the way to the tampered Claude Code extension
+
+→ The Hacker News reported Cursor&#x27;s update on Sunday.
+
+Sources: Cursor, Fireworks AI, The Hacker News; via The AI Gazette</textarea><p class="share-count" id="share-x-story-claude-code-extension-cursor-backdoor-count">276 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Cursor%20says%20a%20key%20it%20had%20issued%20to%20Fireworks%2C%20exposed%20by%20Fireworks%2C%20opened%20the%20way%20to%20the%20tampered%20Claude%20Code%20extension%0A%0A%E2%86%92%20The%20Hacker%20News%20reported%20Cursor%27s%20update%20on%20Sunday.%0A%0ASources%3A%20Cursor%2C%20Fireworks%20AI%2C%20The%20Hacker%20News%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-claude-code-extension-cursor-backdoor" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-claude-code-extension-cursor-backdoor">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-claude-code-extension-cursor-backdoor">Draft for LinkedIn</label><textarea id="share-li-story-claude-code-extension-cursor-backdoor" class="share-text share-text-li" rows="12">UPDATE: Cursor says a key it had issued to Fireworks, exposed by Fireworks, opened the way to the tampered Claude Code extension
+
+→ That bucket held limited coding agent traces, mostly from 2025, from sessions not in Privacy Mode that Cursor was permitted to use for training.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-claude-code-extension-cursor-backdoor
+Sources: Cursor, Fireworks AI, The Hacker News; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Cursor%20says%20a%20key%20it%20had%20issued%20to%20Fireworks%2C%20exposed%20by%20Fireworks%2C%20opened%20the%20way%20to%20the%20tampered%20Claude%20Code%20extension%0A%0A%E2%86%92%20That%20bucket%20held%20limited%20coding%20agent%20traces%2C%20mostly%20from%202025%2C%20from%20sessions%20not%20in%20Privacy%20Mode%20that%20Cursor%20was%20permitted%20to%20use%20for%20training.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-claude-code-extension-cursor-backdoor%0ASources%3A%20Cursor%2C%20Fireworks%20AI%2C%20The%20Hacker%20News%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-claude-code-extension-cursor-backdoor">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-claude-code-extension-cursor-backdoor">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-huang-spy-report">UPDATE: Megaspeed says Alice Huang left the company in August 2025 and hires outside lawyers to investigate reports about its business</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-15T09:20:00+01:00">15 Nov 2026, 09:20 CET</time></p><div class="story-body"><p>Update to this week&#x27;s editions on Jensen Huang&#x27;s resignation and the Megaspeed affair. The new development: Megaspeed, the Singapore-based cloud computing company at the centre of the case, said on Sunday that Alice Huang <mark class="hl">officially left Megaspeed effective August 30, 2025</mark> and has no current role there, in an emailed statement shared with CNBC and also reported by Reuters.</p><p>Megaspeed said recent media reports about its business, supply chain and global operations are not supported by verifiable evidence, and that it has <mark class="hl">retained external legal counsel</mark> to conduct a thorough internal investigation. It said it does not comment on Ms Huang&#x27;s personal and private matters, and that its control frameworks are designed to comply with US export control requirements.</p><p>Reuters notes that Megaspeed has not been found to have violated the rules and that the US government and Nvidia did not respond immediately to requests for comment. Research group C4ADS has said, citing corporate records, that Alice Huang became Megaspeed&#x27;s <mark class="hl">controlling shareholder in March 2023</mark>, the Reuters report carried by The Straits Times adds.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the statement dates Alice Huang&#x27;s departure but does not address the reports about where Megaspeed&#x27;s Nvidia chips went, which is what the export-control inquiries and Nvidia&#x27;s board investigation turn on.</p></aside><p class="caveat"><span class="label">Caveat.</span> The departure date and the description of Megaspeed&#x27;s compliance controls are the company&#x27;s own claims and were not independently verified. US officials suspect Alice Huang of being a Chinese intelligence asset, according to reports cited by CNBC and Reuters; Beijing has denied the allegation, and no authority has publicly found Megaspeed in breach of US export rules.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;if true i&#x27;m GLAD he smuggled the chips to China so they could release such good open weights&rdquo;</p><p class="attribution">&mdash; <a href="https://reddit.com/r/technology/comments/1xwh2q4/exportbanned_nvidia_chips_are_behind_chinas_most/19snx0maqv9oj/" rel="noopener noreferrer">u/Limp_Classroom_2645 on r/technology</a></p></blockquote><blockquote><p>&ldquo;It needs to be a lot more than Jensen.&rdquo;</p><p class="attribution">&mdash; <a href="https://www.reddit.com/r/technology/comments/1xvsezb/nvidia_allegedly_engineered_scarcity_by_funding/" rel="noopener noreferrer">u/Durtle_Turtle on r/technology</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html" rel="noopener noreferrer">CNBC: Megaspeed says Alice Huang left in 2025 as it launches internal probe</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:10+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.straitstimes.com/business/megaspeed-says-alice-huang-left-company-in-august-2025" rel="noopener noreferrer">The Straits Times (Reuters): Megaspeed says Alice Huang left company in August 2025</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:10+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-nvidia-huang-spy-report"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-nvidia-huang-spy-report">Draft for X</label><textarea id="share-x-story-nvidia-huang-spy-report" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-nvidia-huang-spy-report-count">UPDATE: Megaspeed says Alice Huang left the company in August 2025 and hires outside lawyers to investigate reports about its business
+
+Sources: CNBC, The Straits Times (Reuters); via The AI Gazette</textarea><p class="share-count" id="share-x-story-nvidia-huang-spy-report-count">222 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Megaspeed%20says%20Alice%20Huang%20left%20the%20company%20in%20August%202025%20and%20hires%20outside%20lawyers%20to%20investigate%20reports%20about%20its%20business%0A%0ASources%3A%20CNBC%2C%20The%20Straits%20Times%20%28Reuters%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-nvidia-huang-spy-report" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-nvidia-huang-spy-report">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-nvidia-huang-spy-report">Draft for LinkedIn</label><textarea id="share-li-story-nvidia-huang-spy-report" class="share-text share-text-li" rows="12">UPDATE: Megaspeed says Alice Huang left the company in August 2025 and hires outside lawyers to investigate reports about its business
+
+→ Reuters notes that Megaspeed has not been found to have violated the rules and that the US government and Nvidia did not respond immediately to requests for comment.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-nvidia-huang-spy-report
+Sources: CNBC, The Straits Times (Reuters); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Megaspeed%20says%20Alice%20Huang%20left%20the%20company%20in%20August%202025%20and%20hires%20outside%20lawyers%20to%20investigate%20reports%20about%20its%20business%0A%0A%E2%86%92%20Reuters%20notes%20that%20Megaspeed%20has%20not%20been%20found%20to%20have%20violated%20the%20rules%20and%20that%20the%20US%20government%20and%20Nvidia%20did%20not%20respond%20immediately%20to%20requests%20for%20comment.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-nvidia-huang-spy-report%0ASources%3A%20CNBC%2C%20The%20Straits%20Times%20%28Reuters%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-nvidia-huang-spy-report">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-nvidia-huang-spy-report">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-korea-tax-exam-ai-cheating" aria-labelledby="h-korea-tax-exam-ai-cheating"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-korea-tax-exam-ai-cheating">Top scorer in South Korea&#x27;s tax accountant exam admits he cheated with a hidden camera and generative AI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-15">15 Nov 2026</time></p><div class="story-body"><p>Han Won-seok, 34, who placed first in South Korea&#x27;s 2026 certified tax accountant exam, admitted on Sunday that he <mark class="hl">cheated using a miniature camera, a smartphone and generative AI</mark>, in a video on his lawyer&#x27;s YouTube channel, the BBC and The Korea Herald report. He said he photographed the questions, sent them to an AI and checked the answers on his phone, in both rounds of the exam.</p><p>He had scored 397.5 out of 400 in the first round, <mark class="hl">159 of 160 questions correct</mark>, which drew online suspicion; he had earlier denied cheating. The Korea Herald reports that he also admitted using the same methods in the first round of the certified public accountant exam in March. Seoul Metropolitan Police Agency told Yonhap it had received a written confession through his lawyer and assigned the case to investigators, the BBC reports.</p><p>The government said those found to have used AI to cheat in the exam will have their <mark class="hl">qualification revoked and be banned from retaking it for five years</mark>, according to the BBC, and the president&#x27;s policy chief said new measures against cheating would be introduced.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the case shows a general-purpose AI assistant defeating a professional licensing exam built on speed and recall, and the response announced so far is enforcement and penalties rather than a change in how the test is set.</p></aside><p class="caveat"><span class="label">Caveat.</span> The account of how he cheated is his own confession, and the police investigation has only begun. The penalties were reported by the BBC from a government statement that was not read directly.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.bbc.com/news/articles/ckvg2ezvpe08o" rel="noopener noreferrer">BBC: South Korea&#x27;s top scorer in tax accountancy exam admits cheating</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:11+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.koreaherald.com/article/10937374" rel="noopener noreferrer">The Korea Herald: Tax accountant exam&#x27;s top scorer admits to cheating with AI</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:11+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.koreatimes.co.kr/southkorea/law-crime/20261115/top-tax-accountant-exam-scorer-admits-to-using-ai-to-cheat" rel="noopener noreferrer">The Korea Times: Top tax accountant exam scorer admits to using AI to cheat</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:13+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-korea-tax-exam-ai-cheating"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-korea-tax-exam-ai-cheating">Draft for X</label><textarea id="share-x-story-korea-tax-exam-ai-cheating" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-korea-tax-exam-ai-cheating-count">Top scorer in South Korea&#x27;s tax accountant exam admits he cheated with a hidden camera and generative AI
+
+Sources: BBC, The Korea Herald, The Korea Times; via The AI Gazette</textarea><p class="share-count" id="share-x-story-korea-tax-exam-ai-cheating-count">197 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Top%20scorer%20in%20South%20Korea%27s%20tax%20accountant%20exam%20admits%20he%20cheated%20with%20a%20hidden%20camera%20and%20generative%20AI%0A%0ASources%3A%20BBC%2C%20The%20Korea%20Herald%2C%20The%20Korea%20Times%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-korea-tax-exam-ai-cheating" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-korea-tax-exam-ai-cheating">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-korea-tax-exam-ai-cheating">Draft for LinkedIn</label><textarea id="share-li-story-korea-tax-exam-ai-cheating" class="share-text share-text-li" rows="12">Top scorer in South Korea&#x27;s tax accountant exam admits he cheated with a hidden camera and generative AI
+
+→ The Korea Herald reports that he also admitted using the same methods in the first round of the certified public accountant exam in March.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-korea-tax-exam-ai-cheating
+Sources: BBC, The Korea Herald, The Korea Times; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Top%20scorer%20in%20South%20Korea%27s%20tax%20accountant%20exam%20admits%20he%20cheated%20with%20a%20hidden%20camera%20and%20generative%20AI%0A%0A%E2%86%92%20The%20Korea%20Herald%20reports%20that%20he%20also%20admitted%20using%20the%20same%20methods%20in%20the%20first%20round%20of%20the%20certified%20public%20accountant%20exam%20in%20March.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-korea-tax-exam-ai-cheating%0ASources%3A%20BBC%2C%20The%20Korea%20Herald%2C%20The%20Korea%20Times%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-korea-tax-exam-ai-cheating">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-korea-tax-exam-ai-cheating">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-xai-southaven-glycol-spill" aria-labelledby="h-xai-southaven-glycol-spill"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-xai-southaven-glycol-spill">Thousands of gallons of propylene glycol spill from a tank at an xAI facility in Southaven, Mississippi, and reach a drainage ditch</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-15T14:37:00+01:00">15 Nov 2026, 14:37 CET</time></p><div class="story-body"><p>A spill of <mark class="hl">about 5,000 to 6,000 gallons of propylene glycol</mark> from a tank at an xAI facility in Southaven, Mississippi, reached a nearby drainage ditch on Saturday, the Mississippi Department of Environmental Quality said, Action News 5 reports. Propylene glycol is used in antifreeze, deicers and heat-transfer fluids, also known as coolants.</p><p>Crews installed berms upstream and downstream to contain the release, and a contractor has been recovering the material with vacuum trucks since about 10 a.m. on Saturday, with MDEQ emergency staff assisting, according to MDEQ. <mark class="hl">xAI had not commented</mark> when the station published.</p><p>Background (6 November): Mississippi Today reported that MDEQ had released details of penalties against SpaceXAI for starting construction on its Southaven data centre facilities <mark class="hl">without the required stormwater permits</mark>, and that the company had told investors the fines could reach as much as 6.1 million dollars.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the Southaven sites already face state penalties over construction permits, so a coolant release into local drainage adds to scrutiny of how fast the company is building there.</p></aside><p class="caveat"><span class="label">Caveat.</span> The volume and the response details come from MDEQ via Action News 5; the cause of the tank failure and any environmental impact were not reported. Mississippi Today was read through an Internet Archive snapshot dated 10 November.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.actionnews5.com/2026/11/15/chemical-spill-xai-facility-southaven-reaches-drainage-ditch/" rel="noopener noreferrer">Action News 5: Chemical spill at xAI facility in Southaven reaches drainage ditch</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:15+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://mississippitoday.org/2026/11/06/spacexai-southaven-data-center-fines-mdeq/" rel="noopener noreferrer">Mississippi Today: SpaceXAI started Southaven data center without water permits</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:32+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-xai-southaven-glycol-spill"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-xai-southaven-glycol-spill">Draft for X</label><textarea id="share-x-story-xai-southaven-glycol-spill" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-xai-southaven-glycol-spill-count">Thousands of gallons of propylene glycol spill from a tank at an xAI facility in Southaven, Mississippi, and reach a drainage ditch
+
+Sources: Action News 5, Mississippi Today; via The AI Gazette</textarea><p class="share-count" id="share-x-story-xai-southaven-glycol-spill-count">218 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Thousands%20of%20gallons%20of%20propylene%20glycol%20spill%20from%20a%20tank%20at%20an%20xAI%20facility%20in%20Southaven%2C%20Mississippi%2C%20and%20reach%20a%20drainage%20ditch%0A%0ASources%3A%20Action%20News%205%2C%20Mississippi%20Today%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-xai-southaven-glycol-spill" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-xai-southaven-glycol-spill">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-xai-southaven-glycol-spill">Draft for LinkedIn</label><textarea id="share-li-story-xai-southaven-glycol-spill" class="share-text share-text-li" rows="12">Thousands of gallons of propylene glycol spill from a tank at an xAI facility in Southaven, Mississippi, and reach a drainage ditch
+
+→ Propylene glycol is used in antifreeze, deicers and heat-transfer fluids, also known as coolants.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-xai-southaven-glycol-spill
+Sources: Action News 5, Mississippi Today; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Thousands%20of%20gallons%20of%20propylene%20glycol%20spill%20from%20a%20tank%20at%20an%20xAI%20facility%20in%20Southaven%2C%20Mississippi%2C%20and%20reach%20a%20drainage%20ditch%0A%0A%E2%86%92%20Propylene%20glycol%20is%20used%20in%20antifreeze%2C%20deicers%20and%20heat-transfer%20fluids%2C%20also%20known%20as%20coolants.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-xai-southaven-glycol-spill%0ASources%3A%20Action%20News%205%2C%20Mississippi%20Today%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-xai-southaven-glycol-spill">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-xai-southaven-glycol-spill">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-japan-defense-ai-guidelines" aria-labelledby="h-japan-defense-ai-guidelines"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-japan-defense-ai-guidelines">Japan&#x27;s Defense Ministry will publish guidelines for defence use of AI at the end of November, Koizumi says</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-15">15 Nov 2026</time></p><div class="story-body"><p>Japanese Defense Minister Shinjiro Koizumi said on Sunday that the ministry will release <mark class="hl">guidelines for the defense-related use of AI at the end of this month</mark>, Jiji Press reports. They will update the ministry&#x27;s AI basic policy compiled in July 2024 and apply to ministry staff and Self-Defense Forces personnel.</p><p>Koizumi named three pillars: ensuring <mark class="hl">humans make decisions and bear responsibility</mark> for the outcomes of AI use, turning data into power to defend the country, and balancing rapid adoption of AI with enhanced safety. &quot;We will not hesitate to make a necessary revision since AI is an area where things change rapidly,&quot; he said, according to Jiji.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the announcement states intent; the substance will be in the text due at the end of November, including how far human responsibility is required for AI used in operations.</p></aside><p class="caveat"><span class="label">Caveat.</span> The guidelines have not been published; this is the minister&#x27;s description of them as reported by Jiji Press.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://jen.jiji.com/jc/eng?g=eco&amp;k=2026111500349" rel="noopener noreferrer">Jiji Press: Japan Defense Ministry to release AI guidelines at end-Nov.</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:16+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.nippon.com/en/articles/-/57469" rel="noopener noreferrer">Nippon.com (Jiji Press): Japan Defense Ministry to release AI guidelines at end-Nov.</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:18+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-japan-defense-ai-guidelines"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-japan-defense-ai-guidelines">Draft for X</label><textarea id="share-x-story-japan-defense-ai-guidelines" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-japan-defense-ai-guidelines-count">Japan&#x27;s Defense Ministry will publish guidelines for defence use of AI at the end of November, Koizumi says
+
+Sources: Jiji Press, Nippon.com (Jiji Press); via The AI Gazette</textarea><p class="share-count" id="share-x-story-japan-defense-ai-guidelines-count">197 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Japan%27s%20Defense%20Ministry%20will%20publish%20guidelines%20for%20defence%20use%20of%20AI%20at%20the%20end%20of%20November%2C%20Koizumi%20says%0A%0ASources%3A%20Jiji%20Press%2C%20Nippon.com%20%28Jiji%20Press%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-japan-defense-ai-guidelines" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-japan-defense-ai-guidelines">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-japan-defense-ai-guidelines">Draft for LinkedIn</label><textarea id="share-li-story-japan-defense-ai-guidelines" class="share-text share-text-li" rows="12">Japan&#x27;s Defense Ministry will publish guidelines for defence use of AI at the end of November, Koizumi says
+
+→ Japanese Defense Minister Shinjiro Koizumi said on Sunday that the ministry will release guidelines for the defense-related use of AI at the end of this month, Jiji Press reports.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-japan-defense-ai-guidelines
+Sources: Jiji Press, Nippon.com (Jiji Press); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Japan%27s%20Defense%20Ministry%20will%20publish%20guidelines%20for%20defence%20use%20of%20AI%20at%20the%20end%20of%20November%2C%20Koizumi%20says%0A%0A%E2%86%92%20Japanese%20Defense%20Minister%20Shinjiro%20Koizumi%20said%20on%20Sunday%20that%20the%20ministry%20will%20release%20guidelines%20for%20the%20defense-related%20use%20of%20AI%20at%20the%20end%20of%20this%20month%2C%20Jiji%20Press%20reports.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-japan-defense-ai-guidelines%0ASources%3A%20Jiji%20Press%2C%20Nippon.com%20%28Jiji%20Press%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-japan-defense-ai-guidelines">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-japan-defense-ai-guidelines">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-ramaphosa-silicon-valley-ai" aria-labelledby="h-ramaphosa-silicon-valley-ai"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-ramaphosa-silicon-valley-ai">South Africa&#x27;s Ramaphosa arrives in Silicon Valley with eight ministers for a week-long AI and investment visit</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-14">14 Nov 2026</time></p><div class="story-body"><p>President Cyril Ramaphosa arrived in California on Saturday, 14 November, for a <mark class="hl">working visit to Silicon Valley</mark> on artificial intelligence, leading a delegation of officials, business leaders, researchers, technical experts and university students, the South African Presidency says. Ministers of finance, trade, energy, communications and four other portfolios travel with him.</p><p>The programme includes meetings with technology companies, investors and researchers and a South Africa AI Opportunity gathering on <mark class="hl">AI infrastructure, data centres, computing capacity and energy</mark>. The Presidency says South Africa wants to position itself as a competitive AI hub on the continent while safeguarding digital sovereignty, data protection and responsible AI governance.</p><p>Semafor reports that the itinerary includes meetings with Google, Cisco, Palo Alto Networks and Microsoft, and describes the trip as a <mark class="hl">week-long push to court billions</mark> in American AI infrastructure investment.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the visit pairs an investment pitch for data centres and compute with explicit conditions on sovereignty and data protection, the same balance other mid-sized economies are trying to strike with US AI companies.</p></aside><p class="caveat"><span class="label">Caveat.</span> No agreements or investment figures had been announced; the aims are the Presidency&#x27;s own statements.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.thepresidency.gov.za/president-ramaphosa-arrives-california-high-level-artificial-intelligence-learning-visit-silicon" rel="noopener noreferrer">The Presidency of South Africa: President Ramaphosa arrives in California for high-level artificial intelligence learning visit to Silicon Valley</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:20+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.sanews.gov.za/south-africa/working-visit-president-ramaphosa-arrives-california" rel="noopener noreferrer">SAnews: President Ramaphosa arrives in California</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:21+01:00">15 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.semafor.com/article/11/13/2026/s-africas-ramaphosa-takes-ai-pitch-to-musk-turf" rel="noopener noreferrer">Semafor: South Africa&#x27;s Ramaphosa takes AI pitch to Musk&#x27;s turf</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-15T16:06:22+01:00">15 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-ramaphosa-silicon-valley-ai"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-ramaphosa-silicon-valley-ai">Draft for X</label><textarea id="share-x-story-ramaphosa-silicon-valley-ai" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-ramaphosa-silicon-valley-ai-count">South Africa&#x27;s Ramaphosa arrives in Silicon Valley with eight ministers for a week-long AI and investment visit
+
+Sources: The Presidency of South Africa, SAnews, Semafor; via The AI Gazette</textarea><p class="share-count" id="share-x-story-ramaphosa-silicon-valley-ai-count">213 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=South%20Africa%27s%20Ramaphosa%20arrives%20in%20Silicon%20Valley%20with%20eight%20ministers%20for%20a%20week-long%20AI%20and%20investment%20visit%0A%0ASources%3A%20The%20Presidency%20of%20South%20Africa%2C%20SAnews%2C%20Semafor%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-ramaphosa-silicon-valley-ai" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-ramaphosa-silicon-valley-ai">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-ramaphosa-silicon-valley-ai">Draft for LinkedIn</label><textarea id="share-li-story-ramaphosa-silicon-valley-ai" class="share-text share-text-li" rows="12">South Africa&#x27;s Ramaphosa arrives in Silicon Valley with eight ministers for a week-long AI and investment visit
+
+→ Ministers of finance, trade, energy, communications and four other portfolios travel with him.
+
+https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-ramaphosa-silicon-valley-ai
+Sources: The Presidency of South Africa, SAnews, Semafor; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=South%20Africa%27s%20Ramaphosa%20arrives%20in%20Silicon%20Valley%20with%20eight%20ministers%20for%20a%20week-long%20AI%20and%20investment%20visit%0A%0A%E2%86%92%20Ministers%20of%20finance%2C%20trade%2C%20energy%2C%20communications%20and%20four%20other%20portfolios%20travel%20with%20him.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-15-afternoon.html%23story-ramaphosa-silicon-valley-ai%0ASources%3A%20The%20Presidency%20of%20South%20Africa%2C%20SAnews%2C%20Semafor%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-ramaphosa-silicon-valley-ai">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-15-afternoon.html#story-ramaphosa-silicon-valley-ai">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Security incidents now travel through AI supply chains: Cursor traces its breach to <mark class="hl">a key shared with an inference vendor</mark>.</li><li>Generative AI is testing institutions built on trust, from Korea&#x27;s licensing exams to <mark class="hl">Japan&#x27;s planned rules for military AI</mark>.</li><li>Governments are courting AI investment while tightening oversight, as South Africa&#x27;s Silicon Valley delegation and the Megaspeed inquiries show.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (20 threads; 25 requests blocked with HTTP 403, 11 archive queries failed with HTTP 422 and 3 got no response; Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (29 stories)</dd></div><div><dt>github</dt><dd>ok (10 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 71 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were stories earlier editions already ran (the FAA ground stop, the Nvidia financing report, the 13 November Claude outage). Most stories here were found with 16 Google News RSS queries, publisher feeds, the Hacker News search API, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window: widened to start at 17:00 on 13 November, just under 48 hours before this edition, to carry Cursor&#x27;s 13 November incident update, Bland&#x27;s 13 November Tofu-1 announcement and the South African Presidency&#x27;s 14 November statement, which no earlier edition ran. The Megaspeed, South Korea, xAI and Japan stories fall inside the normal window since the morning edition.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 25 of its requests were blocked (HTTP 403), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.</li><li>Read through a non-direct route: Mississippi Today (HTTP 403) through an Internet Archive snapshot dated 10 November; The Hacker News (HTTP 403 to a plain request) through the host&#x27;s page-extraction tool; MarkTechPost (HTTP 403 to a plain request) on a direct retry by the fetch script. Paywalled and not read or carried: the Financial Times report on Congress and AI chip export rules and The New York Times report on Howard Lutnick and chip rules.</li><li>Newsletter leads from the Iris mail bot: not carried were Inkling 2 Small&#x27;s open weights (released 12 November, outside the 48-hour limit), Anthropic&#x27;s IPO price range (carried 10 and 13 November), Nvidia&#x27;s customer financing (carried 14 November), Gemini Robotics 2.5 (carried 10 November), the Claude Fable 5.2 operating-system demonstration (announced 9 November), Claude for Manufacturing and Gemini 4 Hydrogen in Search (handled in the morning edition) and an e-signature tool that is not an AI story.</li><li>Not carried: Meituan&#x27;s LongCat-2.5 weights (repository created 4 November), Crissy Field&#x27;s Lovable data-exposure research (published 2 November), L3Harris&#x27;s statement on the 13 November ground stop (no AI finding), and market commentary on Anthropic&#x27;s listing and data-centre stocks.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 20 threads │ 58,260 upvotes │ 4,262 comments
+├─  HN: 29 stories │ 2,502 points │ 2,047 comments
+├─  dev.to: 12 articles │ 278 reactions │ 77 comments
+├─  GitHub: 10 items │ 43 reactions │ 95 comments
+├─  Top voices: r/technology, r/LocalLLaMA, r/artificial
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-15-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-15-afternoon.md">Markdown text</a></li><li><a href="2026-11-15-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
