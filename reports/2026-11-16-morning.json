@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-16-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-16T06:08:27+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-15T16:09:00+01:00",
+  "window_end": "2026-11-16T06:07:00+01:00",
+  "editorial_note": "Fourteen hours since Sunday afternoon's edition. The one new frontier-scale model is Alibaba's ==Qwen4-Max==, a paid API model rather than open weights. In Washington, Treasury Secretary Scott Bessent asked Nvidia's board for ==answers within 10 days== and an outside chief executive, while the Financial Times reported that Jensen Huang is weighing a return; the State Department and nine partners signed a declaration on protecting AI supply chains, and the Wall Street Journal reported a plan to name AI \"national champions\". In research, OpenAI opened a science blog with a physicist's account of a lattice definition of the Standard Model, Apple opened a 200,000-person study of health AI, and a Childlight report counts a steep rise in reports of AI-generated child abuse material. Vendor claims are labelled as such.",
+  "stories": [
+    {
+      "id": "alibaba-qwen4-max",
+      "section": "Models",
+      "headline": "Alibaba releases Qwen4-Max, its new flagship model, through its paid API with a one-million-token context",
+      "published_at": "2026-11-16",
+      "freshness": "new",
+      "paragraphs": [
+        "Alibaba has released ==Qwen4-Max==, the new flagship of its Qwen family, Reuters reported early on Monday Paris time. QwenCloud's model page lists it as a multimodal model that reads text, images and video and writes text, with a ==1M-token context== and up to 393,000 tokens of output, priced at ==$1.50 per million input tokens== and $4.50 per million output tokens.",
+        "Alibaba told Reuters that Qwen4-Max outperforms Qwen3.8-Max, released in August, while using fewer tokens, and that its training included security checks alongside coding tests to reduce flaws such as code injection and broken access controls. The company said its internal testing ==found no evidence of significant high-risk capabilities==.",
+        "According to Sulat AI & Tech News, which summarised Qwen's launch blog, the model is a mixture-of-experts design with a 2.4-trillion-parameter backbone and 71 billion parameters active per token, and Qwen's own Work360 evaluation puts the average cost per task at $1.67, down from $4.43 for Qwen3.8-Max. Qwen says smaller Qwen4 models will follow as open weights, without sizes or dates."
+      ],
+      "why_it_matters": "Analysis: the pitch is cost per task rather than a new benchmark lead, and the flagship itself is not an open-weights release, so developers reach it only through Alibaba's cloud or its partners.",
+      "caveat": "Performance, token savings and safety findings are Alibaba's own claims, mostly on its in-house Work360 benchmark; they were not independently verified. Qwen's launch blog is a script-rendered page that the tools used here could not read, so the parameter counts come from Sulat's summary of it.",
+      "sources": [
+        {
+          "label": "QwenCloud: Qwen4-Max model page",
+          "url": "https://www.qwencloud.com/models/qwen4-max",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:45+01:00"
+        },
+        {
+          "label": "Reuters via Yahoo News: Alibaba unveils new flagship AI model with safety upgrades",
+          "url": "https://www.yahoo.com/news/articles/alibaba-unveils-flagship-ai-model-042929168.html",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:06:18+01:00"
+        },
+        {
+          "label": "Sulat AI & Tech News: Alibaba launches Qwen4-Max",
+          "url": "https://news.sulat.com/2026/11/16/qwen4-max-launch/",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:45+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50513215",
+          "type": "community",
+          "checked_at": "2026-11-16T06:05:46+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "It scores a 43 on Artificial Analysis with an average cost of $3.27 [1]. For reference, GPT-6.1 Sol (medium) gets a 46 with an average of $0.36.",
+          "author": "maplet",
+          "url": "https://news.ycombinator.com/item?id=50513658"
+        },
+        {
+          "text": "This is exciting. The continued focus on efficiency alongside quality is encouraging",
+          "author": "dan_thinks",
+          "url": "https://news.ycombinator.com/item?id=50513296"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-huang-spy-report",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Bessent asks Nvidia's board for answers within 10 days and an outside chief executive, as Huang is reported to weigh a return",
+      "published_at": "2026-11-15T20:26:00+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to this week's editions on Jensen Huang's resignation and the Megaspeed affair. The new development: on Fox News on Sunday, Treasury Secretary Scott Bessent said Nvidia's board should ==go outside the company== for its next chief executive and needed ==a dramatic shakeup==, CNBC and Axios report.",
+        "Bessent asked whether Nvidia had been pressing seemingly illicit sales to boost its revenue and earnings, and said: \"I think we need answers in the next 10 days from the board and from the outside counsel.\" He also said that if Nvidia were a bank, the Office of the Comptroller of the Currency would be in there and a lot of the executives would be removed, CNBC reports.",
+        "Separately, the Financial Times reported on Sunday that Huang has ==discussed a possible return== as chief executive with confidants, according to Reuters and CNBC, and that an ally said supporters were assembling a war room of Silicon Valley executives to lobby for his reinstatement. An Nvidia spokesperson told CNBC the company is in the process of ==selecting a search firm== and has not formally engaged any candidates.",
+        "The Stand with Jensen petition now claims more than 160,000 signatures, CNBC reports, up from the more than 100,000 this paper reported on Sunday morning. Nvidia reports quarterly results on Tuesday 17 November, its first since Huang left."
+      ],
+      "why_it_matters": "Analysis: a cabinet member setting a deadline and a hiring preference for a listed company's board raises the stakes of Tuesday's results and of any move to bring Huang back.",
+      "caveat": "The comeback report rests on unnamed people cited by the Financial Times, which was not read here; it is relayed through Reuters and CNBC. Bessent's questions about illicit sales are questions, not findings, and Nvidia did not immediately comment on them. Petition counts are self-reported by its website.",
+      "sources": [
+        {
+          "label": "CNBC: Bessent calls for dramatic shakeup at Nvidia, urges outside CEO",
+          "url": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:48+01:00"
+        },
+        {
+          "label": "Axios: Bessent questions Nvidia's sales and calls for external CEO",
+          "url": "https://www.axios.com/2026/11/15/bessent-nvidia-earnings-china-chip-sales-ceo",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:48+01:00"
+        },
+        {
+          "label": "Reuters via CNA: Jensen Huang discusses comeback as Nvidia CEO with allies, FT reports",
+          "url": "https://www.channelnewsasia.com/business/jensen-huang-discusses-comeback-nvidia-ceo-allies-ft-reports-6553346",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:06:09+01:00"
+        },
+        {
+          "label": "CNBC: Calls for Huang's return to Nvidia grow",
+          "url": "https://www.cnbc.com/2026/11/16/nvidia-jensen-huang-return-tech.html",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:48+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50511982",
+          "type": "community",
+          "checked_at": "2026-11-16T06:05:48+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "This isn't OpenAI in 2023. Nvidia is a public company and I don't think its board can just undo its decision because powerful Silicon Valley executives want Jensen back.",
+          "author": "waximabbax",
+          "url": "https://news.ycombinator.com/item?id=50512103"
+        }
+      ]
+    },
+    {
+      "id": "pax-silica-san-francisco-declaration",
+      "section": "Industry & policy",
+      "headline": "US and nine partners sign the San Francisco Declaration on protecting the technologies and infrastructure behind AI supply chains",
+      "published_at": "2026-11-15",
+      "freshness": "new",
+      "paragraphs": [
+        "On 15 November the United States and nine Pax Silica participants signed ==the San Francisco Declaration== on the Secure Foundations of Enduring Prosperity, at a retreat convened by Under Secretary of State for Economic Affairs Jacob Helberg, the State Department says. The text was released by the governments of the US, Australia, India, Israel, Japan, South Korea, Qatar, Singapore, the United Arab Emirates and the United Kingdom.",
+        "The declaration sets out a common understanding of the ==sensitive technologies and critical infrastructure== that underpin what it calls Super Intelligence supply chains, a term that a footnote says means artificial intelligence for some participants, and says safeguarding them is a shared endeavour. It resolves to set up working groups, with ==five proposed groups== including supply chain cooperation across the stack and supply chain security hubs.",
+        "Helberg told the Financial Times that Germany, Sweden, the Netherlands and the European Commission are expected to sign next week, according to a Newsmax account of the FT report. The FT linked the accord to efforts to counter China's influence, ahead of President Trump's meeting with Xi Jinping at the APEC summit in Shenzhen."
+      ],
+      "why_it_matters": "Analysis: Pax Silica, launched in December 2025, had so far been a statement of principles; a shared list of what to protect is the groundwork for coordinated controls, though this text itself names none.",
+      "caveat": "The declaration read here is a statement of shared understanding and proposed working groups; it lists no specific new export controls or binding obligations. The Financial Times article requires registration and was not read; its details come through Newsmax's summary.",
+      "sources": [
+        {
+          "label": "US State Department: The San Francisco Declaration on the Secure Foundations of Enduring Prosperity",
+          "url": "https://www.state.gov/releases/office-of-the-spokesman/2026/11/the-san-francisco-declaration-on-the-secure-foundations-of-enduring-prosperity",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:47+01:00"
+        },
+        {
+          "label": "Newsmax via Yahoo News: US, allies sign accord to protect AI supply lines from China",
+          "url": "https://www.yahoo.com/news/politics/articles/report-us-allies-sign-accord-181215730.html",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:47+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "us-ai-national-champions",
+      "section": "Industry & policy",
+      "headline": "Trump administration plans to name more than two dozen AI \"national champions\", including Nvidia, OpenAI and Anthropic, the WSJ reports",
+      "published_at": "2026-11-16T05:17:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "The Trump administration plans to designate ==more than two dozen== artificial intelligence \"national champions\", including Nvidia, Amazon, Microsoft, OpenAI and Anthropic, the Wall Street Journal reported on Sunday, citing people familiar with the plans, according to Reuters.",
+        "The programme aims to help the companies ==expand overseas== and better compete with Chinese rivals, the report said. Reuters said it could not immediately verify the report, and no official announcement was found."
+      ],
+      "why_it_matters": "Analysis: putting Nvidia on such a list would come days after the Treasury Secretary publicly questioned its export compliance, a tension the administration has not addressed.",
+      "caveat": "This is an unconfirmed report based on unnamed sources. The Wall Street Journal article is paywalled and was not read; the details here come only from Reuters' summary of it.",
+      "sources": [
+        {
+          "label": "Reuters via Investing.com: Trump administration to name Nvidia, other AI firms as US national champions, WSJ reports",
+          "url": "https://www.investing.com/news/stock-market-news/trump-administration-to-name-nvidia-other-ai-firms-as-us-national-champions-wsj-reports-5028349",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:47+01:00"
+        },
+        {
+          "label": "Reuters via Longbridge: Trump administration to name Nvidia, other AI firms as US national champions",
+          "url": "https://longbridge.com/en/news/305612361.md",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:06:10+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-science-blog-standard-model",
+      "section": "Research",
+      "headline": "OpenAI starts a science blog with a physicist's account of a candidate lattice definition of the Standard Model built with GPT-6 Astra",
+      "published_at": "2026-11-15T23:00:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI launched ==a science blog== on 15 November for scientists and academic researchers to share what they are discovering with AI and how, with results, methods and guidance on where a method falls short.",
+        "Its first guest post is by Nathaniel Craig, who leads the particle theory group at the University of California, Santa Barbara and is a visiting scientist at OpenAI. He describes working with GPT-6 Astra on ==a candidate nonperturbative lattice definition== of the Standard Model, a problem open since the theory took shape because chiral theories such as the weak force are hard to put on a lattice. Craig writes that he had a strategy but could not prove it worked in all cases, and that ==Astra took the lead== in developing the detailed proof.",
+        "The work is in a single-author arXiv preprint, A gauge-invariant measure for lattice chiral fermions, submitted on 6 October 2026, which constructs a gauge-invariant measure for overlap fermions on four-dimensional lattices and ships a Lean formalization as a companion."
+      ],
+      "why_it_matters": "Analysis: OpenAI is building a public record of model-assisted science, and this post makes a specific, checkable claim about which part of a proof the model produced.",
+      "caveat": "The preprint is not peer reviewed. Craig himself says expert dialogue is needed to decide whether the construction has all the desired properties, that it is an answer in principle rather than in practice, and that whether it satisfies reflection positivity at finite lattice spacing is still open. The author is a visiting scientist at OpenAI.",
+      "sources": [
+        {
+          "label": "OpenAI: Our new blog for science",
+          "url": "https://openai.com/index/our-new-blog-for-science/",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:50+01:00"
+        },
+        {
+          "label": "OpenAI: A step toward defining the Standard Model on a lattice",
+          "url": "https://openai.com/index/step-toward-defining-the-standard-model/",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:50+01:00"
+        },
+        {
+          "label": "arXiv: A gauge-invariant measure for lattice chiral fermions",
+          "url": "https://arxiv.org/abs/2610.09093",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:50+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "apple-health-ai-usage-study",
+      "section": "Research",
+      "headline": "Apple opens a study of up to 200,000 US iPhone users on how people use health AI, built with OpenEvidence",
+      "published_at": "2026-11-15",
+      "freshness": "new",
+      "paragraphs": [
+        "Apple has launched ==the Apple Health AI Usage Study== in the United States, a virtual research study and app built with the clinical AI company OpenEvidence, to examine what drives trust, the quality of answers, comprehension and everyday health actions when people use conversational health AI.",
+        "Participants ask the study app everyday health questions and get answers with linked peer-reviewed citations, and can choose to share HealthKit data such as resting heart rate, sleep or lab results. Apple says study data ==will not be used to train AI models==, and that the app is not meant to diagnose or treat any condition.",
+        "The study is open to ==up to 200,000 participants== aged 21 and over with an Apple Intelligence-capable iPhone, iPhone 15 Pro or later, running iOS 26 or later."
+      ],
+      "why_it_matters": "Analysis: Apple is testing a consumer health assistant as a research study rather than as a product, which lets it gather evidence on trust and errors before shipping anything wider.",
+      "caveat": "The design, safeguards and goals described are Apple's own; the announcement names no study protocol or publication plan that could be checked here.",
+      "sources": [
+        {
+          "label": "Apple Newsroom: Apple launches research study to explore the use of AI for health",
+          "url": "https://www.apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health/",
+          "type": "primary",
+          "checked_at": "2026-11-16T06:05:50+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "childlight-ai-csam-reports",
+      "section": "Research",
+      "headline": "Reports of AI-generated child sexual abuse material rose from about 4,700 to more than 400,000 in two years, Childlight finds",
+      "published_at": "2026-11-16T01:01:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Reports of AI-generated child sexual abuse material passed by technology companies to the US National Center for Missing and Exploited Children rose from about 4,700 in 2023 to ==more than 400,000 in 2025==, an increase of more than 8,400%, according to new research from the Childlight Global Child Safety Institute at the University of Edinburgh, reported by The Guardian and The Independent.",
+        "The material includes deepfakes made with so-called nudify apps. Childlight also estimates that ==more than 300 million children== a year are subjected to at least one form of technology-facilitated sexual exploitation or abuse. The Guardian adds that the Internet Watch Foundation assessed 6,310 AI images meeting the legal definition of abuse in the first half of 2026, 40% more than in all of last year."
+      ],
+      "why_it_matters": "Analysis: the figures add pressure on governments to close legal gaps on AI-generated abuse material and on AI companies to stop their tools being used to make it.",
+      "caveat": "These are counts of reports, not of distinct images or victims. Childlight's Debi Fry said improved detection and reporting may explain some of the increase. The full report was not read here; the figures come from the newspapers' accounts.",
+      "sources": [
+        {
+          "label": "The Guardian: Reports of AI-related child sexual abuse material rise 8,400% in two years",
+          "url": "https://www.theguardian.com/technology/2026/nov/16/ai-related-child-sexual-abuse-material-rise-exploitation-deepfakes",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:05:50+01:00"
+        },
+        {
+          "label": "The Independent: Reports of AI-generated child sex abuse images soar 8,400%",
+          "url": "https://www.independent.co.uk/tech/scottish-edinburgh-university-philippines-b3085365.html",
+          "type": "reporting",
+          "checked_at": "2026-11-16T06:06:54+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (21 threads; 25 requests blocked with HTTP 403 and 5 archive queries failed with HTTP 422; Arctic Shift archive supplied posts)",
+      "hackernews": "ok (23 stories)",
+      "github": "ok (10 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished (exit 0) with 66 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were general discussion rather than verified developments. Most stories here were found with 16 Google News RSS queries, publisher feeds, the Hacker News search API, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Window: from 16:09 on Sunday 15 November, when the previous edition closed, to this edition; it was not widened.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 25 of its requests were blocked (HTTP 403), so Reddit coverage was partial. Missing coverage does not mean nobody discussed these stories.",
+      "Read through a non-direct route: OpenAI, the State Department, Axios and Investing.com answered plain requests with HTTP 403 or 405 and were read through the host's page-extraction tool. Reuters' own page on Bessent's remarks was not read (every route of the fetch script failed); Axios and CNBC were used instead.",
+      "Paywalled or registration-walled and not read: the Wall Street Journal report on AI national champions, the Financial Times reports on the supply chain accord and on Huang's possible return, and The Globe and Mail's report that Telus is pulling out of two planned Vancouver AI data centres (not carried).",
+      "Newsletter leads from the Iris mail bot: not carried were Gemini on Apple CarPlay (announced 11 November, outside the 48-hour limit), Gemini with Google Wallet (carried 14 November), Meta's Muse Charm (unveiled at Meta Connect in September) and the Microsoft outage (no source URL in the lead and not verified against a primary source in time).",
+      "Not carried: reports of DeepSeek usage limits, Oura's reported purchase of Counsel Health, a reported TSMC investment in Anthropic and OpenAI, and Bharat Semi's seed round, none confirmed by a primary source in time for this edition.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 21 threads │ 19,562 upvotes │ 3,667 comments\n├─ 🟡 HN: 23 stories │ 1,501 points │ 861 comments\n├─ 👩‍💻 dev.to: 12 articles │ 55 reactions │ 19 comments\n├─ 🐙 GitHub: 10 items │ 32 reactions │ 116 comments\n├─ 🗣️ Top voices: r/artificial, r/technology, r/singularity\n---"
+  },
+  "key_patterns": [
+    "Washington is pulling AI companies closer while questioning them: a reported ==national champions list== includes Nvidia as Bessent demands answers from its board.",
+    "Supply chains are becoming diplomacy, with ten governments agreeing on ==what to protect== before naming any controls.",
+    "Labs are publishing claims about model-assisted science and health in study form, which invites checking but is not yet independent proof."
+  ],
+  "previous_issue_id": "2026-11-15-afternoon"
+}
