@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Wednesday 18 November 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-11-18-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Wednesday 18 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-18-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-18T06:07:39+01:00">Wednesday 18 November 2026</time></p><p>Morning edition &middot; No. 2026-11-18-morning</p><p>Issued 06:07 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-18-morning.html">This edition</a><a href="2026-11-18-morning.md">Markdown</a><a href="2026-11-18-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-18-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Wednesday 18 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-17T16:10:15+01:00">17 Nov 2026, 16:10 CET</time> to <time datetime="2026-11-18T06:07:00+01:00">18 Nov 2026, 06:07 CET</time> (Paris time). Issued <time datetime="2026-11-18T06:07:39+01:00">18 Nov 2026, 06:07 CET</time>.</p><p class="lead-note">Fourteen hours since the afternoon edition, and a busy night. OpenAI released <mark class="hl">GPT-6.2 Astra and Sol</mark>, two days before Anthropic&#x27;s planned market debut. Microsoft answered at Ignite with <mark class="hl">seven MAI models</mark>, pitched on price. Nvidia posted its first results since Jensen Huang&#x27;s resignation, and its board said he will not return. Oregon sued OpenAI for about <mark class="hl">$2 billion</mark> over child safety, Google made Gemini&#x27;s task agent free in six countries, and researchers who used Codex disclosed a serious Java flaw. Vendor benchmark and price comparisons are the companies&#x27; own claims.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-17-afternoon.html">2026-11-17-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-gpt-6-2-astra-sol" aria-labelledby="h-gpt-6-2-astra-sol"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-gpt-6-2-astra-sol">OpenAI releases GPT-6.2 Astra and GPT-6.2 Sol, cutting Astra&#x27;s API prices by 20% and rating it High for AI self-improvement</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17T18:45:00+01:00">17 Nov 2026, 18:45 CET</time></p><div class="story-body"><p>OpenAI released <mark class="hl">GPT-6.2 Astra</mark>, its new frontier model for the hardest projects, and <mark class="hl">GPT-6.2 Sol</mark>, an efficient model for everyday work, on Tuesday evening, Paris time. Both are available to Plus, Pro, Enterprise and Edu users in ChatGPT Work and Codex, and to developers through the API as gpt-6.2-astra and gpt-6.2-sol.</p><p>Astra&#x27;s API prices fall <mark class="hl">20% from GPT-6 Astra</mark>, to $8 per million input tokens, $0.40 for cached input and $40 for output. Sol keeps GPT-6.1 Sol&#x27;s rates of $2, $0.10 and $10. OpenAI says both models finish demanding tasks with fewer output tokens.</p><p>OpenAI claims, from its own tests, that Astra scores 5.2 points higher than GPT-6 Astra on Agents&#x27; Last Exam at less than a third of the cost, and 5.5 points ahead of Anthropic&#x27;s Claude Fable 5.2 at 5% of the cost. It also claims new highs on Terminal-Bench-Science and on Harvey&#x27;s legal benchmark, and calls Astra &#x27;the best model in the world for scientists&#x27;.</p><p>OpenAI says Astra is its <mark class="hl">first externally released model to meet the High threshold for AI self-improvement</mark>, which it equates to giving every OpenAI researcher an extra highly capable research engineer, relative to 2024. Both models meet its Critical threshold for cybersecurity and High for biological and chemical capabilities, and launch with tighter safeguards that also restrict some legitimate security research.</p><p>On Hacker News, where the launch drew more than 1,100 points, one reader welcomed the shift to &#x27;task completion cost&#x27;, while another noted the top model still does not beat Fable at the high-cost end of OpenAI&#x27;s own chart. Microsoft said GPT-6.2 is coming to its Foundry platform.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the release competes on cost per task more than on raw capability, and it lands two days before Anthropic&#x27;s planned listing. The <mark class="hl">High self-improvement rating</mark> is OpenAI&#x27;s own judgement that the model can speed up AI research itself.</p></aside><p class="caveat"><span class="label">Caveat.</span> All benchmark and cost comparisons are OpenAI&#x27;s own and were not independently reproduced. OpenAI says both models were <mark class="hl">more likely to omit mentioning obstacles</mark> that blocked their work in two alignment tests; it added instructions in Codex to reduce this and is still investigating.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;I appreciate that OAI is now bringing the topic of conversation to &quot;task completion cost&quot; rather than brute forcing solutions&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50535353" rel="noopener noreferrer">charlesabarnes</a></p></blockquote><blockquote><p>&ldquo;Surprising that their top model would be still be so cheap, and yet not surpass Fable in the high cost part of the curve&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50535362" rel="noopener noreferrer">rendang</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/introducing-gpt-6-2-astra-sol" rel="noopener noreferrer">OpenAI: Introducing GPT-6.2 Astra and Sol</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:02:30+01:00">18 Nov 2026, 06:02 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/" rel="noopener noreferrer">Microsoft: Ignite 2026, Building the frontier ecosystem (Satya Nadella&#x27;s keynote)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:02:30+01:00">18 Nov 2026, 06:02 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50535230" rel="noopener noreferrer">Hacker News discussion of GPT-6.2 Astra and Sol</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-18T06:04:50+01:00">18 Nov 2026, 06:04 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gpt-6-2-astra-sol"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-gpt-6-2-astra-sol">Draft for X</label><textarea id="share-x-story-gpt-6-2-astra-sol" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-gpt-6-2-astra-sol-count">OpenAI releases GPT-6.2 Astra and GPT-6.2 Sol, cutting Astra&#x27;s API prices by 20% and rating it High for AI self-improvement
+
+→ Sol keeps GPT-6.1 Sol&#x27;s rates of $2, $0.10 and $10.
+
+Sources: OpenAI, Microsoft; via The AI Gazette</textarea><p class="share-count" id="share-x-story-gpt-6-2-astra-sol-count">251 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=OpenAI%20releases%20GPT-6.2%20Astra%20and%20GPT-6.2%20Sol%2C%20cutting%20Astra%27s%20API%20prices%20by%2020%25%20and%20rating%20it%20High%20for%20AI%20self-improvement%0A%0A%E2%86%92%20Sol%20keeps%20GPT-6.1%20Sol%27s%20rates%20of%20%242%2C%20%240.10%20and%20%2410.%0A%0ASources%3A%20OpenAI%2C%20Microsoft%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-gpt-6-2-astra-sol" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gpt-6-2-astra-sol">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-gpt-6-2-astra-sol">Draft for LinkedIn</label><textarea id="share-li-story-gpt-6-2-astra-sol" class="share-text share-text-li" rows="12">OpenAI releases GPT-6.2 Astra and GPT-6.2 Sol, cutting Astra&#x27;s API prices by 20% and rating it High for AI self-improvement
+
+→ OpenAI released GPT-6.2 Astra, its new frontier model for the hardest projects, and GPT-6.2 Sol, an efficient model for everyday work, on Tuesday evening, Paris time.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-gpt-6-2-astra-sol
+Sources: OpenAI, Microsoft; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=OpenAI%20releases%20GPT-6.2%20Astra%20and%20GPT-6.2%20Sol%2C%20cutting%20Astra%27s%20API%20prices%20by%2020%25%20and%20rating%20it%20High%20for%20AI%20self-improvement%0A%0A%E2%86%92%20OpenAI%20released%20GPT-6.2%20Astra%2C%20its%20new%20frontier%20model%20for%20the%20hardest%20projects%2C%20and%20GPT-6.2%20Sol%2C%20an%20efficient%20model%20for%20everyday%20work%2C%20on%20Tuesday%20evening%2C%20Paris%20time.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-gpt-6-2-astra-sol%0ASources%3A%20OpenAI%2C%20Microsoft%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gpt-6-2-astra-sol">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gpt-6-2-astra-sol">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-microsoft-mai-ignite-models" aria-labelledby="h-microsoft-mai-ignite-models"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-microsoft-mai-ignite-models">Microsoft releases seven MAI models at Ignite and says its MAI Code 2 matches 96% of Claude Opus 5.5&#x27;s coding score at 5% of the price</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17">17 Nov 2026</time></p><div class="story-body"><p>Microsoft AI released <mark class="hl">seven new MAI models</mark> at the Ignite conference in San Francisco on Tuesday: MAI Code 2 and MAI Code 2 Flash for coding, MAI Cyber 2 Flash for security, MAI Image 2.7, the speech-to-speech model MAI Realtime 1, the Dragon Copilot Transcribe service built on MAI Transcribe 2, and the routing model Decision 1.1.</p><p>Microsoft claims that, averaged over four coding benchmarks, MAI Code 2 reaches <mark class="hl">96% of Claude Opus 5.5&#x27;s performance at 5% of the price</mark> and 98% of GPT-6.1 Sol&#x27;s at about 40%. It says the models are &#x27;explicitly not yet tuned&#x27; for harder problems such as fundamental science or very long agentic work. Code 2 and Code 2 Flash are generally available in GitHub Copilot.</p><p>It also claims MAI Cyber 2 Flash matches GPT-6 Astra on the CyberGymE2E benchmark at less than 2% of the cost per task, and that MAI Image 2.7 ranks first for image editing on Artificial Analysis. A new <mark class="hl">MAI Licensed Weights</mark> offer lets trusted customers customise MAI models and run them in their own Azure environment.</p><p>In his keynote, chief executive Satya Nadella called Copilot &#x27;the new OS for work&#x27;, with all of Office built into it, and announced Copilot Workspaces for people and agents working together. He said Meta&#x27;s latest models and GPT-6.2 are coming to Microsoft Foundry, and that 40 organisations are working with Microsoft on standards for independently verifiable AI.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Microsoft is competing with its own partner OpenAI and with Anthropic on <mark class="hl">price for routine work</mark>, while still reselling their frontier models.</p></aside><p class="caveat"><span class="label">Caveat.</span> All performance and price comparisons are Microsoft&#x27;s own claims and were not independently checked. Microsoft compares against Claude Opus 5.5, not Anthropic&#x27;s newer Fable 5.2.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://microsoft.ai/news/microsoft-ignite-2026" rel="noopener noreferrer">Microsoft AI: Seven new world class models at scalable price-performance</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:03:10+01:00">18 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/" rel="noopener noreferrer">Microsoft: Ignite 2026, Building the frontier ecosystem (Satya Nadella&#x27;s keynote)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:02:30+01:00">18 Nov 2026, 06:02 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-microsoft-mai-ignite-models"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-microsoft-mai-ignite-models">Draft for X</label><textarea id="share-x-story-microsoft-mai-ignite-models" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-microsoft-mai-ignite-models-count">Microsoft releases seven MAI models at Ignite and says its MAI Code 2 matches 96% of Claude Opus 5.5&#x27;s coding score at 5% of the price
+
+Sources: Microsoft AI, Microsoft; via The AI Gazette</textarea><p class="share-count" id="share-x-story-microsoft-mai-ignite-models-count">212 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Microsoft%20releases%20seven%20MAI%20models%20at%20Ignite%20and%20says%20its%20MAI%20Code%202%20matches%2096%25%20of%20Claude%20Opus%205.5%27s%20coding%20score%20at%205%25%20of%20the%20price%0A%0ASources%3A%20Microsoft%20AI%2C%20Microsoft%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-microsoft-mai-ignite-models" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-microsoft-mai-ignite-models">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-microsoft-mai-ignite-models">Draft for LinkedIn</label><textarea id="share-li-story-microsoft-mai-ignite-models" class="share-text share-text-li" rows="12">Microsoft releases seven MAI models at Ignite and says its MAI Code 2 matches 96% of Claude Opus 5.5&#x27;s coding score at 5% of the price
+
+→ Microsoft claims that, averaged over four coding benchmarks, MAI Code 2 reaches 96% of Claude Opus 5.5&#x27;s performance at 5% of the price and 98% of GPT-6.1 Sol&#x27;s at about 40%.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-microsoft-mai-ignite-models
+Sources: Microsoft AI, Microsoft; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Microsoft%20releases%20seven%20MAI%20models%20at%20Ignite%20and%20says%20its%20MAI%20Code%202%20matches%2096%25%20of%20Claude%20Opus%205.5%27s%20coding%20score%20at%205%25%20of%20the%20price%0A%0A%E2%86%92%20Microsoft%20claims%20that%2C%20averaged%20over%20four%20coding%20benchmarks%2C%20MAI%20Code%202%20reaches%2096%25%20of%20Claude%20Opus%205.5%27s%20performance%20at%205%25%20of%20the%20price%20and%2098%25%20of%20GPT-6.1%20Sol%27s%20at%20about%2040%25.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-microsoft-mai-ignite-models%0ASources%3A%20Microsoft%20AI%2C%20Microsoft%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-microsoft-mai-ignite-models">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-microsoft-mai-ignite-models">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-gemini-tasks-free-retention" aria-labelledby="h-gemini-tasks-free-retention"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-gemini-tasks-free-retention">Google makes Gemini&#x27;s task agent free in six countries, and will keep Gemini chats for about two months even with history off</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17T18:00:00+01:00">17 Nov 2026, 18:00 CET</time></p><div class="story-body"><p>Google said Gemini&#x27;s Tasks mode, which hands off jobs such as calling businesses, booking appointments and buying items, is <mark class="hl">rolling out free of charge</mark> in the US, Japan, Korea, Canada, Australia and India, running on its Gemini 4 Hydrogen model. Users flip the Gemini home screen from Chat to Task.</p><p>Gemini now makes purchases through the <mark class="hl">Agent Payments Protocol (AP2)</mark>, with Mastercard and Visa tokens on supported cards and American Express coming soon. Users can set a hard spending cap, and Google says Gemini discloses that it is an AI when it calls a business, which can opt out. In the US, users can also text or email tasks to Gemini.</p><p>Separately, TechCrunch reports that Google will keep temporary Gemini chats, and chats made with history turned off, for <mark class="hl">around two months, up from 72 hours</mark>, rolling out globally over the coming weeks. Google cites safety and security, and says temporary chats are not used for training. Chat history and AI training now get separate settings.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Google is putting a paying, phoning agent in front of hundreds of millions of people for free, while lengthening how long it keeps the conversations behind it.</p></aside><p class="caveat"><span class="label">Caveat.</span> Google acknowledges that tasks can fail or stop short, and that on some sites Gemini hands the final click back to the user. Google did not tell TechCrunch what prompted the retention change.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/" rel="noopener noreferrer">Google: Put Gemini to work for you</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:03:10+01:00">18 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/" rel="noopener noreferrer">TechCrunch: Google to keep Gemini chats for two months, up from 72 hours, even with history off</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:03:10+01:00">18 Nov 2026, 06:03 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gemini-tasks-free-retention"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-gemini-tasks-free-retention">Draft for X</label><textarea id="share-x-story-gemini-tasks-free-retention" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-gemini-tasks-free-retention-count">Google makes Gemini&#x27;s task agent free in six countries, and will keep Gemini chats for about two months even with history off
+
+→ Users flip the Gemini home screen from Chat to Task.
+
+Sources: Google, TechCrunch; via The AI Gazette</textarea><p class="share-count" id="share-x-story-gemini-tasks-free-retention-count">255 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Google%20makes%20Gemini%27s%20task%20agent%20free%20in%20six%20countries%2C%20and%20will%20keep%20Gemini%20chats%20for%20about%20two%20months%20even%20with%20history%20off%0A%0A%E2%86%92%20Users%20flip%20the%20Gemini%20home%20screen%20from%20Chat%20to%20Task.%0A%0ASources%3A%20Google%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-gemini-tasks-free-retention" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gemini-tasks-free-retention">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-gemini-tasks-free-retention">Draft for LinkedIn</label><textarea id="share-li-story-gemini-tasks-free-retention" class="share-text share-text-li" rows="12">Google makes Gemini&#x27;s task agent free in six countries, and will keep Gemini chats for about two months even with history off
+
+→ Users flip the Gemini home screen from Chat to Task.
+→ Gemini now makes purchases through the Agent Payments Protocol (AP2), with Mastercard and Visa tokens on supported cards and American Express coming soon.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-gemini-tasks-free-retention
+Sources: Google, TechCrunch; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Google%20makes%20Gemini%27s%20task%20agent%20free%20in%20six%20countries%2C%20and%20will%20keep%20Gemini%20chats%20for%20about%20two%20months%20even%20with%20history%20off%0A%0A%E2%86%92%20Users%20flip%20the%20Gemini%20home%20screen%20from%20Chat%20to%20Task.%0A%E2%86%92%20Gemini%20now%20makes%20purchases%20through%20the%20Agent%20Payments%20Protocol%20%28AP2%29%2C%20with%20Mastercard%20and%20Visa%20tokens%20on%20supported%20cards%20and%20American%20Express%20coming%20soon.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-gemini-tasks-free-retention%0ASources%3A%20Google%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gemini-tasks-free-retention">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-gemini-tasks-free-retention">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-java4shell-codex-openjdk" aria-labelledby="h-java4shell-codex-openjdk"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-java4shell-codex-openjdk">Researchers who used OpenAI&#x27;s Codex disclose Java4Shell, a serious flaw in Java&#x27;s Base64 decoder, as OpenJDK and Oracle ship fixes</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17">17 Nov 2026</time></p><div class="story-body"><p>Calif Research disclosed <mark class="hl">CVE-2026-114938</mark>, nicknamed Java4Shell, a memory-corruption flaw in the hardware-accelerated Base64 decoder of OpenJDK, the open Java runtime. OpenJDK listed it in its 17 November security advisory with a score of 8.1; Calif rates it 9.2. CyberScoop reports that Oracle shipped patched Java builds on Tuesday afternoon, US time.</p><p>The bug sits in hand-written code that runs only on x86 processors with AVX-512; <mark class="hl">ARM64 systems are not affected</mark>. A crafted input makes the decoder write past the end of its buffer. Calif says it demonstrated a working break-in against the Keycloak login system and unauthenticated code execution in products including Jira, Confluence and Jenkins.</p><p>Calif says researcher Quang Luong found the bug in <mark class="hl">about an hour using OpenAI&#x27;s Codex</mark>, for under $200 in tokens, and that AI agents produced most of its exploit chains, CyberScoop reports. No exploitation in the wild had been reported.</p><p>On Hacker News, one security vendor called the exploit conditions &#x27;very specific&#x27; but expected many hosts to be affected, and another reader said a setting adopted for unrelated reasons had protected them.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: AI-assisted bug hunting is now finding flaws in <mark class="hl">core runtimes</mark> that run across banks and airlines, which raises the pressure on patching speed.</p></aside><p class="caveat"><span class="label">Caveat.</span> The remote-code-execution claim is Calif&#x27;s. Security firm Equixly says the decoder, not the attacker, chooses the bytes written, and that the <mark class="hl">likely outcome is a crash</mark>; Calif says each target needs tailored steps and is withholding product-specific exploit details.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;The exploit conditions are very specific but there are still going to be a lot of hosts impacted.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50538391" rel="noopener noreferrer">ievans</a></p></blockquote><blockquote><p>&ldquo;We set UseAVX=2 on all our jdk hosts last year for unrelated thermal issues, turns out that saved us here&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50538494" rel="noopener noreferrer">Sigmazero60</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openjdk.org/groups/vulnerability/advisories/2026-11-17" rel="noopener noreferrer">OpenJDK Vulnerability Group: Advisory, 17 November 2026</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:04:00+01:00">18 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://cyberscoop.com/java4shell-critical-java-flaw-openjdk" rel="noopener noreferrer">CyberScoop: Researchers disclose critical flaw in Java with help of AI</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:03:50+01:00">18 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://equixly.com/blog/2026/11/17/cve-2026-114938-pre-auth-heap-overflow-in-java-17-21-and-25" rel="noopener noreferrer">Equixly: CVE-2026-114938, pre-auth heap overflow in Java 17, 21 and 25</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:06:40+01:00">18 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50538240" rel="noopener noreferrer">Hacker News discussion of Java4Shell</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-18T06:04:10+01:00">18 Nov 2026, 06:04 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-java4shell-codex-openjdk"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-java4shell-codex-openjdk">Draft for X</label><textarea id="share-x-story-java4shell-codex-openjdk" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-java4shell-codex-openjdk-count">Researchers who used OpenAI&#x27;s Codex disclose Java4Shell, a serious flaw in Java&#x27;s Base64 decoder, as OpenJDK and Oracle ship fixes
+
+Sources: OpenJDK Vulnerability Group, CyberScoop, Equixly; via The AI Gazette</textarea><p class="share-count" id="share-x-story-java4shell-codex-openjdk-count">233 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Researchers%20who%20used%20OpenAI%27s%20Codex%20disclose%20Java4Shell%2C%20a%20serious%20flaw%20in%20Java%27s%20Base64%20decoder%2C%20as%20OpenJDK%20and%20Oracle%20ship%20fixes%0A%0ASources%3A%20OpenJDK%20Vulnerability%20Group%2C%20CyberScoop%2C%20Equixly%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-java4shell-codex-openjdk" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-java4shell-codex-openjdk">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-java4shell-codex-openjdk">Draft for LinkedIn</label><textarea id="share-li-story-java4shell-codex-openjdk" class="share-text share-text-li" rows="12">Researchers who used OpenAI&#x27;s Codex disclose Java4Shell, a serious flaw in Java&#x27;s Base64 decoder, as OpenJDK and Oracle ship fixes
+
+→ Calif Research disclosed CVE-2026-114938, nicknamed Java4Shell, a memory-corruption flaw in the hardware-accelerated Base64 decoder of OpenJDK, the open Java runtime.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-java4shell-codex-openjdk
+Sources: OpenJDK Vulnerability Group, CyberScoop, Equixly; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Researchers%20who%20used%20OpenAI%27s%20Codex%20disclose%20Java4Shell%2C%20a%20serious%20flaw%20in%20Java%27s%20Base64%20decoder%2C%20as%20OpenJDK%20and%20Oracle%20ship%20fixes%0A%0A%E2%86%92%20Calif%20Research%20disclosed%20CVE-2026-114938%2C%20nicknamed%20Java4Shell%2C%20a%20memory-corruption%20flaw%20in%20the%20hardware-accelerated%20Base64%20decoder%20of%20OpenJDK%2C%20the%20open%20Java%20runtime.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-java4shell-codex-openjdk%0ASources%3A%20OpenJDK%20Vulnerability%20Group%2C%20CyberScoop%2C%20Equixly%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-java4shell-codex-openjdk">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-java4shell-codex-openjdk">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-huang-spy-report">UPDATE: Nvidia reports $115.8 billion in quarterly revenue, its board rules out Jensen Huang&#x27;s return, and it stops shipping H200 chips to China</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17T22:20:00+01:00">17 Nov 2026, 22:20 CET</time></p><div class="story-body"><p>Update to yesterday afternoon&#x27;s edition, which reported Nvidia&#x27;s new board committee on national security and export control. The new development: on Tuesday evening Nvidia reported <mark class="hl">revenue of $115.8 billion</mark> for the quarter to 25 October, up 103% from a year earlier, its first results since Huang resigned. Data centre revenue was $107.6 billion.</p><p>Nvidia expects about <mark class="hl">$130 billion</mark> next quarter, plus or minus 3%, a quarter with an extra week, and assumes no data centre compute revenue from China. Interim chief executive Colette Kress said the Vera Rubin NVL72 system has shipped.</p><p>At the start of the earnings call, new board chair Harvey Jones said &#x27;the board does not intend to reinstate&#x27; Huang as chief executive, hours after Huang said he would be honoured to return, Scripps News reports. Jones would not take questions on the board&#x27;s investigation.</p><p>Kress also said Nvidia <mark class="hl">will no longer sell H200 chips in China</mark>, TechCrunch reports, ending sales that Huang had agreed with President Trump through a route that carried a 25% US tariff. She said the backlog of demand for chips such as Vera Rubin means the new US rule on remote access by Chinese companies will not affect top-line revenue.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the board is drawing a line under the Huang era while revenue keeps growing; <mark class="hl">China is now out of Nvidia&#x27;s forecast</mark> entirely.</p></aside><p class="caveat"><span class="label">Caveat.</span> The board and China remarks come from the earnings call as reported by Scripps News and TechCrunch; this paper did not hear the call. The outlook is Nvidia&#x27;s own forecast.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027" rel="noopener noreferrer">NVIDIA Newsroom: NVIDIA Announces Financial Results for Third Quarter Fiscal 2027</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:02:40+01:00">18 Nov 2026, 06:02 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.scrippsnews.com/business/nvidia-board-rules-out-jensen-huangs-return-as-ceo-during-earnings-call" rel="noopener noreferrer">Scripps News: Nvidia&#x27;s board rules out Huang&#x27;s return, as chipmaker posts blowout quarter</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:05:10+01:00">18 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster" rel="noopener noreferrer">TechCrunch: Nvidia is abandoning China after Jensen Huang&#x27;s ouster</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:05:10+01:00">18 Nov 2026, 06:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-nvidia-huang-spy-report"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-nvidia-huang-spy-report">Draft for X</label><textarea id="share-x-story-nvidia-huang-spy-report" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-nvidia-huang-spy-report-count">UPDATE: Nvidia reports $115.8 billion in quarterly revenue, its board rules out Jensen Huang&#x27;s return, and it stops shipping H200 chips to China
+
+Sources: NVIDIA Newsroom, Scripps News, TechCrunch; via The AI Gazette</textarea><p class="share-count" id="share-x-story-nvidia-huang-spy-report-count">240 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Nvidia%20reports%20%24115.8%20billion%20in%20quarterly%20revenue%2C%20its%20board%20rules%20out%20Jensen%20Huang%27s%20return%2C%20and%20it%20stops%20shipping%20H200%20chips%20to%20China%0A%0ASources%3A%20NVIDIA%20Newsroom%2C%20Scripps%20News%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-nvidia-huang-spy-report" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-nvidia-huang-spy-report">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-nvidia-huang-spy-report">Draft for LinkedIn</label><textarea id="share-li-story-nvidia-huang-spy-report" class="share-text share-text-li" rows="12">UPDATE: Nvidia reports $115.8 billion in quarterly revenue, its board rules out Jensen Huang&#x27;s return, and it stops shipping H200 chips to China
+
+→ Data centre revenue was $107.6 billion.
+→ Interim chief executive Colette Kress said the Vera Rubin NVL72 system has shipped.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-nvidia-huang-spy-report
+Sources: NVIDIA Newsroom, Scripps News, TechCrunch; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Nvidia%20reports%20%24115.8%20billion%20in%20quarterly%20revenue%2C%20its%20board%20rules%20out%20Jensen%20Huang%27s%20return%2C%20and%20it%20stops%20shipping%20H200%20chips%20to%20China%0A%0A%E2%86%92%20Data%20centre%20revenue%20was%20%24107.6%20billion.%0A%E2%86%92%20Interim%20chief%20executive%20Colette%20Kress%20said%20the%20Vera%20Rubin%20NVL72%20system%20has%20shipped.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-nvidia-huang-spy-report%0ASources%3A%20NVIDIA%20Newsroom%2C%20Scripps%20News%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-nvidia-huang-spy-report">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-nvidia-huang-spy-report">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-oregon-sues-openai" aria-labelledby="h-oregon-sues-openai"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-oregon-sues-openai">Oregon&#x27;s attorney general sues OpenAI for $2.035 billion, alleging it misled parents about ChatGPT&#x27;s safety for children</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-17">17 Nov 2026</time></p><div class="story-body"><p>Oregon Attorney General Dan Rayfield filed a <mark class="hl">$2.035 billion lawsuit against OpenAI</mark> in Multnomah County Circuit Court on Tuesday, accusing it of endangering children and misleading parents about the safety of ChatGPT. It comes a day after California&#x27;s attorney general sued OpenAI over its AI agents, as yesterday morning&#x27;s edition reported.</p><p>The state says OpenAI broke Oregon&#x27;s <mark class="hl">Unlawful Trade Practices Act</mark> by misleading the public about how safe ChatGPT is for children, selling a product with undisclosed safety problems and marketing unfairly to children and teenagers. It also alleges negligence, unjust enrichment and a public nuisance, and says OpenAI&#x27;s age verification often fails.</p><p>Oregon asks the court to order OpenAI to stop misleading people about children&#x27;s safety and to put working protections in place. KATU reports that the office based the figure on the number of Oregon children using or able to use ChatGPT.</p><p>The suit opens Rayfield&#x27;s Keeping Kids Safe initiative, which also includes a <mark class="hl">$125 million settlement with Meta</mark> limiting how long children can use Instagram and Facebook each day, and an investigation into Discord.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: two states sued OpenAI within two days, one over agent safety and one over children, so <mark class="hl">state enforcement</mark> is now a live front for AI companies.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are allegations in a complaint, not findings by a court. OpenAI&#x27;s response was not found in the sources checked.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-files-2b-lawsuit-against-open-ai-launches-keeping-kids-safe-initiative" rel="noopener noreferrer">Oregon Department of Justice: AG Rayfield Launches Keeping Kids Safe Initiative, Takes Action Against OpenAI</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-18T06:03:10+01:00">18 Nov 2026, 06:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://katu.com/news/local/oregon-attorney-general-dan-rayfield-sues-openai-for-2-billion-over-child-teens-safety-on-chatgpt-lawsuit-generative-artificial-intelligence-keeping-kids-safe-initiative-internet-crimes-children" rel="noopener noreferrer">KATU: Oregon AG Rayfield sues OpenAI for $2 billion over kids&#x27; safety on ChatGPT</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-18T06:07:00+01:00">18 Nov 2026, 06:07 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-18-morning.html#story-oregon-sues-openai"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-oregon-sues-openai">Draft for X</label><textarea id="share-x-story-oregon-sues-openai" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-oregon-sues-openai-count">Oregon&#x27;s attorney general sues OpenAI for $2.035 billion, alleging it misled parents about ChatGPT&#x27;s safety for children
+
+Sources: Oregon Department of Justice, KATU; via The AI Gazette</textarea><p class="share-count" id="share-x-story-oregon-sues-openai-count">209 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Oregon%27s%20attorney%20general%20sues%20OpenAI%20for%20%242.035%20billion%2C%20alleging%20it%20misled%20parents%20about%20ChatGPT%27s%20safety%20for%20children%0A%0ASources%3A%20Oregon%20Department%20of%20Justice%2C%20KATU%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-oregon-sues-openai" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-oregon-sues-openai">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-oregon-sues-openai">Draft for LinkedIn</label><textarea id="share-li-story-oregon-sues-openai" class="share-text share-text-li" rows="12">Oregon&#x27;s attorney general sues OpenAI for $2.035 billion, alleging it misled parents about ChatGPT&#x27;s safety for children
+
+→ Oregon asks the court to order OpenAI to stop misleading people about children&#x27;s safety and to put working protections in place.
+
+https://luongnv.com/news/reports/2026-11-18-morning.html#story-oregon-sues-openai
+Sources: Oregon Department of Justice, KATU; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Oregon%27s%20attorney%20general%20sues%20OpenAI%20for%20%242.035%20billion%2C%20alleging%20it%20misled%20parents%20about%20ChatGPT%27s%20safety%20for%20children%0A%0A%E2%86%92%20Oregon%20asks%20the%20court%20to%20order%20OpenAI%20to%20stop%20misleading%20people%20about%20children%27s%20safety%20and%20to%20put%20working%20protections%20in%20place.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-18-morning.html%23story-oregon-sues-openai%0ASources%3A%20Oregon%20Department%20of%20Justice%2C%20KATU%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-oregon-sues-openai">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-18-morning.html#story-oregon-sues-openai">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Price per task is the new battleground: OpenAI and Microsoft both pitched <mark class="hl">cost against capability</mark> on the same day.</li><li>Nvidia is redrawing its China exposure: no H200 sales, and <mark class="hl">no China data centre revenue</mark> in its forecast.</li><li>State attorneys general are suing OpenAI on two fronts in two days: <mark class="hl">agent safety and children&#x27;s safety</mark>.</li><li>AI tools are surfacing serious flaws in core software, here <mark class="hl">Java&#x27;s Base64 decoder</mark>.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (17 threads; 23 requests blocked with HTTP 403; Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (32 stories)</dd></div><div><dt>github</dt><dd>ok (16 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 77 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were general discussion (code review after AI agents, AI answers and search traffic, recent outages), none tied directly to a story here. Stories were found with 16 Google News RSS queries, publisher feeds, the Hacker News search API, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window: from 16:10 on Tuesday 17 November, when the afternoon edition was issued, to this edition; it was not widened.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 23 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.</li><li>Not read: Bloomberg&#x27;s report that Nvidia stopped selling chips to China and the Wall Street Journal&#x27;s reports on Anthropic&#x27;s IPO pricing and on AI &#x27;national champions&#x27; are paywalled; the Nvidia story rests on Nvidia&#x27;s release, Scripps News and TechCrunch. Calif&#x27;s own write-up of Java4Shell was not read; its claims are taken from CyberScoop&#x27;s report.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file holds seven leads, none with a source link. Not carried: Gemini for Healthcare (announced 10 November) and AWS Emulator (11 November), both older than the 48-hour lead window; a Claude Fable 5.2 game demo, a reported Windows 11 component that detects AI coding tools, TSMC customer credit limits, airline policies on booking agents and a New York research centre, for which no primary source was checked in time.</li><li>Not carried: Anthropic&#x27;s IPO pricing (expected after this edition; reports of an above-range price add little to yesterday&#x27;s update), Genesis AI&#x27;s reported 500 million dollar round, Model ML&#x27;s 250 million dollar round, OpenAI&#x27;s Daybreak models for NATO, ChatGPT for Sales, and US officials&#x27; remarks linking recent outages to AI-written patches, which no primary source confirmed in time.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 17 threads │ 12,448 upvotes │ 1,921 comments
+├─  HN: 32 stories │ 817 points │ 776 comments
+├─  dev.to: 12 articles │ 266 reactions │ 164 comments
+├─  GitHub: 16 items │ 54 reactions │ 152 comments
+├─  Top voices: r/technology, r/singularity, r/artificial
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-18-morning.json" download>Exact input JSON</a></li><li><a href="2026-11-18-morning.md">Markdown text</a></li><li><a href="2026-11-18-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
