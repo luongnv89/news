@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Thursday 19 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-19-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Thursday 19 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-19-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-19T16:08:00+01:00">Thursday 19 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-19-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-19-afternoon.html">This edition</a><a href="2026-11-19-afternoon.md">Markdown</a><a href="2026-11-19-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-19-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Thursday 19 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-19T05:55:00+01:00">19 Nov 2026, 05:55 CET</time> to <time datetime="2026-11-19T16:07:00+01:00">19 Nov 2026, 16:07 CET</time> (Paris time). Issued <time datetime="2026-11-19T16:08:00+01:00">19 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">Ten hours since the morning edition, and <mark class="hl">no new frontier model</mark>. The day&#x27;s most consequential news is a security one: the European Commission confirmed that an <mark class="hl">AI-assisted cyberattack</mark> targeted its systems, the first such case the EU has reported. The money and the power bills follow. Alibaba says its <mark class="hl">AI cloud revenue rose 53%</mark>, the IEA expects data-centre electricity use to double by 2030, Deutsche Telekom put 100 million euros into Mistral, and Google booked a New Glenn rocket for its orbital compute project. Also here: Merck&#x27;s drug-design deal with Isomorphic Labs and a CNN review of restricted Nvidia chips bought by blacklisted Chinese universities. Anthropic&#x27;s shares were due to start trading on Nasdaq later on Thursday; this edition does not report a first trade. The window was widened by 13 minutes to take in the IEA report.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-19-morning.html">2026-11-19-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-merck-isomorphic-labs" aria-labelledby="h-merck-isomorphic-labs"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-merck-isomorphic-labs">Merck signs a research deal with Isomorphic Labs to design small-molecule cancer drug candidates with AI</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19T12:45:00+01:00">19 Nov 2026, 12:45 CET</time></p><div class="story-body"><p>Merck, known as MSD outside the US and Canada, and <mark class="hl">Isomorphic Labs</mark>, the London-based AI drug-design company led by Demis Hassabis, announced a research collaboration to find <mark class="hl">small-molecule candidates against an oncology target</mark> that neither company named.</p><p>Isomorphic will make in silico predictions and deliver molecular designs with its drug design engine, IsoDDE, using proprietary data sets supplied by Merck. Merck takes on preclinical and clinical development, manufacturing and sales. Isomorphic receives an <mark class="hl">undisclosed upfront payment</mark>, milestone payments and tiered royalties, with an option to co-fund development for higher royalties.</p><p>Merck&#x27;s head of discovery George Addona told STAT that the target is one where Merck has already run its own programmes. The deal comes days after Isomorphic&#x27;s 5 billion dollar Series C, which this paper reported on 17 November.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: another large drugmaker is <mark class="hl">pairing its own lab data</mark> with an outside AI design engine rather than building one.</p></aside><p class="caveat"><span class="label">Caveat.</span> No financial terms or target were disclosed, and AI-designed candidates still face years of preclinical and clinical testing.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.merck.com/news/merck-and-isomorphic-labs-enter-strategic-research-collaboration/" rel="noopener noreferrer">Merck: Merck and Isomorphic Labs Enter Strategic Research Collaboration</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-19T16:04:00+01:00">19 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.statnews.com/2026/11/19/merck-isomorphic-labs-partner-to-develop-oncology-drug-candidates/" rel="noopener noreferrer">STAT: Merck, Isomorphic Labs partner to develop oncology drug candidates</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-merck-isomorphic-labs"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-merck-isomorphic-labs">Draft for X</label><textarea id="share-x-story-merck-isomorphic-labs" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-merck-isomorphic-labs-count">Merck signs a research deal with Isomorphic Labs to design small-molecule cancer drug candidates with AI
+
+→ Merck takes on preclinical and clinical development, manufacturing and sales.
+
+Sources: Merck, STAT; via The AI Gazette</textarea><p class="share-count" id="share-x-story-merck-isomorphic-labs-count">252 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Merck%20signs%20a%20research%20deal%20with%20Isomorphic%20Labs%20to%20design%20small-molecule%20cancer%20drug%20candidates%20with%20AI%0A%0A%E2%86%92%20Merck%20takes%20on%20preclinical%20and%20clinical%20development%2C%20manufacturing%20and%20sales.%0A%0ASources%3A%20Merck%2C%20STAT%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-merck-isomorphic-labs" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-merck-isomorphic-labs">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-merck-isomorphic-labs">Draft for LinkedIn</label><textarea id="share-li-story-merck-isomorphic-labs" class="share-text share-text-li" rows="12">Merck signs a research deal with Isomorphic Labs to design small-molecule cancer drug candidates with AI
+
+→ Isomorphic will make in silico predictions and deliver molecular designs with its drug design engine, IsoDDE, using proprietary data sets supplied by Merck.
+→ Merck takes on preclinical and clinical development, manufacturing and sales.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-merck-isomorphic-labs
+Sources: Merck, STAT; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Merck%20signs%20a%20research%20deal%20with%20Isomorphic%20Labs%20to%20design%20small-molecule%20cancer%20drug%20candidates%20with%20AI%0A%0A%E2%86%92%20Isomorphic%20will%20make%20in%20silico%20predictions%20and%20deliver%20molecular%20designs%20with%20its%20drug%20design%20engine%2C%20IsoDDE%2C%20using%20proprietary%20data%20sets%20supplied%20by%20Merck.%0A%E2%86%92%20Merck%20takes%20on%20preclinical%20and%20clinical%20development%2C%20manufacturing%20and%20sales.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-merck-isomorphic-labs%0ASources%3A%20Merck%2C%20STAT%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-merck-isomorphic-labs">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-merck-isomorphic-labs">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-eu-commission-ai-cyberattack" aria-labelledby="h-eu-commission-ai-cyberattack"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-eu-commission-ai-cyberattack">European Commission confirms an AI-assisted cyberattack on its systems, the first the EU has reported, with some tools still offline</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19">19 Nov 2026</time></p><div class="story-body"><p>The European Commission said on Thursday that a cyberattack using <mark class="hl">AI-powered software</mark> targeted its systems in October. &quot;Indeed we can confirm that this was done with AI tools,&quot; Commission spokesperson Thomas Regnier said, according to the Associated Press. It is the <mark class="hl">first time the EU has reported</mark> a cyberattack using an AI tool.</p><p>Regnier said the incident was first detected on <mark class="hl">22 October</mark>, that several applications were taken down as a precaution and that most have since been restored. The investigation is continuing, and so far &quot;we have not detected any evidence of a data breach affecting commission staff as a whole,&quot; he said.</p><p>Politico&#x27;s Brussels Playbook, which first reported the attack, said CERT-EU, the cybersecurity service of the EU institutions, found that hackers had used <mark class="hl">ARTEX</mark>, a publicly available AI-powered tool built to find weaknesses in IT systems. It reported more than 10 days of disruption to the Commission&#x27;s HR system for payslips and leave, its medical reimbursement system and its translation services, and said tech commissioner Henna Virkkunen briefed fellow commissioners on Wednesday.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the debate over AI-found vulnerabilities, so far about American outages and patching, now has a confirmed case inside a major government. The Commission has <mark class="hl">named the method but not the attacker</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> The Commission has not said who was behind the attack or how far personal data was exposed. The tool&#x27;s name and the internal details come from Politico&#x27;s anonymous EU officials, not from an official statement. AP gives 22 October as the first detection, while Politico says CERT-EU detected the tool&#x27;s use earlier this month.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.politico.eu/newsletter/brussels-playbook/cyberattack-hits-the-commission/" rel="noopener noreferrer">Politico Europe: Brussels Playbook, Cyberattack hits the Commission</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.news4jax.com/tech/2026/11/19/a-cyberattack-using-artificial-intelligence-targeted-the-eu-in-october-official-says/" rel="noopener noreferrer">Associated Press (News4JAX copy): A cyberattack using artificial intelligence targeted the EU in October, official says</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-eu-commission-ai-cyberattack"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-eu-commission-ai-cyberattack">Draft for X</label><textarea id="share-x-story-eu-commission-ai-cyberattack" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-eu-commission-ai-cyberattack-count">European Commission confirms an AI-assisted cyberattack on its systems, the first the EU has reported, with some tools still offline
+
+Sources: Politico Europe, Associated Press (News4JAX copy); via The AI Gazette</textarea><p class="share-count" id="share-x-story-eu-commission-ai-cyberattack-count">236 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=European%20Commission%20confirms%20an%20AI-assisted%20cyberattack%20on%20its%20systems%2C%20the%20first%20the%20EU%20has%20reported%2C%20with%20some%20tools%20still%20offline%0A%0ASources%3A%20Politico%20Europe%2C%20Associated%20Press%20%28News4JAX%20copy%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-eu-commission-ai-cyberattack" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-eu-commission-ai-cyberattack">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-eu-commission-ai-cyberattack">Draft for LinkedIn</label><textarea id="share-li-story-eu-commission-ai-cyberattack" class="share-text share-text-li" rows="12">European Commission confirms an AI-assisted cyberattack on its systems, the first the EU has reported, with some tools still offline
+
+→ The European Commission said on Thursday that a cyberattack using AI-powered software targeted its systems in October.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-eu-commission-ai-cyberattack
+Sources: Politico Europe, Associated Press (News4JAX copy); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=European%20Commission%20confirms%20an%20AI-assisted%20cyberattack%20on%20its%20systems%2C%20the%20first%20the%20EU%20has%20reported%2C%20with%20some%20tools%20still%20offline%0A%0A%E2%86%92%20The%20European%20Commission%20said%20on%20Thursday%20that%20a%20cyberattack%20using%20AI-powered%20software%20targeted%20its%20systems%20in%20October.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-eu-commission-ai-cyberattack%0ASources%3A%20Politico%20Europe%2C%20Associated%20Press%20%28News4JAX%20copy%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-eu-commission-ai-cyberattack">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-eu-commission-ai-cyberattack">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-alibaba-ai-cloud-quarter" aria-labelledby="h-alibaba-ai-cloud-quarter"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-alibaba-ai-cloud-quarter">Alibaba&#x27;s AI cloud revenue rises 53% to 61 billion yuan as quarterly spending on AI infrastructure jumps 60%</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19">19 Nov 2026</time></p><div class="story-body"><p>Alibaba said revenue from its AI Cloud and Compute Services segment rose <mark class="hl">53% to 60.97 billion yuan</mark> (about 9.1 billion dollars) in the quarter to 30 September. Revenue from outside customers grew 64%, and AI-related product revenue grew by triple digits for the 13th quarter in a row, the company said.</p><p>Group revenue rose 10% to 271.5 billion yuan. <mark class="hl">Capital expenditure was 50.5 billion yuan</mark>, up 60% from a year earlier, which Alibaba put down to scaling compute capacity for AI demand. Free cash flow was an outflow of 34.5 billion yuan.</p><p>Its new AI Labs and Applications segment, which groups the model labs, the Qwen consumer app and the QwenWork agent platform, made an adjusted <mark class="hl">loss of 10.5 billion yuan</mark>, against 3.4 billion a year earlier; Alibaba cited heavier AI investment and higher inference costs for the Qwen app. The results also say T-Head&#x27;s Zhenwu V900 AI chip is due for commercial release in the first quarter of 2027.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the figures show both sides of China&#x27;s largest AI cloud: <mark class="hl">demand is accelerating</mark>, but the consumer models and the build-out are still costing far more than they bring in.</p></aside><p class="caveat"><span class="label">Caveat.</span> Growth figures and segment definitions are Alibaba&#x27;s own; the AI Labs segment was newly formed, so its year-earlier figures are restated. Net income was lifted mainly by investment gains, not operations.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://data.alibabagroup.com/ecms-files/1532295521/e676aff4-e76d-489b-960a-47b9cf36485d/Alibaba%20Group%20Announces%20September%20Quarter%202026%20Results%20and%20Interim%20Results%20for%20the%20Six%20Months%20Ended%20September%2030%2C%202026.pdf" rel="noopener noreferrer">Alibaba Group: September Quarter 2026 results announcement (PDF)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-alibaba-ai-cloud-quarter"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-alibaba-ai-cloud-quarter">Draft for X</label><textarea id="share-x-story-alibaba-ai-cloud-quarter" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-alibaba-ai-cloud-quarter-count">Alibaba&#x27;s AI cloud revenue rises 53% to 61 billion yuan as quarterly spending on AI infrastructure jumps 60%
+
+→ Group revenue rose 10% to 271.5 billion yuan.
+→ Free cash flow was an outflow of 34.5 billion yuan.
+
+Source: Alibaba Group; via The AI Gazette</textarea><p class="share-count" id="share-x-story-alibaba-ai-cloud-quarter-count">280 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Alibaba%27s%20AI%20cloud%20revenue%20rises%2053%25%20to%2061%20billion%20yuan%20as%20quarterly%20spending%20on%20AI%20infrastructure%20jumps%2060%25%0A%0A%E2%86%92%20Group%20revenue%20rose%2010%25%20to%20271.5%20billion%20yuan.%0A%E2%86%92%20Free%20cash%20flow%20was%20an%20outflow%20of%2034.5%20billion%20yuan.%0A%0ASource%3A%20Alibaba%20Group%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-alibaba-ai-cloud-quarter" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-alibaba-ai-cloud-quarter">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-alibaba-ai-cloud-quarter">Draft for LinkedIn</label><textarea id="share-li-story-alibaba-ai-cloud-quarter" class="share-text share-text-li" rows="12">Alibaba&#x27;s AI cloud revenue rises 53% to 61 billion yuan as quarterly spending on AI infrastructure jumps 60%
+
+→ Alibaba said revenue from its AI Cloud and Compute Services segment rose 53% to 60.97 billion yuan (about 9.1 billion dollars) in the quarter to 30 September.
+→ Group revenue rose 10% to 271.5 billion yuan.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-alibaba-ai-cloud-quarter
+Source: Alibaba Group; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Alibaba%27s%20AI%20cloud%20revenue%20rises%2053%25%20to%2061%20billion%20yuan%20as%20quarterly%20spending%20on%20AI%20infrastructure%20jumps%2060%25%0A%0A%E2%86%92%20Alibaba%20said%20revenue%20from%20its%20AI%20Cloud%20and%20Compute%20Services%20segment%20rose%2053%25%20to%2060.97%20billion%20yuan%20%28about%209.1%20billion%20dollars%29%20in%20the%20quarter%20to%2030%20September.%0A%E2%86%92%20Group%20revenue%20rose%2010%25%20to%20271.5%20billion%20yuan.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-alibaba-ai-cloud-quarter%0ASource%3A%20Alibaba%20Group%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-alibaba-ai-cloud-quarter">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-alibaba-ai-cloud-quarter">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-iea-weo-data-centres" aria-labelledby="h-iea-weo-data-centres"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-iea-weo-data-centres">IEA&#x27;s World Energy Outlook expects data-centre electricity use to double by 2030, with AI behind three-quarters of the rise</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19">19 Nov 2026</time></p><div class="story-body"><p>The International Energy Agency&#x27;s <mark class="hl">World Energy Outlook 2026</mark>, published on Thursday, expects data centres to use <mark class="hl">twice as much electricity by 2030</mark> as today, with AI accounting for three-quarters of that growth, the Guardian reported. AI data centres alone would add about 350 terawatt-hours a year, more than Great Britain consumes.</p><p>Emissions tied to data centres are on track to <mark class="hl">rise 70% by 2030</mark>, the IEA said, because fossil generation grows fastest in the two biggest markets: by then about half the power for China&#x27;s AI data centres would come from coal, and about 60% of US data-centre power from gas. In August, plans covered about 180 gigawatts of new gas plants linked to US data centres. In the EU, renewables would supply about 70%.</p><p>The agency tracked 93 large AI sites under construction with satellite images. It puts their combined capacity at about 50 gigawatts once complete, and says that capacity has grown tenfold in two years to 17 gigawatts.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the IEA&#x27;s figures move the AI power debate from grid capacity to emissions, and show <mark class="hl">the fuel mix differs sharply by region</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> Projections, not measurements, and based on the IEA&#x27;s central scenario. The IEA&#x27;s own report pages were only partly readable from this machine (HTTP 403 and an incomplete text), so the data-centre figures are taken from the Guardian&#x27;s report of the outlook. It came out at about 06:00 Paris time, just before the morning edition closed, and that edition did not carry it.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.iea.org/reports/world-energy-outlook-2026" rel="noopener noreferrer">IEA: World Energy Outlook 2026</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theguardian.com/world/2026/nov/19/datacentres-to-create-70-more-carbon-emissions-by-2030-iea-report-warns" rel="noopener noreferrer">The Guardian: Datacentres to create 70% more carbon emissions by 2030, IEA report warns</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-iea-weo-data-centres"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-iea-weo-data-centres">Draft for X</label><textarea id="share-x-story-iea-weo-data-centres" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-iea-weo-data-centres-count">IEA&#x27;s World Energy Outlook expects data-centre electricity use to double by 2030, with AI behind three-quarters of the rise
+
+→ In the EU, renewables would supply about 70%.
+
+Sources: IEA, The Guardian; via The AI Gazette</textarea><p class="share-count" id="share-x-story-iea-weo-data-centres-count">245 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=IEA%27s%20World%20Energy%20Outlook%20expects%20data-centre%20electricity%20use%20to%20double%20by%202030%2C%20with%20AI%20behind%20three-quarters%20of%20the%20rise%0A%0A%E2%86%92%20In%20the%20EU%2C%20renewables%20would%20supply%20about%2070%25.%0A%0ASources%3A%20IEA%2C%20The%20Guardian%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-iea-weo-data-centres" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-iea-weo-data-centres">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-iea-weo-data-centres">Draft for LinkedIn</label><textarea id="share-li-story-iea-weo-data-centres" class="share-text share-text-li" rows="12">IEA&#x27;s World Energy Outlook expects data-centre electricity use to double by 2030, with AI behind three-quarters of the rise
+
+→ AI data centres alone would add about 350 terawatt-hours a year, more than Great Britain consumes.
+→ In August, plans covered about 180 gigawatts of new gas plants linked to US data centres.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-iea-weo-data-centres
+Sources: IEA, The Guardian; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=IEA%27s%20World%20Energy%20Outlook%20expects%20data-centre%20electricity%20use%20to%20double%20by%202030%2C%20with%20AI%20behind%20three-quarters%20of%20the%20rise%0A%0A%E2%86%92%20AI%20data%20centres%20alone%20would%20add%20about%20350%20terawatt-hours%20a%20year%2C%20more%20than%20Great%20Britain%20consumes.%0A%E2%86%92%20In%20August%2C%20plans%20covered%20about%20180%20gigawatts%20of%20new%20gas%20plants%20linked%20to%20US%20data%20centres.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-iea-weo-data-centres%0ASources%3A%20IEA%2C%20The%20Guardian%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-iea-weo-data-centres">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-iea-weo-data-centres">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-telekom-mistral-investment" aria-labelledby="h-telekom-mistral-investment"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-telekom-mistral-investment">Deutsche Telekom invests 100 million euros in Mistral as a first step towards a German AI partnership</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19">19 Nov 2026</time></p><div class="story-body"><p>Deutsche Telekom&#x27;s investment arm <mark class="hl">T.Capital Tech Fund invested 100 million euros</mark> in Mistral AI&#x27;s Series D round, the German operator said on Thursday. It called the stake a first step towards a <mark class="hl">future strategic partnership</mark> combining its infrastructure, customers and integration work with Mistral&#x27;s models and enterprise software.</p><p>The two companies plan to help German businesses and public bodies adopt AI, particularly in industrial and regulated sectors, Telekom said, building on its Industrial AI Cloud and Mistral&#x27;s recently opened Munich hub. Dow Jones reported that Mistral&#x27;s Series D, completed in September, raised 3 billion euros at a valuation above 21 billion euros.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: Europe&#x27;s largest telecoms operator is <mark class="hl">backing the French lab</mark> with money as well as hosting, a sign that the &#x27;sovereign AI&#x27; pitch now runs across borders inside the EU.</p></aside><p class="caveat"><span class="label">Caveat.</span> The partnership is described as future and has no published terms. Telekom did not give the size of its stake as a share of Mistral.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.telekom.com/en/newsroom/latest-updates/media-information/2026/11/deutsche-telekom-advances-sovereign-ai-in-germany" rel="noopener noreferrer">Deutsche Telekom: Deutsche Telekom advances sovereign AI in Germany: T.Capital Tech Fund invests in Mistral</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-19T16:04:00+01:00">19 Nov 2026, 16:04 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://morningstar.com/news/dow-jones/202611192869/deutsche-telekoms-tech-fund-invests-110-million-in-mistral-ai" rel="noopener noreferrer">Dow Jones (Morningstar): Deutsche Telekom&#x27;s Tech Fund Invests $110 Million in Mistral AI</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:04:00+01:00">19 Nov 2026, 16:04 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-telekom-mistral-investment"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-telekom-mistral-investment">Draft for X</label><textarea id="share-x-story-telekom-mistral-investment" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-telekom-mistral-investment-count">Deutsche Telekom invests 100 million euros in Mistral as a first step towards a German AI partnership
+
+Sources: Deutsche Telekom, Dow Jones (Morningstar); via The AI Gazette</textarea><p class="share-count" id="share-x-story-telekom-mistral-investment-count">197 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Deutsche%20Telekom%20invests%20100%20million%20euros%20in%20Mistral%20as%20a%20first%20step%20towards%20a%20German%20AI%20partnership%0A%0ASources%3A%20Deutsche%20Telekom%2C%20Dow%20Jones%20%28Morningstar%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-telekom-mistral-investment" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-telekom-mistral-investment">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-telekom-mistral-investment">Draft for LinkedIn</label><textarea id="share-li-story-telekom-mistral-investment" class="share-text share-text-li" rows="12">Deutsche Telekom invests 100 million euros in Mistral as a first step towards a German AI partnership
+
+→ Deutsche Telekom&#x27;s investment arm T.Capital Tech Fund invested 100 million euros in Mistral AI&#x27;s Series D round, the German operator said on Thursday.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-telekom-mistral-investment
+Sources: Deutsche Telekom, Dow Jones (Morningstar); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Deutsche%20Telekom%20invests%20100%20million%20euros%20in%20Mistral%20as%20a%20first%20step%20towards%20a%20German%20AI%20partnership%0A%0A%E2%86%92%20Deutsche%20Telekom%27s%20investment%20arm%20T.Capital%20Tech%20Fund%20invested%20100%20million%20euros%20in%20Mistral%20AI%27s%20Series%20D%20round%2C%20the%20German%20operator%20said%20on%20Thursday.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-telekom-mistral-investment%0ASources%3A%20Deutsche%20Telekom%2C%20Dow%20Jones%20%28Morningstar%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-telekom-mistral-investment">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-telekom-mistral-investment">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-google-suncatcher-blue-origin" aria-labelledby="h-google-suncatcher-blue-origin"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-google-suncatcher-blue-origin">Google books a Blue Origin New Glenn launch for Project Suncatcher, its plan for AI compute in orbit, targeting early 2029</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19T14:00:00+01:00">19 Nov 2026, 14:00 CET</time></p><div class="story-body"><p>Google said it is partnering with Blue Origin on the <mark class="hl">first heavy-lift launch for Project Suncatcher</mark>, its long-term project to run AI infrastructure in space on solar power. Blue Origin&#x27;s <mark class="hl">New Glenn</mark> rocket is to put Google&#x27;s satellites, each with roughly the capacity of a data-centre rack, into sun-synchronous orbit, with the launch targeted for the <mark class="hl">first quarter of 2029</mark>.</p><p>Google called the dedicated launch a crucial milestone on its roadmap and said it builds on work with other satellite and launch partners.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: on the same day the IEA set out the strain AI puts on grids, Google put a date on its <mark class="hl">long-shot alternative</mark> of moving compute off the ground.</p></aside><p class="caveat"><span class="label">Caveat.</span> A planned launch more than two years away. Google&#x27;s short post gives no satellite count, cost or performance figures, and Blue Origin&#x27;s announcement could not be read from this machine (HTTP 429).</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/" rel="noopener noreferrer">Google: We&#x27;re partnering with Blue Origin on our first heavy-lift Project Suncatcher launch</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-19T16:04:00+01:00">19 Nov 2026, 16:04 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-google-suncatcher-blue-origin"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-google-suncatcher-blue-origin">Draft for X</label><textarea id="share-x-story-google-suncatcher-blue-origin" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-google-suncatcher-blue-origin-count">Google books a Blue Origin New Glenn launch for Project Suncatcher, its plan for AI compute in orbit, targeting early 2029
+
+Source: Google; via The AI Gazette</textarea><p class="share-count" id="share-x-story-google-suncatcher-blue-origin-count">182 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Google%20books%20a%20Blue%20Origin%20New%20Glenn%20launch%20for%20Project%20Suncatcher%2C%20its%20plan%20for%20AI%20compute%20in%20orbit%2C%20targeting%20early%202029%0A%0ASource%3A%20Google%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-google-suncatcher-blue-origin" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-google-suncatcher-blue-origin">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-google-suncatcher-blue-origin">Draft for LinkedIn</label><textarea id="share-li-story-google-suncatcher-blue-origin" class="share-text share-text-li" rows="12">Google books a Blue Origin New Glenn launch for Project Suncatcher, its plan for AI compute in orbit, targeting early 2029
+
+→ Google said it is partnering with Blue Origin on the first heavy-lift launch for Project Suncatcher, its long-term project to run AI infrastructure in space on solar power.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-google-suncatcher-blue-origin
+Source: Google; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Google%20books%20a%20Blue%20Origin%20New%20Glenn%20launch%20for%20Project%20Suncatcher%2C%20its%20plan%20for%20AI%20compute%20in%20orbit%2C%20targeting%20early%202029%0A%0A%E2%86%92%20Google%20said%20it%20is%20partnering%20with%20Blue%20Origin%20on%20the%20first%20heavy-lift%20launch%20for%20Project%20Suncatcher%2C%20its%20long-term%20project%20to%20run%20AI%20infrastructure%20in%20space%20on%20solar%20power.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-google-suncatcher-blue-origin%0ASource%3A%20Google%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-google-suncatcher-blue-origin">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-google-suncatcher-blue-origin">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-h200-blacklisted-university" aria-labelledby="h-nvidia-h200-blacklisted-university"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-h200-blacklisted-university">UPDATE: CNN finds at least six blacklisted Chinese universities reported buying restricted Nvidia chips, two of them in recent months</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-19T13:35:56+01:00">19 Nov 2026, 13:35 CET</time></p><div class="story-body"><p>Update to the 11 November afternoon edition, which reported Reuters&#x27; finding that Northwestern Polytechnical University bought Nvidia H200 chips. The new development: a CNN review of procurement records found that <mark class="hl">at least six Chinese universities</mark> on the US blacklist reported buying restricted Nvidia chips in recent years.</p><p>Of nearly 300 records CNN examined, most showed purchases of export-controlled A100, A800, H100, H200 and H800 chips; nearly 80% of the 90 buyers were universities. CNN highlighted <mark class="hl">Harbin Institute of Technology</mark>, which reported buying an A100 for about 7,000 dollars in September, and Northwestern Polytechnical, which reported buying <mark class="hl">four H200 chips for about 240,000 dollars</mark> in September and October. Both belong to the &#x27;Seven Sons of National Defence&#x27; group tied to China&#x27;s military.</p><p>The purchases were small amounts of older chips, bought through little-known Chinese sellers rather than Nvidia, CNN said. A100 sales to China have been banned since 2022, and experts told CNN some chips may come from stocks bought before the controls.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the records show how hard it is to <mark class="hl">enforce chip controls once hardware is inside China</mark>, the issue Washington&#x27;s remote-access rule and the Nvidia scandal have pushed to the top of the agenda.</p></aside><p class="caveat"><span class="label">Caveat.</span> CNN says the records are likely incomplete and that it could not verify whether the chips in each notice were delivered.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnn.com/2026/11/19/politics/nvidia-chips-china-universities-invs" rel="noopener noreferrer">CNN: Blacklisted Chinese universities procured Nvidia chips, records show</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-19T16:05:00+01:00">19 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-nvidia-h200-blacklisted-university"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-nvidia-h200-blacklisted-university">Draft for X</label><textarea id="share-x-story-nvidia-h200-blacklisted-university" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-nvidia-h200-blacklisted-university-count">UPDATE: CNN finds at least six blacklisted Chinese universities reported buying restricted Nvidia chips, two of them in recent months
+
+→ Both belong to the &#x27;Seven Sons of National Defence&#x27; group tied to China&#x27;s military.
+
+Source: CNN; via The AI Gazette</textarea><p class="share-count" id="share-x-story-nvidia-h200-blacklisted-university-count">278 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20CNN%20finds%20at%20least%20six%20blacklisted%20Chinese%20universities%20reported%20buying%20restricted%20Nvidia%20chips%2C%20two%20of%20them%20in%20recent%20months%0A%0A%E2%86%92%20Both%20belong%20to%20the%20%27Seven%20Sons%20of%20National%20Defence%27%20group%20tied%20to%20China%27s%20military.%0A%0ASource%3A%20CNN%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-nvidia-h200-blacklisted-university" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-nvidia-h200-blacklisted-university">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-nvidia-h200-blacklisted-university">Draft for LinkedIn</label><textarea id="share-li-story-nvidia-h200-blacklisted-university" class="share-text share-text-li" rows="12">UPDATE: CNN finds at least six blacklisted Chinese universities reported buying restricted Nvidia chips, two of them in recent months
+
+→ Of nearly 300 records CNN examined, most showed purchases of export-controlled A100, A800, H100, H200 and H800 chips; nearly 80% of the 90 buyers were universities.
+
+https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-nvidia-h200-blacklisted-university
+Source: CNN; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20CNN%20finds%20at%20least%20six%20blacklisted%20Chinese%20universities%20reported%20buying%20restricted%20Nvidia%20chips%2C%20two%20of%20them%20in%20recent%20months%0A%0A%E2%86%92%20Of%20nearly%20300%20records%20CNN%20examined%2C%20most%20showed%20purchases%20of%20export-controlled%20A100%2C%20A800%2C%20H100%2C%20H200%20and%20H800%20chips%3B%20nearly%2080%25%20of%20the%2090%20buyers%20were%20universities.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-19-afternoon.html%23story-nvidia-h200-blacklisted-university%0ASource%3A%20CNN%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-nvidia-h200-blacklisted-university">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-19-afternoon.html#story-nvidia-h200-blacklisted-university">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI as an attack tool is now on the record in Europe: the Commission confirms <mark class="hl">an AI-assisted intrusion</mark>.</li><li>The build-out&#x27;s costs are showing: Alibaba&#x27;s <mark class="hl">capital spending up 60%</mark> and the IEA&#x27;s <mark class="hl">70% rise in data-centre emissions</mark>.</li><li>European AI money stays close to home: <mark class="hl">Telekom backs Mistral</mark> for sovereign enterprise AI.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (24 threads; 23 requests blocked with HTTP 403; Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (34 stories)</dd></div><div><dt>github</dt><dd>ok (19 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 89 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were general discussion (a managed cloud for agents, code review after coding agents, AI agents in an audit trial, AI answers and search traffic), none tied to a story here, so no community comments are quoted. Stories were found with 16 Google News RSS queries, publisher feeds, the Hacker News search API, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window: from 05:55 on Thursday 19 November to this edition. It was widened by 13 minutes before the morning edition&#x27;s close (06:08) to take in the IEA&#x27;s World Energy Outlook, released at about 06:00 and not carried by the morning edition.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 23 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.</li><li>Read through other routes or not read: the AP report on the Commission attack was read in News4JAX&#x27;s syndicated copy (apnews.com answered HTTP 403); the IEA&#x27;s report pages were only partly readable (HTTP 403 on direct reads, every fetch_source.py route failed); Blue Origin&#x27;s announcement answered HTTP 429. Not read: Reuters&#x27; own pages and the Wall Street Journal, Bloomberg, Nikkei and The Information originals, which are paywalled or blocked.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file has not changed since the morning edition, which handled its four leads.</li><li>Not carried: the Google DeepMind union drive (its application to the Central Arbitration Committee was reported on 12 November and resurfaced today), Microsoft&#x27;s Aion small model for Windows (published 18 November, before this window), Moonshot AI&#x27;s reported cancellation of an Nvidia chip deal in Indonesia (The Information, paywalled), a reported tightening of TSMC&#x27;s China curbs (Reuters, unread), and Anthropic&#x27;s first trade, which had not happened when this edition closed.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 24 threads │ 11,426 upvotes │ 1,480 comments
+├─  HN: 34 stories │ 3,084 points │ 2,504 comments
+├─  dev.to: 12 articles │ 291 reactions │ 186 comments
+├─  GitHub: 19 items │ 56 reactions │ 214 comments
+├─  Top voices: r/artificial, r/technology, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-19-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-19-afternoon.md">Markdown text</a></li><li><a href="2026-11-19-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>

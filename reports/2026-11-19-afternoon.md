@@ -1,0 +1,201 @@
+# The AI Gazette — Afternoon edition, Thursday 19 November 2026
+
+*Models, machines, and matters of consequence*
+
+- Issue: 2026-11-19-afternoon
+- Issued: 19 Nov 2026, 16:08 CET (Paris)
+- Reporting window: 19 Nov 2026, 05:55 CET to 19 Nov 2026, 16:07 CET
+- Timezone: Europe/Paris
+- Previous issue: 2026-11-19-morning
+- Price: Complimentary
+
+## Editor's note
+
+Ten hours since the morning edition, and **no new frontier model**. The day's most consequential news is a security one: the European Commission confirmed that an **AI-assisted cyberattack** targeted its systems, the first such case the EU has reported. The money and the power bills follow. Alibaba says its **AI cloud revenue rose 53%**, the IEA expects data-centre electricity use to double by 2030, Deutsche Telekom put 100 million euros into Mistral, and Google booked a New Glenn rocket for its orbital compute project. Also here: Merck's drug-design deal with Isomorphic Labs and a CNN review of restricted Nvidia chips bought by blacklisted Chinese universities. Anthropic's shares were due to start trading on Nasdaq later on Thursday; this edition does not report a first trade. The window was widened by 13 minutes to take in the IEA report.
+
+## The News
+
+### Merck signs a research deal with Isomorphic Labs to design small-molecule cancer drug candidates with AI
+
+*Research · New*
+
+**Published:** 19 Nov 2026, 12:45 CET
+
+Merck, known as MSD outside the US and Canada, and **Isomorphic Labs**, the London-based AI drug-design company led by Demis Hassabis, announced a research collaboration to find **small-molecule candidates against an oncology target** that neither company named.
+
+Isomorphic will make in silico predictions and deliver molecular designs with its drug design engine, IsoDDE, using proprietary data sets supplied by Merck. Merck takes on preclinical and clinical development, manufacturing and sales. Isomorphic receives an **undisclosed upfront payment**, milestone payments and tiered royalties, with an option to co-fund development for higher royalties.
+
+Merck's head of discovery George Addona told STAT that the target is one where Merck has already run its own programmes. The deal comes days after Isomorphic's 5 billion dollar Series C, which this paper reported on 17 November.
+
+**Analysis — why it matters:** *Editorial analysis: another large drugmaker is **pairing its own lab data** with an outside AI design engine rather than building one.*
+
+**Caveat:** No financial terms or target were disclosed, and AI-designed candidates still face years of preclinical and clinical testing.
+
+**Sources:**
+
+1. [Merck: Merck and Isomorphic Labs Enter Strategic Research Collaboration](<https://www.merck.com/news/merck-and-isomorphic-labs-enter-strategic-research-collaboration/>) — primary source. Checked: 19 Nov 2026, 16:04 CET
+2. [STAT: Merck, Isomorphic Labs partner to develop oncology drug candidates](<https://www.statnews.com/2026/11/19/merck-isomorphic-labs-partner-to-develop-oncology-drug-candidates/>) — reporting. Checked: 19 Nov 2026, 16:05 CET
+
+### European Commission confirms an AI-assisted cyberattack on its systems, the first the EU has reported, with some tools still offline
+
+*Industry & policy · New*
+
+**Published:** 19 Nov 2026
+
+The European Commission said on Thursday that a cyberattack using **AI-powered software** targeted its systems in October. "Indeed we can confirm that this was done with AI tools," Commission spokesperson Thomas Regnier said, according to the Associated Press. It is the **first time the EU has reported** a cyberattack using an AI tool.
+
+Regnier said the incident was first detected on **22 October**, that several applications were taken down as a precaution and that most have since been restored. The investigation is continuing, and so far "we have not detected any evidence of a data breach affecting commission staff as a whole," he said.
+
+Politico's Brussels Playbook, which first reported the attack, said CERT-EU, the cybersecurity service of the EU institutions, found that hackers had used **ARTEX**, a publicly available AI-powered tool built to find weaknesses in IT systems. It reported more than 10 days of disruption to the Commission's HR system for payslips and leave, its medical reimbursement system and its translation services, and said tech commissioner Henna Virkkunen briefed fellow commissioners on Wednesday.
+
+**Analysis — why it matters:** *Editorial analysis: the debate over AI-found vulnerabilities, so far about American outages and patching, now has a confirmed case inside a major government. The Commission has **named the method but not the attacker**.*
+
+**Caveat:** The Commission has not said who was behind the attack or how far personal data was exposed. The tool's name and the internal details come from Politico's anonymous EU officials, not from an official statement. AP gives 22 October as the first detection, while Politico says CERT-EU detected the tool's use earlier this month.
+
+**Sources:**
+
+1. [Politico Europe: Brussels Playbook, Cyberattack hits the Commission](<https://www.politico.eu/newsletter/brussels-playbook/cyberattack-hits-the-commission/>) — reporting. Checked: 19 Nov 2026, 16:05 CET
+2. [Associated Press (News4JAX copy): A cyberattack using artificial intelligence targeted the EU in October, official says](<https://www.news4jax.com/tech/2026/11/19/a-cyberattack-using-artificial-intelligence-targeted-the-eu-in-october-official-says/>) — reporting. Checked: 19 Nov 2026, 16:05 CET
+
+### Alibaba's AI cloud revenue rises 53% to 61 billion yuan as quarterly spending on AI infrastructure jumps 60%
+
+*Industry & policy · New*
+
+**Published:** 19 Nov 2026
+
+Alibaba said revenue from its AI Cloud and Compute Services segment rose **53% to 60.97 billion yuan** (about 9.1 billion dollars) in the quarter to 30 September. Revenue from outside customers grew 64%, and AI-related product revenue grew by triple digits for the 13th quarter in a row, the company said.
+
+Group revenue rose 10% to 271.5 billion yuan. **Capital expenditure was 50.5 billion yuan**, up 60% from a year earlier, which Alibaba put down to scaling compute capacity for AI demand. Free cash flow was an outflow of 34.5 billion yuan.
+
+Its new AI Labs and Applications segment, which groups the model labs, the Qwen consumer app and the QwenWork agent platform, made an adjusted **loss of 10.5 billion yuan**, against 3.4 billion a year earlier; Alibaba cited heavier AI investment and higher inference costs for the Qwen app. The results also say T-Head's Zhenwu V900 AI chip is due for commercial release in the first quarter of 2027.
+
+**Analysis — why it matters:** *Editorial analysis: the figures show both sides of China's largest AI cloud: **demand is accelerating**, but the consumer models and the build-out are still costing far more than they bring in.*
+
+**Caveat:** Growth figures and segment definitions are Alibaba's own; the AI Labs segment was newly formed, so its year-earlier figures are restated. Net income was lifted mainly by investment gains, not operations.
+
+**Sources:**
+
+1. [Alibaba Group: September Quarter 2026 results announcement (PDF)](<https://data.alibabagroup.com/ecms-files/1532295521/e676aff4-e76d-489b-960a-47b9cf36485d/Alibaba%20Group%20Announces%20September%20Quarter%202026%20Results%20and%20Interim%20Results%20for%20the%20Six%20Months%20Ended%20September%2030%2C%202026.pdf>) — primary source. Checked: 19 Nov 2026, 16:05 CET
+
+### IEA's World Energy Outlook expects data-centre electricity use to double by 2030, with AI behind three-quarters of the rise
+
+*Industry & policy · New*
+
+**Published:** 19 Nov 2026
+
+The International Energy Agency's **World Energy Outlook 2026**, published on Thursday, expects data centres to use **twice as much electricity by 2030** as today, with AI accounting for three-quarters of that growth, the Guardian reported. AI data centres alone would add about 350 terawatt-hours a year, more than Great Britain consumes.
+
+Emissions tied to data centres are on track to **rise 70% by 2030**, the IEA said, because fossil generation grows fastest in the two biggest markets: by then about half the power for China's AI data centres would come from coal, and about 60% of US data-centre power from gas. In August, plans covered about 180 gigawatts of new gas plants linked to US data centres. In the EU, renewables would supply about 70%.
+
+The agency tracked 93 large AI sites under construction with satellite images. It puts their combined capacity at about 50 gigawatts once complete, and says that capacity has grown tenfold in two years to 17 gigawatts.
+
+**Analysis — why it matters:** *Editorial analysis: the IEA's figures move the AI power debate from grid capacity to emissions, and show **the fuel mix differs sharply by region**.*
+
+**Caveat:** Projections, not measurements, and based on the IEA's central scenario. The IEA's own report pages were only partly readable from this machine (HTTP 403 and an incomplete text), so the data-centre figures are taken from the Guardian's report of the outlook. It came out at about 06:00 Paris time, just before the morning edition closed, and that edition did not carry it.
+
+**Sources:**
+
+1. [IEA: World Energy Outlook 2026](<https://www.iea.org/reports/world-energy-outlook-2026>) — primary source. Checked: 19 Nov 2026, 16:05 CET
+2. [The Guardian: Datacentres to create 70% more carbon emissions by 2030, IEA report warns](<https://www.theguardian.com/world/2026/nov/19/datacentres-to-create-70-more-carbon-emissions-by-2030-iea-report-warns>) — reporting. Checked: 19 Nov 2026, 16:05 CET
+
+### Deutsche Telekom invests 100 million euros in Mistral as a first step towards a German AI partnership
+
+*Industry & policy · New*
+
+**Published:** 19 Nov 2026
+
+Deutsche Telekom's investment arm **T.Capital Tech Fund invested 100 million euros** in Mistral AI's Series D round, the German operator said on Thursday. It called the stake a first step towards a **future strategic partnership** combining its infrastructure, customers and integration work with Mistral's models and enterprise software.
+
+The two companies plan to help German businesses and public bodies adopt AI, particularly in industrial and regulated sectors, Telekom said, building on its Industrial AI Cloud and Mistral's recently opened Munich hub. Dow Jones reported that Mistral's Series D, completed in September, raised 3 billion euros at a valuation above 21 billion euros.
+
+**Analysis — why it matters:** *Editorial analysis: Europe's largest telecoms operator is **backing the French lab** with money as well as hosting, a sign that the 'sovereign AI' pitch now runs across borders inside the EU.*
+
+**Caveat:** The partnership is described as future and has no published terms. Telekom did not give the size of its stake as a share of Mistral.
+
+**Sources:**
+
+1. [Deutsche Telekom: Deutsche Telekom advances sovereign AI in Germany: T.Capital Tech Fund invests in Mistral](<https://www.telekom.com/en/newsroom/latest-updates/media-information/2026/11/deutsche-telekom-advances-sovereign-ai-in-germany>) — primary source. Checked: 19 Nov 2026, 16:04 CET
+2. [Dow Jones (Morningstar): Deutsche Telekom's Tech Fund Invests $110 Million in Mistral AI](<https://morningstar.com/news/dow-jones/202611192869/deutsche-telekoms-tech-fund-invests-110-million-in-mistral-ai>) — reporting. Checked: 19 Nov 2026, 16:04 CET
+
+### Google books a Blue Origin New Glenn launch for Project Suncatcher, its plan for AI compute in orbit, targeting early 2029
+
+*Industry & policy · New*
+
+**Published:** 19 Nov 2026, 14:00 CET
+
+Google said it is partnering with Blue Origin on the **first heavy-lift launch for Project Suncatcher**, its long-term project to run AI infrastructure in space on solar power. Blue Origin's **New Glenn** rocket is to put Google's satellites, each with roughly the capacity of a data-centre rack, into sun-synchronous orbit, with the launch targeted for the **first quarter of 2029**.
+
+Google called the dedicated launch a crucial milestone on its roadmap and said it builds on work with other satellite and launch partners.
+
+**Analysis — why it matters:** *Editorial analysis: on the same day the IEA set out the strain AI puts on grids, Google put a date on its **long-shot alternative** of moving compute off the ground.*
+
+**Caveat:** A planned launch more than two years away. Google's short post gives no satellite count, cost or performance figures, and Blue Origin's announcement could not be read from this machine (HTTP 429).
+
+**Sources:**
+
+1. [Google: We're partnering with Blue Origin on our first heavy-lift Project Suncatcher launch](<https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/>) — primary source. Checked: 19 Nov 2026, 16:04 CET
+
+### UPDATE: CNN finds at least six blacklisted Chinese universities reported buying restricted Nvidia chips, two of them in recent months
+
+*Industry & policy · Updated*
+
+**Published:** 19 Nov 2026, 13:35 CET
+
+Update to the 11 November afternoon edition, which reported Reuters' finding that Northwestern Polytechnical University bought Nvidia H200 chips. The new development: a CNN review of procurement records found that **at least six Chinese universities** on the US blacklist reported buying restricted Nvidia chips in recent years.
+
+Of nearly 300 records CNN examined, most showed purchases of export-controlled A100, A800, H100, H200 and H800 chips; nearly 80% of the 90 buyers were universities. CNN highlighted **Harbin Institute of Technology**, which reported buying an A100 for about 7,000 dollars in September, and Northwestern Polytechnical, which reported buying **four H200 chips for about 240,000 dollars** in September and October. Both belong to the 'Seven Sons of National Defence' group tied to China's military.
+
+The purchases were small amounts of older chips, bought through little-known Chinese sellers rather than Nvidia, CNN said. A100 sales to China have been banned since 2022, and experts told CNN some chips may come from stocks bought before the controls.
+
+**Analysis — why it matters:** *Editorial analysis: the records show how hard it is to **enforce chip controls once hardware is inside China**, the issue Washington's remote-access rule and the Nvidia scandal have pushed to the top of the agenda.*
+
+**Caveat:** CNN says the records are likely incomplete and that it could not verify whether the chips in each notice were delivered.
+
+**Sources:**
+
+1. [CNN: Blacklisted Chinese universities procured Nvidia chips, records show](<https://www.cnn.com/2026/11/19/politics/nvidia-chips-china-universities-invs>) — reporting. Checked: 19 Nov 2026, 16:05 CET
+
+## Key patterns (editorial analysis)
+
+- AI as an attack tool is now on the record in Europe: the Commission confirms **an AI-assisted intrusion**.
+- The build-out's costs are showing: Alibaba's **capital spending up 60%** and the IEA's **70% rise in data-centre emissions**.
+- European AI money stays close to home: **Telekom backs Mistral** for sovereign enterprise AI.
+
+## Source coverage
+
+- Engine version: 3.31.0
+- Engine ran this edition: yes
+- Engine look-back: 2 days
+
+### Source status
+
+- reddit: ok, partial (24 threads; 23 requests blocked with HTTP 403; Arctic Shift archive supplied posts)
+- hackernews: ok (34 stories)
+- github: ok (19 items)
+- devto: ok (12 articles; tags ai and llm)
+- youtube: not searched (yt-dlp not available on this machine)
+- polymarket: not used: blocked in France (ANJ)
+- x: not searched (no consent-free source configured)
+
+### Notes
+
+- The installed last30days engine finished (exit 0) with 89 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were general discussion (a managed cloud for agents, code review after coding agents, AI agents in an audit trial, AI answers and search traffic), none tied to a story here, so no community comments are quoted. Stories were found with 16 Google News RSS queries, publisher feeds, the Hacker News search API, post-engine web supplements and the source pages. Item counts are not counts of verified developments.
+- Window: from 05:55 on Thursday 19 November to this edition. It was widened by 13 minutes before the morning edition's close (06:08) to take in the IEA's World Energy Outlook, released at about 06:00 and not carried by the morning edition.
+- Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 23 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.
+- Read through other routes or not read: the AP report on the Commission attack was read in News4JAX's syndicated copy (apnews.com answered HTTP 403); the IEA's report pages were only partly readable (HTTP 403 on direct reads, every fetch\_source.py route failed); Blue Origin's announcement answered HTTP 429. Not read: Reuters' own pages and the Wall Street Journal, Bloomberg, Nikkei and The Information originals, which are paywalled or blocked.
+- Newsletter leads from the Iris mail bot: today's file has not changed since the morning edition, which handled its four leads.
+- Not carried: the Google DeepMind union drive (its application to the Central Arbitration Committee was reported on 12 November and resurfaced today), Microsoft's Aion small model for Windows (published 18 November, before this window), Moonshot AI's reported cancellation of an Nvidia chip deal in Indonesia (The Information, paywalled), a reported tightening of TSMC's China curbs (Reuters, unread), and Anthropic's first trade, which had not happened when this edition closed.
+- No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.
+
+### Engine footer (verbatim)
+
+```text
+---
+✅ All agents reported back!
+├─ 🟠 Reddit: 24 threads │ 11,426 upvotes │ 1,480 comments
+├─ 🟡 HN: 34 stories │ 3,084 points │ 2,504 comments
+├─ 👩‍💻 dev.to: 12 articles │ 291 reactions │ 186 comments
+├─ 🐙 GitHub: 19 items │ 56 reactions │ 214 comments
+├─ 🗣️ Top voices: r/artificial, r/technology, r/singularity
+---
+```
