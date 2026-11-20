@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-20-afternoon",
+  "edition": "Afternoon edition",
+  "issued_at": "2026-11-20T16:14:00+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-20T06:11:00+01:00",
+  "window_end": "2026-11-20T16:13:00+01:00",
+  "editorial_note": "Ten hours since the morning edition, and ==no new frontier model==. The biggest claim of the day comes from mathematics: an Anthropic mathematician says he and Claude have ==proved the Riemann hypothesis==, a claim nobody outside has yet checked. Anthropic's offering has formally closed at ==$93.5 billion== after its underwriters bought extra shares, while the stock fell before Friday's open. Signal now blocks screenshots so operating-system AI agents cannot read its chats, Cursor told House committees it may drop Chinese open-weight models, SpaceX's lenders tried to keep their chip collateral on Earth, and the former head of Alibaba's Qwen models raised money at a $5 billion valuation.",
+  "stories": [
+    {
+      "id": "alpoge-riemann-hypothesis-claim",
+      "section": "Research",
+      "headline": "Anthropic mathematician Levent Alpöge says he and Claude have proved the Riemann hypothesis; the claim is not yet checked by others",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "Levent Alpöge, a mathematician who works at Anthropic, posted a statement on his website on Friday saying: 'I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis.' He writes that the method ==extends to the Generalized Riemann Hypothesis== and that he and Claude have ==formalized the arguments== in the Lean proof assistant, with the files posted in 14 parts alongside the statement.",
+        "The Riemann hypothesis, proposed in 1859, concerns where the zeros of the Riemann zeta function lie and governs how prime numbers are distributed; it is one of the Clay Institute's million-dollar Millennium Prize Problems. Scientific American, which reported the claim on Friday, wrote that experts should not need long to check whether the statement is coded correctly in Lean and whether the proof holds.",
+        "Alpöge describes the argument as ==incredibly long at the moment== and says he intends to understand it, simplify it and write it up properly. No paper or outside review accompanies the statement.",
+        "Background (August 2026): Anthropic reported then that an unreleased research version of Claude had raised the proven share of zeta zeros on the critical line from 41.6% to 67.2%, a related but much smaller result; that post said Anthropic did not expect those techniques to lead to a proof of the hypothesis itself."
+      ],
+      "why_it_matters": "Editorial analysis: if the proof survives checking, it would be the ==first AI-assisted solution of a Millennium Prize Problem==; until then it is one researcher's claim, made by an employee of the company whose model he used.",
+      "caveat": "==Unverified claim==: no independent mathematician or published check of the Lean files had confirmed it when this edition closed. A formal proof is only as good as the statement it encodes.",
+      "sources": [
+        {
+          "label": "Levent Alpöge: statement on the Riemann Hypothesis (PDF)",
+          "url": "https://alpo.ge/remark.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-20T16:03:00+01:00"
+        },
+        {
+          "label": "Scientific American: Anthropic mathematician claims to prove Riemann hypothesis",
+          "url": "https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:05:00+01:00"
+        },
+        {
+          "label": "Anthropic: Claude improves a lower bound for zeros on the critical line (August 2026)",
+          "url": "https://www.anthropic.com/research/riemann-zeta",
+          "type": "primary",
+          "checked_at": "2026-11-20T16:07:00+01:00"
+        },
+        {
+          "label": "Hacker News discussion of the statement",
+          "url": "https://news.ycombinator.com/item?id=50574968",
+          "type": "community",
+          "checked_at": "2026-11-20T16:05:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "Big if true. Looking forward to seeing it verified!",
+          "author": "Routine8502 on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50575329"
+        },
+        {
+          "text": "Interesting timing, given that the claim comes just a day after Anthropic's IPO.",
+          "author": "albinstman on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50575446"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-ipo-investor-doubts",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Anthropic closes its offering at $93.5 billion after underwriters buy 147 million extra shares, as the stock slips before Friday's open",
+      "published_at": "2026-11-20",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to this morning's edition, which reported Anthropic's first day on Nasdaq and a combined $107.3 billion from the offering and a private placement. The new development: Anthropic announced on Friday that the offering has closed, with its underwriters exercising in full their option to buy ==147 million more shares== at $83.",
+        "That brings the offering to 1.127 billion shares and ==about $93.5 billion== in gross proceeds, of which about $91.6 billion goes to Anthropic; selling stockholders received the rest. The concurrent $26 billion private placement of Class N shares to AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners also closed, for ==about $119.5 billion in total== before fees, the company says.",
+        "The shares lost ground before Friday's session: CNBC reported them ==6.38% lower in premarket trading== at 4.02 a.m. New York time, after Thursday's close of $97.17, with Nvidia and AMD also down."
+      ],
+      "why_it_matters": "Editorial analysis: the extra shares add ==$12 billion of cash== on top of an already record raise, while the first full day of trading shows how quickly enthusiasm for the listing is being tested.",
+      "caveat": "The premarket figure is a snapshot from early Friday; this edition closed before a full Friday session and does not report an intraday price.",
+      "sources": [
+        {
+          "label": "Anthropic: closing of initial public offering and concurrent private placement",
+          "url": "https://www.anthropic.com/news/ipo-close",
+          "type": "primary",
+          "checked_at": "2026-11-20T16:03:00+01:00"
+        },
+        {
+          "label": "CNBC: Anthropic falls 6% amid AI selloff as Nvidia, AMD shares drop",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:07:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "signal-blocks-os-ai-agents",
+      "section": "Coding & agents",
+      "headline": "Signal blocks screenshots on iOS 27 and Android to stop operating-system AI agents from reading chats",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "Signal president Meredith Whittaker wrote on Friday that the app will now restrict ==agentic systems built into iOS 27== and, on Android, block screen capture when it detects an AI assistant trying to read the Signal screen. She names Google's Gemini Intelligence and Apple's Onscreen Awareness for Siri AI, which read on-screen content to answer users' requests.",
+        "Signal calls these integrations ==an existential threat== to its mission, saying data captured from the screen ends up in whatever local database or remote server the agent uses, outside Signal's control. Last year it used the same screenshot block against Microsoft's Recall on Windows.",
+        "Users can turn screenshots back on in settings, but Whittaker warns this could expose their and their contacts' messages to the agents, The Verge reports. She said Google, Apple and Microsoft give developers no easy way to restrict such access, which is why Signal ==cannot yet do the same on macOS==."
+      ],
+      "why_it_matters": "Editorial analysis: as assistants gain the right to read and act across apps, an encrypted messenger is now ==blocking the operating system's own AI==, and asking the platform owners for proper controls.",
+      "caveat": "Detection on Android depends on what Signal can see of an assistant's behaviour; Signal does not list which Android versions or assistants are covered.",
+      "sources": [
+        {
+          "label": "Signal: Signal is Serious About Protecting Your Privacy",
+          "url": "https://signal.org/blog/protecting-your-privacy/",
+          "type": "primary",
+          "checked_at": "2026-11-20T16:03:00+01:00"
+        },
+        {
+          "label": "The Verge: Signal is blocking Gemini and Siri AI from reading your screen",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:02:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "cursor-chinese-models-house-report",
+      "section": "Industry & policy",
+      "headline": "Cursor tells House committees it may phase out Chinese open-weight models over 'geopolitical risk', CNBC reports",
+      "published_at": "2026-11-20T15:04:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Cursor, the AI coding tool SpaceX bought in August, plans to 'explore phasing out PRC-developed open-weight models because of geopolitical risk', according to a report by the House Committee on Homeland Security and the House Select Committee on China that ==CNBC saw ahead of its publication== on Friday. Cursor built its Composer 2 coding model on ==Moonshot AI's Kimi K2.5==.",
+        "The report follows a months-long investigation into US companies' use of Chinese models; Airbnb and DoorDash also engaged with it. It finds that cost, customisation and near-frontier performance drive adoption of Chinese models, and that the US lacks an open-weight alternative at the 'price and performance the market demands'.",
+        "Its recommendations include a ==national American open-weight initiative== combining public computing power, shared evaluation tools and lawful access to US frontier models for training, and extending October's ban on DeepSeek in federal civilian systems to all PRC-developed models in federal systems and federal contracts."
+      ],
+      "why_it_matters": "Editorial analysis: a well-known US product built on a Chinese base model is ==backing away under congressional pressure==, while the committees concede the cost case for those models.",
+      "caveat": "Reported by CNBC from a report not yet public when this edition closed; Cursor, SpaceX and DoorDash did not comment, and 'explore phasing out' is not a decision.",
+      "sources": [
+        {
+          "label": "CNBC: SpaceX's subsidiary Cursor tells lawmakers it's considering phasing out Chinese AI models",
+          "url": "https://www.cnbc.com/2026/11/20/cursor-chinese-ai-models-geopolitical-risk.html",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "spacex-chip-debt-orbit-clause",
+      "section": "Industry & policy",
+      "headline": "SpaceX's lenders sought to stop it launching the Nvidia chips that secure its new debt into orbit, the FT reports",
+      "published_at": "2026-11-20T15:15:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Lenders behind SpaceX's ==$43 billion chip-backed debt package== tried to bar the company from sending the Nvidia chips that serve as collateral into space for Elon Musk's planned orbital data centres, according to a Financial Times report republished by Ars Technica. They feared they could not reclaim and sell the chips after a default; SpaceX has said it plans to use these chips on Earth.",
+        "It is ==not certain the restriction made the final documents==, the report says. SpaceX sold more than $30 billion of the debt to large investors on Thursday in a financing called Project Saturn; the largest part is a $25 billion investment-grade bond backed by SpaceX's five-year lease payments for the chips, issued through a special-purpose vehicle that keeps the debt off its balance sheet."
+      ],
+      "why_it_matters": "Editorial analysis: chip-backed borrowing is becoming a standard way to fund AI build-outs, and lenders are already writing the ==physical location of the collateral== into the terms.",
+      "caveat": "Based on people familiar with the matter; Bloomberg's account of the bond sale and the FT original are paywalled and were not read.",
+      "sources": [
+        {
+          "label": "Ars Technica (Financial Times): SpaceX lenders don't want Elon Musk launching their collateral into space",
+          "url": "https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:08:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "pragmatik-labs-5-billion",
+      "section": "Industry & policy",
+      "headline": "Former Qwen chief Lin Junyang's Pragmatik Labs raises money at a $5 billion valuation, Bloomberg reports",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "Pragmatik Labs, the Shanghai AI start-up Lin Junyang set up over the summer after leaving Alibaba, where he oversaw the ==Qwen family of models==, has closed a round valuing it at ==$5 billion==, Bloomberg reported, according to Quartz. In August its first financing, of several hundred million dollars, valued it at $2 billion.",
+        "The new round raised tens of millions of dollars from investors including HyT Capital, CDH Investments and ==carmaker Geely==. Pragmatik builds AI agents for virtual and real-world settings. None of the companies responded to Bloomberg's requests for comment."
+      ],
+      "why_it_matters": "Editorial analysis: investors are pricing China's new research-led labs at multiples of their August value, even as US chip curbs limit the compute they can buy.",
+      "caveat": "Based on unnamed people familiar with the matter; Bloomberg's article is paywalled and was read through Quartz's summary.",
+      "sources": [
+        {
+          "label": "Quartz: Lin Junyang's Pragmatik Labs closed funding at $5 billion valuation",
+          "url": "https://qz.com/pragmatik-labs-funding-5-billion-valuation-alibaba-ai-112026",
+          "type": "reporting",
+          "checked_at": "2026-11-20T16:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (18 threads; 25 requests blocked with HTTP 403; Arctic Shift archive supplied posts, its comment lookups failed with HTTP 422)",
+      "hackernews": "ok (30 stories)",
+      "github": "ok (15 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished (exit 0) with 75 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top clusters were an AI-designed CPU, banks' rules for AI agents and general discussion; none matched a story here except the Riemann thread, whose comments came from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Window: from 06:11 this morning, when the morning edition closed, to this edition. No newsletter lead needed a wider window.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 25 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.",
+      "Paywalled or not read: Bloomberg (Pragmatik Labs, SpaceX's bond sale), the Financial Times original of the SpaceX report (read through Ars Technica's republished copy), the rest of The Verge's Signal article beyond its free opening, and the House committees' report, which was not yet public. Reuters' own pages were not read.",
+      "Newsletter leads from the Iris mail bot: today's file has seven leads. Anthropic's pricing, the agent-framework package attack, Nvidia's quarter and Apple's agent job listings ran in earlier editions; SoftBank founder Masayoshi Son's remark about Anthropic, Cambridge Dictionary's word of the year and Snapchat's Easy Lens tool for coding assistants were not carried.",
+      "Not carried: OpenAI's post on its models improving an AMD GPU design by up to 14% (published 18 November, before this window), Architect Labs' AI-designed Frostbite CPU (first posted 19 November, before this window), OpenAI's test of Dots agents with some ChatGPT Plus users (announced only on X), Mistral's new Asia-Pacific headquarters in Singapore, and Moonshot AI's reported cancelled Nvidia chip lease.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 18 threads │ 2,241 upvotes │ 530 comments\n├─ 🟡 HN: 30 stories │ 2,924 points │ 2,151 comments\n├─ 👩‍💻 dev.to: 12 articles │ 418 reactions │ 276 comments\n├─ 🐙 GitHub: 15 items │ 46 reactions │ 293 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/ClaudeAI\n---"
+  },
+  "key_patterns": [
+    "AI's mathematical claims have reached the top: a ==Riemann proof is claimed==, but not yet checked.",
+    "Anthropic's listing is complete at ==$93.5 billion==, and the market is already testing it.",
+    "Platforms and apps are fighting over agents: ==Signal shuts out OS assistants==.",
+    "Washington's pressure on Chinese models now reaches products, as ==Cursor weighs dropping Kimi==."
+  ],
+  "previous_issue_id": "2026-11-20-morning"
+}

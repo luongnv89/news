@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Friday 20 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-20-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Friday 20 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-20-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-20T16:14:00+01:00">Friday 20 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-20-afternoon</p><p>Issued 16:14 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-20-afternoon.html">This edition</a><a href="2026-11-20-afternoon.md">Markdown</a><a href="2026-11-20-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-20-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Friday 20 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-20T06:11:00+01:00">20 Nov 2026, 06:11 CET</time> to <time datetime="2026-11-20T16:13:00+01:00">20 Nov 2026, 16:13 CET</time> (Paris time). Issued <time datetime="2026-11-20T16:14:00+01:00">20 Nov 2026, 16:14 CET</time>.</p><p class="lead-note">Ten hours since the morning edition, and <mark class="hl">no new frontier model</mark>. The biggest claim of the day comes from mathematics: an Anthropic mathematician says he and Claude have <mark class="hl">proved the Riemann hypothesis</mark>, a claim nobody outside has yet checked. Anthropic&#x27;s offering has formally closed at <mark class="hl">$93.5 billion</mark> after its underwriters bought extra shares, while the stock fell before Friday&#x27;s open. Signal now blocks screenshots so operating-system AI agents cannot read its chats, Cursor told House committees it may drop Chinese open-weight models, SpaceX&#x27;s lenders tried to keep their chip collateral on Earth, and the former head of Alibaba&#x27;s Qwen models raised money at a $5 billion valuation.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-20-morning.html">2026-11-20-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-signal-blocks-os-ai-agents" aria-labelledby="h-signal-blocks-os-ai-agents"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-signal-blocks-os-ai-agents">Signal blocks screenshots on iOS 27 and Android to stop operating-system AI agents from reading chats</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Signal president Meredith Whittaker wrote on Friday that the app will now restrict <mark class="hl">agentic systems built into iOS 27</mark> and, on Android, block screen capture when it detects an AI assistant trying to read the Signal screen. She names Google&#x27;s Gemini Intelligence and Apple&#x27;s Onscreen Awareness for Siri AI, which read on-screen content to answer users&#x27; requests.</p><p>Signal calls these integrations <mark class="hl">an existential threat</mark> to its mission, saying data captured from the screen ends up in whatever local database or remote server the agent uses, outside Signal&#x27;s control. Last year it used the same screenshot block against Microsoft&#x27;s Recall on Windows.</p><p>Users can turn screenshots back on in settings, but Whittaker warns this could expose their and their contacts&#x27; messages to the agents, The Verge reports. She said Google, Apple and Microsoft give developers no easy way to restrict such access, which is why Signal <mark class="hl">cannot yet do the same on macOS</mark>.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: as assistants gain the right to read and act across apps, an encrypted messenger is now <mark class="hl">blocking the operating system&#x27;s own AI</mark>, and asking the platform owners for proper controls.</p></aside><p class="caveat"><span class="label">Caveat.</span> Detection on Android depends on what Signal can see of an assistant&#x27;s behaviour; Signal does not list which Android versions or assistants are covered.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://signal.org/blog/protecting-your-privacy/" rel="noopener noreferrer">Signal: Signal is Serious About Protecting Your Privacy</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-20T16:03:00+01:00">20 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app" rel="noopener noreferrer">The Verge: Signal is blocking Gemini and Siri AI from reading your screen</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:02:00+01:00">20 Nov 2026, 16:02 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-signal-blocks-os-ai-agents"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-signal-blocks-os-ai-agents">Draft for X</label><textarea id="share-x-story-signal-blocks-os-ai-agents" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-signal-blocks-os-ai-agents-count">Signal blocks screenshots on iOS 27 and Android to stop operating-system AI agents from reading chats
+
+Sources: Signal, The Verge; via The AI Gazette</textarea><p class="share-count" id="share-x-story-signal-blocks-os-ai-agents-count">173 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Signal%20blocks%20screenshots%20on%20iOS%2027%20and%20Android%20to%20stop%20operating-system%20AI%20agents%20from%20reading%20chats%0A%0ASources%3A%20Signal%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-signal-blocks-os-ai-agents" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-signal-blocks-os-ai-agents">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-signal-blocks-os-ai-agents">Draft for LinkedIn</label><textarea id="share-li-story-signal-blocks-os-ai-agents" class="share-text share-text-li" rows="12">Signal blocks screenshots on iOS 27 and Android to stop operating-system AI agents from reading chats
+
+→ Signal president Meredith Whittaker wrote on Friday that the app will now restrict agentic systems built into iOS 27 and, on Android, block screen capture when it detects an AI assistant trying to read the Signal screen.
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-signal-blocks-os-ai-agents
+Sources: Signal, The Verge; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Signal%20blocks%20screenshots%20on%20iOS%2027%20and%20Android%20to%20stop%20operating-system%20AI%20agents%20from%20reading%20chats%0A%0A%E2%86%92%20Signal%20president%20Meredith%20Whittaker%20wrote%20on%20Friday%20that%20the%20app%20will%20now%20restrict%20agentic%20systems%20built%20into%20iOS%2027%20and%2C%20on%20Android%2C%20block%20screen%20capture%20when%20it%20detects%20an%20AI%20assistant%20trying%20to%20read%20the%20Signal%20screen.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-signal-blocks-os-ai-agents%0ASources%3A%20Signal%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-signal-blocks-os-ai-agents">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-signal-blocks-os-ai-agents">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-alpoge-riemann-hypothesis-claim" aria-labelledby="h-alpoge-riemann-hypothesis-claim"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-alpoge-riemann-hypothesis-claim">Anthropic mathematician Levent Alpöge says he and Claude have proved the Riemann hypothesis; the claim is not yet checked by others</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Levent Alpöge, a mathematician who works at Anthropic, posted a statement on his website on Friday saying: &#x27;I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis.&#x27; He writes that the method <mark class="hl">extends to the Generalized Riemann Hypothesis</mark> and that he and Claude have <mark class="hl">formalized the arguments</mark> in the Lean proof assistant, with the files posted in 14 parts alongside the statement.</p><p>The Riemann hypothesis, proposed in 1859, concerns where the zeros of the Riemann zeta function lie and governs how prime numbers are distributed; it is one of the Clay Institute&#x27;s million-dollar Millennium Prize Problems. Scientific American, which reported the claim on Friday, wrote that experts should not need long to check whether the statement is coded correctly in Lean and whether the proof holds.</p><p>Alpöge describes the argument as <mark class="hl">incredibly long at the moment</mark> and says he intends to understand it, simplify it and write it up properly. No paper or outside review accompanies the statement.</p><p>Background (August 2026): Anthropic reported then that an unreleased research version of Claude had raised the proven share of zeta zeros on the critical line from 41.6% to 67.2%, a related but much smaller result; that post said Anthropic did not expect those techniques to lead to a proof of the hypothesis itself.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: if the proof survives checking, it would be the <mark class="hl">first AI-assisted solution of a Millennium Prize Problem</mark>; until then it is one researcher&#x27;s claim, made by an employee of the company whose model he used.</p></aside><p class="caveat"><span class="label">Caveat.</span> <mark class="hl">Unverified claim</mark>: no independent mathematician or published check of the Lean files had confirmed it when this edition closed. A formal proof is only as good as the statement it encodes.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Big if true. Looking forward to seeing it verified!&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50575329" rel="noopener noreferrer">Routine8502 on Hacker News</a></p></blockquote><blockquote><p>&ldquo;Interesting timing, given that the claim comes just a day after Anthropic&#x27;s IPO.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50575446" rel="noopener noreferrer">albinstman on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://alpo.ge/remark.pdf" rel="noopener noreferrer">Levent Alpöge: statement on the Riemann Hypothesis (PDF)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-20T16:03:00+01:00">20 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/" rel="noopener noreferrer">Scientific American: Anthropic mathematician claims to prove Riemann hypothesis</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:05:00+01:00">20 Nov 2026, 16:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/riemann-zeta" rel="noopener noreferrer">Anthropic: Claude improves a lower bound for zeros on the critical line (August 2026)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-20T16:07:00+01:00">20 Nov 2026, 16:07 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50574968" rel="noopener noreferrer">Hacker News discussion of the statement</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-20T16:05:00+01:00">20 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-alpoge-riemann-hypothesis-claim"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-alpoge-riemann-hypothesis-claim">Draft for X</label><textarea id="share-x-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-alpoge-riemann-hypothesis-claim-count">Anthropic mathematician Levent Alpöge says he and Claude have proved the Riemann hypothesis; the claim is not yet checked by others
+
+Sources: Levent Alpöge, Scientific American, Anthropic; via The AI Gazette</textarea><p class="share-count" id="share-x-story-alpoge-riemann-hypothesis-claim-count">231 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Anthropic%20mathematician%20Levent%20Alp%C3%B6ge%20says%20he%20and%20Claude%20have%20proved%20the%20Riemann%20hypothesis%3B%20the%20claim%20is%20not%20yet%20checked%20by%20others%0A%0ASources%3A%20Levent%20Alp%C3%B6ge%2C%20Scientific%20American%2C%20Anthropic%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-alpoge-riemann-hypothesis-claim" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-alpoge-riemann-hypothesis-claim">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-alpoge-riemann-hypothesis-claim">Draft for LinkedIn</label><textarea id="share-li-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-li" rows="12">Anthropic mathematician Levent Alpöge says he and Claude have proved the Riemann hypothesis; the claim is not yet checked by others
+
+→ Alpöge describes the argument as incredibly long at the moment and says he intends to understand it, simplify it and write it up properly.
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-alpoge-riemann-hypothesis-claim
+Sources: Levent Alpöge, Scientific American, Anthropic; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Anthropic%20mathematician%20Levent%20Alp%C3%B6ge%20says%20he%20and%20Claude%20have%20proved%20the%20Riemann%20hypothesis%3B%20the%20claim%20is%20not%20yet%20checked%20by%20others%0A%0A%E2%86%92%20Alp%C3%B6ge%20describes%20the%20argument%20as%20incredibly%20long%20at%20the%20moment%20and%20says%20he%20intends%20to%20understand%20it%2C%20simplify%20it%20and%20write%20it%20up%20properly.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-alpoge-riemann-hypothesis-claim%0ASources%3A%20Levent%20Alp%C3%B6ge%2C%20Scientific%20American%2C%20Anthropic%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-alpoge-riemann-hypothesis-claim">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-alpoge-riemann-hypothesis-claim">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-ipo-investor-doubts" aria-labelledby="h-anthropic-ipo-investor-doubts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-ipo-investor-doubts">UPDATE: Anthropic closes its offering at $93.5 billion after underwriters buy 147 million extra shares, as the stock slips before Friday&#x27;s open</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Update to this morning&#x27;s edition, which reported Anthropic&#x27;s first day on Nasdaq and a combined $107.3 billion from the offering and a private placement. The new development: Anthropic announced on Friday that the offering has closed, with its underwriters exercising in full their option to buy <mark class="hl">147 million more shares</mark> at $83.</p><p>That brings the offering to 1.127 billion shares and <mark class="hl">about $93.5 billion</mark> in gross proceeds, of which about $91.6 billion goes to Anthropic; selling stockholders received the rest. The concurrent $26 billion private placement of Class N shares to AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners also closed, for <mark class="hl">about $119.5 billion in total</mark> before fees, the company says.</p><p>The shares lost ground before Friday&#x27;s session: CNBC reported them <mark class="hl">6.38% lower in premarket trading</mark> at 4.02 a.m. New York time, after Thursday&#x27;s close of $97.17, with Nvidia and AMD also down.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the extra shares add <mark class="hl">$12 billion of cash</mark> on top of an already record raise, while the first full day of trading shows how quickly enthusiasm for the listing is being tested.</p></aside><p class="caveat"><span class="label">Caveat.</span> The premarket figure is a snapshot from early Friday; this edition closed before a full Friday session and does not report an intraday price.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/news/ipo-close" rel="noopener noreferrer">Anthropic: closing of initial public offering and concurrent private placement</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-20T16:03:00+01:00">20 Nov 2026, 16:03 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html" rel="noopener noreferrer">CNBC: Anthropic falls 6% amid AI selloff as Nvidia, AMD shares drop</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:07:00+01:00">20 Nov 2026, 16:07 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-anthropic-ipo-investor-doubts"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-anthropic-ipo-investor-doubts">Draft for X</label><textarea id="share-x-story-anthropic-ipo-investor-doubts" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-anthropic-ipo-investor-doubts-count">UPDATE: Anthropic closes its offering at $93.5 billion after underwriters buy 147 million extra shares, as the stock slips before Friday&#x27;s open
+
+Sources: Anthropic, CNBC; via The AI Gazette</textarea><p class="share-count" id="share-x-story-anthropic-ipo-investor-doubts-count">213 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Anthropic%20closes%20its%20offering%20at%20%2493.5%20billion%20after%20underwriters%20buy%20147%20million%20extra%20shares%2C%20as%20the%20stock%20slips%20before%20Friday%27s%20open%0A%0ASources%3A%20Anthropic%2C%20CNBC%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-anthropic-ipo-investor-doubts" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-anthropic-ipo-investor-doubts">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-anthropic-ipo-investor-doubts">Draft for LinkedIn</label><textarea id="share-li-story-anthropic-ipo-investor-doubts" class="share-text share-text-li" rows="12">UPDATE: Anthropic closes its offering at $93.5 billion after underwriters buy 147 million extra shares, as the stock slips before Friday&#x27;s open
+
+→ That brings the offering to 1.127 billion shares and about $93.5 billion in gross proceeds, of which about $91.6 billion goes to Anthropic; selling stockholders received the rest.
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-anthropic-ipo-investor-doubts
+Sources: Anthropic, CNBC; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Anthropic%20closes%20its%20offering%20at%20%2493.5%20billion%20after%20underwriters%20buy%20147%20million%20extra%20shares%2C%20as%20the%20stock%20slips%20before%20Friday%27s%20open%0A%0A%E2%86%92%20That%20brings%20the%20offering%20to%201.127%20billion%20shares%20and%20about%20%2493.5%20billion%20in%20gross%20proceeds%2C%20of%20which%20about%20%2491.6%20billion%20goes%20to%20Anthropic%3B%20selling%20stockholders%20received%20the%20rest.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-anthropic-ipo-investor-doubts%0ASources%3A%20Anthropic%2C%20CNBC%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-anthropic-ipo-investor-doubts">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-anthropic-ipo-investor-doubts">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-cursor-chinese-models-house-report" aria-labelledby="h-cursor-chinese-models-house-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-cursor-chinese-models-house-report">Cursor tells House committees it may phase out Chinese open-weight models over &#x27;geopolitical risk&#x27;, CNBC reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T15:04:00+01:00">20 Nov 2026, 15:04 CET</time></p><div class="story-body"><p>Cursor, the AI coding tool SpaceX bought in August, plans to &#x27;explore phasing out PRC-developed open-weight models because of geopolitical risk&#x27;, according to a report by the House Committee on Homeland Security and the House Select Committee on China that <mark class="hl">CNBC saw ahead of its publication</mark> on Friday. Cursor built its Composer 2 coding model on <mark class="hl">Moonshot AI&#x27;s Kimi K2.5</mark>.</p><p>The report follows a months-long investigation into US companies&#x27; use of Chinese models; Airbnb and DoorDash also engaged with it. It finds that cost, customisation and near-frontier performance drive adoption of Chinese models, and that the US lacks an open-weight alternative at the &#x27;price and performance the market demands&#x27;.</p><p>Its recommendations include a <mark class="hl">national American open-weight initiative</mark> combining public computing power, shared evaluation tools and lawful access to US frontier models for training, and extending October&#x27;s ban on DeepSeek in federal civilian systems to all PRC-developed models in federal systems and federal contracts.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: a well-known US product built on a Chinese base model is <mark class="hl">backing away under congressional pressure</mark>, while the committees concede the cost case for those models.</p></aside><p class="caveat"><span class="label">Caveat.</span> Reported by CNBC from a report not yet public when this edition closed; Cursor, SpaceX and DoorDash did not comment, and &#x27;explore phasing out&#x27; is not a decision.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.cnbc.com/2026/11/20/cursor-chinese-ai-models-geopolitical-risk.html" rel="noopener noreferrer">CNBC: SpaceX&#x27;s subsidiary Cursor tells lawmakers it&#x27;s considering phasing out Chinese AI models</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:05:00+01:00">20 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-cursor-chinese-models-house-report"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-cursor-chinese-models-house-report">Draft for X</label><textarea id="share-x-story-cursor-chinese-models-house-report" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-cursor-chinese-models-house-report-count">Cursor tells House committees it may phase out Chinese open-weight models over &#x27;geopolitical risk&#x27;, CNBC reports
+
+→ Cursor built its Composer 2 coding model on Moonshot AI&#x27;s Kimi K2.5.
+
+Source: CNBC; via The AI Gazette</textarea><p class="share-count" id="share-x-story-cursor-chinese-models-house-report-count">243 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Cursor%20tells%20House%20committees%20it%20may%20phase%20out%20Chinese%20open-weight%20models%20over%20%27geopolitical%20risk%27%2C%20CNBC%20reports%0A%0A%E2%86%92%20Cursor%20built%20its%20Composer%202%20coding%20model%20on%20Moonshot%20AI%27s%20Kimi%20K2.5.%0A%0ASource%3A%20CNBC%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-cursor-chinese-models-house-report" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-cursor-chinese-models-house-report">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-cursor-chinese-models-house-report">Draft for LinkedIn</label><textarea id="share-li-story-cursor-chinese-models-house-report" class="share-text share-text-li" rows="12">Cursor tells House committees it may phase out Chinese open-weight models over &#x27;geopolitical risk&#x27;, CNBC reports
+
+→ Cursor built its Composer 2 coding model on Moonshot AI&#x27;s Kimi K2.5.
+→ The report follows a months-long investigation into US companies&#x27; use of Chinese models; Airbnb and DoorDash also engaged with it.
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-cursor-chinese-models-house-report
+Source: CNBC; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Cursor%20tells%20House%20committees%20it%20may%20phase%20out%20Chinese%20open-weight%20models%20over%20%27geopolitical%20risk%27%2C%20CNBC%20reports%0A%0A%E2%86%92%20Cursor%20built%20its%20Composer%202%20coding%20model%20on%20Moonshot%20AI%27s%20Kimi%20K2.5.%0A%E2%86%92%20The%20report%20follows%20a%20months-long%20investigation%20into%20US%20companies%27%20use%20of%20Chinese%20models%3B%20Airbnb%20and%20DoorDash%20also%20engaged%20with%20it.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-cursor-chinese-models-house-report%0ASource%3A%20CNBC%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-cursor-chinese-models-house-report">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-cursor-chinese-models-house-report">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-spacex-chip-debt-orbit-clause" aria-labelledby="h-spacex-chip-debt-orbit-clause"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-spacex-chip-debt-orbit-clause">SpaceX&#x27;s lenders sought to stop it launching the Nvidia chips that secure its new debt into orbit, the FT reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T15:15:00+01:00">20 Nov 2026, 15:15 CET</time></p><div class="story-body"><p>Lenders behind SpaceX&#x27;s <mark class="hl">$43 billion chip-backed debt package</mark> tried to bar the company from sending the Nvidia chips that serve as collateral into space for Elon Musk&#x27;s planned orbital data centres, according to a Financial Times report republished by Ars Technica. They feared they could not reclaim and sell the chips after a default; SpaceX has said it plans to use these chips on Earth.</p><p>It is <mark class="hl">not certain the restriction made the final documents</mark>, the report says. SpaceX sold more than $30 billion of the debt to large investors on Thursday in a financing called Project Saturn; the largest part is a $25 billion investment-grade bond backed by SpaceX&#x27;s five-year lease payments for the chips, issued through a special-purpose vehicle that keeps the debt off its balance sheet.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: chip-backed borrowing is becoming a standard way to fund AI build-outs, and lenders are already writing the <mark class="hl">physical location of the collateral</mark> into the terms.</p></aside><p class="caveat"><span class="label">Caveat.</span> Based on people familiar with the matter; Bloomberg&#x27;s account of the bond sale and the FT original are paywalled and were not read.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/" rel="noopener noreferrer">Ars Technica (Financial Times): SpaceX lenders don&#x27;t want Elon Musk launching their collateral into space</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:08:00+01:00">20 Nov 2026, 16:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-spacex-chip-debt-orbit-clause"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-spacex-chip-debt-orbit-clause">Draft for X</label><textarea id="share-x-story-spacex-chip-debt-orbit-clause" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-spacex-chip-debt-orbit-clause-count">SpaceX&#x27;s lenders sought to stop it launching the Nvidia chips that secure its new debt into orbit, the FT reports
+
+Source: Ars Technica (Financial Times); via The AI Gazette</textarea><p class="share-count" id="share-x-story-spacex-chip-debt-orbit-clause-count">197 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=SpaceX%27s%20lenders%20sought%20to%20stop%20it%20launching%20the%20Nvidia%20chips%20that%20secure%20its%20new%20debt%20into%20orbit%2C%20the%20FT%20reports%0A%0ASource%3A%20Ars%20Technica%20%28Financial%20Times%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-spacex-chip-debt-orbit-clause" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-spacex-chip-debt-orbit-clause">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-spacex-chip-debt-orbit-clause">Draft for LinkedIn</label><textarea id="share-li-story-spacex-chip-debt-orbit-clause" class="share-text share-text-li" rows="12">SpaceX&#x27;s lenders sought to stop it launching the Nvidia chips that secure its new debt into orbit, the FT reports
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-spacex-chip-debt-orbit-clause
+Source: Ars Technica (Financial Times); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=SpaceX%27s%20lenders%20sought%20to%20stop%20it%20launching%20the%20Nvidia%20chips%20that%20secure%20its%20new%20debt%20into%20orbit%2C%20the%20FT%20reports%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-spacex-chip-debt-orbit-clause%0ASource%3A%20Ars%20Technica%20%28Financial%20Times%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-spacex-chip-debt-orbit-clause">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-spacex-chip-debt-orbit-clause">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-pragmatik-labs-5-billion" aria-labelledby="h-pragmatik-labs-5-billion"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-pragmatik-labs-5-billion">Former Qwen chief Lin Junyang&#x27;s Pragmatik Labs raises money at a $5 billion valuation, Bloomberg reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Pragmatik Labs, the Shanghai AI start-up Lin Junyang set up over the summer after leaving Alibaba, where he oversaw the <mark class="hl">Qwen family of models</mark>, has closed a round valuing it at <mark class="hl">$5 billion</mark>, Bloomberg reported, according to Quartz. In August its first financing, of several hundred million dollars, valued it at $2 billion.</p><p>The new round raised tens of millions of dollars from investors including HyT Capital, CDH Investments and <mark class="hl">carmaker Geely</mark>. Pragmatik builds AI agents for virtual and real-world settings. None of the companies responded to Bloomberg&#x27;s requests for comment.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: investors are pricing China&#x27;s new research-led labs at multiples of their August value, even as US chip curbs limit the compute they can buy.</p></aside><p class="caveat"><span class="label">Caveat.</span> Based on unnamed people familiar with the matter; Bloomberg&#x27;s article is paywalled and was read through Quartz&#x27;s summary.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://qz.com/pragmatik-labs-funding-5-billion-valuation-alibaba-ai-112026" rel="noopener noreferrer">Quartz: Lin Junyang&#x27;s Pragmatik Labs closed funding at $5 billion valuation</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-20T16:05:00+01:00">20 Nov 2026, 16:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-pragmatik-labs-5-billion"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-pragmatik-labs-5-billion">Draft for X</label><textarea id="share-x-story-pragmatik-labs-5-billion" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-pragmatik-labs-5-billion-count">Former Qwen chief Lin Junyang&#x27;s Pragmatik Labs raises money at a $5 billion valuation, Bloomberg reports
+
+→ Pragmatik builds AI agents for virtual and real-world settings.
+
+Source: Quartz; via The AI Gazette</textarea><p class="share-count" id="share-x-story-pragmatik-labs-5-billion-count">232 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Former%20Qwen%20chief%20Lin%20Junyang%27s%20Pragmatik%20Labs%20raises%20money%20at%20a%20%245%20billion%20valuation%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20Pragmatik%20builds%20AI%20agents%20for%20virtual%20and%20real-world%20settings.%0A%0ASource%3A%20Quartz%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-pragmatik-labs-5-billion" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-pragmatik-labs-5-billion">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-pragmatik-labs-5-billion">Draft for LinkedIn</label><textarea id="share-li-story-pragmatik-labs-5-billion" class="share-text share-text-li" rows="12">Former Qwen chief Lin Junyang&#x27;s Pragmatik Labs raises money at a $5 billion valuation, Bloomberg reports
+
+→ Pragmatik Labs, the Shanghai AI start-up Lin Junyang set up over the summer after leaving Alibaba, where he oversaw the Qwen family of models, has closed a round valuing it at $5 billion, Bloomberg reported, according to Quartz.
+
+https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-pragmatik-labs-5-billion
+Source: Quartz; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Former%20Qwen%20chief%20Lin%20Junyang%27s%20Pragmatik%20Labs%20raises%20money%20at%20a%20%245%20billion%20valuation%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20Pragmatik%20Labs%2C%20the%20Shanghai%20AI%20start-up%20Lin%20Junyang%20set%20up%20over%20the%20summer%20after%20leaving%20Alibaba%2C%20where%20he%20oversaw%20the%20Qwen%20family%20of%20models%2C%20has%20closed%20a%20round%20valuing%20it%20at%20%245%20billion%2C%20Bloomberg%20reported%2C%20according%20to%20Quartz.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-20-afternoon.html%23story-pragmatik-labs-5-billion%0ASource%3A%20Quartz%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-pragmatik-labs-5-billion">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-20-afternoon.html#story-pragmatik-labs-5-billion">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI&#x27;s mathematical claims have reached the top: a <mark class="hl">Riemann proof is claimed</mark>, but not yet checked.</li><li>Anthropic&#x27;s listing is complete at <mark class="hl">$93.5 billion</mark>, and the market is already testing it.</li><li>Platforms and apps are fighting over agents: <mark class="hl">Signal shuts out OS assistants</mark>.</li><li>Washington&#x27;s pressure on Chinese models now reaches products, as <mark class="hl">Cursor weighs dropping Kimi</mark>.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (18 threads; 25 requests blocked with HTTP 403; Arctic Shift archive supplied posts, its comment lookups failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (30 stories)</dd></div><div><dt>github</dt><dd>ok (15 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 75 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top clusters were an AI-designed CPU, banks&#x27; rules for AI agents and general discussion; none matched a story here except the Riemann thread, whose comments came from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window: from 06:11 this morning, when the morning edition closed, to this edition. No newsletter lead needed a wider window.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 25 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.</li><li>Paywalled or not read: Bloomberg (Pragmatik Labs, SpaceX&#x27;s bond sale), the Financial Times original of the SpaceX report (read through Ars Technica&#x27;s republished copy), the rest of The Verge&#x27;s Signal article beyond its free opening, and the House committees&#x27; report, which was not yet public. Reuters&#x27; own pages were not read.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file has seven leads. Anthropic&#x27;s pricing, the agent-framework package attack, Nvidia&#x27;s quarter and Apple&#x27;s agent job listings ran in earlier editions; SoftBank founder Masayoshi Son&#x27;s remark about Anthropic, Cambridge Dictionary&#x27;s word of the year and Snapchat&#x27;s Easy Lens tool for coding assistants were not carried.</li><li>Not carried: OpenAI&#x27;s post on its models improving an AMD GPU design by up to 14% (published 18 November, before this window), Architect Labs&#x27; AI-designed Frostbite CPU (first posted 19 November, before this window), OpenAI&#x27;s test of Dots agents with some ChatGPT Plus users (announced only on X), Mistral&#x27;s new Asia-Pacific headquarters in Singapore, and Moonshot AI&#x27;s reported cancelled Nvidia chip lease.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 18 threads │ 2,241 upvotes │ 530 comments
+├─  HN: 30 stories │ 2,924 points │ 2,151 comments
+├─  dev.to: 12 articles │ 418 reactions │ 276 comments
+├─  GitHub: 15 items │ 46 reactions │ 293 comments
+├─  Top voices: r/artificial, r/singularity, r/ClaudeAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-20-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-20-afternoon.md">Markdown text</a></li><li><a href="2026-11-20-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
