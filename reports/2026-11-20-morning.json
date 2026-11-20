@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-20-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-20T06:11:00+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-19T16:08:00+01:00",
+  "window_end": "2026-11-20T06:10:00+01:00",
+  "editorial_note": "Fourteen hours since the afternoon edition, and ==no new frontier model==. Anthropic's shares finally traded: they ==closed 17% above the $83 offer== after opening 34% higher, while the wider AI trade fell. In Washington, a House committee published licence data showing Commerce approved ==more than 879,000 Nvidia and AMD AI chips== for Chinese buyers, California's attorney general subpoenaed Nvidia, and the Senate passed a permitting bill that would make data centres pay for grid upgrades. Agents keep moving onto the desktop: Gemini can now operate Mac apps, and Apple job listings describe its own computer-using agent. Also here: Nvidia's reported talks to buy Inception, DeepSeek's completed funding round and Meta's review of its 2030 net-zero goal.",
+  "stories": [
+    {
+      "id": "anthropic-ipo-investor-doubts",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Anthropic's shares open 34% above the $83 offer price on Nasdaq and close up 17% at $97.17 as the wider AI trade falls",
+      "published_at": "2026-11-19T17:59:00+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 19 November morning edition, which reported the pricing of Anthropic's offering at $83 a share. The new development: the stock began trading on Nasdaq under the ticker ANT on Thursday, ==opened at $111.50== and ==closed at $97.17==, 17% above the offer price, The National reports.",
+        "TechCrunch reported shares changing hands at about $110 in the first minutes. Deadline reported a high of about $115 before the stock slid back to around $95 during a volatile session. At the close the company was worth about ==$1.75 trillion on a fully diluted basis==, or about $1.27 trillion on the shares now outstanding, according to The National.",
+        "The offering sold 980 million shares for $81.3 billion, and a $26 billion private placement brought the total to $107.3 billion, the largest initial public offering on record, ahead of SpaceX's in June. PitchBook analyst Harrison Rolfes told The National that orders reached about six times the shares available and that 'the first year will test the price'.",
+        "The debut did not lift the rest of the sector. Major US indexes fell on Thursday and Asian chip stocks dropped on Friday, The National reports; CNBC's markets desk wrote that Anthropic surged on its first day 'but the tech trade as a whole cratered'."
+      ],
+      "why_it_matters": "Editorial analysis: the first frontier lab to list now has a ==daily public price on AI's prospects==, and its first session showed both strong demand for the shares and weak appetite for the rest of the trade.",
+      "caveat": "Valuations depend on the share count used (fully diluted or outstanding); first-day prices of a new listing are volatile and say little about its long-term value.",
+      "sources": [
+        {
+          "label": "The National: Anthropic shares close 17% above IPO price after volatile Nasdaq debut",
+          "url": "https://www.thenationalnews.com/business/markets/2026/11/20/anthropic-share-price-today-ant-listing/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        },
+        {
+          "label": "TechCrunch: Anthropic hits NASDAQ exchanges at $110, $27 above IPO price",
+          "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:05:00+01:00"
+        },
+        {
+          "label": "Deadline: Anthropic shares pop, then pull back in volatile market debut",
+          "url": "https://deadline.com/2026/11/anthropic-ai-volatile-ipo-shares-trading-nasdaq-market-1237229045/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:06:00+01:00"
+        },
+        {
+          "label": "CNBC: Anthropic IPO fails to lift AI stocks",
+          "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ai-stocks-selloff.html",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "house-ai-chip-licence-data",
+      "section": "Industry & policy",
+      "headline": "House committee discloses that Commerce approved more than 879,000 Nvidia and AMD AI chips for Chinese buyers, as California subpoenas Nvidia",
+      "published_at": "2026-11-19",
+      "freshness": "new",
+      "paragraphs": [
+        "House Foreign Affairs Committee chairman Brian Mast used his powers under the Export Control Reform Act on Thursday afternoon to publish export-licence data for Nvidia and AMD AI chips bound for China. The committee says companies ==requested sales of 3.4 million AI chips== and the Commerce Department's Bureau of Industry and Security ==approved more than 879,000==, including for companies the Pentagon lists as Chinese military companies.",
+        "Al Jazeera, citing the committee, reports the approvals covered December 2025 to May 2026 and included 150,000 chips for Tencent, 75,000 for Alibaba, 43,000 for Baidu and 4,000 for BYD; the chips included Nvidia's H200 and AMD's MI325X. It was not clear how many approvals led to actual shipments. The committee's statement also says the documents include requests by Nvidia to rely on possible chip-smuggling fronts.",
+        "Nvidia said the approvals were 'subject to strict conditions and limited volumes' and that it has since stopped shipping H200s to China, a halt reported in the 18 November morning edition. Nvidia's shares fell 3.3% and AMD's 7.7% on Thursday, Al Jazeera reports.",
+        "The same day, California Attorney General Rob Bonta ==served an investigative subpoena on Nvidia==, asking whether its advanced chips or confidential information went to China after reports of former chief executive Jensen Huang's affair with an alleged Chinese spy, and whether the company misled investors."
+      ],
+      "why_it_matters": "Editorial analysis: the release puts ==numbers on Washington's China chip licensing== for the first time, and it lands as Nvidia faces federal and state scrutiny without its founder.",
+      "caveat": "The smuggling-front claim is the committee's characterisation of Nvidia's requests; the subpoena is an investigative step, not an accusation of wrongdoing.",
+      "sources": [
+        {
+          "label": "House Foreign Affairs Committee: Chairman Mast releases AI chip license information for China",
+          "url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china",
+          "type": "primary",
+          "checked_at": "2026-11-20T06:03:00+01:00"
+        },
+        {
+          "label": "California Attorney General: Bonta serves investigative subpoena on Nvidia",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia",
+          "type": "primary",
+          "checked_at": "2026-11-20T06:05:00+01:00"
+        },
+        {
+          "label": "Al Jazeera: US signed off on sales of nearly 900,000 AI chips to China in six months",
+          "url": "https://aljazeera.com/economy/2026/11/19/us-signed-off-on-sales-of-nearly-900000-ai-chips-to-china-in-six-months",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        },
+        {
+          "label": "Hacker News discussion of CNBC's report",
+          "url": "https://news.ycombinator.com/item?id=50567693",
+          "type": "community",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "it is interesting that, on the one hand, the government states that the threat from China is existential and, on the other hand, chips are being sold en-masse.",
+          "author": "ijidak (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50567694"
+        }
+      ]
+    },
+    {
+      "id": "senate-permitting-bill-data-centres",
+      "section": "Industry & policy",
+      "headline": "US Senate passes a permitting overhaul, 62 to 33, that would speed energy projects and make data centres pay for grid upgrades",
+      "published_at": "2026-11-20T04:22:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "The Senate on Thursday passed the Bipartisan American Affordability and Jobs Act, S. 5653, ==by 62 votes to 33==, Politico and CNBC report. The bill would shorten environmental reviews, limit when projects can be challenged in court and expand federal authority over interstate electricity transmission, at a time of ==AI-driven growth in power demand==.",
+        "CNBC reports that the bill includes a provision forcing hyperscalers to pay for grid upgrades, and that opponents warned it could give data centres too free a hand. Senator Ron Wyden pressed for an amendment to block data centres on public lands; CNBC quotes him: 'I'm not going to sit around and let these data centers scar our treasures.'",
+        "More Democrats voted against the bill than for it, though Senate Minority Leader Chuck Schumer voted yes. The bill now goes to the House, where Republican leaders hope to pass it before Democrats take control of both chambers in January; President Trump supports the deal, CNBC reports."
+      ],
+      "why_it_matters": "Editorial analysis: power and permits, not chips alone, now limit how fast AI data centres can be built; the bill would ==speed building while shifting grid costs== onto their owners.",
+      "caveat": "The bill is not law: it still needs to pass the House, where Democrats are divided, and be signed.",
+      "sources": [
+        {
+          "label": "Politico: Senate passes landmark permitting deal",
+          "url": "https://www.politico.com/news/2026/11/19/senate-passes-landmark-permitting-deal-01177557",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        },
+        {
+          "label": "CNBC: Senate passes BAAJA bill backed by AI, energy sectors",
+          "url": "https://www.cnbc.com/2026/11/20/baaja-bill-senate-passes-permitting-reform.html",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "gemini-mac-computer-use",
+      "section": "Coding & agents",
+      "headline": "Google lets Gemini operate Mac apps and websites in a background window, for US subscribers",
+      "published_at": "2026-11-19T18:00:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Google said on Thursday that ==computer use in the Gemini app for Mac== can now carry out multi-step tasks across local files, desktop apps and the web, handling clicks, typing, menus and forms. Gemini works in an isolated background window with a live preview in the chat, so the user's own screen and cursor stay free.",
+        "Users choose which apps Gemini can reach, can watch each step, pause at any time and approve key actions before they happen, Google says. The feature is rolling out in English in the US; TechCrunch reports it requires a ==Google AI Plus, Pro or Ultra subscription== and that Google gave no date for other markets.",
+        "The same day Google made its Genie 4 world model, opened to Ultra subscribers in the 19 November morning edition, available to developers through the Gemini API and Google AI Studio, generating 720p worlds at 24 frames a second with native audio."
+      ],
+      "why_it_matters": "Editorial analysis: Google joins OpenAI, Anthropic and Meta in giving its assistant control of the desktop, three days after Apple ==tightened the Mac permissions agents rely on== (17 November morning edition).",
+      "caveat": "Google's description of safety controls is a vendor claim; this edition did not test the feature.",
+      "sources": [
+        {
+          "label": "Google: Let Gemini tackle repetitive chores on your Mac",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+          "type": "primary",
+          "checked_at": "2026-11-20T06:03:00+01:00"
+        },
+        {
+          "label": "Google: Genie 4 is now available on the Gemini API",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+          "type": "primary",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        },
+        {
+          "label": "TechCrunch: Google gives Gemini the ability to use your Mac for you",
+          "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "apple-agent-job-listing",
+      "section": "Coding & agents",
+      "headline": "Apple job listings describe its own AI agent that would browse, code and work across apps, Bloomberg reports",
+      "published_at": "2026-11-19T22:44:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Apple is developing its own autonomous AI agent, Bloomberg reported on Thursday, based on ==new job listings on Apple's website==. One seeks a senior engineering manager for a 'proactive, agentic AI assistant', The Verge reports.",
+        "The listing quoted by The Verge says: 'These agents plan and carry out multi-step tasks across apps, browsers, command lines, code, and APIs, and they can coordinate specialized sub-agents along the way.' The engineer would work with Apple's Siri, UI Frameworks and ==Apple Foundation Models== teams, according to The Verge."
+      ],
+      "why_it_matters": "Editorial analysis: the listings suggest Apple, which controls the Mac's permission system, also plans to ==compete with the agents that use it==.",
+      "caveat": "Job listings describe intended work, not a product or a launch date; Apple has not announced an agent.",
+      "sources": [
+        {
+          "label": "The Verge: Apple is hiring engineers to build its own AI agent",
+          "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "nvidia-inception-talks",
+      "section": "Industry & policy",
+      "headline": "Nvidia is in advanced talks to buy diffusion-model startup Inception for more than $500 million, The Information reports",
+      "published_at": "2026-11-19T23:43:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Nvidia is in advanced talks to acquire Inception, a two-year-old startup that builds ==diffusion-based large language models==, in a deal worth ==more than $500 million== plus performance-based earnouts for its staff, The Information reported on Thursday, citing three people with knowledge of the talks; Seeking Alpha and TechDefused summarised the report.",
+        "Diffusion language models refine a whole response in parallel rather than writing it one token at a time, which Inception says makes them faster. TechDefused reports that the team is expected to support Nvidia's open Nemotron models, and that the deal has not been confirmed by either company."
+      ],
+      "why_it_matters": "Editorial analysis: the talks show Nvidia, led by an interim chief executive since Huang's resignation, still ==buying model research, not only selling chips==.",
+      "caveat": "Unconfirmed report from anonymous sources; The Information's article is paywalled and was not read, so details come from summaries of it.",
+      "sources": [
+        {
+          "label": "Seeking Alpha: Nvidia in advanced talks to buy diffusion AI startup Inception - report",
+          "url": "https://seekingalpha.com/news/4675003-nvidia-in-advanced-talks-to-buy-diffusion-ai-startup-inception-for-over-500m---report",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        },
+        {
+          "label": "TechDefused: Nvidia in talks to acquire diffusion AI startup Inception - reports",
+          "url": "https://techdefused.com/a/Pg5frL7/nvidia-in-talks-to-acquire-diffusion-ai-startup-inception-reports",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "deepseek-15-billion-round",
+      "section": "Industry & policy",
+      "headline": "UPDATE: DeepSeek's second funding round of about 100 billion yuan is registered, with Tencent and CATL the largest backers",
+      "published_at": "2026-11-19T17:23:00+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 22 October afternoon edition, which reported that DeepSeek had raised about $15 billion from Tencent, CATL and other backers. The new development: business registration changes completed on 17 November show the round of ==about 100 billion yuan ($15 billion)== has closed, with a partnership for the new investors taking ==a roughly 17.3% stake==, Caixin Global reported on Thursday evening, Paris time. China's Science and Technology Innovation Board Daily first reported the registration on Thursday morning; neither earlier edition carried it.",
+        "The Board Daily's reading of the registry shows 31 new partners in the holding vehicle, with Tencent and funds linked to CATL each contributing about 9.57%, and China Mobile, China Telecom, vivo, Meituan Longzhu and investors such as IDG among the rest. It reports that DeepSeek has hired CITIC Securities to prepare a ==listing on Shanghai's STAR Market==, with the process planned to start this year."
+      ],
+      "why_it_matters": "Editorial analysis: China's best-known open-model lab now has the cash and the backers for a domestic listing just as US curbs cut its access to Nvidia hardware.",
+      "caveat": "The IPO plan rests on unnamed sources cited by the Board Daily; DeepSeek has not announced it. Caixin's full article is for subscribers and only its free opening was read.",
+      "sources": [
+        {
+          "label": "Caixin Global: DeepSeek closes 100 billion yuan funding round",
+          "url": "https://www.caixinglobal.com/2026-11-20/deepseek-closes-100-billion-yuan-funding-round-102506825.html",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        },
+        {
+          "label": "Science and Technology Innovation Board Daily via ifeng: DeepSeek's 100-billion-yuan financing lands (Chinese)",
+          "url": "https://i.ifeng.com/c/8yBAjgyfokc",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "meta-net-zero-review",
+      "section": "Industry & policy",
+      "headline": "Meta says it is re-evaluating its 2030 net-zero goal after its emissions rose 45% in 2025 with its AI build-out",
+      "published_at": "2026-11-19T21:33:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Meta's annual sustainability report, published on Thursday, says the company is ==re-evaluating the 2030 timeframe== for its net-zero emissions goal after its ==emissions rose 45%== last year as it built AI data centres, MLQ.ai and Axios report.",
+        "Its electricity use rose 35%, according to both accounts. Meta executives Rachel Peterson and Blair Swedeen wrote that the company had expected steady growth and falling clean-energy costs: 'The reality has been far more complex.' The report does not say what changes Meta is considering or when it will decide.",
+        "Meta says it has contracted more than 30 gigawatts of clean energy, less than half of it generating so far, and may use natural gas plants where utilities cannot supply power fast enough, according to Axios' account carried by Mezha."
+      ],
+      "why_it_matters": "Editorial analysis: Meta is the first of the largest AI spenders to say openly that the ==AI build-out may move its climate deadline==.",
+      "caveat": "Meta's report itself was not read; figures come from press accounts of it, and reports of its absolute emissions total differ (11.8 or 11.9 million tonnes), so no total is given here.",
+      "sources": [
+        {
+          "label": "MLQ.ai: Meta re-evaluates its 2030 net-zero goal after its emissions rose 45% in 2025",
+          "url": "https://mlq.ai/news/meta-re-evaluates-its-2030-net-zero-goal-after-its-emissions-rose-45-in-2025-on-data-center-growth",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:07:00+01:00"
+        },
+        {
+          "label": "Mezha: Meta reconsiders 2030 net-zero goal as emissions rise 45% (after Axios)",
+          "url": "https://mezha.net/eng/news/mezha-51767058c5f60540ea0cc762_meta_reconsiders_2030",
+          "type": "reporting",
+          "checked_at": "2026-11-20T06:08:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (17 threads; 22 requests blocked with HTTP 403 and 6 unanswered; Arctic Shift archive supplied posts)",
+      "hackernews": "ok (30 stories)",
+      "github": "ok (16 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished (exit 0) with 75 evidence items from Reddit, Hacker News, dev.to and GitHub; its top clusters were general discussion (banks' rules for AI agents, local models, AI safeguards, an audit trial with AI agents), none tied to a story here. The one community comment quoted comes from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Window: from 16:08 on Thursday 19 November, when the afternoon edition closed, to this edition. DeepSeek's round was first reported in Chinese at about 07:13 Paris time on 19 November, inside the afternoon edition's window; it runs here because Caixin's report came within this window and no edition had carried it.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 22 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429 and Google DeepMind's feed could not be parsed. Missing coverage does not mean nobody discussed these stories.",
+      "Paywalled or not read: The Information (Nvidia and Inception), Caixin Global beyond its free opening, Bloomberg, and Meta's sustainability report itself. Reuters' own pages were not read; Reuters-sourced facts here come from Al Jazeera's report. AP's article page returned a version from before trading began, so it is not cited for the debut.",
+      "Newsletter leads from the Iris mail bot: today's file has five leads. Anthropic's pricing, the agent-framework package attack and Nvidia's quarter ran in earlier editions; SoftBank founder Masayoshi Son's remark about Anthropic and Cambridge Dictionary's word of the year were not carried.",
+      "Not carried: OpenAI's Performance Factory post (published 09:00 Paris time on 19 November, before this window), the GAO's test of chatbots producing attack plans (carried 18 November), banks' rules on third-party AI agents (Citi's change dates from earlier in the week), Meta's reported $300 price for its Muse Charm device, and President Trump's remarks on AI rules with Xi Jinping.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 17 threads │ 1,937 upvotes │ 493 comments\n├─ 🟡 HN: 30 stories │ 3,831 points │ 2,748 comments\n├─ 👩‍💻 dev.to: 12 articles │ 336 reactions │ 231 comments\n├─ 🐙 GitHub: 16 items │ 50 reactions │ 303 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/ClaudeAI\n---"
+  },
+  "key_patterns": [
+    "The listing tested the AI trade: Anthropic ==closed 17% above its offer== while the sector fell.",
+    "Scrutiny of Nvidia's China sales widens, from ==879,000 approved chips== to a California subpoena.",
+    "Agents are moving onto the desktop: ==Gemini on the Mac==, and Apple hiring for its own.",
+    "The build-out's physical costs reach policy and pledges: a permitting bill and ==Meta's net-zero review==."
+  ],
+  "previous_issue_id": "2026-11-19-afternoon"
+}
