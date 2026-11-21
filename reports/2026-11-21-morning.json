@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-21-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-21T06:07:00+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-20T16:14:00+01:00",
+  "window_end": "2026-11-21T06:07:00+01:00",
+  "editorial_note": "Fourteen hours since the afternoon edition, and ==no new frontier model==. Wall Street had its worst day for AI stocks in years: the Nasdaq fell ==5.3%==, Nvidia dropped 14% after Reuters reported an SEC look at its accounting, and Anthropic gave back most of its debut gain. Independent mathematicians re-checked the Lean files of the Riemann claim reported yesterday afternoon and found ==no errors so far==. Amazon says a Chinese-linked group's AI agents found and used a zero-day on their own, President Trump threatened a 'tremendous tax' on US companies that build AI data centres abroad, Oracle says its OpenAI contract is fully funded, OpenAI published a medicinal-chemistry benchmark, and Cognition is reported in talks at a $75 billion valuation.",
+  "stories": [
+    {
+      "id": "anthropic-ipo-investor-doubts",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Anthropic gives back most of its debut gain as the Nasdaq falls 5.3% and Nvidia drops 14% on a reported SEC accounting probe",
+      "published_at": "2026-11-20T22:30:00+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday afternoon's edition, which reported that Anthropic's offering had closed at $93.5 billion and that the shares were lower before Friday's open. The new development: in its first full session the stock ==fell about 9%==, after being down as much as 14% at one point, Reuters reported after the close.",
+        "The fall came in a broad retreat from AI stocks. The ==Nasdaq dropped 5.3%== on Friday and the S&P 500 3.7%, and Reuters put the Nasdaq's weekly decline at 10%, its biggest since 2020. The Los Angeles Times reported the S&P 500's steepest weekly loss in more than 18 months.",
+        "Nvidia ==fell 14% on Friday and 23% over the week==, after Reuters reported that the Securities and Exchange Commission is examining the company's accounting. A semiconductor index of AI favourites fell 11%, and the VIX volatility index rose 33% to 37, according to Reuters."
+      ],
+      "why_it_matters": "Editorial analysis: two days after the largest listing of an AI lab, the market is ==repricing the whole AI trade==; the reported SEC inquiry adds a new question mark over the sector's biggest supplier.",
+      "caveat": "The SEC inquiry is ==reported by Reuters from unnamed sources==; neither the SEC nor Nvidia had confirmed it in the coverage read here, and Reuters' own article could not be read from this machine. Price moves are closing figures as reported, not this paper's own market data.",
+      "sources": [
+        {
+          "label": "Reuters via Yahoo Finance: Nasdaq plunges 5% a day after Anthropic debut, but investors still believe in AI",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-plunges-5-day-anthropic-211724232.html",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        },
+        {
+          "label": "Los Angeles Times: Trump says he'll penalize U.S. companies that build data centers abroad",
+          "url": "https://www.latimes.com/politics/story/2026-11-20/trump-says-hell-penalize-u-s-companies-that-build-data-centers-abroad",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        },
+        {
+          "label": "Hacker News: discussion of the reported SEC probe of Nvidia",
+          "url": "https://news.ycombinator.com/item?id=50581438",
+          "type": "community",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "They're now down nearly 50% since their high 6 weeks ago. Absolutely crazy.",
+          "author": "jjcm (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50581930"
+        },
+        {
+          "text": "If the board thought there were accounting issues why did they make the CFO the interim CEO?",
+          "author": "ralph84 (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50582002"
+        }
+      ]
+    },
+    {
+      "id": "alpoge-riemann-hypothesis-claim",
+      "section": "Research",
+      "headline": "UPDATE: Independent mathematicians re-check the Lean proof of the claimed Riemann result and find no errors so far, as a rival human proof appears",
+      "published_at": "2026-11-20",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to yesterday afternoon's edition, which reported Anthropic mathematician Levent Alpöge's claim that he and Claude had proved the Riemann hypothesis, with no outside check yet. The new development: independent researchers, including MIT mathematician Andrew Sutherland, have ==compiled the Lean proof themselves without issues==, Scientific American reported late on Friday.",
+        "'The Lean proof has been compiled and independently re-checked by the Lean kernel with only the three standard axioms,' Sutherland told the magazine. Imperial College London's Kevin Buzzard wrote that a =='comparator run' was still awaited==, to check that the code does not redefine the statement's symbols and that it compiles with several independent kernels.",
+        "Terence Tao, in a post on Friday, called the result an ==enormous Lean-only proof== of the Generalized Riemann Hypothesis and pointed readers to the Lean community's discussion thread. The same post lists Alpöge and NYU's Tristan Buckmaster's AI-assisted proof of blow-up for the ==unforced Navier-Stokes equations==, posted on Friday at 14:37 Paris time, before the afternoon edition closed but not carried there; Tao says that paper still needs work to become a professionally written proof.",
+        "Also on Friday, Stanford's Ravi Vakil posted a ==proposed all-human proof== of the Generalized Riemann Hypothesis by postdoc Alessandro Masullo. About eight hours later Vakil added that several people had reported problems in it, found with the help of AI models."
+      ],
+      "why_it_matters": "Editorial analysis: a formal proof that independent kernels accept moves the claim ==from announcement towards confirmation==, though mathematicians still have to check the statement and understand the argument.",
+      "caveat": "==Not yet fully confirmed==: the comparator check was pending in the reports read here, no paper or peer review exists, and the Navier-Stokes write-up is unpolished by its authors' own account.",
+      "sources": [
+        {
+          "label": "Scientific American: The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest",
+          "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        },
+        {
+          "label": "Terence Tao: Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis",
+          "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        },
+        {
+          "label": "Scientific American: AI just solved the 'real' Navier-Stokes problem",
+          "url": "https://www.scientificamerican.com/article/ai-just-solved-the-real-navier-stokes-problem",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        },
+        {
+          "label": "GitHub: tristanbuckmaster/navier-stokes",
+          "url": "https://github.com/tristanbuckmaster/navier-stokes/",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        },
+        {
+          "label": "Ravi Vakil: Hurried Announcement: Alessandro Masullo GRH",
+          "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        },
+        {
+          "label": "TechCrunch: AI claimed a solution to the 167-year-old Riemann hypothesis, and a human did, too",
+          "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "It looks like two independent kernels accept the result, which means its likely that there are no kernel bug exploitations in the proof.",
+          "author": "chunky1994 (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50581818"
+        },
+        {
+          "text": "Dumb question but with something like 15 million lines of Lean code, how can we tell when the Lean build “passes” that it is actually formally verifying the right thing",
+          "author": "swingboy (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50583510"
+        }
+      ]
+    },
+    {
+      "id": "aws-cairn-agents-zero-day",
+      "section": "Coding & agents",
+      "headline": "Amazon says a Chinese-linked group's AI agents found a zero-day on their own and used it to take over a university server",
+      "published_at": "2026-11-20T18:30:13+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "Amazon Threat Intelligence published findings on Friday about a threat actor that ran ==Cairn, an open-source autonomous penetration-testing framework==, against universities in East Asia outside mainland China over about 48 hours from 8 September. The actor gave the agents goals such as 'obtain shell access' and let them plan and adjust without choosing each step.",
+        "Against an open-source medical imaging AI application, the agents found a path-traversal flaw and went ==from mapping the API to writing files on the server in about 11 minutes==. In a later session they used it to plant a Python payload and obtain a reverse shell running as root. The Register identifies the software as MONAI Label; Amazon says the maintainers have released a fix and a GitHub security advisory.",
+        "Other operations failed: one ran about ==16 hours and 148 sequential actions== against an open Redis server, another tested more than 30,000 credential combinations. Amazon found the campaign because the operator left the Cairn server publicly accessible without authentication."
+      ],
+      "why_it_matters": "Editorial analysis: this is a documented case of ==agents finding and exploiting an unknown flaw== in minutes, which shrinks the time defenders have to respond to an alert.",
+      "caveat": "Amazon's attribution to a Chinese-linked actor is its own assessment, ==made with moderate confidence==, based on Simplified Chinese prompts, China Standard Time timestamps and the choice of targets.",
+      "sources": [
+        {
+          "label": "AWS Security Blog: Chinese-nexus actor's Cairn AI agents found a zero-day on their own",
+          "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:04:00+01:00"
+        },
+        {
+          "label": "GitHub: MONAI Label security advisory GHSA-qc22-rmgc-vg94",
+          "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        },
+        {
+          "label": "The Register: China attackers deployed AI agents that autonomously found and exploited a 0-day",
+          "url": "https://www.theregister.com/security/2026/11/20/china-attackers-deployed-ai-agents-that-autonomously-found-and-exploited-a-0-day-to-take-over-a-university-server/5311382",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "trump-data-centres-abroad-tax",
+      "section": "Industry & policy",
+      "headline": "Trump threatens a 'tremendous tax' on US companies that build AI data centres abroad, without saying how it would work",
+      "published_at": "2026-11-20T20:51:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "President Donald Trump told a White House press briefing on Friday that US tech companies building AI data centres in other countries would face ==a 'tremendous tax'==. 'We're not allowing data centres to go into other countries because China will take all of them, and we're not allowing that to happen,' he said, according to the Associated Press as published by CBC.",
+        "Trump gave no details on enforcement and said he ==had not yet told his own officials== about the plan, the BBC and AP reported. He singled out Google's planned build in Finland, according to the BBC, and urged Americans to welcome data centres and make developers pay their communities.",
+        "The remarks came as data centres have become a political issue after this month's midterm elections, and days after the administration's new rules restricting remote access to advanced US chips."
+      ],
+      "why_it_matters": "Editorial analysis: US hyperscalers have ==overseas projects in Finland, Canada and elsewhere==; even an unspecified threat adds policy risk to where AI capacity gets built.",
+      "caveat": "This is a ==spoken threat, not a policy==: no executive order, rule or bill was published, and the remarks gave no rate, scope or legal basis.",
+      "sources": [
+        {
+          "label": "BBC: Trump threatens ban on US firms building AI data centres overseas",
+          "url": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        },
+        {
+          "label": "CBC (Associated Press): Trump threatens to penalize U.S. tech companies that build AI data centres in other countries",
+          "url": "https://www.cbc.ca/news/world/ai-data-centres-us-tech-companies-trump-9.7430426",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "oracle-openai-fully-funded",
+      "section": "Industry & policy",
+      "headline": "Oracle says its OpenAI contract is fully funded and calls itself the first hyperscaler funded for this investment cycle",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "Oracle said in a statement on Friday that it has ==secured all the funding it needs== to fulfil its contract with OpenAI, and that its final capital raise earlier this month made it 'the first hyperscaler fully funded for this investment cycle'. It said further private talks with vendors are 'just additional options' and that reports saying otherwise would be 'incorrect and wrong'.",
+        "The company said its Abilene campus is nearly complete, its next gigawatt-scale campus at Shackelford is fully permitted, and the handover of Nvidia Vera Rubin racks there is on track for the coming weeks. It repeated targets of positive free cash flow in the second half of fiscal 2028 and ==more than $30 billion in fiscal 2029==.",
+        "EconoTimes reported that the November raise comprised about ==$9.9 billion in net proceeds== from shares sold at $116 and about $10 billion from senior notes with coupons of 7% to 8.65%."
+      ],
+      "why_it_matters": "Editorial analysis: Oracle is answering market doubts about how AI build-outs are financed, on the day those doubts hit AI stocks hardest.",
+      "caveat": "These are ==Oracle's own claims and forward-looking targets==; the statement gives no figure for the contract or the vendor financing, and it pre-emptively rejects reports it does not name.",
+      "sources": [
+        {
+          "label": "Oracle: Oracle Statement (20 November 2026)",
+          "url": "https://www.oracle.com/news/announcement/oracle-statement-2026-11-20/",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        },
+        {
+          "label": "EconoTimes: Oracle Says It Has Funding Secured for OpenAI Infrastructure Contract",
+          "url": "https://econotimes.com/Oracle-Says-It-Has-Funding-Secured-for-OpenAI-Infrastructure-Contract-1780538",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-medchembench",
+      "section": "Research",
+      "headline": "OpenAI publishes MedChemBench, a 99-problem test of AI reasoning in medicinal chemistry, and says GPT-6.2 Astra scores 84.5%",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI introduced ==MedChemBench==, a benchmark of 99 problems drawn from published medicinal chemistry research, with a paper. It tests whether models can connect a molecule's structure with experimental results to explain findings, rank and choose compounds and predict their properties.",
+        "The problems draw on 117 papers and patents and 761 distinct molecular structures. At its highest reasoning setting, OpenAI says ==GPT-6.2 Astra earned 84.5%== of the available credit, against 83.3% for GPT-6 Astra, 82.0% for GPT-6.1 Sol and 58.2% for GPT-5.6 Sol.",
+        "OpenAI says selecting compounds and predicting their numerical properties proved harder for GPT-6 Astra than reconstructing structures and explaining evidence."
+      ],
+      "why_it_matters": "Editorial analysis: a benchmark built from real drug-discovery decisions gives a ==sharper test than general science quizzes==, though it measures reasoning on paper, not results in a laboratory.",
+      "caveat": "OpenAI built the benchmark and reports only its own models' scores. Its page gives only the date; the first reports appeared at 17:51 Paris time on Friday, ==after the previous edition closed==.",
+      "sources": [
+        {
+          "label": "OpenAI: Can AI help scientists identify promising drug candidates?",
+          "url": "https://openai.com/index/introducing-medchembench",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:04:00+01:00"
+        },
+        {
+          "label": "OpenAI: MedChemBench paper (PDF)",
+          "url": "https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-21T06:06:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "cognition-75-billion-talks",
+      "section": "Coding & agents",
+      "headline": "Cognition, maker of the Devin coding agent, is in talks to raise money at a $75 billion valuation, Bloomberg reports",
+      "published_at": "2026-11-20",
+      "freshness": "new",
+      "paragraphs": [
+        "AI coding start-up Cognition is in funding talks at a ==$75 billion valuation==, two months after its last round, Bloomberg reported on Friday, citing people familiar with the matter. The company is considering raising ==$2 billion or more==, and details could change.",
+        "If completed, it would be Cognition's third financing this year; it has raised more than $3 billion in 2026, including more than $2 billion at a $48 billion valuation in September, according to the report. Cognition did not respond to Bloomberg's request for comment."
+      ],
+      "why_it_matters": "Editorial analysis: investors are still paying up for coding agents even as public AI stocks fall, with Cognition priced above the $60 billion SpaceX paid for Cursor.",
+      "caveat": "==Talks only, from unnamed sources==; no round has been announced and the valuation could change.",
+      "sources": [
+        {
+          "label": "Bloomberg via Yahoo Finance: Cognition in Talks for $75 Billion Value With New Funding",
+          "url": "https://uk.finance.yahoo.com/news/cognition-talks-75-billion-value-204755865.html",
+          "type": "reporting",
+          "checked_at": "2026-11-21T06:05:00+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "3.31.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (16 threads; 26 requests blocked with HTTP 403; Arctic Shift archive supplied posts, some of its lookups failed with HTTP 422)",
+      "hackernews": "ok (30 stories)",
+      "github": "ok (13 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine finished (exit 0) with 71 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top clusters were Signal's screenshot block, Chinese labs, the AI-designed Frostbite CPU and the Wall Street AI sell-off; the comments quoted here came from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Window: from 16:14 yesterday, when the afternoon edition closed, to this edition. No newsletter lead needed a wider window.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 26 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.",
+      "Paywalled or not read: Bloomberg's original Cognition article (read through its Yahoo Finance syndication), the Wall Street Journal's market coverage, The Information on SoftBank and SK Hynix, and the Associated Press site, which answered HTTP 403 (its report was read as published by CBC). Reuters' own pages, including its SEC exclusive on Nvidia, were not read.",
+      "Newsletter leads from the Iris mail bot: today's file has three leads. Anthropic's first trading day and Gemini's free task agent ran in earlier editions; the Product Hunt and Google Cloud hackathon was not carried.",
+      "Not carried: OpenAI's post on combatting adversarial distillation (published 11:00 Paris time on Friday, before this window), Google's new Search homepage and Connected Apps, Google's Nest app and speaker Assistant shutdown dates, a Google Research post on Duplex calls in Gemini, and Senate Democrats' proposed select committee on AI.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 16 threads │ 9,729 upvotes │ 973 comments\n├─ 🟡 HN: 30 stories │ 2,257 points │ 1,487 comments\n├─ 👩‍💻 dev.to: 12 articles │ 218 reactions │ 130 comments\n├─ 🐙 GitHub: 13 items │ 45 reactions │ 266 comments\n├─ 🗣️ Top voices: r/technology, r/singularity, r/artificial\n---"
+  },
+  "key_patterns": [
+    "The AI trade is being repriced: the ==Nasdaq lost 10% in a week==, and Anthropic's debut did not stop it.",
+    "AI mathematics is moving from claims to checks, with ==independent Lean re-runs== of the Riemann proof.",
+    "Autonomous agents are now an ==attacker's tool in documented campaigns==, not only a lab demonstration.",
+    "Where AI capacity is built is becoming political, from a ==threatened tax on foreign data centres== to Oracle's funding assurances."
+  ],
+  "previous_issue_id": "2026-11-20-afternoon"
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Saturday 21 November 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-11-21-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Saturday 21 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-21-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-21T06:07:00+01:00">Saturday 21 November 2026</time></p><p>Morning edition &middot; No. 2026-11-21-morning</p><p>Issued 06:07 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-21-morning.html">This edition</a><a href="2026-11-21-morning.md">Markdown</a><a href="2026-11-21-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-21-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Saturday 21 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-20T16:14:00+01:00">20 Nov 2026, 16:14 CET</time> to <time datetime="2026-11-21T06:07:00+01:00">21 Nov 2026, 06:07 CET</time> (Paris time). Issued <time datetime="2026-11-21T06:07:00+01:00">21 Nov 2026, 06:07 CET</time>.</p><p class="lead-note">Fourteen hours since the afternoon edition, and <mark class="hl">no new frontier model</mark>. Wall Street had its worst day for AI stocks in years: the Nasdaq fell <mark class="hl">5.3%</mark>, Nvidia dropped 14% after Reuters reported an SEC look at its accounting, and Anthropic gave back most of its debut gain. Independent mathematicians re-checked the Lean files of the Riemann claim reported yesterday afternoon and found <mark class="hl">no errors so far</mark>. Amazon says a Chinese-linked group&#x27;s AI agents found and used a zero-day on their own, President Trump threatened a &#x27;tremendous tax&#x27; on US companies that build AI data centres abroad, Oracle says its OpenAI contract is fully funded, OpenAI published a medicinal-chemistry benchmark, and Cognition is reported in talks at a $75 billion valuation.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-20-afternoon.html">2026-11-20-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-aws-cairn-agents-zero-day" aria-labelledby="h-aws-cairn-agents-zero-day"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-aws-cairn-agents-zero-day">Amazon says a Chinese-linked group&#x27;s AI agents found a zero-day on their own and used it to take over a university server</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T18:30:13+01:00">20 Nov 2026, 18:30 CET</time></p><div class="story-body"><p>Amazon Threat Intelligence published findings on Friday about a threat actor that ran <mark class="hl">Cairn, an open-source autonomous penetration-testing framework</mark>, against universities in East Asia outside mainland China over about 48 hours from 8 September. The actor gave the agents goals such as &#x27;obtain shell access&#x27; and let them plan and adjust without choosing each step.</p><p>Against an open-source medical imaging AI application, the agents found a path-traversal flaw and went <mark class="hl">from mapping the API to writing files on the server in about 11 minutes</mark>. In a later session they used it to plant a Python payload and obtain a reverse shell running as root. The Register identifies the software as MONAI Label; Amazon says the maintainers have released a fix and a GitHub security advisory.</p><p>Other operations failed: one ran about <mark class="hl">16 hours and 148 sequential actions</mark> against an open Redis server, another tested more than 30,000 credential combinations. Amazon found the campaign because the operator left the Cairn server publicly accessible without authentication.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: this is a documented case of <mark class="hl">agents finding and exploiting an unknown flaw</mark> in minutes, which shrinks the time defenders have to respond to an alert.</p></aside><p class="caveat"><span class="label">Caveat.</span> Amazon&#x27;s attribution to a Chinese-linked actor is its own assessment, <mark class="hl">made with moderate confidence</mark>, based on Simplified Chinese prompts, China Standard Time timestamps and the choice of targets.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/" rel="noopener noreferrer">AWS Security Blog: Chinese-nexus actor&#x27;s Cairn AI agents found a zero-day on their own</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:04:00+01:00">21 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94" rel="noopener noreferrer">GitHub: MONAI Label security advisory GHSA-qc22-rmgc-vg94</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theregister.com/security/2026/11/20/china-attackers-deployed-ai-agents-that-autonomously-found-and-exploited-a-0-day-to-take-over-a-university-server/5311382" rel="noopener noreferrer">The Register: China attackers deployed AI agents that autonomously found and exploited a 0-day</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-aws-cairn-agents-zero-day"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-aws-cairn-agents-zero-day">Draft for X</label><textarea id="share-x-story-aws-cairn-agents-zero-day" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-aws-cairn-agents-zero-day-count">Amazon says a Chinese-linked group&#x27;s AI agents found a zero-day on their own and used it to take over a university server
+
+Sources: AWS Security Blog, GitHub, The Register; via The AI Gazette</textarea><p class="share-count" id="share-x-story-aws-cairn-agents-zero-day-count">215 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Amazon%20says%20a%20Chinese-linked%20group%27s%20AI%20agents%20found%20a%20zero-day%20on%20their%20own%20and%20used%20it%20to%20take%20over%20a%20university%20server%0A%0ASources%3A%20AWS%20Security%20Blog%2C%20GitHub%2C%20The%20Register%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-aws-cairn-agents-zero-day" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-aws-cairn-agents-zero-day">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-aws-cairn-agents-zero-day">Draft for LinkedIn</label><textarea id="share-li-story-aws-cairn-agents-zero-day" class="share-text share-text-li" rows="12">Amazon says a Chinese-linked group&#x27;s AI agents found a zero-day on their own and used it to take over a university server
+
+→ Against an open-source medical imaging AI application, the agents found a path-traversal flaw and went from mapping the API to writing files on the server in about 11 minutes.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-aws-cairn-agents-zero-day
+Sources: AWS Security Blog, GitHub, The Register; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Amazon%20says%20a%20Chinese-linked%20group%27s%20AI%20agents%20found%20a%20zero-day%20on%20their%20own%20and%20used%20it%20to%20take%20over%20a%20university%20server%0A%0A%E2%86%92%20Against%20an%20open-source%20medical%20imaging%20AI%20application%2C%20the%20agents%20found%20a%20path-traversal%20flaw%20and%20went%20from%20mapping%20the%20API%20to%20writing%20files%20on%20the%20server%20in%20about%2011%20minutes.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-aws-cairn-agents-zero-day%0ASources%3A%20AWS%20Security%20Blog%2C%20GitHub%2C%20The%20Register%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-aws-cairn-agents-zero-day">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-aws-cairn-agents-zero-day">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-cognition-75-billion-talks" aria-labelledby="h-cognition-75-billion-talks"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-cognition-75-billion-talks">Cognition, maker of the Devin coding agent, is in talks to raise money at a $75 billion valuation, Bloomberg reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>AI coding start-up Cognition is in funding talks at a <mark class="hl">$75 billion valuation</mark>, two months after its last round, Bloomberg reported on Friday, citing people familiar with the matter. The company is considering raising <mark class="hl">$2 billion or more</mark>, and details could change.</p><p>If completed, it would be Cognition&#x27;s third financing this year; it has raised more than $3 billion in 2026, including more than $2 billion at a $48 billion valuation in September, according to the report. Cognition did not respond to Bloomberg&#x27;s request for comment.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: investors are still paying up for coding agents even as public AI stocks fall, with Cognition priced above the $60 billion SpaceX paid for Cursor.</p></aside><p class="caveat"><span class="label">Caveat.</span> <mark class="hl">Talks only, from unnamed sources</mark>; no round has been announced and the valuation could change.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://uk.finance.yahoo.com/news/cognition-talks-75-billion-value-204755865.html" rel="noopener noreferrer">Bloomberg via Yahoo Finance: Cognition in Talks for $75 Billion Value With New Funding</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-cognition-75-billion-talks"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-cognition-75-billion-talks">Draft for X</label><textarea id="share-x-story-cognition-75-billion-talks" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-cognition-75-billion-talks-count">Cognition, maker of the Devin coding agent, is in talks to raise money at a $75 billion valuation, Bloomberg reports
+
+→ Cognition did not respond to Bloomberg&#x27;s request for comment.
+
+Source: Bloomberg via Yahoo Finance; via The AI Gazette</textarea><p class="share-count" id="share-x-story-cognition-75-billion-talks-count">263 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Cognition%2C%20maker%20of%20the%20Devin%20coding%20agent%2C%20is%20in%20talks%20to%20raise%20money%20at%20a%20%2475%20billion%20valuation%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20Cognition%20did%20not%20respond%20to%20Bloomberg%27s%20request%20for%20comment.%0A%0ASource%3A%20Bloomberg%20via%20Yahoo%20Finance%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-cognition-75-billion-talks" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-cognition-75-billion-talks">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-cognition-75-billion-talks">Draft for LinkedIn</label><textarea id="share-li-story-cognition-75-billion-talks" class="share-text share-text-li" rows="12">Cognition, maker of the Devin coding agent, is in talks to raise money at a $75 billion valuation, Bloomberg reports
+
+→ AI coding start-up Cognition is in funding talks at a $75 billion valuation, two months after its last round, Bloomberg reported on Friday, citing people familiar with the matter.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-cognition-75-billion-talks
+Source: Bloomberg via Yahoo Finance; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Cognition%2C%20maker%20of%20the%20Devin%20coding%20agent%2C%20is%20in%20talks%20to%20raise%20money%20at%20a%20%2475%20billion%20valuation%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20AI%20coding%20start-up%20Cognition%20is%20in%20funding%20talks%20at%20a%20%2475%20billion%20valuation%2C%20two%20months%20after%20its%20last%20round%2C%20Bloomberg%20reported%20on%20Friday%2C%20citing%20people%20familiar%20with%20the%20matter.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-cognition-75-billion-talks%0ASource%3A%20Bloomberg%20via%20Yahoo%20Finance%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-cognition-75-billion-talks">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-cognition-75-billion-talks">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-alpoge-riemann-hypothesis-claim" aria-labelledby="h-alpoge-riemann-hypothesis-claim"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">Updated</span></p><h3 id="h-alpoge-riemann-hypothesis-claim">UPDATE: Independent mathematicians re-check the Lean proof of the claimed Riemann result and find no errors so far, as a rival human proof appears</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Update to yesterday afternoon&#x27;s edition, which reported Anthropic mathematician Levent Alpöge&#x27;s claim that he and Claude had proved the Riemann hypothesis, with no outside check yet. The new development: independent researchers, including MIT mathematician Andrew Sutherland, have <mark class="hl">compiled the Lean proof themselves without issues</mark>, Scientific American reported late on Friday.</p><p>&#x27;The Lean proof has been compiled and independently re-checked by the Lean kernel with only the three standard axioms,&#x27; Sutherland told the magazine. Imperial College London&#x27;s Kevin Buzzard wrote that a <mark class="hl">&#x27;comparator run&#x27; was still awaited</mark>, to check that the code does not redefine the statement&#x27;s symbols and that it compiles with several independent kernels.</p><p>Terence Tao, in a post on Friday, called the result an <mark class="hl">enormous Lean-only proof</mark> of the Generalized Riemann Hypothesis and pointed readers to the Lean community&#x27;s discussion thread. The same post lists Alpöge and NYU&#x27;s Tristan Buckmaster&#x27;s AI-assisted proof of blow-up for the <mark class="hl">unforced Navier-Stokes equations</mark>, posted on Friday at 14:37 Paris time, before the afternoon edition closed but not carried there; Tao says that paper still needs work to become a professionally written proof.</p><p>Also on Friday, Stanford&#x27;s Ravi Vakil posted a <mark class="hl">proposed all-human proof</mark> of the Generalized Riemann Hypothesis by postdoc Alessandro Masullo. About eight hours later Vakil added that several people had reported problems in it, found with the help of AI models.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: a formal proof that independent kernels accept moves the claim <mark class="hl">from announcement towards confirmation</mark>, though mathematicians still have to check the statement and understand the argument.</p></aside><p class="caveat"><span class="label">Caveat.</span> <mark class="hl">Not yet fully confirmed</mark>: the comparator check was pending in the reports read here, no paper or peer review exists, and the Navier-Stokes write-up is unpolished by its authors&#x27; own account.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;It looks like two independent kernels accept the result, which means its likely that there are no kernel bug exploitations in the proof.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50581818" rel="noopener noreferrer">chunky1994 (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;Dumb question but with something like 15 million lines of Lean code, how can we tell when the Lean build “passes” that it is actually formally verifying the right thing&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50583510" rel="noopener noreferrer">swingboy (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest" rel="noopener noreferrer">Scientific American: The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/" rel="noopener noreferrer">Terence Tao: Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.scientificamerican.com/article/ai-just-solved-the-real-navier-stokes-problem" rel="noopener noreferrer">Scientific American: AI just solved the &#x27;real&#x27; Navier-Stokes problem</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/tristanbuckmaster/navier-stokes/" rel="noopener noreferrer">GitHub: tristanbuckmaster/navier-stokes</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" rel="noopener noreferrer">Ravi Vakil: Hurried Announcement: Alessandro Masullo GRH</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/" rel="noopener noreferrer">TechCrunch: AI claimed a solution to the 167-year-old Riemann hypothesis, and a human did, too</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-alpoge-riemann-hypothesis-claim"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-alpoge-riemann-hypothesis-claim">Draft for X</label><textarea id="share-x-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-alpoge-riemann-hypothesis-claim-count">UPDATE: Independent mathematicians re-check the Lean proof of the claimed Riemann result and find no errors so far, as a rival human proof appears
+
+Sources: Scientific American, Terence Tao, GitHub; via The AI Gazette</textarea><p class="share-count" id="share-x-story-alpoge-riemann-hypothesis-claim-count">241 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Independent%20mathematicians%20re-check%20the%20Lean%20proof%20of%20the%20claimed%20Riemann%20result%20and%20find%20no%20errors%20so%20far%2C%20as%20a%20rival%20human%20proof%20appears%0A%0ASources%3A%20Scientific%20American%2C%20Terence%20Tao%2C%20GitHub%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-alpoge-riemann-hypothesis-claim" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-alpoge-riemann-hypothesis-claim">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-alpoge-riemann-hypothesis-claim">Draft for LinkedIn</label><textarea id="share-li-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-li" rows="12">UPDATE: Independent mathematicians re-check the Lean proof of the claimed Riemann result and find no errors so far, as a rival human proof appears
+
+→ &#x27;The Lean proof has been compiled and independently re-checked by the Lean kernel with only the three standard axioms,&#x27; Sutherland told the magazine.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-alpoge-riemann-hypothesis-claim
+Sources: Scientific American, Terence Tao, GitHub; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Independent%20mathematicians%20re-check%20the%20Lean%20proof%20of%20the%20claimed%20Riemann%20result%20and%20find%20no%20errors%20so%20far%2C%20as%20a%20rival%20human%20proof%20appears%0A%0A%E2%86%92%20%27The%20Lean%20proof%20has%20been%20compiled%20and%20independently%20re-checked%20by%20the%20Lean%20kernel%20with%20only%20the%20three%20standard%20axioms%2C%27%20Sutherland%20told%20the%20magazine.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-alpoge-riemann-hypothesis-claim%0ASources%3A%20Scientific%20American%2C%20Terence%20Tao%2C%20GitHub%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-alpoge-riemann-hypothesis-claim">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-alpoge-riemann-hypothesis-claim">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-openai-medchembench" aria-labelledby="h-openai-medchembench"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-openai-medchembench">OpenAI publishes MedChemBench, a 99-problem test of AI reasoning in medicinal chemistry, and says GPT-6.2 Astra scores 84.5%</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>OpenAI introduced <mark class="hl">MedChemBench</mark>, a benchmark of 99 problems drawn from published medicinal chemistry research, with a paper. It tests whether models can connect a molecule&#x27;s structure with experimental results to explain findings, rank and choose compounds and predict their properties.</p><p>The problems draw on 117 papers and patents and 761 distinct molecular structures. At its highest reasoning setting, OpenAI says <mark class="hl">GPT-6.2 Astra earned 84.5%</mark> of the available credit, against 83.3% for GPT-6 Astra, 82.0% for GPT-6.1 Sol and 58.2% for GPT-5.6 Sol.</p><p>OpenAI says selecting compounds and predicting their numerical properties proved harder for GPT-6 Astra than reconstructing structures and explaining evidence.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: a benchmark built from real drug-discovery decisions gives a <mark class="hl">sharper test than general science quizzes</mark>, though it measures reasoning on paper, not results in a laboratory.</p></aside><p class="caveat"><span class="label">Caveat.</span> OpenAI built the benchmark and reports only its own models&#x27; scores. Its page gives only the date; the first reports appeared at 17:51 Paris time on Friday, <mark class="hl">after the previous edition closed</mark>.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://openai.com/index/introducing-medchembench" rel="noopener noreferrer">OpenAI: Can AI help scientists identify promising drug candidates?</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:04:00+01:00">21 Nov 2026, 06:04 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf" rel="noopener noreferrer">OpenAI: MedChemBench paper (PDF)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-openai-medchembench"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-openai-medchembench">Draft for X</label><textarea id="share-x-story-openai-medchembench" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-openai-medchembench-count">OpenAI publishes MedChemBench, a 99-problem test of AI reasoning in medicinal chemistry, and says GPT-6.2 Astra scores 84.5%
+
+→ The problems draw on 117 papers and patents and 761 distinct molecular structures.
+
+Source: OpenAI; via The AI Gazette</textarea><p class="share-count" id="share-x-story-openai-medchembench-count">271 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=OpenAI%20publishes%20MedChemBench%2C%20a%2099-problem%20test%20of%20AI%20reasoning%20in%20medicinal%20chemistry%2C%20and%20says%20GPT-6.2%20Astra%20scores%2084.5%25%0A%0A%E2%86%92%20The%20problems%20draw%20on%20117%20papers%20and%20patents%20and%20761%20distinct%20molecular%20structures.%0A%0ASource%3A%20OpenAI%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-openai-medchembench" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-openai-medchembench">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-openai-medchembench">Draft for LinkedIn</label><textarea id="share-li-story-openai-medchembench" class="share-text share-text-li" rows="12">OpenAI publishes MedChemBench, a 99-problem test of AI reasoning in medicinal chemistry, and says GPT-6.2 Astra scores 84.5%
+
+→ OpenAI introduced MedChemBench, a benchmark of 99 problems drawn from published medicinal chemistry research, with a paper.
+→ The problems draw on 117 papers and patents and 761 distinct molecular structures.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-openai-medchembench
+Source: OpenAI; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=OpenAI%20publishes%20MedChemBench%2C%20a%2099-problem%20test%20of%20AI%20reasoning%20in%20medicinal%20chemistry%2C%20and%20says%20GPT-6.2%20Astra%20scores%2084.5%25%0A%0A%E2%86%92%20OpenAI%20introduced%20MedChemBench%2C%20a%20benchmark%20of%2099%20problems%20drawn%20from%20published%20medicinal%20chemistry%20research%2C%20with%20a%20paper.%0A%E2%86%92%20The%20problems%20draw%20on%20117%20papers%20and%20patents%20and%20761%20distinct%20molecular%20structures.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-openai-medchembench%0ASource%3A%20OpenAI%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-openai-medchembench">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-openai-medchembench">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-ipo-investor-doubts" aria-labelledby="h-anthropic-ipo-investor-doubts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-ipo-investor-doubts">UPDATE: Anthropic gives back most of its debut gain as the Nasdaq falls 5.3% and Nvidia drops 14% on a reported SEC accounting probe</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T22:30:00+01:00">20 Nov 2026, 22:30 CET</time></p><div class="story-body"><p>Update to yesterday afternoon&#x27;s edition, which reported that Anthropic&#x27;s offering had closed at $93.5 billion and that the shares were lower before Friday&#x27;s open. The new development: in its first full session the stock <mark class="hl">fell about 9%</mark>, after being down as much as 14% at one point, Reuters reported after the close.</p><p>The fall came in a broad retreat from AI stocks. The <mark class="hl">Nasdaq dropped 5.3%</mark> on Friday and the S&amp;P 500 3.7%, and Reuters put the Nasdaq&#x27;s weekly decline at 10%, its biggest since 2020. The Los Angeles Times reported the S&amp;P 500&#x27;s steepest weekly loss in more than 18 months.</p><p>Nvidia <mark class="hl">fell 14% on Friday and 23% over the week</mark>, after Reuters reported that the Securities and Exchange Commission is examining the company&#x27;s accounting. A semiconductor index of AI favourites fell 11%, and the VIX volatility index rose 33% to 37, according to Reuters.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: two days after the largest listing of an AI lab, the market is <mark class="hl">repricing the whole AI trade</mark>; the reported SEC inquiry adds a new question mark over the sector&#x27;s biggest supplier.</p></aside><p class="caveat"><span class="label">Caveat.</span> The SEC inquiry is <mark class="hl">reported by Reuters from unnamed sources</mark>; neither the SEC nor Nvidia had confirmed it in the coverage read here, and Reuters&#x27; own article could not be read from this machine. Price moves are closing figures as reported, not this paper&#x27;s own market data.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;They&#x27;re now down nearly 50% since their high 6 weeks ago. Absolutely crazy.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50581930" rel="noopener noreferrer">jjcm (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;If the board thought there were accounting issues why did they make the CFO the interim CEO?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50582002" rel="noopener noreferrer">ralph84 (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://finance.yahoo.com/markets/stocks/articles/nasdaq-plunges-5-day-anthropic-211724232.html" rel="noopener noreferrer">Reuters via Yahoo Finance: Nasdaq plunges 5% a day after Anthropic debut, but investors still believe in AI</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.latimes.com/politics/story/2026-11-20/trump-says-hell-penalize-u-s-companies-that-build-data-centers-abroad" rel="noopener noreferrer">Los Angeles Times: Trump says he&#x27;ll penalize U.S. companies that build data centers abroad</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50581438" rel="noopener noreferrer">Hacker News: discussion of the reported SEC probe of Nvidia</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-anthropic-ipo-investor-doubts"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-anthropic-ipo-investor-doubts">Draft for X</label><textarea id="share-x-story-anthropic-ipo-investor-doubts" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-anthropic-ipo-investor-doubts-count">UPDATE: Anthropic gives back most of its debut gain as the Nasdaq falls 5.3% and Nvidia drops 14% on a reported SEC accounting probe
+
+Sources: Reuters via Yahoo Finance, Los Angeles Times; via The AI Gazette</textarea><p class="share-count" id="share-x-story-anthropic-ipo-investor-doubts-count">231 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Anthropic%20gives%20back%20most%20of%20its%20debut%20gain%20as%20the%20Nasdaq%20falls%205.3%25%20and%20Nvidia%20drops%2014%25%20on%20a%20reported%20SEC%20accounting%20probe%0A%0ASources%3A%20Reuters%20via%20Yahoo%20Finance%2C%20Los%20Angeles%20Times%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-anthropic-ipo-investor-doubts" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-anthropic-ipo-investor-doubts">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-anthropic-ipo-investor-doubts">Draft for LinkedIn</label><textarea id="share-li-story-anthropic-ipo-investor-doubts" class="share-text share-text-li" rows="12">UPDATE: Anthropic gives back most of its debut gain as the Nasdaq falls 5.3% and Nvidia drops 14% on a reported SEC accounting probe
+
+→ The fall came in a broad retreat from AI stocks.
+→ The Los Angeles Times reported the S&amp;P 500&#x27;s steepest weekly loss in more than 18 months.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-anthropic-ipo-investor-doubts
+Sources: Reuters via Yahoo Finance, Los Angeles Times; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Anthropic%20gives%20back%20most%20of%20its%20debut%20gain%20as%20the%20Nasdaq%20falls%205.3%25%20and%20Nvidia%20drops%2014%25%20on%20a%20reported%20SEC%20accounting%20probe%0A%0A%E2%86%92%20The%20fall%20came%20in%20a%20broad%20retreat%20from%20AI%20stocks.%0A%E2%86%92%20The%20Los%20Angeles%20Times%20reported%20the%20S%26P%20500%27s%20steepest%20weekly%20loss%20in%20more%20than%2018%20months.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-anthropic-ipo-investor-doubts%0ASources%3A%20Reuters%20via%20Yahoo%20Finance%2C%20Los%20Angeles%20Times%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-anthropic-ipo-investor-doubts">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-anthropic-ipo-investor-doubts">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-trump-data-centres-abroad-tax" aria-labelledby="h-trump-data-centres-abroad-tax"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-trump-data-centres-abroad-tax">Trump threatens a &#x27;tremendous tax&#x27; on US companies that build AI data centres abroad, without saying how it would work</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T20:51:00+01:00">20 Nov 2026, 20:51 CET</time></p><div class="story-body"><p>President Donald Trump told a White House press briefing on Friday that US tech companies building AI data centres in other countries would face <mark class="hl">a &#x27;tremendous tax&#x27;</mark>. &#x27;We&#x27;re not allowing data centres to go into other countries because China will take all of them, and we&#x27;re not allowing that to happen,&#x27; he said, according to the Associated Press as published by CBC.</p><p>Trump gave no details on enforcement and said he <mark class="hl">had not yet told his own officials</mark> about the plan, the BBC and AP reported. He singled out Google&#x27;s planned build in Finland, according to the BBC, and urged Americans to welcome data centres and make developers pay their communities.</p><p>The remarks came as data centres have become a political issue after this month&#x27;s midterm elections, and days after the administration&#x27;s new rules restricting remote access to advanced US chips.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: US hyperscalers have <mark class="hl">overseas projects in Finland, Canada and elsewhere</mark>; even an unspecified threat adds policy risk to where AI capacity gets built.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is a <mark class="hl">spoken threat, not a policy</mark>: no executive order, rule or bill was published, and the remarks gave no rate, scope or legal basis.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.bbc.co.uk/news/articles/cmde1lw9y54ko" rel="noopener noreferrer">BBC: Trump threatens ban on US firms building AI data centres overseas</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.cbc.ca/news/world/ai-data-centres-us-tech-companies-trump-9.7430426" rel="noopener noreferrer">CBC (Associated Press): Trump threatens to penalize U.S. tech companies that build AI data centres in other countries</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:05:00+01:00">21 Nov 2026, 06:05 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-trump-data-centres-abroad-tax"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-trump-data-centres-abroad-tax">Draft for X</label><textarea id="share-x-story-trump-data-centres-abroad-tax" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-trump-data-centres-abroad-tax-count">Trump threatens a &#x27;tremendous tax&#x27; on US companies that build AI data centres abroad, without saying how it would work
+
+Sources: BBC, CBC (Associated Press); via The AI Gazette</textarea><p class="share-count" id="share-x-story-trump-data-centres-abroad-tax-count">200 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Trump%20threatens%20a%20%27tremendous%20tax%27%20on%20US%20companies%20that%20build%20AI%20data%20centres%20abroad%2C%20without%20saying%20how%20it%20would%20work%0A%0ASources%3A%20BBC%2C%20CBC%20%28Associated%20Press%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-trump-data-centres-abroad-tax" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-trump-data-centres-abroad-tax">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-trump-data-centres-abroad-tax">Draft for LinkedIn</label><textarea id="share-li-story-trump-data-centres-abroad-tax" class="share-text share-text-li" rows="12">Trump threatens a &#x27;tremendous tax&#x27; on US companies that build AI data centres abroad, without saying how it would work
+
+→ President Donald Trump told a White House press briefing on Friday that US tech companies building AI data centres in other countries would face a &#x27;tremendous tax&#x27;.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-trump-data-centres-abroad-tax
+Sources: BBC, CBC (Associated Press); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Trump%20threatens%20a%20%27tremendous%20tax%27%20on%20US%20companies%20that%20build%20AI%20data%20centres%20abroad%2C%20without%20saying%20how%20it%20would%20work%0A%0A%E2%86%92%20President%20Donald%20Trump%20told%20a%20White%20House%20press%20briefing%20on%20Friday%20that%20US%20tech%20companies%20building%20AI%20data%20centres%20in%20other%20countries%20would%20face%20a%20%27tremendous%20tax%27.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-trump-data-centres-abroad-tax%0ASources%3A%20BBC%2C%20CBC%20%28Associated%20Press%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-trump-data-centres-abroad-tax">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-trump-data-centres-abroad-tax">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-oracle-openai-fully-funded" aria-labelledby="h-oracle-openai-fully-funded"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-oracle-openai-fully-funded">Oracle says its OpenAI contract is fully funded and calls itself the first hyperscaler funded for this investment cycle</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Oracle said in a statement on Friday that it has <mark class="hl">secured all the funding it needs</mark> to fulfil its contract with OpenAI, and that its final capital raise earlier this month made it &#x27;the first hyperscaler fully funded for this investment cycle&#x27;. It said further private talks with vendors are &#x27;just additional options&#x27; and that reports saying otherwise would be &#x27;incorrect and wrong&#x27;.</p><p>The company said its Abilene campus is nearly complete, its next gigawatt-scale campus at Shackelford is fully permitted, and the handover of Nvidia Vera Rubin racks there is on track for the coming weeks. It repeated targets of positive free cash flow in the second half of fiscal 2028 and <mark class="hl">more than $30 billion in fiscal 2029</mark>.</p><p>EconoTimes reported that the November raise comprised about <mark class="hl">$9.9 billion in net proceeds</mark> from shares sold at $116 and about $10 billion from senior notes with coupons of 7% to 8.65%.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: Oracle is answering market doubts about how AI build-outs are financed, on the day those doubts hit AI stocks hardest.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are <mark class="hl">Oracle&#x27;s own claims and forward-looking targets</mark>; the statement gives no figure for the contract or the vendor financing, and it pre-emptively rejects reports it does not name.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.oracle.com/news/announcement/oracle-statement-2026-11-20/" rel="noopener noreferrer">Oracle: Oracle Statement (20 November 2026)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://econotimes.com/Oracle-Says-It-Has-Funding-Secured-for-OpenAI-Infrastructure-Contract-1780538" rel="noopener noreferrer">EconoTimes: Oracle Says It Has Funding Secured for OpenAI Infrastructure Contract</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T06:06:00+01:00">21 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-morning.html#story-oracle-openai-fully-funded"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-oracle-openai-fully-funded">Draft for X</label><textarea id="share-x-story-oracle-openai-fully-funded" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-oracle-openai-fully-funded-count">Oracle says its OpenAI contract is fully funded and calls itself the first hyperscaler funded for this investment cycle
+
+Sources: Oracle, EconoTimes; via The AI Gazette</textarea><p class="share-count" id="share-x-story-oracle-openai-fully-funded-count">192 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Oracle%20says%20its%20OpenAI%20contract%20is%20fully%20funded%20and%20calls%20itself%20the%20first%20hyperscaler%20funded%20for%20this%20investment%20cycle%0A%0ASources%3A%20Oracle%2C%20EconoTimes%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-oracle-openai-fully-funded" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-oracle-openai-fully-funded">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-oracle-openai-fully-funded">Draft for LinkedIn</label><textarea id="share-li-story-oracle-openai-fully-funded" class="share-text share-text-li" rows="12">Oracle says its OpenAI contract is fully funded and calls itself the first hyperscaler funded for this investment cycle
+
+→ EconoTimes reported that the November raise comprised about $9.9 billion in net proceeds from shares sold at $116 and about $10 billion from senior notes with coupons of 7% to 8.65%.
+
+https://luongnv.com/news/reports/2026-11-21-morning.html#story-oracle-openai-fully-funded
+Sources: Oracle, EconoTimes; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Oracle%20says%20its%20OpenAI%20contract%20is%20fully%20funded%20and%20calls%20itself%20the%20first%20hyperscaler%20funded%20for%20this%20investment%20cycle%0A%0A%E2%86%92%20EconoTimes%20reported%20that%20the%20November%20raise%20comprised%20about%20%249.9%20billion%20in%20net%20proceeds%20from%20shares%20sold%20at%20%24116%20and%20about%20%2410%20billion%20from%20senior%20notes%20with%20coupons%20of%207%25%20to%208.65%25.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-morning.html%23story-oracle-openai-fully-funded%0ASources%3A%20Oracle%2C%20EconoTimes%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-oracle-openai-fully-funded">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-morning.html#story-oracle-openai-fully-funded">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>The AI trade is being repriced: the <mark class="hl">Nasdaq lost 10% in a week</mark>, and Anthropic&#x27;s debut did not stop it.</li><li>AI mathematics is moving from claims to checks, with <mark class="hl">independent Lean re-runs</mark> of the Riemann proof.</li><li>Autonomous agents are now an <mark class="hl">attacker&#x27;s tool in documented campaigns</mark>, not only a lab demonstration.</li><li>Where AI capacity is built is becoming political, from a <mark class="hl">threatened tax on foreign data centres</mark> to Oracle&#x27;s funding assurances.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (16 threads; 26 requests blocked with HTTP 403; Arctic Shift archive supplied posts, some of its lookups failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (30 stories)</dd></div><div><dt>github</dt><dd>ok (13 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 71 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top clusters were Signal&#x27;s screenshot block, Chinese labs, the AI-designed Frostbite CPU and the Wall Street AI sell-off; the comments quoted here came from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window: from 16:14 yesterday, when the afternoon edition closed, to this edition. No newsletter lead needed a wider window.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results, but 26 of its requests were blocked (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.</li><li>Paywalled or not read: Bloomberg&#x27;s original Cognition article (read through its Yahoo Finance syndication), the Wall Street Journal&#x27;s market coverage, The Information on SoftBank and SK Hynix, and the Associated Press site, which answered HTTP 403 (its report was read as published by CBC). Reuters&#x27; own pages, including its SEC exclusive on Nvidia, were not read.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file has three leads. Anthropic&#x27;s first trading day and Gemini&#x27;s free task agent ran in earlier editions; the Product Hunt and Google Cloud hackathon was not carried.</li><li>Not carried: OpenAI&#x27;s post on combatting adversarial distillation (published 11:00 Paris time on Friday, before this window), Google&#x27;s new Search homepage and Connected Apps, Google&#x27;s Nest app and speaker Assistant shutdown dates, a Google Research post on Duplex calls in Gemini, and Senate Democrats&#x27; proposed select committee on AI.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 16 threads │ 9,729 upvotes │ 973 comments
+├─  HN: 30 stories │ 2,257 points │ 1,487 comments
+├─  dev.to: 12 articles │ 218 reactions │ 130 comments
+├─  GitHub: 13 items │ 45 reactions │ 266 comments
+├─  Top voices: r/technology, r/singularity, r/artificial
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-21-morning.json" download>Exact input JSON</a></li><li><a href="2026-11-21-morning.md">Markdown text</a></li><li><a href="2026-11-21-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
