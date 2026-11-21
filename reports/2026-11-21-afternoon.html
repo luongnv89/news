@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Saturday 21 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-21-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Saturday 21 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-21-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-21T16:08:44+01:00">Saturday 21 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-21-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-21-afternoon.html">This edition</a><a href="2026-11-21-afternoon.md">Markdown</a><a href="2026-11-21-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-21-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Saturday 21 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-20T21:00:00+01:00">20 Nov 2026, 21:00 CET</time> to <time datetime="2026-11-21T16:08:44+01:00">21 Nov 2026, 16:08 CET</time> (Paris time). Issued <time datetime="2026-11-21T16:08:44+01:00">21 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">Ten hours since the morning edition, a quiet Saturday, and <mark class="hl">no new frontier model</mark>. The window was widened back to 21:00 on Friday to pick up two stories the morning edition missed: Thinking Machines&#x27; laptop-sized open model <mark class="hl">Inkling 2 Mini</mark>, and Etsy&#x27;s promise to revise its AI-training terms after sellers closed their shops. Overnight in Geneva, UN weapons talks ended with a <mark class="hl">two-year mandate</mark> to draft rules on autonomous weapons, without agreeing that those rules will be binding.</p><p class="tally">3 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-21-morning.html">2026-11-21-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-inkling-2-mini" aria-labelledby="h-inkling-2-mini"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-inkling-2-mini">Thinking Machines releases Inkling 2 Mini, a 26-billion-parameter open-weights model small enough to run on a 32GB Mac</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20">20 Nov 2026</time></p><div class="story-body"><p>Thinking Machines Lab released <mark class="hl">Inkling 2 Mini</mark> on Friday, an open-weights model under the <mark class="hl">Apache 2.0 licence</mark> that it says is small enough to run on a laptop. The weights are on Hugging Face, the model is on the company&#x27;s Tinker platform, and Ollama lists it for Macs with <mark class="hl">32GB or more of memory</mark>. It was first posted to Hacker News at 21:12 Paris time on Friday, after the previous afternoon edition had closed, and the morning edition did not carry it.</p><p>Inkling 2 Mini is a mixture-of-experts model with <mark class="hl">26.4 billion total parameters</mark> and 3.4 billion active per token. It is a looped transformer: the middle 12 of its 24 layers run three times for every token, which the company says lets it reason more without writing more tokens. Most of its weights were trained and ship in 4-bit NVFP4, for a memory footprint of about 20GB.</p><p>Thinking Machines says the model leads every open-weights model under 100 billion parameters on DeepSWE v1.1 (48.2%) and Vals Index v2.2 (46.5%). It also says the model is weaker on multi-turn chat and on instructions with many constraints, where it trails Qwen3.8-27B. Artificial Analysis, which tests models independently, placed it at <mark class="hl">20 on its Intelligence Index</mark>, level with Qwen3.8 27B, at $0.59 per task against $3.53.</p><p>The lab also released a research variant with a variable number of loops, used to test whether looping hides reasoning from people reading a model&#x27;s chain of thought. It reports that the chain of thought got shorter with more loops but stayed legible, and that the model did not score higher on tests of agentic sabotage as loops were added.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: a <mark class="hl">looped transformer good enough for agentic coding</mark> at laptop size is a new design point for open weights; tests beyond one index will show whether the benchmark lead holds.</p></aside><p class="caveat"><span class="label">Caveat.</span> The benchmark results are Thinking Machines&#x27; own, except the Artificial Analysis index. The release page gives only the date; the time comes from the first Hacker News post.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;I think this may be the first public example of a looped transformer model good enough for real world use cases?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50581821" rel="noopener noreferrer">gchadwick (Hacker News)</a></p></blockquote><blockquote><p>&ldquo;This is bonkers good if these benchmarks hold up in real-world scenarios.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50581726" rel="noopener noreferrer">montroser (Hacker News)</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://thinkingmachines.ai/news/inkling-2-mini/" rel="noopener noreferrer">Thinking Machines: Introducing Inkling 2 Mini</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:34+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://thinkingmachines.ai/model-card/inkling-2-mini/" rel="noopener noreferrer">Thinking Machines: Inkling 2 Mini model card</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:34+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" rel="noopener noreferrer">Hugging Face: thinkingmachines/Inkling-2-Mini</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:35+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://ollama.com/library/inkling-2-mini" rel="noopener noreferrer">Ollama: inkling-2-mini</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:35+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://artificialanalysis.ai/articles/inkling-2-mini" rel="noopener noreferrer">Artificial Analysis: Thinking Machines has released Inkling 2 Mini</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:35+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50581260" rel="noopener noreferrer">Hacker News: discussion of Inkling 2 Mini</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-21T16:08:36+01:00">21 Nov 2026, 16:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-inkling-2-mini"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-inkling-2-mini">Draft for X</label><textarea id="share-x-story-inkling-2-mini" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-inkling-2-mini-count">Thinking Machines releases Inkling 2 Mini, a 26-billion-parameter open-weights model small enough to run on a 32GB Mac
+
+Sources: Thinking Machines, Hugging Face, Ollama; via The AI Gazette</textarea><p class="share-count" id="share-x-story-inkling-2-mini-count">212 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Thinking%20Machines%20releases%20Inkling%202%20Mini%2C%20a%2026-billion-parameter%20open-weights%20model%20small%20enough%20to%20run%20on%20a%2032GB%20Mac%0A%0ASources%3A%20Thinking%20Machines%2C%20Hugging%20Face%2C%20Ollama%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-inkling-2-mini" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-inkling-2-mini">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-inkling-2-mini">Draft for LinkedIn</label><textarea id="share-li-story-inkling-2-mini" class="share-text share-text-li" rows="12">Thinking Machines releases Inkling 2 Mini, a 26-billion-parameter open-weights model small enough to run on a 32GB Mac
+
+→ The weights are on Hugging Face, the model is on the company&#x27;s Tinker platform, and Ollama lists it for Macs with 32GB or more of memory.
+
+https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-inkling-2-mini
+Sources: Thinking Machines, Hugging Face, Ollama; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Thinking%20Machines%20releases%20Inkling%202%20Mini%2C%20a%2026-billion-parameter%20open-weights%20model%20small%20enough%20to%20run%20on%20a%2032GB%20Mac%0A%0A%E2%86%92%20The%20weights%20are%20on%20Hugging%20Face%2C%20the%20model%20is%20on%20the%20company%27s%20Tinker%20platform%2C%20and%20Ollama%20lists%20it%20for%20Macs%20with%2032GB%20or%20more%20of%20memory.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-inkling-2-mini%0ASources%3A%20Thinking%20Machines%2C%20Hugging%20Face%2C%20Ollama%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-inkling-2-mini">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-inkling-2-mini">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-un-autonomous-weapons-mandate" aria-labelledby="h-un-autonomous-weapons-mandate"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-un-autonomous-weapons-mandate">UN weapons talks end with a two-year mandate to draft rules on autonomous weapons, but no commitment that they will be binding</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-21">21 Nov 2026</time></p><div class="story-body"><p>The 128 states party to the UN <mark class="hl">Convention on Certain Conventional Weapons</mark> agreed in Geneva at about 04:45 Paris time on Saturday to &#x27;elaborate&#x27; an international instrument on lethal autonomous weapons systems <mark class="hl">over the next two years</mark>. The review conference had met since Monday; talks on the final wording ran through the night after Russian objections over procedure led to some formal sessions being called off, diplomats told Al Jazeera.</p><p>Close to 100 states had backed legally binding rules on weapons that can kill without a human making the final decision. A group of seven, Austria, Belgium, Brazil, Ireland, Mexico, New Zealand and Panama, wanted a treaty negotiated within a year. Decisions require consensus, and the United States, Russia and Israel opposed binding rules, Al Jazeera and CNA reported. Some states rejected the word &#x27;negotiate&#x27;, so the text says &#x27;elaborate&#x27;, and <mark class="hl">whether the result will bind anyone is left open</mark>.</p><p>UN disarmament chief Izumi Nakamitsu called the outcome a &#x27;significant achievement&#x27; and said &#x27;the path to or possibility to have a legally binding instrument is still open&#x27;. A group of governmental experts will recommend the instrument&#x27;s legal form, including whether it should be a binding protocol. The International Committee of the Red Cross said it regretted the lack of a clear negotiating mandate, and the Stop Killer Robots coalition called the mandate &#x27;watered down&#x27;.</p><p>Separately, US Treasury Secretary Scott Bessent told CNBC on Friday that Presidents Trump and Xi had agreed at their Shenzhen meeting that humans should always be involved in military decisions made with AI, Reuters reported. No written text of that agreement was found.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: the forum that has discussed autonomous weapons for more than a decade now has a <mark class="hl">2028 horizon but no guarantee of binding rules</mark>, while campaigners say such weapons are already in use.</p></aside><p class="caveat"><span class="label">Caveat.</span> The agreed mandate text was not found online; its terms here come from the conference chair and UN officials as reported by news agencies. Reports put the close between 04:30 and 05:00 Geneva time.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.aljazeera.com/news/2026/11/21/nations-agree-to-draft-rules-for-killer-robots-at-arms-control-summit" rel="noopener noreferrer">Al Jazeera: Nations agree to &#x27;elaborate&#x27; on rules for AI-run &#x27;killer robots&#x27; by 2028</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:37+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theguardian.com/technology/2026/nov/21/international-talks-control-ai-autonomous-weapons-collapse" rel="noopener noreferrer">The Guardian: International talks on controlling use of autonomous weapons collapse</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:37+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.aa.com.tr/en/world/un-sees-progress-on-autonomous-weapons-regulation-despite-lack-of-binding-treaty-mandate/4133032" rel="noopener noreferrer">Anadolu: UN sees progress on autonomous weapons regulation despite lack of binding treaty mandate</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:38+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/world/united-nations-regulate-killer-robots-weapons-6571256" rel="noopener noreferrer">CNA: States agree to UN talks aiming to regulate &#x27;killer robots&#x27; by 2028</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:37+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.npr.org/2026/11/21/nx-s1-6047916/killer-robots-un-drones" rel="noopener noreferrer">NPR: Killer robots, the race to control weapons that can decide who lives or dies</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:37+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.defensenews.com/global/asia-pacific/2026/11/20/trump-xi-agreed-that-military-ai-decisions-should-involve-humans-bessent-says/" rel="noopener noreferrer">Defense News (Reuters): Trump, Xi agreed that military AI decisions should involve humans, Bessent says</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:38+01:00">21 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-un-autonomous-weapons-mandate"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-un-autonomous-weapons-mandate">Draft for X</label><textarea id="share-x-story-un-autonomous-weapons-mandate" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-un-autonomous-weapons-mandate-count">UN weapons talks end with a two-year mandate to draft rules on autonomous weapons, but no commitment that they will be binding
+
+→ No written text of that agreement was found.
+
+Sources: Al Jazeera, The Guardian, Anadolu; via The AI Gazette</textarea><p class="share-count" id="share-x-story-un-autonomous-weapons-mandate-count">263 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UN%20weapons%20talks%20end%20with%20a%20two-year%20mandate%20to%20draft%20rules%20on%20autonomous%20weapons%2C%20but%20no%20commitment%20that%20they%20will%20be%20binding%0A%0A%E2%86%92%20No%20written%20text%20of%20that%20agreement%20was%20found.%0A%0ASources%3A%20Al%20Jazeera%2C%20The%20Guardian%2C%20Anadolu%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-un-autonomous-weapons-mandate" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-un-autonomous-weapons-mandate">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-un-autonomous-weapons-mandate">Draft for LinkedIn</label><textarea id="share-li-story-un-autonomous-weapons-mandate" class="share-text share-text-li" rows="12">UN weapons talks end with a two-year mandate to draft rules on autonomous weapons, but no commitment that they will be binding
+
+→ Close to 100 states had backed legally binding rules on weapons that can kill without a human making the final decision.
+→ No written text of that agreement was found.
+
+https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-un-autonomous-weapons-mandate
+Sources: Al Jazeera, The Guardian, Anadolu; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UN%20weapons%20talks%20end%20with%20a%20two-year%20mandate%20to%20draft%20rules%20on%20autonomous%20weapons%2C%20but%20no%20commitment%20that%20they%20will%20be%20binding%0A%0A%E2%86%92%20Close%20to%20100%20states%20had%20backed%20legally%20binding%20rules%20on%20weapons%20that%20can%20kill%20without%20a%20human%20making%20the%20final%20decision.%0A%E2%86%92%20No%20written%20text%20of%20that%20agreement%20was%20found.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-un-autonomous-weapons-mandate%0ASources%3A%20Al%20Jazeera%2C%20The%20Guardian%2C%20Anadolu%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-un-autonomous-weapons-mandate">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-un-autonomous-weapons-mandate">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-etsy-ai-training-terms" aria-labelledby="h-etsy-ai-training-terms"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-etsy-ai-training-terms">Etsy says it will revise new terms that let it and its partners train AI on sellers&#x27; work, after shops close in protest</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-20T23:50:16+01:00">20 Nov 2026, 23:50 CET</time></p><div class="story-body"><p>Etsy told The New York Times on Friday that it would revise its new Terms of Use, which take effect on <mark class="hl">16 December</mark> and add a right for Etsy and its &#x27;third party partners and vendors&#x27; to use sellers&#x27; content to &#x27;develop, train, test and improve artificial intelligence and machine learning technologies&#x27;. The Verge reported the planned revision at 23:50 Paris time on Friday, after the previous afternoon edition had closed.</p><p>Several long-time sellers had closed their shops over the clause, the Times reported, among them an illustrator who had sold on the site for nearly a decade and a home goods and stationery brand with 13 years there. Etsy&#x27;s vice-president for customer operations, James Ossman, said the company would <mark class="hl">share the revised terms directly with sellers soon</mark> and that their creative work belongs to them.</p><p>Earlier in the week, in a post on Etsy&#x27;s community site, Ossman wrote that Etsy does not use seller content &#x27;to train AI models designed to copy your original work or replace your creativity&#x27;. He listed its current uses as fraud detection, search and recommendations, and seller tools, and said vendors with access include fraud-detection services and advertising partners. The revised wording has <mark class="hl">not yet been published</mark>.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Editorial analysis: Etsy is the latest platform to find that <mark class="hl">broad AI-training clauses can cost it the creators</mark> whose work it sells.</p></aside><p class="caveat"><span class="label">Caveat.</span> Etsy&#x27;s promise to revise the terms was made in a statement emailed to The New York Times, read here in the Philadelphia Inquirer&#x27;s syndicated copy because the Times site is paywalled. Etsy&#x27;s Terms of Use page answered HTTP 403 and was not read; the clause wording comes from the Times report.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://community.etsy.com/forum/announcements-290/topic/our-recent-terms-of-use-update-192097" rel="noopener noreferrer">Etsy Community: Our recent Terms of Use update</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:39+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/ai-artificial-intelligence/1039304/etsy-says-it-will-revise-its-new-ai-policy-after-backlash-from-sellers" rel="noopener noreferrer">The Verge: Etsy says it will revise its new AI policy after backlash from sellers</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:39+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.inquirer.com/business/etsy-artists-vendors-sellers-ai-policy-train-protest-20261121.html" rel="noopener noreferrer">The Philadelphia Inquirer (New York Times): Many Etsy sellers close up shop over site&#x27;s new AI policy</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:39+01:00">21 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.engadget.com/2324090/etsy-not-use-seller-content-train-ai" rel="noopener noreferrer">Engadget: Etsy says it will not use sellers&#x27; content to train AI after they revolt over policy changes</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-21T16:06:39+01:00">21 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-etsy-ai-training-terms"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-etsy-ai-training-terms">Draft for X</label><textarea id="share-x-story-etsy-ai-training-terms" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-etsy-ai-training-terms-count">Etsy says it will revise new terms that let it and its partners train AI on sellers&#x27; work, after shops close in protest
+
+→ The revised wording has not yet been published.
+
+Sources: Etsy Community, The Verge, Engadget; via The AI Gazette</textarea><p class="share-count" id="share-x-story-etsy-ai-training-terms-count">261 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Etsy%20says%20it%20will%20revise%20new%20terms%20that%20let%20it%20and%20its%20partners%20train%20AI%20on%20sellers%27%20work%2C%20after%20shops%20close%20in%20protest%0A%0A%E2%86%92%20The%20revised%20wording%20has%20not%20yet%20been%20published.%0A%0ASources%3A%20Etsy%20Community%2C%20The%20Verge%2C%20Engadget%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-etsy-ai-training-terms" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-etsy-ai-training-terms">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-etsy-ai-training-terms">Draft for LinkedIn</label><textarea id="share-li-story-etsy-ai-training-terms" class="share-text share-text-li" rows="12">Etsy says it will revise new terms that let it and its partners train AI on sellers&#x27; work, after shops close in protest
+
+→ Etsy&#x27;s vice-president for customer operations, James Ossman, said the company would share the revised terms directly with sellers soon and that their creative work belongs to them.
+
+https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-etsy-ai-training-terms
+Sources: Etsy Community, The Verge, Engadget; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Etsy%20says%20it%20will%20revise%20new%20terms%20that%20let%20it%20and%20its%20partners%20train%20AI%20on%20sellers%27%20work%2C%20after%20shops%20close%20in%20protest%0A%0A%E2%86%92%20Etsy%27s%20vice-president%20for%20customer%20operations%2C%20James%20Ossman%2C%20said%20the%20company%20would%20share%20the%20revised%20terms%20directly%20with%20sellers%20soon%20and%20that%20their%20creative%20work%20belongs%20to%20them.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-21-afternoon.html%23story-etsy-ai-training-terms%0ASources%3A%20Etsy%20Community%2C%20The%20Verge%2C%20Engadget%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-etsy-ai-training-terms">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-21-afternoon.html#story-etsy-ai-training-terms">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Open models are shrinking to laptop size: <mark class="hl">Inkling 2 Mini fits in about 20GB</mark>.</li><li>Rules on military AI move by consensus and slowly: a <mark class="hl">two-year mandate</mark>, binding or not.</li><li>Creators are pushing back on <mark class="hl">AI-training clauses</mark>, and platforms are revising them.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>3.31.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (21 threads; 22 requests blocked with HTTP 403; Arctic Shift archive supplied posts, some of its lookups failed with HTTP 422)</dd></div><div><dt>hackernews</dt><dd>ok (28 stories)</dd></div><div><dt>github</dt><dd>ok (11 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine finished (exit 0) with 72 evidence items from Reddit, Hacker News, dev.to and GitHub. Its top clusters were a coding agent for DOS, Chinese labs, Friday&#x27;s Wall Street AI sell-off and the AI-designed Frostbite CPU; the Inkling comments quoted here came from the Hacker News search API. Stories were found with 16 Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Window widened: it starts at 21:00 on Friday, about when Thinking Machines released Inkling 2 Mini, instead of at 06:07 this morning, to carry two stories the morning edition missed (Inkling 2 Mini and Etsy&#x27;s planned revision). Nothing the morning edition carried is repeated.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results through the Arctic Shift archive, but 22 direct requests were blocked (HTTP 403) and some archive lookups failed (HTTP 422), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429 and Google DeepMind&#x27;s feed could not be parsed. Missing coverage does not mean nobody discussed these stories.</li><li>Paywalled or not read: The New York Times (paywalled; its Etsy report was read as syndicated by The Philadelphia Inquirer), Reuters&#x27; own pages (Bessent&#x27;s remarks were read in Defense News&#x27; copy of the Reuters report), the Associated Press site, which answered HTTP 403 and is not cited, and Etsy&#x27;s Terms of Use page, which answered HTTP 403. No published text of the Geneva mandate was found.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file has five leads. Inkling 2 Mini running locally on Ollama is carried here. Anthropic&#x27;s first two trading days and Gemini&#x27;s free task agent ran in earlier editions; the Product Hunt and Google Cloud hackathon was not carried.</li><li>Not carried: OpenAI&#x27;s report that its agents finish 46% of two-to-four-hour research tasks (published 18 November, outside the 48-hour limit), OpenAI&#x27;s GPT-Live-1.1 voice model in the API (19 November), Nvidia&#x27;s halt of licensed Hopper shipments to China (said on its earnings call earlier this week), ByteDance&#x27;s Axion 1.0 paper (an arXiv preprint first posted on 2 November), South Korean President Lee Jae Myung&#x27;s visit to the SK and AWS data centre site in Ulsan, and Fortune&#x27;s report on large school districts pushing back on Google&#x27;s AI Overviews.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 12,461 upvotes │ 1,255 comments
+├─  HN: 28 stories │ 2,393 points │ 1,788 comments
+├─  dev.to: 12 articles │ 127 reactions │ 37 comments
+├─  GitHub: 11 items │ 49 reactions │ 106 comments
+├─  Top voices: r/technology, r/singularity, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-21-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-21-afternoon.md">Markdown text</a></li><li><a href="2026-11-21-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
