@@ -1,0 +1,1447 @@
+{
+  "schema_version": 2,
+  "date": "2026-11-22",
+  "issued_at": "2026-11-22T08:03:30+01:00",
+  "source": {
+    "url": "https://github.com/trending?since=daily",
+    "checked_at": "2026-11-22T07:00:29+00:00",
+    "period": "daily",
+    "total_listed": 16
+  },
+  "editorial_note": "GitHub listed sixteen projects this Sunday morning, and fifteen of them were featured here in the past seven days; the sixteenth, CLI-Anything, was covered on 15 October and has not changed since. So there are no first-time cards today. The three picks are ==repeats that earned a return with new, sourced changes==: a mobile app-store guard that shipped version 2.5.0 overnight, a bug-hunting skill bundle that gained a HackerOne MCP server, and the last30days research skill, which put out three releases in three days. Curation order reflects practical interest, not GitHub rank. Trending is not a release date or an endorsement.",
+  "coverage_notes": [
+    "GitHub's daily listing held 16 rows at capture. The capture parsed exactly sixteen listing rows and is GitHub's own list, not a truncation by us.",
+    "All 16 listing entries were inspected. Exact public GitHub API metadata and recent releases of all sixteen entries were read between 07:00:50 and 07:01:12 UTC; the three picks' README files were read at 07:02:02-07:02:03 UTC, and their release notes and merged pull requests were read from the GitHub API at the same time. Every checked repository was active and unarchived.",
+    "Returning picks: mjmirza/app-store-compliance (card of 20 November) published release v2.5.0 at 00:21 UTC today; elementalsouls/Claude-BugHunter (card of 16 November) has no new tagged release, but merged a HackerOne MCP server on 18 November and a get_report tool on 20 November, both after its card; mvanhorn/last30days-skill (card of 17 November) published v4.4.0 (20 November), v4.5.0 (21 November) and v4.6.0 (22 November). The 21 November digest said none of the earlier picks had a release since its card; v4.4.0 of last30days, published at 05:46 UTC on 20 November, had been missed by that check.",
+    "Left out as unchanged since their cards in the past seven days: obra/superpowers, jingyaogong/minimind and cursor/plugins (18 November), google-labs-code/stitch-skills (16 November), nginx/nginx, firecrawl/firecrawl, Tracer-Cloud/opensre, cathrynlavery/diagram-design and zhouxiaoka/autoclip (20 November), and openvinotoolkit/openvino, toeverything/AFFiNE and XiaoYouChR/Ghost-Downloader-3 (21 November). Tracer-Cloud/opensre publishes a dated build every night (0.1.2026.11.22 at 00:57 UTC) and AFFiNE a canary build; minimind merged small fixes (a PyArrow pin and a Chinese repetition-penalty fix). None of these is treated as a material change.",
+    "HKUDS/CLI-Anything (featured 15 October) was inspected and not picked: the latest commit on its main branch is from 22 September and its latest tag, v0.4.0, from 25 June, so nothing has changed since its card.",
+    "mjmirza/app-store-compliance shows NOASSERTION in GitHub's license detection; its LICENSE file and README were read directly: the OpenRoots Agent License 2.3 for everything released from 27 August 2026.",
+    "Disclosure: The AI Gazette's twice-daily research step uses an earlier version of the last30days engine (mvanhorn/last30days-skill, pinned at 3.31.0), which is one of today's picks.",
+    "The preceding seven calendar dates, 15-21 November, were checked for local history; all seven editions exist.",
+    "The official listing was captured at 08:00:29 Europe/Paris. Literal stars-today labels are GitHub's displayed period figures; API total stars and README evidence were checked separately at the times shown per card. They are not an independently audited rolling 24-hour growth measurement.",
+    "Feature descriptions, adoption and performance figures come from each project's own README, release notes and pull requests and are the maintainers' claims. No candidate code, installer, CLI, package, extension or model was installed, downloaded or run, and none of this is a security audit or endorsement."
+  ],
+  "projects": [
+    {
+      "repository": "mjmirza/app-store-compliance",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "trending_rank": 12,
+      "description": "A pre-submission guard for iOS and Android apps: a playbook and shell script that scan a project for ==common App Store and Google Play rejection causes== before you submit.",
+      "why_interesting": "Material change since the 20 November card: release v2.5.0, published at 00:21 UTC today, adds ==a readiness file for checks a code scan cannot prove==, such as a working demo account, review notes and account deletion on a real device. Each report now opens with the date range of its rule pack and prints a STALE warning when even its newest source is more than 60 days old.",
+      "caveat": "The licence is the ==OpenRoots Agent License 2.3, not an OSI open-source licence==, with a royalty above USD 20 million in annual revenue. A clear scan is not an approval, as the README itself says, and the installer edits hook settings in several AI coding tools.",
+      "category": "Mobile development / compliance",
+      "language": "Shell",
+      "license": "OpenRoots Agent License 2.3",
+      "stars_total": 3546,
+      "stars_period": 720,
+      "stars_period_label": "720 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-11-22T07:01:06+00:00",
+      "readme_checked_at": "2026-11-22T07:02:03+00:00",
+      "evidence_urls": [
+        "https://github.com/mjmirza/app-store-compliance",
+        "https://api.github.com/repos/mjmirza/app-store-compliance",
+        "https://github.com/mjmirza/app-store-compliance/releases/tag/v2.5.0",
+        "https://github.com/mjmirza/app-store-compliance/blob/main/LICENSE"
+      ],
+      "readme_source_url": "https://api.github.com/repos/mjmirza/app-store-compliance/readme"
+    },
+    {
+      "repository": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "trending_rank": 1,
+      "description": "A skill bundle for authorized bug hunting and external red-team work: 83 skills and 15 slash commands for Claude Code, also loadable by other agents, built from ==patterns in 681 disclosed HackerOne reports==.",
+      "why_interesting": "Material change since the 16 November card: on 18 November it merged ==a HackerOne MCP server== that can search for duplicate reports and read a program's scope, and on 20 November a tool that fetches the full text of disclosed reports. A HackerOne account is optional and is needed only for private programs and the user's own reports, according to the README.",
+      "caveat": "This is ==offensive tooling, for assets you own or are authorized to test==. There is no new tagged release since v2.1 of June, so these changes sit only on the main branch, and the 'battle-tested' claims are the maintainer's.",
+      "category": "Security / AI agents",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 16434,
+      "stars_period": 1803,
+      "stars_period_label": "1,803 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-11-22T07:00:51+00:00",
+      "readme_checked_at": "2026-11-22T07:02:02+00:00",
+      "evidence_urls": [
+        "https://github.com/elementalsouls/Claude-BugHunter",
+        "https://api.github.com/repos/elementalsouls/Claude-BugHunter",
+        "https://github.com/elementalsouls/Claude-BugHunter/pull/162",
+        "https://github.com/elementalsouls/Claude-BugHunter/pull/187"
+      ],
+      "readme_source_url": "https://api.github.com/repos/elementalsouls/Claude-BugHunter/readme"
+    },
+    {
+      "repository": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "trending_rank": 10,
+      "description": "An agent research skill: it searches Reddit, Hacker News, GitHub, YouTube, prediction markets and the web for a topic, scores what people engaged with over the last 30 days, and writes a grounded brief.",
+      "why_interesting": "Material change since the 17 November card: three releases in three days, v4.4.0 to v4.6.0. Version 4.6.0 adds ==a TikTok and Instagram fallback that needs no paid API key==, using web search discovery and yt-dlp, while v4.4.0 was a batch of fixes, several of them for privacy. Disclosure: an earlier version of this engine powers part of The AI Gazette's own research step.",
+      "caveat": "The wider sources still rely on ==your own API keys or logged-in browser sessions==, and v4.5.0 changed how browser cookies are extracted, which gives an agent access to those accounts. Engagement measures attention, not truth.",
+      "category": "AI agents / research",
+      "language": "Python",
+      "license": "MIT",
+      "stars_total": 72181,
+      "stars_period": 560,
+      "stars_period_label": "560 stars today",
+      "archived": false,
+      "metadata_checked_at": "2026-11-22T07:01:03+00:00",
+      "readme_checked_at": "2026-11-22T07:02:03+00:00",
+      "evidence_urls": [
+        "https://github.com/mvanhorn/last30days-skill",
+        "https://api.github.com/repos/mvanhorn/last30days-skill",
+        "https://github.com/mvanhorn/last30days-skill/releases/tag/v4.6.0",
+        "https://github.com/mvanhorn/last30days-skill/releases/tag/v4.5.0",
+        "https://github.com/mvanhorn/last30days-skill/releases/tag/v4.4.0",
+        "https://github.com/mvanhorn/last30days-skill/pull/1533"
+      ],
+      "readme_source_url": "https://api.github.com/repos/mvanhorn/last30days-skill/readme"
+    }
+  ],
+  "listing": [
+    {
+      "rank": 1,
+      "repository": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars_total": 16434,
+      "stars_period": 1803,
+      "stars_period_label": "1,803 stars today"
+    },
+    {
+      "rank": 2,
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": 323876,
+      "stars_period": 883,
+      "stars_period_label": "883 stars today"
+    },
+    {
+      "rank": 3,
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars_total": 62243,
+      "stars_period": 769,
+      "stars_period_label": "769 stars today"
+    },
+    {
+      "rank": 4,
+      "repository": "jingyaogong/minimind",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars_total": 68276,
+      "stars_period": 488,
+      "stars_period_label": "488 stars today"
+    },
+    {
+      "rank": 5,
+      "repository": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars_total": 18181,
+      "stars_period": 260,
+      "stars_period_label": "260 stars today"
+    },
+    {
+      "rank": 6,
+      "repository": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars_total": 206405,
+      "stars_period": 1006,
+      "stars_period_label": "1,006 stars today"
+    },
+    {
+      "rank": 7,
+      "repository": "nginx/nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars_total": 32777,
+      "stars_period": 189,
+      "stars_period_label": "189 stars today"
+    },
+    {
+      "rank": 8,
+      "repository": "openvinotoolkit/openvino",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars_total": 11978,
+      "stars_period": 200,
+      "stars_period_label": "200 stars today"
+    },
+    {
+      "rank": 9,
+      "repository": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars_total": 69924,
+      "stars_period": 583,
+      "stars_period_label": "583 stars today"
+    },
+    {
+      "rank": 10,
+      "repository": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars_total": 72181,
+      "stars_period": 560,
+      "stars_period_label": "560 stars today"
+    },
+    {
+      "rank": 11,
+      "repository": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars_total": 11581,
+      "stars_period": 326,
+      "stars_period_label": "326 stars today"
+    },
+    {
+      "rank": 12,
+      "repository": "mjmirza/app-store-compliance",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 111 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars_total": 3545,
+      "stars_period": 720,
+      "stars_period_label": "720 stars today"
+    },
+    {
+      "rank": 13,
+      "repository": "Tracer-Cloud/opensre",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars_total": 14089,
+      "stars_period": 450,
+      "stars_period_label": "450 stars today"
+    },
+    {
+      "rank": 14,
+      "repository": "toeverything/AFFiNE",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars_total": 76426,
+      "stars_period": 574,
+      "stars_period_label": "574 stars today"
+    },
+    {
+      "rank": 15,
+      "repository": "XiaoYouChR/Ghost-Downloader-3",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars_total": 14626,
+      "stars_period": 779,
+      "stars_period_label": "779 stars today"
+    },
+    {
+      "rank": 16,
+      "repository": "zhouxiaoka/autoclip",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars_total": 13007,
+      "stars_period": 683,
+      "stars_period_label": "683 stars today"
+    }
+  ],
+  "tracked": [
+    {
+      "repository": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "stars_total": 34371,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "xtool-org/xtool",
+      "url": "https://github.com/xtool-org/xtool",
+      "stars_total": 15861,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "stars_total": 473097,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "stars_total": 116091,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "stars_total": 62243,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "vxcontrol/pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "stars_total": 34765,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "stars_total": 100917,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "xerj-org/xerj",
+      "url": "https://github.com/xerj-org/xerj",
+      "stars_total": 19279,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "stars_total": 58052,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "stars_total": 308506,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "lightseekorg/tokenspeed",
+      "url": "https://github.com/lightseekorg/tokenspeed",
+      "stars_total": 2945,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "stars_total": 47927,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "LibreSpark/LibreTV",
+      "url": "https://github.com/LibreSpark/LibreTV",
+      "stars_total": 25547,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "android/skills",
+      "url": "https://github.com/android/skills",
+      "stars_total": 10695,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "stars_total": 323878,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "stars_total": 72956,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo",
+      "stars_total": 82243,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "hmjz100/LinkSwift",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "stars_total": 40872,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "stars_total": 228464,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "stars_total": 16245,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "stars_total": 132229,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "stars_total": 148025,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mlabonne/llm-course",
+      "url": "https://github.com/mlabonne/llm-course",
+      "stars_total": 85174,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "stars_total": 80273,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "withmarbleapp/os-taxonomy",
+      "url": "https://github.com/withmarbleapp/os-taxonomy",
+      "stars_total": 7793,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "stars_total": 48065,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "stars_total": 156608,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "stars_total": 76788,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "stars_total": 151691,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "url": "https://github.com/vllm-project/vllm",
+      "stars_total": 97325,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "stars_total": 196509,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "stars_total": 36659,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "stars_total": 61306,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "supabase/supabase",
+      "url": "https://github.com/supabase/supabase",
+      "stars_total": 115275,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "php/php-src",
+      "url": "https://github.com/php/php-src",
+      "stars_total": 41851,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "stars_total": 104970,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Meloong-Git/PCL",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "stars_total": 9802,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "luongnv89/claude-howto",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "stars_total": 47495,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "stars_total": 123858,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "NVIDIA/OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "stars_total": 21853,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "SnailSploit/Claude-Red",
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "stars_total": 11357,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "OpenBMB/VoxCPM",
+      "url": "https://github.com/OpenBMB/VoxCPM",
+      "stars_total": 42863,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "stars_total": 19215,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "stars_total": 3538,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "stars_total": 114641,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "stars_total": 59173,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "makecindy/cindy",
+      "url": "https://github.com/makecindy/cindy",
+      "stars_total": 10366,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "stars_total": 13966,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "stars_total": 108980,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "stars_total": 66341,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "JetBrains/thinkrail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "stars_total": 8390,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "stars_total": 31451,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "stars_total": 123408,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "stars_total": 27209,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "gitroomhq/postiz-app",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "stars_total": 42132,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "nightly-labs/openbot",
+      "url": "https://github.com/nightly-labs/openbot",
+      "stars_total": 9692,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "stars_total": 113822,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "stars_total": 30314,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "stars_total": 61416,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "elayadesign/ai-design-skills",
+      "url": "https://github.com/elayadesign/ai-design-skills",
+      "stars_total": 16271,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "macro-inc/macro",
+      "url": "https://github.com/macro-inc/macro",
+      "stars_total": 6429,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "expo/skills",
+      "url": "https://github.com/expo/skills",
+      "stars_total": 4206,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "stars_total": 104760,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "xiaolai/the-craft-of-selfteaching",
+      "url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+      "stars_total": 19419,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "CopilotKit/OpenBot",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "stars_total": 13154,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "milind-soni/OpenMausBot",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "stars_total": 26606,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "stars_total": 118893,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Donchitos/Claude-Code-Game-Studios",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "stars_total": 40537,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "lightpanda-io/browser",
+      "url": "https://github.com/lightpanda-io/browser",
+      "stars_total": 42320,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "pingdotgg/t3code",
+      "url": "https://github.com/pingdotgg/t3code",
+      "stars_total": 70031,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "stars_total": 329917,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "stars_total": 198628,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Orkas-AI/Orkas",
+      "url": "https://github.com/Orkas-AI/Orkas",
+      "stars_total": 9524,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "vorssaint/vorssaint-utils",
+      "url": "https://github.com/vorssaint/vorssaint-utils",
+      "stars_total": 35673,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "THU-MAIC/OpenMAIC",
+      "url": "https://github.com/THU-MAIC/OpenMAIC",
+      "stars_total": 44101,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "bregman-arie/devops-exercises",
+      "url": "https://github.com/bregman-arie/devops-exercises",
+      "stars_total": 86909,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "beenuar/AiSOC",
+      "url": "https://github.com/beenuar/AiSOC",
+      "stars_total": 7321,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "cjpais/Handy",
+      "url": "https://github.com/cjpais/Handy",
+      "stars_total": 39576,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "FlashML-org/FreeToken",
+      "url": "https://github.com/FlashML-org/FreeToken",
+      "stars_total": 17592,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "kornia/kornia",
+      "url": "https://github.com/kornia/kornia",
+      "stars_total": 12403,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "hyprwm/Hyprland",
+      "url": "https://github.com/hyprwm/Hyprland",
+      "stars_total": 40735,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "vercel-labs/agent-desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "stars_total": 26007,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "max-sixty/worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "stars_total": 12690,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "JustVugg/colibri",
+      "url": "https://github.com/JustVugg/colibri",
+      "stars_total": 52747,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "D4Vinci/Scrapling",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "stars_total": 104878,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "paperclipai/paperclip",
+      "url": "https://github.com/paperclipai/paperclip",
+      "stars_total": 115734,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "karpathy/nanochat",
+      "url": "https://github.com/karpathy/nanochat",
+      "stars_total": 60759,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "floci-io/floci",
+      "url": "https://github.com/floci-io/floci",
+      "stars_total": 32029,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anomalyco/hex",
+      "url": "https://github.com/anomalyco/hex",
+      "stars_total": 8012,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "spotify/portal-ai-plugins",
+      "url": "https://github.com/spotify/portal-ai-plugins",
+      "stars_total": 3303,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Usagi-org/ai-goofish-monitor",
+      "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "stars_total": 20416,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "NVIDIA/auto-ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "stars_total": 14215,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "github/spec-kit",
+      "url": "https://github.com/github/spec-kit",
+      "stars_total": 150962,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "The-PR-Agent/pr-agent",
+      "url": "https://github.com/The-PR-Agent/pr-agent",
+      "stars_total": 16546,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "FareedKhan-dev/kimi-k3-in-c",
+      "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+      "stars_total": 12551,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "JiaFeiMiao-K-Cat/DiscImageStudio",
+      "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+      "stars_total": 10526,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Thysrael/Horizon",
+      "url": "https://github.com/Thysrael/Horizon",
+      "stars_total": 14893,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "lz4/lz4",
+      "url": "https://github.com/lz4/lz4",
+      "stars_total": 12829,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "stars_total": 53270,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "google/skills",
+      "url": "https://github.com/google/skills",
+      "stars_total": 24529,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "microsoft/VibeVoice",
+      "url": "https://github.com/microsoft/VibeVoice",
+      "stars_total": 57475,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "rails/rails",
+      "url": "https://github.com/rails/rails",
+      "stars_total": 59115,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "openssl/openssl",
+      "url": "https://github.com/openssl/openssl",
+      "stars_total": 31507,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mpv-player/mpv",
+      "url": "https://github.com/mpv-player/mpv",
+      "stars_total": 38246,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "zed-industries/zed",
+      "url": "https://github.com/zed-industries/zed",
+      "stars_total": 95494,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "prometheus/prometheus",
+      "url": "https://github.com/prometheus/prometheus",
+      "stars_total": 67751,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "astral-sh/ruff",
+      "url": "https://github.com/astral-sh/ruff",
+      "stars_total": 51379,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mbillow/localthings",
+      "url": "https://github.com/mbillow/localthings",
+      "stars_total": 1406,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ranxianglei/billion-context",
+      "url": "https://github.com/ranxianglei/billion-context",
+      "stars_total": 8105,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "stars_total": 31924,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "dsx-ai-factory/nvke",
+      "url": "https://github.com/dsx-ai-factory/nvke",
+      "stars_total": 1246,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "stars_total": 115591,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "tailwindlabs/tailwindcss",
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "stars_total": 98702,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "google-deepmind/mujoco",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "stars_total": 18381,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "anthropics/claude-quickstarts",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "stars_total": 21131,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "homeassistant-ai/ha-mcp",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "stars_total": 8046,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "url": "https://github.com/garrytan/gbrain",
+      "stars_total": 33381,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "stars_total": 73653,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "stars_total": 119631,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "tokio-rs/topcoat",
+      "url": "https://github.com/tokio-rs/topcoat",
+      "stars_total": 7298,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "we-promise/sure",
+      "url": "https://github.com/we-promise/sure",
+      "stars_total": 17199,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "openai/codex-security",
+      "url": "https://github.com/openai/codex-security",
+      "stars_total": 14260,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "stars_total": 9966,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "shadcn/improve",
+      "url": "https://github.com/shadcn/improve",
+      "stars_total": 12117,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "TheAlgorithms/Java",
+      "url": "https://github.com/TheAlgorithms/Java",
+      "stars_total": 67299,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "QwenLM/qwen-code",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "stars_total": 30853,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ashhart/TensorFold",
+      "url": "https://github.com/ashhart/TensorFold",
+      "stars_total": 2369,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Alishahryar1/free-claude-code",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "stars_total": 72531,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "stars_total": 135971,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm",
+      "stars_total": 96304,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "pookjw/HermesEnabler",
+      "url": "https://github.com/pookjw/HermesEnabler",
+      "stars_total": 2363,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "stars_total": 55184,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "tailscale/tailcat",
+      "url": "https://github.com/tailscale/tailcat",
+      "stars_total": 10138,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ChromeDevTools/chrome-devtools-mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "stars_total": 58726,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "louislam/uptime-kuma",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "stars_total": 94753,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "block/buzz",
+      "url": "https://github.com/block/buzz",
+      "stars_total": 37649,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "backnotprop/plannotator",
+      "url": "https://github.com/backnotprop/plannotator",
+      "stars_total": 14224,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "stars_total": 7670,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "JuliusBrussee/caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "stars_total": 122027,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Tencent/LoopForge",
+      "url": "https://github.com/Tencent/LoopForge",
+      "stars_total": 5559,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "dream-num/univer",
+      "url": "https://github.com/dream-num/univer",
+      "stars_total": 31133,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ag-ui-protocol/ag-ui",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "stars_total": 21064,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "martin-olivier/airgorah",
+      "url": "https://github.com/martin-olivier/airgorah",
+      "stars_total": 6813,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "ggml-org/ggml",
+      "url": "https://github.com/ggml-org/ggml",
+      "stars_total": 16149,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "NVIDIA/SkillEvaluator",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "stars_total": 4342,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "stars_total": 16435,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "stars_total": 11584,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "getarcaneapp/arcane",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "stars_total": 10270,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "kajisho5/ffmpeg-skill",
+      "url": "https://github.com/kajisho5/ffmpeg-skill",
+      "stars_total": 9383,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "DeanChensj/jiangshan-map",
+      "url": "https://github.com/DeanChensj/jiangshan-map",
+      "stars_total": 8690,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "google-research/paper-orchestra",
+      "url": "https://github.com/google-research/paper-orchestra",
+      "stars_total": 5791,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "stars_total": 72182,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "jingyaogong/minimind",
+      "url": "https://github.com/jingyaogong/minimind",
+      "stars_total": 68277,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "stars_total": 18182,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "sveltejs/svelte",
+      "url": "https://github.com/sveltejs/svelte",
+      "stars_total": 89846,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "solidjs/solid",
+      "url": "https://github.com/solidjs/solid",
+      "stars_total": 36908,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "jquery/jquery",
+      "url": "https://github.com/jquery/jquery",
+      "stars_total": 60138,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "astral-sh/uv",
+      "url": "https://github.com/astral-sh/uv",
+      "stars_total": 92532,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "stars_total": 211701,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "appwrite/appwrite",
+      "url": "https://github.com/appwrite/appwrite",
+      "stars_total": 58528,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "nginx/nginx",
+      "url": "https://github.com/nginx/nginx",
+      "stars_total": 32777,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "stars_total": 206405,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "Tracer-Cloud/opensre",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "stars_total": 14090,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "mjmirza/app-store-compliance",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "stars_total": 3547,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "stars_total": 69925,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "zhouxiaoka/autoclip",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "stars_total": 13008,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "openvinotoolkit/openvino",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "stars_total": 11978,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "toeverything/AFFiNE",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "stars_total": 76426,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    },
+    {
+      "repository": "XiaoYouChR/Ghost-Downloader-3",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "stars_total": 14626,
+      "archived": false,
+      "checked_at": "2026-11-22T07:02:54+00:00"
+    }
+  ]
+}
