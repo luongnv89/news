@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Afternoon edition, Wednesday 25 November 2026</title>
+<meta name="description" content="Afternoon edition of The AI Gazette, issue 2026-11-25-afternoon.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Afternoon edition · Wednesday 25 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-25-afternoon.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-25T16:08:33+01:00">Wednesday 25 November 2026</time></p><p>Afternoon edition &middot; No. 2026-11-25-afternoon</p><p>Issued 16:08 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-25-afternoon.html">This edition</a><a href="2026-11-25-afternoon.md">Markdown</a><a href="2026-11-25-afternoon.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-25-afternoon.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Afternoon edition &mdash; Wednesday 25 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-24T19:00:00+01:00">24 Nov 2026, 19:00 CET</time> to <time datetime="2026-11-25T16:08:33+01:00">25 Nov 2026, 16:08 CET</time> (Paris time). Issued <time datetime="2026-11-25T16:08:33+01:00">25 Nov 2026, 16:08 CET</time>.</p><p class="lead-note">Google Research posted six papers its Cogentic agent system wrote on Gemini 4, led by a claimed <mark class="hl">unconditional factoring algorithm in L[1/3] time</mark>; no outside reviewer has checked them and Google says it has nothing to do with breaking encryption in practice. Amazon and Meta are reported to be <mark class="hl">talking about ending Amazon&#x27;s Muse block</mark>, AI shares fell for a second day before the New York open, Fujitsu joined OpenAI&#x27;s cyber-defence partner programme, KRAFTON released its own open-weight model and Japan set out an AI-power goal. There is <mark class="hl">no new frontier model</mark>. The window starts at 19:00 on Tuesday, before the previous issue time, to include KRAFTON&#x27;s model, which no edition carried.</p><p class="tally">6 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-25-morning.html">2026-11-25-morning</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-krafton-raon-1-mini" aria-labelledby="h-krafton-raon-1-mini"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-krafton-raon-1-mini">KRAFTON releases Raon-1 mini, a 28.8-billion-parameter open-weight model it trained from scratch, under Apache 2.0</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-24">24 Nov 2026</time></p><div class="story-body"><p>KRAFTON, the South Korean games company behind PUBG, took its in-house language model <mark class="hl">Raon-1 mini</mark> out of preview on Tuesday 24 November and published the weights on Hugging Face under the <mark class="hl">Apache 2.0 licence</mark>. No earlier edition carried it.</p><p>The model card describes a mixture-of-experts model with <mark class="hl">28.8 billion parameters, 4.3 billion active</mark> per token, designed and trained from scratch by KRAFTON AI, with a 262,144-token context and its own linear-attention variant. Users can pick one of six reasoning-effort levels, from none to max.</p><p>On KRAFTON&#x27;s own benchmark table, Raon-1 mini scores 64.9 on MultiChallenge (59.0 for the preview), 55.9 on BrowseComp Plus and 72.3 on GDPVal, the best among the similar-sized mixture-of-experts models it compares. Seoul Economic Daily reports that KRAFTON plans a larger Raon-1 and a full-duplex voice model.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a games publisher training a competitive model from scratch adds to the small set of <mark class="hl">non-US, non-Chinese open-weight models</mark> that companies can run themselves.</p></aside><p class="caveat"><span class="label">Caveat.</span> All scores are <mark class="hl">KRAFTON&#x27;s own</mark> and unverified; on the same table the dense Qwen3.8 27B, shown for reference, scores higher on GDPVal (74.3). The window was widened to include this release.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://huggingface.co/KRAFTON/Raon-1-mini" rel="noopener noreferrer">Hugging Face: KRAFTON/Raon-1-mini model card</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:22+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://en.sedaily.com/business/2026/11/25/krafton-unveils-in-house-llm-raon-1-mini-pushes-commercial" rel="noopener noreferrer">Seoul Economic Daily: Krafton unveils in-house LLM Raon-1 Mini</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:23+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-krafton-raon-1-mini"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-krafton-raon-1-mini">Draft for X</label><textarea id="share-x-story-krafton-raon-1-mini" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-krafton-raon-1-mini-count">KRAFTON releases Raon-1 mini, a 28.8-billion-parameter open-weight model it trained from scratch, under Apache 2.0
+
+→ Users can pick one of six reasoning-effort levels, from none to max.
+
+Sources: Hugging Face, Seoul Economic Daily; via The AI Gazette</textarea><p class="share-count" id="share-x-story-krafton-raon-1-mini-count">276 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=KRAFTON%20releases%20Raon-1%20mini%2C%20a%2028.8-billion-parameter%20open-weight%20model%20it%20trained%20from%20scratch%2C%20under%20Apache%202.0%0A%0A%E2%86%92%20Users%20can%20pick%20one%20of%20six%20reasoning-effort%20levels%2C%20from%20none%20to%20max.%0A%0ASources%3A%20Hugging%20Face%2C%20Seoul%20Economic%20Daily%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-krafton-raon-1-mini" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-krafton-raon-1-mini">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-krafton-raon-1-mini">Draft for LinkedIn</label><textarea id="share-li-story-krafton-raon-1-mini" class="share-text share-text-li" rows="12">KRAFTON releases Raon-1 mini, a 28.8-billion-parameter open-weight model it trained from scratch, under Apache 2.0
+
+→ Users can pick one of six reasoning-effort levels, from none to max.
+→ Seoul Economic Daily reports that KRAFTON plans a larger Raon-1 and a full-duplex voice model.
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-krafton-raon-1-mini
+Sources: Hugging Face, Seoul Economic Daily; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=KRAFTON%20releases%20Raon-1%20mini%2C%20a%2028.8-billion-parameter%20open-weight%20model%20it%20trained%20from%20scratch%2C%20under%20Apache%202.0%0A%0A%E2%86%92%20Users%20can%20pick%20one%20of%20six%20reasoning-effort%20levels%2C%20from%20none%20to%20max.%0A%E2%86%92%20Seoul%20Economic%20Daily%20reports%20that%20KRAFTON%20plans%20a%20larger%20Raon-1%20and%20a%20full-duplex%20voice%20model.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-krafton-raon-1-mini%0ASources%3A%20Hugging%20Face%2C%20Seoul%20Economic%20Daily%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-krafton-raon-1-mini">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-krafton-raon-1-mini">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-google-cogentic-six-math-papers" aria-labelledby="h-google-cogentic-six-math-papers"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">New</span></p><h3 id="h-google-cogentic-six-math-papers">Google Research posts six papers written by its Cogentic agents on Gemini 4, including a claimed proof that any integer can be factored in number-field-sieve time</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25T11:21:27+01:00">25 Nov 2026, 11:21 CET</time></p><div class="story-body"><p>Google Research added <mark class="hl">six new papers</mark> to the Cogentic folder of its public google-research repository on GitHub on Wednesday; the commit was pushed at 11:21 Paris time. Each paper says it was <mark class="hl">entirely obtained by Cogentic</mark>, an agent framework for mathematical discovery using Gemini 4 as its base model, with no human interaction other than the initial prompt to generate a full proof. Cogentic was described in a September arXiv preprint as a multi-agent harness for automated proof discovery; the folder now lists ten papers, the first dated 30 October.</p><p>The lead paper claims a zero-error randomised algorithm that computes the complete prime factorisation of any integer N in worst-case expected time <mark class="hl">L_N[1/3, 105]</mark>, relying on no unproven hypotheses. Its abstract says this improves on the rigorous L_N[1/2, 1] bound of Lenstra and Pomerance from 1992 and matches the exponent of the heuristic General Number Field Sieve, the fastest practical method, whose running time has never been proved.</p><p>The other five claim: a deterministic subexponential factoring algorithm; discrete logarithms in finite fields of fixed small characteristic in <mark class="hl">sub-quasi-polynomial time</mark>; a communication-complexity bound of O(r^(1/2 - epsilon)) with epsilon of 5 x 10^-6 toward the log-rank conjecture; a polynomial-time algorithm for 1/5-approximate Nash equilibria in two-player games; and an edge-reconstruction result for dense graphs. The factoring paper&#x27;s page says a complete Lean 4 formalisation exists and <mark class="hl">will be released in a companion submission</mark>.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: this is the third frontier lab this week to post machine-written claims on long-standing problems, after Anthropic&#x27;s VP versus VNP paper and OpenAI&#x27;s matrix-multiplication manuscript. Because the constant in the factoring bound is <mark class="hl">105, not the sieve&#x27;s roughly 1.92</mark>, the result concerns what can be proved, not how fast RSA keys can be broken.</p></aside><p class="caveat"><span class="label">Caveat.</span> None of the six papers has been peer reviewed, and the Lean proofs are <mark class="hl">promised but not yet public</mark>, so no outside check exists. The authorship claim is Google&#x27;s own. The folder carries the repository&#x27;s standard line &#x27;This is not an official Google product&#x27;. The paper count comes from the folder index; the factoring and discrete-logarithm summaries come from the papers&#x27; own abstracts.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;Math is going through its own version of the industrial revolution.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50642161" rel="noopener noreferrer">david-gpu on Hacker News</a></p></blockquote><blockquote><p>&ldquo;Since several comments ask about the practical effect of this paper for things like factorization: None at all.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50642784" rel="noopener noreferrer">dgacmu on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers" rel="noopener noreferrer">Google Research (GitHub): Cogentic research papers index</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:11+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/integer_factorization" rel="noopener noreferrer">Google Research (GitHub): Unconditional Integer Factorization in Time L_N[1/3, O(1)]</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:12+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc770e71a259b7966c500496b99010a" rel="noopener noreferrer">Google Research (GitHub): commit adding six Cogentic research papers</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:13+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://arxiv.org/abs/2609.40324" rel="noopener noreferrer">arXiv: Cogentic, multi-agent orchestration for automated proof discovery</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:13+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50642086" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:14+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-google-cogentic-six-math-papers"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-google-cogentic-six-math-papers">Draft for X</label><textarea id="share-x-story-google-cogentic-six-math-papers" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-google-cogentic-six-math-papers-count">Google Research posts six papers written by its Cogentic agents on Gemini 4, including a claimed proof that any integer can be factored in number-field-sieve time
+
+Sources: Google Research (GitHub), arXiv; via The AI Gazette</textarea><p class="share-count" id="share-x-story-google-cogentic-six-math-papers-count">248 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Google%20Research%20posts%20six%20papers%20written%20by%20its%20Cogentic%20agents%20on%20Gemini%204%2C%20including%20a%20claimed%20proof%20that%20any%20integer%20can%20be%20factored%20in%20number-field-sieve%20time%0A%0ASources%3A%20Google%20Research%20%28GitHub%29%2C%20arXiv%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-google-cogentic-six-math-papers" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-google-cogentic-six-math-papers">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-google-cogentic-six-math-papers">Draft for LinkedIn</label><textarea id="share-li-story-google-cogentic-six-math-papers" class="share-text share-text-li" rows="12">Google Research posts six papers written by its Cogentic agents on Gemini 4, including a claimed proof that any integer can be factored in number-field-sieve time
+
+→ The factoring paper&#x27;s page says a complete Lean 4 formalisation exists and will be released in a companion submission.
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-google-cogentic-six-math-papers
+Sources: Google Research (GitHub), arXiv; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Google%20Research%20posts%20six%20papers%20written%20by%20its%20Cogentic%20agents%20on%20Gemini%204%2C%20including%20a%20claimed%20proof%20that%20any%20integer%20can%20be%20factored%20in%20number-field-sieve%20time%0A%0A%E2%86%92%20The%20factoring%20paper%27s%20page%20says%20a%20complete%20Lean%204%20formalisation%20exists%20and%20will%20be%20released%20in%20a%20companion%20submission.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-google-cogentic-six-math-papers%0ASources%3A%20Google%20Research%20%28GitHub%29%2C%20arXiv%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-google-cogentic-six-math-papers">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-google-cogentic-six-math-papers">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-amazon-meta-muse-talks" aria-labelledby="h-amazon-meta-muse-talks"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-amazon-meta-muse-talks">Amazon and Meta are in talks to end Amazon&#x27;s block on Meta&#x27;s Muse shopping agent, Fortune reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>Amazon and Meta have held <mark class="hl">multiple rounds of talks</mark> about a deal that would let Meta&#x27;s Muse agent connect to Amazon&#x27;s store and end the block Amazon imposed two months ago, Fortune reported on Wednesday, citing people familiar with the discussions. This paper noted on 13 November that Amazon blocks Muse, and on 24 November reported Muse&#x27;s UK launch.</p><p>According to Fortune, as summarised by TechCrunch and The Verge, the two sticking points are <mark class="hl">how search results and advertising</mark> would be handled. Amazon is said to worry about losing ad revenue, about the quality of the products Muse would surface, and about agents weakening its direct relationship with shoppers. Any agreement would reportedly need <mark class="hl">sign-off from both chief executives</mark>.</p><p>Neither company had responded to TechCrunch&#x27;s or The Verge&#x27;s requests for comment. The Verge notes that Amazon also blocked Perplexity&#x27;s shopping agent and is promoting its own Alexa for Shopping assistant.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Amazon is the largest store an agent can be shut out of. Whether it opens up, and on what ad and ranking terms, will shape how much <mark class="hl">third-party shopping agents can actually buy</mark>.</p></aside><p class="caveat"><span class="label">Caveat.</span> The talks are reported from anonymous sources; <mark class="hl">no deal has been announced</mark> and Fortune says it is unclear whether one will be reached. Fortune&#x27;s article was not read directly; its account is cited through TechCrunch and The Verge.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" rel="noopener noreferrer">TechCrunch: Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:18+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" rel="noopener noreferrer">The Verge: Amazon is reportedly in talks to end Muse AI shopping block</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:19+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-amazon-meta-muse-talks"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-amazon-meta-muse-talks">Draft for X</label><textarea id="share-x-story-amazon-meta-muse-talks" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-amazon-meta-muse-talks-count">Amazon and Meta are in talks to end Amazon&#x27;s block on Meta&#x27;s Muse shopping agent, Fortune reports
+
+→ Any agreement would reportedly need sign-off from both chief executives.
+
+Sources: TechCrunch, The Verge; via The AI Gazette</textarea><p class="share-count" id="share-x-story-amazon-meta-muse-talks-count">250 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Amazon%20and%20Meta%20are%20in%20talks%20to%20end%20Amazon%27s%20block%20on%20Meta%27s%20Muse%20shopping%20agent%2C%20Fortune%20reports%0A%0A%E2%86%92%20Any%20agreement%20would%20reportedly%20need%20sign-off%20from%20both%20chief%20executives.%0A%0ASources%3A%20TechCrunch%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-amazon-meta-muse-talks" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-amazon-meta-muse-talks">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-amazon-meta-muse-talks">Draft for LinkedIn</label><textarea id="share-li-story-amazon-meta-muse-talks" class="share-text share-text-li" rows="12">Amazon and Meta are in talks to end Amazon&#x27;s block on Meta&#x27;s Muse shopping agent, Fortune reports
+
+→ According to Fortune, as summarised by TechCrunch and The Verge, the two sticking points are how search results and advertising would be handled.
+→ Any agreement would reportedly need sign-off from both chief executives.
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-amazon-meta-muse-talks
+Sources: TechCrunch, The Verge; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Amazon%20and%20Meta%20are%20in%20talks%20to%20end%20Amazon%27s%20block%20on%20Meta%27s%20Muse%20shopping%20agent%2C%20Fortune%20reports%0A%0A%E2%86%92%20According%20to%20Fortune%2C%20as%20summarised%20by%20TechCrunch%20and%20The%20Verge%2C%20the%20two%20sticking%20points%20are%20how%20search%20results%20and%20advertising%20would%20be%20handled.%0A%E2%86%92%20Any%20agreement%20would%20reportedly%20need%20sign-off%20from%20both%20chief%20executives.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-amazon-meta-muse-talks%0ASources%3A%20TechCrunch%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-amazon-meta-muse-talks">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-amazon-meta-muse-talks">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-anthropic-ipo-investor-doubts" aria-labelledby="h-anthropic-ipo-investor-doubts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-anthropic-ipo-investor-doubts">UPDATE: AI shares fall for a second day after Huang&#x27;s return, with Nasdaq futures down 3.2% and Korea&#x27;s Kospi closing 6.2% lower</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>Update to Tuesday afternoon&#x27;s report that Anthropic&#x27;s shares had fallen below their $83 IPO price. The sell-off in AI stocks continued on Wednesday: before the New York open, <mark class="hl">Nasdaq futures were down 3.2%</mark> and S&amp;P 500 futures 2.1%, Nvidia had slid 6.2% and Anthropic 5%, and CoreWeave nearly 9%, CNN reported. Anthropic closed Tuesday at <mark class="hl">$81.91</mark>, just under its offer price.</p><p>In Asia, South Korea&#x27;s Kospi, dominated by the memory makers SK Hynix and Samsung, <mark class="hl">closed down 6.2%</mark>, CNN reported. AP reported that Taiwan&#x27;s Taiex closed 4.8% lower, with TSMC down 3.6% and MediaTek down 10%.</p><p>AP said questions about Nvidia&#x27;s governance and President Trump&#x27;s shareholding added to doubts about AI valuations, alongside expected US tariff increases and Wednesday&#x27;s October inflation data. Nvidia had risen more than 30% on Monday after reinstating Jensen Huang as chief executive.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the one-day rally on Huang&#x27;s return has fully reversed, which suggests investors&#x27; worries about <mark class="hl">AI spending, debt and regulation</mark> run deeper than one company&#x27;s leadership.</p></aside><p class="caveat"><span class="label">Caveat.</span> All US figures are <mark class="hl">pre-market moves</mark> reported on Wednesday morning, New York time; the regular session closes after this edition, and the final numbers will differ.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;It&#x27;s so bizarre to see these crazy breakthroughs daily, but the market (and especially the AI market) keeps sliding down.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50642883" rel="noopener noreferrer">howunfortunate on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://edition.cnn.com/2026/11/25/business/ai-sell-off-despite-huang-nvidia-return" rel="noopener noreferrer">CNN: Tech stock selloff deepens as AI fears outweigh Huang&#x27;s Nvidia return</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:20+01:00">25 Nov 2026, 16:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://sandiegouniontribune.com/2026/11/25/ai-nvidia-wall-street" rel="noopener noreferrer">AP (via San Diego Union-Tribune): AI rout continues as market exuberance fades</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:22+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-anthropic-ipo-investor-doubts"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-anthropic-ipo-investor-doubts">Draft for X</label><textarea id="share-x-story-anthropic-ipo-investor-doubts" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-anthropic-ipo-investor-doubts-count">UPDATE: AI shares fall for a second day after Huang&#x27;s return, with Nasdaq futures down 3.2% and Korea&#x27;s Kospi closing 6.2% lower
+
+Sources: CNN, AP (via San Diego Union-Tribune); via The AI Gazette</textarea><p class="share-count" id="share-x-story-anthropic-ipo-investor-doubts-count">220 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20AI%20shares%20fall%20for%20a%20second%20day%20after%20Huang%27s%20return%2C%20with%20Nasdaq%20futures%20down%203.2%25%20and%20Korea%27s%20Kospi%20closing%206.2%25%20lower%0A%0ASources%3A%20CNN%2C%20AP%20%28via%20San%20Diego%20Union-Tribune%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-anthropic-ipo-investor-doubts" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-anthropic-ipo-investor-doubts">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-anthropic-ipo-investor-doubts">Draft for LinkedIn</label><textarea id="share-li-story-anthropic-ipo-investor-doubts" class="share-text share-text-li" rows="12">UPDATE: AI shares fall for a second day after Huang&#x27;s return, with Nasdaq futures down 3.2% and Korea&#x27;s Kospi closing 6.2% lower
+
+→ Anthropic closed Tuesday at $81.91, just under its offer price.
+→ In Asia, South Korea&#x27;s Kospi, dominated by the memory makers SK Hynix and Samsung, closed down 6.2%, CNN reported.
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-anthropic-ipo-investor-doubts
+Sources: CNN, AP (via San Diego Union-Tribune); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20AI%20shares%20fall%20for%20a%20second%20day%20after%20Huang%27s%20return%2C%20with%20Nasdaq%20futures%20down%203.2%25%20and%20Korea%27s%20Kospi%20closing%206.2%25%20lower%0A%0A%E2%86%92%20Anthropic%20closed%20Tuesday%20at%20%2481.91%2C%20just%20under%20its%20offer%20price.%0A%E2%86%92%20In%20Asia%2C%20South%20Korea%27s%20Kospi%2C%20dominated%20by%20the%20memory%20makers%20SK%20Hynix%20and%20Samsung%2C%20closed%20down%206.2%25%2C%20CNN%20reported.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-anthropic-ipo-investor-doubts%0ASources%3A%20CNN%2C%20AP%20%28via%20San%20Diego%20Union-Tribune%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-anthropic-ipo-investor-doubts">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-anthropic-ipo-investor-doubts">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-fujitsu-openai-daybreak-defense" aria-labelledby="h-fujitsu-openai-daybreak-defense"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-fujitsu-openai-daybreak-defense">Fujitsu joins OpenAI&#x27;s Daybreak Defense Network and launches a vulnerability-assessment service built on OpenAI&#x27;s cyber-defence tools</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>Fujitsu said on Wednesday that it has joined the <mark class="hl">Daybreak Defense Network</mark>, OpenAI&#x27;s partner programme for cyber defence, and launched a <mark class="hl">vulnerability-assessment service</mark> the same day. The service combines OpenAI Daybreak&#x27;s cyber-defence capabilities with Fujitsu&#x27;s own AI-powered assessment system, linking source-code analysis with tests against live environments.</p><p>Fujitsu says the service covers discovery, checks whether a flaw can actually be exploited, remediation advice and retesting after a fix. It says its red team penetrated <mark class="hl">all of roughly 30 organisations</mark> it tested in 2026, and that in internal trials the system found new vulnerabilities that conventional methods missed. OpenAI Japan&#x27;s Dino Mizushima said the network&#x27;s security specialists review the results of AI-assisted assessments.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: OpenAI is selling its security tools through large integrators rather than only directly, which puts AI-driven attack testing into ordinary enterprise contracts.</p></aside><p class="caveat"><span class="label">Caveat.</span> The effectiveness claims are <mark class="hl">Fujitsu&#x27;s own</mark> and come with no published figures on the vulnerabilities found. Fujitsu&#x27;s page refused a plain request (HTTP 429) and was read through a web-extraction tool.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://global.fujitsu/en-global/pr/news/2026/11/25-01" rel="noopener noreferrer">Fujitsu: Fujitsu expands collaboration with OpenAI to launch a vulnerability assessment service</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:19+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-fujitsu-openai-daybreak-defense"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-fujitsu-openai-daybreak-defense">Draft for X</label><textarea id="share-x-story-fujitsu-openai-daybreak-defense" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-fujitsu-openai-daybreak-defense-count">Fujitsu joins OpenAI&#x27;s Daybreak Defense Network and launches a vulnerability-assessment service built on OpenAI&#x27;s cyber-defence tools
+
+Source: Fujitsu; via The AI Gazette</textarea><p class="share-count" id="share-x-story-fujitsu-openai-daybreak-defense-count">194 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Fujitsu%20joins%20OpenAI%27s%20Daybreak%20Defense%20Network%20and%20launches%20a%20vulnerability-assessment%20service%20built%20on%20OpenAI%27s%20cyber-defence%20tools%0A%0ASource%3A%20Fujitsu%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-fujitsu-openai-daybreak-defense" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-fujitsu-openai-daybreak-defense">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-fujitsu-openai-daybreak-defense">Draft for LinkedIn</label><textarea id="share-li-story-fujitsu-openai-daybreak-defense" class="share-text share-text-li" rows="12">Fujitsu joins OpenAI&#x27;s Daybreak Defense Network and launches a vulnerability-assessment service built on OpenAI&#x27;s cyber-defence tools
+
+→ The service combines OpenAI Daybreak&#x27;s cyber-defence capabilities with Fujitsu&#x27;s own AI-powered assessment system, linking source-code analysis with tests against live environments.
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-fujitsu-openai-daybreak-defense
+Source: Fujitsu; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Fujitsu%20joins%20OpenAI%27s%20Daybreak%20Defense%20Network%20and%20launches%20a%20vulnerability-assessment%20service%20built%20on%20OpenAI%27s%20cyber-defence%20tools%0A%0A%E2%86%92%20The%20service%20combines%20OpenAI%20Daybreak%27s%20cyber-defence%20capabilities%20with%20Fujitsu%27s%20own%20AI-powered%20assessment%20system%2C%20linking%20source-code%20analysis%20with%20tests%20against%20live%20environments.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-fujitsu-openai-daybreak-defense%0ASource%3A%20Fujitsu%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-fujitsu-openai-daybreak-defense">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-fujitsu-openai-daybreak-defense">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-japan-ai-nation-security-documents" aria-labelledby="h-japan-ai-nation-security-documents"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-japan-ai-nation-security-documents">Japan&#x27;s government outlines a goal of becoming the leading AI nation after the US and China in its revised security documents</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>Japan&#x27;s government presented the economic-security sections of its revised <mark class="hl">three national security documents</mark> to a meeting of the ruling Liberal Democratic Party on Wednesday and obtained broad approval, Jiji reported in The Japan Times. The outline sets a goal of becoming a <mark class="hl">leading AI nation after the United States and China</mark>.</p><p>According to the outline, the documents will call for <mark class="hl">reducing Japan&#x27;s AI reliance</mark> on other countries, invest intensively in automated driving and physical AI, and seek technology that makes Japan indispensable to others. The revisions are due later this year.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: writing AI into national-security doctrine ties Japan&#x27;s chip, model and data spending to defence planning rather than industrial policy alone.</p></aside><p class="caveat"><span class="label">Caveat.</span> This is an <mark class="hl">outline approved by the ruling party</mark>, not the final documents; the cabinet still has to adopt the revisions. The Japan Times refused a plain request (HTTP 403) and was read through a web-extraction tool.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.japantimes.co.jp/news/2026/11/25/japan/ai-nation-aim/" rel="noopener noreferrer">The Japan Times (Jiji): Japan to declare aim to become AI nation after U.S. and China</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-25T16:06:23+01:00">25 Nov 2026, 16:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-japan-ai-nation-security-documents"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-japan-ai-nation-security-documents">Draft for X</label><textarea id="share-x-story-japan-ai-nation-security-documents" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-japan-ai-nation-security-documents-count">Japan&#x27;s government outlines a goal of becoming the leading AI nation after the US and China in its revised security documents
+
+Source: The Japan Times (Jiji); via The AI Gazette</textarea><p class="share-count" id="share-x-story-japan-ai-nation-security-documents-count">201 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Japan%27s%20government%20outlines%20a%20goal%20of%20becoming%20the%20leading%20AI%20nation%20after%20the%20US%20and%20China%20in%20its%20revised%20security%20documents%0A%0ASource%3A%20The%20Japan%20Times%20%28Jiji%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-japan-ai-nation-security-documents" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-japan-ai-nation-security-documents">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-japan-ai-nation-security-documents">Draft for LinkedIn</label><textarea id="share-li-story-japan-ai-nation-security-documents" class="share-text share-text-li" rows="12">Japan&#x27;s government outlines a goal of becoming the leading AI nation after the US and China in its revised security documents
+
+https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-japan-ai-nation-security-documents
+Source: The Japan Times (Jiji); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Japan%27s%20government%20outlines%20a%20goal%20of%20becoming%20the%20leading%20AI%20nation%20after%20the%20US%20and%20China%20in%20its%20revised%20security%20documents%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-25-afternoon.html%23story-japan-ai-nation-security-documents%0ASource%3A%20The%20Japan%20Times%20%28Jiji%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-japan-ai-nation-security-documents">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-25-afternoon.html#story-japan-ai-nation-security-documents">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Machine-written mathematics is arriving in batches: Google posted <mark class="hl">six Cogentic papers in one commit</mark>, a day after OpenAI&#x27;s and Anthropic&#x27;s own claims, with formal proofs still to come.</li><li>Agents now meet commercial gatekeepers: Amazon is reportedly negotiating <mark class="hl">ads and search terms for Muse</mark>, and OpenAI is reaching companies through partners such as Fujitsu.</li><li>Markets and governments are pulling in different directions: AI shares fell again while Japan wrote an <mark class="hl">AI-power goal into security planning</mark>.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>4.6.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (17 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (26 stories)</dd></div><div><dt>github</dt><dd>ok (4 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older items (Tidal&#x27;s AI-music ban, Anthropic&#x27;s &#x27;Working with AI&#x27; study, an agent-checked Riemann draft); the Cogentic papers were found through a Hacker News scan of the window. Stories were also found with Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. Three Google News queries and VentureBeat&#x27;s feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.</li><li>Window widened: it starts at 19:00 Paris time on Tuesday 24 November, before the previous issue time (06:07 today), to include KRAFTON&#x27;s Raon-1 mini release, which no edition carried. Nothing that an earlier edition carried is repeated except as a labelled update.</li><li>Read through other routes: Fujitsu&#x27;s press release (HTTP 429) and The Japan Times (HTTP 403) refused plain requests and were read with a web-extraction tool; The Register&#x27;s JetBrains report was read with scripts/fetch_source.py&#x27;s direct route. Fortune&#x27;s exclusive on the Muse talks was not read directly and is cited through TechCrunch and The Verge.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file still holds the same five leads as this morning, all already carried, repeated or older than 48 hours; none was used.</li><li>Not carried: JetBrains&#x27; Kotlin Benchmark 2.0, posted 23 November, outside the window; Google DeepMind&#x27;s agent-found quantum algorithms (23 November) and Ant Group&#x27;s Ling-3.2-air (23 November), both older than 48 hours; the US Army&#x27;s request for proposals for power and data centres at nine bases (19 to 20 November); OpenAI&#x27;s tests of email addresses for its Dots agents, reported 24 November and first mentioned 17 November; a US jury&#x27;s conviction of Huawei, which fell in the previous edition&#x27;s window; and a Wall Street Journal report on Anthropic&#x27;s debt, which is paywalled.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 17 threads │ 1,858 upvotes │ 1,200 comments
+├─  HN: 26 stories │ 1,052 points │ 715 comments
+├─  dev.to: 12 articles │ 143 reactions │ 62 comments
+├─  GitHub: 4 items │ 13 reactions │ 48 comments
+├─  Top voices: r/artificial, r/technology, r/ClaudeAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-25-afternoon.json" download>Exact input JSON</a></li><li><a href="2026-11-25-afternoon.md">Markdown text</a></li><li><a href="2026-11-25-afternoon.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
