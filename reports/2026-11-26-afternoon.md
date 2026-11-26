@@ -1,0 +1,192 @@
+# The AI Gazette — Afternoon edition, Thursday 26 November 2026
+
+*Models, machines, and matters of consequence*
+
+- Issue: 2026-11-26-afternoon
+- Issued: 26 Nov 2026, 16:08 CET (Paris)
+- Reporting window: 26 Nov 2026, 06:09 CET to 26 Nov 2026, 16:08 CET
+- Timezone: Europe/Paris
+- Previous issue: 2026-11-26-morning
+- Price: Complimentary
+
+## Editor's note
+
+This afternoon's edition is led by the fallout from the US rule on overseas AI compute: the FT reports that Nvidia has stopped server shipments to **four Southeast Asian countries**, and Reuters says Z.AI's next flagship model has slipped. The Bank of England put hyperscalers' potential exposure at **just over $4 trillion**, Switzerland confirmed its first attacks run with AI agents, India launched its Chariot-1 models and Dutch groups took Meta's AI glasses to court. There is **no new frontier model** in this window, and no research item met the bar. One of the six stories is a labelled update.
+
+## The News
+
+### Z.AI's GLM-5.5 has slipped and Moonshot expects slower releases as US compute curbs and anti-distillation safeguards bite, Reuters reports
+
+*Models · New*
+
+**Published:** 26 Nov 2026
+
+China's Z.AI had planned to release its next flagship model, **GLM-5.5**, this month but has not done so, two people familiar with the matter told Reuters in an exclusive published on Thursday. One of them said the model, designed with **roughly 3 trillion parameters**, has been held up partly by increasingly effective safeguards against distillation, the practice of training a model on a stronger model's answers, and that the US rule on overseas computing could push its launch into the first quarter of 2027 or later.
+
+Moonshot AI internally expects its usual six-month gap between major releases could stretch to **12 months or longer** if it loses overseas computing access entirely, a person with knowledge of its operations said, estimating that its next flagship, Kimi K4, could slip to around mid-2027. The same person said Moonshot has begun distilling from Google and Meta models as data from Anthropic's and OpenAI's models became harder to obtain. Moonshot has previously denied that Kimi K3's performance came from distillation.
+
+The computing rule is the Commerce Department measure first reported here on 16 November; Reuters says it covers arrangements above roughly the equivalent of 750 Nvidia H100 chips and gives existing operators 90 days to obtain licences. Z.AI released GLM-5.4 on Monday, built on an existing 750-billion-parameter model.
+
+**Analysis — why it matters:** *Analysis: if the sources are right, both US-side levers, export licensing and the labs' own distillation defences, are now slowing Chinese releases, whose edge has been that they cost far less to build.*
+
+**Caveat:** The account rests on **anonymous sources**; Z.AI, Moonshot, Google and Meta did not respond to Reuters. The delay estimates are the sources' expectations, not company statements. Reuters' own page refused automated requests (HTTP 401), so the story was read in its Reuters wire copy on Daily Maverick.
+
+**Sources:**
+
+1. [Daily Maverick (Reuters): US chip curbs, distillation crackdown threaten Chinese AI model development, sources say](<https://www.dailymaverick.co.za/article/2026-11-26-us-chip-curbs-distillation-crackdown-threaten-chinese-ai-model-development-sources-say/>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+
+### India launches Chariot-1, an 11-billion-parameter language model and a speech model pre-trained from scratch under its IndiaAI Mission
+
+*Models · New*
+
+**Published:** 26 Nov 2026, 06:53 CET
+
+India's Ministry of Electronics and Information Technology launched the **Chariot-1** foundation models in New Delhi on Thursday. They were built by Chariot Artificial Intelligence, one of the first four teams the IndiaAI Mission selected to develop sovereign models. The suite has a language model and a text-to-speech model, both pre-trained from scratch in India, the government's release says.
+
+The language model is an **11-billion-parameter mixture-of-experts** model with 4 billion parameters active per token, offered in three sizes: 10.7 billion, 1.7 billion and 745 million parameters. The release says the three sizes came from one training run and one set of weights, a method it calls Nested Training, and that IndicShift, a shared alphabet for 12 Indian scripts, uses up to 2.5 times fewer tokens on Indian text than OpenAI's GPT tokeniser.
+
+The speech model covers English and 10 Indian languages. The release reports **over 97% accuracy** in reading out numbers, dates and similar text on a 1,029-sentence benchmark, and a Hindi character error rate of 7.60%.
+
+**Analysis — why it matters:** *Analysis: India is presenting this as sovereign capacity: small models meant to run anywhere from data centres to phones, with tokenisation tuned for Indian scripts, where foreign tokenisers are costly.*
+
+**Caveat:** All figures are **the developer's and the ministry's claims**; the release cites no independent evaluation. It does not say whether the model weights can be downloaded; only IndicShift is described as open source.
+
+**Sources:**
+
+1. [PIB (Government of India): India AI Mission-supported Chariot-1 Foundation Models Launched](<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2341725>) — primary source. Checked: 26 Nov 2026, 16:06 CET
+2. [Inc42: IndiaAI Mission-backed Chariot AI unveils 11 Bn parameter LLM, speech models](<https://inc42.com/buzz/indiaai-mission-backed-chariot-ai-unveils-11-bn-parameter-llm-speech-models/>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+
+### Switzerland's cyber security office confirms its first attacks carried out with AI agents, including against critical-infrastructure operators
+
+*Coding & agents · New*
+
+**Published:** 26 Nov 2026
+
+Switzerland's National Cyber Security Centre (BACS) said it had received its **first reports of cyberattacks carried out with AI agents** against organisations in Switzerland, including operators of critical infrastructure in at least two sectors. The attackers used what it calls 'Agentic Offensive Frameworks': AI agents that search for vulnerabilities, pick attack tools, evaluate the results and plan their next steps on their own.
+
+Reuters, reporting the office's statement on Thursday, said five attacks in recent days used AI agents and that **four of the five succeeded**. Three operators of critical infrastructure were among the targets, and Swiss broadcaster SRF said they included electricity, water and telecoms providers. The office did not say who was behind the attacks.
+
+The NCSC says the number of internet-accessible attack agents, naming ARTEX and CyberStrikeAI, has **almost doubled since October 2026**. It tells companies to install critical patches for internet-facing systems within 24 hours, protect every exposed service with multi-factor authentication or passkeys, and cut the number of systems reachable from the internet. ARTEX is the framework Microsoft tied to Chinese and North Korean groups in this morning's edition.
+
+**Analysis — why it matters:** *Analysis: agent-driven intrusion moves here from vendor threat reports to confirmed national incident data, and the 24-hour patch advice shows how short the defenders' window has become.*
+
+**Caveat:** The NCSC's English statement says every attack it knows of compromised the victim's systems, while Reuters reports four successes out of five; the statement gives no count. **Victims and attackers were not named**.
+
+**Sources:**
+
+1. [NCSC (BACS): Cyberattacks involving AI agents: First confirmed cases in Switzerland](<https://www.bacs.admin.ch/en/26-ki-agenten-1-en>) — primary source. Checked: 26 Nov 2026, 16:06 CET
+2. [CNA (Reuters): AI agents used in five cyber attacks in Switzerland, government says](<https://channelnewsasia.com/business/ai-agents-used-in-five-cyber-attacks-in-switzerland-government-says-6585191>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+
+### UPDATE: Nvidia tells server makers to stop shipping to Malaysia, Singapore, Thailand and Indonesia under the new US chip rule, the FT reports
+
+*Industry & policy · Updated*
+
+**Published:** 26 Nov 2026
+
+Nvidia has told its manufacturing partners to **stop shipping servers containing its chips** to Malaysia, Singapore, Thailand and Indonesia, the Financial Times reported on Thursday, according to Reuters' account of the report. Partners including Dell and Supermicro told buyers in the four countries that Nvidia would not allow their orders to be shipped, the FT said, citing three people familiar with the matter. Reuters could not immediately verify the report, and Nvidia, Dell and Supermicro did not immediately respond.
+
+Update to the 16 November afternoon story on the Commerce Department's remote-access rule. That rule took effect on 19 November. Besides licences for overseas data centres that rent large amounts of compute to Chinese-headquartered companies, it requires **licences to ship advanced AI chips** to Singapore, Malaysia, Thailand, Indonesia and Brazil, which the department says present a higher-than-normal risk of diversion.
+
+The FT said it was unclear whether the halt is temporary while Nvidia and its partners work out how to comply. TNW, citing the FT, reports that revenue booked through Nvidia's Singapore subsidiary reached **$104bn in 2025**, up 72%, and quotes a regional cloud provider executive: 'It's causing sheer chaos in the region.'
+
+**Analysis — why it matters:** *Analysis: a stop imposed by the chip supplier closes the rental route faster than licence reviews could, but it also strands buyers in the region with no clear path to a licence.*
+
+**Caveat:** The FT article is paywalled and was not read; this account rests on Reuters' and TNW's summaries of it. Nvidia has **not confirmed the halt**, and the FT did not say whether it is temporary. The Singapore figure counts revenue booked through that subsidiary, not only sales to Southeast Asian customers.
+
+**Community reaction (opinion, not verified fact):**
+
+> “How surprising. What could possibly have caused them to do that so suddenly? We may never know.” — [musicale on Hacker News](<https://news.ycombinator.com/item?id=50652569>)
+
+> “As in, we'll believe they stop bypassing tariffs only when it's clearly shown in their earnings report.” — [esperent on Hacker News](<https://news.ycombinator.com/item?id=50653045>)
+
+**Sources:**
+
+1. [Bangkok Post (Reuters): Nvidia halts server shipments to Southeast Asia](<https://www.bangkokpost.com/business/general/3361629/nvidia-halts-server-shipments-to-southeast-asia>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+2. [TNW: Nvidia reportedly stops server shipments to Malaysia, Singapore, Thailand, and Indonesia](<https://thenextweb.com/news/nvidia-halts-server-shipments-southeast-asia>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+
+### Bank of England puts hyperscalers' potential exposure at just over $4 trillion and warns AI financing is becoming 'complex, circular and opaque'
+
+*Industry & policy · New*
+
+**Published:** 26 Nov 2026, 11:30 CET
+
+The Bank of England's Financial Policy Committee said in its November Financial Stability Report, published on Thursday, that the very rapid expansion of AI financing, 'in a form that is increasingly complex, circular and opaque', is deepening links across the global financial system and making it more likely that stress in one area spreads to another. Internal Bank estimates put hyperscalers' total potential exposure, including debt and off-balance-sheet commitments, at **just over $4 trillion**.
+
+The report says borrowing by hyperscalers, data-centre operators and other AI-infrastructure firms is **almost double its 2025 level**, and that hyperscaler bond issuance is set to exceed **$305 billion in 2026**, about 8% of global investment-grade issuance. It adds that spreads have widened sharply for some lower-quality AI-related borrowers and that some private credit funds are becoming more selective about further data-centre financing.
+
+The committee also says the growing sophistication of AI agents and open-weight models is making cyber and operational risks a more prominent threat to financial stability. A Bank and FCA survey cited in the report found that 86% of responding UK financial firms use AI and **80% have deployed AI agents**.
+
+**Analysis — why it matters:** *Analysis: a central bank is treating the AI build-out as a systemic-risk question as well as a growth story, and it names the opacity of circular deals, not the size of any one firm, as the problem.*
+
+**Caveat:** The $4 trillion figure is an internal Bank estimate that adds debt to contractual commitments such as leases and guarantees; it measures **potential exposure, not losses**. The report uses data available as at 18 November.
+
+**Sources:**
+
+1. [Bank of England: Financial Stability Report, November 2026 (PDF)](<https://www.bankofengland.co.uk/-/media/boe/files/financial-stability-report/2026/financial-stability-report-november-2026.pdf>) — primary source. Checked: 26 Nov 2026, 16:06 CET
+2. [Bank of England: Financial Stability Report, November 2026](<https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026>) — primary source. Checked: 26 Nov 2026, 16:06 CET
+
+### Dutch consumer and digital-rights groups ask an Amsterdam court to halt sales of Meta's AI glasses until they comply with privacy law
+
+*Industry & policy · New*
+
+**Published:** 26 Nov 2026
+
+Dutch consumer and digital-rights groups, including the consumers' association Consumentenbond and Offlimits, asked the Amsterdam District Court on Thursday to **halt sales of Meta's AI-powered smart glasses** in the Netherlands, arguing that they let wearers film people without their knowledge, Reuters reports. The groups want Meta to stop covert recording, stop using recordings to train AI models and halt sales until it complies, with penalties of **€100,000 per day** per defendant, capped at €100 million.
+
+Meta's lawyer said the measures would amount to a product recall and that a recording light on the frame makes filming obvious; he denied that Meta processes images from the glasses in Europe or uses them to train AI models. A lawyer for EssilorLuxottica said the company neither processes nor has access to footage. Reuters says a decision in the summary proceedings is **expected in mid-December**.
+
+**Analysis — why it matters:** *Analysis: a ruling would cover only the Netherlands, but Reuters notes it could set a precedent, and the training-data claim ties camera wearables directly to Europe's privacy rules for AI.*
+
+**Caveat:** This was a hearing; **no ruling has been made**. The claims about covert recording and AI training are the plaintiffs'; Meta denies them.
+
+**Sources:**
+
+1. [Euronext (Reuters): Dutch groups ask court to halt Meta smart glasses sales over privacy concerns](<https://live.euronext.com/en/financial-news/dutch-groups-ask-court-halt-meta-smart-glasses-sales-over-privacy-concerns>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+2. [CNA (Reuters): Dutch groups ask court to halt Meta smart glasses sales over privacy concerns](<https://www.channelnewsasia.com/business/dutch-groups-ask-court-halt-meta-smart-glasses-sales-over-privacy-concerns-6585041>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+3. [NL Times: Dutch consumers org. also sues Meta over AI glasses; hearing set for November 26](<https://nltimes.nl/2026/10/15/dutch-consumers-org-also-sues-meta-ai-glasses-hearing-set-november-26>) — reporting. Checked: 26 Nov 2026, 16:06 CET
+
+## Key patterns (editorial analysis)
+
+- The US compute rule is biting from both ends: a reported supplier-side halt to **four Southeast Asian markets** and reported delays at two Chinese labs.
+- Supervisors are moving from warnings to numbers: the Bank of England's **$4 trillion exposure** estimate and Switzerland's first confirmed intrusions run with AI agents.
+- Sovereignty and privacy are shaping deployment: India's from-scratch Chariot-1 models, and a Dutch suit seeking to **halt Meta's glasses sales**.
+
+## Source coverage
+
+- Engine version: 4.6.0
+- Engine ran this edition: yes
+- Engine look-back: 2 days
+
+### Source status
+
+- reddit: ok, partial (18 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)
+- hackernews: ok (27 stories)
+- github: ok (5 items)
+- devto: ok (12 articles; tags ai and llm)
+- youtube: not searched (yt-dlp not available on this machine)
+- polymarket: not used: blocked in France (ANJ)
+- x: not searched (no consent-free source configured)
+
+### Notes
+
+- The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older or general items (Google's Workspace agent rules, an ethics thread, the New York Times note on Photoshop); the stories in this edition were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.
+- Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.
+- Read through other routes: Reuters' own pages refused automated requests (HTTP 401), so Reuters stories were read in wire copies on Bangkok Post, Daily Maverick, Euronext and CNA. The Financial Times report on Nvidia is paywalled and was not read. Business Insider's report that Thomson Reuters will build its Thomson 1.1 model on Z.ai's GLM and Google's Gemma sits behind a subscription prompt and was not carried; Bloomberg's report on ElevenLabs funding talks is paywalled and was not carried.
+- Newsletter leads from the Iris mail bot: today's file now holds seven leads. Four were handled in the morning edition. Of the three added this afternoon, the merger of ChatGPT's Chat and Work limits was announced on 1 November and carried that day; Baidu's ERNIE 5.5 Flash Preview weights were posted on 23 and 24 November, more than 48 hours before this edition; and Ollama 0.40.18 is a point release that was not carried.
+- Not carried because they fall before this window: OpenAI's fix to a GPT-6.2 billing mistake, which makes Astra and Sol users reach their limits 40% and 25% faster, posted on X at about 03:50 Paris time on 26 November; Apple's removal of MiniMax's Talkie app from the App Store, reported on 25 November; Google's requirement that AI agents reach Workspace through its MCP servers or CLI from 1 February 2027, announced on 24 November.
+- Also before this window: Cloudflare's Search for Agents, 25 November; the ShellBench agent benchmark, 24 November; and a LessWrong study of side channels between models on shared inference servers, posted on 22 November and covered by Tom's Hardware today.
+- Also not carried: Reuters' exclusive that a researcher found MiniMax data accessed by unidentified parties, read only in headlines; reports that OpenAI and Anthropic staff fear releasing their strongest unreleased models, whose original source was not read in the window.
+- No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.
+
+### Engine footer (verbatim)
+
+```text
+---
+✅ All agents reported back!
+├─ 🟠 Reddit: 18 threads │ 581 upvotes │ 1,037 comments
+├─ 🟡 HN: 27 stories │ 1,107 points │ 775 comments
+├─ 👩‍💻 dev.to: 12 articles │ 228 reactions │ 192 comments
+├─ 🐙 GitHub: 5 items │ 16 reactions │ 35 comments
+├─ 🗣️ Top voices: r/artificial, r/technology, r/ClaudeAI
+---
+```
