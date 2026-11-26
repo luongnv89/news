@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-26-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-26T06:09:15+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-25T16:08:33+01:00",
+  "window_end": "2026-11-26T06:09:15+01:00",
+  "editorial_note": "The FCC authorised SpaceX to deploy ==up to 1 million orbital data-centre satellites==, and S&P put Nvidia's AA credit rating on watch over board independence after Jensen Huang's ouster and return. Researchers working with Anthropic posted a much shorter machine-checked proof of the Riemann hypothesis and its Dirichlet generalisation, Anthropic explained how Claude agents moved its main API from Python to Rust, and Microsoft named China's Salt Typhoon among the users of the ARTEX attack framework. There is ==no new frontier model== in this window. Three of the five stories are labelled updates to stories earlier editions carried.",
+  "stories": [
+    {
+      "id": "spacex-starmind-fcc-million-satellites",
+      "section": "Industry & policy",
+      "headline": "FCC authorises SpaceX to deploy up to 1 million 'Starmind' data-centre satellites, the first US approval of an orbital compute constellation",
+      "published_at": "2026-11-25",
+      "freshness": "new",
+      "paragraphs": [
+        "The US Federal Communications Commission said on Wednesday that it had granted SpaceX authorisation to deploy up to ==1,000,000 orbital compute modules==, the 'Starmind' constellation, and called it the first authorisation in US history for a constellation of data centres in space. The FCC's release says the system operates consistently with its orbital-debris rules and that the agency is still reviewing other orbital data-centre proposals.",
+        "Chairman Brendan Carr framed the grant around what the release calls America's super intelligence economy. Besides the constellation itself, the authorisation covers radio links for backup telemetry, tracking and command, and radio backup for the optical inter-satellite network in the ==18.8 to 19.3 GHz downlink and 28.6 to 29.1 GHz uplink== bands.",
+        "Ars Technica, which describes the grant as conditional, reports that SpaceX has seven years to deploy a single operational Starmind satellite, ==until November 2035 for 100,000== and until November 2040 for the full constellation. It says SpaceX proposed six orbits from 550 km to about 1,000 km and sought a waiver to move retired satellites above 600 km into disposal or heliocentric orbits instead of burning them up. The Verge notes that SpaceX says Starmind will send data to Earth over laser links to Starlink."
+      ],
+      "why_it_matters": "Analysis: the approval clears a regulatory hurdle, not the technical or economic ones; Ars notes that it does not establish that orbital data centres are viable. If fully built, Ars says, the constellation would raise the number of satellites in orbit ==roughly 50-fold==, so the conditions on orbits and disposal carry real weight.",
+      "caveat": "The deployment deadlines, orbits and waiver request come from Ars Technica's reading of the order; the FCC's two-page release gives none of them. SpaceX's description of Starmind is its own claim.",
+      "sources": [
+        {
+          "label": "FCC: FCC Authorizes 1 Million Satellites for Data Centers in Space (PDF)",
+          "url": "https://docs.fcc.gov/public/attachments/DOC-427572A1.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-26T06:06:42+01:00"
+        },
+        {
+          "label": "Ars Technica: The FCC has authorized SpaceX to deploy 1 million satellites",
+          "url": "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
+          "type": "reporting",
+          "checked_at": "2026-11-26T06:06:43+01:00"
+        },
+        {
+          "label": "The Verge: FCC signs off on SpaceX's plan to put up to 1 million data center satellites into space",
+          "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+          "type": "reporting",
+          "checked_at": "2026-11-26T06:06:42+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50645978",
+          "type": "community",
+          "checked_at": "2026-11-26T06:06:44+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "They said we are heading for very difficult times for earth-based astronomy.",
+          "author": "nico on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50646182"
+        },
+        {
+          "text": "I am more worried about space debris and regulations around that.",
+          "author": "neya on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50646221"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-huang-spy-report",
+      "section": "Industry & policy",
+      "headline": "UPDATE: S&P puts Nvidia's AA credit rating on watch for a possible one-notch cut, citing board independence and 'key man' risk",
+      "published_at": "2026-11-25T19:38:00+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 23 November afternoon edition, which reported Nvidia's board reinstating Jensen Huang as chief executive, and the 24 November morning edition, which reported Commerce adding Megaspeed and six other Asian firms to the Entity List. The new development: on Wednesday at 13:38 New York time S&P Global Ratings placed Nvidia's ==AA issuer and senior unsecured ratings on CreditWatch negative==.",
+        "S&P said recent, well-publicised developments had raised questions about Nvidia's management and governance, including board independence and key man risk, and that it was unaware of any remedial action by the board. It said the long tenure of certain board members 'may have compromised their independence', and that the CEO's departure and reinstatement 'does not sufficiently answer our questions regarding board oversight of executive code of conduct'. It revised its governance modifier ==to neutral from positive==.",
+        "S&P expects to resolve the review ==within 90 days== and to limit any downgrade to one notch, unless investigations or disclosures lead it to believe Nvidia's reputation or prospects have been harmed. It said Nvidia's competitive position and finances are unchanged, but that evidence of circumvented export rules or misleading China disclosures would weigh on its view. TechCrunch notes that one notch would take Nvidia to AA-, and that a lower rating could raise costs for the neoclouds and infrastructure companies whose debt Nvidia backstops."
+      ],
+      "why_it_matters": "Analysis: a credit rating agency is now putting a price on the governance questions raised by the spy and chip-smuggling reports, at a company whose guarantees support part of the AI data-centre build-out.",
+      "caveat": "A CreditWatch placement is ==not a downgrade==; S&P says it will meet the board and management first. The possible effect on borrowers Nvidia backstops is TechCrunch's analysis, not S&P's. S&P's page refused a plain request (HTTP 403) and was read with a web-extraction tool.",
+      "sources": [
+        {
+          "label": "S&P Global Ratings: NVIDIA Corp. 'AA' Ratings Placed On CreditWatch Negative On Rising M&G Risk",
+          "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3667832",
+          "type": "primary",
+          "checked_at": "2026-11-26T06:06:44+01:00"
+        },
+        {
+          "label": "TechCrunch: S&P considers Nvidia credit downgrade over governance and 'key man' risks",
+          "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+          "type": "reporting",
+          "checked_at": "2026-11-26T06:06:45+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "alpoge-riemann-hypothesis-claim",
+      "section": "Research",
+      "headline": "UPDATE: Researchers working with Anthropic post a far shorter Lean proof of the Riemann hypothesis and its generalisation for Dirichlet L-functions, so far checked only by machine",
+      "published_at": "2026-11-25T21:38:07+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 22 November morning edition, which reported the Lean and Mathlib communities certifying Levent Alpöge's Lean proof of the Riemann hypothesis. The new development: on Wednesday at 21:38 Paris time the GitHub user lsernau pushed ==grh-lean==, a Lean 4 proof of the Riemann hypothesis and of the ==Generalized Riemann Hypothesis for Dirichlet L-functions==. Its README says the proof is based on Alpöge's and is a shorter version 'produced in collaboration with my colleagues at Anthropic, and Claude'.",
+        "The repository holds two editions of the same five theorems: a readable one of ==about 300,000 lines==, with a guide, and a compact one of ==about 76,000 lines==. Both build on Mathlib using only Lean's three standard axioms; a build takes one to two hours on 12 cores with 24 GB of memory. The code is licensed Apache 2.0 under an Anthropic copyright.",
+        "Separately, the complexity theorist Scott Aaronson wrote on Wednesday that his working assumption is now that 'any proof that comes directly from OpenAI or Anthropic is correct barring information to the contrary', citing the Lean certificates the labs publish. He added that he is 'virtually certain, from multiple reliable sources' that AI labs are sitting on unreleased results that would break currently deployed cryptosystems, while saying he has seen no details and is much less confident about their nature. No lab has published such a result."
+      ],
+      "why_it_matters": "Analysis: a readable edition a few hundred thousand lines long makes a human read-through more feasible, and that read-through is the step the proof still lacks.",
+      "caveat": "The README says the proof has ==passed machine checks only==: no mathematician has read it through and no paper comes with it. The repository sits on a personal GitHub account, not Anthropic's, and Anthropic has made no announcement. Aaronson's cryptography remarks are second-hand and, by his own account, unverified.",
+      "sources": [
+        {
+          "label": "GitHub: lsernau/grh-lean, GRH for Dirichlet L-functions in Lean 4",
+          "url": "https://github.com/lsernau/grh-lean",
+          "type": "primary",
+          "checked_at": "2026-11-26T06:06:38+01:00"
+        },
+        {
+          "label": "Shtetl-Optimized (Scott Aaronson): HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT",
+          "url": "https://scottaaronson.blog/?p=10379",
+          "type": "reporting",
+          "checked_at": "2026-11-26T06:06:38+01:00"
+        },
+        {
+          "label": "Hacker News discussion of grh-lean",
+          "url": "https://news.ycombinator.com/item?id=50648050",
+          "type": "community",
+          "checked_at": "2026-11-26T06:06:39+01:00"
+        },
+        {
+          "label": "Hacker News discussion of Aaronson's post",
+          "url": "https://news.ycombinator.com/item?id=50646108",
+          "type": "community",
+          "checked_at": "2026-11-26T06:06:42+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "From ~17M lines to just ~76k lines, a 99.56% reduction.",
+          "author": "bananaflag on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50648590"
+        },
+        {
+          "text": "If this were “from Anthropic” surely it would be hosted on an Anthropic account?",
+          "author": "lelandfe on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50648275"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-messages-api-rust",
+      "section": "Coding & agents",
+      "headline": "Anthropic says Claude agents helped move its Messages API from Python to Rust on live traffic, cutting CPU per request by about 70%",
+      "published_at": "2026-11-25",
+      "freshness": "new",
+      "paragraphs": [
+        "Anthropic's engineering team published an account on Wednesday of how it moved its ==Messages API==, the main way customers and its own apps such as Claude Code and Cowork reach Claude, from Python to Rust without taking the service offline. It says API traffic grew ==roughly 1,800 times== from early 2024 to autumn 2026, and that the Rust version uses ==about 70% less CPU per request== and cuts median time to first token by about 20%.",
+        "Claude wrote a first version of the core request path in about a week, the post says, but verification was the hard part: in April the Rust API passed about 98% of its tests while only about a quarter of real inputs matched on production traffic. Anthropic shadowed live requests through both versions, turned each difference into a small record and dispatched agents to fix it, using an inner sandbox loop, an outer loop on shadowed traffic and a memory loop that turned engineers' review corrections into rules, tests and lints.",
+        "The share of matching inputs fell to 6.5% in early May and ==reached 99.6%== by August, according to the post; public traffic moved to Rust in September. Merged changes to the API's Rust code rose to more than 3,000 per two-week period, not all of them migration work."
+      ],
+      "why_it_matters": "Analysis: the post argues that checking behaviour on production traffic, not writing the code, is what limits agent-driven rewrites of live systems; other teams can test that claim on their own migrations.",
+      "caveat": "All figures are Anthropic's own, taken from the text and charts of its post; no outside party has checked them.",
+      "sources": [
+        {
+          "label": "Anthropic: Migrating our Messages API to Rust",
+          "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+          "type": "primary",
+          "checked_at": "2026-11-26T06:06:45+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50646357",
+          "type": "community",
+          "checked_at": "2026-11-26T06:06:46+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "the era of 'productivity gains' using dynamic languages is over.",
+          "author": "dzonga on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50648399"
+        },
+        {
+          "text": "Makes you wonder why they even use Bun at this point.",
+          "author": "pier25 on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50648803"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-storm-0940-artex",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Microsoft says China's Salt Typhoon and Crystal Typhoon and two North Korean groups have added the ARTEX agentic attack framework to their tooling",
+      "published_at": "2026-11-25T19:09:06+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Update to the 22 October morning edition, which reported Microsoft's finding that the China-aligned group Storm-0940 used ARTEX against hundreds of organisations; later editions carried CrowdStrike's VAPOR PANDA report (30 October), a Japan-led probe of ARTEX servers (15 November) and the European Commission's AI-assisted breach (19 November). The new development: on Wednesday evening Microsoft Threat Intelligence said that, as of November, it has seen ==Salt Typhoon and Crystal Typhoon==, North Korea's Onyx Sleet and Pearl Sleet, and the groups Storm-0940 and Storm-3358 integrating ARTEX into their tooling.",
+        "Microsoft describes ARTEX as an AI-driven penetration-testing platform in which a planner agent, worker agents with a real shell and a reporter agent take an attack from reconnaissance to exploitation with little or no human involvement. It says the tool introduces no new techniques but can reach ==persistent, privileged access in minutes==, and that the most durable sign of it is behavioural: bursts of varied requests and retries at machine speed.",
+        "According to Microsoft, the original developer removed the code from GitHub in October, but forks continue, and in November the Chinese security firm ThreatBook ==claimed ownership and began selling 'ARTEX Pro'==. The Record notes that Salt Typhoon is the group US agencies believe breached at least nine telecommunications companies in 2024, and that the FBI issued its own ARTEX advisory two weeks ago."
+      ],
+      "why_it_matters": "Analysis: the list now includes the state group blamed for the 2024 US telecom breaches, which moves agentic attack tooling from a criminal problem to a state-espionage one.",
+      "caveat": "Attribution to named groups is Microsoft's own, and it gives no detail on how each group used the tool. ThreatBook's ownership claim is reported by Microsoft.",
+      "sources": [
+        {
+          "label": "Microsoft Security Blog: What defenders need to know about ARTEX, the agentic AI framework threat actors abuse",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+          "type": "primary",
+          "checked_at": "2026-11-26T06:06:46+01:00"
+        },
+        {
+          "label": "The Record: Microsoft: China's Salt Typhoon hackers are using Artex",
+          "url": "https://therecord.media/microsoft-china-salt-typhoon-using-artex-ai-tool",
+          "type": "reporting",
+          "checked_at": "2026-11-26T06:06:46+01:00"
+        }
+      ],
+      "community_quotes": []
+    }
+  ],
+  "coverage": {
+    "engine_version": "4.6.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (18 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)",
+      "hackernews": "ok (25 stories)",
+      "github": "ok (4 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older or general items (a New York Times note on Photoshop, an agent-tool security essay, an ethics thread); the stories in this edition were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429 and Google DeepMind's feed could not be parsed. Missing coverage does not mean nobody discussed these stories.",
+      "Read through other routes: S&P Global Ratings' release refused a plain request (HTTP 403) and was read with a web-extraction tool. X post identifiers were used only to check publication times and are not cited.",
+      "Newsletter leads from the Iris mail bot: today's file holds four leads. Anthropic's close below its IPO price and Claude's install-as-app beta were already carried; Best Buy's raised forecast and Oracle's reported European job cuts could not be matched to a primary source in the window and were not used.",
+      "Not carried: the New York Times' warning to photographers about Photoshop 2027, published 24 November before this window; the state attorneys general's challenge to Character.AI's sale of user chats, announced from 23 November; OpenAI's Hirsch-conjecture and Fourier-transform manuscripts, pushed with the matrix paper at 01:04 Paris time on 25 November, inside the 25 November morning edition's window.",
+      "Also not carried: OpenAI's December merger of ChatGPT and Codex usage limits, announced on its help pages earlier in November; Sam Altman's statement that OpenAI is testing Private Inference, found only on X and in reports citing it; an OpenAI alignment-midtraining post that resurfaced in news feeds but dates from March; and a House bill on AI-built models, reported 24 November.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 18 threads │ 1,058 comments\n├─ 🟡 HN: 25 stories │ 1,150 points │ 825 comments\n├─ 👩‍💻 dev.to: 12 articles │ 100 reactions │ 93 comments\n├─ 🐙 GitHub: 4 items │ 13 reactions │ 31 comments\n├─ 🗣️ Top voices: r/artificial, r/technology, r/singularity\n---"
+  },
+  "key_patterns": [
+    "Compute is heading for orbit on paper first: the FCC granted ==up to 1 million satellites== with a 14-year runway, while the economics remain unproven.",
+    "Governance has become a credit question: S&P tied a possible Nvidia downgrade to ==board independence and succession planning==.",
+    "Agents are taking on work where checking is the hard part: Anthropic used shadowed production traffic to steer its Rust rewrite, and a machine proof shrank to ==about 76,000 lines== but still awaits a human reader."
+  ],
+  "previous_issue_id": "2026-11-25-afternoon"
+}

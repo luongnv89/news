@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Thursday 26 November 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-11-26-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Thursday 26 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-26-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-26T06:09:15+01:00">Thursday 26 November 2026</time></p><p>Morning edition &middot; No. 2026-11-26-morning</p><p>Issued 06:09 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-26-morning.html">This edition</a><a href="2026-11-26-morning.md">Markdown</a><a href="2026-11-26-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-26-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Thursday 26 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-25T16:08:33+01:00">25 Nov 2026, 16:08 CET</time> to <time datetime="2026-11-26T06:09:15+01:00">26 Nov 2026, 06:09 CET</time> (Paris time). Issued <time datetime="2026-11-26T06:09:15+01:00">26 Nov 2026, 06:09 CET</time>.</p><p class="lead-note">The FCC authorised SpaceX to deploy <mark class="hl">up to 1 million orbital data-centre satellites</mark>, and S&amp;P put Nvidia&#x27;s AA credit rating on watch over board independence after Jensen Huang&#x27;s ouster and return. Researchers working with Anthropic posted a much shorter machine-checked proof of the Riemann hypothesis and its Dirichlet generalisation, Anthropic explained how Claude agents moved its main API from Python to Rust, and Microsoft named China&#x27;s Salt Typhoon among the users of the ARTEX attack framework. There is <mark class="hl">no new frontier model</mark> in this window. Three of the five stories are labelled updates to stories earlier editions carried.</p><p class="tally">5 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-25-afternoon.html">2026-11-25-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-anthropic-messages-api-rust" aria-labelledby="h-anthropic-messages-api-rust"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-anthropic-messages-api-rust">Anthropic says Claude agents helped move its Messages API from Python to Rust on live traffic, cutting CPU per request by about 70%</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>Anthropic&#x27;s engineering team published an account on Wednesday of how it moved its <mark class="hl">Messages API</mark>, the main way customers and its own apps such as Claude Code and Cowork reach Claude, from Python to Rust without taking the service offline. It says API traffic grew <mark class="hl">roughly 1,800 times</mark> from early 2024 to autumn 2026, and that the Rust version uses <mark class="hl">about 70% less CPU per request</mark> and cuts median time to first token by about 20%.</p><p>Claude wrote a first version of the core request path in about a week, the post says, but verification was the hard part: in April the Rust API passed about 98% of its tests while only about a quarter of real inputs matched on production traffic. Anthropic shadowed live requests through both versions, turned each difference into a small record and dispatched agents to fix it, using an inner sandbox loop, an outer loop on shadowed traffic and a memory loop that turned engineers&#x27; review corrections into rules, tests and lints.</p><p>The share of matching inputs fell to 6.5% in early May and <mark class="hl">reached 99.6%</mark> by August, according to the post; public traffic moved to Rust in September. Merged changes to the API&#x27;s Rust code rose to more than 3,000 per two-week period, not all of them migration work.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the post argues that checking behaviour on production traffic, not writing the code, is what limits agent-driven rewrites of live systems; other teams can test that claim on their own migrations.</p></aside><p class="caveat"><span class="label">Caveat.</span> All figures are Anthropic&#x27;s own, taken from the text and charts of its post; no outside party has checked them.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;the era of &#x27;productivity gains&#x27; using dynamic languages is over.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50648399" rel="noopener noreferrer">dzonga on Hacker News</a></p></blockquote><blockquote><p>&ldquo;Makes you wonder why they even use Bun at this point.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50648803" rel="noopener noreferrer">pier25 on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.anthropic.com/research/migrating-api-to-rust" rel="noopener noreferrer">Anthropic: Migrating our Messages API to Rust</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:45+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50646357" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:46+01:00">26 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-26-morning.html#story-anthropic-messages-api-rust"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-anthropic-messages-api-rust">Draft for X</label><textarea id="share-x-story-anthropic-messages-api-rust" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-anthropic-messages-api-rust-count">Anthropic says Claude agents helped move its Messages API from Python to Rust on live traffic, cutting CPU per request by about 70%
+
+Source: Anthropic; via The AI Gazette</textarea><p class="share-count" id="share-x-story-anthropic-messages-api-rust-count">194 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Anthropic%20says%20Claude%20agents%20helped%20move%20its%20Messages%20API%20from%20Python%20to%20Rust%20on%20live%20traffic%2C%20cutting%20CPU%20per%20request%20by%20about%2070%25%0A%0ASource%3A%20Anthropic%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-anthropic-messages-api-rust" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-anthropic-messages-api-rust">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-anthropic-messages-api-rust">Draft for LinkedIn</label><textarea id="share-li-story-anthropic-messages-api-rust" class="share-text share-text-li" rows="12">Anthropic says Claude agents helped move its Messages API from Python to Rust on live traffic, cutting CPU per request by about 70%
+
+→ The share of matching inputs fell to 6.5% in early May and reached 99.6% by August, according to the post; public traffic moved to Rust in September.
+
+https://luongnv.com/news/reports/2026-11-26-morning.html#story-anthropic-messages-api-rust
+Source: Anthropic; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Anthropic%20says%20Claude%20agents%20helped%20move%20its%20Messages%20API%20from%20Python%20to%20Rust%20on%20live%20traffic%2C%20cutting%20CPU%20per%20request%20by%20about%2070%25%0A%0A%E2%86%92%20The%20share%20of%20matching%20inputs%20fell%20to%206.5%25%20in%20early%20May%20and%20reached%2099.6%25%20by%20August%2C%20according%20to%20the%20post%3B%20public%20traffic%20moved%20to%20Rust%20in%20September.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-anthropic-messages-api-rust%0ASource%3A%20Anthropic%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-anthropic-messages-api-rust">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-anthropic-messages-api-rust">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-alpoge-riemann-hypothesis-claim" aria-labelledby="h-alpoge-riemann-hypothesis-claim"><p class="kicker"><span class="section-name">Research</span> <span class="freshness">Updated</span></p><h3 id="h-alpoge-riemann-hypothesis-claim">UPDATE: Researchers working with Anthropic post a far shorter Lean proof of the Riemann hypothesis and its generalisation for Dirichlet L-functions, so far checked only by machine</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25T21:38:07+01:00">25 Nov 2026, 21:38 CET</time></p><div class="story-body"><p>Update to the 22 November morning edition, which reported the Lean and Mathlib communities certifying Levent Alpöge&#x27;s Lean proof of the Riemann hypothesis. The new development: on Wednesday at 21:38 Paris time the GitHub user lsernau pushed <mark class="hl">grh-lean</mark>, a Lean 4 proof of the Riemann hypothesis and of the <mark class="hl">Generalized Riemann Hypothesis for Dirichlet L-functions</mark>. Its README says the proof is based on Alpöge&#x27;s and is a shorter version &#x27;produced in collaboration with my colleagues at Anthropic, and Claude&#x27;.</p><p>The repository holds two editions of the same five theorems: a readable one of <mark class="hl">about 300,000 lines</mark>, with a guide, and a compact one of <mark class="hl">about 76,000 lines</mark>. Both build on Mathlib using only Lean&#x27;s three standard axioms; a build takes one to two hours on 12 cores with 24 GB of memory. The code is licensed Apache 2.0 under an Anthropic copyright.</p><p>Separately, the complexity theorist Scott Aaronson wrote on Wednesday that his working assumption is now that &#x27;any proof that comes directly from OpenAI or Anthropic is correct barring information to the contrary&#x27;, citing the Lean certificates the labs publish. He added that he is &#x27;virtually certain, from multiple reliable sources&#x27; that AI labs are sitting on unreleased results that would break currently deployed cryptosystems, while saying he has seen no details and is much less confident about their nature. No lab has published such a result.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a readable edition a few hundred thousand lines long makes a human read-through more feasible, and that read-through is the step the proof still lacks.</p></aside><p class="caveat"><span class="label">Caveat.</span> The README says the proof has <mark class="hl">passed machine checks only</mark>: no mathematician has read it through and no paper comes with it. The repository sits on a personal GitHub account, not Anthropic&#x27;s, and Anthropic has made no announcement. Aaronson&#x27;s cryptography remarks are second-hand and, by his own account, unverified.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;From ~17M lines to just ~76k lines, a 99.56% reduction.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50648590" rel="noopener noreferrer">bananaflag on Hacker News</a></p></blockquote><blockquote><p>&ldquo;If this were “from Anthropic” surely it would be hosted on an Anthropic account?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50648275" rel="noopener noreferrer">lelandfe on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://github.com/lsernau/grh-lean" rel="noopener noreferrer">GitHub: lsernau/grh-lean, GRH for Dirichlet L-functions in Lean 4</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:38+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://scottaaronson.blog/?p=10379" rel="noopener noreferrer">Shtetl-Optimized (Scott Aaronson): HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:38+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50648050" rel="noopener noreferrer">Hacker News discussion of grh-lean</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:39+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50646108" rel="noopener noreferrer">Hacker News discussion of Aaronson&#x27;s post</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:42+01:00">26 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-26-morning.html#story-alpoge-riemann-hypothesis-claim"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-alpoge-riemann-hypothesis-claim">Draft for X</label><textarea id="share-x-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-alpoge-riemann-hypothesis-claim-count">UPDATE: Researchers working with Anthropic post a far shorter Lean proof of the Riemann hypothesis and its generalisation for Dirichlet L-functions, so far checked only by machine
+
+Sources: GitHub, Shtetl-Optimized (Scott Aaronson); via The AI Gazette</textarea><p class="share-count" id="share-x-story-alpoge-riemann-hypothesis-claim-count">275 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Researchers%20working%20with%20Anthropic%20post%20a%20far%20shorter%20Lean%20proof%20of%20the%20Riemann%20hypothesis%20and%20its%20generalisation%20for%20Dirichlet%20L-functions%2C%20so%20far%20checked%20only%20by%20machine%0A%0ASources%3A%20GitHub%2C%20Shtetl-Optimized%20%28Scott%20Aaronson%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-alpoge-riemann-hypothesis-claim" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-alpoge-riemann-hypothesis-claim">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-alpoge-riemann-hypothesis-claim">Draft for LinkedIn</label><textarea id="share-li-story-alpoge-riemann-hypothesis-claim" class="share-text share-text-li" rows="12">UPDATE: Researchers working with Anthropic post a far shorter Lean proof of the Riemann hypothesis and its generalisation for Dirichlet L-functions, so far checked only by machine
+
+→ Both build on Mathlib using only Lean&#x27;s three standard axioms; a build takes one to two hours on 12 cores with 24 GB of memory.
+
+https://luongnv.com/news/reports/2026-11-26-morning.html#story-alpoge-riemann-hypothesis-claim
+Sources: GitHub, Shtetl-Optimized (Scott Aaronson); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Researchers%20working%20with%20Anthropic%20post%20a%20far%20shorter%20Lean%20proof%20of%20the%20Riemann%20hypothesis%20and%20its%20generalisation%20for%20Dirichlet%20L-functions%2C%20so%20far%20checked%20only%20by%20machine%0A%0A%E2%86%92%20Both%20build%20on%20Mathlib%20using%20only%20Lean%27s%20three%20standard%20axioms%3B%20a%20build%20takes%20one%20to%20two%20hours%20on%2012%20cores%20with%2024%20GB%20of%20memory.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-alpoge-riemann-hypothesis-claim%0ASources%3A%20GitHub%2C%20Shtetl-Optimized%20%28Scott%20Aaronson%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-alpoge-riemann-hypothesis-claim">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-alpoge-riemann-hypothesis-claim">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-spacex-starmind-fcc-million-satellites" aria-labelledby="h-spacex-starmind-fcc-million-satellites"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-spacex-starmind-fcc-million-satellites">FCC authorises SpaceX to deploy up to 1 million &#x27;Starmind&#x27; data-centre satellites, the first US approval of an orbital compute constellation</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25">25 Nov 2026</time></p><div class="story-body"><p>The US Federal Communications Commission said on Wednesday that it had granted SpaceX authorisation to deploy up to <mark class="hl">1,000,000 orbital compute modules</mark>, the &#x27;Starmind&#x27; constellation, and called it the first authorisation in US history for a constellation of data centres in space. The FCC&#x27;s release says the system operates consistently with its orbital-debris rules and that the agency is still reviewing other orbital data-centre proposals.</p><p>Chairman Brendan Carr framed the grant around what the release calls America&#x27;s super intelligence economy. Besides the constellation itself, the authorisation covers radio links for backup telemetry, tracking and command, and radio backup for the optical inter-satellite network in the <mark class="hl">18.8 to 19.3 GHz downlink and 28.6 to 29.1 GHz uplink</mark> bands.</p><p>Ars Technica, which describes the grant as conditional, reports that SpaceX has seven years to deploy a single operational Starmind satellite, <mark class="hl">until November 2035 for 100,000</mark> and until November 2040 for the full constellation. It says SpaceX proposed six orbits from 550 km to about 1,000 km and sought a waiver to move retired satellites above 600 km into disposal or heliocentric orbits instead of burning them up. The Verge notes that SpaceX says Starmind will send data to Earth over laser links to Starlink.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the approval clears a regulatory hurdle, not the technical or economic ones; Ars notes that it does not establish that orbital data centres are viable. If fully built, Ars says, the constellation would raise the number of satellites in orbit <mark class="hl">roughly 50-fold</mark>, so the conditions on orbits and disposal carry real weight.</p></aside><p class="caveat"><span class="label">Caveat.</span> The deployment deadlines, orbits and waiver request come from Ars Technica&#x27;s reading of the order; the FCC&#x27;s two-page release gives none of them. SpaceX&#x27;s description of Starmind is its own claim.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;They said we are heading for very difficult times for earth-based astronomy.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50646182" rel="noopener noreferrer">nico on Hacker News</a></p></blockquote><blockquote><p>&ldquo;I am more worried about space debris and regulations around that.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50646221" rel="noopener noreferrer">neya on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://docs.fcc.gov/public/attachments/DOC-427572A1.pdf" rel="noopener noreferrer">FCC: FCC Authorizes 1 Million Satellites for Data Centers in Space (PDF)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:42+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/" rel="noopener noreferrer">Ars Technica: The FCC has authorized SpaceX to deploy 1 million satellites</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:43+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers" rel="noopener noreferrer">The Verge: FCC signs off on SpaceX&#x27;s plan to put up to 1 million data center satellites into space</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:42+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50645978" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:44+01:00">26 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-26-morning.html#story-spacex-starmind-fcc-million-satellites"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-spacex-starmind-fcc-million-satellites">Draft for X</label><textarea id="share-x-story-spacex-starmind-fcc-million-satellites" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-spacex-starmind-fcc-million-satellites-count">FCC authorises SpaceX to deploy up to 1 million &#x27;Starmind&#x27; data-centre satellites, the first US approval of an orbital compute constellation
+
+Sources: FCC, Ars Technica, The Verge; via The AI Gazette</textarea><p class="share-count" id="share-x-story-spacex-starmind-fcc-million-satellites-count">223 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=FCC%20authorises%20SpaceX%20to%20deploy%20up%20to%201%20million%20%27Starmind%27%20data-centre%20satellites%2C%20the%20first%20US%20approval%20of%20an%20orbital%20compute%20constellation%0A%0ASources%3A%20FCC%2C%20Ars%20Technica%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-spacex-starmind-fcc-million-satellites" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-spacex-starmind-fcc-million-satellites">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-spacex-starmind-fcc-million-satellites">Draft for LinkedIn</label><textarea id="share-li-story-spacex-starmind-fcc-million-satellites" class="share-text share-text-li" rows="12">FCC authorises SpaceX to deploy up to 1 million &#x27;Starmind&#x27; data-centre satellites, the first US approval of an orbital compute constellation
+
+→ The FCC&#x27;s release says the system operates consistently with its orbital-debris rules and that the agency is still reviewing other orbital data-centre proposals.
+
+https://luongnv.com/news/reports/2026-11-26-morning.html#story-spacex-starmind-fcc-million-satellites
+Sources: FCC, Ars Technica, The Verge; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=FCC%20authorises%20SpaceX%20to%20deploy%20up%20to%201%20million%20%27Starmind%27%20data-centre%20satellites%2C%20the%20first%20US%20approval%20of%20an%20orbital%20compute%20constellation%0A%0A%E2%86%92%20The%20FCC%27s%20release%20says%20the%20system%20operates%20consistently%20with%20its%20orbital-debris%20rules%20and%20that%20the%20agency%20is%20still%20reviewing%20other%20orbital%20data-centre%20proposals.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-spacex-starmind-fcc-million-satellites%0ASources%3A%20FCC%2C%20Ars%20Technica%2C%20The%20Verge%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-spacex-starmind-fcc-million-satellites">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-spacex-starmind-fcc-million-satellites">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-nvidia-huang-spy-report" aria-labelledby="h-nvidia-huang-spy-report"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-nvidia-huang-spy-report">UPDATE: S&amp;P puts Nvidia&#x27;s AA credit rating on watch for a possible one-notch cut, citing board independence and &#x27;key man&#x27; risk</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25T19:38:00+01:00">25 Nov 2026, 19:38 CET</time></p><div class="story-body"><p>Update to the 23 November afternoon edition, which reported Nvidia&#x27;s board reinstating Jensen Huang as chief executive, and the 24 November morning edition, which reported Commerce adding Megaspeed and six other Asian firms to the Entity List. The new development: on Wednesday at 13:38 New York time S&amp;P Global Ratings placed Nvidia&#x27;s <mark class="hl">AA issuer and senior unsecured ratings on CreditWatch negative</mark>.</p><p>S&amp;P said recent, well-publicised developments had raised questions about Nvidia&#x27;s management and governance, including board independence and key man risk, and that it was unaware of any remedial action by the board. It said the long tenure of certain board members &#x27;may have compromised their independence&#x27;, and that the CEO&#x27;s departure and reinstatement &#x27;does not sufficiently answer our questions regarding board oversight of executive code of conduct&#x27;. It revised its governance modifier <mark class="hl">to neutral from positive</mark>.</p><p>S&amp;P expects to resolve the review <mark class="hl">within 90 days</mark> and to limit any downgrade to one notch, unless investigations or disclosures lead it to believe Nvidia&#x27;s reputation or prospects have been harmed. It said Nvidia&#x27;s competitive position and finances are unchanged, but that evidence of circumvented export rules or misleading China disclosures would weigh on its view. TechCrunch notes that one notch would take Nvidia to AA-, and that a lower rating could raise costs for the neoclouds and infrastructure companies whose debt Nvidia backstops.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a credit rating agency is now putting a price on the governance questions raised by the spy and chip-smuggling reports, at a company whose guarantees support part of the AI data-centre build-out.</p></aside><p class="caveat"><span class="label">Caveat.</span> A CreditWatch placement is <mark class="hl">not a downgrade</mark>; S&amp;P says it will meet the board and management first. The possible effect on borrowers Nvidia backstops is TechCrunch&#x27;s analysis, not S&amp;P&#x27;s. S&amp;P&#x27;s page refused a plain request (HTTP 403) and was read with a web-extraction tool.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3667832" rel="noopener noreferrer">S&amp;P Global Ratings: NVIDIA Corp. &#x27;AA&#x27; Ratings Placed On CreditWatch Negative On Rising M&amp;G Risk</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:44+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" rel="noopener noreferrer">TechCrunch: S&amp;P considers Nvidia credit downgrade over governance and &#x27;key man&#x27; risks</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:45+01:00">26 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-26-morning.html#story-nvidia-huang-spy-report"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-nvidia-huang-spy-report">Draft for X</label><textarea id="share-x-story-nvidia-huang-spy-report" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-nvidia-huang-spy-report-count">UPDATE: S&amp;P puts Nvidia&#x27;s AA credit rating on watch for a possible one-notch cut, citing board independence and &#x27;key man&#x27; risk
+
+Sources: S&amp;P Global Ratings, TechCrunch; via The AI Gazette</textarea><p class="share-count" id="share-x-story-nvidia-huang-spy-report-count">211 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20S%26P%20puts%20Nvidia%27s%20AA%20credit%20rating%20on%20watch%20for%20a%20possible%20one-notch%20cut%2C%20citing%20board%20independence%20and%20%27key%20man%27%20risk%0A%0ASources%3A%20S%26P%20Global%20Ratings%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-nvidia-huang-spy-report" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-nvidia-huang-spy-report">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-nvidia-huang-spy-report">Draft for LinkedIn</label><textarea id="share-li-story-nvidia-huang-spy-report" class="share-text share-text-li" rows="12">UPDATE: S&amp;P puts Nvidia&#x27;s AA credit rating on watch for a possible one-notch cut, citing board independence and &#x27;key man&#x27; risk
+
+→ S&amp;P expects to resolve the review within 90 days and to limit any downgrade to one notch, unless investigations or disclosures lead it to believe Nvidia&#x27;s reputation or prospects have been harmed.
+
+https://luongnv.com/news/reports/2026-11-26-morning.html#story-nvidia-huang-spy-report
+Sources: S&amp;P Global Ratings, TechCrunch; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20S%26P%20puts%20Nvidia%27s%20AA%20credit%20rating%20on%20watch%20for%20a%20possible%20one-notch%20cut%2C%20citing%20board%20independence%20and%20%27key%20man%27%20risk%0A%0A%E2%86%92%20S%26P%20expects%20to%20resolve%20the%20review%20within%2090%20days%20and%20to%20limit%20any%20downgrade%20to%20one%20notch%2C%20unless%20investigations%20or%20disclosures%20lead%20it%20to%20believe%20Nvidia%27s%20reputation%20or%20prospects%20have%20been%20harmed.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-nvidia-huang-spy-report%0ASources%3A%20S%26P%20Global%20Ratings%2C%20TechCrunch%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-nvidia-huang-spy-report">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-nvidia-huang-spy-report">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-microsoft-storm-0940-artex" aria-labelledby="h-microsoft-storm-0940-artex"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-microsoft-storm-0940-artex">UPDATE: Microsoft says China&#x27;s Salt Typhoon and Crystal Typhoon and two North Korean groups have added the ARTEX agentic attack framework to their tooling</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-25T19:09:06+01:00">25 Nov 2026, 19:09 CET</time></p><div class="story-body"><p>Update to the 22 October morning edition, which reported Microsoft&#x27;s finding that the China-aligned group Storm-0940 used ARTEX against hundreds of organisations; later editions carried CrowdStrike&#x27;s VAPOR PANDA report (30 October), a Japan-led probe of ARTEX servers (15 November) and the European Commission&#x27;s AI-assisted breach (19 November). The new development: on Wednesday evening Microsoft Threat Intelligence said that, as of November, it has seen <mark class="hl">Salt Typhoon and Crystal Typhoon</mark>, North Korea&#x27;s Onyx Sleet and Pearl Sleet, and the groups Storm-0940 and Storm-3358 integrating ARTEX into their tooling.</p><p>Microsoft describes ARTEX as an AI-driven penetration-testing platform in which a planner agent, worker agents with a real shell and a reporter agent take an attack from reconnaissance to exploitation with little or no human involvement. It says the tool introduces no new techniques but can reach <mark class="hl">persistent, privileged access in minutes</mark>, and that the most durable sign of it is behavioural: bursts of varied requests and retries at machine speed.</p><p>According to Microsoft, the original developer removed the code from GitHub in October, but forks continue, and in November the Chinese security firm ThreatBook <mark class="hl">claimed ownership and began selling &#x27;ARTEX Pro&#x27;</mark>. The Record notes that Salt Typhoon is the group US agencies believe breached at least nine telecommunications companies in 2024, and that the FBI issued its own ARTEX advisory two weeks ago.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the list now includes the state group blamed for the 2024 US telecom breaches, which moves agentic attack tooling from a criminal problem to a state-espionage one.</p></aside><p class="caveat"><span class="label">Caveat.</span> Attribution to named groups is Microsoft&#x27;s own, and it gives no detail on how each group used the tool. ThreatBook&#x27;s ownership claim is reported by Microsoft.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/" rel="noopener noreferrer">Microsoft Security Blog: What defenders need to know about ARTEX, the agentic AI framework threat actors abuse</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:46+01:00">26 Nov 2026, 06:06 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://therecord.media/microsoft-china-salt-typhoon-using-artex-ai-tool" rel="noopener noreferrer">The Record: Microsoft: China&#x27;s Salt Typhoon hackers are using Artex</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-26T06:06:46+01:00">26 Nov 2026, 06:06 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-26-morning.html#story-microsoft-storm-0940-artex"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-microsoft-storm-0940-artex">Draft for X</label><textarea id="share-x-story-microsoft-storm-0940-artex" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-microsoft-storm-0940-artex-count">UPDATE: Microsoft says China&#x27;s Salt Typhoon and Crystal Typhoon and two North Korean groups have added the ARTEX agentic attack framework to their tooling
+
+Sources: Microsoft Security Blog, The Record; via The AI Gazette</textarea><p class="share-count" id="share-x-story-microsoft-storm-0940-artex-count">244 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Microsoft%20says%20China%27s%20Salt%20Typhoon%20and%20Crystal%20Typhoon%20and%20two%20North%20Korean%20groups%20have%20added%20the%20ARTEX%20agentic%20attack%20framework%20to%20their%20tooling%0A%0ASources%3A%20Microsoft%20Security%20Blog%2C%20The%20Record%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-microsoft-storm-0940-artex" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-microsoft-storm-0940-artex">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-microsoft-storm-0940-artex">Draft for LinkedIn</label><textarea id="share-li-story-microsoft-storm-0940-artex" class="share-text share-text-li" rows="12">UPDATE: Microsoft says China&#x27;s Salt Typhoon and Crystal Typhoon and two North Korean groups have added the ARTEX agentic attack framework to their tooling
+
+https://luongnv.com/news/reports/2026-11-26-morning.html#story-microsoft-storm-0940-artex
+Sources: Microsoft Security Blog, The Record; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Microsoft%20says%20China%27s%20Salt%20Typhoon%20and%20Crystal%20Typhoon%20and%20two%20North%20Korean%20groups%20have%20added%20the%20ARTEX%20agentic%20attack%20framework%20to%20their%20tooling%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-26-morning.html%23story-microsoft-storm-0940-artex%0ASources%3A%20Microsoft%20Security%20Blog%2C%20The%20Record%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-microsoft-storm-0940-artex">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-26-morning.html#story-microsoft-storm-0940-artex">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>Compute is heading for orbit on paper first: the FCC granted <mark class="hl">up to 1 million satellites</mark> with a 14-year runway, while the economics remain unproven.</li><li>Governance has become a credit question: S&amp;P tied a possible Nvidia downgrade to <mark class="hl">board independence and succession planning</mark>.</li><li>Agents are taking on work where checking is the hard part: Anthropic used shadowed production traffic to steer its Rust rewrite, and a machine proof shrank to <mark class="hl">about 76,000 lines</mark> but still awaits a human reader.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>4.6.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (18 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (25 stories)</dd></div><div><dt>github</dt><dd>ok (4 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older or general items (a New York Times note on Photoshop, an agent-tool security essay, an ethics thread); the stories in this edition were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429 and Google DeepMind&#x27;s feed could not be parsed. Missing coverage does not mean nobody discussed these stories.</li><li>Read through other routes: S&amp;P Global Ratings&#x27; release refused a plain request (HTTP 403) and was read with a web-extraction tool. X post identifiers were used only to check publication times and are not cited.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file holds four leads. Anthropic&#x27;s close below its IPO price and Claude&#x27;s install-as-app beta were already carried; Best Buy&#x27;s raised forecast and Oracle&#x27;s reported European job cuts could not be matched to a primary source in the window and were not used.</li><li>Not carried: the New York Times&#x27; warning to photographers about Photoshop 2027, published 24 November before this window; the state attorneys general&#x27;s challenge to Character.AI&#x27;s sale of user chats, announced from 23 November; OpenAI&#x27;s Hirsch-conjecture and Fourier-transform manuscripts, pushed with the matrix paper at 01:04 Paris time on 25 November, inside the 25 November morning edition&#x27;s window.</li><li>Also not carried: OpenAI&#x27;s December merger of ChatGPT and Codex usage limits, announced on its help pages earlier in November; Sam Altman&#x27;s statement that OpenAI is testing Private Inference, found only on X and in reports citing it; an OpenAI alignment-midtraining post that resurfaced in news feeds but dates from March; and a House bill on AI-built models, reported 24 November.</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 18 threads │ 1,058 comments
+├─  HN: 25 stories │ 1,150 points │ 825 comments
+├─  dev.to: 12 articles │ 100 reactions │ 93 comments
+├─  GitHub: 4 items │ 13 reactions │ 31 comments
+├─  Top voices: r/artificial, r/technology, r/singularity
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-26-morning.json" download>Exact input JSON</a></li><li><a href="2026-11-26-morning.md">Markdown text</a></li><li><a href="2026-11-26-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>
