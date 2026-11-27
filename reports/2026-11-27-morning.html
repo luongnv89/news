@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Gazette — Morning edition, Friday 27 November 2026</title>
+<meta name="description" content="Morning edition of The AI Gazette, issue 2026-11-27-morning.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;family=UnifrakturMaguntia&amp;display=swap">
+<style>
+:root {
+  --paper: #f4ecd8;
+  --ink: #1a1a1a;
+  --font-masthead: "UnifrakturMaguntia", "Old English Text MT", "Goudy Text MT", "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", Times, serif;
+  --gutter: 12px;
+  --half-gap: 12px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
+html { background: #f4ecd8; color: #1a1a1a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; width: 100%; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.35;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; hyphens: manual; }
+p, ul, ol, dl, dd, blockquote, figure { margin: 0; }
+main p, main li, main dd, .site-footer p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 var(--gutter); }
+.skip-link { position: absolute; left: 8px; top: -200px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 4px 10px; font-weight: 700; }
+.skip-link:focus { top: 8px; }
+.label { font-variant: small-caps; font-weight: 700; letter-spacing: 0.06em; }
+
+/* Masthead */
+.site-header { padding-top: 10px; }
+.masthead { text-align: center; }
+.brand {
+  display: block; font-family: var(--font-masthead); font-weight: 400;
+  font-size: clamp(2.4rem, 10vw, 8rem); line-height: 1.05; color: var(--ink);
+  text-decoration: none; padding: 4px 0 2px; border-top: 1px solid var(--ink);
+  overflow-wrap: anywhere;
+}
+.brand:hover { text-decoration: underline; }
+.tagline { font-style: italic; font-size: 1.05rem; padding: 0 0 6px; text-align: center; }
+.dateline {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 2px 16px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink);
+  padding: 4px 0; font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.05em;
+}
+.dateline p { margin: 0; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--ink); padding: 4px 0; }
+.site-nav a { padding: 2px 12px; border-left: 1px solid var(--ink); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 700; }
+.site-nav a:first-child { border-left: 0; }
+
+/* Lead */
+main { padding-top: 12px; padding-bottom: 12px; }
+.lead { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
+.lead h1 {
+  text-align: center; font-weight: 900; font-size: clamp(1.6rem, 4.5vw, 3rem);
+  text-transform: uppercase; letter-spacing: 0.02em; padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink); margin-bottom: 8px;
+}
+main p.window-line { text-align: center; font-style: italic; margin-bottom: 8px; }
+.lead-note { font-size: 1.12rem; line-height: 1.35; }
+.lead-note::first-letter {
+  float: left; font-family: var(--font-display); font-weight: 900;
+  font-size: 3.6em; line-height: 0.82; padding: 6px 8px 0 0;
+}
+main p.tally { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; margin-top: 8px; clear: both; }
+
+/* Section titles */
+.paper-section { margin: 0 0 16px; }
+.paper-section > h2 {
+  text-align: center; font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.2em; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 4px 0; margin-bottom: 10px;
+}
+main p.section-note { text-align: center; font-style: italic; margin-bottom: 10px; }
+
+/* Ruled newspaper grid: 1 column, 2 from 640px, 3 from 1024px. */
+.grid-cols { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 0; }
+.grid-cols > .cell { min-width: 0; padding: 0 0 14px; }
+
+/* Dispatch boxes */
+.dispatch { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; break-inside: avoid; page-break-inside: avoid; }
+.dispatch.fresh-new { border: 4px double var(--ink); }
+main .dispatch p.kicker { text-align: center; font-variant: small-caps; letter-spacing: 0.1em; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 5px; }
+.kicker .freshness { text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--ink); padding: 0 5px; margin-left: 6px; font-variant: normal; font-size: 0.85rem; }
+.dispatch h3 { font-weight: 900; font-size: 1.32rem; text-transform: uppercase; text-align: center; letter-spacing: 0.005em; margin: 2px 0 6px; overflow-wrap: anywhere; }
+.dispatch.is-background h3 { font-size: 1.08rem; font-weight: 700; }
+main .dispatch p.dates { text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.story-body p + p { margin-top: 6px; text-indent: 1.2em; }
+.analysis, .caveat, .quotes, .sources { border-top: 1px solid var(--ink); margin-top: 7px; padding-top: 5px; }
+.analysis { font-style: italic; }
+.analysis .label, .caveat .label { font-style: normal; }
+.caveat { font-weight: 700; }
+.quotes blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 1px solid var(--ink); }
+.quotes blockquote + blockquote { margin-top: 6px; }
+main .quotes p.attribution { text-align: right; font-size: 0.92rem; }
+.sources ol { margin: 3px 0 0; padding-left: 1.4em; }
+main .sources li, main .box li, main .box dd { text-align: left; }
+.sources li { font-size: 0.95rem; margin-top: 3px; }
+.source-link { font-weight: 700; }
+.source-meta { font-style: italic; }
+
+/* Notices, key patterns, colophon */
+main p.empty-notice { border: 4px double var(--ink); padding: 10px 12px; text-align: center; font-style: italic; font-size: 1.1rem; margin-bottom: 14px; }
+.box { border: 1px solid var(--ink); padding: 8px 10px 10px; font-size: 0.98rem; }
+.box h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 6px; }
+.box ul { list-style: none; padding: 0; }
+.box li { padding-left: 1.1em; text-indent: -1.1em; margin-top: 3px; }
+.box li::before { content: "\2014\00a0"; }
+.box dl > div { margin-top: 3px; }
+.box dt { display: inline; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.box dt::after { content: ":"; }
+.box dd { display: inline; margin-left: 4px; }
+.engine-footer { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.95rem; }
+main p.engine-footer { text-align: left; }
+
+/* Archive */
+.table-scroll { width: 100%; overflow-x: auto; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); }
+.archive-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.archive-table th, .archive-table td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.archive-table th:first-child, .archive-table td:first-child { border-left: 0; padding-left: 0; }
+.archive-table th { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.site-footer { border-top: 4px double var(--ink); margin-top: 8px; padding: 8px 0 16px; font-size: 0.95rem; }
+.site-footer p + p { margin-top: 6px; }
+
+@media (min-width: 640px) {
+  :root { --gutter: 16px; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .grid-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) {
+  .dateline { flex-direction: column; align-items: center; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #f4ecd8 !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .skip-link, .site-nav { display: none !important; }
+  .grid-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols > .cell:nth-child(n) { padding: 0 var(--half-gap) 14px; border-left: 1px solid var(--ink); }
+  .grid-cols > .cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .grid-cols > .cell:nth-child(2n) { padding-right: 0; }
+  .brand { font-size: 3.4rem; }
+  .table-scroll { overflow: visible; }
+  a.source-link::after { content: " <" attr(href) ">"; font-weight: 400; font-size: 0.85em; overflow-wrap: anywhere; }
+}
+.share-drafts { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--ink); font-size: 0.95rem;
+  text-align: left; hyphens: manual; overflow-wrap: break-word; }
+.share-drafts > summary { display: inline-block; cursor: pointer; list-style: none; font-variant: small-caps;
+  font-weight: 700; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; }
+.share-drafts > summary::-webkit-details-marker { display: none; }
+.share-drafts > summary:hover { text-decoration-thickness: 2px; }
+.share-drafts > summary:focus, .share-drafts > summary:focus-visible,
+.share-drafts .share-text:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.share-panel { margin-top: 5px; }
+main .share-drafts p, main .share-drafts a { text-align: left; hyphens: manual; }
+.share-field + .share-field, .share-panel > .share-actions { margin-top: 8px; }
+.share-drafts label { display: block; font-variant: small-caps; font-weight: 700; letter-spacing: 0.04em; }
+.share-text { display: block; width: 100%; max-width: 100%; margin: 3px 0 0; padding: 4px; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.35;
+  resize: vertical; }
+main .share-drafts p.share-count { font-size: 0.9rem; font-style: italic; margin-top: 2px; }
+.share-drafts .share-actions { margin-top: 3px; }
+.share-drafts a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.share-drafts a:hover { text-decoration-thickness: 2px; }
+main .share-drafts p.share-status { font-style: italic; margin-top: 3px; }
+@media print { .share-drafts { display: none !important; } }
+/* Reader's highlighter: a muted ink wash, as if marked by hand with an old highlighter. */
+mark.hl{background:rgba(201,162,39,.30);color:inherit;padding:0;margin:0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.analysis mark.hl,.caveat mark.hl{background:rgba(201,162,39,.24)}
+@media print{mark.hl{background:rgba(201,162,39,.30)}}
+
+.public-nav { text-align: center; padding: 4px 0; border-bottom: 1px solid var(--ink); }
+@media print { .public-nav { display: none !important; } }
+</style>
+<!--running-head-css--><style>
+html { scroll-padding-top: 3.2rem; }
+.running-head {
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px;
+  background: var(--paper, #f4ecd8); color: var(--ink, #1a1a1a);
+  border-bottom: 3px double var(--ink, #1a1a1a);
+  padding: 4px var(--gutter, 12px) 3px;
+  font-family: var(--font-body, Georgia, serif); font-size: 0.82rem; line-height: 1.3;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.running-head .rh-title { font-weight: 700; }
+.running-head .rh-url { font-variant: normal; letter-spacing: 0; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 639px) { .running-head { font-size: 0.74rem; } }
+@media print { .running-head { display: none !important; } }
+</style><!--/running-head-css-->
+</head>
+<body class="page page-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<!--running-head--><div class="running-head" role="note" aria-label="Where this page is from"><span class="rh-title">The AI Gazette · Morning edition · Friday 27 November 2026</span><span class="rh-url">luongnv.com/news/reports/2026-11-27-morning.html</span></div><!--/running-head-->
+<header class="site-header">
+<div class="wrap masthead">
+<a class="brand" href="../index.html">The AI Gazette</a>
+<p class="tagline">Models, machines, and matters of consequence</p>
+<div class="dateline"><p>Paris, <time datetime="2026-11-27T06:10:41+01:00">Friday 27 November 2026</time></p><p>Morning edition &middot; No. 2026-11-27-morning</p><p>Issued 06:10 CET</p><p>Price: Complimentary</p></div>
+</div>
+<nav class="wrap" aria-label="Site"><div class="site-nav"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a><a href="2026-11-27-morning.html">This edition</a><a href="2026-11-27-morning.md">Markdown</a><a href="2026-11-27-morning.json">JSON</a></div></nav>
+<nav class="wrap" aria-label="Editions and downloads"><p class="public-nav"><a href="../index.html">Latest edition</a> &middot; <a href="../archive.html">Archive</a> &middot; <a href="2026-11-27-morning.html">This edition (HTML)</a></p></nav>
+</header>
+<main id="main" class="wrap">
+<section class="lead" aria-labelledby="lead-title"><h1 id="lead-title">Morning edition &mdash; Friday 27 November 2026</h1><p class="window-line">Reporting window: <time datetime="2026-11-26T03:45:00+01:00">26 Nov 2026, 03:45 CET</time> to <time datetime="2026-11-27T06:10:41+01:00">27 Nov 2026, 06:10 CET</time> (Paris time). Issued <time datetime="2026-11-27T06:10:41+01:00">27 Nov 2026, 06:10 CET</time>.</p><p class="lead-note">This morning&#x27;s edition leads with work and power: Bloomberg reports SAP is weighing <mark class="hl">at least 10,000 job cuts</mark> in an AI restructuring, and Japan&#x27;s largest generator, JERA, says it is talking to Anthropic and Meta about data centres beside its plants. Japan is drafting <mark class="hl">fines and inspections</mark> for frontier AI developers, Singapore says it has not confirmed Nvidia&#x27;s reported shipment halt, and the Bank of England&#x27;s transcript shows its governor warning about unreleased models and encryption. In coding, AI agent skills are headed for the Linux kernel, and OpenAI says a billing fix means GPT-6.2 users will reach their limits sooner. There is <mark class="hl">no new frontier model</mark> in this window and no research item met the bar. The window was widened back to 03:45 on 26 November to carry one newsletter lead; two of the seven stories are labelled updates.</p><p class="tally">7 new or updated dispatches &middot; 0 background items &middot; Previous: <a href="2026-11-26-afternoon.html">2026-11-26-afternoon</a></p></section>
+<section class="paper-section" aria-labelledby="news-title"><h2 id="news-title">The News</h2><div class="grid-cols dispatches"><div class="cell"><article class="dispatch fresh-new" id="story-openai-gpt-6-2-billing-fix" aria-labelledby="h-openai-gpt-6-2-billing-fix"><p class="kicker"><span class="section-name">Models</span> <span class="freshness">New</span></p><h3 id="h-openai-gpt-6-2-billing-fix">OpenAI says a billing fix means GPT-6.2 Astra users will hit their limits 40% faster and Sol users 25% faster</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26T03:50:10+01:00">26 Nov 2026, 03:50 CET</time></p><div class="story-body"><p>OpenAI&#x27;s Thibault Sottiaux, who works on Codex and ChatGPT, said in a post on X at 03:50 Paris time on Thursday that the company made &#x27;a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users&#x27;, BleepingComputer and The Next Web report. Compared with the previous week, users will reach their limits <mark class="hl">40% faster on Astra and 25% faster on Sol</mark>.</p><p>Sottiaux said users would <mark class="hl">not be charged for past usage</mark>, that other models were not affected, and that both models should still go further than GPT-6 Astra and GPT-6.1 Sol. OpenAI is adding <mark class="hl">one banked reset</mark> for everyone on Go, Plus, Pro and Business; BleepingComputer said the reset appeared in ChatGPT&#x27;s usage settings and expires after a month.</p><p>This item came from a newsletter lead and was published before this edition&#x27;s normal window; no earlier edition carried it. Both models launched on 17 November, when OpenAI said they would let users get more done within their limits, The Next Web notes.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: the generous limits that drew users to GPT-6.2 in its first week were partly a mistake, and the correction lands as OpenAI is also merging ChatGPT&#x27;s Chat and Work usage into one meter.</p></aside><p class="caveat"><span class="label">Caveat.</span> The statement was made on X, which this newspaper does not cite directly; the wording comes from BleepingComputer&#x27;s and The Next Web&#x27;s quotations. OpenAI&#x27;s pricing pages did not change, The Next Web said.</p><aside class="quotes" aria-label="Community reaction"><p class="label">Community reaction (opinion, not verified fact)</p><blockquote><p>&ldquo;1. why would you drop this on thanksgiving? 2. how does this go unnoticed?&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50651406" rel="noopener noreferrer">derac on Hacker News</a></p></blockquote><blockquote><p>&ldquo;This is, frankly, an insane move.&rdquo;</p><p class="attribution">&mdash; <a href="https://news.ycombinator.com/item?id=50651647" rel="noopener noreferrer">enraged_camel on Hacker News</a></p></blockquote></aside><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/" rel="noopener noreferrer">BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:21+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://thenextweb.com/news/openai-billing-mistake-gpt-6-2-usage-limits" rel="noopener noreferrer">The Next Web: OpenAI fixes a GPT-6.2 billing mistake, and users hit limits 40% faster</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:21+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="community" href="https://news.ycombinator.com/item?id=50651406" rel="noopener noreferrer">Hacker News discussion</a> <span class="source-meta">(community) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:21+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-openai-gpt-6-2-billing-fix"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-openai-gpt-6-2-billing-fix">Draft for X</label><textarea id="share-x-story-openai-gpt-6-2-billing-fix" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-openai-gpt-6-2-billing-fix-count">OpenAI says a billing fix means GPT-6.2 Astra users will hit their limits 40% faster and Sol users 25% faster
+
+Sources: BleepingComputer, The Next Web; via The AI Gazette</textarea><p class="share-count" id="share-x-story-openai-gpt-6-2-billing-fix-count">194 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=OpenAI%20says%20a%20billing%20fix%20means%20GPT-6.2%20Astra%20users%20will%20hit%20their%20limits%2040%25%20faster%20and%20Sol%20users%2025%25%20faster%0A%0ASources%3A%20BleepingComputer%2C%20The%20Next%20Web%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-openai-gpt-6-2-billing-fix" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-openai-gpt-6-2-billing-fix">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-openai-gpt-6-2-billing-fix">Draft for LinkedIn</label><textarea id="share-li-story-openai-gpt-6-2-billing-fix" class="share-text share-text-li" rows="12">OpenAI says a billing fix means GPT-6.2 Astra users will hit their limits 40% faster and Sol users 25% faster
+
+→ Sottiaux said users would not be charged for past usage, that other models were not affected, and that both models should still go further than GPT-6 Astra and GPT-6.1 Sol.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-openai-gpt-6-2-billing-fix
+Sources: BleepingComputer, The Next Web; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=OpenAI%20says%20a%20billing%20fix%20means%20GPT-6.2%20Astra%20users%20will%20hit%20their%20limits%2040%25%20faster%20and%20Sol%20users%2025%25%20faster%0A%0A%E2%86%92%20Sottiaux%20said%20users%20would%20not%20be%20charged%20for%20past%20usage%2C%20that%20other%20models%20were%20not%20affected%2C%20and%20that%20both%20models%20should%20still%20go%20further%20than%20GPT-6%20Astra%20and%20GPT-6.1%20Sol.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-openai-gpt-6-2-billing-fix%0ASources%3A%20BleepingComputer%2C%20The%20Next%20Web%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-openai-gpt-6-2-billing-fix">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-openai-gpt-6-2-billing-fix">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-linux-kernel-agent-skills" aria-labelledby="h-linux-kernel-agent-skills"><p class="kicker"><span class="section-name">Coding &amp; agents</span> <span class="freshness">New</span></p><h3 id="h-linux-kernel-agent-skills">AI agent skills look set to be submitted for Linux 7.5, with in-tree instructions for tagging fixes, writing commit messages and KUnit tests</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26">26 Nov 2026</time></p><div class="story-body"><p>Sasha Levin, an NVIDIA engineer who co-maintains the Linux stable and LTS kernels, asked on Thursday for his &#x27;agents&#x27; branch to be dropped from linux-next, writing that it &#x27;contains the <mark class="hl">agent skills series, which I intend to send to Linus</mark>&#x27;, Phoronix reports. The submission is expected in the <mark class="hl">Linux 7.5 merge window</mark> that opens in late December.</p><p>The branch adds a new agents/skills directory to the kernel source tree with initial skills that tell AI coding agents how to determine the &#x27;Fixes:&#x27; tag of a patch, determine stable tags, find other instances of a fixed bug, write commit messages and write KUnit tests, according to Phoronix.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: if Linus Torvalds accepts it, the world&#x27;s largest collaborative codebase would ship its own instructions for AI agents, a sign that maintainers now plan for agent-written patches rather than only policing them.</p></aside><p class="caveat"><span class="label">Caveat.</span> Inclusion is <mark class="hl">not decided</mark>: Torvalds has not yet received or accepted the pull request. The mailing-list message itself could not be read here (the kernel archive answered with a bot challenge and every fetch_source.py route failed), so its wording comes from Phoronix, which web extraction read after plain requests were refused.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready" rel="noopener noreferrer">Phoronix: It Looks Like AI Agent Skills Will Be Submitted For Linux 7.5</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:19+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-linux-kernel-agent-skills"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-linux-kernel-agent-skills">Draft for X</label><textarea id="share-x-story-linux-kernel-agent-skills" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-linux-kernel-agent-skills-count">AI agent skills look set to be submitted for Linux 7.5, with in-tree instructions for tagging fixes, writing commit messages and KUnit tests
+
+Source: Phoronix; via The AI Gazette</textarea><p class="share-count" id="share-x-story-linux-kernel-agent-skills-count">202 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=AI%20agent%20skills%20look%20set%20to%20be%20submitted%20for%20Linux%207.5%2C%20with%20in-tree%20instructions%20for%20tagging%20fixes%2C%20writing%20commit%20messages%20and%20KUnit%20tests%0A%0ASource%3A%20Phoronix%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-linux-kernel-agent-skills" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-linux-kernel-agent-skills">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-linux-kernel-agent-skills">Draft for LinkedIn</label><textarea id="share-li-story-linux-kernel-agent-skills" class="share-text share-text-li" rows="12">AI agent skills look set to be submitted for Linux 7.5, with in-tree instructions for tagging fixes, writing commit messages and KUnit tests
+
+→ The submission is expected in the Linux 7.5 merge window that opens in late December.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-linux-kernel-agent-skills
+Source: Phoronix; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=AI%20agent%20skills%20look%20set%20to%20be%20submitted%20for%20Linux%207.5%2C%20with%20in-tree%20instructions%20for%20tagging%20fixes%2C%20writing%20commit%20messages%20and%20KUnit%20tests%0A%0A%E2%86%92%20The%20submission%20is%20expected%20in%20the%20Linux%207.5%20merge%20window%20that%20opens%20in%20late%20December.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-linux-kernel-agent-skills%0ASource%3A%20Phoronix%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-linux-kernel-agent-skills">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-linux-kernel-agent-skills">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-sap-ai-restructuring-job-cuts" aria-labelledby="h-sap-ai-restructuring-job-cuts"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-sap-ai-restructuring-job-cuts">SAP is weighing at least 10,000 job cuts in an AI-era restructuring, Bloomberg reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26T17:15:00+01:00">26 Nov 2026, 17:15 CET</time></p><div class="story-body"><p>German software maker SAP is preparing a plan to cut <mark class="hl">at least 10,000 positions</mark> to reshape its business for the AI era, Bloomberg News reported on Thursday, citing people familiar with the matter. Reuters, which relayed the report, said it could not independently verify it.</p><p>The cuts would affect <mark class="hl">at least 9 per cent</mark> of SAP&#x27;s global workforce, and the total could still change after labour negotiations, Bloomberg said according to Reuters. SAP, Europe&#x27;s most valuable technology company, <mark class="hl">declined to comment</mark>, Reuters said.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: SAP is one of the largest enterprise-software employers in Europe, and a cut of this size framed around AI would be one of the clearest cases yet of a software company reorganising its own workforce around the technology it sells.</p></aside><p class="caveat"><span class="label">Caveat.</span> The plan is <mark class="hl">reported, not announced</mark>: the Bloomberg article is paywalled and was not read, so this account rests on Reuters&#x27; summary carried by CNA. The figure is a floor that may change in labour talks.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.channelnewsasia.com/business/sap-considers-least-10000-job-cuts-in-ai-restructuring-bloomberg-reports-6585781" rel="noopener noreferrer">CNA (Reuters): SAP considers at least 10,000 job cuts in AI restructuring, Bloomberg reports</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:13+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-sap-ai-restructuring-job-cuts"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-sap-ai-restructuring-job-cuts">Draft for X</label><textarea id="share-x-story-sap-ai-restructuring-job-cuts" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-sap-ai-restructuring-job-cuts-count">SAP is weighing at least 10,000 job cuts in an AI-era restructuring, Bloomberg reports
+
+→ Reuters, which relayed the report, said it could not independently verify it.
+
+Source: CNA (Reuters); via The AI Gazette</textarea><p class="share-count" id="share-x-story-sap-ai-restructuring-job-cuts-count">235 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=SAP%20is%20weighing%20at%20least%2010%2C000%20job%20cuts%20in%20an%20AI-era%20restructuring%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20Reuters%2C%20which%20relayed%20the%20report%2C%20said%20it%20could%20not%20independently%20verify%20it.%0A%0ASource%3A%20CNA%20%28Reuters%29%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-sap-ai-restructuring-job-cuts" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-sap-ai-restructuring-job-cuts">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-sap-ai-restructuring-job-cuts">Draft for LinkedIn</label><textarea id="share-li-story-sap-ai-restructuring-job-cuts" class="share-text share-text-li" rows="12">SAP is weighing at least 10,000 job cuts in an AI-era restructuring, Bloomberg reports
+
+→ German software maker SAP is preparing a plan to cut at least 10,000 positions to reshape its business for the AI era, Bloomberg News reported on Thursday, citing people familiar with the matter.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-sap-ai-restructuring-job-cuts
+Source: CNA (Reuters); via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=SAP%20is%20weighing%20at%20least%2010%2C000%20job%20cuts%20in%20an%20AI-era%20restructuring%2C%20Bloomberg%20reports%0A%0A%E2%86%92%20German%20software%20maker%20SAP%20is%20preparing%20a%20plan%20to%20cut%20at%20least%2010%2C000%20positions%20to%20reshape%20its%20business%20for%20the%20AI%20era%2C%20Bloomberg%20News%20reported%20on%20Thursday%2C%20citing%20people%20familiar%20with%20the%20matter.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-sap-ai-restructuring-job-cuts%0ASource%3A%20CNA%20%28Reuters%29%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-sap-ai-restructuring-job-cuts">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-sap-ai-restructuring-job-cuts">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-jera-anthropic-meta-data-centres" aria-labelledby="h-jera-anthropic-meta-data-centres"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-jera-anthropic-meta-data-centres">Japan&#x27;s largest power generator JERA says it is in talks with Anthropic and Meta on data centres beside its Tokyo-area plants, Nikkei reports</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26T22:51:00+01:00">26 Nov 2026, 22:51 CET</time></p><div class="story-body"><p>JERA has entered talks with <mark class="hl">Anthropic, Meta and other US tech companies</mark> to build data centres next to its power plants around Tokyo, JERA Global chief executive Yukio Kani told Nikkei in a report published at 06:51 Japan time on Friday. According to Reuters&#x27; account of the report, relayed by Voltgrid News, Kani said JERA is also in discussions with Amazon, Microsoft and Google.</p><p>Nikkei describes the plans as <mark class="hl">behind the meter</mark> set-ups, in which a data centre draws power directly from the neighbouring plant rather than through the public grid. Neither Nikkei nor Reuters gave sites, megawatts or timing for the new talks, and no agreement has been announced.</p><p>The only concrete project so far predates these talks: on 1 October JERA signed a memorandum with Dell Technologies and developer RHAELM for a data centre at its Chiba Thermal Power Station, with up to 400 MW of power and expected capital deployment of <mark class="hl">more than $15 billion</mark>, Voltgrid News reports, citing JERA&#x27;s release.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: grid connections are the slowest part of building AI capacity, and a generator offering plant-side sites turns Japan&#x27;s existing gas fleet into a shortcut for the labs.</p></aside><p class="caveat"><span class="label">Caveat.</span> These are <mark class="hl">talks, not contracts</mark>, reported by Nikkei from an interview with JERA&#x27;s chief. The Nikkei and Reuters articles were not read directly (Nikkei is paywalled; Reuters pages refuse automated requests); Anthropic, Meta and the other companies had not commented.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://voltgridnews.com/story/jera-talks-with-anthropic-meta-on-data-centers-at-plants-chiba-400-mw" rel="noopener noreferrer">Voltgrid News: JERA talks with Anthropic, Meta on data centers at plants</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:14+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://mlq.ai/news/jera-in-talks-to-host-anthropic-and-meta-data-centers-at-tokyo-area-plants/" rel="noopener noreferrer">MLQ.ai: JERA in talks to host Anthropic and Meta data centers at Tokyo-area plants</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:14+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-jera-anthropic-meta-data-centres"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-jera-anthropic-meta-data-centres">Draft for X</label><textarea id="share-x-story-jera-anthropic-meta-data-centres" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-jera-anthropic-meta-data-centres-count">Japan&#x27;s largest power generator JERA says it is in talks with Anthropic and Meta on data centres beside its Tokyo-area plants, Nikkei reports
+
+Sources: Voltgrid News, MLQ.ai; via The AI Gazette</textarea><p class="share-count" id="share-x-story-jera-anthropic-meta-data-centres-count">217 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Japan%27s%20largest%20power%20generator%20JERA%20says%20it%20is%20in%20talks%20with%20Anthropic%20and%20Meta%20on%20data%20centres%20beside%20its%20Tokyo-area%20plants%2C%20Nikkei%20reports%0A%0ASources%3A%20Voltgrid%20News%2C%20MLQ.ai%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-jera-anthropic-meta-data-centres" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-jera-anthropic-meta-data-centres">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-jera-anthropic-meta-data-centres">Draft for LinkedIn</label><textarea id="share-li-story-jera-anthropic-meta-data-centres" class="share-text share-text-li" rows="12">Japan&#x27;s largest power generator JERA says it is in talks with Anthropic and Meta on data centres beside its Tokyo-area plants, Nikkei reports
+
+→ According to Reuters&#x27; account of the report, relayed by Voltgrid News, Kani said JERA is also in discussions with Amazon, Microsoft and Google.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-jera-anthropic-meta-data-centres
+Sources: Voltgrid News, MLQ.ai; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Japan%27s%20largest%20power%20generator%20JERA%20says%20it%20is%20in%20talks%20with%20Anthropic%20and%20Meta%20on%20data%20centres%20beside%20its%20Tokyo-area%20plants%2C%20Nikkei%20reports%0A%0A%E2%86%92%20According%20to%20Reuters%27%20account%20of%20the%20report%2C%20relayed%20by%20Voltgrid%20News%2C%20Kani%20said%20JERA%20is%20also%20in%20discussions%20with%20Amazon%2C%20Microsoft%20and%20Google.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-jera-anthropic-meta-data-centres%0ASources%3A%20Voltgrid%20News%2C%20MLQ.ai%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-jera-anthropic-meta-data-centres">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-jera-anthropic-meta-data-centres">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-new" id="story-japan-ai-law-inspections-fines" aria-labelledby="h-japan-ai-law-inspections-fines"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">New</span></p><h3 id="h-japan-ai-law-inspections-fines">Japan drafts an AI law amendment with inspections and fines of up to 100 million yen for frontier developers, Nikkei and Yomiuri report</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26">26 Nov 2026</time></p><div class="story-body"><p>Japan&#x27;s government is drafting an amendment to its AI Promotion Act that would let ministries <mark class="hl">inspect developers of high-performance AI</mark> whose safety measures fall short and fine them up to <mark class="hl">100 million yen</mark>, Nikkei reported on Thursday, according to MLQ.ai&#x27;s account. Developers would have to report accidents such as malfunctions, and foreign developers would be covered too.</p><p>The Yomiuri Shimbun reported the same day that the government would first issue a recommendation, then order corrective action, with penalties for ignoring an order. Its examples of required safeguards include refusing questions about cyberattack methods or bomb-making and <mark class="hl">verifying users of AI with strong cyberattack capabilities</mark>, according to a summary by the Japanese outlet 8and cited by MLQ.ai.</p><p>The government aims to put the bill to the ordinary Diet session in 2027. Under the current law it can investigate companies and give guidance, but answering its inquiries is voluntary, MLQ.ai reports. Kyodo first reported on 12 November that the government was considering penalties; the new reports add the inspection powers, the fine ceiling and coverage of foreign developers.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Japan has had one of the lightest AI regimes among large economies; a binding duty with inspections would bring OpenAI, Anthropic, Google and Chinese labs operating there under a real enforcement path for the first time.</p></aside><p class="caveat"><span class="label">Caveat.</span> No bill text has been published and the penalties are <mark class="hl">still under negotiation</mark>. Nikkei and the Yomiuri are paywalled and were not read; this account rests on MLQ.ai&#x27;s and Chip Dispatch&#x27;s summaries of them.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://mlq.ai/news/japans-ai-law-overhaul-would-allow-inspections-and-fines-up-to-100-million/" rel="noopener noreferrer">MLQ.ai: Japan&#x27;s AI law overhaul would allow inspections and fines up to ¥100 million</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:14+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://chipdispatch.com/articles/japan-drafts-ai-rules-with-100-million-fines-and-ministry-inspections" rel="noopener noreferrer">Chip Dispatch: Japan drafts AI rules with ¥100 million fines and ministry inspections</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:15+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://english.kyodonews.net/articles/-/91104" rel="noopener noreferrer">Kyodo News: Japan mulls penalties for AI firms over safety risks (12 November)</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:17+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-japan-ai-law-inspections-fines"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-japan-ai-law-inspections-fines">Draft for X</label><textarea id="share-x-story-japan-ai-law-inspections-fines" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-japan-ai-law-inspections-fines-count">Japan drafts an AI law amendment with inspections and fines of up to 100 million yen for frontier developers, Nikkei and Yomiuri report
+
+Sources: MLQ.ai, Chip Dispatch, Kyodo News; via The AI Gazette</textarea><p class="share-count" id="share-x-story-japan-ai-law-inspections-fines-count">223 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=Japan%20drafts%20an%20AI%20law%20amendment%20with%20inspections%20and%20fines%20of%20up%20to%20100%20million%20yen%20for%20frontier%20developers%2C%20Nikkei%20and%20Yomiuri%20report%0A%0ASources%3A%20MLQ.ai%2C%20Chip%20Dispatch%2C%20Kyodo%20News%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-japan-ai-law-inspections-fines" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-japan-ai-law-inspections-fines">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-japan-ai-law-inspections-fines">Draft for LinkedIn</label><textarea id="share-li-story-japan-ai-law-inspections-fines" class="share-text share-text-li" rows="12">Japan drafts an AI law amendment with inspections and fines of up to 100 million yen for frontier developers, Nikkei and Yomiuri report
+
+→ Developers would have to report accidents such as malfunctions, and foreign developers would be covered too.
+→ The government aims to put the bill to the ordinary Diet session in 2027.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-japan-ai-law-inspections-fines
+Sources: MLQ.ai, Chip Dispatch, Kyodo News; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Japan%20drafts%20an%20AI%20law%20amendment%20with%20inspections%20and%20fines%20of%20up%20to%20100%20million%20yen%20for%20frontier%20developers%2C%20Nikkei%20and%20Yomiuri%20report%0A%0A%E2%86%92%20Developers%20would%20have%20to%20report%20accidents%20such%20as%20malfunctions%2C%20and%20foreign%20developers%20would%20be%20covered%20too.%0A%E2%86%92%20The%20government%20aims%20to%20put%20the%20bill%20to%20the%20ordinary%20Diet%20session%20in%202027.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-japan-ai-law-inspections-fines%0ASources%3A%20MLQ.ai%2C%20Chip%20Dispatch%2C%20Kyodo%20News%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-japan-ai-law-inspections-fines">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-japan-ai-law-inspections-fines">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-us-remote-access-chip-rule" aria-labelledby="h-us-remote-access-chip-rule"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-us-remote-access-chip-rule">UPDATE: Singapore says it has not confirmed Nvidia&#x27;s reported halt to server shipments and is consulting businesses on the impact</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-27T03:22:37+01:00">27 Nov 2026, 03:22 CET</time></p><div class="story-body"><p>Singapore&#x27;s Deputy Prime Minister Gan Kim Yong said on Friday that the government has <mark class="hl">not confirmed</mark> whether Nvidia has stopped server shipments to the country. &#x27;We have not confirmed it,&#x27; he said at the Asia Future Summit, adding that the government is <mark class="hl">engaging businesses</mark> to see what the impact on them is.</p><p>Update to the 26 November afternoon story, which reported the Financial Times&#x27; account that Nvidia had told partners such as Dell and Supermicro to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia. Gan&#x27;s remarks are the first public response from one of the four governments; he said businesses are also organising themselves to work with their partners.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: Singapore is a regional hub for AI data centres, and a government that cannot yet confirm the halt shows how much of the new US rule is being applied through suppliers rather than through published licence decisions.</p></aside><p class="caveat"><span class="label">Caveat.</span> Nvidia has still <mark class="hl">not confirmed the halt</mark>, and it remains unclear whether it is temporary. Gan was answering a question at a summit; this is not a formal government statement on the rule.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="reporting" href="https://www.asiaone.com/singapore/nvidia-hatlts-server-shipments-chips-gan-kim-yong" rel="noopener noreferrer">AsiaOne: &#x27;We have not confirmed it&#x27;: DPM Gan on reports of Nvidia halting chip shipments to Singapore</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:17+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://mothership.sg/2026/11/nvidia-chip-shipping-singapore-gan-kim-yong/" rel="noopener noreferrer">Mothership: Govt has not confirmed if Nvidia has stopped chip shipments to S&#x27;pore: DPM Gan</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:18+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="reporting" href="https://www.zaobao.com.sg/en/finance/singapore/dpm-gan-nvidia-supply-halt-unconfirmed-businesses-being-consulted-impact" rel="noopener noreferrer">Lianhe Zaobao: DPM Gan: Nvidia supply halt unconfirmed, businesses being consulted on impact</a> <span class="source-meta">(reporting) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:19+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-us-remote-access-chip-rule"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-us-remote-access-chip-rule">Draft for X</label><textarea id="share-x-story-us-remote-access-chip-rule" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-us-remote-access-chip-rule-count">UPDATE: Singapore says it has not confirmed Nvidia&#x27;s reported halt to server shipments and is consulting businesses on the impact
+
+Sources: AsiaOne, Mothership, Lianhe Zaobao; via The AI Gazette</textarea><p class="share-count" id="share-x-story-us-remote-access-chip-rule-count">218 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Singapore%20says%20it%20has%20not%20confirmed%20Nvidia%27s%20reported%20halt%20to%20server%20shipments%20and%20is%20consulting%20businesses%20on%20the%20impact%0A%0ASources%3A%20AsiaOne%2C%20Mothership%2C%20Lianhe%20Zaobao%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-us-remote-access-chip-rule" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-us-remote-access-chip-rule">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-us-remote-access-chip-rule">Draft for LinkedIn</label><textarea id="share-li-story-us-remote-access-chip-rule" class="share-text share-text-li" rows="12">UPDATE: Singapore says it has not confirmed Nvidia&#x27;s reported halt to server shipments and is consulting businesses on the impact
+
+→ Singapore&#x27;s Deputy Prime Minister Gan Kim Yong said on Friday that the government has not confirmed whether Nvidia has stopped server shipments to the country.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-us-remote-access-chip-rule
+Sources: AsiaOne, Mothership, Lianhe Zaobao; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Singapore%20says%20it%20has%20not%20confirmed%20Nvidia%27s%20reported%20halt%20to%20server%20shipments%20and%20is%20consulting%20businesses%20on%20the%20impact%0A%0A%E2%86%92%20Singapore%27s%20Deputy%20Prime%20Minister%20Gan%20Kim%20Yong%20said%20on%20Friday%20that%20the%20government%20has%20not%20confirmed%20whether%20Nvidia%20has%20stopped%20server%20shipments%20to%20the%20country.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-us-remote-access-chip-rule%0ASources%3A%20AsiaOne%2C%20Mothership%2C%20Lianhe%20Zaobao%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-us-remote-access-chip-rule">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-us-remote-access-chip-rule">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div><div class="cell"><article class="dispatch fresh-updated" id="story-boe-fsr-ai-financing" aria-labelledby="h-boe-fsr-ai-financing"><p class="kicker"><span class="section-name">Industry &amp; policy</span> <span class="freshness">Updated</span></p><h3 id="h-boe-fsr-ai-financing">UPDATE: Bank of England governor says developers are cautious about releasing their newest models and that companies are right to be careful</h3><p class="dates"><span class="label">Published:</span> <time datetime="2026-11-26T17:52:44+01:00">26 Nov 2026, 17:52 CET</time></p><div class="story-body"><p>Asked at the Financial Stability Report press conference about rumours that AI developers already have models able to crack the cryptography the financial system relies on, Governor Andrew Bailey said developers are &#x27;expressing concerns that these models have <mark class="hl">even more powerful properties</mark>&#x27;. &#x27;We are, as they put it now, on the exponential part of the development,&#x27; he said, according to the Bank&#x27;s published transcript.</p><p>Bailey said this is &#x27;bringing about quite a bit of caution about how these models get released&#x27; and that he could not comment on what the models can and cannot do. He said &#x27;the companies are right&#x27; and called for <mark class="hl">more robust model testing</mark>, before and after release, and for other countries to join that work: &#x27;AI does not stop at the borders.&#x27;</p><p>Update to the 26 November afternoon story on the report&#x27;s warnings about AI financing. That story did not cover the press conference. The report itself says confidential data could be compromised through <mark class="hl">the use of frontier AI to exploit cryptographic vulnerabilities</mark>, as well as by a future quantum computer.</p></div><aside class="analysis" aria-label="Analysis"><p><span class="label">Analysis &mdash; why it matters.</span> Analysis: a central bank governor publicly endorsing labs&#x27; decisions to hold back models, and linking them to the security of encrypted financial data, gives the encryption worries of recent days an official voice for the first time.</p></aside><p class="caveat"><span class="label">Caveat.</span> Bailey did not say any model can break encryption and <mark class="hl">declined to describe capabilities</mark>. The remarks were made at the press conference on 26 November; the transcript PDF was created at 17:52 Paris time, after the previous edition was issued. The Financial Times&#x27; report on the remarks is paywalled and was not read.</p><section class="sources" aria-label="Sources"><p class="label">Sources</p><ol><li><a class="source-link" data-source-type="primary" href="https://www.bankofengland.co.uk/-/media/boe/files/financial-stability-report/2026/fsr-press-conference-transcript-november-2026.pdf" rel="noopener noreferrer">Bank of England: Financial Stability Report press conference transcript, November 2026 (PDF)</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:19+01:00">27 Nov 2026, 06:08 CET</time></span></li><li><a class="source-link" data-source-type="primary" href="https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026" rel="noopener noreferrer">Bank of England: Financial Stability Report, November 2026</a> <span class="source-meta">(primary source) <span class="label">Checked:</span> <time datetime="2026-11-27T06:08:19+01:00">27 Nov 2026, 06:08 CET</time></span></li></ol></section><details class="share share-drafts" data-permalink="https://luongnv.com/news/reports/2026-11-27-morning.html#story-boe-fsr-ai-financing"><summary>Share</summary><div class="share-panel"><div class="share-field"><label for="share-x-story-boe-fsr-ai-financing">Draft for X</label><textarea id="share-x-story-boe-fsr-ai-financing" class="share-text share-text-x" rows="9" aria-describedby="share-x-story-boe-fsr-ai-financing-count">UPDATE: Bank of England governor says developers are cautious about releasing their newest models and that companies are right to be careful
+
+→ That story did not cover the press conference.
+
+Source: Bank of England; via The AI Gazette</textarea><p class="share-count" id="share-x-story-boe-fsr-ai-financing-count">260 of 280 characters, link counted as 23; X adds the link after the text.</p><p class="share-actions"><a class="share-post-x" href="https://x.com/intent/post?text=UPDATE%3A%20Bank%20of%20England%20governor%20says%20developers%20are%20cautious%20about%20releasing%20their%20newest%20models%20and%20that%20companies%20are%20right%20to%20be%20careful%0A%0A%E2%86%92%20That%20story%20did%20not%20cover%20the%20press%20conference.%0A%0ASource%3A%20Bank%20of%20England%3B%20via%20The%20AI%20Gazette&amp;url=https%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-boe-fsr-ai-financing" target="_blank" rel="noopener noreferrer">Post on X</a> &middot; <a class="share-copy-x" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-boe-fsr-ai-financing">Copy X draft</a></p></div><div class="share-field"><label for="share-li-story-boe-fsr-ai-financing">Draft for LinkedIn</label><textarea id="share-li-story-boe-fsr-ai-financing" class="share-text share-text-li" rows="12">UPDATE: Bank of England governor says developers are cautious about releasing their newest models and that companies are right to be careful
+
+→ &#x27;We are, as they put it now, on the exponential part of the development,&#x27; he said, according to the Bank&#x27;s published transcript.
+→ That story did not cover the press conference.
+
+https://luongnv.com/news/reports/2026-11-27-morning.html#story-boe-fsr-ai-financing
+Source: Bank of England; via The AI Gazette
+#AI #AINews</textarea><p class="share-actions"><a class="share-post-li" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=UPDATE%3A%20Bank%20of%20England%20governor%20says%20developers%20are%20cautious%20about%20releasing%20their%20newest%20models%20and%20that%20companies%20are%20right%20to%20be%20careful%0A%0A%E2%86%92%20%27We%20are%2C%20as%20they%20put%20it%20now%2C%20on%20the%20exponential%20part%20of%20the%20development%2C%27%20he%20said%2C%20according%20to%20the%20Bank%27s%20published%20transcript.%0A%E2%86%92%20That%20story%20did%20not%20cover%20the%20press%20conference.%0A%0Ahttps%3A%2F%2Fluongnv.com%2Fnews%2Freports%2F2026-11-27-morning.html%23story-boe-fsr-ai-financing%0ASource%3A%20Bank%20of%20England%3B%20via%20The%20AI%20Gazette%0A%23AI%20%23AINews" target="_blank" rel="noopener noreferrer">Post on LinkedIn</a> &middot; <a class="share-copy-li" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-boe-fsr-ai-financing">Copy LinkedIn draft</a></p></div><p class="share-actions"><a class="share-copy-link" href="https://luongnv.com/news/reports/2026-11-27-morning.html#story-boe-fsr-ai-financing">Copy link</a></p><p class="share-status" aria-live="polite"></p></div></details></article></div></div></section>
+<section class="paper-section" aria-labelledby="kp-title"><h2 id="kp-title">Key patterns &mdash; editorial analysis</h2><div class="box"><ul><li>AI is reshaping work and power at the same time: a reported <mark class="hl">10,000-job cut at SAP</mark> and a Japanese generator courting labs with plant-side sites.</li><li>Governments are moving from guidance to enforcement: Japan&#x27;s draft <mark class="hl">inspections and fines</mark>, and Singapore weighing a supplier-imposed halt it cannot yet confirm.</li><li>Caution about unreleased models has reached a central bank, with Bailey backing labs that hold back their newest systems.</li></ul></div></section>
+<section class="paper-section colophon" aria-labelledby="col-title"><h2 id="col-title">Source coverage &amp; colophon</h2><div class="grid-cols"><div class="cell"><div class="box"><h3>Collection engine</h3><dl><div><dt>Version</dt><dd>4.6.0</dd></div><div><dt>Ran this edition</dt><dd>yes</dd></div><div><dt>Engine look-back</dt><dd>2 days</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Source status</h3><dl><div><dt>reddit</dt><dd>ok, partial (21 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)</dd></div><div><dt>hackernews</dt><dd>ok (25 stories)</dd></div><div><dt>github</dt><dd>ok (6 items)</dd></div><div><dt>devto</dt><dd>ok (12 articles; tags ai and llm)</dd></div><div><dt>youtube</dt><dd>not searched (yt-dlp not available on this machine)</dd></div><div><dt>polymarket</dt><dd>not used: blocked in France (ANJ)</dd></div><div><dt>x</dt><dd>not searched (no consent-free source configured)</dd></div></dl></div></div><div class="cell"><div class="box"><h3>Coverage notes</h3><ul><li>The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older or general items (Google&#x27;s Workspace agent rules, a DeepMind podcast from 19 November, an AI self-hosting essay); the stories in this edition were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.</li><li>Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat&#x27;s feed answered HTTP 429 and DeepMind&#x27;s feed did not parse. Missing coverage does not mean nobody discussed these stories.</li><li>Window: the normal window opens at the previous edition&#x27;s issue time, 16:08 on 26 November. It was widened to 03:45 on 26 November to carry one newsletter lead, OpenAI&#x27;s GPT-6.2 billing fix, posted at 03:50 that day, which no earlier edition carried. Everything else in the widened window followed the editorial gate.</li><li>Not read: Bloomberg&#x27;s SAP report, the Nikkei and Yomiuri reports on JERA and Japan&#x27;s AI law, and the Financial Times&#x27; report on Andrew Bailey are paywalled; Reuters&#x27; own pages refuse automated requests. Those stories rest on the wire and summary copies cited. The Linux kernel mailing-list archive answered with a bot challenge and every fetch_source.py route (direct, Chrome-like TLS, Internet Archive) failed; Phoronix refused plain requests (HTTP 403) and was read through web extraction.</li><li>Newsletter leads from the Iris mail bot: today&#x27;s file holds four leads. OpenAI&#x27;s GPT-6.2 billing fix is carried. FinCEN&#x27;s cyber incident was disclosed on 24 November, more than 48 hours before this edition; Anthropic&#x27;s &#x27;Working with AI&#x27; study of 58 companies was published on 23 November; and the reported SpaceX and Tesla merger talks were first reported by the FT on 25 November and are not an AI development, so none of the three was carried.</li><li>Not carried because they were published before the normal window opened at 16:08 on 26 November (the window was widened only for the newsletter lead): California&#x27;s public-nuisance lawsuit against OpenAI (filed 16 November), the Gemini 4 proof of Hadwiger&#x27;s covering conjecture in three dimensions (arXiv, 24 November), and Sakana AI&#x27;s Namazu Small (25 November).</li><li>Also published before the normal window and not carried: Tencent&#x27;s open-source DFly2 speculative decoder (26 November, 13:22 Paris), Anthropic&#x27;s neuron-basis interpretability posts (24 November), Nvidia&#x27;s study of models managing their own context (25 November), and Meta&#x27;s refusal of the FCA&#x27;s offer to test its Muse agent (reported by WIRED at midday on 26 November).</li><li>No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private.</li></ul></div></div><div class="cell"><div class="box"><h3>Engine footer</h3><p class="engine-footer">---
+ All agents reported back!
+├─  Reddit: 21 threads │ 799 upvotes │ 3,828 comments
+├─  HN: 25 stories │ 1,322 points │ 784 comments
+├─  dev.to: 12 articles │ 249 reactions │ 269 comments
+├─  GitHub: 6 items │ 17 reactions │ 29 comments
+├─  Top voices: r/artificial, r/singularity, r/OpenAI
+---</p></div></div><div class="cell"><div class="box"><h3>This edition</h3><ul><li><a href="2026-11-27-morning.json" download>Exact input JSON</a></li><li><a href="2026-11-27-morning.md">Markdown text</a></li><li><a href="2026-11-27-morning.html">Permanent page</a></li></ul></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>The AI Gazette is a locally rendered digest. Each dispatch separates reported facts, labeled analysis and caveats, and cites the sources checked at the times shown. Background items are older or undated context, not new reporting.</p>
+<p>Rendered as static HTML with inline styles and one inline share-panel script; no cookies or analytics. Typefaces are requested from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); if that request is blocked, Georgia, Times or another installed serif is used.</p>
+</div></footer>
+<script id="share-drafts">(function () {
+  "use strict";
+  var LIMIT = 280;
+  var LINK = 23;
+  var LIGHT = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+  var URL_RE = /https?:\/\/[!-~]*[A-Za-z0-9\/\-_+=#&@]/gi;
+  function weight(text) {
+    var total = 0;
+    for (var i = 0; i < text.length; i += 1) {
+      var cp = text.codePointAt(i);
+      var light = false;
+      if (cp > 0xFFFF) { i += 1; }
+      for (var j = 0; j < LIGHT.length; j += 1) {
+        if (cp >= LIGHT[j][0] && cp <= LIGHT[j][1]) { light = true; }
+      }
+      total += light ? 1 : 2;
+    }
+    return total;
+  }
+  function xLength(text) {
+    var total = 0;
+    var pos = 0;
+    var m;
+    URL_RE.lastIndex = 0;
+    while ((m = URL_RE.exec(text)) !== null) {
+      total += weight(text.slice(pos, m.index)) + LINK;
+      pos = m.index + m[0].length;
+    }
+    return total + weight(text.slice(pos)) + 1 + LINK;
+  }
+  function countText(n) {
+    var over = n > LIMIT ? " \u2014 " + (n - LIMIT) + " over the limit" : "";
+    return n + " of " + LIMIT + " characters, link counted as " + LINK + over + "; X adds the link after the text.";
+  }
+  function enc(text) {
+    return encodeURIComponent(text).replace(/[!'()*]/g, function (c) {
+      return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function wire(panel) {
+    var permalink = panel.getAttribute("data-permalink");
+    var xBox = panel.querySelector("textarea.share-text-x");
+    var liBox = panel.querySelector("textarea.share-text-li");
+    var xPost = panel.querySelector("a.share-post-x");
+    var liPost = panel.querySelector("a.share-post-li");
+    var count = panel.querySelector(".share-count");
+    var status = panel.querySelector(".share-status");
+    if (!permalink || !xBox || !liBox || !xPost || !liPost || !count || !status) { return; }
+    function announce(message) { status.textContent = message; }
+    function refresh() {
+      count.textContent = countText(xLength(xBox.value));
+      xPost.setAttribute("href", "https://x.com/intent/post?text=" + enc(xBox.value) + "&url=" + enc(permalink));
+      liPost.setAttribute("href", "https://www.linkedin.com/feed/?shareActive=true&text=" + enc(liBox.value));
+    }
+    function selectFallback(box, start, end) {
+      box.focus();
+      if (typeof start === "number") { box.setSelectionRange(start, end); } else { box.select(); }
+    }
+    function copy(text, done, failed) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { announce(done); }, failed);
+      } else {
+        failed();
+      }
+    }
+    function copyDraft(text, box, done, failedMessage) {
+      copy(text, done, function () {
+        selectFallback(box);
+        announce(failedMessage || "Copy failed \u2014 the draft is selected; press Ctrl+C or Command+C.");
+      });
+    }
+    function on(selector, handler) {
+      var el = panel.querySelector(selector);
+      if (el) { el.addEventListener("click", handler); }
+    }
+    xBox.addEventListener("input", refresh);
+    liBox.addEventListener("input", refresh);
+    refresh();
+    on("a.share-post-x", refresh);
+    on("a.share-post-li", function () {
+      refresh();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft. If LinkedIn opens with an empty box, paste it there.",
+        "Copy failed \u2014 if LinkedIn opened empty, come back here: the draft is selected; press Ctrl+C or Command+C.");
+    });
+    on("a.share-copy-x", function (event) {
+      event.preventDefault();
+      copyDraft(xBox.value + "\n" + permalink, xBox, "Copied the X draft and the link.");
+    });
+    on("a.share-copy-li", function (event) {
+      event.preventDefault();
+      copyDraft(liBox.value, liBox, "Copied the LinkedIn draft.");
+    });
+    on("a.share-copy-link", function (event) {
+      event.preventDefault();
+      copy(permalink, "Copied the link.", function () {
+        var at = liBox.value.indexOf(permalink);
+        if (at >= 0) {
+          selectFallback(liBox, at, at + permalink.length);
+          announce("Copy failed \u2014 the link is selected in the LinkedIn draft; press Ctrl+C or Command+C.");
+        } else {
+          announce("Copy failed \u2014 copy the link by hand: " + permalink);
+        }
+      });
+    });
+  }
+  var panels = document.querySelectorAll("details.share-drafts");
+  for (var k = 0; k < panels.length; k += 1) { wire(panels[k]); }
+}());</script>
+</body>
+</html>

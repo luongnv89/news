@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-27-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-27T06:10:41+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-26T03:45:00+01:00",
+  "window_end": "2026-11-27T06:10:41+01:00",
+  "editorial_note": "This morning's edition leads with work and power: Bloomberg reports SAP is weighing ==at least 10,000 job cuts== in an AI restructuring, and Japan's largest generator, JERA, says it is talking to Anthropic and Meta about data centres beside its plants. Japan is drafting ==fines and inspections== for frontier AI developers, Singapore says it has not confirmed Nvidia's reported shipment halt, and the Bank of England's transcript shows its governor warning about unreleased models and encryption. In coding, AI agent skills are headed for the Linux kernel, and OpenAI says a billing fix means GPT-6.2 users will reach their limits sooner. There is ==no new frontier model== in this window and no research item met the bar. The window was widened back to 03:45 on 26 November to carry one newsletter lead; two of the seven stories are labelled updates.",
+  "stories": [
+    {
+      "id": "sap-ai-restructuring-job-cuts",
+      "section": "Industry & policy",
+      "headline": "SAP is weighing at least 10,000 job cuts in an AI-era restructuring, Bloomberg reports",
+      "published_at": "2026-11-26T17:15:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "German software maker SAP is preparing a plan to cut ==at least 10,000 positions== to reshape its business for the AI era, Bloomberg News reported on Thursday, citing people familiar with the matter. Reuters, which relayed the report, said it could not independently verify it.",
+        "The cuts would affect ==at least 9 per cent== of SAP's global workforce, and the total could still change after labour negotiations, Bloomberg said according to Reuters. SAP, Europe's most valuable technology company, ==declined to comment==, Reuters said."
+      ],
+      "why_it_matters": "Analysis: SAP is one of the largest enterprise-software employers in Europe, and a cut of this size framed around AI would be one of the clearest cases yet of a software company reorganising its own workforce around the technology it sells.",
+      "caveat": "The plan is ==reported, not announced==: the Bloomberg article is paywalled and was not read, so this account rests on Reuters' summary carried by CNA. The figure is a floor that may change in labour talks.",
+      "sources": [
+        {
+          "label": "CNA (Reuters): SAP considers at least 10,000 job cuts in AI restructuring, Bloomberg reports",
+          "url": "https://www.channelnewsasia.com/business/sap-considers-least-10000-job-cuts-in-ai-restructuring-bloomberg-reports-6585781",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:13+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "jera-anthropic-meta-data-centres",
+      "section": "Industry & policy",
+      "headline": "Japan's largest power generator JERA says it is in talks with Anthropic and Meta on data centres beside its Tokyo-area plants, Nikkei reports",
+      "published_at": "2026-11-26T22:51:00+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "JERA has entered talks with ==Anthropic, Meta and other US tech companies== to build data centres next to its power plants around Tokyo, JERA Global chief executive Yukio Kani told Nikkei in a report published at 06:51 Japan time on Friday. According to Reuters' account of the report, relayed by Voltgrid News, Kani said JERA is also in discussions with Amazon, Microsoft and Google.",
+        "Nikkei describes the plans as ==behind the meter== set-ups, in which a data centre draws power directly from the neighbouring plant rather than through the public grid. Neither Nikkei nor Reuters gave sites, megawatts or timing for the new talks, and no agreement has been announced.",
+        "The only concrete project so far predates these talks: on 1 October JERA signed a memorandum with Dell Technologies and developer RHAELM for a data centre at its Chiba Thermal Power Station, with up to 400 MW of power and expected capital deployment of ==more than $15 billion==, Voltgrid News reports, citing JERA's release."
+      ],
+      "why_it_matters": "Analysis: grid connections are the slowest part of building AI capacity, and a generator offering plant-side sites turns Japan's existing gas fleet into a shortcut for the labs.",
+      "caveat": "These are ==talks, not contracts==, reported by Nikkei from an interview with JERA's chief. The Nikkei and Reuters articles were not read directly (Nikkei is paywalled; Reuters pages refuse automated requests); Anthropic, Meta and the other companies had not commented.",
+      "sources": [
+        {
+          "label": "Voltgrid News: JERA talks with Anthropic, Meta on data centers at plants",
+          "url": "https://voltgridnews.com/story/jera-talks-with-anthropic-meta-on-data-centers-at-plants-chiba-400-mw",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:14+01:00"
+        },
+        {
+          "label": "MLQ.ai: JERA in talks to host Anthropic and Meta data centers at Tokyo-area plants",
+          "url": "https://mlq.ai/news/jera-in-talks-to-host-anthropic-and-meta-data-centers-at-tokyo-area-plants/",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:14+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "japan-ai-law-inspections-fines",
+      "section": "Industry & policy",
+      "headline": "Japan drafts an AI law amendment with inspections and fines of up to 100 million yen for frontier developers, Nikkei and Yomiuri report",
+      "published_at": "2026-11-26",
+      "freshness": "new",
+      "paragraphs": [
+        "Japan's government is drafting an amendment to its AI Promotion Act that would let ministries ==inspect developers of high-performance AI== whose safety measures fall short and fine them up to ==100 million yen==, Nikkei reported on Thursday, according to MLQ.ai's account. Developers would have to report accidents such as malfunctions, and foreign developers would be covered too.",
+        "The Yomiuri Shimbun reported the same day that the government would first issue a recommendation, then order corrective action, with penalties for ignoring an order. Its examples of required safeguards include refusing questions about cyberattack methods or bomb-making and ==verifying users of AI with strong cyberattack capabilities==, according to a summary by the Japanese outlet 8and cited by MLQ.ai.",
+        "The government aims to put the bill to the ordinary Diet session in 2027. Under the current law it can investigate companies and give guidance, but answering its inquiries is voluntary, MLQ.ai reports. Kyodo first reported on 12 November that the government was considering penalties; the new reports add the inspection powers, the fine ceiling and coverage of foreign developers."
+      ],
+      "why_it_matters": "Analysis: Japan has had one of the lightest AI regimes among large economies; a binding duty with inspections would bring OpenAI, Anthropic, Google and Chinese labs operating there under a real enforcement path for the first time.",
+      "caveat": "No bill text has been published and the penalties are ==still under negotiation==. Nikkei and the Yomiuri are paywalled and were not read; this account rests on MLQ.ai's and Chip Dispatch's summaries of them.",
+      "sources": [
+        {
+          "label": "MLQ.ai: Japan's AI law overhaul would allow inspections and fines up to ¥100 million",
+          "url": "https://mlq.ai/news/japans-ai-law-overhaul-would-allow-inspections-and-fines-up-to-100-million/",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:14+01:00"
+        },
+        {
+          "label": "Chip Dispatch: Japan drafts AI rules with ¥100 million fines and ministry inspections",
+          "url": "https://chipdispatch.com/articles/japan-drafts-ai-rules-with-100-million-fines-and-ministry-inspections",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:15+01:00"
+        },
+        {
+          "label": "Kyodo News: Japan mulls penalties for AI firms over safety risks (12 November)",
+          "url": "https://english.kyodonews.net/articles/-/91104",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:17+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "us-remote-access-chip-rule",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Singapore says it has not confirmed Nvidia's reported halt to server shipments and is consulting businesses on the impact",
+      "published_at": "2026-11-27T03:22:37+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Singapore's Deputy Prime Minister Gan Kim Yong said on Friday that the government has ==not confirmed== whether Nvidia has stopped server shipments to the country. 'We have not confirmed it,' he said at the Asia Future Summit, adding that the government is ==engaging businesses== to see what the impact on them is.",
+        "Update to the 26 November afternoon story, which reported the Financial Times' account that Nvidia had told partners such as Dell and Supermicro to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia. Gan's remarks are the first public response from one of the four governments; he said businesses are also organising themselves to work with their partners."
+      ],
+      "why_it_matters": "Analysis: Singapore is a regional hub for AI data centres, and a government that cannot yet confirm the halt shows how much of the new US rule is being applied through suppliers rather than through published licence decisions.",
+      "caveat": "Nvidia has still ==not confirmed the halt==, and it remains unclear whether it is temporary. Gan was answering a question at a summit; this is not a formal government statement on the rule.",
+      "sources": [
+        {
+          "label": "AsiaOne: 'We have not confirmed it': DPM Gan on reports of Nvidia halting chip shipments to Singapore",
+          "url": "https://www.asiaone.com/singapore/nvidia-hatlts-server-shipments-chips-gan-kim-yong",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:17+01:00"
+        },
+        {
+          "label": "Mothership: Govt has not confirmed if Nvidia has stopped chip shipments to S'pore: DPM Gan",
+          "url": "https://mothership.sg/2026/11/nvidia-chip-shipping-singapore-gan-kim-yong/",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:18+01:00"
+        },
+        {
+          "label": "Lianhe Zaobao: DPM Gan: Nvidia supply halt unconfirmed, businesses being consulted on impact",
+          "url": "https://www.zaobao.com.sg/en/finance/singapore/dpm-gan-nvidia-supply-halt-unconfirmed-businesses-being-consulted-impact",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:19+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "boe-fsr-ai-financing",
+      "section": "Industry & policy",
+      "headline": "UPDATE: Bank of England governor says developers are cautious about releasing their newest models and that companies are right to be careful",
+      "published_at": "2026-11-26T17:52:44+01:00",
+      "freshness": "updated",
+      "paragraphs": [
+        "Asked at the Financial Stability Report press conference about rumours that AI developers already have models able to crack the cryptography the financial system relies on, Governor Andrew Bailey said developers are 'expressing concerns that these models have ==even more powerful properties=='. 'We are, as they put it now, on the exponential part of the development,' he said, according to the Bank's published transcript.",
+        "Bailey said this is 'bringing about quite a bit of caution about how these models get released' and that he could not comment on what the models can and cannot do. He said 'the companies are right' and called for ==more robust model testing==, before and after release, and for other countries to join that work: 'AI does not stop at the borders.'",
+        "Update to the 26 November afternoon story on the report's warnings about AI financing. That story did not cover the press conference. The report itself says confidential data could be compromised through ==the use of frontier AI to exploit cryptographic vulnerabilities==, as well as by a future quantum computer."
+      ],
+      "why_it_matters": "Analysis: a central bank governor publicly endorsing labs' decisions to hold back models, and linking them to the security of encrypted financial data, gives the encryption worries of recent days an official voice for the first time.",
+      "caveat": "Bailey did not say any model can break encryption and ==declined to describe capabilities==. The remarks were made at the press conference on 26 November; the transcript PDF was created at 17:52 Paris time, after the previous edition was issued. The Financial Times' report on the remarks is paywalled and was not read.",
+      "sources": [
+        {
+          "label": "Bank of England: Financial Stability Report press conference transcript, November 2026 (PDF)",
+          "url": "https://www.bankofengland.co.uk/-/media/boe/files/financial-stability-report/2026/fsr-press-conference-transcript-november-2026.pdf",
+          "type": "primary",
+          "checked_at": "2026-11-27T06:08:19+01:00"
+        },
+        {
+          "label": "Bank of England: Financial Stability Report, November 2026",
+          "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026",
+          "type": "primary",
+          "checked_at": "2026-11-27T06:08:19+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "linux-kernel-agent-skills",
+      "section": "Coding & agents",
+      "headline": "AI agent skills look set to be submitted for Linux 7.5, with in-tree instructions for tagging fixes, writing commit messages and KUnit tests",
+      "published_at": "2026-11-26",
+      "freshness": "new",
+      "paragraphs": [
+        "Sasha Levin, an NVIDIA engineer who co-maintains the Linux stable and LTS kernels, asked on Thursday for his 'agents' branch to be dropped from linux-next, writing that it 'contains the ==agent skills series, which I intend to send to Linus==', Phoronix reports. The submission is expected in the ==Linux 7.5 merge window== that opens in late December.",
+        "The branch adds a new agents/skills directory to the kernel source tree with initial skills that tell AI coding agents how to determine the 'Fixes:' tag of a patch, determine stable tags, find other instances of a fixed bug, write commit messages and write KUnit tests, according to Phoronix."
+      ],
+      "why_it_matters": "Analysis: if Linus Torvalds accepts it, the world's largest collaborative codebase would ship its own instructions for AI agents, a sign that maintainers now plan for agent-written patches rather than only policing them.",
+      "caveat": "Inclusion is ==not decided==: Torvalds has not yet received or accepted the pull request. The mailing-list message itself could not be read here (the kernel archive answered with a bot challenge and every fetch_source.py route failed), so its wording comes from Phoronix, which web extraction read after plain requests were refused.",
+      "sources": [
+        {
+          "label": "Phoronix: It Looks Like AI Agent Skills Will Be Submitted For Linux 7.5",
+          "url": "https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:19+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "openai-gpt-6-2-billing-fix",
+      "section": "Models",
+      "headline": "OpenAI says a billing fix means GPT-6.2 Astra users will hit their limits 40% faster and Sol users 25% faster",
+      "published_at": "2026-11-26T03:50:10+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI's Thibault Sottiaux, who works on Codex and ChatGPT, said in a post on X at 03:50 Paris time on Thursday that the company made 'a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users', BleepingComputer and The Next Web report. Compared with the previous week, users will reach their limits ==40% faster on Astra and 25% faster on Sol==.",
+        "Sottiaux said users would ==not be charged for past usage==, that other models were not affected, and that both models should still go further than GPT-6 Astra and GPT-6.1 Sol. OpenAI is adding ==one banked reset== for everyone on Go, Plus, Pro and Business; BleepingComputer said the reset appeared in ChatGPT's usage settings and expires after a month.",
+        "This item came from a newsletter lead and was published before this edition's normal window; no earlier edition carried it. Both models launched on 17 November, when OpenAI said they would let users get more done within their limits, The Next Web notes."
+      ],
+      "why_it_matters": "Analysis: the generous limits that drew users to GPT-6.2 in its first week were partly a mistake, and the correction lands as OpenAI is also merging ChatGPT's Chat and Work usage into one meter.",
+      "caveat": "The statement was made on X, which this newspaper does not cite directly; the wording comes from BleepingComputer's and The Next Web's quotations. OpenAI's pricing pages did not change, The Next Web said.",
+      "sources": [
+        {
+          "label": "BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:21+01:00"
+        },
+        {
+          "label": "The Next Web: OpenAI fixes a GPT-6.2 billing mistake, and users hit limits 40% faster",
+          "url": "https://thenextweb.com/news/openai-billing-mistake-gpt-6-2-usage-limits",
+          "type": "reporting",
+          "checked_at": "2026-11-27T06:08:21+01:00"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50651406",
+          "type": "community",
+          "checked_at": "2026-11-27T06:08:21+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "1. why would you drop this on thanksgiving? 2. how does this go unnoticed?",
+          "author": "derac on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50651406"
+        },
+        {
+          "text": "This is, frankly, an insane move.",
+          "author": "enraged_camel on Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50651647"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "4.6.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (21 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)",
+      "hackernews": "ok (25 stories)",
+      "github": "ok (6 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were mostly older or general items (Google's Workspace agent rules, a DeepMind podcast from 19 November, an AI self-hosting essay); the stories in this edition were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429 and DeepMind's feed did not parse. Missing coverage does not mean nobody discussed these stories.",
+      "Window: the normal window opens at the previous edition's issue time, 16:08 on 26 November. It was widened to 03:45 on 26 November to carry one newsletter lead, OpenAI's GPT-6.2 billing fix, posted at 03:50 that day, which no earlier edition carried. Everything else in the widened window followed the editorial gate.",
+      "Not read: Bloomberg's SAP report, the Nikkei and Yomiuri reports on JERA and Japan's AI law, and the Financial Times' report on Andrew Bailey are paywalled; Reuters' own pages refuse automated requests. Those stories rest on the wire and summary copies cited. The Linux kernel mailing-list archive answered with a bot challenge and every fetch_source.py route (direct, Chrome-like TLS, Internet Archive) failed; Phoronix refused plain requests (HTTP 403) and was read through web extraction.",
+      "Newsletter leads from the Iris mail bot: today's file holds four leads. OpenAI's GPT-6.2 billing fix is carried. FinCEN's cyber incident was disclosed on 24 November, more than 48 hours before this edition; Anthropic's 'Working with AI' study of 58 companies was published on 23 November; and the reported SpaceX and Tesla merger talks were first reported by the FT on 25 November and are not an AI development, so none of the three was carried.",
+      "Not carried because they were published before the normal window opened at 16:08 on 26 November (the window was widened only for the newsletter lead): California's public-nuisance lawsuit against OpenAI (filed 16 November), the Gemini 4 proof of Hadwiger's covering conjecture in three dimensions (arXiv, 24 November), and Sakana AI's Namazu Small (25 November).",
+      "Also published before the normal window and not carried: Tencent's open-source DFly2 speculative decoder (26 November, 13:22 Paris), Anthropic's neuron-basis interpretability posts (24 November), Nvidia's study of models managing their own context (25 November), and Meta's refusal of the FCA's offer to test its Muse agent (reported by WIRED at midday on 26 November).",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 21 threads │ 799 upvotes │ 3,828 comments\n├─ 🟡 HN: 25 stories │ 1,322 points │ 784 comments\n├─ 👩‍💻 dev.to: 12 articles │ 249 reactions │ 269 comments\n├─ 🐙 GitHub: 6 items │ 17 reactions │ 29 comments\n├─ 🗣️ Top voices: r/artificial, r/singularity, r/OpenAI\n---"
+  },
+  "key_patterns": [
+    "AI is reshaping work and power at the same time: a reported ==10,000-job cut at SAP== and a Japanese generator courting labs with plant-side sites.",
+    "Governments are moving from guidance to enforcement: Japan's draft ==inspections and fines==, and Singapore weighing a supplier-imposed halt it cannot yet confirm.",
+    "Caution about unreleased models has reached a central bank, with Bailey backing labs that hold back their newest systems."
+  ],
+  "previous_issue_id": "2026-11-26-afternoon"
+}
