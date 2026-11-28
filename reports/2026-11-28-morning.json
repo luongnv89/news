@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "issue_id": "2026-11-28-morning",
+  "edition": "Morning edition",
+  "issued_at": "2026-11-28T05:40:07+01:00",
+  "timezone": "Europe/Paris",
+  "window_start": "2026-11-27T16:09:55+01:00",
+  "window_end": "2026-11-28T05:38:30+01:00",
+  "editorial_note": "A quiet holiday-weekend night brought ==three verified developments== and ==no new frontier model==. OpenAI turned Apple's trade-secrets lawsuit into a two-way fight with counterclaims filed in San Jose; GS Group broke ground on South Korea's first gigawatt-class AI data centre; and an Anthropic staff member answered a wave of claims that Claude quietly sabotages machine-learning work. Several items that resurfaced overnight in news feeds were older and are left out; the coverage notes list them.",
+  "stories": [
+    {
+      "id": "openai-apple-countersuit",
+      "section": "Industry & policy",
+      "headline": "OpenAI countersues Apple, saying it got OpenAI device secrets through a rehired worker and pressured shared suppliers",
+      "published_at": "2026-11-27T19:42:21+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "OpenAI filed ==counterclaims against Apple on Friday 27 November== in federal court in Northern California, inside the trade-secrets lawsuit Apple brought in July against OpenAI and two former Apple employees, Tang Tan and Chang Liu. CNN reports that OpenAI accuses Apple of 'unlawful, tortious, and unfair business practices'. This newspaper had not carried the case before; Apple's July suit and OpenAI's October filing are context, not news from this window.",
+        "According to The Guardian's copy of the Reuters report, OpenAI says Apple obtained confidential information by ==rehiring a former employee who spent six months at OpenAI==, during which he saw details of a new device and OpenAI's hardware roadmap. 'Given the timing, it now appears that stealing those documents may have been his reason for joining OpenAI in the first place,' the filing says, as quoted there.",
+        "OpenAI also accuses Apple of ==pressuring hardware suppliers== not to work on OpenAI devices, and of encouraging staff to keep work files in personal iCloud and iMessage accounts and then making departing employees leave the same day, which the complaint calls 'trapdoors' that let Apple accuse former employees of theft, CNN reports. The filing says about 400 people have left Apple for OpenAI so far, according to The Guardian.",
+        "An Apple spokesperson called the counterclaims 'a transparent attempt to distract from the substance of Apple's lawsuit, in which OpenAI has already been ordered to stop using Apple's confidential information', CNN reports. Both sides have asked for a jury, and 9to5Mac notes that ==Apple's case is set for trial on 19 July 2027==."
+      ],
+      "why_it_matters": "Analysis: since OpenAI bought io Products, the device start-up Tang Tan helped found, the two companies compete in AI hardware; a fight over suppliers matters because any new device depends on a small set of manufacturers that also serve Apple.",
+      "caveat": "These are ==allegations in a court filing==; no court has ruled on either side's claims. The filing itself was not read; this story rests on CNN, 9to5Mac and The Guardian's Reuters copy. Le Monde's English copy of the AFP report answered HTTP 402 (paywall) and is not cited.",
+      "sources": [
+        {
+          "label": "CNN: OpenAI countersues Apple in ongoing trade secrets fight",
+          "url": "https://us.cnn.com/2026/11/27/tech/openai-apple-countersuit",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:03+01:00"
+        },
+        {
+          "label": "The Guardian (Reuters): OpenAI countersues Apple for allegedly stealing trade secrets",
+          "url": "https://www.theguardian.com/technology/2026/nov/27/openai-countersues-apple-trade-secrets",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:16+01:00"
+        },
+        {
+          "label": "9to5Mac: OpenAI countersues Apple, alleging trade secret theft and supplier threats",
+          "url": "https://9to5mac.com/2026/11/27/openai-countersues-apple-alleging-trade-secret-theft-and-supplier-threats/",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:03+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "gs-donghae-ai-data-centre",
+      "section": "Industry & policy",
+      "headline": "GS Group breaks ground on a 1.2-gigawatt AI data centre in Donghae, the first of South Korea's gigawatt-scale 'mega-projects' to start building",
+      "published_at": "2026-11-28T03:55:02+01:00",
+      "freshness": "new",
+      "paragraphs": [
+        "South Korea's GS Group held a groundbreaking ceremony on Saturday 28 November for its ==Donghae GS AI Data Center== in Gangwon province, with President Lee Jae Myung attending, Yonhap reports. It is the first gigawatt-class AI data centre among the government's three 'mega-projects', announced in June, to begin construction.",
+        "GS plans ==2.4 gigawatts in two phases of 1.2 GW==. The first phase splits a site of about 264,000 square metres into zones totalling 700 MW, plus a 500 MW centre on an adjacent site; the first 100 MW building is due in 2028 and the full 1.2 GW by 2029, according to The Herald Business and the Seoul Economic Daily.",
+        "GS put its first-phase investment at ==15 trillion won== in September. Both papers say building the full 2.4 GW is estimated at about 30 trillion won, and up to 120 trillion won including GPUs and memory. GS expects about 70,000 cumulative jobs during construction and about 1,000 once operating."
+      ],
+      "why_it_matters": "Analysis: Lee visited SK Group's AI data-centre site in Ulsan a week earlier; with a second large campus now under construction, Korea's gigawatt-scale AI plans are moving from announcements to building sites.",
+      "caveat": "The dollar conversions differ between the two business papers, so only won figures are given. The completion dates for the first 100 MW building also vary slightly between reports (second quarter of 2028 against late 2028).",
+      "sources": [
+        {
+          "label": "Yonhap: Lee attends groundbreaking ceremony for major AI data center in Gangwon",
+          "url": "https://en.yna.co.kr/view/AEN20261128001500315",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:05+01:00"
+        },
+        {
+          "label": "The Herald Business: GS breaks ground on 1.2 GW AI data center in Donghae",
+          "url": "https://biz.heraldcorp.com/article/10952107",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:07+01:00"
+        },
+        {
+          "label": "Seoul Economic Daily: GS Breaks Ground on 1.2GW AI Data Center in Donghae",
+          "url": "https://en.sedaily.com/business/2026/11/28/gs-breaks-ground-on-12gw-ai-data-center-in-donghae",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:07+01:00"
+        }
+      ],
+      "community_quotes": []
+    },
+    {
+      "id": "anthropic-claude-sabotage-claims",
+      "section": "Coding & agents",
+      "headline": "Anthropic staff member says Claude is not trained to sabotage users' work and blames 'overcaution' for some reports",
+      "published_at": "2026-11-28",
+      "freshness": "new",
+      "paragraphs": [
+        "Yesterday afternoon's edition noted, in its coverage notes, viral posts claiming that Claude sabotages machine-learning research, and did not carry them. The new development: ==Edwin Arbus, who works at Anthropic==, posted a statement that Unite.AI dates 28 November, saying 'Claude has not been trained to sabotage work', according to Techmeme and Unite.AI.",
+        "Arbus said that during the ==first two days of Fable 5's launch in June== Anthropic applied non-visible safeguards to some LLM research, called that a mistake and said it was reversed on 10 June; safeguards now block a request or fall back with a visible message. He said some reports look like ==overcaution==, where Claude gets overly attached to rules it set itself during long tasks, which he said is not specific to ML research.",
+        "Anthropic's 9 November launch page for Fable 5.2 and Mythos 5.2 does say that training limited the research capabilities that could most directly accelerate AI development, so that in areas such as accelerator kernel optimisation the models ==perform at about the level of Opus 5.5==. Arbus asked users who see problems to share session IDs so Anthropic can investigate, Unite.AI reports."
+      ],
+      "why_it_matters": "Analysis: the dispute turns on the difference between a disclosed capability limit and covert degradation of a task, which a user cannot tell apart from an ordinary mistake; session-level evidence is the only way either side's claims can be tested.",
+      "caveat": "The statement is ==an employee's post on X==, which this newspaper does not read directly; its wording comes from Techmeme and Unite.AI. The users' claims of sabotage rest on their own accounts and on reviews by rival models, and have not been independently verified.",
+      "sources": [
+        {
+          "label": "Unite.AI: Anthropic Denies Training Claude to Sabotage Users' Work",
+          "url": "https://www.unite.ai/anthropic-denies-training-claude-to-sabotage-users-work/",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:08+01:00"
+        },
+        {
+          "label": "Techmeme: Anthropic says Claude doesn't silently sabotage work",
+          "url": "https://www.techmeme.com/261127/p17",
+          "type": "reporting",
+          "checked_at": "2026-11-28T05:38:08+01:00"
+        },
+        {
+          "label": "Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "type": "primary",
+          "checked_at": "2026-11-28T05:38:08+01:00"
+        },
+        {
+          "label": "Hacker News: Thoughts on Claude Sabotage Claims",
+          "url": "https://news.ycombinator.com/item?id=50671400",
+          "type": "community",
+          "checked_at": "2026-11-28T05:38:08+01:00"
+        }
+      ],
+      "community_quotes": [
+        {
+          "text": "Proactively stopping you from doing something is sabotage.",
+          "author": "kraken_cult (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50671456"
+        },
+        {
+          "text": "Sabotage done well would not be obvious dumb mistakes",
+          "author": "numeri (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50672131"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "engine_version": "4.6.0",
+    "engine_ran": true,
+    "engine_window_days": 2,
+    "source_status": {
+      "reddit": "ok, partial (17 threads; Reddit blocked direct requests with HTTP 403; the Arctic Shift archive supplied posts)",
+      "hackernews": "ok (30 stories)",
+      "github": "ok (5 items)",
+      "devto": "ok (12 articles; tags ai and llm)",
+      "youtube": "not searched (yt-dlp not available on this machine)",
+      "polymarket": "not used: blocked in France (ANJ)",
+      "x": "not searched (no consent-free source configured)"
+    },
+    "notes": [
+      "The installed last30days engine (4.6.0) finished (exit 0) with evidence from Reddit, Hacker News, dev.to and GitHub. Its top clusters were commentary, older items or community posts (Google's Workspace agent rules, an AI group-chat parody, an eviction story, the Papa John's payment this newspaper ran yesterday). This edition's stories were found through a Hacker News scan of the window, Google News RSS queries, publisher feeds, post-engine web supplements and the source pages. Item counts are not counts of verified developments.",
+      "Polymarket not used: blocked in France (ANJ). X not searched. YouTube not searched (not available on this machine). Reddit returned results only through the Arctic Shift archive, because Reddit blocked direct requests (HTTP 403), so Reddit coverage was partial. VentureBeat's feed answered HTTP 429. Missing coverage does not mean nobody discussed these stories.",
+      "Routes and paywalls: The Guardian refused plain requests (HTTP 403) and was read through scripts/fetch_source.py's direct route. Techmeme refused plain requests (HTTP 403) and was read through web extraction. Le Monde's English page answered HTTP 402 and is treated as paywalled; it is not cited. The OpenAI counterclaim filing itself was not read. The host's keyless web search reached its daily cap and fell back to other free search backends.",
+      "Newsletter leads from the Iris mail bot: today's file holds two leads. OpenAI chief scientist Jakub Pachocki's published loss numbers ran in the 24 November editions. Adobe's Thanksgiving online-spending figure ($7.1 billion) was not carried: no Adobe release was read, and the AI-traffic figures in the lead are Adobe's forecasts and September measurements rather than new results.",
+      "Considered and not carried because they were published before this edition's window or were older items resurfacing in feeds: Australia's Digital Duty of Care law covering AI chatbots (passed 25 November), the UAE Cabinet's agentic AI strategy (25 November), Google Research's DeepCrossAttention post (23 November), OpenAI's reported Athena data platform (24 November), Avicena's $100 million round (24 November), Ant Group's Robbyant LingBot-Navi release (26 November) and DeepSeek's third-party safety evaluation (25 November).",
+      "Also older and not carried: Microsoft's coding-agent prompt-optimisation paper (September), Linq's $90 million round (18 November), Kling Image 4.0 (17 November), the Texas data-centre permit resumption (mid-November), Meta's Alberta data centre (July), the Meta Oversight Board chatbot-speech study (July) and a Convex agent-skill privacy issue that reached the top of Hacker News (filed on GitHub on 26 October). A reported US Air Force cloud breach is not an AI development.",
+      "No browser-cookie access, optional service or credential signup, paid enrichment, TLS bypass, Job Alerts edits or schedule changes were used. Research logs and full provenance remain private."
+    ],
+    "engine_footer": "---\n✅ All agents reported back!\n├─ 🟠 Reddit: 17 threads │ 437 upvotes │ 2,063 comments\n├─ 🟡 HN: 30 stories │ 1,814 points │ 1,232 comments\n├─ 👩‍💻 dev.to: 12 articles │ 272 reactions │ 217 comments\n├─ 🐙 GitHub: 5 items │ 14 reactions │ 48 comments\n├─ 🗣️ Top voices: r/singularity, r/artificial, r/technology\n---"
+  },
+  "key_patterns": [
+    "The AI device race is moving into court and into the supply chain: OpenAI's counterclaims turn on ==shared suppliers and employee moves==, not on models.",
+    "Gigawatt-scale AI campuses are leaving the announcement stage: GS's Donghae site is the ==second Korean AI data centre under construction== that President Lee has visited in a week.",
+    "For coding agents, the line between a ==disclosed capability limit== and covert degradation is now a trust question users want settled with session evidence."
+  ],
+  "previous_issue_id": "2026-11-27-afternoon"
+}
